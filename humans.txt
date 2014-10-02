@@ -1,0 +1,17 @@
+/* TEAM */
+	Maquetado: Juan Francisco
+	Contact: fherrera [at] digitaldealers.mx
+	Twitter: @jok3rcit0
+
+	UX/UI: 
+	Twitter: 
+
+	Graphic Design:
+	Twiter:
+
+/* SITE */
+	Last update: 2014/10/02
+	Language: Español
+	Doctype: HTML5
+	Components: normalize, jQuery, 1140px, Stylus
+	IDE: Sublime Text, Photoshop, Illustrator
