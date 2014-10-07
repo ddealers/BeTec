@@ -1,0 +1,21 @@
+*{
+padding:0px;
+margin: 0px;
+}
+/* =========================== */
+nav{
+	position: fixed;
+
+}
+section#be_tec{
+	background: url(../img/back-be-tec.png)no-repeat;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+}
+section#actividades{
+	background: url(../img/back-actividades.png)no-repeat;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+}
