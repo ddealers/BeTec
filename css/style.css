@@ -55,15 +55,20 @@ h1 {
   color: #fff;
   transform: rotate(-3deg);
   display: block;
+  font-family: 'Helvetica Neue';
 }
 h2 {
   color: #fff;
   margin-left: 180px;
   padding-top: 250px;
   font-size: 20px;
+  font-family: 'Gill Sans';
+  font-weight: bold;
 }
 p {
   color: #fff;
+  font-family: 'Gill Sans';
+  font-weight: regular;
 }
 article {
   position: relative;
@@ -333,30 +338,111 @@ section#aviso_legal div {
 }
 /* =========================== REGISTRO */
 section#registro {
-  background: #fff;
+  background: #f9f9f9;
   width: 100%;
-  height: 100%;
+  height: auto;
   background-size: cover;
+  padding-bottom: 50px;
 }
-section#registro h1 {
-  top: 180px;
+section#registro div.datos {
+  padding-top: 75px;
+  margin-left: -10px;
+}
+section#registro div.container12 {
+  margin-left: 0px;
+  font-size: 16px;
+}
+section#registro div.container12 .column3 {
+  width: 130px;
+  padding-top: 10px;
+}
+section#registro div.container12 .column3 p.col {
+  margin: 0px !important;
+}
+section#registro div.container12 .column3 img.lapiz {
+  margin-left: 25px;
+  margin-top: 15px;
+}
+section#registro div.container12 .column3 img {
+  margin-left: 50px;
+  margin-top: 15px;
+}
+section#registro div.container12 .column3 p.hospedaje {
+  width: 300px;
+}
+section#registro div.container12 .column3 input.checkbox {
+  width: 47px;
+}
+section#registro .column3.tu {
+  margin-left: 195px;
+}
+section#registro h1.registro {
+  top: 90px;
   background: #de3370;
   padding: 10px;
-  left: 100px;
+  left: 200px;
 }
 section#registro h2.experiencia {
   color: #727272;
-  margin-left: 180px;
-  padding-top: 250px;
+  margin-left: 200px;
+  padding-top: 166px;
   font-size: 20px;
+}
+section#registro div.genero {
+  display: inline-flex;
+}
+section#registro div.genero p {
+  margin-right: 60px;
 }
 section#registro p {
   color: #727272;
+  margin-left: 205px;
+  margin-bottom: 10px;
+}
+section#registro li {
+  margin-left: 200px;
+  list-style: none;
+}
+section#registro li p {
+  margin-left: 0px;
+  margin-top: 20px;
+}
+section#registro input {
+  padding: 3px;
+  margin-top: 10px;
+  width: 255px;
+}
+section#registro select {
+  width: 102px;
+  background: #fff;
+  margin-top: 10px;
+  color: #727272;
+}
+section#registro select.option {
+  width: 250px;
+}
+section#registro .column3.box {
+  width: 15px !important;
+}
+section#registro p.leyenda {
+  font-size: 11px;
+  width: 700px;
 }
 /* =========================== LOAD DOCUMENTS */
 section#load_documents {
-  background: url("../img/back-registrate.png") no-repeat;
+  background: #f9f9f9;
   width: 100%;
   height: 100%;
   background-size: cover;
+  border-top: 1px solid #727272;
+}
+section#load_documents h1 {
+  top: 180px;
+  background: #00bbf2;
+  padding: 10px;
+  left: 100px;
+}
+section#load_documents p {
+  margin-left: 210px;
+  margin-bottom: 10px;
 }
