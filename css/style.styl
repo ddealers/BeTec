@@ -12,6 +12,9 @@ nav
 	left: 0px;
 	right: 0px;
 	top: 40px;
+	font-family: 'gill sans';
+	font-weight: 300;
+
 	ul
 		position: absolute;
 		display: inline-flex;
@@ -32,6 +35,10 @@ div.social
 		display: inline-flex;
 		list-style: none;
 		width: 200px;
+		li
+			padding: 0px 15px 10px 0px;
+		li.rs
+			padding-top 20px
 [class^="icon-"], [class*=" icon-"] 
 	color: #fff;
 figure 
@@ -43,7 +50,7 @@ h1
 	color: #fff;
 	transform: rotate(-3deg);
 	display: block;
-	font-family:'Helvetica Neue';
+	font-family:'HelveticaNeue-CondensedBold';
 h2 
 	color: #fff;
 	margin-left: 180px;
@@ -132,6 +139,8 @@ section#agenda
 			padding: 5px;
 			font-size: 10px;
 			color #fff
+		td.act
+			font-size 15px
 		td.uno
 			background #8fd8f0
 			color #000
@@ -158,6 +167,7 @@ section#agenda
 			color #000
 	table.jueves
 		height: 115px;
+		margin-bottom: 20px;
 	table.sabado
 		height: 225px;	
 		width: 500px;	
@@ -166,8 +176,13 @@ section#agenda
 		width: 350px;
 		padding-left: 105px;
 		padding-top: 10px;
-
-		/*background: rgba (255, 255, 255, .06);*/
+	div.column6
+		width 400px
+		padding-left 70px
+	img
+		float: left;
+		margin-top: 15px;
+		margin-left: 40px		
 /* =========================== SEDE */
 section#sede
 	/*background: url(../img/back-sede.png)no-repeat;*/
@@ -187,6 +202,8 @@ section#sede
 	p
 		margin-left: 210px;
 		margin-bottom: 10px;
+	span
+		font-weight: normal;
 	div.image
 		position:relative;
 		margin-top: 262px;
@@ -323,7 +340,7 @@ section#aviso_legal
 		padding: 10px;
 		left: 100px;
 	h2.terminos	
-			width: 465px;
+			width: 525px;
 			margin: auto;
 			padding-top: 280px;
 	div
@@ -360,6 +377,8 @@ section#registro
 				margin-top: 15px;
 			p.hospedaje
 				width:300px;
+				font-family: 'gillsans';
+
 			input.checkbox
 				width 47px
 	.column3.tu
@@ -377,6 +396,7 @@ section#registro
 	div.genero
 		display:inline-flex;
 		p.genero.p
+			font-family: 'Futura-Medium';
 			margin-top 65px
 		p
 			margin-right: 60px;
@@ -388,8 +408,14 @@ section#registro
 		p.h
 			color: #fff;
 			text-align: center;
-			margin-top: 70px;
+			margin-top: 95px;
 			width: 300px;
+		img.caballero
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				top: 40px;
 		p.o
 			position: absolute;
 			left: 276px;
@@ -405,8 +431,14 @@ section#registro
 		height: 148px;
 		p.m 
 			text-align: center;
-			margin-top: 70px;
+			margin-top: 95px;
 			width: 300px;
+		img.dama
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				top: 35px;
 	p
 		color:#727272;
 		margin-left: 205px;
@@ -417,6 +449,8 @@ section#registro
 		p
 			margin-left:0px;
 			margin-top:20px;
+			font-family: 'Futura-Medium';
+
 	input
 		padding:3px;
 		margin-top: 10px;
@@ -552,7 +586,9 @@ section#load_documents
 		height: 185px;
 		div.container12
 			padding-top: 10px;
-			margin-left: 150px;
+			padding-left: 151px;
+			width: 1000px;
+			margin: auto;
 		div.column3
 			width 230px
 		p
@@ -570,8 +606,19 @@ footer
 	margin: 0;
 	padding: 0;
 	height: 55px;
+	position relative
 	p
 		padding: 15px 0px 15px 50px;
+	img
+		position absolute
+		bottom: 15px;
+		left: 10px;
+	span.icon-help
+		position: absolute;
+		right: 30px;
+		top: 20px;
+	span
+		padding-left: 30px;
 /* =========================== MODAL LOAD DOCUMENTS √ */
 div.containerModal
 	width 100%

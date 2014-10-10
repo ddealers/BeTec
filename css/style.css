@@ -14,6 +14,8 @@ nav {
   left: 0px;
   right: 0px;
   top: 40px;
+  font-family: 'gill sans';
+  font-weight: 300;
 }
 nav ul {
   position: absolute;
@@ -41,6 +43,12 @@ div.social ul {
   list-style: none;
   width: 200px;
 }
+div.social ul li {
+  padding: 0px 15px 10px 0px;
+}
+div.social ul li.rs {
+  padding-top: 20px;
+}
 [class^="icon-"],
 [class*=" icon-"] {
   color: #fff;
@@ -55,7 +63,7 @@ h1 {
   color: #fff;
   transform: rotate(-3deg);
   display: block;
-  font-family: 'Helvetica Neue';
+  font-family: 'HelveticaNeue-CondensedBold';
 }
 h2 {
   color: #fff;
@@ -163,6 +171,9 @@ section#agenda table td {
   font-size: 10px;
   color: #fff;
 }
+section#agenda table td.act {
+  font-size: 15px;
+}
 section#agenda table td.uno {
   background: #8fd8f0;
   color: #000;
@@ -197,6 +208,7 @@ section#agenda table td.ocho {
 }
 section#agenda table.jueves {
   height: 115px;
+  margin-bottom: 20px;
 }
 section#agenda table.sabado {
   height: 225px;
@@ -207,7 +219,15 @@ section#agenda p.textJ {
   width: 350px;
   padding-left: 105px;
   padding-top: 10px;
-/*background: rgba (255, 255, 255, .06);*/
+}
+section#agenda div.column6 {
+  width: 400px;
+  padding-left: 70px;
+}
+section#agenda img {
+  float: left;
+  margin-top: 15px;
+  margin-left: 40px;
 }
 /* =========================== SEDE */
 section#sede {
@@ -231,6 +251,9 @@ section#sede h2 {
 section#sede p {
   margin-left: 210px;
   margin-bottom: 10px;
+}
+section#sede span {
+  font-weight: normal;
 }
 section#sede div.image {
   position: relative;
@@ -397,7 +420,7 @@ section#aviso_legal h1 {
   left: 100px;
 }
 section#aviso_legal h2.terminos {
-  width: 465px;
+  width: 525px;
   margin: auto;
   padding-top: 280px;
 }
@@ -443,6 +466,7 @@ section#registro div.container12 .column3 img {
 }
 section#registro div.container12 .column3 p.hospedaje {
   width: 300px;
+  font-family: 'gillsans';
 }
 section#registro div.container12 .column3 input.checkbox {
   width: 47px;
@@ -466,6 +490,7 @@ section#registro div.genero {
   display: inline-flex;
 }
 section#registro div.genero p.genero.p {
+  font-family: 'Futura-Medium';
   margin-top: 65px;
 }
 section#registro div.genero p {
@@ -480,8 +505,15 @@ section#registro div.azul {
 section#registro div.azul p.h {
   color: #fff;
   text-align: center;
-  margin-top: 70px;
+  margin-top: 95px;
   width: 300px;
+}
+section#registro div.azul img.caballero {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  top: 40px;
 }
 section#registro div.azul p.o {
   position: absolute;
@@ -500,8 +532,15 @@ section#registro div.transparente {
 }
 section#registro div.transparente p.m {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 95px;
   width: 300px;
+}
+section#registro div.transparente img.dama {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  top: 35px;
 }
 section#registro p {
   color: #727272;
@@ -515,6 +554,7 @@ section#registro li {
 section#registro li p {
   margin-left: 0px;
   margin-top: 20px;
+  font-family: 'Futura-Medium';
 }
 section#registro input {
   padding: 3px;
@@ -681,7 +721,9 @@ section#load_documents div.footer {
 }
 section#load_documents div.footer div.container12 {
   padding-top: 10px;
-  margin-left: 150px;
+  padding-left: 151px;
+  width: 1000px;
+  margin: auto;
 }
 section#load_documents div.footer div.column3 {
   width: 230px;
@@ -704,9 +746,23 @@ footer {
   margin: 0;
   padding: 0;
   height: 55px;
+  position: relative;
 }
 footer p {
   padding: 15px 0px 15px 50px;
+}
+footer img {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+}
+footer span.icon-help {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+footer span {
+  padding-left: 30px;
 }
 /* =========================== MODAL LOAD DOCUMENTS √ */
 div.containerModal {
