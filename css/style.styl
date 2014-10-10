@@ -57,9 +57,12 @@ p
 	font-weight:regular;
 article
 	position:relative;
+div.filtro
+	height 100%
+	width 100%
 /* =========================== BE TEC */
 section#be_tec
-	/*background: url(../img/back-be-tec.png)no-repeat;*/
+	background: url(../img/back-be-tec.png)no-repeat;
 	background: url(../img/filtro-rosa.png)no-repeat;
 	width: 100%;
 	height: 100%;
@@ -88,11 +91,13 @@ section#actividades
 		margin-left: 210px;
 		margin-bottom: 10px;
 	div.container12
-		margin-left: 200px;
+		padding-left: 200px;
 		font-size: 14px;
+		width: 1010px;
 		.column3 
-			width: 180px;
+			width: 193px;
 			padding-top: 10px;
+			padding-left: 0px;
 			p.col
 				margin: 0px !important;
 
@@ -109,8 +114,60 @@ section#agenda
 		padding: 10px;
 		left: 100px;
 	p
-		margin-left: 210px;
-		margin-bottom: 10px;
+		text-align center
+		color #fff
+	table
+		position: relative;
+		margin: auto;
+		margin-top: 40px;
+		height: 270px;
+		width: 900px;
+		background: rgba(255, 255, 255, 0.2);
+		tr
+			border-top: solid 1.5px #943ba7;
+			border-bottom: solid 1.5px #943ba7;
+		td
+			border-left: solid 1.5px #943ba7;
+			border-right: solid 1.5px #943ba7;
+			padding: 5px;
+			font-size: 10px;
+			color #fff
+		td.uno
+			background #8fd8f0
+			color #000
+		td.dos
+			background #eeb790
+			color #000
+		td.tres
+			background #8fe9c9
+			color #000
+		td.cuatro
+			background #eb8bf2
+			color #000
+		td.cinco
+			background #b58bf1
+			color #000
+		td.seis
+			background #ef8a91
+			color #000
+		td.siete
+			background #90eae2
+			color #000
+		td.ocho
+			background #e6e691
+			color #000
+	table.jueves
+		height: 115px;
+	table.sabado
+		height: 225px;	
+		width: 500px;	
+	p.textJ
+		text-align left
+		width: 350px;
+		padding-left: 105px;
+		padding-top: 10px;
+
+		/*background: rgba (255, 255, 255, .06);*/
 /* =========================== SEDE */
 section#sede
 	/*background: url(../img/back-sede.png)no-repeat;*/
@@ -182,11 +239,13 @@ section#registrate
 		margin-left: 210px;
 		margin-bottom: 10px;
 	div.container12
-		margin-left: 200px;
+		padding-left: 200px;
 		font-size: 14px;
+		width: 1010px;
 		.column3 
-			width: 180px;
+			width: 193px;
 			padding-top: 10px;
+			padding-left: 0px;
 			p
 				margin: 0px;
 			a
@@ -220,8 +279,9 @@ section#faq
 	span
 		font-weight:bold;
 	div.container12
-		margin-left: 200px;
+		padding-left: 200px;
 		font-size: 14px;
+		width: 1010px;
 		.column6 
 			width: 323px;
 			padding-left: 65px;
@@ -280,13 +340,13 @@ section#registro
 	width: 100%;
 	height: auto;
 	background-size: cover;
-	padding-bottom: 50px;
 	div.datos
 		padding-top:75px;
 		margin-left:-10px;
 	div.container12
-		margin-left: 0px;
+		padding-left: 0px;
 		font-size: 16px;
+		width 1010px
 		.column3 
 			width: 130px;
 			padding-top: 10px;
@@ -316,8 +376,37 @@ section#registro
 		font-size: 20px;
 	div.genero
 		display:inline-flex;
+		p.genero.p
+			margin-top 65px
 		p
 			margin-right: 60px;
+	div.azul
+		position: relative;
+		background: #68b9ef;
+		width: 300px;
+		height: 150px;
+		p.h
+			color: #fff;
+			text-align: center;
+			margin-top: 70px;
+			width: 300px;
+		p.o
+			position: absolute;
+			left: 276px;
+			top: 40px;
+			background: #fff;
+			padding: 5px 20px 5px 20px;
+			border: 1px solid;
+			z-index: 1;
+	div.transparente
+		position: relative;
+		border: 1px solid #eeeeee;
+		width: 300px;
+		height: 148px;
+		p.m 
+			text-align: center;
+			margin-top: 70px;
+			width: 300px;
 	p
 		color:#727272;
 		margin-left: 205px;
@@ -344,64 +433,174 @@ section#registro
 	p.leyenda
 		font-size 11px	
 		width: 700px;
-	.cmn-toggle {
-	  position: absolute;
-	  margin-left: -9999px;
-	  visibility: hidden;
-
-		.cmn-toggle + label {
-		  display: block;
-		  position: relative;
-		  cursor: pointer;
-		  outline: none;
-		  user-select: none;
-
-	 input.cmn-toggle-round + label {
-	  padding: 2px;
-	  width: 120px;
-	  height: 60px;
-	  background-color: #dddddd;
-	  border-radius: 60px;
-
-		input.cmn-toggle-round + label:before,
-		input.cmn-toggle-round + label:after {
-		  display: block;
-		  position: absolute;
-		  top: 1px;
-		  left: 1px;
-		  bottom: 1px;
-		  content: "";
-
-		input.cmn-toggle-round + label:before {
-		  right: 1px;
-		  background-color: #f1f1f1;
-		  border-radius: 60px;
-		  transition: background 0.4s;
-
-		input.cmn-toggle-round + label:after {
-		  width: 58px;
-		  background-color: #fff;
-		  border-radius: 100%;
-		  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-		  transition: margin 0.4s;
-
-		input.cmn-toggle-round:checked + label:before {
-		  background-color: #8ce196;
-
-		input.cmn-toggle-round:checked + label:after {
-		  margin-left: 60px;
+	div.end
+		position: relative;
+		margin-left: -200px;
+		div.registroT
+			h1
+				top: 190px;
+				background: #de3370;
+				padding: 10px;
+				left: 435px;
+			h2
+				width: 465px;
+				margin: auto;
+				padding-top: 280px;
+				color: #727272;
+			p
+				margin-left: 460px;
+				color: #de3370;
+			li
+				font-size: 10px;
+				margin-left: 460px;
+				color: #de3370;
+				padding-top 10px
+				span
+					font-weight bold
+			img
+				position: absolute;
+				width: 7%;
+				left: 345px;
+		div.redesS
+			position: relative;
+			width: 100%;
+			height: 250px;
+			background: #de3370;
+			p
+				color #fff
+				padding-top: 130px;
+				font-weight bold
+			a
+				background: url("../img/f.png") no-repeat;
+				position: absolute;
+				top: 30px;
+				height: 100px;
+				width: 100px;
+				left: -35px;
+				right: 0;
+				margin: auto;
+			.t
+				background: url("../img/t.png") no-repeat 30px;
+				left 35px
+				top: 20px;
+			p.siguiente
+				background: url("../img/siguiente.png") no-repeat no-repeat;
+				color #fff
+				padding-top: 20px;
+				font-weight: normal;
+				padding-left: 50px;
+				height: 100px;
+				margin-left: 500px;
 /* =========================== LOAD DOCUMENTS */
 section#load_documents
 	background: #f9f9f9;
 	width: 100%;
 	height: 100%;
 	background-size: cover;
-	border-top: 1px solid #727272;
+	border-top: 1px solid #eeeeee;
 	h1
-		top: 180px;
+		top: 100px;
 		background: #00bbf2;
 		padding: 10px;
 		left: 100px;
+	div.adjuntar
+		position: relative;
+		padding-top: 180px;
+		margin-left: -105px;
+		p
+			margin-left: 210px;
+			margin-bottom: 10px;
+			color #727272
+		div.container12
+			padding-top 0
+			margin-left 183px
+			div.column6
+				padding-top 40px
+				width: 373px;
+				p.name
+					font-weight bold
+					color #727272
+					margin-left: 115px;
+					margin-top -20px
+					font-size: 23px;
+					line-height: 15px;
+				p.tec
+					margin-top -35px
+				p.line
+					border-bottom: 1px solid;
+					margin-top: -13px;
+					margin-left: 300px;
+				p
+					color #000
+					margin-top: -60px;
+				img
+					margin-left 130px
+				button
+					margin-left: 210px;
+					padding: 5px 27px 5px 5px;
+					background: #727272 url(../img/up.png)no-repeat 47px;
+					color: #fff;
+					font-size: 14px;
+					border none
+		span
+			font-weight normal
+			font-size 12px
+			color #727272
+	div.footer
+		background: #00bbf2;
+		margin-top: 43px;
+		height: 185px;
+		div.container12
+			padding-top: 10px;
+			margin-left: 150px;
+		div.column3
+			width 230px
+		p
+			text-align center
+			padding-top: 20px;
+		div
+			padding-top 10px
+		a
+			color: #fff;
+			text-decoration: none;
+			font-size: 14px;
+/* =========================== LOAD DOCUMENTS */
+footer
+	background: #727272;
+	margin: 0;
+	padding: 0;
+	height: 55px;
 	p
-		margin-left: 210px;
-		margin-bottom: 10px;
+		padding: 15px 0px 15px 50px;
+/* =========================== MODAL LOAD DOCUMENTS √ */
+div.containerModal
+	width 100%
+	height 100%
+	position relative
+	div.modal
+		position absolute
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		background: url("../img/modal.png") no-repeat;
+		height: 480px;
+		width: 690px;
+		h1.hecho
+			margin-left 175px
+			margin-top 95px
+			font-size 50px
+		img
+			position absolute
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 70px;
+			margin: auto;
+		p
+			text-align: center;
+			margin-top: 255px;
+		span
+			font-weight bold
+			font-size: 27px;
