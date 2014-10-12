@@ -3,11 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>BTEC</title>
-	
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/1140.css" />
 	<link rel="stylesheet" type="text/css" href="css/btec.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
+	<script type="text/javascript" src="js/vendor/skrollr/skrollr.min.js"></script>
+	<script type="text/javascript" src="js/vendor/skrollr/skrollr.menu.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 	<header>
@@ -25,22 +29,25 @@
 			</ul>
 		</nav>
 		<div class="social">
-			<ul>
-				<li><a href="#"><img src="./img/registro.png" /></a></li>
-				<li class="rs"><a href="#"><img src="./img/face.png"></a></li>
-				<li class="rs"><a href="#"><img src="./img/tw.png"></a></li>
-			</ul>
+			<a href="#"><img src="./img/registro_boton.png" /></a>
+			<div class="rs">
+				<a href="#"><img src="./img/face.png"></a>
+				<a href="#"><img src="./img/tw.png"></a>
+			</div>
 		</div>
 	</header>
-	<section id="be_tec">
+	<nav class="arrows">
+		<a class="next" href="#next"></a>
+		<a class="prev" href="prev"></a>
+	</nav>
+	<section id="be_tec" data-0="transform: translate(0%,0)" data-100p="transform: translate(-100%,0)">
 		<article><!--CONTENIDO_BORN_TO_BE_TEC-->
 			<h1>¿QUÉ ES?</h1>
 			<h2>UN EVENTO PENSADO EN <br> TI, QUE ESTÁS EN EL <br> ÚLTIMO AÑO DE PREPA.</h2>
 			<p>Siendo su tercera edición, BORN TO BE TEC es para que descubras la<br> experiencia de ser alumno del Tecnológico de Monterrey.<br><br>Es organizado por alumnos del Campus Monterrey, maestros, directores de<br> carrera y todo el equipo de asesores de admisión. Se lleva a cabo para que<br> tengas la inigualable oportunidad de vivir un día como universitario, hacer<br> nuevos amigos, conocer el campus, interactuar con estudiantes actuales,<br> platicar con líderes estudiantiles y descubrir todas las carreras que podrías<br> estudiar en el Tecnológico de Monterrey.<br><br>Te esperamos este 21 y 22 de noviembre en el Tecnológico de Monterrey,<br> Campus Monterrey, para sorprenderte. ¡Regístrate ahora!</p>
 		</article>
-		<div class="filtro rosa"></div>
 	</section>
-	<section id="actividades">
+	<section id="actividades" data-0="transform: translate(100%,0)" data-100p="transform: translate(0%,0)" data-200p="transform: translate(-100%,0)">
 		<article><!--CONTENIDO_ACTIVIDADES-->
 			<h1>ACTIVIDADES</h1>
 			<h2>¿TE PREGUNTAS LO QUE <br> VAS A HACER DURANTE <br> ESTOS 2 DÍAS?</h2>
@@ -80,779 +87,309 @@
 			  	</div>
 			</div>
 		</article>
-		<div class="filtro verde"></div>
 	</section>
-	<section id="agenda">
+	<section id="agenda" data-100p="transform: translate(100%, 0)" data-200p="transform: translate(0%, 0)"><!-- data-300p="transform: translate(-100%, 0)"-->
 		<article><!--CONTENIDO_AGENDA-->
 			<h1>AGENDA</h1>
 			<h2>CONOCE EL PROGRAMA</h2>
-			<!--p>VIERNES 21 DE NOVIEMBRE</p>
-			<table>
-				<tr>
-					<td class="act">ACTIVIDADES</td>
-					<td colspan="2">9AM</td>
-					<td colspan="2">10AM</td>
-					<td colspan="2">11AM</td>
-					<td colspan="2">12AM</td>
-					<td colspan="2">1PM</td>
-					<td colspan="2">2PM</td>
-					<td colspan="2">3PM</td>
-					<td colspan="2">4PM</td>
-					<td colspan="2">5PM</td>
-					<td colspan="2">6PM</td>
-				</tr>
-				<tr>
-					<td>Tour por la ciudad<br> (exclusivo foráneos)</td>
-					<td colspan="6" class="uno"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Comida<br> (exclusivo foráneos)</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td colspan="4" class="dos"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Registro de locales<br> y foráneos</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td colspan="2" class="tres"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Platica de <br>bienvenida</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td colspan="2" class="cuatro"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Primera ronda de<br> actividades</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td ></td>
-					<td></td>
-					<td colspan="2" class="cinco"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Segunda ronda de<br> actividades</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td colspan="2" class="seis"></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Terecera ronda de<br> actividades</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td colspan="1" class="siete"></td>
-				</tr>
-				<tr>
-					<td>Cena / Cierre de viernes</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table>
 <!-- ============================== table  PARTE JUEVES-->
-			<p>JUEVES 20 DE NOVIEMBRE</p>
-			<table class="jueves">
-				<tr>
-					<td class="act">ACTIVIDADES</td>
-					<td colspan="2">3pm</td>
-					<td colspan="2">4pm</td>
-					<td colspan="2">5pm</td>
-					<td colspan="2">6pm</td>
-					<td colspan="2">7pm</td>
-					<td colspan="2">8pm</td>
-					<td colspan="2">9pm</td>
-					<td colspan="2">10pm</td>
-				</tr>
-				<tr>
-					<td>Recepción de foráneos</td>
-					<td colspan="8" class="uno"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Meet & Grill<br>(exclusivo foráneos)</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td colspan="6" class="seis"></td>
-					<td></td>
-				</tr>
-			</table>
-			<div class="container12">
-			 	<div class="column6">
-			 		<img src="./img/foco.png">
-			 		<p class="textJ">Asistente foráneo:<br>Te recomendamos llegar a Monterrey desde el jueves 20 de noviembre para que puedas instalarte cómodamente. Ese día te daremos la bienvenida en nuestro Meet & Grill, donde podrás conocer a los demás participantes foráneos.</p>
-			 	</div>
-			  	<div class="column6">
-			  		<img src="./img/icon.png">
-			  		<p class="textJ">La recepción de foráneos será en el edificio de Residencias III, ubicado en Av. Fernando García Roel esquina con Junco de la Vega. <br><br>Ahí te registraremos y trasladaremos al hotel sede.<p>
-			  	</div>
-			</div>
-<!-- ============================== table  PARTE SÁBADO-->
-			<!--p>SÁBADO 22 DE NOVIEMBRE</p>
-			<table class="sabado">
-				<tr>
-					<td class="act">ACTIVIDADES</td>
-					<td colspan="2">9am</td>
-					<td colspan="2">10am</td>
-					<td colspan="2">11am</td>
-					<td colspan="2">12am</td>
-					<td colspan="2">1pm</td>
-				</tr>
-				<tr>
-					<td>Taller 1</td>
-					<td colspan="8" class="siete">Proyecto Integrador de la Escuela de Negocios,<br> Ciencias Sociales y Humanidades</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Taller 2</td>
-					<td colspan="8" class="cuatro">Proyecto Integrador de la Escuela de Ingeniería y <br>Tecnologías de Información</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Taller 3</td>
-					<td colspan="8" class="seis">Proyecto Integrador de la Escuela de Biotecnología y<br> Ciencias de la Salud</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Taller 4</td>
-					<td colspan="8" class="uno">Proyecto Integrador de la Escuela de Arquitectura, <br> Arte y Diseño</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Taller 5</td>
-					<td colspan="8" class="ocho">Proyecto Integrador de la Escuela Nacional de <br>Medicina</td>
-					<td></td>
-					<td></td>
-				</tr>
-			</table-->
-		</article>
-		<div class="filtro morado"></div>
-	</section>
-	<section id="sede">
-		<article><!--CONTENIDO_SEDE-->
-			<h1>SEDE</h1>
-			<h2>BORN TO BE TEC ES LLEVADO A <br> CABO EN EL TECNOLÓGICO DE <br> MONTERREY, CAMPUS MONTERREY,<br> <span> UBICADO EN AV. EUGENIO GARZA SADA <br>#2501. </span> </h2>
-			<div class="image">
-				<img src="./img/circle1.png" class="uno">
-				<img src="./img/circle2.png" class="dos">
-				<img src="./img/circle3.png" class="tres">
-				<img src="./img/circle4.png" class="cuatro">
-				<img src="./img/circle5.png" class="cinco">
-				<img src="./img/circle6.png" class="seis">
-				<img src="./img/circle7.png" class="siete">
-			</div>	
-		</article>
-		<div class="filtro azul"></div>
-	</section>
-	<section id="registrate">
-		<article><!--CONTENIDO_REGISTRATE-->
-			<h1>REGÍSTRATE</h1>
-			<h2>NO LO PIENSES MÁS Y REGÍSTRATE AHORA PARA<br>QUE PUEDAS PARTICIPAR. EL REGISTRO CIERRA EL<br>MARTES 18 DE NOVIEMBRE A LAS 23:59 HORAS.</h2>
-			<p>Llena el siguiente formulario con todos tus datos, asegúrate de contar con la<br> Carta Compromiso correctamente llenada y firmada por tus papás. Si aún no la<br> tienes, aquí te facilitamos el formato, ¡descárgalo! <br><br> Si eres foráneo, descarga el formato de referencias bancarias para realizar tu<br> pago, deposita en el banco de tu preferencia y pide que agreguen tu nombre<br> a la referencia para que puedas subirla escaneada al registro.</p>
-			<div class="container12">
-			 	<div class="column3">
-			 		<img src="./img/descarga.png">
-			 		<p>Descargar formato<br> de referencias bancarias</p>
-			 	</div>
-			  	<div class="column3">
-			  		<img src="./img/descarga.png">
-			  		<p>Descargar formato de<br> Carta Compromiso</p>
-			  	</div>
-			  	<div class="column3">
-			  		<img src="./img/registro.png">
-			  		<a href="">Iniciar registro</a>
-			  	</div>
-				<div class="column3">
-			  	</div>			  	
-			</div>
-		</article>
-		<div class="filtro rojo"></div>
-	</section>
-	<section id="faq">
-		<article><!--CONTENIDO_FAQ-->
-			<h1>PREGUNTAS FRECUENTES</h1>
-			<div class="texto">
-				<p class="bold">Hicimos esta sección para aclarar tus dudas.</p>
-				<p>Si requieres ayuda personalizada, escribe, llama o contáctanos vía redes sociales.</p>
-			</div>
-			<div>
-				<div class="container12">
-				 	<div class="column6">
-						<a href="" class="escribenos">Escribenos:<br>btec.mty@servicios.itesm.mx</a>
-				 	</div>
-				  	<div class="column6">
-						<a href="">Llámanos<br>01 800 832 33 689 / (81) 8158 2269</a>
-				  	</div>
-				</div>
-				<div class="container12">
-				 	<div class="column6">
-				 		<p><span>¿Quiénes pueden asistir?</span> <br><br>Born to Be Tec está diseñado para chavos de <br> último año de prepa de todo el país.</p>
-				 	</div>
-				  	<div class="column6">
-				  		<p><span>¿Por qué los foráneos pagamos $500 pesos?</span> <br><br> Es una cuota simbólica de recuperación, debido a que te ofrecemos las comidas, traslados internos, hospedaje y actividades durante el evento.</p>
-				  	</div>
-				</div>
-				<div class="container12">
-				 	<div class="column6">
-				 		<p><span>¿Puedo invitar a alguien más?</span> <br><br>Sí, no dudes en invitar a tus compañeros o a tus<br> amigos de último año de prepa, ellos deberán llenar<br> su propio registro.</p>
-				 	</div>
-				  	<div class="column6">
-				  		<p><span>¿La cuota de los $500 pesos para los foráneos es reembolsable?</span> <br><br>No, en ninguno de los casos será reembolsable.</p>
-				  	</div>
-				</div>
-			</div>
-		</article>
-		<div class="filtro rosa"></div>
-	</section>
-	<section id="aviso_legal">
-		<article><!--CONTENIDO_AVISO_LEGAL-->
-			<h1>AVISO LEGAL</h1>
-			<h2 class="terminos">TÉRMINOS Y CONDICIONES DE USO DEL SITIO</h2>
-			<div>
-				<p>Los términos de uso que a continuación se presentan (en lo sucesivo los TÉRMINOS DE USO) constituyen el acuerdo entre el INSTITUTO TECNOLÓGICO Y DE ESTUDIOS SUPERIORES DE MONTERREY (en lo sucesivo TECNOLÓGICO DE MONTERREY) y cualquier usuario del SITIO cuya dirección electrónica es: http://www. http://borntobetec.mty.itesm.mx (en lo sucesivo el SITIO).<br><br>
-
-	La utilización del SITIO por parte de cualquier persona, le atribuye la calidad de usuario (en lo sucesivo el USUARIO) y ello implica su adhesión plena e incondicional a estos TÉRMINOS DE USO; en consecuencia es indispensable que el USUARIO los lea previamente y los evalúe de forma cuidadosa, de tal manera que esté consciente de que se sujeta a ellos y a las modificaciones que pudieran sufrir, cada vez que accede al SITIO.<br><br>
-
-	Si en cualquier momento el USUARIO no estuviera de acuerdo total o parcialmente con estos TÉRMINOS DE USO, deberá abstenerse inmediatamente de usar el SITIO en cualquiera de sus partes o secciones.<br><br>
-
-	El USUARIO está de acuerdo en que en diversas partes del SITIO podrá haber estipulaciones especiales que, según sea el caso, sustituirán, complementarán y/o modificarán los TÉRMINOS DE USO (en lo sucesivo las CONDICIONES PARTICULARES), por tal razón también resulta indispensable que el USUARIO las lea previamente en cada caso y de no estar total o parcialmente de acuerdo con ella o ellas, se abstenga de usar la parte o sección del SITIO regulada bajo esa CONDICIÓN o CONDICIONES PARTICULAR(ES). En caso de que el USUARIO utilice la parte del SITIO regulada por una o más CONDICIONES PARTICULARES, se entenderá que se somete total e incondicionalmente a ellas.</p><br><br>
-			</div>
-		</article>
-		<div class="filtro yellow"></div>
-	</section>
-	<section id="registro">
-		<article><!--CONTENIDO_REGISTRO-->
-			<h1 class="registro">REGISTRO</h1>
-			<h2 class="experiencia">¡ESTÁS MUY CERCA DE<br> VIVIR LA EXPERIENCIA TEC!</h2>
-			<p>Iniciemos con el registro ahora mimso. Por favor proporciona<br>los siguientes datos:</p>
-			<form>
-				<ul>
-					<li>
-						<div class="genero">
-							<p class="genero p">TU GÉNERO</p>
-							<div class="azul">
-								<div>
-									<img src="./img/hombre.png" class="caballero">
-									<p class="h">HOMBRE</p>
-									<p class="o">o</p>
-								</div>
-							</div>
-							<div class="transparente">
-								<div>
-									<img src="./img/mujer.png" class="dama">
-									<p class="m">MUJER</p>
-								</div>
-							</div>
-						</div>
-						<div class="datos">
-							<div class="container12">
-							 	<div class="column3">
-									<p>TU NOMBRE</p>
-									<img class="lapiz"src="./img/lapiz.png">
-							 	</div>
-							  	<div class="column3">
-									<input type="text" placeholder="Nombre(s)*" name="nombre" requerid>
-									<input type="text" placeholder="Apellido paterno*" name="apellido_paterno" requerid>
-									<input type="text" placeholder="Apellido materno*" name="apellido_materno" requerid>
-							  	</div>
-							  	<div class="column3 tu">
-									<p class="cumple">TU CUMPLEAÑOS</p>
-									<img src="./img/regalo.png">
-							 	</div>
-							  	<div class="column3">
-									<select>
-										<option>Día*</option>
-										<option>1</option>
-										<option>2</option>
-										<option>3</option>
-										<option>4</option>
-										<option>5</option>
-										<option>6</option>
-										<option>7</option>
-										<option>8</option>
-										<option>9</option>
-										<option>10</option>
-										<option>11</option>
-										<option>12</option>
-										<option>13</option>
-										<option>14</option>
-										<option>15</option>
-										<option>16</option>
-										<option>17</option>
-										<option>18</option>
-										<option>19</option>
-										<option>20</option>
-										<option>21</option>
-										<option>22</option>
-										<option>23</option>
-										<option>24</option>
-										<option>25</option>
-										<option>26</option>
-										<option>27</option>
-										<option>28</option>
-										<option>29</option>
-										<option>30</option>
-										<option>31</option>
-									</select>
-									<select>
-										<option>Mes*</option>
-										<option>Enero</option>
-										<option>Febrero</option>
-										<option>Marzo</option>
-										<option>Abril</option>
-										<option>Mayo</option>
-										<option>Junio</option>
-										<option>Julio</option>
-										<option>Agosto</option>
-										<option>Septiembre</option>
-										<option>Octubre</option>
-										<option>Noviembre</option>
-										<option>Diciembre</option>
-									</select>
-									<select>
-										<option>Año*</option>
-										<option>1986</option>
-										<option>1987</option>
-										<option>1988</option>
-										<option>1989</option>
-										<option>1990</option>
-										<option>1991</option>
-										<option>1992</option>
-										<option>1993</option>
-										<option>1994</option>
-										<option>1995</option>
-										<option>1996</option>
-									</select>
-							  	</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="datos">
-							<div class="container12">
-							 	<div class="column3">
-									<p>DATOS DE CONTACTO</p>
-									<img class="lapiz"src="./img/tel.png">
-							 	</div>
-							  	<div class="column3">
-									<input type="email" placeholder="Correo electrónico*" name="email" requerid>
-									<input type="tel" placeholder="Lada*" name="lada" requerid>
-									<input type="tel" placeholder="Teléfono fijo*" name="tel" requerid>
-									<input type="tel" placeholder="Celular*" name="cel" requerid>
-							  	</div>
-							  	<div class="column3 tu">
-									<p class="cumple">CARRERAS DE INTERÉS</p>
-									<img class="lapiz"src="./img/doc.png">
-							 	</div>
-							  	<div class="column3">
-									<select class="option">
-										<option>Opción uno*</option>
-										<option>dos</option>
-										<option>tres</option>
-									</select>
-									<select class="option">
-										<option>Opción dos*</option>
-										<option>dos</option>
-										<option>tres</option>
-									</select>
-							  	</div>
-							</div>
-						</div>
-						<div class="datos">
-							<div class="container12">
-							 	<div class="column3">
-									<p>TU RESIDENCIA</p>
-									<img class="lapiz"src="./img/ubi.png">
-							 	</div>
-							  	<div class="column3">
-									<input type="text" placeholder="Estado de residencia*" name="estado" requerid>
-									<input type="text" placeholder="Ciudad de residencia*" name="ciudad" requerid>
-							  	</div>
-							  	<div class="column3 tu">
-									<p class="cumple">TU PREPA</p>
-									<img class="lapiz"src="./img/libro.png">
-							 	</div>
-							  	<div class="column3">
-									<select class="option">
-										<option>Prepa donde estudias*</option>
-										<option>dos</option>
-										<option>tres</option>
-									</select>
-									<select class="option">
-										<option>Fecha esperada de graduación*</option>
-										<option>dos</option>
-										<option>tres</option>
-									</select>
-							  	</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="datos">
-							<div class="container12">
-							 	<div class="column3">
-									<p>TU HOSPEDAJE</p>
-									<img class="lapiz"src="./img/casa.png">
-							 	</div>
-							  	<div class="column3">
-							  		<p class="hospedaje">¿Necesitas hospedaje en Monterrey?*</p>
-							  		si<input class="checkbox"type="checkbox" name="si" value="hospedaje">
-							  		no<input class="checkbox"type="checkbox" name="no" value="hospedaje">
-							  	</div>
-							  	<div class="column3 tu">
-							 	</div>
-							  	<div class="column3">
-							  	</div>
-							</div>
-						</div>
-						<div class="container12">
-						 	<div class="column3">
-								<p>TU ACOMPAÑANTE</p>
-								<img class="lapiz"src="./img/al.png">
-						 	</div>
-						  	<div class="column3">
-						  		<p class="hospedaje">¿Vendrás con un acompañante?*</p>
-						  		si<input class="checkbox"type="checkbox" name="si" value="hospedaje">
-						  		no<input class="checkbox"type="checkbox" name="no" value="hospedaje">
-						  		<select class="option">
-						  			<option>Parentesco</option>
-						  			<option>1</option>
-						  			<option>2</option>
-						  		</select>
-						  		<input type="text" placeholder="Nombre completo*" name="nombre" requried>
-						  	</div>
-						  	<div class="column3 tu">
-						 	</div>
-						  	<div class="column3">
-						  	</div>
-						</div>
-					</li>
-					<li>
-						<div class="datos">
-							<div class="container12">
-							 	<div class="column3">
-									<p>TALLERES DEL VIERNES</p>
-									<img class="lapiz"src="./img/ecualizador.png">
-							 	</div>
-							  	<div class="column3">
-							  		<p class="hospedaje">Elige los tres talleres a los que quieres asistir el viernes.*</p>
-							  		<select class="option">
-							  			<option>Selecciona la opción que más te atraiga*</option>
-							  			<option>1</option>
-							  			<option>2</option>
-						  			</select>
-						  			<select class="option">
-							  			<option>Selecciona la opción que más te atraiga*</option>
-							  			<option>1</option>
-							  			<option>2</option>
-						  			</select>
-						  			<select class="option">
-							  			<option>Selecciona la opción que más te atraiga*</option>
-							  			<option>1</option>
-							  			<option>2</option>
-						  			</select>
-							  	</div>
-							  	<div class="column3 tu">
-									<p class="cumple">TALLERES DEL SÁBADO</p>
-									<img class="lapiz"src="./img/ecualizador.png">
-							 	</div>
-							  	<div class="column3">
-							  		<p class="hospedaje">Elige los tres talleres a los que quieres asistir el sábado.*</p>
-									<select class="option">
-							  			<option>Selecciona la opción que más te atraiga*</option>
-							  			<option>1</option>
-							  			<option>2</option>
-						  			</select>
-									<select class="option">
-							  			<option>Selecciona la opción que más te atraiga*</option>
-							  			<option>1</option>
-							  			<option>2</option>
-						  			</select>
-							  	</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="container12">
-							<div class="column3">
-							</div>
-							<div class="column3">
-							</div>
-							<div class="column3 tu">
-								<p class="cumple">EVENTO</p>
-								<img class="lapiz"src="./img/evento.png">
-							</div>
-							<div class="column3">
-								<p class="hospedaje">¿Como te enteraste del evento?*</p>
-								<select class="option">
-							  		<option>Selecciona una opción*</option>
-							  		<option>1</option>
-							  		<option>2</option>
-						  		</select>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="container12">
-							<div class="column3">
-								<p>ACEPTO</p>
-							</div>
-							<div class="column3 box">
-								<input class="checkbox"type="checkbox" name="si" value="acepto">
-							</div>
-							<div class="column6">
-								<p class="leyenda">El Instituto Tecnológico y de Estudios Superiores de Monterrey, con domicilio en Av. Eugenio Garza Sada #2501 Sur, Col. Tecnológico, en la ciudad de Monterrey, N.L., utilizará sus datos personales aquí recabados para fines de seguimiento y promoción de eventos exclusivos del Tecnológico de Monterrey, así como para dar seguimiento al proceso de admisión e inscripción a cualquiera de los campus o sedes del Tecnológico de Monterrey. Para mayor información acerca del tratamiento y de los derechos que puede ejercer, por favor acceder al Aviso de Privacidad completo en la página hospedada en la siguiente dirección electrónica: www.itesm.edu.  Acepto y autorizo que el Instituto Tecnológico y de Estudios Superiores de Monterrey utilice la información aquí proporcionada para los fines anteriormente señalados. Si desea eliminar su registro de nuestra base de datos, favor de enviar un correo con la palabra BAJA a la dirección: siem@servicios.itesm.mx</p>
-							</div>
-						</div>
-<!-- ========================= REGISTRO TERMINADO -->
-						<div class="end">
-							<div class="registroT">
-								<h1>¡BIEN HECHO!</h1>
-								<h2>TU REGISTRO ESTÁ CASI TERMINADO.</h2>
-								<p>Ahora sólo sigue estas instrucciones:</p>
-								<img src="./img/img.png">
-								<ol>
-									<li><span>1.</span> Descarga la Carta Compromiso <span><a href="">aquí</a></span> llénala y que firmen tus papás.</li>
-									<li><span>2.</span> Descarga la ficha de pago <span><a href="">aquí</a></span> y realiza el depósito de $500.00 pesos en<br>el banco de tu preferencia.<br></li>
-									<li><span>3.</span> Sube ambos documentos comprobantes al link que te enviamos por correo.</li>
-								</ol>
-<!-- ========================= REGISTRO TERMINADO PASO 2-->
-
-									<!--p>Ahora sólo sigue estas instrucciones:</p>
-								<img src="./img/img.png">
-								<ol>
-									<li><span>1.</span> Descarga la Carta Compromiso <span><a href="">aquí</a></span> llénala y que firmen tus papás.</li>
-									<li><span>2.</span> Sube el documento al link que te enviamos por correo</li-->
-
-<!-- ========================= REGISTRO TERMINADO PASO 3-->
-
-								<!--p>Enviaremos a tu correo una confirmación, sólo tendrás que descargarla y presentarla impresa el día del evento junto con tu identificación oficial.<br><br>¡Te esperamos en BORN TO BE TEC 2014!</p-->
-
-								<div class="redesS">
-									<a href=""></a>
-									<a href="" class="t"></a>
-									<p>¡COMPARTE EN REDES SOCIALES!</p>
-									<p class="siguiente">SIGUIENTE</p>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</form>
-		</article>
-	</section>
-	<section id="load_documents">
-		<article><!--CONTENIDO_LOAD_DOCUMENTS-->
-			<h1>ADJUNTAR</h1>
-			<div class="adjuntar">
-				<p>Sube tu Carta Compromiso correctamente llenada<br>y firmada antes del 18 de noviembre.</p>
-				<div class="container12">
-				 	<div class="column6">
-				 		<p class="name">GERMÁN RADILLO<br><span>Asistente</span></p>
-				 	</div>
-				  	<div class="column6">
-						<p class="tec"><span>Evento</span><br>BORN TO BE TEC 2014</p>
-				  	</div>
-				</div>
-				<div class="container12">
-				 	<div class="column6">
-				 		<img src="./img/correcto.png">
-				 		<p><span>Registro</span><br>REALIZADO</p>
-				 		<p class="line"></p>
-				 	</div>
-				  	<div class="column6">
-						<img src="./img/incorrecto.png">
-						<p><span>Carta</span><br>PENDIENTE SUBIR<br>CARTA COMPROMISO</p>
-						<button>Subir</button>
-				  	</div>
-				  	<!--div class="column6">
-						<img src="./img/incorrecto.png">
-						<p><span>Pago</span><br>PENDIENTE SUBIR<br>COMPROBANTE</p>
-						<button>Subir</button>
-				  	</div-->
-				</div>
-			</div>	
-			<div class="footer">
-				<p>¿TIENES DUDAS?</p>
-				<div>
-					<div class="container12">
-					 	<div class="column3">
-					 		<img src="./img/mesage.png">
-					 		<a href="">Escribenos:<br>btec.mty@servicios.itesm.mx</a>
-					 	</div>
-					  	<div class="column3">
-					  		<img src="./img/fon.png">
-					  		<a href="">Llámanos:<br>01 800 832 33 689<br>o al (81) 8158 2269</a>
-					  	</div>
-					  	<div class="column3">
-					  		<img src="./img/face.png">
-					  		<a href="">Postea:<br>/AdmisoresTecdeMty</a>
-					  	</div>
-					  	<div class="column3">
-					  		<img src="./img/tw.png">
-					  		<a href="">Tuitea:<br>@AdmisoresITESM</a>
-					  	</div>
+			<div class="calendar">
+				<div class="header">
+					<a class="prev" href="#prev"></a>
+					<div class="titles">
+						<p>JUEVES 20 DE NOVIEMBRE</p>
+						<p>VIERNES 21 DE NOVIEMBRE</p>
+						<p>SÁBADO 22 DE NOVIEMBRE</p>
 					</div>
+					<a class="next" href="#next"></a>
 				</div>
+				<div class="days">
+					<div class="day">
+						<table class="jueves">
+							<tr>
+								<td class="act">ACTIVIDADES</td>
+								<td class="hr" colspan="2">3<span>pm</span></td>
+								<td class="hr" colspan="2">4<span>pm</span></td>
+								<td class="hr" colspan="2">5<span>pm</span></td>
+								<td class="hr" colspan="2">6<span>pm</span></td>
+								<td class="hr" colspan="2">7<span>pm</span></td>
+								<td class="hr" colspan="2">8<span>pm</span></td>
+								<td class="hr" colspan="2">9<span>pm</span></td>
+								<td class="hr" colspan="2">10<span>pm</span></td>
+							</tr>
+							<tr>
+								<td>Recepción de foráneos</td>
+								<td colspan="8" class="uno"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Meet & Grill<br>(exclusivo foráneos)</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td colspan="6" class="seis"></td>
+								<td></td>
+							</tr>
+						</table>
+						<div class="container12">
+							<div class="column6">
+								<img src="./img/foco.png">
+					 			<p class="textJ">Asistente foráneo:<br>Te recomendamos llegar a Monterrey desde el jueves 20 de noviembre para que puedas instalarte cómodamente. Ese día te daremos la bienvenida en nuestro Meet & Grill, donde podrás conocer a los demás participantes foráneos.</p>
+					 		</div>
+					  		<div class="column6">
+					  			<img src="./img/icon.png">
+					  			<p class="textJ">La recepción de foráneos será en el edificio de Residencias III, ubicado en Av. Fernando García Roel esquina con Junco de la Vega. <br><br>Ahí te registraremos y trasladaremos al hotel sede.<p>
+					  		</div>
+						</div>
+					</div>
+					<div class="day">
+						<table class="viernes">
+							<tr>
+								<td class="act">ACTIVIDADES</td>
+								<td colspan="2">9AM</td>
+								<td colspan="2">10AM</td>
+								<td colspan="2">11AM</td>
+								<td colspan="2">12AM</td>
+								<td colspan="2">1PM</td>
+								<td colspan="2">2PM</td>
+								<td colspan="2">3PM</td>
+								<td colspan="2">4PM</td>
+								<td colspan="2">5PM</td>
+								<td colspan="2">6PM</td>
+							</tr>
+							<tr>
+								<td>Tour por la ciudad<br> (exclusivo foráneos)</td>
+								<td colspan="6" class="uno"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Comida<br> (exclusivo foráneos)</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td colspan="4" class="dos"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Registro de locales<br> y foráneos</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td colspan="2" class="tres"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Platica de <br>bienvenida</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td colspan="2" class="cuatro"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Primera ronda de<br> actividades</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td ></td>
+								<td></td>
+								<td colspan="2" class="cinco"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Segunda ronda de<br> actividades</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td colspan="2" class="seis"></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Terecera ronda de<br> actividades</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td colspan="1" class="siete"></td>
+							</tr>
+							<tr>
+								<td>Cena / Cierre de viernes</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+					<div class="day">
+<!-- ============================== table  PARTE SÁBADO-->
+						<table class="sabado">
+							<tr>
+								<td class="act">ACTIVIDADES</td>
+								<td colspan="2">9am</td>
+								<td colspan="2">10am</td>
+								<td colspan="2">11am</td>
+								<td colspan="2">12am</td>
+								<td colspan="2">1pm</td>
+							</tr>
+							<tr>
+								<td>Taller 1</td>
+								<td colspan="8" class="siete">Proyecto Integrador de la Escuela de Negocios,<br> Ciencias Sociales y Humanidades</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Taller 2</td>
+								<td colspan="8" class="cuatro">Proyecto Integrador de la Escuela de Ingeniería y <br>Tecnologías de Información</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Taller 3</td>
+								<td colspan="8" class="seis">Proyecto Integrador de la Escuela de Biotecnología y<br> Ciencias de la Salud</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Taller 4</td>
+								<td colspan="8" class="uno">Proyecto Integrador de la Escuela de Arquitectura, <br> Arte y Diseño</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Taller 5</td>
+								<td colspan="8" class="ocho">Proyecto Integrador de la Escuela Nacional de <br>Medicina</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+				</div>		
 			</div>
 		</article>
 	</section>
-	<footer>
-		<figure id="foot">
-			<img src="./img/tec-logo.png">
-		</figure>
-		<img src="./img/tec-logo.png">
-		<p>Tecnológico de Monterrey&nbsp;<span>Aviso Legal</span>&nbsp;<span class="icon-help"></span></p>
-	</footer>
-<!-- ================================ MODAL LOAD DOCUMENTS -->
-	<div class="containerModal">
-		<div class="modal">
-			<h1 class="hecho">¡BIEN HECHO!</h1>
-			<img src="./img/correcto.png">
-			<p><span>TU REGISTRO ESTÁ COMPLETO.</span><br><br>Te enviaremos un correo de confirmación, asegúrate de descargar<br> tu comprobante de registro, imprimirlo y llevarlo contigo el día del evento.<br><br>¡Te esperamos en BORN  TO BE  TEC 2014!</p>
-		</div>
-	</div>	
 </body>
 </html>

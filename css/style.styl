@@ -1,191 +1,226 @@
+@import "nib"
 *
 	margin 0
 	padding 0
 body
 html
-	width: 100%;
-	height: 100%;
-nav
-	position: fixed;
-	margin: auto;
-	width: 500px;
-	left: 0px;
-	right: 0px;
-	top: 40px;
-	font-family: 'gill sans';
-	font-weight: 300;
-
-	ul
-		position: absolute;
-		display: inline-flex;
-		list-style: none;
-		li
-			margin-right: 30px;
-			font-style: none;
-			 a
-				color: #fff;
-				text-decoration: none;
-header
-	position: absolute;
-div.social 
-	position: absolute;
-	left: 1100px;
-	top: 60px;
-	ul 
-		display: inline-flex;
-		list-style: none;
-		width: 200px;
-		li
-			padding: 0px 15px 10px 0px;
-		li.rs
-			padding-top 20px
-[class^="icon-"], [class*=" icon-"] 
-	color: #fff;
-figure 
-	position: fixed;
+	size 100%
 /* =========================== ESTILO GENERAL */
 h1
 	position: absolute;
-	font-size: 40px;
+	font-size: 3.8vw;
 	color: #fff;
 	transform: rotate(-3deg);
 	display: block;
 	font-family:'HelveticaNeue-CondensedBold';
 h2 
 	color: #fff;
-	margin-left: 180px;
-	padding-top: 250px;
-	font-size: 20px;
+	font-size: 2.7vw;
 	font-family:'Gill Sans'
 	font-weight:bold;
+	margin-bottom 3vh
 p 
 	color: #fff;
-	font-family:'Gill Sans'
+	font-size: 1.2vw;
+	font-family:'GillSans-Light'
 	font-weight:regular;
-article
-	position:relative;
-div.filtro
-	height 100%
+a
+	text-decoration none
+/* =========================== NAV */
+header
+	fixed top left
 	width 100%
+	display inline-flex
+	justify-content space-around
+	align-items center
+	z-index 1
+	figure 
+		img
+			width 11vw
+			min-width 120px
+	nav
+		font-family 'Gill Sans'
+		font-weight 300
+		ul
+			display inline-flex
+			justify-content space-around
+			align-items center
+			list-style-type none
+			li
+				margin-right 3vw
+				a
+					font-size 1.2vw
+					color #fff
+					&.selected
+						font-family 'GillSans-Bold'
+	div.social
+		display inline-flex
+		flex-wrap wrap
+		list-style none
+		width 15vw
+		margin-top 2vw
+		a
+			width 100%
+			display block
+		div.rs
+			width 5vw
+			margin 0 auto
+			a
+				size 2vw
+				text-align center
+				display inline-block
+	[class^="icon-"], [class*=" icon-"] 
+		color: #fff;
+nav.arrows
+	fixed top 23vh right 17vw z-index 1
+	a
+		size 4vw
+		display block
+		float left
+		&.prev
+			background url(../img/flechas.png) no-repeat -4vw
+			background-size cover
+		&.next
+			background url(../img/flechas.png) no-repeat
+			background-size cover
 /* =========================== BE TEC */
-section#be_tec
-	background: url(../img/back-be-tec.png)no-repeat;
-	background: url(../img/filtro-rosa.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #97ea3d;
-		padding: 10px;
-		left: 100px;
-	p
-		margin-left: 210px;
-		margin-bottom: 10px;
+section
+	size 100%
+	fixed top 0 left 0
+	overflow hidden
+	article
+		absolute top 32vh left 11vw
+	&#be_tec
+		background: url(../img/filtro-rosa.png), url(../img/back-be-tec.png)no-repeat;
+		background-size: cover
+		h1
+			top -6.6vw
+			background #97ea3d
+			padding 1vw 2.1vw
+			left -7vw
+		p
+			margin-left 1.6vw
 /* =========================== ACTIVIDADES */
-section#actividades
-	/*background: url(../img/back-actividades.png)no-repeat;*/
-	background: url(../img/filtro-verde.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 175px;
-		background: #00bbf2;
-		padding: 10px;
-		left: 100px;
-	p
-		margin-left: 210px;
-		margin-bottom: 10px;
-	div.container12
-		padding-left: 200px;
-		font-size: 14px;
-		width: 1010px;
-		.column3 
-			width: 193px;
-			padding-top: 10px;
-			padding-left: 0px;
-			p.col
-				margin: 0px !important;
+	&#actividades
+		background: url(../img/filtro-verde.png), url(../img/back-actividades.png)no-repeat;
+		background-size: cover;
+		h1
+			top: -6.6vw
+			background #00bbf2
+			padding: 1vw 2.1vw
+			left: -7vw
+		p
+			margin-left 1.6vw
+		div.container12
+			padding-left 1vw
+			padding-top 2vh
+			.column3 
+				width: 12vw
+				padding 0
+				margin 0
+				p.col
+					margin 0
 
 /* =========================== AGENDA */
-section#agenda
-	/*background: url(../img/back-agenda.png)no-repeat;*/
-	background: url(../img/filtro-morado.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #f20000;
-		padding: 10px;
-		left: 100px;
-	p
-		text-align center
-		color #fff
-	table
-		position: relative;
-		margin: auto;
-		margin-top: 40px;
-		height: 270px;
-		width: 900px;
-		background: rgba(255, 255, 255, 0.2);
-		tr
-			border-top: solid 1.5px #943ba7;
-			border-bottom: solid 1.5px #943ba7;
-		td
-			border-left: solid 1.5px #943ba7;
-			border-right: solid 1.5px #943ba7;
-			padding: 5px;
-			font-size: 10px;
-			color #fff
-		td.act
-			font-size 15px
-		td.uno
-			background #8fd8f0
-			color #000
-		td.dos
-			background #eeb790
-			color #000
-		td.tres
-			background #8fe9c9
-			color #000
-		td.cuatro
-			background #eb8bf2
-			color #000
-		td.cinco
-			background #b58bf1
-			color #000
-		td.seis
-			background #ef8a91
-			color #000
-		td.siete
-			background #90eae2
-			color #000
-		td.ocho
-			background #e6e691
-			color #000
-	table.jueves
-		height: 115px;
-		margin-bottom: 20px;
-	table.sabado
-		height: 225px;	
-		width: 500px;	
-	p.textJ
-		text-align left
-		width: 350px;
-		padding-left: 105px;
-		padding-top: 10px;
-	div.column6
-		width 400px
-		padding-left 70px
-	img
-		float: left;
-		margin-top: 15px;
-		margin-left: 40px		
+	&#agenda
+		background: url(../img/filtro-morado.png), url(../img/back-agenda.png) no-repeat;
+		background-size cover
+		article
+			h1
+				top: -6.6vw
+				background #f20000
+				padding: 1vw 2.1vw
+				left: -7vw
+			.calendar
+				size 74vw 57vh
+				.header
+					display flex
+					justify-content center
+					align-items center
+					margin-bottom 3.6vh
+					a
+						size 2vw
+						display block
+						&.prev
+							background url(../img/table_left.png) no-repeat
+							background-size cover
+						&.next
+							background url(../img/table_right.png) no-repeat
+							background-size cover
+					.titles
+						text-align center
+						padding 0 1vw
+				.days
+					size 100%
+					.day
+						table
+							margin auto
+							background rgba(255, 255, 255, 0.2)
+							tr
+								border-top: solid 1.5px #943ba7;
+								border-bottom: solid 1.5px #943ba7;
+								td
+									font-family:'GillSans-Light'
+									border-left: solid 1.5px #943ba7;
+									border-right: solid 1.5px #943ba7;
+									padding 0 1.1vw
+									font-size 1vw
+									color #fff
+									&.act
+										font-size 1.4vw
+										text-transform uppercase
+									&.hr
+										font-size 1.4vw
+										text-transform uppercase
+										text-align center
+										span
+											font-size 1vh
+											vertical-align super
+									&.uno
+										background #8fd8f0
+										color #000
+									&.dos
+										background #eeb790
+										color #000
+									&.tres
+										background #8fe9c9
+										color #000
+									&.cuatro
+										background #eb8bf2
+										color #000
+									&.cinco
+										background #b58bf1
+										color #000
+									&.seis
+										background #ef8a91
+										color #000
+									&.siete
+										background #90eae2
+										color #000
+									&.ocho
+										background #e6e691
+										color #000
+							&.jueves
+								margin-bottom 5.6vh
+							&.viernes
+								height 440px
+							&.sabado
+								height: 225px;	
+								width: 500px;	
+						p.textJ
+							text-align left
+							width 29vw
+							padding-left 5vw
+						div.column6:nth-child(2)
+							p
+								width 27vw
+						img
+							float left	
+
 /* =========================== SEDE */
+/*
 section#sede
-	/*background: url(../img/back-sede.png)no-repeat;*/
+	//background: url(../img/back-sede.png)no-repeat;
 	background: url(../img/filtro-azul.png)no-repeat;
 	width: 100%;
 	height: 100%;
@@ -241,8 +276,9 @@ section#sede
 		bottom: 206px;
 		right: 324px;
 /* =========================== REGISTRATE */
+/*
 section#registrate
-	/*background: url(../img/back-registrate.png)no-repeat;*/
+	//background: url(../img/back-registrate.png)no-repeat;
 	background: url(../img/filtro-rojo.png)no-repeat;
 	width: 100%;
 	height: 100%;
@@ -270,8 +306,9 @@ section#registrate
 				color: #fff;
 				text-decoration: none;
 /* =========================== FAQ'S */
+/*
 section#faq
-	/*background: url(../img/back-faqs.png)no-repeat;*/
+	//background: url(../img/back-faqs.png)no-repeat;
 	background: url(../img/filtro-rosa.png)no-repeat;
 	width: 100%;
 	height: 100%;
@@ -328,8 +365,9 @@ section#faq
 			p
 				margin: 0px;
 /* =========================== AVISO LEGAL */
+/*
 section#aviso_legal
-	/*background: url(../img/back-aviso.png)no-repeat;*/
+	//background: url(../img/back-aviso.png)no-repeat;
 	background: url(../img/filtro-amarillo.png)no-repeat;
 	width: 100%;
 	height: 100%;
@@ -352,6 +390,7 @@ section#aviso_legal
 		margin-left: 245px;
 		margin-top: 10px;
 /* =========================== REGISTRO */
+/*
 section#registro
 	background: #f9f9f9;
 	width: 100%;
@@ -526,6 +565,7 @@ section#registro
 				height: 100px;
 				margin-left: 500px;
 /* =========================== LOAD DOCUMENTS */
+/*
 section#load_documents
 	background: #f9f9f9;
 	width: 100%;
@@ -601,6 +641,7 @@ section#load_documents
 			text-decoration: none;
 			font-size: 14px;
 /* =========================== LOAD DOCUMENTS */
+/*
 footer
 	background: #727272;
 	margin: 0;
@@ -620,6 +661,7 @@ footer
 	span
 		padding-left: 30px;
 /* =========================== MODAL LOAD DOCUMENTS √ */
+/*
 div.containerModal
 	width 100%
 	height 100%
