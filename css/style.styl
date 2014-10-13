@@ -432,9 +432,15 @@ footer
 			p
 				color #9d9d9d
 				margin-bottom  1vh
+			img
+				display: list-item;
+				margin-left: 50px;
 			form
 				.step
 					size 100% 100%
+					.step-area.prepa
+						position absolute
+						right 0
 					.step-area
 						display inline-flex
 						align-items center
@@ -448,8 +454,10 @@ footer
 						.info.hospedaje
 							margin-top 30px
 							img
-								display block
-								margin 2vh auto 0
+								/*display block
+								margin 2vh auto 0*/
+								display: list-item;
+								margin-left: 50px;
 						.step-data
 							input
 								display block
@@ -458,11 +466,6 @@ footer
 								border 2px #ececec solid
 							&:before
 									absolute top 1.5vw right 1vw
-							.inputPrepa
-								position absolute
-								top: -47px;
-								left: 300px;
-
 							label
 								position relative
 								display block
@@ -500,6 +503,7 @@ footer
 									text-align center
 									img
 										padding-top 10%
+										padding-left 100px
 									p
 										color #727272
 									&.selected
@@ -550,18 +554,23 @@ footer
 									padding-right 3vw
 						&.sabado
 							width 35vw
+							margin-left: -10px;
+							margin-top: 19px;
+							padding-bottom: 16px;
 							label
 								width 100%
 								select
 									width 100%
 									padding-right 3vw
+						select.option.eve
+							width 235px
 							.info
 								width 15vw
 						&.acepto
 							.step-data
-								font-size 0.6vw
+								font-size 0.8vw
 								color #333
-								width 61vw
+								width 50vw
 					.clearborder
 						clear both
 						display inline-flex
