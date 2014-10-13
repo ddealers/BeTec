@@ -196,6 +196,11 @@ section#be_tec p {
   -moz-background-size: cover;
   background-size: cover;
 }
+#actividades article {
+  position: absolute;
+  top: 28vh;
+  left: 16vw;
+}
 #actividades h1 {
   top: -6.6vw;
   background: #00bbf2;
@@ -234,7 +239,7 @@ section#be_tec p {
   left: -7vw;
 }
 #agenda article .calendar {
-  width: 74vw;
+  width: 65vw;
   height: 57vh;
 }
 #agenda article .calendar .header {
@@ -265,15 +270,11 @@ section#be_tec p {
 }
 #agenda article .calendar .header a.prev {
   background: url("../img/table_left.png") no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+/*background-size cover*/
 }
 #agenda article .calendar .header a.next {
   background: url("../img/table_right.png") no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+/*background-size cover*/
 }
 #agenda article .calendar .header .titles {
   text-align: center;
@@ -351,6 +352,9 @@ section#be_tec p {
   text-align: left;
   width: 29vw;
   padding-left: 5vw;
+}
+#agenda article .calendar .days .day .column6 {
+  width: 450px;
 }
 #agenda article .calendar .days .day div.column6:nth-child(2) p {
   width: 27vw;
@@ -652,7 +656,7 @@ footer .icon-help {
   background: #f9f9f9;
 }
 #registro article {
-  top: 21vh;
+  top: 15vh;
   left: 20vw;
   width: 65%;
   height: 60%;
@@ -690,12 +694,18 @@ footer .icon-help {
   align-items: center;
   float: left;
 }
+#registro article form .step .step-area .hospedaje {
+  margin-top: 20px;
+}
 #registro article form .step .step-area .info {
   font-family: 'Futura-Medium';
   width: 12vw;
   text-align: center;
 }
-#registro article form .step .step-area .info img {
+#registro article form .step .step-area .info.hospedaje {
+  margin-top: 30px;
+}
+#registro article form .step .step-area .info.hospedaje img {
   display: block;
   margin: 2vh auto 0;
 }
@@ -704,6 +714,16 @@ footer .icon-help {
   padding: 0.8vw;
   margin: 0.5vw 0;
   border: 2px #ececec solid;
+}
+#registro article form .step .step-area .step-data:before {
+  position: absolute;
+  top: 1.5vw;
+  right: 1vw;
+}
+#registro article form .step .step-area .step-data .inputPrepa {
+  position: absolute;
+  top: -47px;
+  left: 300px;
 }
 #registro article form .step .step-area .step-data label {
   position: relative;
@@ -838,9 +858,9 @@ footer .icon-help {
   width: 15vw;
 }
 #registro article form .step .step-area.acepto .step-data {
-  font-size: 0.7vw;
+  font-size: 0.6vw;
   color: #333;
-  width: 50vw;
+  width: 61vw;
 }
 #registro article form .step .clearborder {
   clear: both;
@@ -921,7 +941,7 @@ footer .icon-help {
   color: #727272;
 }
 #end div.registroT p {
-  margin-left: 460px;
+  margin-left: 490px;
   color: #de3370;
 }
 #end div.registroT li {
@@ -943,6 +963,7 @@ footer .icon-help {
   width: 100%;
   height: 250px;
   background: #de3370;
+  margin-top: 25px;
 }
 #end div.redesS p {
   color: #fff;

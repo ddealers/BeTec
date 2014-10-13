@@ -104,9 +104,13 @@ section
 		p
 			margin-left 1.6vw
 /* =========================== ACTIVIDADES */
+	
 	&#actividades
 		background: url(../img/filtro-verde.png), url(../img/back-actividades.png)no-repeat;
 		background-size: cover;
+		article
+			absolute top 28vh left 16vw
+
 		h1
 			top: -6.6vw
 			background #00bbf2
@@ -136,7 +140,7 @@ section
 				padding: 1vw 2.1vw
 				left: -7vw
 			.calendar
-				size 74vw 57vh
+				size 65vw 57vh
 				.header
 					display flex
 					justify-content center
@@ -147,10 +151,10 @@ section
 						display block
 						&.prev
 							background url(../img/table_left.png) no-repeat
-							background-size cover
+							/*background-size cover*/
 						&.next
 							background url(../img/table_right.png) no-repeat
-							background-size cover
+							/*background-size cover*/
 					.titles
 						text-align center
 						padding 0 1vw
@@ -214,6 +218,8 @@ section
 							text-align left
 							width 29vw
 							padding-left 5vw
+						.column6
+							width 450px
 						div.column6:nth-child(2)
 							p
 								width 27vw
@@ -412,7 +418,7 @@ footer
 	&#registro
 		background #f9f9f9
 		article
-			top 21vh
+			top 15vh
 			left 20vw
 			size 65% 60%
 			h1.registro
@@ -433,10 +439,14 @@ footer
 						display inline-flex
 						align-items center
 						float left
+						.hospedaje
+							margin-top 20px
 						.info
 							font-family 'Futura-Medium'
 							width 12vw
 							text-align center
+						.info.hospedaje
+							margin-top 30px
 							img
 								display block
 								margin 2vh auto 0
@@ -446,6 +456,13 @@ footer
 								padding 0.8vw
 								margin 0.5vw 0
 								border 2px #ececec solid
+							&:before
+									absolute top 1.5vw right 1vw
+							.inputPrepa
+								position absolute
+								top: -47px;
+								left: 300px;
+
 							label
 								position relative
 								display block
@@ -542,9 +559,9 @@ footer
 								width 15vw
 						&.acepto
 							.step-data
-								font-size 0.7vw
+								font-size 0.6vw
 								color #333
-								width 50vw
+								width 61vw
 					.clearborder
 						clear both
 						display inline-flex
@@ -596,7 +613,7 @@ footer
 				padding-top: 280px;
 				color: #727272;
 			p
-				margin-left: 460px;
+				margin-left: 490px;
 				color: #de3370;
 			li
 				font-size: 10px;
@@ -614,6 +631,7 @@ footer
 			width: 100%;
 			height: 250px;
 			background: #de3370;
+			margin-top: 25px;
 			p
 				color #fff
 				padding-top: 130px;
