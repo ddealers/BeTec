@@ -5,6 +5,7 @@
 body
 html
 	size 100%
+
 /* =========================== ESTILO GENERAL */
 h1
 	position: absolute;
@@ -26,6 +27,7 @@ p
 	font-weight:regular;
 a
 	text-decoration none
+
 /* =========================== NAV */
 header
 	fixed top left
@@ -72,24 +74,25 @@ header
 	[class^="icon-"], [class*=" icon-"] 
 		color: #fff;
 nav.arrows
-	fixed top 23vh right 17vw z-index 1
+	fixed top 21vh right 11vw z-index 1
 	a
 		size 4vw
 		display block
 		float left
 		&.prev
-			background url(../img/flechas.png) no-repeat -4vw
+			background url(../img/flechas.png) no-repeat 
 			background-size cover
 		&.next
-			background url(../img/flechas.png) no-repeat
+			background url(../img/flechas.png) no-repeat -4vw
 			background-size cover
+
 /* =========================== BE TEC */
 section
 	size 100%
 	fixed top 0 left 0
 	overflow hidden
 	article
-		absolute top 32vh left 11vw
+		absolute top 32vh left 16vw
 	&#be_tec
 		background: url(../img/filtro-rosa.png), url(../img/back-be-tec.png)no-repeat;
 		background-size: cover
@@ -126,6 +129,7 @@ section
 		background: url(../img/filtro-morado.png), url(../img/back-agenda.png) no-repeat;
 		background-size cover
 		article
+			top 27vh
 			h1
 				top: -6.6vw
 				background #f20000
@@ -139,7 +143,7 @@ section
 					align-items center
 					margin-bottom 3.6vh
 					a
-						size 2vw
+						size 2.1vw
 						display block
 						&.prev
 							background url(../img/table_left.png) no-repeat
@@ -203,10 +207,9 @@ section
 							&.jueves
 								margin-bottom 5.6vh
 							&.viernes
-								height 440px
+								//
 							&.sabado
-								height: 225px;	
-								width: 500px;	
+								//
 						p.textJ
 							text-align left
 							width 29vw
@@ -218,297 +221,369 @@ section
 							float left	
 
 /* =========================== SEDE */
-/*
-section#sede
-	//background: url(../img/back-sede.png)no-repeat;
-	background: url(../img/filtro-azul.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #97ea3d;
-		padding: 10px;
-		left: 100px;
-	h2 
-		color: #fff;
-		margin-left: 100px !important;
-		padding-top: 255px !important;
-	p
-		margin-left: 210px;
-		margin-bottom: 10px;
-	span
-		font-weight: normal;
-	div.image
-		position:relative;
-		margin-top: 262px;
-	img.uno
-		position:absolute;
-		width: 20%
-		right: 150px;
-		bottom: 20px;
-	img.dos
-		width: 10%;
-		position: absolute;
-		bottom: 300px;
-		right: 494px;
-	img.tres
-		position: absolute;
-		width: 15%;
-		bottom: 117px;
-		right: 485px;
-	img.cuatro
-		position: absolute;
-		right: 278px;
-		bottom: 369px;
-	img.cinco
-		position: absolute;
-		right: 393px;
-		bottom: 109px;
-	img.seis
-		width: 11%;
-		position: absolute;
-		bottom: 262px;
-		right: 195px;
-	img.siete
-		width: 15%;
-		position: absolute;
-		bottom: 206px;
-		right: 324px;
+	&#sede
+		background: url(../img/filtro-azul.png), url(../img/back-sede.png)no-repeat;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		article
+			h1
+				top: -6.6vw
+				background #97ea3d
+				padding: 1vw 2.1vw
+				left: -7vw
+			h2
+				font-size 1.7vw
+				margin-top 2vh
+				margin-left -6.5vw
+				span
+					font-family:'GillSans-Light'
+					font-size 1.6vw
+			div.image
+				absolute top -14vh left 25vw
+				size 42vw 45vw
+				img.uno
+					absolute right -4vw top 14.6vw
+					width 52%
+				img.dos
+					absolute top 4vw left 3vw
+					width 26%
+				img.tres
+					absolute top 15vw left 0.5vw
+					width 35%
+				img.cuatro
+					absolute top right 15vw
+					width 18%
+				img.cinco
+					absolute top 22vw left 14.6vw
+					width 22%
+				img.seis
+					absolute top 4vh right 3.2vw
+					width 30%
+				img.siete
+					absolute top 7.2vw left 13vw
+					width 35%
+						
 /* =========================== REGISTRATE */
-/*
-section#registrate
-	//background: url(../img/back-registrate.png)no-repeat;
-	background: url(../img/filtro-rojo.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #32dafe;
-		padding: 10px;
-		left: 100px;
-	p
-		margin-left: 210px;
-		margin-bottom: 10px;
-	div.container12
-		padding-left: 200px;
-		font-size: 14px;
-		width: 1010px;
-		.column3 
-			width: 193px;
-			padding-top: 10px;
-			padding-left: 0px;
-			p
-				margin: 0px;
-			a
-				display: block;
-				color: #fff;
-				text-decoration: none;
+	&#registrate
+		background: url(../img/filtro-rojo.png), url(../img/back-registrate.png) no-repeat;
+		background-size: cover;
+		article
+			h1
+				top: -6.6vw
+				background #32dafe
+				padding: 1vw 2.1vw
+				left: -7vw
+			h2
+				font-size 1.7vw
+				margin-bottom 2vh
+			.container12
+				width 40vw
+				margin-left 2.5vw
+				.column12
+					width 100%
+					margin-bottom 2vh
+				.column3
+					width 25%
+					a
+						img
+							display block
+							margin-left 15%
+							margin-bottom 1vh
+						p
+							font-size 1.1vw
+					&.registro
+						text-align center
+						img
+							margin 0 auto 1vh
+						p
+							font-size 1.3vw
+
 /* =========================== FAQ'S */
-/*
-section#faq
-	//background: url(../img/back-faqs.png)no-repeat;
-	background: url(../img/filtro-rosa.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #fbc549;
-		padding: 10px;
-		left: 100px;
-	div.texto 
-		position: relative;
-		padding-top: 260px;
-		text-align: center;
-		margin-right: 110px;
-	div
-		padding-top: 0px;
-	p.bold
-		font-weight:bold;
-	p
-		margin-left: 110px;
-		margin-bottom: 10px;
-	span
-		font-weight:bold;
-	div.container12
-		padding-left: 200px;
-		font-size: 14px;
-		width: 1010px;
-		.column6 
-			width: 323px;
-			padding-left: 65px;
-			padding-top: 10px;
-			a.escribenos
-				background: url(../img/escribenos.png)no-repeat;
-				height: 68px;
-				width: 290px;
-				display: block;
-				padding-left: 62px;
-				padding-top: 13px;
-				color: #fff;
-				text-decoration: none;
-				font-size:13px;
-				margin-left:60px;
-			a
-				background: url(../img/llamanos.png)no-repeat;
-				height: 68px;
-				width: 290px;
-				display: block;
-				padding-left: 47px;
-				padding-top: 13px;
-				color: #fff;
-				text-decoration: none;
-				font-size:13px;
-				margin-left:-60px;
-			p
-				margin: 0px;
+	&#faq
+		background: url(../img/filtro-rosa.png), url(../img/back-faqs.png)no-repeat;
+		background-size: cover;
+		article
+			width 75%
+			h1
+				top: -6.6vw
+				background #fbc549
+				padding: 1vw 2.1vw
+				left: -7vw
+			.texto
+				margin-top 5vh
+				p
+					text-align center
+					margin-bottom 3.4vh
+					&.bold
+						font-family 'GillSans'
+			.container12
+				width 100%
+				.column6
+					width 46%
+					a
+						size 20vw 5vw
+						display block
+						padding-top 1.5vw
+						color #fff
+						font-size 1vw
+						box-sizing border-box
+						&.escribenos
+							background url(../img/escribenos.png)no-repeat
+							background-size cover
+							padding-left 4vw
+						&.llamanos
+							background url(../img/llamanos.png)no-repeat
+							background-size cover
+							padding-left 3vw
+				&.contacto
+					width 65%
+				&.faqs
+					size 80% 35vh
+					overflow-x hidden
+					overflow-y auto
+					p
+						margin-top 2vh
+						margin-left 2vw
+						span
+							font-family 'GillSans'
+						
+
 /* =========================== AVISO LEGAL */
-/*
-section#aviso_legal
-	//background: url(../img/back-aviso.png)no-repeat;
-	background: url(../img/filtro-amarillo.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #7338b6;
-		padding: 10px;
-		left: 100px;
-	h2.terminos	
-			width: 525px;
-			margin: auto;
-			padding-top: 280px;
+	&#aviso_legal
+		background url(../img/filtro-amarillo.png), url(../img/back-aviso.png) no-repeat
+		background-size cover
+		z-index 5
+		display none
+		article
+			size 65% 60%
+			h1
+				top -6.6vw
+				background #7338b6
+				padding 1vw 2.1vw
+				left -7vw
+			h2
+				font-size 1.5vw
+				text-align center
+				margin-top 7vh
+			div
+				height 70%
+				overflow-y scroll
+				overflow-x hidden
+				h3
+					color #fff
+					margin 1vh 0 2vh
+				p
+					margin-bottom 1vh
+				ul
+					list-style-type disc
+					margin 1vh 2vw 2vh
+					li
+						font-size 1.1vw
+						color #fff
+				a
+					color #eee
+			.close
+				background url(../img/btn_cerrar.png) no-repeat
+				background-size cover
+				absolute top -9vh right -5vw
+				size 4vw
+				display block
+footer
+	fixed bottom left
+	size 100% height 6.5vh
+	display block
+	z-index 1
 	div
-		position: relative;
-		width: 750px;
-		overflow-y: scroll;
-		height: 300px;
-		display: inline-flex;
-		margin-left: 245px;
-		margin-top: 10px;
+		absolute bottom 2vh left 2vw
+		display inline-flex
+		align-items center
+		width 30%
+		a
+			font-family 'GillSans-Light'
+			font-size 1.2vw
+			margin-left 2vw
+			color #fff
+	.icon-help
+		absolute bottom 2vh right 2vw
+		color #fff
+
 /* =========================== REGISTRO */
-/*
-section#registro
-	background: #f9f9f9;
-	width: 100%;
-	height: auto;
-	background-size: cover;
-	div.datos
-		padding-top:75px;
-		margin-left:-10px;
-	div.container12
-		padding-left: 0px;
-		font-size: 16px;
-		width 1010px
-		.column3 
-			width: 130px;
-			padding-top: 10px;
-			p.col
-				margin: 0px !important;
-			img.lapiz
-				margin-left: 25px;
-				margin-top: 15px;
-			img
-				margin-left:50px;
-				margin-top: 15px;
-			p.hospedaje
-				width:300px;
-				font-family: 'gillsans';
-
-			input.checkbox
-				width 47px
-	.column3.tu
-		margin-left:195px;
-	h1.registro
-		top: 90px;
-		background: #de3370;
-		padding: 10px;
-		left: 200px;
-	h2.experiencia 
-		color: #727272;
-		margin-left: 200px;
-		padding-top: 166px;
-		font-size: 20px;
-	div.genero
-		display:inline-flex;
-		p.genero.p
-			font-family: 'Futura-Medium';
-			margin-top 65px
-		p
-			margin-right: 60px;
-	div.azul
-		position: relative;
-		background: #68b9ef;
-		width: 300px;
-		height: 150px;
-		p.h
-			color: #fff;
-			text-align: center;
-			margin-top: 95px;
-			width: 300px;
-		img.caballero
-				position: absolute;
-				left: 0px;
-				right: 0px;
-				margin: auto;
-				top: 40px;
-		p.o
-			position: absolute;
-			left: 276px;
-			top: 40px;
-			background: #fff;
-			padding: 5px 20px 5px 20px;
-			border: 1px solid;
-			z-index: 1;
-	div.transparente
-		position: relative;
-		border: 1px solid #eeeeee;
-		width: 300px;
-		height: 148px;
-		p.m 
-			text-align: center;
-			margin-top: 95px;
-			width: 300px;
-		img.dama
-				position: absolute;
-				left: 0px;
-				right: 0px;
-				margin: auto;
-				top: 35px;
-	p
-		color:#727272;
-		margin-left: 205px;
-		margin-bottom: 10px;
-	li
-		margin-left:200px;
-		list-style:none;
-		p
-			margin-left:0px;
-			margin-top:20px;
-			font-family: 'Futura-Medium';
-
-	input
-		padding:3px;
-		margin-top: 10px;
-		width:255px;
-	select
-		width: 102px;
-		background: #fff;
-		margin-top: 10px;
-		color:#727272;
-	select.option
-		width:250px;
-	.column3.box
-		width 15px !important;
-	p.leyenda
-		font-size 11px	
-		width: 700px;
-	div.end
-		position: relative;
-		margin-left: -200px;
+	&#registro
+		background #f9f9f9
+		article
+			top 21vh
+			left 20vw
+			size 65% 60%
+			h1.registro
+				top -6.6vw
+				background #de3370
+				padding 1vw 2.1vw
+			h2.experiencia 
+				color #727272
+				font-size 2.4vh
+				margin 1vh 0
+			p
+				color #9d9d9d
+				margin-bottom  1vh
+			form
+				.step
+					size 100% 100%
+					.step-area
+						display inline-flex
+						align-items center
+						float left
+						.info
+							font-family 'Futura-Medium'
+							width 12vw
+							text-align center
+							img
+								display block
+								margin 2vh auto 0
+						.step-data
+							input
+								display block
+								padding 0.8vw
+								margin 0.5vw 0
+								border 2px #ececec solid
+							label
+								position relative
+								display block
+								select
+									display inline-block
+									padding 0.8vw
+									margin 0.3vw 0
+									min-width 9vw
+									border 2px #ececec solid
+									background #fff
+									color #727272
+									appearance none
+								&:before
+									absolute top 1.5vw right 1vw
+									transform rotate(-90deg)
+							.bool-choose
+								.option
+									cursor pointer
+									size 2vw 1.5vw
+									color #ececec
+									background #fff
+									border 2px #ececec solid
+									padding 1vw
+									text-align center
+									display inline-block
+						&.genero
+							.choose
+								border 1px solid #ececec 
+								size 53vw 11vw
+								position relative
+								.option
+									cursor pointer
+									size 50% 100%
+									float left
+									text-align center
+									img
+										padding-top 10%
+									p
+										color #727272
+									&.selected
+										background #68b9ef
+										p
+											color #fff
+								.o
+									absolute top right bottom left
+									size 3vw 1.5vw
+									margin auto
+									text-align center
+									background #f5f4f4
+									box-shadow 1px 1px 5px #ccc
+						&.cumple
+							margin-left 10vw
+							.step-data
+								margin-left 2vw
+						&.contacto
+							input[name="lada"]
+								width 4vw
+								display inline-block
+							input[name="tel"]
+								width 11vw
+								display inline-block
+						&.carreras
+							select
+								width 12vw
+						&.residencia
+							select
+								width 18vw
+						&.prepa
+							select
+								width 23vw
+						&.compania
+							label
+								width 11vw
+								display inline-block
+								select
+									width 100%
+							input
+								display inline-block
+						&.viernes
+							width 30vw
+							label
+								width 100%
+								select
+									width 100%
+									padding-right 3vw
+						&.sabado
+							width 35vw
+							label
+								width 100%
+								select
+									width 100%
+									padding-right 3vw
+							.info
+								width 15vw
+						&.acepto
+							.step-data
+								font-size 0.7vw
+								color #333
+								width 50vw
+					.clearborder
+						clear both
+						display inline-flex
+						width 100%
+						.info
+							width 12vw
+						.border
+							height 1vw
+							border-bottom 1px #eeeeee solid
+							margin-bottom 1vw
+							width 53vw
+		.siguiente
+			background #de3370
+			fixed bottom 7.5vh left
+			size 100% 9vh
+			a
+				background url(../img/form_siguiente.png) no-repeat 8vw center;
+				border-radius 20px
+				border 3px #fff solid
+				display block
+				size 13vw 3vw
+				box-sizing border-box
+				absolute top right bottom left
+				margin auto
+				text-transform uppercase
+				color #fff
+				padding 0.7vw 5.5vw 0 2.75vw
+				font-size 0.9vw
+		.footer
+			background #727272
+			fixed bottom left z-index 1
+			size 100% 7.5vh
+			display block
+	
+	&#end
+		display none
+		background #fff
+		article
+			position initial
 		div.registroT
 			h1
 				top: 190px;
@@ -556,14 +631,15 @@ section#registro
 				background: url("../img/t.png") no-repeat 30px;
 				left 35px
 				top: 20px;
-			p.siguiente
-				background: url("../img/siguiente.png") no-repeat no-repeat;
-				color #fff
-				padding-top: 20px;
-				font-weight: normal;
-				padding-left: 50px;
-				height: 100px;
-				margin-left: 500px;
+		p.siguiente
+			background: url("../img/siguiente.png") no-repeat no-repeat;
+			color #fff
+			padding-top: 20px;
+			font-weight: normal;
+			padding-left: 50px;
+			height: 100px;
+			margin-left: 500px;
+				/*
 /* =========================== LOAD DOCUMENTS */
 /*
 section#load_documents
@@ -642,24 +718,7 @@ section#load_documents
 			font-size: 14px;
 /* =========================== LOAD DOCUMENTS */
 /*
-footer
-	background: #727272;
-	margin: 0;
-	padding: 0;
-	height: 55px;
-	position relative
-	p
-		padding: 15px 0px 15px 50px;
-	img
-		position absolute
-		bottom: 15px;
-		left: 10px;
-	span.icon-help
-		position: absolute;
-		right: 30px;
-		top: 20px;
-	span
-		padding-left: 30px;
+
 /* =========================== MODAL LOAD DOCUMENTS √ */
 /*
 div.containerModal

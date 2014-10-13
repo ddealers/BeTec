@@ -138,8 +138,8 @@ header [class*=" icon-"] {
 }
 nav.arrows {
   position: fixed;
-  top: 23vh;
-  right: 17vw;
+  top: 21vh;
+  right: 11vw;
   z-index: 1;
 }
 nav.arrows a {
@@ -149,13 +149,13 @@ nav.arrows a {
   float: left;
 }
 nav.arrows a.prev {
-  background: url("../img/flechas.png") no-repeat -4vw;
+  background: url("../img/flechas.png") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
 }
 nav.arrows a.next {
-  background: url("../img/flechas.png") no-repeat;
+  background: url("../img/flechas.png") no-repeat -4vw;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -172,7 +172,7 @@ section {
 section article {
   position: absolute;
   top: 32vh;
-  left: 11vw;
+  left: 16vw;
 }
 section#be_tec {
   background: url("../img/filtro-rosa.png"), url("../img/back-be-tec.png") no-repeat;
@@ -224,6 +224,9 @@ section#be_tec p {
   -moz-background-size: cover;
   background-size: cover;
 }
+#agenda article {
+  top: 27vh;
+}
 #agenda article h1 {
   top: -6.6vw;
   background: #f20000;
@@ -256,8 +259,8 @@ section#be_tec p {
   margin-bottom: 3.6vh;
 }
 #agenda article .calendar .header a {
-  width: 2vw;
-  height: 2vw;
+  width: 2.1vw;
+  height: 2.1vw;
   display: block;
 }
 #agenda article .calendar .header a.prev {
@@ -344,13 +347,6 @@ section#be_tec p {
 #agenda article .calendar .days .day table.jueves {
   margin-bottom: 5.6vh;
 }
-#agenda article .calendar .days .day table.viernes {
-  height: 440px;
-}
-#agenda article .calendar .days .day table.sabado {
-  height: 225px;
-  width: 500px;
-}
 #agenda article .calendar .days .day p.textJ {
   text-align: left;
   width: 29vw;
@@ -363,353 +359,622 @@ section#be_tec p {
   float: left;
 }
 /* =========================== SEDE */
-/*
-section#sede
-	//background: url(../img/back-sede.png)no-repeat;
-	background: url(../img/filtro-azul.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #97ea3d;
-		padding: 10px;
-		left: 100px;
-	h2 
-		color: #fff;
-		margin-left: 100px !important;
-		padding-top: 255px !important;
-	p
-		margin-left: 210px;
-		margin-bottom: 10px;
-	span
-		font-weight: normal;
-	div.image
-		position:relative;
-		margin-top: 262px;
-	img.uno
-		position:absolute;
-		width: 20%
-		right: 150px;
-		bottom: 20px;
-	img.dos
-		width: 10%;
-		position: absolute;
-		bottom: 300px;
-		right: 494px;
-	img.tres
-		position: absolute;
-		width: 15%;
-		bottom: 117px;
-		right: 485px;
-	img.cuatro
-		position: absolute;
-		right: 278px;
-		bottom: 369px;
-	img.cinco
-		position: absolute;
-		right: 393px;
-		bottom: 109px;
-	img.seis
-		width: 11%;
-		position: absolute;
-		bottom: 262px;
-		right: 195px;
-	img.siete
-		width: 15%;
-		position: absolute;
-		bottom: 206px;
-		right: 324px;
+#sede {
+  background: url("../img/filtro-azul.png"), url("../img/back-sede.png") no-repeat;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+#sede article h1 {
+  top: -6.6vw;
+  background: #97ea3d;
+  padding: 1vw 2.1vw;
+  left: -7vw;
+}
+#sede article h2 {
+  font-size: 1.7vw;
+  margin-top: 2vh;
+  margin-left: -6.5vw;
+}
+#sede article h2 span {
+  font-family: 'GillSans-Light';
+  font-size: 1.6vw;
+}
+#sede article div.image {
+  position: absolute;
+  top: -14vh;
+  left: 25vw;
+  width: 42vw;
+  height: 45vw;
+}
+#sede article div.image img.uno {
+  position: absolute;
+  right: -4vw;
+  top: 14.6vw;
+  width: 52%;
+}
+#sede article div.image img.dos {
+  position: absolute;
+  top: 4vw;
+  left: 3vw;
+  width: 26%;
+}
+#sede article div.image img.tres {
+  position: absolute;
+  top: 15vw;
+  left: 0.5vw;
+  width: 35%;
+}
+#sede article div.image img.cuatro {
+  position: absolute;
+  top: 0;
+  right: 15vw;
+  width: 18%;
+}
+#sede article div.image img.cinco {
+  position: absolute;
+  top: 22vw;
+  left: 14.6vw;
+  width: 22%;
+}
+#sede article div.image img.seis {
+  position: absolute;
+  top: 4vh;
+  right: 3.2vw;
+  width: 30%;
+}
+#sede article div.image img.siete {
+  position: absolute;
+  top: 7.2vw;
+  left: 13vw;
+  width: 35%;
+}
 /* =========================== REGISTRATE */
-/*
-section#registrate
-	//background: url(../img/back-registrate.png)no-repeat;
-	background: url(../img/filtro-rojo.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #32dafe;
-		padding: 10px;
-		left: 100px;
-	p
-		margin-left: 210px;
-		margin-bottom: 10px;
-	div.container12
-		padding-left: 200px;
-		font-size: 14px;
-		width: 1010px;
-		.column3 
-			width: 193px;
-			padding-top: 10px;
-			padding-left: 0px;
-			p
-				margin: 0px;
-			a
-				display: block;
-				color: #fff;
-				text-decoration: none;
+#registrate {
+  background: url("../img/filtro-rojo.png"), url("../img/back-registrate.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+#registrate article h1 {
+  top: -6.6vw;
+  background: #32dafe;
+  padding: 1vw 2.1vw;
+  left: -7vw;
+}
+#registrate article h2 {
+  font-size: 1.7vw;
+  margin-bottom: 2vh;
+}
+#registrate article .container12 {
+  width: 40vw;
+  margin-left: 2.5vw;
+}
+#registrate article .container12 .column12 {
+  width: 100%;
+  margin-bottom: 2vh;
+}
+#registrate article .container12 .column3 {
+  width: 25%;
+}
+#registrate article .container12 .column3 a img {
+  display: block;
+  margin-left: 15%;
+  margin-bottom: 1vh;
+}
+#registrate article .container12 .column3 a p {
+  font-size: 1.1vw;
+}
+#registrate article .container12 .column3.registro {
+  text-align: center;
+}
+#registrate article .container12 .column3.registro img {
+  margin: 0 auto 1vh;
+}
+#registrate article .container12 .column3.registro p {
+  font-size: 1.3vw;
+}
 /* =========================== FAQ'S */
-/*
-section#faq
-	//background: url(../img/back-faqs.png)no-repeat;
-	background: url(../img/filtro-rosa.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #fbc549;
-		padding: 10px;
-		left: 100px;
-	div.texto 
-		position: relative;
-		padding-top: 260px;
-		text-align: center;
-		margin-right: 110px;
-	div
-		padding-top: 0px;
-	p.bold
-		font-weight:bold;
-	p
-		margin-left: 110px;
-		margin-bottom: 10px;
-	span
-		font-weight:bold;
-	div.container12
-		padding-left: 200px;
-		font-size: 14px;
-		width: 1010px;
-		.column6 
-			width: 323px;
-			padding-left: 65px;
-			padding-top: 10px;
-			a.escribenos
-				background: url(../img/escribenos.png)no-repeat;
-				height: 68px;
-				width: 290px;
-				display: block;
-				padding-left: 62px;
-				padding-top: 13px;
-				color: #fff;
-				text-decoration: none;
-				font-size:13px;
-				margin-left:60px;
-			a
-				background: url(../img/llamanos.png)no-repeat;
-				height: 68px;
-				width: 290px;
-				display: block;
-				padding-left: 47px;
-				padding-top: 13px;
-				color: #fff;
-				text-decoration: none;
-				font-size:13px;
-				margin-left:-60px;
-			p
-				margin: 0px;
+#faq {
+  background: url("../img/filtro-rosa.png"), url("../img/back-faqs.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+#faq article {
+  width: 75%;
+}
+#faq article h1 {
+  top: -6.6vw;
+  background: #fbc549;
+  padding: 1vw 2.1vw;
+  left: -7vw;
+}
+#faq article .texto {
+  margin-top: 5vh;
+}
+#faq article .texto p {
+  text-align: center;
+  margin-bottom: 3.4vh;
+}
+#faq article .texto p.bold {
+  font-family: 'GillSans';
+}
+#faq article .container12 {
+  width: 100%;
+}
+#faq article .container12 .column6 {
+  width: 46%;
+}
+#faq article .container12 .column6 a {
+  width: 20vw;
+  height: 5vw;
+  display: block;
+  padding-top: 1.5vw;
+  color: #fff;
+  font-size: 1vw;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#faq article .container12 .column6 a.escribenos {
+  background: url("../img/escribenos.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  padding-left: 4vw;
+}
+#faq article .container12 .column6 a.llamanos {
+  background: url("../img/llamanos.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  padding-left: 3vw;
+}
+#faq article .container12.contacto {
+  width: 65%;
+}
+#faq article .container12.faqs {
+  width: 80%;
+  height: 35vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#faq article .container12.faqs p {
+  margin-top: 2vh;
+  margin-left: 2vw;
+}
+#faq article .container12.faqs p span {
+  font-family: 'GillSans';
+}
 /* =========================== AVISO LEGAL */
-/*
-section#aviso_legal
-	//background: url(../img/back-aviso.png)no-repeat;
-	background: url(../img/filtro-amarillo.png)no-repeat;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	h1
-		top: 180px;
-		background: #7338b6;
-		padding: 10px;
-		left: 100px;
-	h2.terminos	
-			width: 525px;
-			margin: auto;
-			padding-top: 280px;
-	div
-		position: relative;
-		width: 750px;
-		overflow-y: scroll;
-		height: 300px;
-		display: inline-flex;
-		margin-left: 245px;
-		margin-top: 10px;
+#aviso_legal {
+  background: url("../img/filtro-amarillo.png"), url("../img/back-aviso.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  z-index: 5;
+  display: none;
+}
+#aviso_legal article {
+  width: 65%;
+  height: 60%;
+}
+#aviso_legal article h1 {
+  top: -6.6vw;
+  background: #7338b6;
+  padding: 1vw 2.1vw;
+  left: -7vw;
+}
+#aviso_legal article h2 {
+  font-size: 1.5vw;
+  text-align: center;
+  margin-top: 7vh;
+}
+#aviso_legal article div {
+  height: 70%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#aviso_legal article div h3 {
+  color: #fff;
+  margin: 1vh 0 2vh;
+}
+#aviso_legal article div p {
+  margin-bottom: 1vh;
+}
+#aviso_legal article div ul {
+  list-style-type: disc;
+  margin: 1vh 2vw 2vh;
+}
+#aviso_legal article div ul li {
+  font-size: 1.1vw;
+  color: #fff;
+}
+#aviso_legal article div a {
+  color: #eee;
+}
+#aviso_legal article .close {
+  background: url("../img/btn_cerrar.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: -9vh;
+  right: -5vw;
+  width: 4vw;
+  height: 4vw;
+  display: block;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: height;
+  display: block;
+  z-index: 1;
+}
+footer div {
+  position: absolute;
+  bottom: 2vh;
+  left: 2vw;
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 30%;
+}
+footer div a {
+  font-family: 'GillSans-Light';
+  font-size: 1.2vw;
+  margin-left: 2vw;
+  color: #fff;
+}
+footer .icon-help {
+  position: absolute;
+  bottom: 2vh;
+  right: 2vw;
+  color: #fff;
+}
 /* =========================== REGISTRO */
+#registro {
+  background: #f9f9f9;
+}
+#registro article {
+  top: 21vh;
+  left: 20vw;
+  width: 65%;
+  height: 60%;
+}
+#registro article h1.registro {
+  top: -6.6vw;
+  background: #de3370;
+  padding: 1vw 2.1vw;
+}
+#registro article h2.experiencia {
+  color: #727272;
+  font-size: 2.4vh;
+  margin: 1vh 0;
+}
+#registro article p {
+  color: #9d9d9d;
+  margin-bottom: 1vh;
+}
+#registro article form .step {
+  width: 100%;
+  height: 100%;
+}
+#registro article form .step .step-area {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  float: left;
+}
+#registro article form .step .step-area .info {
+  font-family: 'Futura-Medium';
+  width: 12vw;
+  text-align: center;
+}
+#registro article form .step .step-area .info img {
+  display: block;
+  margin: 2vh auto 0;
+}
+#registro article form .step .step-area .step-data input {
+  display: block;
+  padding: 0.8vw;
+  margin: 0.5vw 0;
+  border: 2px #ececec solid;
+}
+#registro article form .step .step-area .step-data label {
+  position: relative;
+  display: block;
+}
+#registro article form .step .step-area .step-data label select {
+  display: inline-block;
+  padding: 0.8vw;
+  margin: 0.3vw 0;
+  min-width: 9vw;
+  border: 2px #ececec solid;
+  background: #fff;
+  color: #727272;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+#registro article form .step .step-area .step-data label:before {
+  position: absolute;
+  top: 1.5vw;
+  right: 1vw;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+#registro article form .step .step-area .step-data .bool-choose .option {
+  cursor: pointer;
+  width: 2vw;
+  height: 1.5vw;
+  color: #ececec;
+  background: #fff;
+  border: 2px #ececec solid;
+  padding: 1vw;
+  text-align: center;
+  display: inline-block;
+}
+#registro article form .step .step-area.genero .choose {
+  border: 1px solid #ececec;
+  width: 53vw;
+  height: 11vw;
+  position: relative;
+}
+#registro article form .step .step-area.genero .choose .option {
+  cursor: pointer;
+  width: 50%;
+  height: 100%;
+  float: left;
+  text-align: center;
+}
+#registro article form .step .step-area.genero .choose .option img {
+  padding-top: 10%;
+}
+#registro article form .step .step-area.genero .choose .option p {
+  color: #727272;
+}
+#registro article form .step .step-area.genero .choose .option.selected {
+  background: #68b9ef;
+}
+#registro article form .step .step-area.genero .choose .option.selected p {
+  color: #fff;
+}
+#registro article form .step .step-area.genero .choose .o {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 3vw;
+  height: 1.5vw;
+  margin: auto;
+  text-align: center;
+  background: #f5f4f4;
+  -webkit-box-shadow: 1px 1px 5px #ccc;
+  box-shadow: 1px 1px 5px #ccc;
+}
+#registro article form .step .step-area.cumple {
+  margin-left: 10vw;
+}
+#registro article form .step .step-area.cumple .step-data {
+  margin-left: 2vw;
+}
+#registro article form .step .step-area.contacto input[name="lada"] {
+  width: 4vw;
+  display: inline-block;
+}
+#registro article form .step .step-area.contacto input[name="tel"] {
+  width: 11vw;
+  display: inline-block;
+}
+#registro article form .step .step-area.carreras select {
+  width: 12vw;
+}
+#registro article form .step .step-area.residencia select {
+  width: 18vw;
+}
+#registro article form .step .step-area.prepa select {
+  width: 23vw;
+}
+#registro article form .step .step-area.compania label {
+  width: 11vw;
+  display: inline-block;
+}
+#registro article form .step .step-area.compania label select {
+  width: 100%;
+}
+#registro article form .step .step-area.compania input {
+  display: inline-block;
+}
+#registro article form .step .step-area.viernes {
+  width: 30vw;
+}
+#registro article form .step .step-area.viernes label {
+  width: 100%;
+}
+#registro article form .step .step-area.viernes label select {
+  width: 100%;
+  padding-right: 3vw;
+}
+#registro article form .step .step-area.sabado {
+  width: 35vw;
+}
+#registro article form .step .step-area.sabado label {
+  width: 100%;
+}
+#registro article form .step .step-area.sabado label select {
+  width: 100%;
+  padding-right: 3vw;
+}
+#registro article form .step .step-area.sabado .info {
+  width: 15vw;
+}
+#registro article form .step .step-area.acepto .step-data {
+  font-size: 0.7vw;
+  color: #333;
+  width: 50vw;
+}
+#registro article form .step .clearborder {
+  clear: both;
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-box;
+  display: inline-flex;
+  width: 100%;
+}
+#registro article form .step .clearborder .info {
+  width: 12vw;
+}
+#registro article form .step .clearborder .border {
+  height: 1vw;
+  border-bottom: 1px #eee solid;
+  margin-bottom: 1vw;
+  width: 53vw;
+}
+#registro .siguiente {
+  background: #de3370;
+  position: fixed;
+  bottom: 7.5vh;
+  left: 0;
+  width: 100%;
+  height: 9vh;
+}
+#registro .siguiente a {
+  background: url("../img/form_siguiente.png") no-repeat 8vw center;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  border: 3px #fff solid;
+  display: block;
+  width: 13vw;
+  height: 3vw;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0.7vw 5.5vw 0 2.75vw;
+  font-size: 0.9vw;
+}
+#registro .footer {
+  background: #727272;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 7.5vh;
+  display: block;
+}
+#end {
+  display: none;
+  background: #fff;
+}
+#end article {
+  position: initial;
+}
+#end div.registroT h1 {
+  top: 190px;
+  background: #de3370;
+  padding: 10px;
+  left: 435px;
+}
+#end div.registroT h2 {
+  width: 465px;
+  margin: auto;
+  padding-top: 280px;
+  color: #727272;
+}
+#end div.registroT p {
+  margin-left: 460px;
+  color: #de3370;
+}
+#end div.registroT li {
+  font-size: 10px;
+  margin-left: 460px;
+  color: #de3370;
+  padding-top: 10px;
+}
+#end div.registroT li span {
+  font-weight: bold;
+}
+#end div.registroT img {
+  position: absolute;
+  width: 7%;
+  left: 345px;
+}
+#end div.redesS {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: #de3370;
+}
+#end div.redesS p {
+  color: #fff;
+  padding-top: 130px;
+  font-weight: bold;
+}
+#end div.redesS a {
+  background: url("../img/f.png") no-repeat;
+  position: absolute;
+  top: 30px;
+  height: 100px;
+  width: 100px;
+  left: -35px;
+  right: 0;
+  margin: auto;
+}
+#end div.redesS .t {
+  background: url("../img/t.png") no-repeat 30px;
+  left: 35px;
+  top: 20px;
+}
+#end p.siguiente {
+  background: url("../img/siguiente.png") no-repeat no-repeat;
+  color: #fff;
+  padding-top: 20px;
+  font-weight: normal;
+  padding-left: 50px;
+  height: 100px;
+  margin-left: 500px;
 /*
-section#registro
-	background: #f9f9f9;
-	width: 100%;
-	height: auto;
-	background-size: cover;
-	div.datos
-		padding-top:75px;
-		margin-left:-10px;
-	div.container12
-		padding-left: 0px;
-		font-size: 16px;
-		width 1010px
-		.column3 
-			width: 130px;
-			padding-top: 10px;
-			p.col
-				margin: 0px !important;
-			img.lapiz
-				margin-left: 25px;
-				margin-top: 15px;
-			img
-				margin-left:50px;
-				margin-top: 15px;
-			p.hospedaje
-				width:300px;
-				font-family: 'gillsans';
-
-			input.checkbox
-				width 47px
-	.column3.tu
-		margin-left:195px;
-	h1.registro
-		top: 90px;
-		background: #de3370;
-		padding: 10px;
-		left: 200px;
-	h2.experiencia 
-		color: #727272;
-		margin-left: 200px;
-		padding-top: 166px;
-		font-size: 20px;
-	div.genero
-		display:inline-flex;
-		p.genero.p
-			font-family: 'Futura-Medium';
-			margin-top 65px
-		p
-			margin-right: 60px;
-	div.azul
-		position: relative;
-		background: #68b9ef;
-		width: 300px;
-		height: 150px;
-		p.h
-			color: #fff;
-			text-align: center;
-			margin-top: 95px;
-			width: 300px;
-		img.caballero
-				position: absolute;
-				left: 0px;
-				right: 0px;
-				margin: auto;
-				top: 40px;
-		p.o
-			position: absolute;
-			left: 276px;
-			top: 40px;
-			background: #fff;
-			padding: 5px 20px 5px 20px;
-			border: 1px solid;
-			z-index: 1;
-	div.transparente
-		position: relative;
-		border: 1px solid #eeeeee;
-		width: 300px;
-		height: 148px;
-		p.m 
-			text-align: center;
-			margin-top: 95px;
-			width: 300px;
-		img.dama
-				position: absolute;
-				left: 0px;
-				right: 0px;
-				margin: auto;
-				top: 35px;
-	p
-		color:#727272;
-		margin-left: 205px;
-		margin-bottom: 10px;
-	li
-		margin-left:200px;
-		list-style:none;
-		p
-			margin-left:0px;
-			margin-top:20px;
-			font-family: 'Futura-Medium';
-
-	input
-		padding:3px;
-		margin-top: 10px;
-		width:255px;
-	select
-		width: 102px;
-		background: #fff;
-		margin-top: 10px;
-		color:#727272;
-	select.option
-		width:250px;
-	.column3.box
-		width 15px !important;
-	p.leyenda
-		font-size 11px	
-		width: 700px;
-	div.end
-		position: relative;
-		margin-left: -200px;
-		div.registroT
-			h1
-				top: 190px;
-				background: #de3370;
-				padding: 10px;
-				left: 435px;
-			h2
-				width: 465px;
-				margin: auto;
-				padding-top: 280px;
-				color: #727272;
-			p
-				margin-left: 460px;
-				color: #de3370;
-			li
-				font-size: 10px;
-				margin-left: 460px;
-				color: #de3370;
-				padding-top 10px
-				span
-					font-weight bold
-			img
-				position: absolute;
-				width: 7%;
-				left: 345px;
-		div.redesS
-			position: relative;
-			width: 100%;
-			height: 250px;
-			background: #de3370;
-			p
-				color #fff
-				padding-top: 130px;
-				font-weight bold
-			a
-				background: url("../img/f.png") no-repeat;
-				position: absolute;
-				top: 30px;
-				height: 100px;
-				width: 100px;
-				left: -35px;
-				right: 0;
-				margin: auto;
-			.t
-				background: url("../img/t.png") no-repeat 30px;
-				left 35px
-				top: 20px;
-			p.siguiente
-				background: url("../img/siguiente.png") no-repeat no-repeat;
-				color #fff
-				padding-top: 20px;
-				font-weight: normal;
-				padding-left: 50px;
-				height: 100px;
-				margin-left: 500px;
 /* =========================== LOAD DOCUMENTS */
+}
 /*
 section#load_documents
 	background: #f9f9f9;
@@ -787,24 +1052,7 @@ section#load_documents
 			font-size: 14px;
 /* =========================== LOAD DOCUMENTS */
 /*
-footer
-	background: #727272;
-	margin: 0;
-	padding: 0;
-	height: 55px;
-	position relative
-	p
-		padding: 15px 0px 15px 50px;
-	img
-		position absolute
-		bottom: 15px;
-		left: 10px;
-	span.icon-help
-		position: absolute;
-		right: 30px;
-		top: 20px;
-	span
-		padding-left: 30px;
+
 /* =========================== MODAL LOAD DOCUMENTS √ */
 /*
 div.containerModal
