@@ -110,3 +110,26 @@ $(document).ready(function(){
 	//$("table.jueves").css({width: 850 * sx, height: 130 * sy});
 	//$("table.viernes").css({width: 1020 * sx, height: 440 * sy});
 });
+
+//===== Acciones en registrar ===== //
+
+$( document ).ready(function(){
+	$("#generoM").click(function() {
+		if($(this).hasClass("selected")){
+			console.log("ya tiene la clase!!");
+		}else{
+			$(this).addClass("selected");
+			$("#generoH").removeClass("selected");
+			$("#genero").val('Mujer');
+		}
+	})
+	$("#generoH").click(function() {
+		if($(this).hasClass("selected")){
+			console.log("ya tiene la clase!!");
+		}else{
+			$(this).addClass("selected");
+			$("#generoM").removeClass("selected");
+			$("#genero").val('Hombre');
+		}
+	})
+})
