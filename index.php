@@ -1,7 +1,4 @@
-<?php 
-require("sql/funciones.php");
-require("sql/estadoCity.php");
-?>
+<?php require("sql/funciones.php"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -550,9 +547,9 @@ require("sql/estadoCity.php");
 							<img class="lapiz"src="./img/lapiz.png">
 						</p>
 						<div class="step-data">
-							<input type="text" placeholder="Nombre(s)*" name="nombre" required>
-							<input type="text" placeholder="Apellido paterno*" name="apaterno" required>
-							<input type="text" placeholder="Apellido materno*" name="amaterno" required>
+							<input type="text" placeholder="Nombre(s)*" name="nombre" id="nombre">
+							<input type="text" placeholder="Apellido paterno*" name="apaterno" id="apaterno">
+							<input type="text" placeholder="Apellido materno*" name="amaterno" id="amaterno">
 						</div>
 					</div>
 					<div class="step-area cumple">
