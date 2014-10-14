@@ -722,10 +722,11 @@ require("sql/estadoCity.php");
 						<div class="step-data">
 							<p>¿Necesitas hospedaje en Monterrey?*</p>
 							<div class="bool-choose">
-								<div class="option selected">
+								<input type="hidden" name="hospedaje" id="hospedaje" value="0"/>
+								<div class="option noActivo" id="hotelS">
 									<p>SÍ</p>
 								</div>
-								<div class="option">
+								<div class="option activo" id="hotelN">
 									<p>NO</p>
 								</div>
 							</div>
@@ -743,10 +744,11 @@ require("sql/estadoCity.php");
 						<div class="step-data">
 							<p>¿Vendrás con un acompañante?*</p>
 							<div class="bool-choose">
-								<div class="option selected">
+								<input type="hidden" name="acompanante" id="acompanante" value="0"/>
+								<div class="option noActivo" id="soloS">
 									<p>SÍ</p>
 								</div>
-								<div class="option">
+								<div class="option activo" id="soloN">
 									<p>NO</p>
 								</div>
 							</div>
@@ -830,7 +832,7 @@ require("sql/estadoCity.php");
 						</p>
 						<div class="step-data">
 							El Instituto Tecnológico y de Estudios Superiores de Monterrey, con domicilio en Av. Eugenio Garza Sada #2501 Sur, Col. Tecnológico, en la ciudad de Monterrey, N.L., utilizará sus datos personales aquí recabados para fines de seguimiento y promoción de eventos exclusivos del Tecnológico de Monterrey, así como para dar seguimiento al proceso de admisión e inscripción a cualquiera de los campus o sedes del Tecnológico de Monterrey. Para mayor información acerca del tratamiento y de los derechos que puede ejercer, por favor acceder al Aviso de Privacidad completo en la página hospedada en la siguiente dirección electrónica: www.itesm.edu.  Acepto y autorizo que el Instituto Tecnológico y de Estudios Superiores de Monterrey utilice la información aquí proporcionada para los fines anteriormente señalados. Si desea eliminar su registro de nuestra base de datos, favor de enviar un correo con la palabra BAJA a la dirección: siem@servicios.itesm.mx
-							<label>Acepto los Terminos y Condiciones<input type="checkbox" name="acepto"></label>
+							<label>Acepto los Terminos y Condiciones<input type="checkbox" id="acepto"></label>
 						</div>
 					</div>
 				</div>

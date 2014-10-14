@@ -131,6 +131,46 @@ $( document ).ready(function(){
 			$("#genero").val('0');
 		}
 	})
+	$("#hotelS").click(function() {
+		if($(this).hasClass("activo")){
+			console.log("ya esta activo");
+		}else{
+			$("#hotelN").removeClass("activo");
+			$("#hotelN").addClass("noActivo");
+			$("#hotelS").addClass("activo");
+			$("#hospedaje").val('1');
+		}
+	})
+	$("#hotelN").click(function() {
+		if($(this).hasClass("activo")){
+			console.log("esta activo");
+		}else{
+			$("#hotelS").removeClass("activo");
+			$("#hotelS").addClass("noActivo");
+			$("#hotelN").addClass("activo");
+			$("#hospedaje").val('0');
+		}
+	})
+	$("#soloS").click(function() {
+		if($(this).hasClass("activo")){
+			console.log("ya esta activo");
+		}else{
+			$("#soloN").removeClass("activo");
+			$("#soloN").addClass("noActivo");
+			$("#soloS").addClass("activo");
+			$("#acompanante").val('1');
+		}
+	})
+	$("#soloN").click(function() {
+		if($(this).hasClass("activo")){
+			console.log("esta activo");
+		}else{
+			$("#soloS").removeClass("activo");
+			$("#soloS").addClass("noActivo");
+			$("#soloN").addClass("activo");
+			$("#acompanante").val('0');
+		}
+	})
 })
 
 
@@ -170,4 +210,12 @@ function citySchool(s,id){
 			alert('Algo salio mal, selecciona tu estado de nuevo.');
 		}
 	});
+}
+
+function save(){
+	if($("input:checked")){
+		console.log("ya esta chekeado");
+	}else{
+		alert("Debes acptar terminos y condiciones D: ");
+	}
 }
