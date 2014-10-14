@@ -1,3 +1,7 @@
+<?php 
+require("sql/funciones.php");
+require("sql/estadoCity.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -523,7 +527,7 @@
 				<div class="step">
 					<div class="step-area genero">
 						<p class="info">TU GÉNERO</p>
-						<input type="hidden" name="genero" id="genero" value="Hombre">
+						<input type="hidden" name="genero" id="genero" value="0">
 						<div class="choose">
 							<div class="option selected" id="generoH">
 								<img src="./img/hombre.png" class="caballero">
@@ -560,70 +564,70 @@
 							<label class="icon-arrow-left">
 								<select name="ndia">
 									<option>Día*</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-									<option>7</option>
-									<option>8</option>
-									<option>9</option>
-									<option>10</option>
-									<option>11</option>
-									<option>12</option>
-									<option>13</option>
-									<option>14</option>
-									<option>15</option>
-									<option>16</option>
-									<option>17</option>
-									<option>18</option>
-									<option>19</option>
-									<option>20</option>
-									<option>21</option>
-									<option>22</option>
-									<option>23</option>
-									<option>24</option>
-									<option>25</option>
-									<option>26</option>
-									<option>27</option>
-									<option>28</option>
-									<option>29</option>
-									<option>30</option>
-									<option>31</option>
+									<option value="1<">1</option>
+									<option value="2<">2</option>
+									<option value="3<">3</option>
+									<option value="4<">4</option>
+									<option value="5<">5</option>
+									<option value="6<">6</option>
+									<option value="7<">7</option>
+									<option value="8<">8</option>
+									<option value="9<">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
 								<select name="nmes">
-									<option>Mes*</option>
-									<option>Enero</option>
-									<option>Febrero</option>
-									<option>Marzo</option>
-									<option>Abril</option>
-									<option>Mayo</option>
-									<option>Junio</option>
-									<option>Julio</option>
-									<option>Agosto</option>
-									<option>Septiembre</option>
-									<option>Octubre</option>
-									<option>Noviembre</option>
-									<option>Diciembre</option>
+									<option value="Me">Mes*</option>
+									<option value="1">Enero</option>
+									<option value="2">Febrero</option>
+									<option value="3">Marzo</option>
+									<option value="4">Abril</option>
+									<option value="5">Mayo</option>
+									<option value="6">Junio</option>
+									<option value="7">Julio</option>
+									<option value="8">Agosto</option>
+									<option value="9">Septiembre</option>
+									<option value="10">Octubre</option>
+									<option value="11">Noviembre</option>
+									<option value="12">Diciembre</option>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
 								<select name="nanio">
 									<option>Año*</option>
-									<option>1986</option>
-									<option>1987</option>
-									<option>1988</option>
-									<option>1989</option>
-									<option>1990</option>
-									<option>1991</option>
-									<option>1992</option>
-									<option>1993</option>
-									<option>1994</option>
-									<option>1995</option>
-									<option>1996</option>
+									<option value="1986">1986</option>
+									<option value="1987">1987</option>
+									<option value="1988">1988</option>
+									<option value="1989">1989</option>
+									<option value="1990">1990</option>
+									<option value="1991">1991</option>
+									<option value="1992">1992</option>
+									<option value="1993">1993</option>
+									<option value="1994">1994</option>
+									<option value="1995">1995</option>
+									<option value="1996">1996</option>
 								</select>
 							</label>
 						</div>
@@ -650,17 +654,17 @@
 						<div class="step-data">
 							<label class="icon-arrow-left">
 								<select name="carrera1" class="option">
-									<option>Opción uno*</option>
+									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
 								<select name="carrera2" class="option">
-									<option>Opción dos*</option>
+									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
 								<select name="carrera3" class="option">
-									<option>Opción tres*</option>
+									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
 						</div>
@@ -676,13 +680,13 @@
 						</p>
 						<div class="step-data">
 							<label class="icon-arrow-left">
-								<select name="estado" class="option">
-									<option>Estado de residencia*</option>
+								<select name="estado" class="option" onchange="estadoCity(this,'ciudadMX')">
+									<?php echo selectEstados(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="ciudad" class="option">
-									<option>Ciudad de residencia*</option>
+								<select name="ciudad" id="ciudadMX" class="option" onchange="citySchool(this,'prepaMX')">
+									<option value='#'>Elije tu ciudad</option>
 								</select>
 							</label>
 						</div>
@@ -694,13 +698,16 @@
 						</p>
 						<div class="step-data">
 							<label class="icon-arrow-left">
-								<select name="prepa" class="option">
-									<option>Prepa donde estudias*</option>
+								<select name="prepa" class="option" id="prepaMX">
+									<option value='#'>Elije tu Prepa</option>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
 								<select name="gradua" class="option inputPrepa">
 									<option>Fecha esperada de graduación*</option>
+									<option value="2014">2014</option>
+									<option value="2015">2015</option>
+									<option value="2016">2016</option>
 								</select>
 							</label>
 						</div>
@@ -746,6 +753,12 @@
 							<label class="icon-arrow-left">
 								<select name="parentesco" class="option">
 									<option>Parentesco*</option>
+									<option value="1">Madre</option>
+									<option value="2">Padre</option>
+									<option value="3">Hermano Mayor</option>
+									<option value="4">Hermana Mayor</option>
+									<option value="5">Amig@</option>
+
 								</select>
 							</label>
 							<input type="text" placeholder="Nombre completo*" name="nomcomp" required>
@@ -763,17 +776,17 @@
 							<p>Elige los tres talleres a los que quieres asistir el viernes.</p>
 							<label class="icon-arrow-left">
 								<select name="vopt1" class="option">
-									<option>Selecciona la opción que más te atraiga*</option>
+									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
 								<select name="vopt2" class="option">
-									<option>Selecciona la opción que más te atraiga*</option>
+									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
 								<select name="vopt3" class="option">
-									<option>Selecciona la opción que más te atraiga*</option>
+									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
 						</div>
@@ -788,7 +801,7 @@
 							<p>Elige el taller al que quieres asistir el sábado.</p>
 							<label class="icon-arrow-left">
 								<select name="sopt" class="option">
-									<option>Selecciona la opción que más te atraiga*</option>
+									<?php echo selectTalleresS(); ?>
 								</select>
 							</label>
 						</div>
@@ -802,7 +815,7 @@
 							<p>¿Cómo te enteraste del evento?</p>
 							<label class="icon-arrow-left">
 								<select name="evento" class="option eve">
-									<option>Selecciona una opción*</option>
+									<?php echo selectEventos(); ?>
 								</select>
 							</label>
 						</div>

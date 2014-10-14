@@ -112,7 +112,6 @@ $(document).ready(function(){
 });
 
 //===== Acciones en registrar ===== //
-
 $( document ).ready(function(){
 	$("#generoM").click(function() {
 		if($(this).hasClass("selected")){
@@ -120,7 +119,7 @@ $( document ).ready(function(){
 		}else{
 			$(this).addClass("selected");
 			$("#generoH").removeClass("selected");
-			$("#genero").val('Mujer');
+			$("#genero").val('1');
 		}
 	})
 	$("#generoH").click(function() {
@@ -129,7 +128,46 @@ $( document ).ready(function(){
 		}else{
 			$(this).addClass("selected");
 			$("#generoM").removeClass("selected");
-			$("#genero").val('Hombre');
+			$("#genero").val('0');
 		}
 	})
 })
+
+
+function estadoCity(s,id){
+	var est = $(s).val();
+	var opc = 'estadoCity';
+	$.ajax({
+		type: 'GET',
+		url: '../sql/funciones.php',
+		data: {opc:opc, est:est},
+		success: function(response){
+			if(id != undefined){
+				$("#"+id).html(response);
+			}
+		},
+		error: function(){
+			console.log(response);
+			alert('Algo salio mal, selecciona tu estado de nuevo.');
+		}
+	});
+}
+
+function citySchool(s,id){
+	var idc = $(s).val();
+	var opc = 'citySchool';
+	$.ajax({
+		type: 'GET',
+		url: '../sql/funciones.php',
+		data: {opc:opc, idc:idc},
+		success: function(response){
+			if(id != undefined){
+				$("#"+id).html(response);
+			}
+		},
+		error: function(){
+			console.log(response);
+			alert('Algo salio mal, selecciona tu estado de nuevo.');
+		}
+	});
+}
