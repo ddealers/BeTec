@@ -23,7 +23,7 @@
 			
 		</figure>
 		<nav>
-			<ul>
+			<ul data-500p="opacity:1;display:inline-flex" data-550p="display:none"data-600p="opacity:0;">
 				<li><a data-menu-top="0" href="#be_tec">BTEC</a></li>
 				<li><a data-menu-top="100p" href="#actividades">Actividades</a></li>
 				<li><a data-menu-top="200p" href="#agenda">Agenda</a></li>
@@ -33,16 +33,16 @@
 			</ul>
 		</nav>
 		<div class="social">
-			<a data-menu-top="600p" href="#registro"><img src="./img/registro_boton.png"/></a>
+			<a data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0" data-menu-top="600p" href="#registro"><img src="./img/registro_boton.png"/></a>
 			<div class="rs">
-				<a href="#"><img src="./img/face.png"></a>
-				<a href="#"><img src="./img/tw.png"></a>
+				<a href="#" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/face.png"></a>
+				<a href="#" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/tw.png"></a>
 			</div>
 		</div>
 	</header>
 	<nav class="arrows">
-		<a data-0="opacity:0" data-100p="opacity:1" class="prev" href="#prev"></a>
-		<a class="next" href="#next"></a>
+		<a data-0="opacity:0; display:none" data-50p="display:block" data-100p="opacity:1" class="prev" href="#prev" data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0"></a>
+		<a class="next" href="#next" data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0"></a>
 	</nav>
 	<section id="be_tec" data-0="transform: translate(0%,0)" data-100p="transform: translate(-100%,0)">
 		<article><!--CONTENIDO_BORN_TO_BE_TEC-->
@@ -63,7 +63,7 @@
 			 	</div>
 			  	<div class="column3">
 			  		<img src="./img/herramientas.png">
-			  		<p class="col">Talleres interactivos<br> de carreras<br> (Ver todos los<br> talleres aquí)</p>
+			  		<p class="col">Talleres interactivos<br> de carreras</p>
 			  	</div>
 			  	<div class="column3">
 			  		<img src="./img/bici.png">
@@ -77,7 +77,7 @@
 			<div class="container12">
 			 	<div class="column3">
 			 		<img src="./img/chat.png">
-			 		<p class="col">Charla:  “No tengo idea qué carrera elegir”<br>(Ver más información)</p>
+			 		<p class="col">Charla:  “No tengo idea qué carrera elegir”</p>
 			 	</div>
 			  	<div class="column3">
 			  		<img src="./img/i.png">
