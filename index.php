@@ -559,7 +559,7 @@
 						</p>
 						<div class="step-data">
 							<label class="icon-arrow-left">
-								<select name="ndia">
+								<select name="ndia" id="ndia">
 									<option>Día*</option>
 									<option value="1<">1</option>
 									<option value="2<">2</option>
@@ -595,7 +595,7 @@
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="nmes">
+								<select name="nmes" id="nmes">
 									<option value="Me">Mes*</option>
 									<option value="1">Enero</option>
 									<option value="2">Febrero</option>
@@ -612,7 +612,7 @@
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="nanio">
+								<select name="nanio" id"nanio">
 									<option>Año*</option>
 									<option value="1986">1986</option>
 									<option value="1987">1987</option>
