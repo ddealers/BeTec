@@ -523,13 +523,14 @@
 				<div class="step">
 					<div class="step-area genero">
 						<p class="info">TU GÉNERO</p>
+						<input type="hidden" name="genero" id="genero" value="Hombre">
 						<div class="choose">
-							<div class="option selected">
+							<div class="option selected" id="generoH">
 								<img src="./img/hombre.png" class="caballero">
 								<p>HOMBRE</p>
 							</div>
 							<p class="o">o</p>
-							<div class="option">
+							<div class="option" id="generoM">
 								<img src="./img/mujer.png" class="dama">
 								<p>MUJER</p>
 							</div>
