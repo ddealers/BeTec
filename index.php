@@ -845,7 +845,7 @@
 			<div class="registroT">
 				<h1>¡BIEN HECHO!</h1>
 				<h2>TU REGISTRO ESTÁ CASI TERMINADO.</h2>
-				<p>Ahora sólo sigue estas instrucciones:</p>
+				<p class="sigue">Ahora sólo sigue estas instrucciones:</p>
 				<img src="./img/img.png">
 				<ol>
 					<li><span>1.</span> Descarga la Carta Compromiso <span><a href="">aquí</a></span> llénala y que firmen tus papás.</li>
