@@ -66,6 +66,7 @@
 </style>
 <?php
 header('Content-Type: text/html; charset=utf-8');
+require('./sql/funciones.php');
 	//cadena encriptada
 $string = $_GET['s'];
 
@@ -74,19 +75,6 @@ $v = (isset($_GET['v'])) ? $_GET['v'] : '' ;
 
 //llave descriptar
 $key = 'BornToBeTec321_';
-
-function desencriptarURL($string, $key){
-	$result = '';
-	$string = base64_decode($string);
-	for($i=0; $i<strlen($string); $i++) {
-		$char = substr($string, $i, 1);
-		$keychar = substr($key, ($i % strlen($key))-1, 1);
-		$char = chr(ord($char)-ord($keychar));
-		$result.=$char;
-	}
-	return $result;
-}
-
 
 function validaMail($mail){
 	$mysqli = new mysqli('localhost','root','olamund0','test');

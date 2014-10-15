@@ -1,10 +1,81 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
+error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
+require('./sql/funciones.php');
 require('pdf/fpdf.php');
+/*function info(){
+	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$string = $_GET['s'];
+	$key = 'BornToBeTec321_';
+
+	$mail = desencriptarURL($string, $key);
+
+	if($mail){
+		$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
+		$v = $mysqli->query($q);
+
+		if($v){
+			if($v->num_rows > 0){
+				while ($row = $v->fetch_assoc()) {
+					$data = $row;
+				}
+
+				$idu = $data['id'];
+				$full_name = $data['nombre'];
+
+				$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
+				$vt = $mysqli->query($t);
+
+				if($vt){
+					if($vt->num_rows > 0){
+						while ($rows = $vt->fetch_assoc()) {
+							$info[] = $rows;
+						}
+					}
+
+					$tv1 = $info[0]['nombre'];
+					$tv2 = $info[1]['nombre'];
+					$tv3 = $info[2]['nombre'];
+					$ts1 = $info[3]['nombre'];
+				}
+			}
+		}
+	}
+}*/
 	class PDF extends FPDF
 	{
 		function Header()
 		{
+$mysqli = new mysqli('localhost','root','olamund0','test');
+$string = $_GET['s'];
+$key = 'BornToBeTec321_';
+$mail = desencriptarURL($string, $key);
+if($mail){
+$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
+$v = $mysqli->query($q);
+if($v){
+if($v->num_rows > 0){
+while ($row = $v->fetch_assoc()) {
+$data = $row;
+}
+$idu = $data['id'];
+$full_name = $data['nombre'];
+$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
+$vt = $mysqli->query($t);
+if($vt){
+if($vt->num_rows > 0){
+while ($rows = $vt->fetch_assoc()) {
+$info[] = $rows;
+}
+}
+$tv1 = $info[0]['nombre'];
+$tv2 = $info[1]['nombre'];
+$tv3 = $info[2]['nombre'];
+$ts1 = $info[3]['nombre'];
+}
+}
+}
+}
 			//cabecera
 			$this->Image('./img/impresora.png',77,12,6);
 			$this->SetFont('Arial','',8);
@@ -124,15 +195,15 @@ require('pdf/fpdf.php');
 				//Talleres Viernes
 			$this->SetY(60);
 			$this->SetX(-300);
-			$this->Cell(0,0, 'Juan Francisco Herrera Espinosa', 0,0,'C');
+			$this->Cell(0,0, $full_name, 0,0,'C');
 			$this->SetFont('Arial','B',8);
 			$this->SetY(75);
 			$this->SetX(-315);
-			$this->Cell(0,0, '1. Platica de Programas Internacionales', 0,0,'C');
+			$this->Cell(0,0, '1. '.$tv1, 0,0,'C');
 			$this->ln(7);
-			$this->Cell(69,0, '2. Platica de Asuntos Estudiantiles', 0,0,'C');
+			$this->Cell(69,0, '2. '.$tv2, 0,0,'C');
 			$this->ln(7);
-			$this->Cell(49,0, '3. Feria de Carreras', 0,0,'C');
+			$this->Cell(49,0, '3. '.$tv3, 0,0,'C');
 
 				//Luagr
 			$this->SetY(99);
@@ -153,15 +224,47 @@ require('pdf/fpdf.php');
 			$this->SetFont('Arial','B',8);
 			$this->SetY(75);
 			$this->SetX(-170);
-			$this->Cell(0,0, '1. Proyecto Integrador de la Escuela de Negocios', 0,0,'C');
+			$this->Cell(0,0, '1. '.$ts1, 0,0,'C');
 			$this->ln(10);
-			$this->Cell(220,0, '2. Proyecto Integrador de la Escuela de Medicina', 0,0,'C');
+			$this->Cell(220,0, '2. '.$ts1, 0,0,'C');
 
 
 			
 		}
 		function Footer()
 		{
+$mysqli = new mysqli('localhost','root','olamund0','test');
+$string = $_GET['s'];
+$key = 'BornToBeTec321_';
+$mail = desencriptarURL($string, $key);
+if($mail){
+$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
+$v = $mysqli->query($q);
+if($v){
+if($v->num_rows > 0){
+while ($row = $v->fetch_assoc()) {
+$data = $row;
+}
+$idu = $data['id'];
+$full_name = $data['nombre'];
+list($n1, $n2, $n3, $n4) = explode(' ', $full_name);
+
+$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
+$vt = $mysqli->query($t);
+if($vt){
+if($vt->num_rows > 0){
+while ($rows = $vt->fetch_assoc()) {
+$info[] = $rows;
+}
+}
+$tv1 = $info[0]['nombre'];
+$tv2 = $info[1]['nombre'];
+$tv3 = $info[2]['nombre'];
+$ts1 = $info[3]['nombre'];
+}
+}
+}
+}
 			$this->SetY(-188);
 			$this->SetX(-356);
 			$this->Image('./img/instrucciones.png', 8,112,8);
@@ -203,11 +306,11 @@ require('pdf/fpdf.php');
 			$this->SetX(-305);
 			$this->SetTextColor(0,0,0);
 			$this->SetFont('Arial','B',11);
-			$this->Cell(0,0,'- Platica de Progamas Internacionales.',0,0,'C');
+			$this->Cell(0,0,'- '.$tv1,0,0,'C');
 			$this->Ln(20);
-			$this->Cell(77,0,'- Platica de Asuntos Estudiantiles.',0,0,'C');
+			$this->Cell(77,0,'- '.$tv2,0,0,'C');
 			$this->Ln(20);
-			$this->Cell(60,0,'- Jardin de las Carreras.',0,0,'C');
+			$this->Cell(60,0,'- '.$tv3,0,0,'C');
 
 			//Agenda Sabado
 			$this->SetX(-201);
@@ -225,11 +328,11 @@ require('pdf/fpdf.php');
 			$this->SetX(-305);
 			$this->SetTextColor(0,0,0);
 			$this->SetFont('Arial','B',11);
-			$this->Text(17,235,'- Proyecto Integrador de la Escuela de ');
-			$this->Text(17,240,'Negocios, Ciencias Sociales y Humanidades.');
+			$this->Text(17,235,'- '.$ts1);
+			//$this->Text(17,240,'Negocios, Ciencias Sociales y Humanidades.');
 			$this->Ln(30);
-			$this->Text(17,265,'- Proyecto Integrador de la Escuela ');
-			$this->Text(17,270,'Nacional de Medicina.');
+			$this->Text(17,265,'- '.$ts1);
+			//$this->Text(17,270,'Nacional de Medicina.');
 
 			//Imagen Gafete
 			$this->SetY(-188);
@@ -238,8 +341,8 @@ require('pdf/fpdf.php');
 
 			$this->SetTextColor(26, 89, 184);
 			$this->SetFont('Arial','B',24);
-			$this->Text(132,195,'Francisco');
-			$this->Text(135,205,'Herrera');
+			$this->Text(132,195,$n2);
+			$this->Text(135,205,$n3);
 		}
 	}
 
