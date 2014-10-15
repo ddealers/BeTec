@@ -3,6 +3,275 @@ ini_set('display_errors', '0');
 $mysqli = new mysqli('localhost','root','olamund0','test');
 $response = 'false';
 
+$key = 'BornToBeTec321_';
+
+function encriptarURL($string, $key){
+	$result = '';
+	for($i=0; $i<strlen($string); $i++) {
+		$char = substr($string, $i, 1);
+		$keychar = substr($key, ($i % strlen($key))-1, 1);
+		$char = chr(ord($char)+ord($keychar));
+		$result.=$char;
+	}
+	return base64_encode($result);
+}
+
+$ur = encriptarURL($email, $key);
+$url = 'http://btec.dev/documentacion/?s='.$ur;
+
+$mail_FB = '
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Mail</title>
+</head>
+<style type="text/css">
+	a{
+		color: #00b7ff;
+	}
+	a:visited{
+		color: #00b7ff;
+	}
+	body{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 18px;
+		height: 100%;
+		width: 600px;
+	}
+	figure{
+		position: relative;
+		margin-left: 35%;
+		width: 147px;
+	}
+	img{
+		width: 100%;
+	}
+	h3{
+		text-align: center;
+		color: #424040;
+	}
+	p{
+		font-size: 0.8em;
+		text-align: justify;
+		padding-left: 10px;
+		padding-right: 30px;
+
+	}
+	p>strong{
+		color: #000;
+		font-size: 0.9em;
+	}
+	hr{
+		border: 0.5;
+		border-color: #000;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		position: relative;
+		left: 8px;
+		list-style: none;
+		display: inline;
+		font-size: 0.8em;
+		line-height: 20px;
+
+	}
+	footer{
+		text-align: center;
+		font-size: 0.8em;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	footer>h4{
+		margin-top: 20px;
+		margin-left: -15px;
+		margin-bottom: -1px;
+		line-height: 10px;
+		text-align: left;
+		font-size: 0.8em;
+
+	}
+	li:first-child{
+		border-width: 1px;
+		border-bottom: dashed;
+		border-color: #ccc;
+	}
+	.aviso{
+		line-height: 1px;
+	}
+	.cuadro{
+		border-top: 10px solid #fc2f7a;
+		background-color: #fff;
+	}
+	.lista_link{
+		position: relative;
+		float: right;
+		margin-right: 70px;
+	}
+</style>
+<body>
+	<div class="cuadro">
+	<figure>
+		<img src="http://btec.dev/img/logo.png" />
+	</figure>
+	<h3>Tu reservación para BORN TO BE TEC está casi completa.</h3>
+	<p>
+		Ingresa al siguiente link para subir tu <strong>Carta Compromiso</strong> correctamente llenada y
+		firmada por tus padres: <a href="'.$url.'">'.$url.'</a>.<br /><br />
+		Tienes hasta el 18 de noviembre de 2014 para realizar este proceso, de lo
+		contrario tu registro no podrá ser confirmado. ¡Date prisa que los lugares se
+		acaban!.
+	</p>
+	<br />
+	<p class="aviso">
+		<strong>¿No encuentras el formato? Descárgalo de aquí</strong>
+		<hr />
+		<ul>
+			<li>- Carta Compromiso <a href="http://bitl.ly/334ds" class="lista_link">http://bitl.ly/334ds</a></li>
+		</ul>
+	</p>
+	</div>
+	<footer>
+		<h4>TECNOLÓGICO DE MONTERREY</h4>
+		<p>
+			Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
+			duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
+			escríbenos a <a href="mailto:btec.mty@servicios.itesm.mx">btec.mty@servicios.itesm.mx</a>
+		</p>
+	</footer>
+</body>
+</html>
+';
+
+$mail_FA = '
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Mail</title>
+</head>
+<style type="text/css">
+	a{
+		color: #00b7ff;
+	}
+	a:visited{
+		color: #00b7ff;
+	}
+	body{
+		font-family: "Times New Roman", Times, serif;
+		font-size: 18px;
+		height: 100%;
+		width: 600px;
+	}
+	figure{
+		position: relative;
+		margin-left: 35%;
+		width: 147px;
+	}
+	img{
+		width: 100%;
+	}
+	h3{
+		text-align: center;
+		color: #424040;
+	}
+	p{
+		font-size: 0.8em;
+		text-align: justify;
+		padding-left: 10px;
+		padding-right: 30px;
+
+	}
+	p>strong{
+		color: #000;
+		font-size: 0.9em;
+	}
+	hr{
+		border: 0.5;
+		border-color: #000;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		position: relative;
+		left: 8px;
+		list-style: none;
+		display: inline;
+		font-size: 0.8em;
+		line-height: 20px;
+
+	}
+	footer{
+		text-align: center;
+		font-size: 0.8em;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+	footer>h4{
+		margin-top: 20px;
+		margin-left: -15px;
+		margin-bottom: -1px;
+		line-height: 10px;
+		text-align: left;
+		font-size: 0.8em;
+
+	}
+	li:first-child{
+		border-width: 1px;
+		border-bottom: dashed;
+		border-color: #ccc;
+	}
+	.aviso{
+		line-height: 1px;
+	}
+	.cuadro{
+		border-top: 10px solid #fc2f7a;
+		background-color: #fff;
+	}
+	.lista_link{
+		position: relative;
+		float: right;
+		margin-right: 70px;
+	}
+</style>
+<body>
+	<div class="cuadro">
+	<figure>
+		<img src="http://btec.dev/img/logo.png" />
+	</figure>
+	<h3>Tu reservación para BORN TO BE TEC está casi completa.</h3>
+	<p>
+		Ingresa al siguiente link para subir tu <strong>Carta Compromiso</strong> correctamente llenada y
+		firmada por tus padres, así como tu <strong>comprobante de depósito bancario </strong> por los
+		$500.00 pesos: <a href="'.$url.'">'.$url.'</a>.<br /><br />
+		Tienes hasta el 18 de noviembre de 2014 para realizar este proceso, de lo
+		contrario tu registro no podrá ser confirmado. ¡Date prisa que los lugares se
+		acaban!.
+	</p>
+	<br />
+	<p class="aviso">
+		<strong>¿No encuentras los formatos? Descárgalos de aquí</strong>
+		<hr />
+		<ul>
+			<li>- Carta Compromiso <a href="http://bitl.ly/334ds" class="lista_link">http://bitl.ly/334ds</a></li>
+			<li>- Ficha Bancaria   <a href="http://bitl.ly/2fd8ab" class="lista_link">http://bitl.ly/2fd8ab</a></li>
+		</ul>
+	</p>
+	</div>
+	<footer>
+		<h4>TECNOLÓGICO DE MONTERREY</h4>
+		<p>
+			Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
+			duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
+			escríbenos a <a href="mailto:btec.mty@servicios.itesm.mx">btec.mty@servicios.itesm.mx</a>
+		</p>
+	</footer>
+</body>
+</html>
+';
+
+
 //var_dump($_REQUEST);
 $genero  = $_POST['genero'];
 $nombre	 = $_POST['nombre'];
@@ -57,6 +326,11 @@ if($v){
 	$vw = $mysqli->query($qw);
 
 	if($v && $vp){
+		if($hotel == '0'){
+			mail($email, 'Completa tu registro', $mail_FB);
+		}elseif ($hotel == '1') {
+			mail($email, 'Completa tu registro', $mail_FA);
+		}
 		$response = 'true';
 	}else{
 		$response = 'false';
@@ -66,4 +340,5 @@ if($v){
 }
 
 echo $response;
+
 ?>
