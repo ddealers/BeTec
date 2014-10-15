@@ -38,8 +38,23 @@ $(document).ready(function(){
 		skrollr.menu.click(sel[0]);
 	});
 	$('header nav ul li a').on('click', function(e){
+		e.preventDefault();
 		$('#end').hide();
 	});
+
+	$('footer .aviso-legal').on('click', function(e){
+		e.preventDefault();
+		TweenMax.set('#aviso_legal',{display: 'block', opacity: 1, scale: 1});
+		TweenMax.from('#aviso_legal', 0.5, {opacity: 0, scale: 0.5, ease: Back.easeOut});
+	});
+
+	$('#aviso_legal .close').on('click', function(e){
+		e.preventDefault();
+		TweenMax.to('#aviso_legal', 0.5, {opacity: 0, scale: 0.5, ease: Back.easeOut, onComplete: function(){
+			TweenMax.set('#aviso_legal',{display: 'none'});
+		}});
+	});
+
 	//===== Form =====
 	var form_data = {};
 	var index_form = 0;
