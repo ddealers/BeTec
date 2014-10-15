@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.19)
 # Base de datos: test
-# Tiempo de GeneraciÛn: 2014-10-15 12:09:52 a.m. +0000
+# Tiempo de GeneraciÛn: 2014-10-15 09:51:36 p.m. +0000
 # ************************************************************
 
 
@@ -36,7 +36,7 @@ LOCK TABLES `carreras` WRITE;
 
 INSERT INTO `carreras` (`id`, `nombre`)
 VALUES
-	(1,'Lic. en Administraci√≥n y Estrategia de Negocios');
+	(1,'Lic. en Administraci&oacute;n y Estrategia de Negocios');
 
 /*!40000 ALTER TABLE `carreras` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2614,7 +2614,7 @@ DROP TABLE IF EXISTS `medios`;
 
 CREATE TABLE `medios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(150) NOT NULL DEFAULT '',
+  `nombre` varchar(150) CHARACTER SET utf8 NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -2897,7 +2897,7 @@ DROP TABLE IF EXISTS `preparatorias`;
 CREATE TABLE `preparatorias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_ciudad` int(11) NOT NULL,
-  `nombre` varchar(150) NOT NULL DEFAULT '',
+  `nombre` varchar(150) CHARACTER SET utf8 NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -2920,7 +2920,7 @@ DROP TABLE IF EXISTS `talleres`;
 CREATE TABLE `talleres` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dia` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
+  `nombre` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT '',
   `cupo` int(11) NOT NULL,
   `libres` int(5) NOT NULL,
   PRIMARY KEY (`id`)
@@ -2932,7 +2932,9 @@ LOCK TABLES `talleres` WRITE;
 INSERT INTO `talleres` (`id`, `dia`, `nombre`, `cupo`, `libres`)
 VALUES
 	(1,1,'Liderazgo',50,50),
-	(2,2,'Lic. en adminstraci√≥n y estrategia de negocios',50,50);
+	(2,2,'Lic. en admon. y estrategia de negocios',50,50),
+	(3,1,'Liderazgo 2',0,0),
+	(4,1,'Liderazgo 3',0,0);
 
 /*!40000 ALTER TABLE `talleres` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2972,21 +2974,38 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `genero` tinyint(1) NOT NULL COMMENT '0 = masculino, 1 = femenino',
-  `nombre` varchar(200) NOT NULL,
+  `nombre` varchar(200) CHARACTER SET utf8 NOT NULL DEFAULT '',
   `cumplea√±os` date NOT NULL,
-  `correo` varchar(200) NOT NULL,
-  `telefono` varchar(15) NOT NULL,
-  `celular` varchar(15) NOT NULL,
+  `correo` varchar(200) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `telefono` varchar(15) CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `celular` varchar(15) CHARACTER SET utf8 NOT NULL DEFAULT '',
   `id_estado` int(11) NOT NULL,
   `id_ciudad` int(11) NOT NULL,
   `id_prepa` int(11) NOT NULL,
-  `graduacion` varchar(10) NOT NULL,
+  `graduacion` varchar(10) CHARACTER SET utf8 NOT NULL DEFAULT '',
   `hospedaje` tinyint(1) NOT NULL COMMENT '0 = false, 1 = true',
   `acompana` tinyint(1) NOT NULL COMMENT '0 = false, 1 = true',
   `id_medio` int(11) NOT NULL,
+  `documentos` char(1) CHARACTER SET utf8 DEFAULT '0',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+
+# Volcado de tabla usuarios_documentos
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `usuarios_documentos`;
+
+CREATE TABLE `usuarios_documentos` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
+  `url_pago` varchar(100) DEFAULT '#',
+  `url_permiso` varchar(100) DEFAULT '#',
+  `tipo_foraneo` char(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 

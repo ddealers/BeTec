@@ -1,300 +1,186 @@
+<style type="text/css">
+	form{
+		background-color: #fff;
+		border-top: 10px solid #06ba4e;
+		font-size: 16px;
+		width: 600px;
+	}
+	fieldset{
+		text-align: center;
+		font-size: 1.2em;
+		font-weight: bold;
+		border: none;
+	}
+	label{
+		text-align: left;
+		font-size: 0.9em;
+		font-weight: bold;
+	}
+	input[type="file"]{
+		height: 25px;
+		width: 100%;
+	}
+	input[type='submit']{
+		border: none;
+		background-color: #5aaded;
+		height: 35px;
+		width: 100px;
+		cursor: pointer;
+		border-radius: 4px;
+		float: right;
+		color: white;
+		font-weight: bold;
+	}
+	input[type='submit']:hover{
+		background-color: #37a7fc;
+	}
+	span{
+		text-align: center;
+		position: relative;
+		display: block;
+		background-color: #5ccc8d;
+		font-style: italic;
+	}
+	.noactive{
+		background-color: #ccc!important;
+		color: black!important;
+		font-weight: normal!important;
+	}
+	.boleto{
+		background-color: #b33535;
+		color: white;
+		font-weight: bold;
+		height: 35px;
+		width: 100px;
+		cursor: pointer;
+		border-radius: 4px;
+		border:none;
+		float: left;
+		margin-left: 250px;
+		margin-top: 5%;
+
+	}
+	input[type="button"]:hover{
+		background-color: #d93c3c;
+	}
+</style>
 <?php
 header('Content-Type: text/html; charset=utf-8');
-require('pdf/fpdf.php');
-
+require('./sql/funciones.php');
+	//cadena encriptada
 $string = $_GET['s'];
+
+//guardo bien form
+$v = (isset($_GET['v'])) ? $_GET['v'] : '' ;
+
+//llave descriptar
 $key = 'BornToBeTec321_';
-
-function desencriptarURL($string, $key){
-	$result = '';
-	$string = base64_decode($string);
-	for($i=0; $i<strlen($string); $i++) {
-		$char = substr($string, $i, 1);
-		$keychar = substr($key, ($i % strlen($key))-1, 1);
-		$char = chr(ord($char)-ord($keychar));
-		$result.=$char;
-	}
-	return $result;
-}
-
 
 function validaMail($mail){
 	$mysqli = new mysqli('localhost','root','olamund0','test');
-	$res = false;
-	$q = "SELECT id, nombre, correo FROM usuarios WHERE correo = '$mail' ";
+	$res = array();
+	$q = "SELECT id, documentos FROM usuarios WHERE correo = '$mail' ";
 	$v = $mysqli->query($q);
 	if($v){
 		if($v->num_rows > 0){
-			$res = true;
+			while ($row = $v->fetch_assoc()) {
+				$inf = $row;
+			}
+			$res[0] = true;
+			$res[1] = $inf;
 		}else{
-			$res = false;
+			$res[0] = false;
 		}
 	}
 	return $res;
 }
 
-$mail = desencriptarURL($string, $key);
 
-//Generamos Boleto
-
-if(!validaMail($mail)){
-	//Si el mail existe 
-	/*$q = "SELECT usuarios.nombre, ";
+function validaDocs($idu){
+	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$respuesta = array();
+	$q = "SELECT * FROM usuarios_documentos WHERE id_usuario = '$idu' ";
 	$v = $mysqli->query($q);
+
 	if($v){
-		while ($row = $v->fetch_assoc()) {
-			$data[] = $row;
+		if($v->num_rows > 0){
+			while ($row = $v->fetch_assoc()) {
+				$info = $row;
+			}
 		}
-	}*/
-
-	class PDF extends FPDF
-	{
-		function Header()
-		{
-			//cabecera
-			$this->Image('./img/impresora.png',77,12,6);
-			$this->SetFont('Arial','',8);
-			$this->Cell(80);
-			$this->Cell(30,10,'imprimir y traer el dia del evento',0,0,'C');
-			$this->Ln(10);
-
-			$this->SetLineWidth(0.5);
-			$this->Cell(190, 90, '', 1,0,'B');
-			$this->Image('./img/logo.png',16,26,35);
-			$this->SetY(32);
-			$this->SetX(65);
-			$this->SetFont('Arial','B',25);
-			$this->Write(5, 'BORN TO BE TEC 2014');
-
-
-			//Lineas
-			$this->SetTextColor(207,207,207);
-			$this->SetFont('Arial','',7);
-			$this->SetY(50);
-			$this->SetX(15);
-			$this->Write(0, '- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ');
-			$this->SetFont('Arial','',5);
-			$this->SetY(30);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			$this->Ln(3);
-			$this->SetX(170);
-			$this->Write(1, '|');
-			
-			//Indicadores
-			$this->SetFont('Arial','',8);
-			$this->SetY(55);
-			$this->SetX(-355);
-			$this->Cell(0,0,'Participante:',0,0,'C');
-			$this->SetY(68);
-			$this->SetX(-345);
-			$this->Cell(0,0,'Talleres del Viernes:',0,0,'C');
-			$this->SetY(95);
-			$this->SetX(-362);
-			$this->Cell(0,0,'Lugar:',0,0,'C');
-			$this->SetY(68);
-			$this->SetX(-210);
-			$this->Cell(0,0,'Talleres de Sábado:',0,0,'C');
-			$this->SetY(90);
-			$this->SetX(-208);
-			$this->Cell(179,10,'Fecha:',0,0,'C');
-			$this->SetY(175);
-			$this->SetX(-210);
-			$this->Cell(175,-137,'http://borntobetec.mty.itesem.mx/',0,0,'C');
-
-			// Escuela
-			$this->Image('./img/tmty.png',165,98,30);
-
-			//Contenido Dinamico
-			$this->SetTextColor(0,0,0);
-			$this->SetFont('Arial','B',12);
-				//Talleres Viernes
-			$this->SetY(60);
-			$this->SetX(-300);
-			$this->Cell(0,0, 'Juan Francisco Herrera Espinosa', 0,0,'C');
-			$this->SetFont('Arial','B',8);
-			$this->SetY(75);
-			$this->SetX(-315);
-			$this->Cell(0,0, '1. Platica de Programas Internacionales', 0,0,'C');
-			$this->ln(7);
-			$this->Cell(69,0, '2. Platica de Asuntos Estudiantiles', 0,0,'C');
-			$this->ln(7);
-			$this->Cell(49,0, '3. Feria de Carreras', 0,0,'C');
-
-				//Luagr
-			$this->SetY(99);
-			$this->SetX(-326);
-			$this->SetFont('Arial','',7);
-			$this->Cell(0,0, '-Centro Estudiantil de Tecnológico de', 0,0,'C');
-			$this->Ln(3);
-			$this->Cell(56,0, 'Monterrey, Campus Monterrey.', 0,0,'C');
-				//Fecha
-			$this->SetY(99);
-			$this->SetX(-200);
-			$this->SetFont('Arial','',7);
-			$this->Cell(0,0, '- 21 de noviembre (14:30 horas)', 0,0,'C');
-			$this->Ln(3);
-			$this->Cell(190,0, '- 22 de noviembre (09:00 horas)', 0,0,'C');
-
-				//Talleres Sabado
-			$this->SetFont('Arial','B',8);
-			$this->SetY(75);
-			$this->SetX(-170);
-			$this->Cell(0,0, '1. Proyecto Integrador de la Escuela de Negocios', 0,0,'C');
-			$this->ln(10);
-			$this->Cell(220,0, '2. Proyecto Integrador de la Escuela de Medicina', 0,0,'C');
-
-
-			
-		}
-		function Footer()
-		{
-			$this->SetY(-188);
-			$this->SetX(-356);
-			$this->Image('./img/instrucciones.png', 8,112,8);
-			$this->SetFont('Arial','B',8);
-			$this->Cell(0,10,'Instrucciones:',0,0,'C');
-			$this->SetY(-185);
-			$this->SetX(-193);
-			$this->SetFont('Arial','',7);
-			$this->Cell(0,10, 'Una vez que presentes tu boleto en el registro, dobla la hoja a la mitad y después de izquierda a derecha para usar el diseño del recuadro de',0,0,'L');
-			$this->Ln(3);
-			$this->SetX(-193);
-			$this->Cell(0,10, 'abajo como gafete por el frente y contar por el reverso con los nombre de los talleres a los que te registraste.', 0,0,'L');
-
-			//Caja_Agenda
-			$this->SetY(125);
-			$this->SetX(-200);
-			$this->SetDrawColor(207,207,207);
-			$this->SetLineWidth(1);
-			$this->Cell(190, 160, '', 1,0,'B');
-			$this->Line(103, 125, 103, 285);
-
-			//Agenda Viernes
-			$this->SetX(-295);
-			$this->SetFont('Arial','B',20);
-			$this->Cell(0,16,'MI AGENDA',0,0,'C');
-			$this->Ln(5);
-			$this->SetTextColor(207,207,207);
-			$this->SetFont('Arial','B',17);
-			$this->Cell(90,19,'VIERNES',0,0,'C');
-			$this->Ln(20);
-			$this->SetFont('Arial','B',10);
-			$this->Cell(50,0,'Taller de 16:30 - 17:20',0,0,'C');
-			$this->Ln(20);
-			$this->Cell(50,0,'Taller de 17:40 - 18:30',0,0,'C');
-			$this->Ln(20);
-			$this->Cell(80,0,'Cierre primer dia / Cena de 19:40 - 21:00',0,0,'C');
-			
-			$this->SetY(-141);
-			$this->SetX(-305);
-			$this->SetTextColor(0,0,0);
-			$this->SetFont('Arial','B',11);
-			$this->Cell(0,0,'- Platica de Progamas Internacionales.',0,0,'C');
-			$this->Ln(20);
-			$this->Cell(77,0,'- Platica de Asuntos Estudiantiles.',0,0,'C');
-			$this->Ln(20);
-			$this->Cell(60,0,'- Jardin de las Carreras.',0,0,'C');
-
-			//Agenda Sabado
-			$this->SetX(-201);
-			$this->SetTextColor(207,207,207);
-			$this->SetFont('Arial','B',17);
-			$this->Cell(85,30,'SABADO',0,0,'C');
-			$this->Ln(30);
-			$this->SetFont('Arial','B',10);
-			$this->Cell(50,0,'Taller de 09:00 - 11:30',0,0,'C');
-			$this->Ln(30);
-			$this->Cell(50,0,'Taller de 11:45 - 14:15',0,0,'C');
-			$this->Ln(20);
-
-			$this->SetY(-65);
-			$this->SetX(-305);
-			$this->SetTextColor(0,0,0);
-			$this->SetFont('Arial','B',11);
-			$this->Text(17,235,'- Proyecto Integrador de la Escuela de ');
-			$this->Text(17,240,'Negocios, Ciencias Sociales y Humanidades.');
-			$this->Ln(30);
-			$this->Text(17,265,'- Proyecto Integrador de la Escuela ');
-			$this->Text(17,270,'Nacional de Medicina.');
-
-			//Imagen Gafete
-			$this->SetY(-188);
-			$this->SetX(-356);
-			$this->Image('./img/gafete.png', 105,130,90);
-
-			$this->SetTextColor(26, 89, 184);
-			$this->SetFont('Arial','B',24);
-			$this->Text(132,195,'Francisco');
-			$this->Text(135,205,'Herrera');
+		if($info['tipo_foraneo'] == '0' && $info['url_permiso'] == '#' && $info['url_pago'] == '#'){
+			$respuesta['estatus'] = 'true';
+			$respuesta['docs'] = 'false';
+			$respuesta['hotel'] = 'false';
+			$respuesta['v'] = 'no';
+		}elseif($info['tipo_foraneo'] == '1' && ($info['url_pago'] == '#' || $info['url_permiso'] == '#')) {
+			$respuesta['estatus'] = 'true';
+			$respuesta['docs'] = 'false';
+			$respuesta['hotel'] = 'true';
+			$respuesta['v'] = 'no';
+		}elseif($info['url_pago'] != '#' || $info['url_permiso'] != '#'){
+			$respuesta['estatus'] = 'boleto';
+			$respuesta['v'] = 'ok';
 		}
 	}
+	return $respuesta;
+}
 
-	$pdf = new PDF();
-	$pdf->AliasNbPages();
-	$pdf->AddPage();
-	$pdf->SetFont('Times','',12);
-	$pdf->Output();
-}else{
+$mail = desencriptarURL($string, $key);
+$in = validaMail($mail);
+$idu = $in[1]['id'];
+
+$respuesta = validaDocs($idu);
+
+
+//Generamos Boleto
+$correcto = "<span>Se guardo correctamente tu información.</span><br />";
+$nll = '';
+$bolet = "<a href='boleto.php?s=".$string."'><input type='button' value='Generar Boleto' class='boleto'/></a>";
+$class = 'noactive';
+
+$correcto = ($v == 'ok') ? $correcto : $nll ;
+$bolet = ($v == 'ok' || $respuesta['v'] == 'ok') ? $bolet : $nll;
+$class = ($v == 'ok') ? $class : $nll;
+
+//Forms
+$form_FB = "
+<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
+	<fieldset>Sube tu documentación</fieldset>
+	".$correcto."
+	<label>Carta Compromiso</label><br />
+	<input type='hidden' name='string' value='".$string."' />
+	<input type='hidden' name='idu' value='".$idu."' />
+	<input type='file' name='carta' />
+	<br />
+	<label>Ficha Bancaria</label><br />
+	<input type='file' name='banco' /><br />
+	<input type='submit' value='Guardar' class='".$class."'/>
+	".$bolet."
+</form>
+";
+
+$form_FA = "
+<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
+	<fieldset>Sube tu documentación</fieldset>
+	".$correcto."
+	<label>Carta Compromiso</label><br />
+	<input type='hidden' name='string' value='".$string."' />
+	<input type='hidden' name='idu' value='".$idu."' />
+	<input type='file' name='carta' />
+	<br />
+	<input type='submit' value='Guardar' class='".$class."'/>
+	".$bolet."
+</form>
+";
+
+if($respuesta['estatus'] == 'true' && $respuesta['docs'] == 'false' && $respuesta['hotel'] == 'false'){
+	echo $form_FA;
+}elseif ($respuesta['estatus'] == 'true' && $respuesta['docs'] == 'false' && $respuesta['hotel'] == 'true') {
+	echo $form_FB;
+}elseif ($respuesta['estatus'] == 'boleto') {
+	echo $bolet;
+}elseif($respuesta['estatus'] == 'false'){
 	echo "<h1>Lo sentimos, este link ha expirado.</h1>";
 }
 
