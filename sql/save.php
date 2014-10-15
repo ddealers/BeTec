@@ -19,14 +19,14 @@ function encriptarURL($string, $key){
 $ur = encriptarURL($email, $key);
 $url = 'http://btec.dev/documentacion/?s='.$ur;
 
-$mail_FB = '
+$mail_FB = "
 <!DOCTYPE html>
-<html lang="es">
+<html lang='es'>
 <head>
-	<meta charset="UTF-8">
+	<meta charset='UTF-8'>
 	<title>Mail</title>
 </head>
-<style type="text/css">
+<style type='text/css'>
 	a{
 		color: #00b7ff;
 	}
@@ -34,7 +34,7 @@ $mail_FB = '
 		color: #00b7ff;
 	}
 	body{
-		font-family: "Times New Roman", Times, serif;
+		font-family: 'Times New Roman', Times, serif;
 		font-size: 18px;
 		height: 100%;
 		width: 600px;
@@ -111,24 +111,24 @@ $mail_FB = '
 	}
 </style>
 <body>
-	<div class="cuadro">
+	<div class='cuadro'>
 	<figure>
-		<img src="http://btec.dev/img/logo.png" />
+		<img src='http://btec.dev/img/logo.png' />
 	</figure>
 	<h3>Tu reservación para BORN TO BE TEC está casi completa.</h3>
 	<p>
 		Ingresa al siguiente link para subir tu <strong>Carta Compromiso</strong> correctamente llenada y
-		firmada por tus padres: <a href="'.$url.'">'.$url.'</a>.<br /><br />
+		firmada por tus padres: <a href='".$url."'>".$url."</a>.<br /><br />
 		Tienes hasta el 18 de noviembre de 2014 para realizar este proceso, de lo
 		contrario tu registro no podrá ser confirmado. ¡Date prisa que los lugares se
 		acaban!.
 	</p>
 	<br />
-	<p class="aviso">
+	<p class='aviso'>
 		<strong>¿No encuentras el formato? Descárgalo de aquí</strong>
 		<hr />
 		<ul>
-			<li>- Carta Compromiso <a href="http://bitl.ly/334ds" class="lista_link">http://bitl.ly/334ds</a></li>
+			<li>- Carta Compromiso <a href='http://bitl.ly/334ds' class='lista_link'>http://bitl.ly/334ds</a></li>
 		</ul>
 	</p>
 	</div>
@@ -137,21 +137,21 @@ $mail_FB = '
 		<p>
 			Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
 			duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
-			escríbenos a <a href="mailto:btec.mty@servicios.itesm.mx">btec.mty@servicios.itesm.mx</a>
+			escríbenos a <a href='mailto:btec.mty@servicios.itesm.mx'>btec.mty@servicios.itesm.mx</a>
 		</p>
 	</footer>
 </body>
 </html>
-';
+";
 
-$mail_FA = '
+$mail_FA = "
 <!DOCTYPE html>
-<html lang="es">
+<html lang='es'>
 <head>
-	<meta charset="UTF-8">
+	<meta charset='UTF-8'>
 	<title>Mail</title>
 </head>
-<style type="text/css">
+<style type='text/css'>
 	a{
 		color: #00b7ff;
 	}
@@ -159,7 +159,7 @@ $mail_FA = '
 		color: #00b7ff;
 	}
 	body{
-		font-family: "Times New Roman", Times, serif;
+		font-family: 'Times New Roman', Times, serif;
 		font-size: 18px;
 		height: 100%;
 		width: 600px;
@@ -236,26 +236,26 @@ $mail_FA = '
 	}
 </style>
 <body>
-	<div class="cuadro">
+	<div class='cuadro'>
 	<figure>
-		<img src="http://btec.dev/img/logo.png" />
+		<img src='http://btec.dev/img/logo.png' />
 	</figure>
 	<h3>Tu reservación para BORN TO BE TEC está casi completa.</h3>
 	<p>
 		Ingresa al siguiente link para subir tu <strong>Carta Compromiso</strong> correctamente llenada y
 		firmada por tus padres, así como tu <strong>comprobante de depósito bancario </strong> por los
-		$500.00 pesos: <a href="'.$url.'">'.$url.'</a>.<br /><br />
+		$500.00 pesos: <a href='".$url."'>".$url."</a>.<br /><br />
 		Tienes hasta el 18 de noviembre de 2014 para realizar este proceso, de lo
 		contrario tu registro no podrá ser confirmado. ¡Date prisa que los lugares se
 		acaban!.
 	</p>
 	<br />
-	<p class="aviso">
+	<p class='aviso'>
 		<strong>¿No encuentras los formatos? Descárgalos de aquí</strong>
 		<hr />
 		<ul>
-			<li>- Carta Compromiso <a href="http://bitl.ly/334ds" class="lista_link">http://bitl.ly/334ds</a></li>
-			<li>- Ficha Bancaria   <a href="http://bitl.ly/2fd8ab" class="lista_link">http://bitl.ly/2fd8ab</a></li>
+			<li>- Carta Compromiso <a href='http://bitl.ly/334ds' class='lista_link'>http://bitl.ly/334ds</a></li>
+			<li>- Ficha Bancaria   <a href='http://bitl.ly/2fd8ab' class='lista_link'>http://bitl.ly/2fd8ab</a></li>
 		</ul>
 	</p>
 	</div>
@@ -264,12 +264,12 @@ $mail_FA = '
 		<p>
 			Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
 			duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
-			escríbenos a <a href="mailto:btec.mty@servicios.itesm.mx">btec.mty@servicios.itesm.mx</a>
+			escríbenos a <a href='mailto:btec.mty@servicios.itesm.mx'>btec.mty@servicios.itesm.mx</a>
 		</p>
 	</footer>
 </body>
 </html>
-';
+";
 
 
 //var_dump($_REQUEST);
