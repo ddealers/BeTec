@@ -35,8 +35,8 @@
 		<div class="social">
 			<a data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0" data-menu-top="600p" href="#registro"><img src="./img/registro_boton.png"/></a>
 			<div class="rs">
-				<a href="#" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/face.png"></a>
-				<a href="#" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/tw.png"></a>
+				<a href="https://www.facebook.com/BorntoBeTEC" target="_blank" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/face.png"></a>
+				<a href="https://twitter.com/BorntoBeTEC" target="_blank" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/tw.png"></a>
 			</div>
 		</div>
 	</header>
@@ -408,13 +408,19 @@
 			<h1>SEDE</h1>
 			<h2>BORN TO BE TEC ES LLEVADO A <br> CABO EN EL TECNOLÓGICO DE <br> MONTERREY, CAMPUS MONTERREY,<br> <span> UBICADO EN AV. EUGENIO GARZA SADA <br>#2501. </span> </h2>
 			<div class="image">
-				<img src="./img/circle1.png" class="uno">
+				<a target="_blank" href="https://www.google.com.mx/maps/place/Tecnol%C3%B3gico+de+Monterrey/@25.651565,-100.28954,15z/data=!4m2!3m1!1s0x0:0xab5b4cc298e6fe08">
+					<img src="./img/circle1.png" class="uno">
+				</a>
 				<img src="./img/circle2.png" class="dos">
 				<img src="./img/circle3.png" class="tres">
 				<img src="./img/circle4.png" class="cuatro">
 				<img src="./img/circle5.png" class="cinco">
-				<img src="./img/circle6.png" class="seis">
-				<img src="./img/circle7.png" class="siete">
+				<a target="_blank" href="https://www.google.com.mx/maps/place/Centro+Estudiantil,+Luis+Elizondo,+Tecnol%C3%B3gico+de+Monterrey,+Tecnol%C3%B3gico,+64849+Monterrey,+NL/@25.6486964,-100.2897986,17z/data=!3m1!4b1!4m2!3m1!1s0x8662bfb96b8bc3c9:0x227db37e58a10fe1">
+					<img src="./img/circle6.png" class="seis">
+				</a>
+				<a target="_blank" href="https://www.google.com.mx/maps/place/Residencias+III,+Av+Fernando+Garc%C3%ADa+Roel,+Tecnol%C3%B3gico+de+Monterrey,+Tecnol%C3%B3gico,+Monterrey,+NL/@25.6535164,-100.290541,17z/data=!3m1!4b1!4m2!3m1!1s0x8662bfc77e813f3b:0xc8e774422e4056d0">
+					<img src="./img/circle7.png" class="siete">
+				</a>
 			</div>	
 		</article>
 	</section>
@@ -427,13 +433,13 @@
 					<p>Llena el siguiente formulario con todos tus datos, asegúrate de contar con la<br> Carta Compromiso correctamente llenada y firmada por tus papás. Si aún no la<br> tienes, aquí te facilitamos el formato, ¡descárgalo! <br><br> Si eres foráneo, descarga el formato de referencias bancarias para realizar tu<br> pago, deposita en el banco de tu preferencia y pide que agreguen tu nombre<br> a la referencia para que puedas subirla escaneada al registro.</p>
 				</div>
 			 	<div class="column3">
-			 		<a href="#descarga">
+			 		<a target="_blank" href="./download/Formato_CuentaBancaria.jpg" download="Formato_CuentaBancaria.jpg">
 			 			<img src="./img/descarga.png">
 			 			<p>Descargar formato<br> de referencias bancarias</p>
 			 		</a>
 			 	</div>
 			  	<div class="column3">
-			  		<a href="#descarga">
+			  		<a target="_blank" href="./download/FormatodeCartaCompromiso_2014_BTEC.pdf" download="FormatodeCartaCompromiso_2014_BTEC.pdf">
 			  			<img src="./img/descarga.png">
 			  			<p>Descargar formato de<br> Carta Compromiso</p>
 			  		</a>
@@ -555,9 +561,9 @@
 							<img class="lapiz"src="./img/lapiz.png">
 						</p>
 						<div class="step-data">
-							<input type="text" placeholder="Nombre(s)*" name="nombre" id="nombre">
-							<input type="text" placeholder="Apellido paterno*" name="apaterno" id="apaterno">
-							<input type="text" placeholder="Apellido materno*" name="amaterno" id="amaterno">
+							<input type="text" placeholder="Nombre(s)*" name="nombre" id="nombre" />
+							<input type="text" placeholder="Apellido paterno*" name="apaterno" id="apaterno" />
+							<input type="text" placeholder="Apellido materno*" name="amaterno" id="amaterno" />
 						</div>
 					</div>
 					<div class="step-area cumple">
@@ -568,16 +574,16 @@
 						<div class="step-data">
 							<label class="icon-arrow-left">
 								<select name="ndia" id="ndia">
-									<option>Día*</option>
-									<option value="1<">1</option>
-									<option value="2<">2</option>
-									<option value="3<">3</option>
-									<option value="4<">4</option>
-									<option value="5<">5</option>
-									<option value="6<">6</option>
-									<option value="7<">7</option>
-									<option value="8<">8</option>
-									<option value="9<">9</option>
+									<option value="">Día*</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
 									<option value="10">10</option>
 									<option value="11">11</option>
 									<option value="12">12</option>
@@ -604,7 +610,7 @@
 							</label>
 							<label class="icon-arrow-left">
 								<select name="nmes" id="nmes">
-									<option value="Me">Mes*</option>
+									<option value="">Mes*</option>
 									<option value="1">Enero</option>
 									<option value="2">Febrero</option>
 									<option value="3">Marzo</option>
@@ -620,8 +626,8 @@
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="nanio" id"nanio">
-									<option>Año*</option>
+								<select name="nanio" id="nanio">
+									<option value="">Año*</option>
 									<option value="1986">1986</option>
 									<option value="1987">1987</option>
 									<option value="1988">1988</option>
@@ -645,10 +651,10 @@
 							<img class="lapiz"src="./img/tel.png">
 						</p>
 						<div class="step-data">
-							<input type="email" placeholder="Correo electrónico*" name="email" required>
-							<input type="tel" placeholder="Lada*" name="lada" required>
-							<input type="tel" placeholder="Teléfono fijo*" name="tel" required>
-							<input type="tel" placeholder="Celular*" name="cel" required>
+							<input type="email" placeholder="Correo electrónico*" name="email" id="email" >
+							<input type="tel" placeholder="Lada*" name="lada" id="lada" >
+							<input type="tel" placeholder="Teléfono fijo*" name="tel" id="tel" >
+							<input type="tel" placeholder="Celular*" name="cel" id="cel" >
 						</div>
 					</div>
 					<div class="step-area carreras">
@@ -658,17 +664,17 @@
 						</p>
 						<div class="step-data">
 							<label class="icon-arrow-left">
-								<select name="carrera1" class="option">
+								<select name="carrera1" id="carrera1" class="option">
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="carrera2" class="option">
+								<select name="carrera2" id="carrera2" class="option">
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="carrera3" class="option">
+								<select name="carrera3" id="carrera3" class="option">
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
@@ -685,7 +691,7 @@
 						</p>
 						<div class="step-data">
 							<label class="icon-arrow-left">
-								<select name="estado" class="option" onchange="estadoCity(this,'ciudadMX')">
+								<select name="estado" id="estado" class="option" onchange="estadoCity(this,'ciudadMX')">
 									<?php echo selectEstados(); ?>
 								</select>
 							</label>
@@ -708,7 +714,7 @@
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="gradua" class="option inputPrepa">
+								<select name="gradua" id="gradua" class="option inputPrepa">
 									<option>Fecha esperada de graduación*</option>
 									<option value="2014">2014</option>
 									<option value="2015">2015</option>
@@ -758,17 +764,14 @@
 								</div>
 							</div>
 							<label class="icon-arrow-left">
-								<select name="parentesco" class="option">
-									<option>Parentesco*</option>
+								<select name="parentesco" id="parentesco" class="option">
+									<option value="">Parentesco*</option>
 									<option value="1">Madre</option>
 									<option value="2">Padre</option>
-									<option value="3">Hermano Mayor</option>
-									<option value="4">Hermana Mayor</option>
-									<option value="5">Amig@</option>
 
 								</select>
 							</label>
-							<input type="text" placeholder="Nombre completo*" name="nomcomp" required>
+							<input type="text" placeholder="Nombre completo*" name="nomcomp" id="nomcomp">
 						</div>
 					</div>
 				</div>
@@ -782,17 +785,17 @@
 						<div class="step-data">
 							<p>Elige los tres talleres a los que quieres asistir el viernes.</p>
 							<label class="icon-arrow-left">
-								<select name="vopt1" class="option">
+								<select name="vopt1" id="vopt1" class="option">
 									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="vopt2" class="option">
+								<select name="vopt2" id="vopt2" class="option">
 									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="vopt3" class="option">
+								<select name="vopt3" id="vopt3" class="option">
 									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
@@ -807,7 +810,7 @@
 						<div class="step-data">
 							<p>Elige el taller al que quieres asistir el sábado.</p>
 							<label class="icon-arrow-left">
-								<select name="sopt" class="option">
+								<select name="sopt" id="sopt" class="option">
 									<?php echo selectTalleresS(); ?>
 								</select>
 							</label>
@@ -821,7 +824,7 @@
 						<div class="step-data">
 							<p>¿Cómo te enteraste del evento?</p>
 							<label class="icon-arrow-left">
-								<select name="evento" class="option eve">
+								<select name="evento" id="evento" class="option eve">
 									<?php echo selectEventos(); ?>
 								</select>
 							</label>
@@ -869,8 +872,8 @@
 				<!-- ========================= REGISTRO TERMINADO PASO 3-->
 					<!--p>Enviaremos a tu correo una confirmación, sólo tendrás que descargarla y presentarla impresa el día del evento junto con tu identificación oficial.<br><br>¡Te esperamos en BORN TO BE TEC 2014!</p-->
 				<div class="redesS">
-					<a href=""></a>
-					<a href="" class="t"></a>
+					<a href="#"></a>
+					<a href="#" class="t"></a>
 					<p>¡COMPARTE EN REDES SOCIALES!</p>
 					<!--p class="siguiente">SIGUIENTE</p-->
 				</div>
@@ -919,10 +922,10 @@
 	<footer>
 		<div>
 			<img src="./img/tec-logo.png">
-			<p>Tecnológico de Monterrey</p>
-			<a href="#aviso_legal">Aviso Legal</a>
+			<a href="http://www.itesm.mx/" class="tec"><p>Tecnológico de Monterrey</p></a>
+			<a class="aviso-legal" href="#aviso_legal">Aviso Legal</a>
 		</div>
-		<a class="icon-help"></a>
+		<a href="#faq" data-menu-top="500p" class="icon-help"></a>
 	</footer>
 </body>
 </html>

@@ -474,8 +474,8 @@ footer
 				color #9d9d9d
 				margin-bottom  1vh
 			img
-				display: list-item;
-				margin-left: 50px;
+				display block
+				margin auto
 			form
 				.step
 					size 100% 100%
@@ -544,7 +544,8 @@ footer
 									text-align center
 									img
 										padding-top 10%
-										padding-left 100px
+										display block
+										margin auto
 									p
 										color #727272
 									&.selected
@@ -559,7 +560,7 @@ footer
 									background #f5f4f4
 									box-shadow 1px 1px 5px #ccc
 						&.cumple
-							margin-left 10vw
+							margin-left 4vw
 							.step-data
 								margin-left 2vw
 						&.contacto
@@ -576,8 +577,12 @@ footer
 							select
 								width 18vw
 						&.prepa
+							width 30vw
+							margin-left 2vw
+							label
+								width 100%
 							select
-								width 23vw
+								width 100%
 						&.compania
 							label
 								width 11vw
@@ -594,19 +599,22 @@ footer
 									width 100%
 									padding-right 3vw
 						&.sabado
-							width 35vw
-							margin-left: -10px;
-							margin-top: 19px;
-							padding-bottom: 16px;
+							width 30vw
+							margin-left 1vw
+							margin-top 2vw
+							padding-bottom 1vw
 							label
 								width 100%
 								select
 									width 100%
 									padding-right 3vw
-						select.option.eve
-							width 235px
-							.info
-								width 15vw
+						&.evento
+							width 30vw
+							margin-left 1vw
+							select.option.eve
+								width 235px
+								.info
+									width 15vw
 						&.acepto
 							.step-data
 								font-size 0.8vw
@@ -713,7 +721,117 @@ footer
 			padding-left: 50px;
 			height: 100px;
 			margin-left: 500px;
-				/*
+
+/** CARGAR DOCUMENTOS jok3r**/
+
+section.content
+	margin-top -30px
+	margin-left: 120px;
+	//background-color #fafafa
+	width  100%
+	article
+		h1
+			top -6.6vw
+			background #43b9f0
+			padding 1vw 2.1vw
+			left -7vw
+		span
+			font-size 0.7em
+			text-align left
+			display block
+			max-width 250px
+			margin-left -80px
+			margin-top 12px
+			color #c9c9c9
+		h3
+			text-transform: uppercase
+			color #4D4D4D
+			margin-left -80px
+			margin-top 30px
+			line-height 1px
+		
+		div.evento
+			display inline-block
+			float right
+			margin: -50px 0 0 300px;
+			color: #4d4d4d;
+			position: absolute;
+			width 100%
+			span.even
+				display inline-block
+				margin-left 1px!important
+		div.acciones
+			display inline
+			float left
+			margin-left -120px
+			.hecho
+				margin-top 30px!important
+				display inline-block
+				figure
+					width 100%
+				img
+					width 60px
+				span, h4
+					float left
+					margin-left 120px
+					margin-top -60px
+					display block
+				h4
+					margin-top -40px
+					font-weight normal
+		div.pendiente
+			display: inline;
+			float: right;
+			margin-left: 300px;
+			position: absolute;
+			margin-top: -97px;
+			figure
+				width 100%
+			img
+				width 62px
+			span, h4
+				float left
+				margin-left: 110px;
+				margin-top: -57px;
+				display inline
+			h4
+				margin-top -40px
+				font-weight normal
+				width 100%
+			input[type='file']
+				margin-left 110px
+/*
+.foot
+	background-color: #858585
+	display: inline-block
+	max-height 40px
+	height 40px
+	position: fixed;
+	margin: 639px 0 0 0px;
+	max-width: 100%!important;
+	width: 1280px;
+	figure
+		margin: 5px 0 0 10px;
+	ul
+		display: inline;
+		width: 100%;
+		float: left;
+		color #fff
+		li
+			list-style: none;
+			margin-top: -20px;
+			margin-left: 100px;
+			a
+				margin-left 100px!important
+*/
+			
+		
+	
+
+	
+				
+
+/*
 /* =========================== LOAD DOCUMENTS */
 /*
 section#load_documents

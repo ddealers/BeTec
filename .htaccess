@@ -30,3 +30,8 @@ Options All -Indexes
 #ServerMail
 ServerSignature EMail
 SetEnv SERVER_ADMIN support@digitaldealers.mx
+
+
+#Quitar ext .php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
