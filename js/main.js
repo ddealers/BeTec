@@ -148,7 +148,7 @@ $(document).ready(function(){
 				console.log(form_data);
 				$.ajax({
 					type: 'POST',
-					url: '../sql/save.php',
+					url: 'sql/save.php',
 					data:form_data,
 					success: function(response){
 						if(response == 'true'){
@@ -295,7 +295,7 @@ function estadoCity(s,id){
 	var opc = 'estadoCity';
 	$.ajax({
 		type: 'GET',
-		url: '../sql/funciones.php',
+		url: 'sql/funciones.php',
 		data: {opc:opc, est:est},
 		success: function(response){
 			if(id != undefined){
@@ -314,7 +314,7 @@ function citySchool(s,id){
 	var opc = 'citySchool';
 	$.ajax({
 		type: 'GET',
-		url: '../sql/funciones.php',
+		url: 'sql/funciones.php',
 		data: {opc:opc, idc:idc},
 		success: function(response){
 			if(id != undefined){

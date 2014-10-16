@@ -1,8 +1,12 @@
 <?php
-
+if(curPageName() == 'funciones.php'){
+	require_once("../config.php");	
+}else{
+	require_once("config.php");
+}
 if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 	$est = $_GET['est'];
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$prim = "<option value=''>Elije</option>";
 	if(isset($est) AND $est != NULL){
 		$q = "SELECT id, nombre FROM ciudades WHERE estado_id = $est";
@@ -17,7 +21,7 @@ if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 }elseif (isset($_GET['opc']) && $_GET['opc'] == 'citySchool') {
 	
 	$idc = $_GET['idc'];
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$prim = "<option value=''>Elije</option>";
 
 	if(isset($idc) && $idc != NULL){
@@ -32,9 +36,11 @@ if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 	}
 		echo $prim . $listado;
 }
-
+function curPageName() {
+ return substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+}
 function cupoTaller(){
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$listado = "<option value='#'>Elije un taller</option>";
 	$q = "SELECT id, nombre FROM talleres WHERE libres > 0";
 	$v = $mysqli->query($q);
@@ -49,7 +55,7 @@ function cupoTaller(){
 }
 
 function selectEstados(){
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$listado = "<option value='#'>Elije tu estado</option>";
 	$q = "SELECT id, nombre FROM estados";
 	$v = $mysqli->query($q);
@@ -64,7 +70,7 @@ function selectEstados(){
 }
 
 function selectCarreras(){
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$listado = "<option value=''>Elije un opción</option>";
 	$q = "SELECT * FROM carreras";
 	$v = $mysqli->query($q);
@@ -80,7 +86,7 @@ function selectCarreras(){
 }
 
 function selectTalleresV(){
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$listado = "<option value=''>Elije un taller</option>";
 	$q = "SELECT id, nombre FROM talleres WHERE dia = 1 ";
 	$v = $mysqli->query($q);
@@ -95,7 +101,7 @@ function selectTalleresV(){
 }
 
 function selectTalleresS(){
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$listado = "<option value=''>Elije un taller</option>";
 	$q = "SELECT id, nombre FROM talleres WHERE dia = 2 ";
 	$v = $mysqli->query($q);
@@ -110,7 +116,7 @@ function selectTalleresS(){
 }
 
 function selectEventos(){
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$listado = "<option value=''>Elije un medio</option>";
 	$q = "SELECT * FROM medios ";
 	$v = $mysqli->query($q);

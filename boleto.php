@@ -1,6 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
+require_once("config.php");
 require('./sql/funciones.php');
 require('pdf/fpdf.php');
 /*function info(){
@@ -46,7 +47,7 @@ require('pdf/fpdf.php');
 	{
 		function Header()
 		{
-$mysqli = new mysqli('localhost','root','olamund0','test');
+$mysqli = new mysqli(HOST,USR,PWD,DB);
 $string = $_GET['s'];
 $key = 'BornToBeTec321_';
 $mail = desencriptarURL($string, $key);
@@ -233,7 +234,7 @@ $ts1 = $info[3]['nombre'];
 		}
 		function Footer()
 		{
-$mysqli = new mysqli('localhost','root','olamund0','test');
+$mysqli = new mysqli(HOST,USR,PWD,DB);
 $string = $_GET['s'];
 $key = 'BornToBeTec321_';
 $mail = desencriptarURL($string, $key);

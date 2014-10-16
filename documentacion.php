@@ -66,6 +66,7 @@
 </style>
 <?php
 header('Content-Type: text/html; charset=utf-8');
+require_once("config.php");
 require('./sql/funciones.php');
 	//cadena encriptada
 $string = $_GET['s'];
@@ -77,7 +78,7 @@ $v = (isset($_GET['v'])) ? $_GET['v'] : '' ;
 $key = 'BornToBeTec321_';
 
 function validaMail($mail){
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$res = array();
 	$q = "SELECT id, documentos FROM usuarios WHERE correo = '$mail' ";
 	$v = $mysqli->query($q);
@@ -97,7 +98,7 @@ function validaMail($mail){
 
 
 function validaDocs($idu){
-	$mysqli = new mysqli('localhost','root','olamund0','test');
+	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$respuesta = array();
 	$q = "SELECT * FROM usuarios_documentos WHERE id_usuario = '$idu' ";
 	$v = $mysqli->query($q);

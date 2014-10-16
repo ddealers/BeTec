@@ -1,10 +1,11 @@
 <?php
+require_once("../config.php");	
 //variales FORM
 $hora = date('YmdHms');
 $s = $_POST['string'];
 $idu = $_POST['idu'];
 $res = false;
-$mysqli = new mysqli('localhost','root','olamund0','test');
+$mysqli = new mysqli(HOST,USR,PWD,DB);
 
 	//Mover
 	if(isset($_FILES['carta']) && $_FILES['carta'] != NULL){

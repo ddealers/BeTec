@@ -1,7 +1,8 @@
 <?php
 ini_set('display_errors', '0');
 setlocale(LC_ALL,"es_ES");
-$mysqli = new mysqli('localhost','root','olamund0','test');
+require_once("../config.php");	
+$mysqli = new mysqli(HOST,USR,PWD,DB);
 
 $response = 'false';
 

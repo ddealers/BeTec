@@ -799,7 +799,8 @@ footer .icon-help {
 }
 #registro article form .step .step-area.genero .choose .option img {
   padding-top: 10%;
-  padding-left: 100px;
+  display: block;
+  margin: auto;
 }
 #registro article form .step .step-area.genero .choose .option p {
   color: #727272;
@@ -825,7 +826,7 @@ footer .icon-help {
   box-shadow: 1px 1px 5px #ccc;
 }
 #registro article form .step .step-area.cumple {
-  margin-left: 10vw;
+  margin-left: 9vw;
 }
 #registro article form .step .step-area.cumple .step-data {
   margin-left: 2vw;
