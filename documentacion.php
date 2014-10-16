@@ -1,74 +1,9 @@
-<style type="text/css">
-	form{
-		background-color: #fff;
-		border-top: 10px solid #06ba4e;
-		font-size: 16px;
-		width: 600px;
-	}
-	fieldset{
-		text-align: center;
-		font-size: 1.2em;
-		font-weight: bold;
-		border: none;
-	}
-	label{
-		text-align: left;
-		font-size: 0.9em;
-		font-weight: bold;
-	}
-	input[type="file"]{
-		height: 25px;
-		width: 100%;
-	}
-	input[type='submit']{
-		border: none;
-		background-color: #5aaded;
-		height: 35px;
-		width: 100px;
-		cursor: pointer;
-		border-radius: 4px;
-		float: right;
-		color: white;
-		font-weight: bold;
-	}
-	input[type='submit']:hover{
-		background-color: #37a7fc;
-	}
-	span{
-		text-align: center;
-		position: relative;
-		display: block;
-		background-color: #5ccc8d;
-		font-style: italic;
-	}
-	.noactive{
-		background-color: #ccc!important;
-		color: black!important;
-		font-weight: normal!important;
-	}
-	.boleto{
-		background-color: #b33535;
-		color: white;
-		font-weight: bold;
-		height: 35px;
-		width: 100px;
-		cursor: pointer;
-		border-radius: 4px;
-		border:none;
-		float: left;
-		margin-left: 250px;
-		margin-top: 5%;
-
-	}
-	input[type="button"]:hover{
-		background-color: #d93c3c;
-	}
-</style>
 <?php
 header('Content-Type: text/html; charset=utf-8');
 require_once("config.php");
-require('./sql/funciones.php');
-	//cadena encriptada
+require_once('./sql/funciones.php');
+
+//cadena encriptada
 $string = $_GET['s'];
 
 //guardo bien form
@@ -145,7 +80,82 @@ $bolet = ($v == 'ok' || $respuesta['v'] == 'ok') ? $bolet : $nll;
 $class = ($v == 'ok') ? $class : $nll;
 
 //Forms
-$form_FB = "
+$form_FA = "
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+	<meta charset='UTF-8'>
+	<title>BTEC</title>
+	<link rel='stylesheet' type='text/css' href='css/normalize.css' />
+	<link rel='stylesheet' type='text/css' href='css/1140.css' />
+	<link rel='stylesheet' type='text/css' href='css/responsive-tables.css'>
+	<link rel='stylesheet' type='text/css' href='css/btec.css' />
+	<link rel='stylesheet' type='text/css' href='css/style.css' />
+	<script type='text/javascript' src='js/vendor/jquery.min.js'></script>
+	<script type='text/javascript' src='js/vendor/skrollr/skrollr.min.js'></script>
+	<script type='text/javascript' src='js/vendor/skrollr/skrollr.menu.min.js'></script>
+	<script type='text/javascript' src='js/vendor/responsive-tables.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js'></script>
+	<script type='text/javascript' src='js/main.js'></script>
+</head>
+<body>
+	<header>
+		<figure id='logo'>
+			<a href='#'><img src='./img/logo.png' title='Born to be TEC' /></a>
+			
+		</figure>
+		<nav>
+			<ul><!--NADA--></ul>
+		</nav>
+		<div class='social'>
+			<ahref='#registro'><img src='./img/registro_boton.png'/></a>
+			<div class='rs'>
+				<a href='https://www.facebook.com/BorntoBeTEC' target='_blank'><img src='./img/face.png'></a>
+				<a href='https://twitter.com/BorntoBeTEC' target='_blank'><img src='./img/tw.png'></a>
+			</div>
+		</div>
+	</header>
+	<section class='content'>
+		<article>
+			<h1>ADJUNTAR</h1>
+			<span>Sube tu carta compromiso correctamente llenada y firmada antes del 18 de noviembre.</span>
+			<h3>GERMÁN RADILLO</h3>
+			<span class='sub'>Asistente</span>
+			<p>	
+				<div class='evento'>
+					<span class='even'>Evento</span>
+					<h4>BORN TO BE TEC 2014</h4>
+				</div>
+				<div class='acciones'>
+					<div class='hecho'>
+						<figure>
+							<img src='img/correcto.png' alt='Registrado'>
+						</figure>
+						<span class='even'>Registro</span>
+						<h4>Realizado</h4>
+					</div>
+					<div class='pendiente'>
+						<figure>
+							<img src='img/incorrecto.png' alt='Pendiente'>
+						</figure>
+						<span class='even'>Carta</span>
+						<h4>Pendiente subir carta compromiso</h4>
+						<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
+							<input type='hidden' name='string' value='".$string."' />
+							<input type='hidden' name='idu' value='".$idu."' />
+							<input type='file' name='carta' />
+							<input type='submit' value='Guardar' class='".$class."'/>
+						</form>
+					</div>
+				</div>
+			</p>
+		</article>
+	</section>
+</body>
+</html>
+";
+
+$OLD= "
 <form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
 	<fieldset>Sube tu documentación</fieldset>
 	".$correcto."
@@ -161,7 +171,7 @@ $form_FB = "
 </form>
 ";
 
-$form_FA = "
+$form_FB = "
 <form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
 	<fieldset>Sube tu documentación</fieldset>
 	".$correcto."
