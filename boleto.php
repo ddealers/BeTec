@@ -4,79 +4,70 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
 require_once("config.php");
 require('./sql/funciones.php');
 require('pdf/fpdf.php');
-/*function info(){
-	$mysqli = new mysqli('localhost','root','olamund0','test');
-	$string = $_GET['s'];
-	$key = 'BornToBeTec321_';
+require_once('pdf/class/BCGFontFile.php');
+require_once('pdf/class/BCGColor.php');
+require_once('pdf/class/BCGDrawing.php');
+require_once('pdf/class/BCGcode128.barcode.php');
 
-	$mail = desencriptarURL($string, $key);
+$string = $_GET['s'];
 
-	if($mail){
-		$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
-		$v = $mysqli->query($q);
+$colorFront = new BCGColor(0, 0, 0);
+$colorBack = new BCGColor(255, 255, 255);
+$font = new BCGFontFile('pdf/font/Arial.ttf', 18);
 
-		if($v){
-			if($v->num_rows > 0){
-				while ($row = $v->fetch_assoc()) {
-					$data = $row;
-				}
+$code = new BCGcode128();
+$code->setScale(1);
+$code->setThickness(45);
+$code->setForegroundColor($colorFont);
+$code->setBackgroundColor($colorBack);
+$code->setFont($font);
+$code->parse($string);
 
-				$idu = $data['id'];
-				$full_name = $data['nombre'];
+$drawing = new BCGDrawing('', $colorBack);
+$drawing->setBarcode($code);
+$drawing->draw();
+//header('Content-Type: image/png');
+//$drawing->finish(BCGDrawing::IMG_FORMAT_PNG);
 
-				$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
-				$vt = $mysqli->query($t);
+/*header('Content-Type: image/png');
+$drawing->finish(BCGDrawing::IMG_FORMAT_PNG);
+$drawing = new BCGDrawing('./archivos/filename.png', $colorBack);
+//$drawing->setFilename("./archivos/prueba.png");*/
 
-				if($vt){
-					if($vt->num_rows > 0){
-						while ($rows = $vt->fetch_assoc()) {
-							$info[] = $rows;
-						}
-					}
-
-					$tv1 = $info[0]['nombre'];
-					$tv2 = $info[1]['nombre'];
-					$tv3 = $info[2]['nombre'];
-					$ts1 = $info[3]['nombre'];
-				}
-			}
-		}
-	}
-}*/
 	class PDF extends FPDF
 	{
 		function Header()
 		{
-$mysqli = new mysqli(HOST,USR,PWD,DB);
-$string = $_GET['s'];
-$key = 'BornToBeTec321_';
-$mail = desencriptarURL($string, $key);
-if($mail){
-$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
-$v = $mysqli->query($q);
-if($v){
-if($v->num_rows > 0){
-while ($row = $v->fetch_assoc()) {
-$data = $row;
-}
-$idu = $data['id'];
-$full_name = $data['nombre'];
-$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
-$vt = $mysqli->query($t);
-if($vt){
-if($vt->num_rows > 0){
-while ($rows = $vt->fetch_assoc()) {
-$info[] = $rows;
-}
-}
-$tv1 = $info[0]['nombre'];
-$tv2 = $info[1]['nombre'];
-$tv3 = $info[2]['nombre'];
-$ts1 = $info[3]['nombre'];
-}
-}
-}
-}
+			$mysqli = new mysqli(HOST,USR,PWD,DB);
+			$string = $_GET['s'];
+			$key = 'BornToBeTec321_';
+			$mail = desencriptarURL($string, $key);
+			if($mail){
+				$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
+				$v = $mysqli->query($q);
+				if($v){
+					if($v->num_rows > 0){
+						while ($row = $v->fetch_assoc()) {
+							$data = $row;
+						}
+						$idu = $data['id'];
+						$full_name = $data['nombre'];
+						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
+						$vt = $mysqli->query($t);
+						if($vt){
+							if($vt->num_rows > 0){
+								while ($rows = $vt->fetch_assoc()) {
+									$info[] = $rows;
+								}
+							}
+							$tv1 = $info[0]['nombre'];
+							$tv2 = $info[1]['nombre'];
+							$tv3 = $info[2]['nombre'];
+							$ts1 = $info[3]['nombre'];
+						}
+					}
+				}
+			}
 			//cabecera
 			$this->Image('./img/impresora.png',77,12,6);
 			$this->SetFont('Arial','',8);
@@ -189,6 +180,7 @@ $ts1 = $info[3]['nombre'];
 
 			// Escuela
 			$this->Image('./img/tmty.png',165,98,30);
+			//Aka lleva un Barcode girado 180º
 
 			//Contenido Dinamico
 			$this->SetTextColor(0,0,0);
@@ -234,38 +226,38 @@ $ts1 = $info[3]['nombre'];
 		}
 		function Footer()
 		{
-$mysqli = new mysqli(HOST,USR,PWD,DB);
-$string = $_GET['s'];
-$key = 'BornToBeTec321_';
-$mail = desencriptarURL($string, $key);
-if($mail){
-$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
-$v = $mysqli->query($q);
-if($v){
-if($v->num_rows > 0){
-while ($row = $v->fetch_assoc()) {
-$data = $row;
-}
-$idu = $data['id'];
-$full_name = $data['nombre'];
-list($n1, $n2, $n3, $n4) = explode(' ', $full_name);
+			$mysqli = new mysqli(HOST,USR,PWD,DB);
+			$string = $_GET['s'];
+			$key = 'BornToBeTec321_';
+			$mail = desencriptarURL($string, $key);
+			if($mail){
+				$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
+				$v = $mysqli->query($q);
+				if($v){
+					if($v->num_rows > 0){
+						while ($row = $v->fetch_assoc()) {
+							$data = $row;
+						}
+						$idu = $data['id'];
+						$full_name = $data['nombre'];
+						list($n1, $n2, $n3, $n4) = explode(' ', $full_name);
 
-$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
-$vt = $mysqli->query($t);
-if($vt){
-if($vt->num_rows > 0){
-while ($rows = $vt->fetch_assoc()) {
-$info[] = $rows;
-}
-}
-$tv1 = $info[0]['nombre'];
-$tv2 = $info[1]['nombre'];
-$tv3 = $info[2]['nombre'];
-$ts1 = $info[3]['nombre'];
-}
-}
-}
-}
+						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
+						$vt = $mysqli->query($t);
+						if($vt){
+							if($vt->num_rows > 0){
+								while ($rows = $vt->fetch_assoc()) {
+									$info[] = $rows;
+								}
+							}
+							$tv1 = $info[0]['nombre'];
+							$tv2 = $info[1]['nombre'];
+							$tv3 = $info[2]['nombre'];
+							$ts1 = $info[3]['nombre'];
+						}
+					}
+				}
+			}
 			$this->SetY(-188);
 			$this->SetX(-356);
 			$this->Image('./img/instrucciones.png', 8,112,8);
@@ -339,6 +331,7 @@ $ts1 = $info[3]['nombre'];
 			$this->SetY(-188);
 			$this->SetX(-356);
 			$this->Image('./img/gafete.png', 105,130,90);
+			//Aka lleva un Barcode sin rotacion
 
 			$this->SetTextColor(26, 89, 184);
 			$this->SetFont('Arial','B',24);
