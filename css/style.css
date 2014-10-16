@@ -693,8 +693,8 @@ footer .icon-help {
   margin-bottom: 1vh;
 }
 #registro article img {
-  display: list-item;
-  margin-left: 50px;
+  display: block;
+  margin: auto;
 }
 #registro article form .step {
   width: 100%;
@@ -826,7 +826,7 @@ footer .icon-help {
   box-shadow: 1px 1px 5px #ccc;
 }
 #registro article form .step .step-area.cumple {
-  margin-left: 9vw;
+  margin-left: 4vw;
 }
 #registro article form .step .step-area.cumple .step-data {
   margin-left: 2vw;
@@ -845,8 +845,15 @@ footer .icon-help {
 #registro article form .step .step-area.residencia select {
   width: 18vw;
 }
+#registro article form .step .step-area.prepa {
+  width: 30vw;
+  margin-left: 2vw;
+}
+#registro article form .step .step-area.prepa label {
+  width: 100%;
+}
 #registro article form .step .step-area.prepa select {
-  width: 23vw;
+  width: 100%;
 }
 #registro article form .step .step-area.compania label {
   width: 11vw;
@@ -869,10 +876,10 @@ footer .icon-help {
   padding-right: 3vw;
 }
 #registro article form .step .step-area.sabado {
-  width: 35vw;
-  margin-left: -10px;
-  margin-top: 19px;
-  padding-bottom: 16px;
+  width: 30vw;
+  margin-left: 1vw;
+  margin-top: 2vw;
+  padding-bottom: 1vw;
 }
 #registro article form .step .step-area.sabado label {
   width: 100%;
@@ -881,10 +888,14 @@ footer .icon-help {
   width: 100%;
   padding-right: 3vw;
 }
-#registro article form .step .step-area select.option.eve {
+#registro article form .step .step-area.evento {
+  width: 30vw;
+  margin-left: 1vw;
+}
+#registro article form .step .step-area.evento select.option.eve {
   width: 235px;
 }
-#registro article form .step .step-area select.option.eve .info {
+#registro article form .step .step-area.evento select.option.eve .info {
   width: 15vw;
 }
 #registro article form .step .step-area.acepto .step-data {

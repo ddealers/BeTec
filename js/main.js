@@ -109,6 +109,16 @@ $(document).ready(function(){
 				var numero = lada + tel;
 				form_data.numero = numero;
 				index++;
+				console.log(form_data.city);
+				if(form_data.city == 986){
+					form_data.hotel = '';
+					form_data.solo = '';
+					form_data.pare = '';
+					form_data.namep = '';
+					index++;
+					setFormStep(index);
+					return;
+				}
 			}else{
 				alert("todos los datos son requeridos");
 				return;

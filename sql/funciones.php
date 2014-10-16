@@ -41,7 +41,7 @@ function curPageName() {
 }
 function cupoTaller(){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$listado = "<option value='#'>Elije un taller</option>";
+	$listado = "<option value='#'>Elige un taller</option>";
 	$q = "SELECT id, nombre FROM talleres WHERE libres > 0";
 	$v = $mysqli->query($q);
 
@@ -56,10 +56,9 @@ function cupoTaller(){
 
 function selectEstados(){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$listado = "<option value='#'>Elije tu estado</option>";
+	$listado = "<option value='#'>Elige tu estado</option>";
 	$q = "SELECT id, nombre FROM estados";
 	$v = $mysqli->query($q);
-
 	if($v){
 		while ($row = $v->fetch_assoc()) {
 			$listado .= "<option value='".$row['id']."'>".$row['nombre']."</option>";
@@ -71,7 +70,7 @@ function selectEstados(){
 
 function selectCarreras(){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$listado = "<option value=''>Elije un opción</option>";
+	$listado = "<option value=''>Elige un opción</option>";
 	$q = "SELECT * FROM carreras";
 	$v = $mysqli->query($q);
 
@@ -87,7 +86,7 @@ function selectCarreras(){
 
 function selectTalleresV(){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$listado = "<option value=''>Elije un taller</option>";
+	$listado = "<option value=''>Elige un taller</option>";
 	$q = "SELECT id, nombre FROM talleres WHERE dia = 1 ";
 	$v = $mysqli->query($q);
 
@@ -102,7 +101,7 @@ function selectTalleresV(){
 
 function selectTalleresS(){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$listado = "<option value=''>Elije un taller</option>";
+	$listado = "<option value=''>Elige un taller</option>";
 	$q = "SELECT id, nombre FROM talleres WHERE dia = 2 ";
 	$v = $mysqli->query($q);
 
@@ -117,7 +116,7 @@ function selectTalleresS(){
 
 function selectEventos(){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$listado = "<option value=''>Elije un medio</option>";
+	$listado = "<option value=''>Elige un medio</option>";
 	$q = "SELECT * FROM medios ";
 	$v = $mysqli->query($q);
 
