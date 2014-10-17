@@ -99,7 +99,7 @@ section
 	article
 		absolute top 32vh left 16vw
 	&#be_tec
-		background: url(../img/filtro-rosa.png), url(../img/back-be-tec.png)no-repeat;
+		background: url(../img/filtro-rosa.png), url(../img/back-be-tec.jpg)no-repeat;
 		background-size: cover
 		h1
 			top -6.6vw
@@ -111,7 +111,7 @@ section
 /* =========================== ACTIVIDADES */
 	
 	&#actividades
-		background: url(../img/filtro-verde.png), url(../img/back-actividades.png)no-repeat;
+		background: url(../img/filtro-verde.png), url(../img/back-actividades.jpg)no-repeat;
 		background-size: cover;
 		article
 			absolute top 28vh left 16vw
@@ -135,7 +135,7 @@ section
 
 /* =========================== AGENDA */
 	&#agenda
-		background: url(../img/filtro-morado.png), url(../img/back-agenda.png) no-repeat;
+		background: url(../img/filtro-morado.png), url(../img/back-agenda.jpg) no-repeat;
 		background-size cover
 		article
 			top 27vh
@@ -150,30 +150,38 @@ section
 					display flex
 					justify-content center
 					align-items center
-					margin-bottom 3.6vh
+					/*
 					a
 						size 2.1vw
 						display block
 						&.prev
-							/*background url(../img/table_left.png) no-repeat
-							/*background-size cover*/
+							background url(../img/table_left.png) no-repeat
+							background-size cover
 						&.next
-							/*background url(../img/table_right.png) no-repeat
-							/*background-size cover*/
+							background url(../img/table_right.png) no-repeat
+							background-size cover
+					*/
 					.titles
 						text-align center
-						padding 0 1vw
+						padding 0
+						display inline-flex
+						p
+							padding 1vw
+							font-size 1vw
+							border 1px solid rgba(255,255,255,0.3)
+							&.active
+								background: rgba(255,255,255,0.2);
+					/*
 					p.j 
 						position absolute
 						left: 107px;
 						background: rgba(255,255,255,0.2);
 						top: 60px;
-						padding: 10px;
-						font-size: 13px;
+						
 					p.v 
 						position absolute
 						left: 278px;
-						/*background: rgba(255,255,255,0.2);*/
+						/*background: rgba(255,255,255,0.2);
 						border 1px solid rgba(255,255,255,0.3)
 						top: 60px;
 						padding: 10px;
@@ -181,11 +189,12 @@ section
 					p.s 
 						position absolute
 						left: 458px;
-						/*background: rgba(255,255,255,0.2);*/
-						border 1px solid rgba(255,255,255,0.3#)
+						/*background: rgba(255,255,255,0.2);
+						border 1px solid rgba(255,255,255,0.3)
 						top: 60px;
 						padding: 10px;
 						font-size: 13px;
+					*/
 			.days
 					size 100%
 					.day
@@ -262,7 +271,7 @@ section
 
 /* =========================== SEDE */
 	&#sede
-		background: url(../img/filtro-azul.png), url(../img/back-sede.png)no-repeat;
+		background: url(../img/filtro-azul.png), url(../img/back-sede.jpg)no-repeat;
 		width: 100%;
 		height: 100%;
 		background-size: cover;
@@ -306,7 +315,7 @@ section
 						
 /* =========================== REGISTRATE */
 	&#registrate
-		background: url(../img/filtro-rojo.png), url(../img/back-registrate.png) no-repeat;
+		background: url(../img/filtro-rojo.png), url(../img/back-registrate.jpg) no-repeat;
 		background-size: cover;
 		article
 			h1
@@ -341,7 +350,7 @@ section
 
 /* =========================== FAQ'S */
 	&#faq
-		background: url(../img/filtro-rosa.png), url(../img/back-faqs.png)no-repeat;
+		background: url(../img/filtro-rosa.png), url(../img/back-faqs.jpg)no-repeat;
 		background-size: cover;
 		article
 			width 75%
@@ -398,7 +407,7 @@ section
 		colro #9D9D9D
 /* =========================== AVISO LEGAL */
 	&#aviso_legal
-		background url(../img/filtro-amarillo.png), url(../img/back-aviso.png) no-repeat
+		background url(../img/filtro-amarillo.png), url(../img/back-aviso.jpg) no-repeat
 		background-size cover
 		z-index 5
 		display none

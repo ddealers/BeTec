@@ -63,6 +63,8 @@ $(document).ready(function(){
 	$("#registro .next").on("click", function(e){
 		e.preventDefault();
 		prev = index;
+		index++;
+		/*
 		if(index == 0){
 			var genero = $("#genero").val();
 			form_data.genero = genero;
@@ -189,65 +191,41 @@ $(document).ready(function(){
 				return;
 			}
 		}
+		*/
 		setFormStep(index);
 	});
 
 	function setFormStep(next){
 		$(".step").hide();
-
 		var ns = $(".step").eq(next);
-		
 		ns.show();
-		
 		TweenMax.from(ns, 0.3, {opacity: 0, y: 100});
 	}
 
 	//===== Calendar =====
 	var index = 0;
-	setCalendarDay(0);
-
-	$(".calendar .next").on("click", function(e){
+	
+	$('.titles p').on('click', function(e){
 		e.preventDefault();
-		prev = index;
-		index++;
-		if(index > 2){
-			index = 0;
-		}
-		setCalendarDay(index);
+		setCalendarDay($(this).index());
 	});
-	$(".calendar .prev").on("click", function(e){
-		e.preventDefault();
-		prev = index;
-		index--;
-		if(index < 0){
-			index = 2;
-		}
-		setCalendarDay(index);
-	});
-
 	function setCalendarDay(next){
-		$(".titles p").hide();
+		$(".titles p").removeClass('active');
 		$(".days .day").hide();
 
 		var n = $(".titles p").eq(next),
 			nd = $(".days .day").eq(next);
 		
-		n.show();
+		n.addClass('active');
 		nd.show();
 		
-		TweenMax.from(n, 0.3, {opacity: 0, y: -10});
+		TweenMax.to('.titles p', 0.3, {'background-color': 'rgba(255,255,255,0)'});
+		TweenMax.to(n, 0.3, {'background-color': 'rgba(255,255,255,0.3)'});
 		TweenMax.from(nd, 0.3, {opacity: 0, y: -10});
 	}
-
-	//===== Tables =====
-	var sx = 1366 / $(window).width();
-	var sy = 864 / $(window).height();
-	//$("table.jueves").css({width: 850 * sx, height: 130 * sy});
-	//$("table.viernes").css({width: 1020 * sx, height: 440 * sy});
-});
-
-//===== Acciones en registrar ===== //
-$( document ).ready(function(){
+	setCalendarDay(0);
+	
+	//===== Acciones en registrar ===== //
 	$("#generoM").click(function() {
 		if($(this).hasClass("selected")){
 			console.log("ya tiene la clase!!");

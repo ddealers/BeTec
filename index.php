@@ -99,13 +99,13 @@
 <!-- ============================== table  PARTE JUEVES-->
 			<div class="calendar">
 				<div class="header">
-					<a class="prev" href="#prev"></a>
-					<div class="_titles">
+					<!--a class="prev" href="#prev"></a-->
+					<div class="titles">
 						<p class="j">JUEVES 20 DE NOVIEMBRE</p>
 						<p class="v">VIERNES 21 DE NOVIEMBRE</p>
 						<p class="s">SÁBADO 22 DE NOVIEMBRE</p>
 					</div>
-					<a class="next" href="#next"></a>
+					<!--a class="next" href="#next"></a-->
 				</div>
 				<div class="days">
 					<div class="day">
@@ -753,15 +753,11 @@
 						</div>
 					</div>
 				</div>
-
-
-
-
 				<div class="step">
 					<div class="step-area hospedaje">
 						<p class="info hospedaje">
 							ELECCIÓN DE CARRERA
-							<img class="lapiz"src="./img/.png">
+							<img class="lapiz"src="./img/lapiz.png">
 						</p>
 						<div class="step-data">
 							<p>¿Ya decidiste qué carrera estudiar?</p>
