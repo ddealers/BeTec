@@ -180,7 +180,7 @@ section article {
   left: 16vw;
 }
 section#be_tec {
-  background: url("../img/filtro-rosa.png"), url("../img/back-be-tec.png") no-repeat;
+  background: url("../img/filtro-rosa.png"), url("../img/back-be-tec.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -196,7 +196,7 @@ section#be_tec p {
 }
 /* =========================== ACTIVIDADES */
 #actividades {
-  background: url("../img/filtro-verde.png"), url("../img/back-actividades.png") no-repeat;
+  background: url("../img/filtro-verde.png"), url("../img/back-actividades.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -231,7 +231,7 @@ section#be_tec p {
 }
 /* =========================== AGENDA */
 #agenda {
-  background: url("../img/filtro-morado.png"), url("../img/back-agenda.png") no-repeat;
+  background: url("../img/filtro-morado.png"), url("../img/back-agenda.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -268,56 +268,73 @@ section#be_tec p {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  margin-bottom: 3.6vh;
-}
-#agenda article .calendar .header a {
-  width: 2.1vw;
-  height: 2.1vw;
-  display: block;
+/*
+					a
+						size 2.1vw
+						display block
+						&.prev
+							background url(../img/table_left.png) no-repeat
+							background-size cover
+						&.next
+							background url(../img/table_right.png) no-repeat
+							background-size cover
+					*/
+/*
+					p.j 
+						position absolute
+						left: 107px;
+						background: rgba(255,255,255,0.2);
+						top: 60px;
+						
+					p.v 
+						position absolute
+						left: 278px;
+						/*background: rgba(255,255,255,0.2);
+						border 1px solid rgba(255,255,255,0.3)
+						top: 60px;
+						padding: 10px;
+						font-size: 13px;
+					p.s 
+						position absolute
+						left: 458px;
+						/*background: rgba(255,255,255,0.2);
+						border 1px solid rgba(255,255,255,0.3)
+						top: 60px;
+						padding: 10px;
+						font-size: 13px;
+					*/
 }
 #agenda article .calendar .header .titles {
   text-align: center;
-  padding: 0 1vw;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-box;
+  display: inline-flex;
 }
-#agenda article .calendar .header p.j {
-  position: absolute;
-  left: 107px;
+#agenda article .calendar .header .titles p {
+  padding: 1vw;
+  font-size: 1vw;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+#agenda article .calendar .header .titles p.active {
   background: rgba(255,255,255,0.2);
-  top: 60px;
-  padding: 10px;
-  font-size: 13px;
 }
-#agenda article .calendar .header p.v {
-  position: absolute;
-  left: 278px;
-/*background: rgba(255,255,255,0.2);*/
-  border: 1px solid rgba(255,255,255,0.3);
-  top: 60px;
-  padding: 10px;
-  font-size: 13px;
-}
-#agenda article .calendar .header p.s {
-  position: absolute;
-  left: 458px;
-/*background: rgba(255,255,255,0.2);*/
-  border: 1px solid rgba(255,255,255,0.3);
-  top: 60px;
-  padding: 10px;
-  font-size: 13px;
-}
-#agenda article .calendar .days {
+#agenda article .days {
   width: 100%;
   height: 100%;
 }
-#agenda article .calendar .days .day table {
+#agenda article .days .day table {
   margin: auto;
   background: rgba(255,255,255,0.2);
 }
-#agenda article .calendar .days .day table tr {
+#agenda article .days .day table tr {
   border-top: solid 1.5px #943ba7;
   border-bottom: solid 1.5px #943ba7;
 }
-#agenda article .calendar .days .day table tr td {
+#agenda article .days .day table tr td {
   font-family: 'GillSans-Light';
   border-left: solid 1.5px #943ba7;
   border-right: solid 1.5px #943ba7;
@@ -325,79 +342,79 @@ section#be_tec p {
   font-size: 1vw;
   color: #fff;
 }
-#agenda article .calendar .days .day table tr td.act {
+#agenda article .days .day table tr td.act {
   font-size: 1.4vw;
   text-transform: uppercase;
 }
-#agenda article .calendar .days .day table tr td.hr {
+#agenda article .days .day table tr td.hr {
   font-size: 1.4vw;
   text-transform: uppercase;
   text-align: center;
 }
-#agenda article .calendar .days .day table tr td.hr span {
+#agenda article .days .day table tr td.hr span {
   font-size: 1vh;
   vertical-align: super;
 }
-#agenda article .calendar .days .day table tr td.uno {
+#agenda article .days .day table tr td.uno {
   background: #8fd8f0;
   color: #fff;
   height: 25px;
 }
-#agenda article .calendar .days .day table tr td.dos {
+#agenda article .days .day table tr td.dos {
   background: #eeb790;
   color: #000;
 }
-#agenda article .calendar .days .day table tr td.tres {
+#agenda article .days .day table tr td.tres {
   background: #8fe9c9;
   color: #000;
 }
-#agenda article .calendar .days .day table tr td.cuatro {
+#agenda article .days .day table tr td.cuatro {
   background: #eb8bf2;
   color: #000;
 }
-#agenda article .calendar .days .day table tr td.cinco {
+#agenda article .days .day table tr td.cinco {
   background: #b58bf1;
   color: #000;
 }
-#agenda article .calendar .days .day table tr td.seis {
+#agenda article .days .day table tr td.seis {
   background: #ef8a91;
   color: #fff;
 }
-#agenda article .calendar .days .day table tr td.siete {
+#agenda article .days .day table tr td.siete {
   background: #90eae2;
   color: #000;
 }
-#agenda article .calendar .days .day table tr td.ocho {
+#agenda article .days .day table tr td.ocho {
   background: #e6e691;
   color: #000;
 }
-#agenda article .calendar .days .day table.jueves {
+#agenda article .days .day table.jueves {
   margin-bottom: 5.6vh;
 }
-#agenda article .calendar .days .day p.textJ {
+#agenda article .days .day p.textJ {
   text-align: left;
   width: 29vw;
   padding-left: 5vw;
 }
-#agenda article .calendar .days .day p.textJ span.negritas {
+#agenda article .days .day p.textJ span.negritas {
   font-weight: bold;
 }
-#agenda article .calendar .days .day .column6 {
+#agenda article .days .day .column6 {
   width: 450px;
 }
-#agenda article .calendar .days .day .top {
+#agenda article .days .day .top {
   margin-top: 30px;
 }
-#agenda article .calendar .days .day div.column6:nth-child(2) p {
+#agenda article .days .day div.column6:nth-child(2) p {
   width: 27vw;
 }
-#agenda article .calendar .days .day img {
+#agenda article .days .day img {
   float: left;
   margin-left: -35px;
 }
 /* =========================== SEDE */
 #sede {
-  background: url("../img/filtro-azul.png"), url("../img/back-sede.png") no-repeat;
+  background: url("../img/filtro-azul.png"), url("../img/back-sede.jpg") no-repeat;
   width: 100%;
   height: 100%;
   -webkit-background-size: cover;
@@ -470,7 +487,7 @@ section#be_tec p {
 }
 /* =========================== REGISTRATE */
 #registrate {
-  background: url("../img/filtro-rojo.png"), url("../img/back-registrate.png") no-repeat;
+  background: url("../img/filtro-rojo.png"), url("../img/back-registrate.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -515,7 +532,7 @@ section#be_tec p {
 }
 /* =========================== FAQ'S */
 #faq {
-  background: url("../img/filtro-rosa.png"), url("../img/back-faqs.png") no-repeat;
+  background: url("../img/filtro-rosa.png"), url("../img/back-faqs.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -600,7 +617,7 @@ section#be_tec p {
 }
 /* =========================== AVISO LEGAL */
 #aviso_legal {
-  background: url("../img/filtro-amarillo.png"), url("../img/back-aviso.png") no-repeat;
+  background: url("../img/filtro-amarillo.png"), url("../img/back-aviso.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
