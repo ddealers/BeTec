@@ -155,14 +155,37 @@ section
 						size 2.1vw
 						display block
 						&.prev
-							background url(../img/table_left.png) no-repeat
+							/*background url(../img/table_left.png) no-repeat
 							/*background-size cover*/
 						&.next
-							background url(../img/table_right.png) no-repeat
+							/*background url(../img/table_right.png) no-repeat
 							/*background-size cover*/
 					.titles
 						text-align center
 						padding 0 1vw
+					p.j 
+						position absolute
+						left: 107px;
+						background: rgba(255,255,255,0.2);
+						top: 60px;
+						padding: 10px;
+						font-size: 13px;
+					p.v 
+						position absolute
+						left: 278px;
+						/*background: rgba(255,255,255,0.2);*/
+						border 1px solid rgba(255,255,255,0.3)
+						top: 60px;
+						padding: 10px;
+						font-size: 13px;
+					p.s 
+						position absolute
+						left: 458px;
+						/*background: rgba(255,255,255,0.2);*/
+						border 1px solid rgba(255,255,255,0.3)
+						top: 60px;
+						padding: 10px;
+						font-size: 13px;
 				.days
 					size 100%
 					.day
@@ -191,7 +214,8 @@ section
 											vertical-align super
 									&.uno
 										background #8fd8f0
-										color #000
+										color #fff
+										height 25px
 									&.dos
 										background #eeb790
 										color #000
@@ -206,7 +230,7 @@ section
 										color #000
 									&.seis
 										background #ef8a91
-										color #000
+										color #fff
 									&.siete
 										background #90eae2
 										color #000
@@ -223,13 +247,18 @@ section
 							text-align left
 							width 29vw
 							padding-left 5vw
+							span.negritas
+								font-weight bold
 						.column6
 							width 450px
+						.top
+							margin-top 30px
 						div.column6:nth-child(2)
 							p
 								width 27vw
 						img
 							float left	
+							margin-left: -35px;
 
 /* =========================== SEDE */
 	&#sede

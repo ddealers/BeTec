@@ -273,17 +273,35 @@ section#be_tec p {
   height: 2.1vw;
   display: block;
 }
-#agenda article .calendar .header a.prev {
-  background: url("../img/table_left.png") no-repeat;
-/*background-size cover*/
-}
-#agenda article .calendar .header a.next {
-  background: url("../img/table_right.png") no-repeat;
-/*background-size cover*/
-}
 #agenda article .calendar .header .titles {
   text-align: center;
   padding: 0 1vw;
+}
+#agenda article .calendar .header p.j {
+  position: absolute;
+  left: 107px;
+  background: rgba(255,255,255,0.2);
+  top: 60px;
+  padding: 10px;
+  font-size: 13px;
+}
+#agenda article .calendar .header p.v {
+  position: absolute;
+  left: 278px;
+/*background: rgba(255,255,255,0.2);*/
+  border: 1px solid rgba(255,255,255,0.3);
+  top: 60px;
+  padding: 10px;
+  font-size: 13px;
+}
+#agenda article .calendar .header p.s {
+  position: absolute;
+  left: 458px;
+/*background: rgba(255,255,255,0.2);*/
+  border: 1px solid rgba(255,255,255,0.3);
+  top: 60px;
+  padding: 10px;
+  font-size: 13px;
 }
 #agenda article .calendar .days {
   width: 100%;
@@ -320,7 +338,8 @@ section#be_tec p {
 }
 #agenda article .calendar .days .day table tr td.uno {
   background: #8fd8f0;
-  color: #000;
+  color: #fff;
+  height: 25px;
 }
 #agenda article .calendar .days .day table tr td.dos {
   background: #eeb790;
@@ -340,7 +359,7 @@ section#be_tec p {
 }
 #agenda article .calendar .days .day table tr td.seis {
   background: #ef8a91;
-  color: #000;
+  color: #fff;
 }
 #agenda article .calendar .days .day table tr td.siete {
   background: #90eae2;
@@ -358,14 +377,21 @@ section#be_tec p {
   width: 29vw;
   padding-left: 5vw;
 }
+#agenda article .calendar .days .day p.textJ span.negritas {
+  font-weight: bold;
+}
 #agenda article .calendar .days .day .column6 {
   width: 450px;
+}
+#agenda article .calendar .days .day .top {
+  margin-top: 30px;
 }
 #agenda article .calendar .days .day div.column6:nth-child(2) p {
   width: 27vw;
 }
 #agenda article .calendar .days .day img {
   float: left;
+  margin-left: -35px;
 }
 /* =========================== SEDE */
 #sede {

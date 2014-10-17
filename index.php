@@ -100,10 +100,10 @@
 			<div class="calendar">
 				<div class="header">
 					<a class="prev" href="#prev"></a>
-					<div class="titles">
-						<p>JUEVES 20 DE NOVIEMBRE</p>
-						<p>VIERNES 21 DE NOVIEMBRE</p>
-						<p>SÁBADO 22 DE NOVIEMBRE</p>
+					<div class="_titles">
+						<p class="j">JUEVES 20 DE NOVIEMBRE</p>
+						<p class="v">VIERNES 21 DE NOVIEMBRE</p>
+						<p class="s">SÁBADO 22 DE NOVIEMBRE</p>
 					</div>
 					<a class="next" href="#next"></a>
 				</div>
@@ -123,7 +123,7 @@
 							</tr>
 							<tr>
 								<td>Recepción de foráneos</td>
-								<td colspan="8" class="uno"></td>
+								<td colspan="8" class="uno">EXCLUSIVO FORÁNEOS</td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -144,18 +144,26 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td colspan="6" class="seis"></td>
+								<td colspan="6" class="seis">EXCLUSIVO FORÁNEOS</td>
 								<td></td>
 							</tr>
 						</table>
 						<div class="container12">
 							<div class="column6">
-								<img src="./img/foco.png">
-					 			<p class="textJ">Asistente foráneo:<br>Te recomendamos llegar a Monterrey desde el jueves 20 de noviembre para que puedas instalarte cómodamente. Ese día te daremos la bienvenida en nuestro Meet & Grill, donde podrás conocer a los demás participantes foráneos.</p>
+								<img src="./img/icon.png">
+					 			<p class="textJ"><span class="negritas">ASISTENTES FORÁNEOS:</span><br>Las actividades programadas para ti inician el jueves por la<br>noche. Tu registro será en el edificio de Residencias III,<br>ubicado en Av. Fernando García Roel esquina con Junco de<br>la Vega, de ahí te transladeremos al hotel sede. </p>
 					 		</div>
 					  		<div class="column6">
-					  			<img src="./img/icon.png">
-					  			<p class="textJ">La recepción de foráneos será en el edificio de Residencias III, ubicado en Av. Fernando García Roel esquina con Junco de la Vega. <br><br>Ahí te registraremos y trasladaremos al hotel sede.<p>
+					  			<!--img src="./img/foco.png"-->
+					  			<p class="textJ"><span class="negritas">ASISTENTES FORÁNEOS Y LOCALES:</span><br>El registro para las actividades del viernes por la tarde<br>y sábado, serán para todos en el Centro Estudiantil del<br>Campus Monterrey.</p>
+					  		</div>
+						</div>
+						<div class="container12">
+							<div class="column6 top">
+								<img src="./img/foco.png">
+					 			<p class="textJ"><span class="negritas">ASISTENTES LOCALES:</span><br>Las actividades para ti inician el viernes 21 de<br>noviembre a partir de las 4:30 horas. Consulta las<br>actividades del viernes para más detalles de la agenda.</p>
+					 		</div>
+					  		<div class="column6">
 					  		</div>
 						</div>
 					</div>
