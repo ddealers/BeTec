@@ -48,44 +48,44 @@
 		<article><!--CONTENIDO_BORN_TO_BE_TEC-->
 			<h1>¿QUÉ ES?</h1>
 			<h2>UN EVENTO PENSADO EN <br> TI, QUE ESTÁS EN EL <br> ÚLTIMO AÑO DE PREPA.</h2>
-			<p>Siendo su tercera edición, BORN TO BE TEC es para que descubras la<br> experiencia de ser alumno del Tecnológico de Monterrey.<br><br>Es organizado por alumnos del Campus Monterrey, maestros, directores de<br> carrera y todo el equipo de asesores de admisión. Se lleva a cabo para que<br> tengas la inigualable oportunidad de vivir un día como universitario, hacer<br> nuevos amigos, conocer el campus, interactuar con estudiantes actuales,<br> platicar con líderes estudiantiles y descubrir todas las carreras que podrías<br> estudiar en el Tecnológico de Monterrey.<br><br>Te esperamos este 21 y 22 de noviembre en el Tecnológico de Monterrey,<br> Campus Monterrey, para sorprenderte. ¡Regístrate ahora!</p>
+			<p>BORN TO BE TEC es un evento diseñado para que tengas la oportunidad de<br>vivir un día como alumno del Tecnológico de Monterrey.<br><br>Podrás hacer nuevos amigos, conocer el campus, interactuar con alumnos<br>actuales, líderes estudiantiles, y descubrir toda la oferta educativa que podrías<br>estudiar en el Campus Monterrey.<br><br>Te apoyaremos en la elección de carrera a través de una experiencia diseñada<br>por cada director de los programas académicos.<br><br>Te esperamos este 21 y 22 de noviembre en el Tecnológico de Monterrey,<br>en el Campus Monterrey. Cupo limitado ¡Regístrate ahora!</p>
 		</article>
 	</section>
 	<section id="actividades" data-0="transform: translate(100%,0)" data-100p="transform: translate(0%,0)" data-200p="transform: translate(-100%,0)">
 		<article><!--CONTENIDO_ACTIVIDADES-->
 			<h1>ACTIVIDADES</h1>
-			<h2>¿TE PREGUNTAS LO QUE <br> VAS A HACER DURANTE <br> ESTOS 2 DÍAS?</h2>
-			<p>Te tenemos preparadas muchas actividades para que conozcas el Tecnológico <br> de Monterrey y todo lo que el Campus Monterrey tiene que ofrecerte.</p>
+			<!--h2>¿TE PREGUNTAS LO QUE <br> VAS A HACER DURANTE <br> ESTOS 2 DÍAS?</h2-->
+			<!--p>Te tenemos preparadas muchas actividades para que conozcas el Tecnológico <br> de Monterrey y todo lo que el Campus Monterrey tiene que ofrecerte.</p-->
 			<div class="container12">
 			 	<div class="column3">
 			 		<img src="./img/feria.png">
-			 		<p class="col">Feria Estudiantil con<br> alumnos de todas las<br> carreras</p>
+			 		<p class="col">Feria Estudiantil <br>con alumnos de<br> todas las carreras</p>
 			 	</div>
 			  	<div class="column3">
 			  		<img src="./img/herramientas.png">
-			  		<p class="col">Talleres interactivos<br> de carreras</p>
+			  		<p class="col">Talleres<br> interactivos de<br> carreras</p>
 			  	</div>
 			  	<div class="column3">
 			  		<img src="./img/bici.png">
-			  		<p class="col">Tours por el campus</p>
+			  		<p class="col">Tours por el <br>campus</p>
 			  	</div>
 			  	<div class="column3">
 			  		<img src="./img/person.png">
-			  		<p class="col">Conferencia Magistral</p>
+			  		<p class="col">Conferencia<br> Magistral</p>
 			  	</div>
 			</div>
 			<div class="container12">
 			 	<div class="column3">
 			 		<img src="./img/chat.png">
-			 		<p class="col">Charla:  “No tengo idea qué carrera elegir”</p>
+			 		<p class="col">Charla:  “No<br> tengo idea qué<br> carrera elegir”</p>
 			 	</div>
 			  	<div class="column3">
 			  		<img src="./img/i.png">
-			  		<p class="col">Sesiones informativas</p>
+			  		<p class="col">Sesiones <br>informativas</p>
 			  	</div>
 			  	<div class="column3">
 			  		<img src="./img/pareja.png">
-			  		<p class="col">Pláticas para padres</p>
+			  		<p class="col">Pláticas para<br> padres</p>
 			  	</div>
 			  	<div class="column3">
 			  	</div>
@@ -184,7 +184,7 @@
 							</tr>
 							<tr>
 								<td>Tour por la ciudad<br> (exclusivo foráneos)</td>
-								<td colspan="6" class="uno"></td>
+								<td colspan="6" class="uno">EXCLUSIVO FORÁNEOS</td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -208,7 +208,7 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td colspan="4" class="dos"></td>
+								<td colspan="4" class="dos">EXCLUSIVO FORÁNEOS</td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -366,6 +366,7 @@
 								<td class="hr" colspan="2">11<span>AM</span></td>
 								<td class="hr" colspan="2">12<span>AM</span></td>
 								<td class="hr" colspan="2">1<span>PM</span></td>
+								<td class="hr" colspan="2">2<span>PM</span></td>
 							</tr>
 							<tr>
 								<td>Taller 1</td>
@@ -657,29 +658,6 @@
 							<input type="tel" placeholder="Celular*" name="cel" id="cel" >
 						</div>
 					</div>
-					<div class="step-area carreras">
-						<p class="info">
-							CARRERAS DE INTERÉS
-							<img class="lapiz"src="./img/doc.png">
-						</p>
-						<div class="step-data">
-							<label class="icon-arrow-left">
-								<select name="carrera1" id="carrera1" class="option">
-									<?php echo selectCarreras(); ?>
-								</select>
-							</label>
-							<label class="icon-arrow-left">
-								<select name="carrera2" id="carrera2" class="option">
-									<?php echo selectCarreras(); ?>
-								</select>
-							</label>
-							<label class="icon-arrow-left">
-								<select name="carrera3" id="carrera3" class="option">
-									<?php echo selectCarreras(); ?>
-								</select>
-							</label>
-						</div>
-					</div>
 					<div class="clearborder">
 						<p class="info"></p>
 						<div class="border"></div>
@@ -731,7 +709,7 @@
 							<img class="lapiz"src="./img/casa.png">
 						</p>
 						<div class="step-data">
-							<p>¿Necesitas hospedaje en Monterrey?*</p>
+							<p>¿Necesitas hospedaje en Monterrey?<br>ahora que asistirás al Born To Be Tec*</p>
 							<div class="bool-choose">
 								<input type="hidden" name="hospedaje" id="hospedaje" value="0"/>
 								<div class="option noActivo" id="hotelS">
@@ -775,6 +753,69 @@
 						</div>
 					</div>
 				</div>
+
+
+
+
+				<div class="step">
+					<div class="step-area hospedaje">
+						<p class="info hospedaje">
+							ELECCIÓN DE CARRERA
+							<img class="lapiz"src="./img/.png">
+						</p>
+						<div class="step-data">
+							<p>¿Ya decidiste qué carrera estudiar?</p>
+							<div class="bool-choose">
+								<input type="hidden" name="carrera" id="carrera" value="0"/>
+								<div class="option noActivo" id="hotelS">
+									<p>SÍ</p>
+								</div>
+								<div class="option activo" id="hotelN">
+									<p>NO</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="step-area carreras">
+						<p class="info">
+							CARRERAS DE INTERÉS
+							<img class="lapiz"src="./img/doc.png">
+						</p>
+						<div class="step-data">
+							<label class="icon-arrow-left">
+								<select name="carrera1" id="carrera1" class="option">
+									<?php echo selectCarreras(); ?>
+								</select>
+							</label>
+							<label class="icon-arrow-left">
+								<select name="carrera2" id="carrera2" class="option">
+									<?php echo selectCarreras(); ?>
+								</select>
+							</label>
+							<label class="icon-arrow-left">
+								<select name="carrera3" id="carrera3" class="option">
+									<?php echo selectCarreras(); ?>
+								</select>
+							</label>
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				<div class="step">
 					<div class="step-area viernes">
 						<p class="info">
