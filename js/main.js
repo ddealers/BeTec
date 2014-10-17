@@ -163,6 +163,15 @@ $(document).ready(function(){
 					success: function(response){
 						if(response == 'true'){
 							$('#end').show();
+							$('.registroT .response').hide();
+							if(form_data.city != 986 && form_data.hospedaje == 1){
+								$('.registroT .foraneoA').show();
+							}else if(form_data.city != 986 && form_data.hospedaje == 0){
+								$('.registroT .foraneoB').show();
+							}else{
+								$('.registroT .local').show();
+							}
+							
 							TweenMax.from('#end', 1, {opacity: 0, scale: 0.5, ease: Back.easeOut});
 							return;
 						}else{

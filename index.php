@@ -848,21 +848,28 @@
 			<div class="registroT">
 				<h1>¡BIEN HECHO!</h1>
 				<h2>TU REGISTRO ESTÁ CASI TERMINADO.</h2>
+				<div class="response foraneoA">
 				<p class="sigue">Ahora sólo sigue estas instrucciones:</p>
 				<img src="./img/img.png">
-				<ol>
-					<li><span>1.</span> Descarga la Carta Compromiso <span><a href="">aquí</a></span> llénala y que firmen tus papás.</li>
-					<li><span>2.</span> Descarga la ficha de pago <span><a href="">aquí</a></span> y realiza el depósito de $500.00 pesos en<br>el banco de tu preferencia.<br></li>
-					<li><span>3.</span> Sube ambos documentos comprobantes al link que te enviamos por correo.</li>
-				</ol>
+					<ol>
+						<li><span>1.</span> Descarga la Carta Compromiso <span><a href="">aquí</a></span> llénala y que firmen tus papás.</li>
+						<li><span>2.</span> Descarga la ficha de pago <span><a href="">aquí</a></span> y realiza el depósito de $500.00 pesos en<br>el banco de tu preferencia.<br></li>
+						<li><span>3.</span> Sube ambos documentos comprobantes al link que te enviamos por correo.</li>
+					</ol>
+				</div>
 				<!-- ========================= REGISTRO TERMINADO PASO 2-->
-					<!--p>Ahora sólo sigue estas instrucciones:</p>
+				<div class="response foraneoB">
+					<p class="sigue">Ahora sólo sigue estas instrucciones:</p>
 					<img src="./img/img.png">
 					<ol>
 						<li><span>1.</span> Descarga la Carta Compromiso <span><a href="">aquí</a></span> llénala y que firmen tus papás.</li>
 						<li><span>2.</span> Sube el documento al link que te enviamos por correo</li-->
+					</ol>
+				</div>
 				<!-- ========================= REGISTRO TERMINADO PASO 3-->
-					<!--p>Enviaremos a tu correo una confirmación, sólo tendrás que descargarla y presentarla impresa el día del evento junto con tu identificación oficial.<br><br>¡Te esperamos en BORN TO BE TEC 2014!</p-->
+				<div class="response local">
+					<p>Enviaremos a tu correo una confirmación, sólo tendrás que descargarla y presentarla impresa el día del evento junto con tu identificación oficial.<br><br>¡Te esperamos en BORN TO BE TEC 2014!</p-->
+				</div>
 				<div class="redesS">
 					<a href="#"></a>
 					<a href="#" class="t"></a>

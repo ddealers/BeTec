@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -983,7 +982,8 @@ footer .icon-help {
   color: #727272;
 }
 #end div.registroT p {
-  margin-left: 490px;
+  margin-top: 1vw;
+  text-align: center;
   color: #de3370;
 }
 #end div.registroT p.sigue {
@@ -1042,9 +1042,127 @@ footer .icon-help {
   padding-left: 50px;
   height: 100px;
   margin-left: 500px;
+}
+/** CARGAR DOCUMENTOS jok3r**/
+section.content {
+  margin-top: -30px;
+  margin-left: 120px;
+  width: 100%;
+}
+section.content article h1 {
+  top: -6.6vw;
+  background: #43b9f0;
+  padding: 1vw 2.1vw;
+  left: -7vw;
+}
+section.content article span {
+  font-size: 0.7em;
+  text-align: left;
+  display: block;
+  max-width: 250px;
+  margin-left: -80px;
+  margin-top: 12px;
+  color: #c9c9c9;
+}
+section.content article h3 {
+  text-transform: uppercase;
+  color: #4d4d4d;
+  margin-left: -80px;
+  margin-top: 30px;
+  line-height: 1px;
+}
+section.content article div.evento {
+  display: inline-block;
+  float: right;
+  margin: -50px 0 0 300px;
+  color: #4d4d4d;
+  position: absolute;
+  width: 100%;
+}
+section.content article div.evento span.even {
+  display: inline-block;
+  margin-left: 1px !important;
+}
+section.content article div.acciones {
+  display: inline;
+  float: left;
+  margin-left: -120px;
+}
+section.content article div.acciones .hecho {
+  margin-top: 30px !important;
+  display: inline-block;
+}
+section.content article div.acciones .hecho figure {
+  width: 100%;
+}
+section.content article div.acciones .hecho img {
+  width: 60px;
+}
+section.content article div.acciones .hecho span,
+section.content article div.acciones .hecho h4 {
+  float: left;
+  margin-left: 120px;
+  margin-top: -60px;
+  display: block;
+}
+section.content article div.acciones .hecho h4 {
+  margin-top: -40px;
+  font-weight: normal;
+}
+section.content article div.pendiente {
+  display: inline;
+  float: right;
+  margin-left: 300px;
+  position: absolute;
+  margin-top: -97px;
+}
+section.content article div.pendiente figure {
+  width: 100%;
+}
+section.content article div.pendiente img {
+  width: 62px;
+}
+section.content article div.pendiente span,
+section.content article div.pendiente h4 {
+  float: left;
+  margin-left: 110px;
+  margin-top: -57px;
+  display: inline;
+}
+section.content article div.pendiente h4 {
+  margin-top: -40px;
+  font-weight: normal;
+  width: 100%;
+}
+section.content article div.pendiente input[type='file'] {
+  margin-left: 110px;
+}
+/*
+.foot
+	background-color: #858585
+	display: inline-block
+	max-height 40px
+	height 40px
+	position: fixed;
+	margin: 639px 0 0 0px;
+	max-width: 100%!important;
+	width: 1280px;
+	figure
+		margin: 5px 0 0 10px;
+	ul
+		display: inline;
+		width: 100%;
+		float: left;
+		color #fff
+		li
+			list-style: none;
+			margin-top: -20px;
+			margin-left: 100px;
+			a
+				margin-left 100px!important
+*/
 /*
 /* =========================== LOAD DOCUMENTS */
-}
 /*
 section#load_documents
 	background: #f9f9f9;
@@ -1156,3 +1274,4 @@ div.containerModal
 		span
 			font-weight bold
 			font-size: 27px;
+
