@@ -207,7 +207,7 @@ section#be_tec p {
   left: 16vw;
 }
 #actividades h1 {
-  top: -6.6vw;
+  top: -3.6vw;
   background: #00bbf2;
   padding: 1vw 2.1vw;
   left: -7vw;
@@ -217,15 +217,17 @@ section#be_tec p {
 }
 #actividades div.container12 {
   padding-left: 1vw;
-  padding-top: 2vh;
+  padding-top: 12vh;
 }
 #actividades div.container12 .column3 {
   width: 12vw;
-  padding: 0;
+  padding: 0 20px;
   margin: 0;
 }
 #actividades div.container12 .column3 p.col {
   margin: 0;
+  text-align: center;
+  margin-left: -80px;
 }
 /* =========================== AGENDA */
 #agenda {
@@ -767,6 +769,7 @@ footer .icon-help {
   padding: 0.8vw;
   margin: 0.5vw 0;
   border: 2px #ececec solid;
+  width: 199px;
 }
 #registro article form .step .step-area .step-data:before {
   position: absolute;
