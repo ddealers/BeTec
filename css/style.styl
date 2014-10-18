@@ -190,22 +190,11 @@ section
 					p.s 
 						position absolute
 						left: 458px;
-<<<<<<< HEAD
 						/*background: rgba(255,255,255,0.2);*/
-						border 1px solid rgba(255,255,255,0.3)
 						top: 60px
 						padding: 10px;
 						font-size: 13px;
 				.days
-=======
-						/*background: rgba(255,255,255,0.2);
-						border 1px solid rgba(255,255,255,0.3)
-						top: 60px;
-						padding: 10px;
-						font-size: 13px;
-					*/
-			.days
->>>>>>> 1e34f7133d2bdc91dee87bd593f056675e2177cd
 					size 100%
 					.day
 						table
@@ -237,13 +226,14 @@ section
 										height 25px
 									&.dos
 										background #eeb790
-										color #000
+										color #fff
 									&.tres
 										background #8fe9c9
 										color #000
 									&.cuatro
 										background #eb8bf2
-										color #000
+										color #fff
+										border none
 									&.cinco
 										background #b58bf1
 										color #000
@@ -252,15 +242,19 @@ section
 										color #fff
 									&.siete
 										background #90eae2
-										color #000
+										color #fff
+										border none
 									&.ocho
 										background #e6e691
 										color #000
 							&.jueves
 								margin-bottom 5.6vh
+								width: 745px;
 							&.viernes
+								width: 745px;
 								//
 							&.sabado
+								width: 745px;
 								//
 						p.textJ
 							text-align left
@@ -322,6 +316,7 @@ section
 				img.siete
 					absolute top 7.2vw left 13vw
 					width 35%
+
 						
 /* =========================== REGISTRATE */
 	&#registrate
@@ -482,9 +477,10 @@ footer
 			left 20vw
 			size 65% 60%
 			h1.registro
-				top -6.6vw
+				top -4.6vw
 				background #ff3073
 				padding 1vw 2.1vw
+				font-size 2.3vw 
 			h2.experiencia 
 				color #727272
 				font-size 2.4vh
@@ -507,6 +503,7 @@ footer
 						float left
 						.hospedaje
 							margin-top 20px
+							width: 417px;
 						.info
 							font-family 'Futura-Medium'
 							width 12vw
@@ -525,11 +522,13 @@ footer
 								margin 0.5vw 0
 								border 2px #ececec solid
 								width 199px
+								font-size: 13px;
 							&:before
 									absolute top 1.5vw right 1vw
 							label
 								position relative
 								display block
+								font-size: 13px;
 								select
 									display inline-block
 									padding 0.8vw
@@ -630,7 +629,7 @@ footer
 									padding-right 3vw
 						&.evento
 							width 30vw
-							margin-left 1vw
+							margin-left 4vw
 							select.option.eve
 								width 235px
 								.info

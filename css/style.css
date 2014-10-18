@@ -297,12 +297,10 @@ section#be_tec p {
 					p.s 
 						position absolute
 						left: 458px;
-						/*background: rgba(255,255,255,0.2);
-						border 1px solid rgba(255,255,255,0.3)
-						top: 60px;
-						padding: 10px;
-						font-size: 13px;
-					*/
+						/*background: rgba(255,255,255,0.2);*/
+  top: 60px;
+  padding: 10px;
+  font-size: 13px;
 }
 #agenda article .calendar .header .titles {
   text-align: center;
@@ -362,7 +360,7 @@ section#be_tec p {
 }
 #agenda article .days .day table tr td.dos {
   background: #eeb790;
-  color: #000;
+  color: #fff;
 }
 #agenda article .days .day table tr td.tres {
   background: #8fe9c9;
@@ -370,7 +368,8 @@ section#be_tec p {
 }
 #agenda article .days .day table tr td.cuatro {
   background: #eb8bf2;
-  color: #000;
+  color: #fff;
+  border: none;
 }
 #agenda article .days .day table tr td.cinco {
   background: #b58bf1;
@@ -382,7 +381,8 @@ section#be_tec p {
 }
 #agenda article .days .day table tr td.siete {
   background: #90eae2;
-  color: #000;
+  color: #fff;
+  border: none;
 }
 #agenda article .days .day table tr td.ocho {
   background: #e6e691;
@@ -390,6 +390,13 @@ section#be_tec p {
 }
 #agenda article .days .day table.jueves {
   margin-bottom: 5.6vh;
+  width: 745px;
+}
+#agenda article .days .day table.viernes {
+  width: 745px;
+}
+#agenda article .days .day table.sabado {
+  width: 745px;
 }
 #agenda article .days .day p.textJ {
   text-align: left;
@@ -724,9 +731,10 @@ footer .icon-help {
   height: 60%;
 }
 #registro article h1.registro {
-  top: -6.6vw;
+  top: -4.6vw;
   background: #ff3073;
   padding: 1vw 2.1vw;
+  font-size: 2.3vw;
 }
 #registro article h2.experiencia {
   color: #727272;
@@ -766,6 +774,7 @@ footer .icon-help {
 }
 #registro article form .step .step-area .hospedaje {
   margin-top: 20px;
+  width: 417px;
 }
 #registro article form .step .step-area .info {
   font-family: 'Futura-Medium';
@@ -787,6 +796,7 @@ footer .icon-help {
   margin: 0.5vw 0;
   border: 2px #ececec solid;
   width: 199px;
+  font-size: 13px;
 }
 #registro article form .step .step-area .step-data:before {
   position: absolute;
@@ -796,6 +806,7 @@ footer .icon-help {
 #registro article form .step .step-area .step-data label {
   position: relative;
   display: block;
+  font-size: 13px;
 }
 #registro article form .step .step-area .step-data label select {
   display: inline-block;
@@ -936,7 +947,7 @@ footer .icon-help {
 }
 #registro article form .step .step-area.evento {
   width: 30vw;
-  margin-left: 1vw;
+  margin-left: 4vw;
 }
 #registro article form .step .step-area.evento select.option.eve {
   width: 235px;

@@ -181,10 +181,16 @@
 								<td class="hr" colspan="2">4<span>PM</span></td>
 								<td class="hr" colspan="2">5<span>PM</span></td>
 								<td class="hr" colspan="2">6<span>PM</span></td>
+								<td class="hr" colspan="2">7<span>PM</span></td>
+								<td class="hr" colspan="2">8<span>PM</span></td>
 							</tr>
 							<tr>
 								<td>Tour por la ciudad<br> (exclusivo foráneos)</td>
 								<td colspan="6" class="uno">EXCLUSIVO FORÁNEOS</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -219,6 +225,10 @@
 								<td></td>
 								<td></td>
 								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td>Registro de locales<br> y foráneos</td>
@@ -234,6 +244,10 @@
 								<td></td>
 								<td></td>
 								<td colspan="2" class="tres"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -263,6 +277,10 @@
 								<td></td>
 								<td></td>
 								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td>Primera ronda de<br> actividades</td>
@@ -282,6 +300,10 @@
 								<td ></td>
 								<td></td>
 								<td colspan="2" class="cinco"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 								<td></td>
 								<td></td>
 								<td></td>
@@ -307,6 +329,10 @@
 								<td></td>
 								<td colspan="2" class="seis"></td>
 								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td>Terecera ronda de<br> actividades</td>
@@ -329,7 +355,10 @@
 								<td></td>
 								<td></td>
 								<td></td>
-								<td colspan="1" class="siete"></td>
+								<td colspan="2" class="siete"></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 							<tr>
 								<td>Cena / Cierre de viernes</td>
@@ -353,6 +382,8 @@
 								<td></td>
 								<td></td>
 								<td></td>
+								<td></td>
+								<td colspan="3" class="ocho"></td>
 							</tr>
 						</table>
 					</div>
@@ -369,34 +400,26 @@
 								<td class="hr" colspan="2">2<span>PM</span></td>
 							</tr>
 							<tr>
-								<td>Taller 1</td>
-								<td colspan="8" class="siete">Proyecto Integrador de la Escuela de Negocios,<br> Ciencias Sociales y Humanidades</td>
+								<td>Primera ronda de talleres</td>
+								<td colspan="4" class="siete">TALLERES INTERACTIVOS<br> DE LAS 40 CARRERAS</td>
+								<td class="siete"></td>
 								<td></td>
 								<td></td>
-							</tr>
-							<tr>
-								<td>Taller 2</td>
-								<td colspan="8" class="cuatro">Proyecto Integrador de la Escuela de Ingeniería y <br>Tecnologías de Información</td>
 								<td></td>
 								<td></td>
-							</tr>
-							<tr>
-								<td>Taller 3</td>
-								<td colspan="8" class="seis">Proyecto Integrador de la Escuela de Biotecnología y<br> Ciencias de la Salud</td>
+								<td></td>
 								<td></td>
 								<td></td>
 							</tr>
 							<tr>
-								<td>Taller 4</td>
-								<td colspan="8" class="uno">Proyecto Integrador de la Escuela de Arquitectura, <br> Arte y Diseño</td>
+								<td>Segunda ronda de talleres</td>
 								<td></td>
 								<td></td>
-							</tr>
-							<tr>
-								<td>Taller 5</td>
-								<td colspan="8" class="ocho">Proyecto Integrador de la Escuela Nacional de <br>Medicina</td>
 								<td></td>
 								<td></td>
+								<td></td>
+								<td class="cuatro"></td>
+								<td colspan="5" class="cuatro">TALLERES INTERACTIVOS<br> DE LAS 40 CARRERAS></td>
 							</tr>
 						</table>
 					</div>
@@ -675,7 +698,7 @@
 							</label>
 							<label class="icon-arrow-left">
 								<select name="ciudad" id="ciudadMX" class="option" onchange="citySchool(this,'prepaMX')">
-									<option value='#'>Elije tu ciudad</option>
+									<option value='#'>Ciudad de residencia*</option>
 								</select>
 							</label>
 						</div>
@@ -688,7 +711,7 @@
 						<div class="step-data">
 							<label class="icon-arrow-left">
 								<select name="prepa" class="option" id="prepaMX">
-									<option value='#'>Elije tu Prepa</option>
+									<option value='#'>Prepa donde estudias*</option>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
@@ -757,7 +780,7 @@
 					<div class="step-area hospedaje">
 						<p class="info hospedaje">
 							ELECCIÓN DE CARRERA
-							<img class="lapiz"src="./img/lapiz.png">
+							<img class="lapiz"src="./img/lista.png">
 						</p>
 						<div class="step-data">
 							<p>¿Ya decidiste qué carrera estudiar?</p>
@@ -771,6 +794,31 @@
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="step-area hospedaje">
+						<p class="info hospedaje">
+							CAMPUS MONTERREY
+							<img class="lapiz"src="./img/libro.png">
+						</p>
+						<div class="step-data">
+							<p>¿Tienes pensado estudiar tu carrera en el <br>Tecnológico de Monterrey, Campus Monterrey?</p>
+							<div class="bool-choose">
+								<input type="hidden" name="carrera" id="carrera" value="0"/>
+								<div class="option noActivo" id="hotelS">
+									<p>SÍ</p>
+								</div>
+								<div class="option activo" id="hotelN">
+									<p>NO</p>
+								</div>
+							</div>
+							<div class="step-data">
+								<input type="text" placeholder="Escuela(s)*" name="escuela" id="escuela" />
+							</div>
+						</div>
+					</div>
+					<div class="clearborder">
+						<p class="info"></p>
+						<div class="border"></div>
 					</div>
 					<div class="step-area carreras">
 						<p class="info">
@@ -795,32 +843,30 @@
 							</label>
 						</div>
 					</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+					<div class="step-area evento">
+						<p class="info">
+							EVENTO
+							<img class="lapiz"src="./img/evento.png">
+						</p>
+						<div class="step-data">
+							<p>¿Cómo te enteraste del Born to be Tec?</p>
+							<label class="icon-arrow-left">
+								<select name="evento" id="evento" class="option eve">
+									<?php echo selectEventos(); ?>
+								</select>
+							</label>
+						</div>
+					</div>
+				</div>
 				<div class="step">
 					<div class="step-area viernes">
 						<p class="info">
-							TALLERES<br />
+							ACTIVIDADES<br />
 							DEL VIERNES
 							<img class="lapiz"src="./img/ecualizador.png">
 						</p>
 						<div class="step-data">
-							<p>Elige los tres talleres a los que quieres asistir el viernes.</p>
+							<p>Elige las tres actividades a las que quieres asistir el viernes.</p>
 							<label class="icon-arrow-left">
 								<select name="vopt1" id="vopt1" class="option">
 									<?php echo selectTalleresV(); ?>
@@ -840,29 +886,20 @@
 					</div>
 					<div class="step-area sabado">
 						<p class="info">
-							TALLER<br />
+							TALLERES<br />
 							DEL SÁBADO
 							<img class="lapiz"src="./img/ecualizador.png">
 						</p>
 						<div class="step-data">
-							<p>Elige el taller al que quieres asistir el sábado.</p>
+							<p>Elige los dos talleres que quieres asistir el sábado.</p>
 							<label class="icon-arrow-left">
 								<select name="sopt" id="sopt" class="option">
 									<?php echo selectTalleresS(); ?>
 								</select>
 							</label>
-						</div>
-					</div>
-					<div class="step-area evento">
-						<p class="info">
-							EVENTO
-							<img class="lapiz"src="./img/evento.png">
-						</p>
-						<div class="step-data">
-							<p>¿Cómo te enteraste del evento?</p>
 							<label class="icon-arrow-left">
-								<select name="evento" id="evento" class="option eve">
-									<?php echo selectEventos(); ?>
+								<select name="sopt" id="sopt" class="option">
+									<?php echo selectTalleresS(); ?>
 								</select>
 							</label>
 						</div>
@@ -877,7 +914,7 @@
 						</p>
 						<div class="step-data">
 							El Instituto Tecnológico y de Estudios Superiores de Monterrey, con domicilio en Av. Eugenio Garza Sada #2501 Sur, Col. Tecnológico, en la ciudad de Monterrey, N.L., utilizará sus datos personales aquí recabados para fines de seguimiento y promoción de eventos exclusivos del Tecnológico de Monterrey, así como para dar seguimiento al proceso de admisión e inscripción a cualquiera de los campus o sedes del Tecnológico de Monterrey. Para mayor información acerca del tratamiento y de los derechos que puede ejercer, por favor acceder al Aviso de Privacidad completo en la página hospedada en la siguiente dirección electrónica: www.itesm.edu.  Acepto y autorizo que el Instituto Tecnológico y de Estudios Superiores de Monterrey utilice la información aquí proporcionada para los fines anteriormente señalados. Si desea eliminar su registro de nuestra base de datos, favor de enviar un correo con la palabra BAJA a la dirección: siem@servicios.itesm.mx
-							<label>Acepto los Terminos y Condiciones<input type="checkbox" id="acepto"></label>
+							<label>Acepto los Términos y Condiciones<input type="checkbox" id="acepto"></label>
 						</div>
 					</div>
 				</div>
@@ -886,6 +923,9 @@
 		<div class="siguiente">
 			<a class="next" href="#next">Siguiente</a>
 		</div>
+		<!--div class="enviar">
+			<a class="next" href="#next">ENVIAR</a>
+		</div-->
 		<div class="footer"></div>
 	</section>
 	<section id="end">
