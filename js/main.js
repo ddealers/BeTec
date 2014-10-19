@@ -17,24 +17,37 @@ $(document).ready(function(){
 	updateContainer();
 
 	//===== Navigation =====
-	var sections = ['be_tec','actividades','agenda','sede','registrate','faq'];
-	var sindex = 0;
+	var sections = ['be_tec','actividades','agenda','sede','registrate','faq','registro'];
+	var sindex = 0, sel;
 	$('.arrows .next').on('click', function(e){
 		e.preventDefault();
 		sindex++;
+		/*
 		if(sindex >= sections.length){
 			sindex = 0;
 		}
-		var sel = $('header nav ul li').eq(sindex).children('a');
+		*/
+		if(sindex == sections.length - 1){
+			sindex--;
+			sel = $('#btn_registrate');
+		}else{
+			sel = $('header nav ul li').eq(sindex).children('a');
+		}
 		skrollr.menu.click(sel[0]);
 	});
 	$('.arrows .prev').on('click', function(e){
 		e.preventDefault();
 		sindex--;
+		/*
 		if(sindex < 0){
 			sindex = sections.length - 1;
 		}
-		var sel = $('header nav ul li').eq(sindex).children('a');
+		*/
+		if(sindex == sections.length - 1){
+			sel = $('#btn_registrate');
+		}else{
+			sel = $('header nav ul li').eq(sindex).children('a');
+		}
 		skrollr.menu.click(sel[0]);
 	});
 	$('header nav ul li a').on('click', function(e){

@@ -33,7 +33,7 @@
 			</ul>
 		</nav>
 		<div class="social">
-			<a data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0" data-menu-top="600p" href="#registro"><img src="./img/registro_boton.png"/></a>
+			<a id="btn_registrate" data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0" data-menu-top="600p" href="#registro"><img src="./img/registro_boton.png"/></a>
 			<div class="rs">
 				<a href="https://www.facebook.com/BorntoBeTEC" target="_blank" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/face.png"></a>
 				<a href="https://twitter.com/BorntoBeTEC" target="_blank" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/tw.png"></a>
