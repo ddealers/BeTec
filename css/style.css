@@ -796,7 +796,7 @@ footer .icon-help {
   padding: 0.8vw;
   margin: 0.5vw 0;
   border: 2px #ececec solid;
-  width: 199px;
+  width: 80%;
   font-size: 13px;
 }
 #registro article form .step .step-area .step-data:before {
@@ -831,7 +831,8 @@ footer .icon-help {
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
-#registro article form .step .step-area .step-data .bool-choose .option {
+#registro article form .step .step-area .step-data .bool-choose .option,
+#registro article form .step .step-area .step-data .bool-chooser .option {
   cursor: pointer;
   width: 2vw;
   height: 1.5vw;
@@ -890,11 +891,11 @@ footer .icon-help {
   margin-left: 2vw;
 }
 #registro article form .step .step-area.contacto input[name="lada"] {
-  width: 4vw;
+  width: 10%;
   display: inline-block;
 }
 #registro article form .step .step-area.contacto input[name="tel"] {
-  width: 11vw;
+  width: 63%;
   display: inline-block;
 }
 #registro article form .step .step-area.carreras select {
@@ -922,6 +923,11 @@ footer .icon-help {
 }
 #registro article form .step .step-area.compania input {
   display: inline-block;
+}
+#registro article form .step .step-area.compania #parentesco-cont,
+#registro article form .step .step-area.compania #nomcomp {
+  display: none;
+  width: 45%;
 }
 #registro article form .step .step-area.viernes {
   width: 30vw;

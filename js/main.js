@@ -76,8 +76,7 @@ $(document).ready(function(){
 	$("#registro .next").on("click", function(e){
 		e.preventDefault();
 		prev = index;
-		index++;
-		/*
+		//index++;
 		if(index == 0){
 			var genero = $("#genero").val();
 			form_data.genero = genero;
@@ -88,7 +87,8 @@ $(document).ready(function(){
 			var anio = $("#nanio").val();
 			var mes = $("#nmes").val();
 			
-			if(name != '' && apat != '' && amat != '' && dia != '' && mes != '' && anio != ''){
+			if(name != '' && apat != '' && amat != '' 
+				&& dia != '' && mes != '' && anio != ''){
 					var nombre = name + ' ' + apat + ' ' + amat;
 					form_data.nombre = nombre;
 					var cumple = anio + '-' + mes +'-'+ dia;
@@ -105,12 +105,14 @@ $(document).ready(function(){
 			var tel   = $("#tel").val();
 			var cel   = $("#cel").val();
 			form_data.cel = cel;
+			/*
 			var car1  = $("#carrera1").val();
 			form_data.car1 = car1;
 			var car2  = $("#carrera2").val();
 			form_data.car2 = car2;
 			var car3  = $("#carrera3").val();
 			form_data.car3 = car3;
+			*/
 			var state = $("#estado").val();
 			form_data.state = state;
 			var city  = $("#ciudadMX").val();
@@ -120,7 +122,16 @@ $(document).ready(function(){
 			var grad  = $("#gradua").val();
 			form_data.grad = grad;
 
-			if(email != '' && lada != '' && tel != '' && cel != '' && car1 != '' && car2 != '' && car3 != '' && state != '' && city != '' && prep != '' && grad != ''){
+			if(email != '' 
+				&& lada != '' && tel != '' 
+				&& cel != '' 
+				/*
+				&& car1 != '' 
+				&& car2 != '' 
+				&& car3 != '' 
+				*/
+				&& state != '' && city != '' 
+				&& prep != '' && grad != ''){
 				var numero = lada + tel;
 				form_data.numero = numero;
 				index++;
@@ -157,6 +168,33 @@ $(document).ready(function(){
 				index++;
 			}
 		}else if(index == 3){
+			var carrera = $("#carrera").val(),
+				carrera1 = $("#carrera1").val(),
+				carrera2 = $("#carrera2").val(),
+				carrera3 = $("#carrera3").val(),
+				campus = $("#campus").val(),
+				campusEscuela = $("#campus_escuela").val(),
+				evento = $("#evento").val();
+			if(carrera != ''
+				&& carrera1 != ''
+				&& carrera2 != ''
+				&& carrera3 != ''
+				&& campus != ''
+				&& campusEscuela != ''
+				&& evento != ''){
+				form_data.carrera = carrera;
+				form_data.car1 = carrera1;
+				form_data.car2 = carrera2;
+				form_data.car3 = carrera3;
+				form_data.campus = campus;
+				form_data.campus_escuela = campusEscuela;
+				form_data.evento = evento;
+				index++;
+			}else{
+				alert("Debes aceptar terminos y condiciones");
+				return;
+			}
+		}else if(index == 4){
 			var vopt1  = $("#vopt1").val();
 			form_data.vopt1 = vopt1;
 			var vopt2  = $("#vopt2").val();
@@ -204,7 +242,6 @@ $(document).ready(function(){
 				return;
 			}
 		}
-		*/
 		setFormStep(index);
 	});
 
@@ -257,6 +294,9 @@ $(document).ready(function(){
 			$("#genero").val('0');
 		}
 	})
+	//$("#genero").val('0');
+
+	$(".compania").hide();
 	$("#hotelS").click(function() {
 		if($(this).hasClass("activo")){
 			console.log("ya esta activo");
@@ -265,6 +305,8 @@ $(document).ready(function(){
 			$("#hotelN").addClass("noActivo");
 			$("#hotelS").addClass("activo");
 			$("#hospedaje").val('1');
+			TweenMax.set('.compania',{display: 'inline-flex'});
+			TweenMax.from('.compania', 0.3, {opacity: 0});
 		}
 	})
 	$("#hotelN").click(function() {
@@ -275,8 +317,13 @@ $(document).ready(function(){
 			$("#hotelS").addClass("noActivo");
 			$("#hotelN").addClass("activo");
 			$("#hospedaje").val('0');
+			TweenMax.to('.compania', 0.3, {opacity: 0, onComplete: function(){
+				TweenMax.set('.compania', {display:'none', opacity: '1'});
+			}});
 		}
 	})
+	//$("#hospedaje").val('0');
+
 	$("#soloS").click(function() {
 		if($(this).hasClass("activo")){
 			console.log("ya esta activo");
@@ -285,6 +332,8 @@ $(document).ready(function(){
 			$("#soloN").addClass("noActivo");
 			$("#soloS").addClass("activo");
 			$("#acompanante").val('1');
+			TweenMax.set(['#parentesco-cont','#nomcomp'],{display: 'inline-block'});
+			TweenMax.from(['#parentesco-cont','#nomcomp'], 0.3, {opacity: 0});
 		}
 	})
 	$("#soloN").click(function() {
@@ -295,8 +344,21 @@ $(document).ready(function(){
 			$("#soloS").addClass("noActivo");
 			$("#soloN").addClass("activo");
 			$("#acompanante").val('0');
+			TweenMax.to(['#parentesco-cont','#nomcomp'], 0.3, {opacity: 0, onComplete: function(){
+				TweenMax.set(['#parentesco-cont','#nomcomp'], {display:'none', opacity: '1'});
+			}});
 		}
 	})
+	$('.bool-chooser .option').on('click', function(e){
+		e.preventDefault();
+		var input = $('#'+$(this).parent().data('input'));
+
+		$(this).parent().find('.option').removeClass('activo').addClass('noActivo');
+		$(this).addClass('activo');
+		
+		input.val($(this).data('val'));
+	});
+	//$("#acompanante").val('0');
 })
 
 
