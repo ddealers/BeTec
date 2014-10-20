@@ -1170,6 +1170,7 @@ section.content article h3 {
   margin-left: -80px;
   margin-top: 30px;
   line-height: 1px;
+  font-family: GillSans-Bold;
 }
 section.content article div.evento {
   display: inline-block;
@@ -1182,6 +1183,10 @@ section.content article div.evento {
 section.content article div.evento span.even {
   display: inline-block;
   margin-left: 1px !important;
+  font-family: 'Gill Sans';
+}
+section.content article div.evento h4.font {
+  font-family: 'Gill Sans';
 }
 section.content article div.acciones {
   display: inline;
@@ -1204,10 +1209,15 @@ section.content article div.acciones .hecho h4 {
   margin-left: 120px;
   margin-top: -60px;
   display: block;
+  font-family: 'Gill Sans';
 }
 section.content article div.acciones .hecho h4 {
   margin-top: -40px;
   font-weight: normal;
+  text-transform: uppercase;
+  font-family: 'Gill Sans';
+  color: #4d4d4d;
+  font-weight: bold;
 }
 section.content article div.pendiente {
   display: inline;
@@ -1228,13 +1238,28 @@ section.content article div.pendiente h4 {
   margin-left: 110px;
   margin-top: -57px;
   display: inline;
+  font-family: 'Gill Sans';
 }
 section.content article div.pendiente h4 {
   margin-top: -40px;
   font-weight: normal;
   width: 100%;
+  font-family: 'Gill Sans';
+  text-transform: uppercase;
+  color: #4d4d4d;
+  font-weight: bold;
 }
 section.content article div.pendiente input[type='file'] {
+  margin-left: 110px;
+}
+section.content article div.pendiente input[type='submit'] {
+  color: #fff;
+  background: #6d6d6d url("../img/up.png") no-repeat 75px;
+  border: none;
+  width: 100px;
+  text-align: left;
+  padding: 10px;
+  margin-top: 20px;
   margin-left: 110px;
 }
 /*

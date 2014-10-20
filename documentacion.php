@@ -124,7 +124,7 @@ $form_FA = "
 			<p>	
 				<div class='evento'>
 					<span class='even'>Evento</span>
-					<h4>BORN TO BE TEC 2014</h4>
+					<h4 class='font'>BORN TO BE TEC 2014</h4>
 				</div>
 				<div class='acciones'>
 					<div class='hecho'>
@@ -139,7 +139,7 @@ $form_FA = "
 							<img src='img/incorrecto.png' alt='Pendiente'>
 						</figure>
 						<span class='even'>Carta</span>
-						<h4>Pendiente subir carta compromiso</h4>
+						<h4>Pendiente subir<br> carta compromiso</h4>
 						<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
 							<input type='hidden' name='string' value='".$string."' />
 							<input type='hidden' name='idu' value='".$idu."' />
