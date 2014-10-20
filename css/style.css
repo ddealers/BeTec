@@ -1226,29 +1226,21 @@ section.content article div.pendiente {
   position: absolute;
   margin-top: -97px;
 }
-section.content article div.pendiente.carta {
-  display: inline;
-  float: right;
-  margin-left: 300px;
-  position: absolute;
-  margin-top: -97px;
-  left: 100px;
-}
-section.content article div.pendiente.carta figure {
+section.content article div.pendiente figure {
   width: 100%;
 }
-section.content article div.pendiente.carta img {
+section.content article div.pendiente img {
   width: 62px;
 }
-section.content article div.pendiente.carta span,
-section.content article div.pendiente.carta h4 {
+section.content article div.pendiente span,
+section.content article div.pendiente h4 {
   float: left;
   margin-left: 110px;
   margin-top: -57px;
   display: inline;
   font-family: 'Gill Sans';
 }
-section.content article div.pendiente.carta h4 {
+section.content article div.pendiente h4 {
   margin-top: -40px;
   font-weight: normal;
   width: 100%;
@@ -1257,10 +1249,10 @@ section.content article div.pendiente.carta h4 {
   color: #4d4d4d;
   font-weight: bold;
 }
-section.content article div.pendiente.carta input[type='file'] {
+section.content article div.pendiente input[type='file'] {
   margin-left: 110px;
 }
-section.content article div.pendiente.carta input[type='submit'] {
+section.content article div.pendiente input[type='submit'] {
   color: #fff;
   background: #6d6d6d url("../img/up.png") no-repeat 75px;
   border: none;
@@ -1269,6 +1261,14 @@ section.content article div.pendiente.carta input[type='submit'] {
   padding: 10px;
   margin-top: 20px;
   margin-left: 110px;
+}
+section.content article div.pendiente.carta {
+  display: inline;
+  float: right;
+  margin-left: 300px;
+  position: absolute;
+  margin-top: -97px;
+  left: 100px;
 }
 section.content article div.azul {
   background: #00bbf2;
