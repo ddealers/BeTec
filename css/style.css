@@ -739,6 +739,7 @@ section#be_tec p {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  line-height: 135%;
 }
 #registro article form .step .step-area .step-data .bool-choose .option,
 #registro article form .step .step-area .step-data .bool-chooser .option {
