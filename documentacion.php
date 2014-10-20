@@ -249,7 +249,7 @@ $form_FB = "
 					</div>
 
 
-					<div class='pendiente.carta'>
+					<div class='pendiente carta'>
 						<figure>
 							<img src='img/incorrecto.png' alt='Pendiente'>
 						</figure>
