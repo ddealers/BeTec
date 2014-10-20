@@ -870,9 +870,9 @@ section#be_tec p {
   margin-left: 4vw;
 }
 #registro article form .step .step-area.evento select.option.eve {
-  width: 235px;
+  width: 100%;
 }
-#registro article form .step .step-area.evento select.option.eve .info {
+#registro article form .step .step-area.evento .info {
   width: 15vw;
 }
 #registro article form .step .step-area.acepto .step-data {
