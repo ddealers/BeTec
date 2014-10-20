@@ -33,7 +33,7 @@ if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 		if($v){
 			$listado = "";
 			while ($row = $v->fetch_assoc()) {
-				$listado .= ucwords("<option value='".$row['id']."'>".$row['nombre']."</option>");
+				$listado .= utf8_decode(ucwords("<option value='".$row['id']."'>".$row['nombre']."</option>"));
 			}
 		}
 	}
