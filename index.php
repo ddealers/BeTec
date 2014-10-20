@@ -663,6 +663,8 @@
 									<option value="1994">1994</option>
 									<option value="1995">1995</option>
 									<option value="1996">1996</option>
+									<option value="1997">1997</option>
+									<option value="1998">1998</option>
 								</select>
 							</label>
 						</div>
