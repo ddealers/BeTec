@@ -669,7 +669,7 @@
 									<option value="31">31</option>
 								</select>
 							</label>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="nmes" id="nmes">
 									<option value="">Mes*</option>
@@ -687,7 +687,7 @@
 									<option value="12">Diciembre</option>
 								</select>
 							</label>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="nanio" id="nanio">
 									<option value="">Año*</option>
@@ -732,14 +732,14 @@
 							<img class="lapiz"src="./img/ubi.png">
 						</p>
 						<div class="step-data">
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="estado" id="estado" class="option" onchange="estadoCity(this,'ciudadMX')">
 									<option value=''>Estado de residencia*</option>
 									<?php echo selectEstados(); ?>
 								</select>
 							</label>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="ciudad" id="ciudadMX" class="option" onchange="citySchool(this,'prepaMX')">
 									<option value=''>Ciudad de residencia*</option>
@@ -753,13 +753,13 @@
 							<img class="lapiz"src="./img/libro.png">
 						</p>
 						<div class="step-data">
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="prepa" class="option" id="prepaMX">
 									<option value=''>Prepa donde estudias*</option>
 								</select>
 							</label>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="gradua" id="gradua" class="option inputPrepa">
 									<option value="">Fecha esperada de graduación*</option>
@@ -810,7 +810,7 @@
 									<p>NO</p>
 								</div>
 							</div>
-							<label class="icon-arrow-left" id="parentesco-cont">
+							<label id="parentesco-cont">
 								<select name="parentesco" id="parentesco" class="option">
 									<i class="icon ion-ios7-arrow-down"></i>
 									<option value="">Parentesco*</option>
@@ -873,21 +873,21 @@
 							<img class="lapiz"src="./img/doc.png">
 						</p>
 						<div class="step-data">
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera1" id="carrera1" class="option">
 									<option value="">Elige una carrera*</option>
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera2" id="carrera2" class="option">
 									<option value="">Elige una carrera*</option>
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera3" id="carrera3" class="option">
 									<option value="">Elige una carrera*</option>
@@ -903,7 +903,7 @@
 						</p>
 						<div class="step-data">
 							<p>¿Cómo te enteraste del Born to be Tec?</p>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="evento" id="evento" class="option eve">
 									<option value="">Elige un medio*</option>
@@ -922,21 +922,21 @@
 						</p>
 						<div class="step-data">
 							<p>Elige las tres actividades a las que quieres asistir el viernes.</p>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt1" id="vopt1" class="option">
 									<option value="">Elige tu actividad de 16:30 a 17:20 horas*</option>
 									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt2" id="vopt2" class="option">
 									<option value="">Elige tu actividad de 17:40 a 18:30 horas*</option>
 									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt3" id="vopt3" class="option">
 									<option value="">Elige tu actividad de 18:40 a 19:30 horas*</option>
@@ -953,14 +953,14 @@
 						</p>
 						<div class="step-data">
 							<p>Elige los dos talleres que quieres asistir el sábado.</p>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="sopt1" id="sopt1" class="option">
 									<option value="">Elige tu taller de 9:00 a 11:30 horas*</option>
 									<?php echo selectTalleresS(); ?>
 								</select>
 							</label>
-							<label class="icon-arrow-left">
+							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="sopt2" id="sopt2" class="option">
 									<option value="">Elige tu taller de 11:45 a 14:15 horas*</option>

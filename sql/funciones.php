@@ -22,7 +22,7 @@ if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 	
 	$idc = $_GET['idc'];
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$prim = "<option value=''>Prepa donde estudias**</option>";
+	$prim = "<option value=''>Prepa donde estudias*</option>";
 
 	if(isset($idc) && $idc != NULL){
 		$q = "SELECT id, nombre FROM preparatorias WHERE id_ciudad = $idc";
