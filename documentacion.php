@@ -238,7 +238,7 @@ $form_FB = "
 						<figure>
 							<img src='img/incorrecto.png' alt='Pendiente'>
 						</figure>
-						<span class='even'>Carta</span>
+						<span class='even'>Pago</span>
 						<h4>Pendiente subir<br> comprobante</h4>
 						<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
 							<input type='hidden' name='string' value='".$string."' />
