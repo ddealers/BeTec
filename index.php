@@ -6,43 +6,77 @@
 	<title>BTEC</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/1140.css" />
-	<link rel="stylesheet" type="text/css" href="css/responsive-tables.css">
-	<link rel="stylesheet" type="text/css" href="css/btec.css" />
+	<link rel="stylesheet" type="text/css" href="css/ionicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/responsive-tables.css" />
+	<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="js/vendor/skrollr/skrollr.min.js"></script>
 	<script type="text/javascript" src="js/vendor/skrollr/skrollr.menu.min.js"></script>
 	<script type="text/javascript" src="js/vendor/responsive-tables.js"></script>
+	<script type="text/javascript" src="js/vendor/perfect-scrollbar.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 	<header>
-		<figure id="logo">
-			<a href="#"><img src="./img/logo.png" title="Born to be TEC" /></a>
+		<figure>
+			<a id="logo" href="#"><img src="./img/logo.png" title="Born to be TEC" /></a>
 			
 		</figure>
 		<nav>
-			<ul data-500p="opacity:1;display:inline-flex" data-550p="display:none"data-600p="opacity:0;">
-				<li><a data-menu-top="0" href="#be_tec">BTEC</a></li>
-				<li><a data-menu-top="100p" href="#actividades">Actividades</a></li>
-				<li><a data-menu-top="200p" href="#agenda">Agenda</a></li>
-				<li><a data-menu-top="300p" href="#sede">Sede</a></li>
-				<li><a data-menu-top="400p" href="#registrate">Regístrate</a></li>
-				<li><a data-menu-top="500p" href="#faq">FAQ's</a></li>
+			<ul>
+				<li><a
+					data-0="font-weight:700"
+					data-100p="font-weight:500"
+					data-menu-top="0" href="#be_tec">BTEC</a>
+				</li>
+				<li><a 
+					data-0="font-weight:500"
+					data-100p="font-weight:700"
+					data-200p="font-weight:500"
+					data-menu-top="100p" href="#actividades">Actividades</a>
+				</li>
+				<li>
+					<a
+					data-100p="font-weight:500"
+					data-200p="font-weight:700"
+					data-300p="font-weight:500" 
+					data-menu-top="200p" href="#agenda">Agenda</a>
+				</li>
+				<li>
+					<a 
+					data-200p="font-weight:500"
+					data-300p="font-weight:700"
+					data-400p="font-weight:500"
+					data-menu-top="300p" href="#sede">Sede</a>
+				</li>
+				<li>
+					<a 
+					data-300p="font-weight:500"
+					data-400p="font-weight:700"
+					data-500p="font-weight:500"
+					data-menu-top="400p" href="#registrate">Regístrate</a>
+				</li>
+				<li>
+					<a 
+					data-400p="font-weight:500"
+					data-500p="font-weight:700"
+					data-menu-top="500p" href="#faq">FAQ's</a>
+				</li>
 			</ul>
 		</nav>
 		<div class="social">
-			<a id="btn_registrate" data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0" data-menu-top="600p" href="#registro"><img src="./img/registro_boton.png"/></a>
+			<a id="btn_registrate" href="#registro"><img src="./img/registro_boton.png"/></a>
 			<div class="rs">
-				<a href="https://www.facebook.com/AdmisionesTecdeMty" target="_blank" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/face.png"></a>
-				<a href="https://twitter.com/AdmisionesITESM" target="_blank" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/tw.png"></a>
+				<a href="www.facebook.com/AdmisionesTecdeMty" target="_blank"><img src="./img/face.png"></a>
+				<a href="http://twitter.com/AdmisionesITESM" target="_blank"><img src="./img/tw.png"></a>
 			</div>
 		</div>
 	</header>
 	<nav class="arrows">
-		<a data-0="opacity:0; display:none" data-50p="display:block" data-100p="opacity:1" class="prev" href="#prev" data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0"></a>
-		<a class="next" href="#next" data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0"></a>
+		<a class="prev" href="#prev" data-0="opacity:0; display:none" data-50p="display:block" data-100p="opacity:1" data-500p="opacity:1;display:block"></a>
+		<a class="next" href="#next" data-400p="opacity:1;display:block" data-450p="opacity:0"></a>
 	</nav>
 	<section id="be_tec" data-0="transform: translate(0%,0)" data-100p="transform: translate(-100%,0)">
 		<article><!--CONTENIDO_BORN_TO_BE_TEC-->
@@ -469,7 +503,7 @@
 			  		</a>
 			  	</div>
 			  	<div class="column3 registro">
-			  		<a data-menu-top="600p" href="#registro">
+			  		<a id="btn_registro" data-menu-top="600p" href="#registro">
 			  			<img src="./img/registro.png">
 			  			<p>Iniciar registro</p>
 			  		</a>
@@ -477,7 +511,8 @@
 			</div>
 		</article>
 	</section>
-	<section id="faq" data-400p="transform: translate(100%, 0)" data-500p="transform: translate(0%, 0)" data-600p="transform: translate(-100%, 0)">
+	<section id="faq" data-400p="transform: translate(100%, 0)" data-500p="transform: translate(0%, 0)">
+	<!--section id="faq" data-400p="transform: translate(100%, 0)" data-500p="transform: translate(0%, 0)" data-600p="transform: translate(-100%, 0)"-->
 		<article><!--CONTENIDO_FAQ-->
 			<h1>PREGUNTAS FRECUENTES</h1>
 			<div class="texto">
@@ -553,7 +588,7 @@
 			</div>
 		</article>
 	</section>
-	<section id="registro" data-500p="transform: translate(100%, 0)" data-600p="transform: translate(0%, 0)">
+	<section id="registro">
 		<article><!--CONTENIDO_REGISTRO-->
 			<h1 class="registro">REGISTRO</h1>
 			<h2 class="experiencia">¡ESTÁS MUY CERCA DE<br> VIVIR LA EXPERIENCIA TEC!</h2>
@@ -565,12 +600,12 @@
 						<input type="hidden" name="genero" id="genero" value="0">
 						<div class="choose">
 							<div class="option selected" id="generoH">
-								<img src="./img/hombre.png" class="caballero">
+								<img src="./img/hombre_on.png" class="caballero">
 								<p>HOMBRE</p>
 							</div>
 							<p class="o">o</p>
 							<div class="option" id="generoM">
-								<img src="./img/mujer.png" class="dama">
+								<img src="./img/mujer_off.png" class="dama">
 								<p>MUJER</p>
 							</div>
 						</div>
@@ -596,7 +631,8 @@
 							<img src="./img/regalo.png">
 						</p>
 						<div class="step-data">
-							<label class="icon-arrow-left">
+							<label>
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="ndia" id="ndia">
 									<option value="">Día*</option>
 									<option value="1">1</option>
@@ -633,6 +669,7 @@
 								</select>
 							</label>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="nmes" id="nmes">
 									<option value="">Mes*</option>
 									<option value="1">Enero</option>
@@ -650,6 +687,7 @@
 								</select>
 							</label>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="nanio" id="nanio">
 									<option value="">Año*</option>
 									<option value="1986">1986</option>
@@ -694,13 +732,16 @@
 						</p>
 						<div class="step-data">
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="estado" id="estado" class="option" onchange="estadoCity(this,'ciudadMX')">
+									<option value=''>Estado de residencia*</option>
 									<?php echo selectEstados(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="ciudad" id="ciudadMX" class="option" onchange="citySchool(this,'prepaMX')">
-									<option value='#'>Ciudad de residencia*</option>
+									<option value=''>Ciudad de residencia*</option>
 								</select>
 							</label>
 						</div>
@@ -712,13 +753,15 @@
 						</p>
 						<div class="step-data">
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="prepa" class="option" id="prepaMX">
-									<option value='#'>Prepa donde estudias*</option>
+									<option value=''>Prepa donde estudias*</option>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="gradua" id="gradua" class="option inputPrepa">
-									<option>Fecha esperada de graduación*</option>
+									<option value="">Fecha esperada de graduación*</option>
 									<option value="2015">Agosto 2015</option>
 									<option value="2016-1">Enero 2016</option>
 									<option value="2016-2">Agosto 2016</option>
@@ -768,6 +811,7 @@
 							</div>
 							<label class="icon-arrow-left" id="parentesco-cont">
 								<select name="parentesco" id="parentesco" class="option">
+									<i class="icon ion-ios7-arrow-down"></i>
 									<option value="">Parentesco*</option>
 									<option value="1">Madre</option>
 									<option value="2">Padre</option>
@@ -787,11 +831,11 @@
 						<div class="step-data">
 							<p>¿Ya decidiste qué carrera estudiar?</p>
 							<div class="bool-chooser" data-input="carrera">
-								<input type="hidden" name="carrera" id="carrera" value="0"/>
+								<input type="hidden" name="carrera" id="carrera"/>
 								<div class="option noActivo" id="carreraS" data-val="0">
 									<p>SÍ</p>
 								</div>
-								<div class="option activo" id="carreraN" data-val="1">
+								<div class="option noActivo" id="carreraN" data-val="1">
 									<p>NO</p>
 								</div>
 							</div>
@@ -805,11 +849,11 @@
 						<div class="step-data">
 							<p>¿Tienes pensado estudiar tu carrera en el <br>Tecnológico de Monterrey, Campus Monterrey?</p>
 							<div class="bool-chooser" data-input="campus">
-								<input type="hidden" name="campus" id="campus" value="0"/>
+								<input type="hidden" name="campus" id="campus"/>
 								<div class="option noActivo" id="campusS" data-val="0">
 									<p>SÍ</p>
 								</div>
-								<div class="option activo" id="campusN" data-val="1">
+								<div class="option noActivo" id="campusN" data-val="1">
 									<p>NO</p>
 								</div>
 							</div>
@@ -829,17 +873,23 @@
 						</p>
 						<div class="step-data">
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera1" id="carrera1" class="option">
+									<option value="">Elige una carrera*</option>
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera2" id="carrera2" class="option">
+									<option value="">Elige una carrera*</option>
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera3" id="carrera3" class="option">
+									<option value="">Elige una carrera*</option>
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
@@ -853,7 +903,9 @@
 						<div class="step-data">
 							<p>¿Cómo te enteraste del Born to be Tec?</p>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="evento" id="evento" class="option eve">
+									<option value="">Elige un medio*</option>
 									<?php echo selectEventos(); ?>
 								</select>
 							</label>
@@ -870,17 +922,23 @@
 						<div class="step-data">
 							<p>Elige las tres actividades a las que quieres asistir el viernes.</p>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt1" id="vopt1" class="option">
+									<option value="">Elige tu actividad de 16:30 a 17:20 horas*</option>
 									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt2" id="vopt2" class="option">
+									<option value="">Elige tu actividad de 17:40 a 18:30 horas*</option>
 									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt3" id="vopt3" class="option">
+									<option value="">Elige tu actividad de 18:40 a 19:30 horas*</option>
 									<?php echo selectTalleresV(); ?>
 								</select>
 							</label>
@@ -895,12 +953,16 @@
 						<div class="step-data">
 							<p>Elige los dos talleres que quieres asistir el sábado.</p>
 							<label class="icon-arrow-left">
-								<select name="sopt" id="sopt" class="option">
+								<i class="icon ion-ios7-arrow-down"></i>
+								<select name="sopt1" id="sopt1" class="option">
+									<option value="">Elige tu taller de 9:00 a 11:30 horas*</option>
 									<?php echo selectTalleresS(); ?>
 								</select>
 							</label>
 							<label class="icon-arrow-left">
-								<select name="sopt" id="sopt" class="option">
+								<i class="icon ion-ios7-arrow-down"></i>
+								<select name="sopt2" id="sopt2" class="option">
+									<option value="">Elige tu taller de 11:45 a 14:15 horas*</option>
 									<?php echo selectTalleresS(); ?>
 								</select>
 							</label>
@@ -923,11 +985,8 @@
 			</form>
 		</article>
 		<div class="siguiente">
-			<a class="next" href="#next">Siguiente</a>
+			<a class="next" href="#next">Siguiente<i class="icon ion-arrow-right-c"></i></a>
 		</div>
-		<!--div class="enviar">
-			<a class="next" href="#next">ENVIAR</a>
-		</div-->
 		<div class="footer"></div>
 	</section>
 	<section id="end">
@@ -937,19 +996,19 @@
 				<h2>TU REGISTRO ESTÁ CASI TERMINADO.</h2>
 				<div class="response foraneoA">
 				<p class="sigue">Ahora sólo sigue estas instrucciones:</p>
-				<img src="./img/img.png">
+				<!--img src="./img/img.png"-->
 					<ol>
-						<li><span>1.</span> Descarga la Carta Compromiso <span><a href="">aquí</a></span> llénala y que firmen tus papás.</li>
-						<li><span>2.</span> Descarga la ficha de pago <span><a href="">aquí</a></span> y realiza el depósito de $500.00 pesos en<br>el banco de tu preferencia.<br></li>
+						<li><span>1.</span> Descarga la Carta Compromiso <span><a target="_blank" href="./download/FormatodeCartaCompromiso_2014_BTEC.pdf" download="FormatodeCartaCompromiso_2014_BTEC.pdf">aquí</a></span> llénala y que firmen tus papás.</li>
+						<li><span>2.</span> Descarga la ficha de pago <span><a target="_blank" href="./download/Formato_CuentaBancaria.jpg" download="Formato_CuentaBancaria.jpg">aquí</a></span> y realiza el depósito de $500.00 pesos en<br>el banco de tu preferencia.<br></li>
 						<li><span>3.</span> Sube ambos documentos comprobantes al link que te enviamos por correo.</li>
 					</ol>
 				</div>
 				<!-- ========================= REGISTRO TERMINADO PASO 2-->
 				<div class="response foraneoB">
 					<p class="sigue">Ahora sólo sigue estas instrucciones:</p>
-					<img src="./img/img.png">
+					<!--img src="./img/img.png"-->
 					<ol>
-						<li><span>1.</span> Descarga la Carta Compromiso <span><a href="">aquí</a></span> llénala y que firmen tus papás.</li>
+						<li><span>1.</span> Descarga la Carta Compromiso <span><a target="_blank" href="./download/FormatodeCartaCompromiso_2014_BTEC.pdf" download="FormatodeCartaCompromiso_2014_BTEC.pdf">aquí</a></span> llénala y que firmen tus papás.</li>
 						<li><span>2.</span> Sube el documento al link que te enviamos por correo</li-->
 					</ol>
 				</div>
@@ -957,12 +1016,11 @@
 				<div class="response local">
 					<p>Enviaremos a tu correo una confirmación, sólo tendrás que descargarla y presentarla impresa el día del evento junto con tu identificación oficial.<br><br>¡Te esperamos en BORN TO BE TEC 2014!</p-->
 				</div>
-				<div class="redesS">
+				<!--div class="redesS">
 					<a href="#"></a>
 					<a href="#" class="t"></a>
 					<p>¡COMPARTE EN REDES SOCIALES!</p>
-					<!--p class="siguiente">SIGUIENTE</p-->
-				</div>
+				</div-->
 			</div>
 		</article>
 	</section>
@@ -971,7 +1029,7 @@
 			<h1>AVISO LEGAL</h1>
 			<h2 class="terminos">TÉRMINOS Y CONDICIONES DE USO DEL SITIO</h2>
 			<a class="close" href="#close"></a>
-			<div>
+			<div class="info">
 				<h3>Identidad y domicilio del Responsable</h3>
 				<p>El Responsable de los datos personales que usted proporciona es El Instituto Tecnológico y de Estudios Superiores de Monterrey (en lo sucesivo “ITESM”) con domicilio ubicado en Av. Eugenio Garza Sada Sur No. 2501, colonia Tecnológico en Monterrey, Nuevo León. C.P. 64849.</p>
 				<h3>Datos personales y datos personales sensibles tratados por ITESM</h3>

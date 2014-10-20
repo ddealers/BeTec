@@ -17,19 +17,13 @@ $(document).ready(function(){
 	updateContainer();
 
 	//===== Navigation =====
-	var sections = ['be_tec','actividades','agenda','sede','registrate','faq','registro'];
+	var sections = ['be_tec','actividades','agenda','sede','registrate','faq'];
 	var sindex = 0, sel;
 	$('.arrows .next').on('click', function(e){
 		e.preventDefault();
 		sindex++;
-		/*
 		if(sindex >= sections.length){
 			sindex = 0;
-		}
-		*/
-		if(sindex == sections.length - 1){
-			sindex--;
-			sel = $('#btn_registrate');
 		}else{
 			sel = $('header nav ul li').eq(sindex).children('a');
 		}
@@ -38,13 +32,8 @@ $(document).ready(function(){
 	$('.arrows .prev').on('click', function(e){
 		e.preventDefault();
 		sindex--;
-		/*
 		if(sindex < 0){
 			sindex = sections.length - 1;
-		}
-		*/
-		if(sindex == sections.length - 1){
-			sel = $('#btn_registrate');
 		}else{
 			sel = $('header nav ul li').eq(sindex).children('a');
 		}
@@ -68,6 +57,69 @@ $(document).ready(function(){
 		}});
 	});
 
+	//===== Calendar =====
+	var index = 0;
+	
+	$('.titles p').on('click', function(e){
+		e.preventDefault();
+		setCalendarDay($(this).index());
+	});
+	function setCalendarDay(next){
+		$(".titles p").removeClass('active');
+		$(".days .day").hide();
+
+		var n = $(".titles p").eq(next),
+			nd = $(".days .day").eq(next);
+		
+		n.addClass('active');
+		nd.show();
+		
+		TweenMax.to('.titles p', 0.3, {'background-color': 'rgba(255,255,255,0)'});
+		TweenMax.to(n, 0.3, {'background-color': 'rgba(255,255,255,0.3)'});
+		TweenMax.from(nd, 0.3, {opacity: 0, y: -10});
+	}
+	setCalendarDay(0);
+
+	//===== Scrollbars =====
+	$('.faqs').perfectScrollbar();
+	$('#aviso_legal .info').perfectScrollbar();
+
+	//===== Registro =====
+	$('#btn_registrate').on('click', function(e){
+		e.preventDefault();
+		index_form = 0;
+		setFormStep(0);
+		$('.siguiente .next').html('Siguiente<i class="icon ion-arrow-right-c">');
+		$('select').val('');
+		$('input').val('');
+		TweenMax.to('header .social', 0.5, {opacity:0});
+		TweenMax.to('nav ul', 0.5, {opacity:0});
+		TweenMax.to('.arrows', 0.5, {opacity:0});
+		TweenMax.set('#registro', {display:'block'});
+		TweenMax.from('#registro', 0.5, {opacity:0});
+	});
+	$('#btn_registro').on('click', function(e){
+		e.preventDefault();
+		index_form = 0;
+		setFormStep(0);
+		$('.siguiente .next').html('Siguiente<i class="icon ion-arrow-right-c">');
+		$('select').val('');
+		$('input').val('');
+		TweenMax.to('header .social', 0.5, {opacity:0});
+		TweenMax.to('nav ul', 0.5, {opacity:0});
+		TweenMax.to('.arrows', 0.5, {opacity:0});
+		TweenMax.set('#registro', {display:'block'});
+		TweenMax.from('#registro', 0.5, {opacity:0});
+	});
+	$('#logo').on('click', function(e){
+		TweenMax.to('header .social', 0.5, {opacity:1});
+		TweenMax.to('nav ul', 0.5, {opacity:1});
+		TweenMax.to('.arrows', 0.5, {opacity:1});
+		TweenMax.set('#registro', {display:'none'});
+		TweenMax.set('#end', {display:'none'});
+	});
+
+
 	//===== Form =====
 	var form_data = {};
 	var index_form = 0;
@@ -75,9 +127,9 @@ $(document).ready(function(){
 
 	$("#registro .next").on("click", function(e){
 		e.preventDefault();
-		prev = index;
+		prev = index_form;
 		//index++;
-		if(index == 0){
+		if(index_form == 0){
 			var genero = $("#genero").val();
 			form_data.genero = genero;
 			var name = $("#nombre").val();
@@ -93,12 +145,12 @@ $(document).ready(function(){
 					form_data.nombre = nombre;
 					var cumple = anio + '-' + mes +'-'+ dia;
 					form_data.cumple = cumple;
-					index++;
+					index_form++;
 			}else{
-				alert("todos los datos son requeridos");
+				alert("Todos los datos son requeridos");
 				return;
 			}
-		}else if(index == 1){
+		}else if(index_form == 1){
 			var email = $("#email").val();
 			form_data.email = email;
 			var lada  = $("#lada").val();
@@ -134,22 +186,21 @@ $(document).ready(function(){
 				&& prep != '' && grad != ''){
 				var numero = lada + tel;
 				form_data.numero = numero;
-				index++;
-				console.log(form_data.city);
+				index_form++;
 				if(form_data.city == 986){
 					form_data.hotel = '';
 					form_data.solo = '';
 					form_data.pare = '';
 					form_data.namep = '';
-					index++;
+					index_form++;
 					setFormStep(index);
 					return;
 				}
 			}else{
-				alert("todos los datos son requeridos");
+				alert("Todos los datos son requeridos");
 				return;
 			}
-		}else if(index == 2){
+		}else if(index_form == 2){
 			var hotel = $("#hospedaje").val();
 			form_data.hotel = hotel;
 			var solo  = $("#acompanante").val();
@@ -160,14 +211,14 @@ $(document).ready(function(){
 			form_data.namep = namep;
 			if(solo == '1'){
 				if(pare != '' && namep != ''){
-					index++;
+					index_form++;
 				}else{
 					alert("Nombre y Parentesco son necesarios");
 				}
 			}else{
-				index++;
+				index_form++;
 			}
-		}else if(index == 3){
+		}else if(index_form == 3){
 			var carrera = $("#carrera").val(),
 				carrera1 = $("#carrera1").val(),
 				carrera2 = $("#carrera2").val(),
@@ -180,33 +231,48 @@ $(document).ready(function(){
 				&& carrera2 != ''
 				&& carrera3 != ''
 				&& campus != ''
-				&& campusEscuela != ''
 				&& evento != ''){
 				form_data.carrera = carrera;
 				form_data.car1 = carrera1;
 				form_data.car2 = carrera2;
 				form_data.car3 = carrera3;
 				form_data.campus = campus;
-				form_data.campus_escuela = campusEscuela;
 				form_data.evento = evento;
-				index++;
+				if(campus == 1){
+					if(campusEscuela != ''){
+						form_data.campus_escuela = campusEscuela;
+					}else{
+						alert("Es necesario indicar que escuela se ha elegido");
+						return;
+					}
+				}
+				$('.siguiente .next').html('Enviar<i class="icon ion-paper-airplane"></i>');
+				index_form++;
 			}else{
-				alert("Debes aceptar terminos y condiciones");
+				alert("Todos los datos son requeridos");
 				return;
 			}
-		}else if(index == 4){
+		}else if(index_form == 4){
 			var vopt1  = $("#vopt1").val();
 			form_data.vopt1 = vopt1;
 			var vopt2  = $("#vopt2").val();
 			form_data.vopt2 = vopt2;
 			var vopt3  = $("#vopt3").val();
 			form_data.vopt3 = vopt3;
-			var sopt   = $("#sopt").val();
-			form_data.sopt = sopt;
+			var sopt1   = $("#sopt1").val();
+			form_data.sopt1 = sopt1;
+			var sopt2   = $("#sopt2").val();
+			form_data.sopt2 = sopt2;
 			var evento = $("#evento").val();
 			form_data.evento = evento;
 
-			if($("#acepto").is(':checked') === true && vopt1 != '' && vopt2 != '' && vopt3 != '' && sopt != '' && evento != ''){
+			if($("#acepto").is(':checked') === true 
+				&& vopt1 != '' 
+				&& vopt2 != '' 
+				&& vopt3 != '' 
+				&& sopt1 != ''
+				&& sopt2 != ''
+				&& evento != ''){
 				//cotinuar
 				console.log(form_data);
 				$.ajax({
@@ -215,16 +281,16 @@ $(document).ready(function(){
 					data:form_data,
 					success: function(response){
 						if(response == 'true'){
-							$('#end').show();
 							$('.registroT .response').hide();
-							if(form_data.city != 986 && form_data.hospedaje == 1){
+							console.log(form_data.city, form_data.hotel);
+							if(form_data.city != 986 && form_data.hotel == '1'){
 								$('.registroT .foraneoA').show();
-							}else if(form_data.city != 986 && form_data.hospedaje == 0){
+							}else if(form_data.city != 986 && form_data.hotel == '0'){
 								$('.registroT .foraneoB').show();
 							}else{
 								$('.registroT .local').show();
 							}
-							
+							$('#end').show();
 							TweenMax.from('#end', 1, {opacity: 0, scale: 0.5, ease: Back.easeOut});
 							return;
 						}else{
@@ -237,12 +303,13 @@ $(document).ready(function(){
 						console.log(response);
 					}
 				});
+				return;
 			}else{
 				alert("Debes aceptar terminos y condiciones");
 				return;
 			}
 		}
-		setFormStep(index);
+		setFormStep(index_form);
 	});
 
 	function setFormStep(next){
@@ -251,29 +318,6 @@ $(document).ready(function(){
 		ns.show();
 		TweenMax.from(ns, 0.3, {opacity: 0, y: 100});
 	}
-
-	//===== Calendar =====
-	var index = 0;
-	
-	$('.titles p').on('click', function(e){
-		e.preventDefault();
-		setCalendarDay($(this).index());
-	});
-	function setCalendarDay(next){
-		$(".titles p").removeClass('active');
-		$(".days .day").hide();
-
-		var n = $(".titles p").eq(next),
-			nd = $(".days .day").eq(next);
-		
-		n.addClass('active');
-		nd.show();
-		
-		TweenMax.to('.titles p', 0.3, {'background-color': 'rgba(255,255,255,0)'});
-		TweenMax.to(n, 0.3, {'background-color': 'rgba(255,255,255,0.3)'});
-		TweenMax.from(nd, 0.3, {opacity: 0, y: -10});
-	}
-	setCalendarDay(0);
 	
 	//===== Acciones en registrar ===== //
 	$("#generoM").click(function() {
@@ -281,7 +325,9 @@ $(document).ready(function(){
 			console.log("ya tiene la clase!!");
 		}else{
 			$(this).addClass("selected");
+			$(this).find('img').attr('src','./img/mujer_on.png');
 			$("#generoH").removeClass("selected");
+			$("#generoH").find('img').attr('src','./img/hombre_off.png');
 			$("#genero").val('1');
 		}
 	})
@@ -290,7 +336,9 @@ $(document).ready(function(){
 			console.log("ya tiene la clase!!");
 		}else{
 			$(this).addClass("selected");
+			$(this).find('img').attr('src','./img/hombre_on.png');
 			$("#generoM").removeClass("selected");
+			$("#generoM").find('img').attr('src','./img/mujer_off.png');
 			$("#genero").val('0');
 		}
 	})
@@ -349,6 +397,17 @@ $(document).ready(function(){
 			}});
 		}
 	})
+	$('#campus_escuela').hide();
+	$('#campusN').on('click', function(e){
+		TweenMax.set('#campus_escuela',{display: 'block'});
+		TweenMax.from('#campus_escuela', 0.3, {opacity: 0});
+	});
+	$('#campusS').on('click', function(e){
+		TweenMax.to('#campus_escuela', 0.3, {opacity: 0, onComplete: function(){
+			TweenMax.set('#campus_escuela', {display:'none', opacity: '1'});
+		}});
+	});
+
 	$('.bool-chooser .option').on('click', function(e){
 		e.preventDefault();
 		var input = $('#'+$(this).parent().data('input'));
