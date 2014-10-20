@@ -278,19 +278,6 @@ $form_FB = "
 </body>
 </html>
 ";
-<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
-	<fieldset>Sube tu documentación</fieldset>
-	".$correcto."
-	<label>Carta Compromiso</label><br />
-	<input type='hidden' name='string' value='".$string."' />
-	<input type='hidden' name='idu' value='".$idu."' />
-	<input type='file' name='carta' />
-	<br />
-	<input type='submit' value='Guardar' class='".$class."'/>
-	".$bolet."
-</form>
-";
-
 if($respuesta['estatus'] == 'true' && $respuesta['docs'] == 'false' && $respuesta['hotel'] == 'false'){
 	echo $form_FA;
 }elseif ($respuesta['estatus'] == 'true' && $respuesta['docs'] == 'false' && $respuesta['hotel'] == 'true') {
