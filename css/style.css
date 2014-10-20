@@ -102,7 +102,7 @@ header nav ul li a {
   color: #fff;
 }
 header nav ul li a.selected {
-  font-family: 'GillSans-Bold';
+  font-weight: 700;
 }
 header div.social {
   display: -webkit-inline-box;
@@ -601,8 +601,7 @@ section#be_tec p {
 #faq article .container12.faqs {
   width: 80%;
   height: 35vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 #faq article .container12.faqs p {
   margin-top: 2vh;
@@ -610,6 +609,22 @@ section#be_tec p {
 }
 #faq article .container12.faqs p span {
   font-family: 'GillSans';
+}
+#faq article .container12.faqs .ps-scrollbar-y-rail {
+  background: #193349;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#faq article .container12.faqs .ps-scrollbar-y {
+  background: #fbc549;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 .activo {
   background: #68b9ef !important;
@@ -623,106 +638,9 @@ section#be_tec p {
 .noActivo p {
   colro: #9d9d9d;
 }
-/* =========================== AVISO LEGAL */
-#aviso_legal {
-  background: url("../img/filtro-amarillo.png"), url("../img/back-aviso.jpg") no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  z-index: 5;
-  display: none;
-}
-#aviso_legal article {
-  width: 65%;
-  height: 60%;
-}
-#aviso_legal article h1 {
-  top: -6.6vw;
-  background: #7338b6;
-  padding: 1vw 2.1vw;
-  left: -7vw;
-}
-#aviso_legal article h2 {
-  font-size: 1.5vw;
-  text-align: center;
-  margin-top: 7vh;
-}
-#aviso_legal article div {
-  height: 70%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-#aviso_legal article div h3 {
-  color: #fff;
-  margin: 1vh 0 2vh;
-}
-#aviso_legal article div p {
-  margin-bottom: 1vh;
-}
-#aviso_legal article div ul {
-  list-style-type: disc;
-  margin: 1vh 2vw 2vh;
-}
-#aviso_legal article div ul li {
-  font-size: 1.1vw;
-  color: #fff;
-}
-#aviso_legal article div a {
-  color: #eee;
-}
-#aviso_legal article .close {
-  background: url("../img/btn_cerrar.png") no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  position: absolute;
-  top: -9vh;
-  right: -5vw;
-  width: 4vw;
-  height: 4vw;
-  display: block;
-}
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: height;
-  display: block;
-  z-index: 1;
-}
-footer div {
-  position: absolute;
-  bottom: 2vh;
-  left: 2vw;
-  display: -webkit-inline-box;
-  display: -moz-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-box;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -o-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  width: 30%;
-}
-footer div a {
-  font-family: 'GillSans-Light';
-  font-size: 1.2vw;
-  margin-left: 2vw;
-  color: #fff;
-}
-footer .icon-help {
-  position: absolute;
-  bottom: 2vh;
-  right: 2vw;
-  color: #fff;
-}
 /* =========================== REGISTRO */
 #registro {
+  display: none;
   background: #f9f9f9;
 }
 #registro article {
@@ -799,19 +717,20 @@ footer .icon-help {
   width: 80%;
   font-size: 13px;
 }
-#registro article form .step .step-area .step-data:before {
-  position: absolute;
-  top: 1.5vw;
-  right: 1vw;
-}
 #registro article form .step .step-area .step-data label {
   position: relative;
   display: block;
   font-size: 13px;
 }
+#registro article form .step .step-area .step-data label i {
+  position: absolute;
+  right: 5%;
+  top: 30%;
+}
 #registro article form .step .step-area .step-data label select {
+  width: 100%;
   display: inline-block;
-  padding: 0.8vw;
+  padding: 0.5vw 15% 0.5vw 0.5vw;
   margin: 0.3vw 5px;
   min-width: 9vw;
   border: 2px #ececec solid;
@@ -820,16 +739,6 @@ footer .icon-help {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
-#registro article form .step .step-area .step-data label:before {
-  position: absolute;
-  top: 1.5vw;
-  right: 1vw;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
 }
 #registro article form .step .step-area .step-data .bool-choose .option,
 #registro article form .step .step-area .step-data .bool-chooser .option {
@@ -898,6 +807,9 @@ footer .icon-help {
   width: 63%;
   display: inline-block;
 }
+#registro article form .step .step-area.carreras {
+  width: 30vw;
+}
 #registro article form .step .step-area.carreras select {
   width: 12vw;
 }
@@ -905,7 +817,7 @@ footer .icon-help {
   width: 18vw;
 }
 #registro article form .step .step-area.prepa {
-  width: 30vw;
+  width: 25vw;
   margin-left: 2vw;
 }
 #registro article form .step .step-area.prepa label {
@@ -936,8 +848,8 @@ footer .icon-help {
   width: 100%;
 }
 #registro article form .step .step-area.viernes label select {
+  font-size: 0.8vw;
   width: 100%;
-  padding-right: 3vw;
 }
 #registro article form .step .step-area.sabado {
   width: 30vw;
@@ -949,8 +861,8 @@ footer .icon-help {
   width: 100%;
 }
 #registro article form .step .step-area.sabado label select {
+  font-size: 0.8vw;
   width: 100%;
-  padding-right: 3vw;
 }
 #registro article form .step .step-area.evento {
   width: 30vw;
@@ -995,7 +907,6 @@ footer .icon-help {
   height: 9vh;
 }
 #registro .siguiente a {
-  background: url("../img/form_siguiente.png") no-repeat 8vw center;
   -webkit-border-radius: 20px;
   border-radius: 20px;
   border: 3px #fff solid;
@@ -1015,6 +926,12 @@ footer .icon-help {
   color: #fff;
   padding: 0.7vw 5.5vw 0 2.75vw;
   font-size: 0.9vw;
+}
+#registro .siguiente a i {
+  position: absolute;
+  right: 20%;
+  top: 0%;
+  font-size: 2vw;
 }
 #registro .footer {
   background: #727272;
@@ -1106,6 +1023,124 @@ footer .icon-help {
   padding-left: 50px;
   height: 100px;
   margin-left: 500px;
+}
+/* =========================== AVISO LEGAL */
+#aviso_legal {
+  background: url("../img/filtro-amarillo.png"), url("../img/back-aviso.jpg") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  z-index: 5;
+  display: none;
+}
+#aviso_legal article {
+  width: 65%;
+  height: 60%;
+}
+#aviso_legal article h1 {
+  top: -6.6vw;
+  background: #7338b6;
+  padding: 1vw 2.1vw;
+  left: -7vw;
+}
+#aviso_legal article h2 {
+  font-size: 1.5vw;
+  text-align: center;
+  margin-top: 7vh;
+}
+#aviso_legal article .info {
+  width: 100%;
+  height: 70%;
+  overflow: hidden;
+  position: relative;
+}
+#aviso_legal article .info .ps-scrollbar-y-rail {
+  background: #1a423f;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#aviso_legal article .info .ps-scrollbar-y {
+  background: #7338b6;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#aviso_legal article .info h3 {
+  color: #fff;
+  margin: 1vh 0 2vh;
+  padding: 0 1vw;
+}
+#aviso_legal article .info p {
+  margin-bottom: 1vh;
+  padding: 0 1vw;
+}
+#aviso_legal article .info ul {
+  list-style-type: disc;
+  margin: 1vh 2vw 2vh;
+  padding: 0 1vw;
+}
+#aviso_legal article .info ul li {
+  font-size: 1.1vw;
+  color: #fff;
+}
+#aviso_legal article .info a {
+  color: #eee;
+}
+#aviso_legal article .close {
+  background: url("../img/btn_cerrar.png") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: -9vh;
+  right: -5vw;
+  width: 4vw;
+  height: 4vw;
+  display: block;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: height;
+  display: block;
+  z-index: 1;
+}
+footer div {
+  position: absolute;
+  bottom: 2vh;
+  left: 2vw;
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 30%;
+}
+footer div a {
+  font-family: 'GillSans-Light';
+  font-size: 1.2vw;
+  margin-left: 2vw;
+  color: #fff;
+}
+footer .icon-help {
+  position: absolute;
+  bottom: 2vh;
+  right: 2vw;
+  color: #fff;
 }
 /** CARGAR DOCUMENTOS jok3r**/
 section.content {
