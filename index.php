@@ -701,8 +701,8 @@
 									<option value="1994">1994</option>
 									<option value="1995">1995</option>
 									<option value="1996">1996</option>
-									<option value="1997">1996</option>
-									<option value="1998">1996</option>
+									<option value="1997">1997</option>
+									<option value="1998">1998</option>
 								</select>
 							</label>
 						</div>
@@ -762,9 +762,9 @@
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="gradua" id="gradua" class="option inputPrepa">
 									<option value="">Fecha esperada de graduación*</option>
-									<option value="2014">Agosto 2015</option>
-									<option value="2015">Enero 2016</option>
-									<option value="2016">Agosto 2016</option>
+									<option value="2015">Agosto 2015</option>
+									<option value="2016-1">Enero 2016</option>
+									<option value="2016-2">Agosto 2016</option>
 								</select>
 							</label>
 						</div>
