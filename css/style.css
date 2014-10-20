@@ -1222,7 +1222,7 @@ section.content article div.acciones .hecho h4 {
 section.content article div.pendiente {
   display: inline;
   float: right;
-  margin-left: 300px;
+  margin-left: 235px;
   position: absolute;
   margin-top: -97px;
 }
@@ -1251,6 +1251,7 @@ section.content article div.pendiente h4 {
 }
 section.content article div.pendiente input[type='file'] {
   margin-left: 110px;
+  font-size: 11px;
 }
 section.content article div.pendiente input[type='submit'] {
   color: #fff;
