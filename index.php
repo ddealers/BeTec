@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/1140.css" />
 	<link rel="stylesheet" type="text/css" href="css/ionicons.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/responsive-tables.css" />
-	<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.min.css" />ç
+	<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/btec.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
@@ -70,7 +70,8 @@
 		<div class="social">
 			<a id="btn_registrate" href="#registro"><img src="./img/registro_boton.png"/></a>
 			<div class="rs">
-				<a href="http://www.facebook.com/AdmisionesTecdeMty" target="_blank"><img src="./img/face.png"></a>
+				<a href="http://ç
+				www.facebook.com/AdmisionesTecdeMty" target="_blank"><img src="./img/face.png"></a>
 				<a href="http://twitter.com/AdmisionesITESM" target="_blank"><img src="./img/tw.png"></a>
 			</div>
 		</div>
