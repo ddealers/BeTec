@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-10-2014 a las 21:32:08
+-- Tiempo de generación: 20-10-2014 a las 23:43:50
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `carreras`;
-CREATE TABLE IF NOT EXISTS `carreras` (
+CREATE TABLE `carreras` (
 `id` int(11) NOT NULL,
   `nombre` varchar(250) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
@@ -90,7 +90,7 @@ INSERT INTO `carreras` (`id`, `nombre`) VALUES
 --
 
 DROP TABLE IF EXISTS `ciudades`;
-CREATE TABLE IF NOT EXISTS `ciudades` (
+CREATE TABLE `ciudades` (
 `id` int(11) NOT NULL,
   `estado_id` int(11) NOT NULL COMMENT 'Relación con estados',
   `clave` varchar(3) CHARACTER SET utf8 NOT NULL,
@@ -2575,7 +2575,7 @@ INSERT INTO `ciudades` (`id`, `estado_id`, `clave`, `nombre`, `sigla`) VALUES
 --
 
 DROP TABLE IF EXISTS `estados`;
-CREATE TABLE IF NOT EXISTS `estados` (
+CREATE TABLE `estados` (
 `id` int(11) NOT NULL,
   `clave` varchar(2) CHARACTER SET utf8 NOT NULL,
   `nombre` varchar(45) CHARACTER SET utf8 NOT NULL,
@@ -2632,7 +2632,7 @@ INSERT INTO `estados` (`id`, `clave`, `nombre`, `abrev`) VALUES
 --
 
 DROP TABLE IF EXISTS `medios`;
-CREATE TABLE IF NOT EXISTS `medios` (
+CREATE TABLE `medios` (
 `id` int(11) NOT NULL,
   `nombre` varchar(150) CHARACTER SET utf8 NOT NULL DEFAULT ''
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
@@ -2660,7 +2660,7 @@ INSERT INTO `medios` (`id`, `nombre`) VALUES
 --
 
 DROP TABLE IF EXISTS `pma__bookmark`;
-CREATE TABLE IF NOT EXISTS `pma__bookmark` (
+CREATE TABLE `pma__bookmark` (
 `id` int(11) NOT NULL,
   `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -2680,7 +2680,7 @@ TRUNCATE TABLE `pma__bookmark`;
 --
 
 DROP TABLE IF EXISTS `pma__column_info`;
-CREATE TABLE IF NOT EXISTS `pma__column_info` (
+CREATE TABLE `pma__column_info` (
 `id` int(5) unsigned NOT NULL,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -2743,7 +2743,7 @@ INSERT INTO `pma__column_info` (`id`, `db_name`, `table_name`, `column_name`, `c
 --
 
 DROP TABLE IF EXISTS `pma__designer_coords`;
-CREATE TABLE IF NOT EXISTS `pma__designer_coords` (
+CREATE TABLE `pma__designer_coords` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `x` int(11) DEFAULT NULL,
@@ -2764,7 +2764,7 @@ TRUNCATE TABLE `pma__designer_coords`;
 --
 
 DROP TABLE IF EXISTS `pma__history`;
-CREATE TABLE IF NOT EXISTS `pma__history` (
+CREATE TABLE `pma__history` (
 `id` bigint(20) unsigned NOT NULL,
   `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -2785,7 +2785,7 @@ TRUNCATE TABLE `pma__history`;
 --
 
 DROP TABLE IF EXISTS `pma__pdf_pages`;
-CREATE TABLE IF NOT EXISTS `pma__pdf_pages` (
+CREATE TABLE `pma__pdf_pages` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
 `page_nr` int(10) unsigned NOT NULL,
   `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT ''
@@ -2803,7 +2803,7 @@ TRUNCATE TABLE `pma__pdf_pages`;
 --
 
 DROP TABLE IF EXISTS `pma__recent`;
-CREATE TABLE IF NOT EXISTS `pma__recent` (
+CREATE TABLE `pma__recent` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `tables` text COLLATE utf8_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
@@ -2827,7 +2827,7 @@ INSERT INTO `pma__recent` (`username`, `tables`) VALUES
 --
 
 DROP TABLE IF EXISTS `pma__relation`;
-CREATE TABLE IF NOT EXISTS `pma__relation` (
+CREATE TABLE `pma__relation` (
   `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `master_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -2848,7 +2848,7 @@ TRUNCATE TABLE `pma__relation`;
 --
 
 DROP TABLE IF EXISTS `pma__table_coords`;
-CREATE TABLE IF NOT EXISTS `pma__table_coords` (
+CREATE TABLE `pma__table_coords` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `pdf_page_number` int(11) NOT NULL DEFAULT '0',
@@ -2868,7 +2868,7 @@ TRUNCATE TABLE `pma__table_coords`;
 --
 
 DROP TABLE IF EXISTS `pma__table_info`;
-CREATE TABLE IF NOT EXISTS `pma__table_info` (
+CREATE TABLE `pma__table_info` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
@@ -2886,7 +2886,7 @@ TRUNCATE TABLE `pma__table_info`;
 --
 
 DROP TABLE IF EXISTS `pma__table_uiprefs`;
-CREATE TABLE IF NOT EXISTS `pma__table_uiprefs` (
+CREATE TABLE `pma__table_uiprefs` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -2906,7 +2906,7 @@ TRUNCATE TABLE `pma__table_uiprefs`;
 --
 
 DROP TABLE IF EXISTS `pma__tracking`;
-CREATE TABLE IF NOT EXISTS `pma__tracking` (
+CREATE TABLE `pma__tracking` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `version` int(10) unsigned NOT NULL,
@@ -2931,7 +2931,7 @@ TRUNCATE TABLE `pma__tracking`;
 --
 
 DROP TABLE IF EXISTS `pma__userconfig`;
-CREATE TABLE IF NOT EXISTS `pma__userconfig` (
+CREATE TABLE `pma__userconfig` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `config_data` text COLLATE utf8_bin NOT NULL
@@ -2956,7 +2956,7 @@ INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
 --
 
 DROP TABLE IF EXISTS `preparatorias`;
-CREATE TABLE IF NOT EXISTS `preparatorias` (
+CREATE TABLE `preparatorias` (
 `id` int(11) NOT NULL,
   `id_ciudad` int(11) NOT NULL,
   `nombre` varchar(150) CHARACTER SET utf8 NOT NULL DEFAULT ''
@@ -7164,7 +7164,7 @@ INSERT INTO `preparatorias` (`id`, `id_ciudad`, `nombre`) VALUES
 --
 
 DROP TABLE IF EXISTS `talleres`;
-CREATE TABLE IF NOT EXISTS `talleres` (
+CREATE TABLE `talleres` (
 `id` int(11) NOT NULL,
   `dia` int(11) NOT NULL,
   `nombre` varchar(150) CHARACTER SET utf8 NOT NULL DEFAULT '',
@@ -7235,7 +7235,7 @@ INSERT INTO `talleres` (`id`, `dia`, `nombre`, `cupo`, `libres`) VALUES
 --
 
 DROP TABLE IF EXISTS `usuarios`;
-CREATE TABLE IF NOT EXISTS `usuarios` (
+CREATE TABLE `usuarios` (
 `id` int(11) NOT NULL,
   `genero` tinyint(1) NOT NULL COMMENT '0 = masculino, 1 = femenino',
   `nombre` varchar(200) CHARACTER SET utf8 NOT NULL DEFAULT '',
@@ -7252,13 +7252,21 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_medio` int(11) NOT NULL,
   `documentos` char(1) CHARACTER SET utf8 DEFAULT '0',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Truncar tablas antes de insertar `usuarios`
 --
 
 TRUNCATE TABLE `usuarios`;
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `genero`, `nombre`, `cumpleaños`, `correo`, `telefono`, `celular`, `id_estado`, `id_ciudad`, `id_prepa`, `graduacion`, `hospedaje`, `acompana`, `id_medio`, `documentos`, `create_at`) VALUES
+(1, 0, 'w w w', '1986-01-01', 'a@a', '3333', '333', 18, 928, 2613, '2015', 0, 0, 1, '0', '2014-10-20 21:14:42'),
+(2, 0, 'a a a', '1986-01-01', 'a@a', '3333', '33', 19, 966, 2510, '2015', 1, 1, 1, '1', '2014-10-20 21:42:00');
+
 -- --------------------------------------------------------
 
 --
@@ -7266,19 +7274,52 @@ TRUNCATE TABLE `usuarios`;
 --
 
 DROP TABLE IF EXISTS `usuarios_documentos`;
-CREATE TABLE IF NOT EXISTS `usuarios_documentos` (
+CREATE TABLE `usuarios_documentos` (
 `id` int(11) unsigned NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `url_pago` varchar(100) DEFAULT '#',
   `url_permiso` varchar(100) DEFAULT '#',
   `tipo_foraneo` char(1) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Truncar tablas antes de insertar `usuarios_documentos`
 --
 
 TRUNCATE TABLE `usuarios_documentos`;
+--
+-- Volcado de datos para la tabla `usuarios_documentos`
+--
+
+INSERT INTO `usuarios_documentos` (`id`, `id_usuario`, `url_pago`, `url_permiso`, `tipo_foraneo`) VALUES
+(1, 1, '#', '#', '0'),
+(2, 2, '#', '#', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios_info`
+--
+
+DROP TABLE IF EXISTS `usuarios_info`;
+CREATE TABLE `usuarios_info` (
+`id` int(11) unsigned NOT NULL,
+  `moneterrey` tinyint(1) DEFAULT '0',
+  `campus` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Truncar tablas antes de insertar `usuarios_info`
+--
+
+TRUNCATE TABLE `usuarios_info`;
+--
+-- Volcado de datos para la tabla `usuarios_info`
+--
+
+INSERT INTO `usuarios_info` (`id`, `moneterrey`, `campus`) VALUES
+(2, 0, '');
+
 -- --------------------------------------------------------
 
 --
@@ -7286,7 +7327,7 @@ TRUNCATE TABLE `usuarios_documentos`;
 --
 
 DROP TABLE IF EXISTS `usuario_carrera`;
-CREATE TABLE IF NOT EXISTS `usuario_carrera` (
+CREATE TABLE `usuario_carrera` (
   `id_usuario` int(11) NOT NULL,
   `id_carrera` int(11) NOT NULL,
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -7297,6 +7338,18 @@ CREATE TABLE IF NOT EXISTS `usuario_carrera` (
 --
 
 TRUNCATE TABLE `usuario_carrera`;
+--
+-- Volcado de datos para la tabla `usuario_carrera`
+--
+
+INSERT INTO `usuario_carrera` (`id_usuario`, `id_carrera`, `create_at`) VALUES
+(1, 1, '2014-10-20 21:14:42'),
+(1, 2, '2014-10-20 21:14:42'),
+(1, 3, '2014-10-20 21:14:42'),
+(2, 1, '2014-10-20 21:42:00'),
+(2, 2, '2014-10-20 21:42:00'),
+(2, 3, '2014-10-20 21:42:00');
+
 -- --------------------------------------------------------
 
 --
@@ -7304,7 +7357,7 @@ TRUNCATE TABLE `usuario_carrera`;
 --
 
 DROP TABLE IF EXISTS `usuario_taller`;
-CREATE TABLE IF NOT EXISTS `usuario_taller` (
+CREATE TABLE `usuario_taller` (
   `id_usuario` int(11) NOT NULL,
   `id_taller` int(11) NOT NULL,
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -7315,6 +7368,20 @@ CREATE TABLE IF NOT EXISTS `usuario_taller` (
 --
 
 TRUNCATE TABLE `usuario_taller`;
+--
+-- Volcado de datos para la tabla `usuario_taller`
+--
+
+INSERT INTO `usuario_taller` (`id_usuario`, `id_taller`, `create_at`) VALUES
+(1, 1, '2014-10-20 21:14:42'),
+(1, 2, '2014-10-20 21:14:42'),
+(1, 3, '2014-10-20 21:14:42'),
+(1, 6, '2014-10-20 21:14:42'),
+(2, 1, '2014-10-20 21:42:00'),
+(2, 2, '2014-10-20 21:42:00'),
+(2, 3, '2014-10-20 21:42:00'),
+(2, 6, '2014-10-20 21:42:00');
+
 --
 -- Índices para tablas volcadas
 --
@@ -7440,6 +7507,12 @@ ALTER TABLE `usuarios_documentos`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `usuarios_info`
+--
+ALTER TABLE `usuarios_info`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -7497,12 +7570,17 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `usuarios_documentos`
 --
 ALTER TABLE `usuarios_documentos`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `usuarios_info`
+--
+ALTER TABLE `usuarios_info`
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
