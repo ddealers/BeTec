@@ -1283,10 +1283,11 @@ section.content article div.azul ul {
   display: -ms-inline-flexbox;
   display: inline-box;
   display: inline-flex;
-  padding: 10px 0px;
+  padding: 10px 60px;
   list-style: none;
   color: #fff;
   font-family: 'Gill Sans';
+  font-size: 13px;
 }
 section.content article div.azul ul li {
   padding-left: 100px;
