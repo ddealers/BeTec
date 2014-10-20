@@ -33,7 +33,7 @@
 			</ul>
 		</nav>
 		<div class="social">
-			<a data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0" data-menu-top="600p" href="#registro"><img src="./img/registro_boton.png"/></a>
+			<a id="btn_registrate" data-500p="opacity:1;display:block" data-550p="display:none" data-600p="opacity:0" data-menu-top="600p" href="#registro"><img src="./img/registro_boton.png"/></a>
 			<div class="rs">
 				<a href="https://www.facebook.com/BorntoBeTEC" target="_blank" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/face.png"></a>
 				<a href="https://twitter.com/BorntoBeTEC" target="_blank" data-500p="opacity:1;display:inline-flex" data-550p="display:none" data-600p="opacity:0"><img src="./img/tw.png"></a>
@@ -557,7 +557,7 @@
 		<article><!--CONTENIDO_REGISTRO-->
 			<h1 class="registro">REGISTRO</h1>
 			<h2 class="experiencia">¡ESTÁS MUY CERCA DE<br> VIVIR LA EXPERIENCIA TEC!</h2>
-			<p>Iniciemos con el registro ahora mimso. Por favor proporciona<br>los siguientes datos:</p>
+			<p>Iniciemos con el registro ahora mismo. Por favor proporciona<br>los siguientes datos:</p>
 			<form method="POST">
 				<div class="step">
 					<div class="step-area genero">
@@ -764,7 +764,7 @@
 									<p>NO</p>
 								</div>
 							</div>
-							<label class="icon-arrow-left">
+							<label class="icon-arrow-left" id="parentesco-cont">
 								<select name="parentesco" id="parentesco" class="option">
 									<option value="">Parentesco*</option>
 									<option value="1">Madre</option>
@@ -777,42 +777,42 @@
 					</div>
 				</div>
 				<div class="step">
-					<div class="step-area hospedaje">
-						<p class="info hospedaje">
+					<div class="step-area carrera">
+						<p class="info carrera">
 							ELECCIÓN DE CARRERA
 							<img class="lapiz"src="./img/lista.png">
 						</p>
 						<div class="step-data">
 							<p>¿Ya decidiste qué carrera estudiar?</p>
-							<div class="bool-choose">
+							<div class="bool-chooser" data-input="carrera">
 								<input type="hidden" name="carrera" id="carrera" value="0"/>
-								<div class="option noActivo" id="hotelS">
+								<div class="option noActivo" id="carreraS" data-val="0">
 									<p>SÍ</p>
 								</div>
-								<div class="option activo" id="hotelN">
+								<div class="option activo" id="carreraN" data-val="1">
 									<p>NO</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="step-area hospedaje">
-						<p class="info hospedaje">
+					<div class="step-area campus">
+						<p class="info campus">
 							CAMPUS MONTERREY
 							<img class="lapiz"src="./img/libro.png">
 						</p>
 						<div class="step-data">
 							<p>¿Tienes pensado estudiar tu carrera en el <br>Tecnológico de Monterrey, Campus Monterrey?</p>
-							<div class="bool-choose">
-								<input type="hidden" name="carrera" id="carrera" value="0"/>
-								<div class="option noActivo" id="hotelS">
+							<div class="bool-chooser" data-input="campus">
+								<input type="hidden" name="campus" id="campus" value="0"/>
+								<div class="option noActivo" id="campusS" data-val="0">
 									<p>SÍ</p>
 								</div>
-								<div class="option activo" id="hotelN">
+								<div class="option activo" id="campusN" data-val="1">
 									<p>NO</p>
 								</div>
 							</div>
 							<div class="step-data">
-								<input type="text" placeholder="Escuela(s)*" name="escuela" id="escuela" />
+								<input type="text" placeholder="Escuela(s)*" name="campus_escuela" id="campus_escuela" />
 							</div>
 						</div>
 					</div>
