@@ -8,7 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="css/1140.css" />
 	<link rel="stylesheet" type="text/css" href="css/ionicons.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/responsive-tables.css" />
-	<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.min.css" />ç
+	<link rel="stylesheet" type="text/css" href="css/btec.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="js/vendor/skrollr/skrollr.min.js"></script>
