@@ -19,9 +19,8 @@ function encriptarURL($string, $key){
 	return base64_encode($result);
 }
 
-$ur = encriptarURL($email, $key);
+$ur = encriptarURL($_POST['email'], $key);
 $url = "http://$_SERVER[HTTP_HOST]/documentacion?s=".$ur;
-
 
 //var_dump($_REQUEST);
 $genero  = $_POST['genero'];
@@ -32,9 +31,12 @@ $numero	 = $_POST['numero'];
 $cel	 = $_POST['cel'];
 
 
+$carrera = $_POST['carrera'];
 $car1	 = $_POST['car1'];
 $car2	 = $_POST['car2'];
 $car3	 = $_POST['car3'];
+$campus = $_POST['campus'];
+$campus_escuela = $_POST['campus_escuela'];
 
 
 $state	 = $_POST['state'];
@@ -62,6 +64,7 @@ $evento	 = $_POST['evento'];
 $subeDocs = ($_POST['hotel'] == '1') ? '1' : '0' ;
 
 $q = "INSERT INTO usuarios VALUES(NULL, '$genero', '$nombre', '$cumple', '$email', '$numero', '$cel', '$state', '$city', '$prep', '$grad', '$hotel', '$solo', '$evento', '$subeDocs',  CURRENT_TIMESTAMP )";
+//echo $sql;
 $v = $mysqli->query($q);
 if($v){
 	$idu = $mysqli->insert_id;
@@ -82,7 +85,10 @@ if($v){
 	$qd = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '#', '#', '$subeDocs')";
 	$vd = $mysqli->query($qd);
 
-	if($v && $vp){
+	$qi = "INSERT INTO usuarios_info VALUES($idu, $campus, '$campus_escuela')";
+	$vi = $mysqli->query($qi);
+
+	if($v && $vp && $vi){
 		$response = 'true';
 	}else{
 		$response = 'false';

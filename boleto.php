@@ -14,7 +14,7 @@ $string = $_GET['s'];
 $colorFront = new BCGColor(0, 0, 0);
 $colorBack = new BCGColor(255, 255, 255);
 $font = new BCGFontFile('pdf/font/Arial.ttf', 18);
-
+/*
 $code = new BCGcode128();
 $code->setScale(1);
 $code->setThickness(45);
@@ -64,6 +64,7 @@ $drawing = new BCGDrawing('./archivos/filename.png', $colorBack);
 							$tv2 = $info[1]['nombre'];
 							$tv3 = $info[2]['nombre'];
 							$ts1 = $info[3]['nombre'];
+							$ts2 = $info[4]['nombre'];
 						}
 					}
 				}
@@ -170,7 +171,7 @@ $drawing = new BCGDrawing('./archivos/filename.png', $colorBack);
 			$this->Cell(0,0,'Lugar:',0,0,'C');
 			$this->SetY(68);
 			$this->SetX(-210);
-			$this->Cell(0,0,'Talleres de Sábado:',0,0,'C');
+			$this->Cell(0,0,utf8_decode('Talleres de Sábado:'),0,0,'C');
 			$this->SetY(90);
 			$this->SetX(-208);
 			$this->Cell(179,10,'Fecha:',0,0,'C');
@@ -192,17 +193,19 @@ $drawing = new BCGDrawing('./archivos/filename.png', $colorBack);
 			$this->SetFont('Arial','B',8);
 			$this->SetY(75);
 			$this->SetX(-315);
-			$this->Cell(0,0, '1. '.$tv1, 0,0,'C');
+			$this->Cell(310,0, '1. '.$tv1, 0,0,'C');
 			$this->ln(7);
-			$this->Cell(69,0, '2. '.$tv2, 0,0,'C');
+			$this->SetX(-315);
+			$this->Cell(310,0, '2. '.$tv2, 0,0,'C');
 			$this->ln(7);
-			$this->Cell(49,0, '3. '.$tv3, 0,0,'C');
+			$this->SetX(-315);
+			$this->Cell(310,0, '3. '.$tv3, 0,0,'C');
 
 				//Luagr
 			$this->SetY(99);
 			$this->SetX(-326);
 			$this->SetFont('Arial','',7);
-			$this->Cell(0,0, '-Centro Estudiantil de Tecnológico de', 0,0,'C');
+			$this->Cell(0,0, utf8_decode('-Centro Estudiantil de Tecnológico de'), 0,0,'C');
 			$this->Ln(3);
 			$this->Cell(56,0, 'Monterrey, Campus Monterrey.', 0,0,'C');
 				//Fecha
@@ -216,10 +219,11 @@ $drawing = new BCGDrawing('./archivos/filename.png', $colorBack);
 				//Talleres Sabado
 			$this->SetFont('Arial','B',8);
 			$this->SetY(75);
-			$this->SetX(-170);
-			$this->Cell(0,0, '1. '.$ts1, 0,0,'C');
+			$this->SetX(90);
+			$this->Cell(80,0, '1. '.$ts1, 0,0,'C');
 			$this->ln(10);
-			$this->Cell(220,0, '2. '.$ts1, 0,0,'C');
+			$this->SetX(90);
+			$this->Cell(80,0, '2. '.$ts2, 0,0,'C');
 
 
 			
@@ -266,7 +270,7 @@ $drawing = new BCGDrawing('./archivos/filename.png', $colorBack);
 			$this->SetY(-185);
 			$this->SetX(-193);
 			$this->SetFont('Arial','',7);
-			$this->Cell(0,10, 'Una vez que presentes tu boleto en el registro, dobla la hoja a la mitad y después de izquierda a derecha para usar el diseño del recuadro de',0,0,'L');
+			$this->Cell(0,10, utf8_decode('Una vez que presentes tu boleto en el registro, dobla la hoja a la mitad y después de izquierda a derecha para usar el diseño del recuadro de'),0,0,'L');
 			$this->Ln(3);
 			$this->SetX(-193);
 			$this->Cell(0,10, 'abajo como gafete por el frente y contar por el reverso con los nombre de los talleres a los que te registraste.', 0,0,'L');
@@ -301,9 +305,11 @@ $drawing = new BCGDrawing('./archivos/filename.png', $colorBack);
 			$this->SetFont('Arial','B',11);
 			$this->Cell(0,0,'- '.$tv1,0,0,'C');
 			$this->Ln(20);
-			$this->Cell(77,0,'- '.$tv2,0,0,'C');
+			$this->SetX(-305);
+			$this->Cell(0,0,'- '.$tv2,0,0,'C');
 			$this->Ln(20);
-			$this->Cell(60,0,'- '.$tv3,0,0,'C');
+			$this->SetX(-305);
+			$this->Cell(0,0,'- '.$tv3,0,0,'C');
 
 			//Agenda Sabado
 			$this->SetX(-201);
@@ -321,11 +327,10 @@ $drawing = new BCGDrawing('./archivos/filename.png', $colorBack);
 			$this->SetX(-305);
 			$this->SetTextColor(0,0,0);
 			$this->SetFont('Arial','B',11);
-			$this->Text(17,235,'- '.$ts1);
-			//$this->Text(17,240,'Negocios, Ciencias Sociales y Humanidades.');
+			$this->Text(100,0,'- '.$ts1,0,0,'C');
 			$this->Ln(30);
-			$this->Text(17,265,'- '.$ts1);
-			//$this->Text(17,270,'Nacional de Medicina.');
+			$this->SetX(-305);
+			$this->Text(100,0,'- '.$ts2,0,0,'C');
 
 			//Imagen Gafete
 			$this->SetY(-188);

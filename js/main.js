@@ -157,14 +157,6 @@ $(document).ready(function(){
 			var tel   = $("#tel").val();
 			var cel   = $("#cel").val();
 			form_data.cel = cel;
-			/*
-			var car1  = $("#carrera1").val();
-			form_data.car1 = car1;
-			var car2  = $("#carrera2").val();
-			form_data.car2 = car2;
-			var car3  = $("#carrera3").val();
-			form_data.car3 = car3;
-			*/
 			var state = $("#estado").val();
 			form_data.state = state;
 			var city  = $("#ciudadMX").val();
@@ -175,15 +167,7 @@ $(document).ready(function(){
 			form_data.grad = grad;
 
 			if(email != '' 
-				&& lada != '' && tel != '' 
-				&& cel != '' 
-				/*
-				&& car1 != '' 
-				&& car2 != '' 
-				&& car3 != '' 
-				*/
-				&& state != '' && city != '' 
-				&& prep != '' && grad != ''){
+				&& lada != '' && tel != ''  && cel != ''  && state != '' && city != ''  && prep != '' && grad != ''){
 				var numero = lada + tel;
 				form_data.numero = numero;
 				index_form++;
@@ -193,7 +177,7 @@ $(document).ready(function(){
 					form_data.pare = '';
 					form_data.namep = '';
 					index_form++;
-					setFormStep(index);
+					setFormStep(index_form);
 					return;
 				}
 			}else{
@@ -209,7 +193,7 @@ $(document).ready(function(){
 			form_data.pare = pare;
 			var namep = $("#nomcomp").val();
 			form_data.namep = namep;
-			if(solo == '1'){
+			if(hotel == '1' && solo == '1'){
 				if(pare != '' && namep != ''){
 					index_form++;
 				}else{
@@ -219,25 +203,30 @@ $(document).ready(function(){
 				index_form++;
 			}
 		}else if(index_form == 3){
-			var carrera = $("#carrera").val(),
-				carrera1 = $("#carrera1").val(),
-				carrera2 = $("#carrera2").val(),
-				carrera3 = $("#carrera3").val(),
-				campus = $("#campus").val(),
-				campusEscuela = $("#campus_escuela").val(),
-				evento = $("#evento").val();
-			if(carrera != ''
-				&& carrera1 != ''
-				&& carrera2 != ''
-				&& carrera3 != ''
-				&& campus != ''
-				&& evento != ''){
+			var carrera = $("#carrera").val();
 				form_data.carrera = carrera;
-				form_data.car1 = carrera1;
-				form_data.car2 = carrera2;
-				form_data.car3 = carrera3;
-				form_data.campus = campus;
-				form_data.evento = evento;
+			var car1  = $("#carrera1").val();
+				form_data.car1 = car1;
+			var car2  = $("#carrera2").val();
+				form_data.car2 = car2;
+			var car3  = $("#carrera3").val();
+				form_data.car3 = car3;
+				
+				campus = $("#campus").val();
+					form_data.campus = campus;
+				campusEscuela = $("#campus_escuela").val();
+					form_data.campus_escuela = campusEscuela;
+				eventos = $("#evento").val();
+					form_data.eventos = eventos;
+
+			if(carrera != '' && car1 != '' && car2 != '' && car3 != '' && campus != '' && eventos != ''){
+				/*form_data.carrera = carrera;
+				form_data.car1 = car1;
+				form_data.car2 = car2;
+				form_data.car3 = car3;
+				*/
+				
+				
 				if(campus == 1){
 					if(campusEscuela != ''){
 						form_data.campus_escuela = campusEscuela;
@@ -266,13 +255,7 @@ $(document).ready(function(){
 			var evento = $("#evento").val();
 			form_data.evento = evento;
 
-			if($("#acepto").is(':checked') === true 
-				&& vopt1 != '' 
-				&& vopt2 != '' 
-				&& vopt3 != '' 
-				&& sopt1 != ''
-				&& sopt2 != ''
-				&& evento != ''){
+			if($("#acepto").is(':checked') === true  && vopt1 != ''  && vopt2 != ''  && vopt3 != '' && sopt1 != '' && sopt2 != '' && evento != ''){
 				//cotinuar
 				console.log(form_data);
 				$.ajax({
