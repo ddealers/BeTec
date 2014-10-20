@@ -164,7 +164,7 @@ $form_FA = "
 </html>
 ";
 
-$OLD= "
+/*$OLD= "
 <form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
 	<fieldset>Sube tu documentación</fieldset>
 	".$correcto."
@@ -179,7 +179,7 @@ $OLD= "
 	".$bolet."
 </form>
 ";
-
+*/
 $form_FB = "
 <form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
 	<fieldset>Sube tu documentación</fieldset>
