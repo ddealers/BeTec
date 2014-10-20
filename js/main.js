@@ -220,13 +220,10 @@ $(document).ready(function(){
 					form_data.eventos = eventos;
 
 			if(carrera != '' && car1 != '' && car2 != '' && car3 != '' && campus != '' && eventos != ''){
-				/*form_data.carrera = carrera;
+				form_data.carrera = carrera;
 				form_data.car1 = car1;
 				form_data.car2 = car2;
 				form_data.car3 = car3;
-				*/
-				
-				
 				if(campus == 1){
 					if(campusEscuela != ''){
 						form_data.campus_escuela = campusEscuela;
@@ -302,6 +299,58 @@ $(document).ready(function(){
 		TweenMax.from(ns, 0.3, {opacity: 0, y: 100});
 	}
 	
+	//===== Acciones en select ===== //
+	function updateLists(all, lists){
+		$.each(lists, function(){
+			var list = this;
+			$('#'+list+' option').show();
+			console.log(all);
+			$.each(all, function(key, value){
+				if(key != list){
+					$('#'+list+' option[value="'+value+'"]').hide();
+				}
+			});
+		});
+	}
+
+	var carrerasList = {carrera1:null, carrera2: null, carrera3: null};
+	$('#carrera1').on('change', function(){
+		carrerasList.carrera1 = $(this).val();
+		updateLists(carrerasList, ['carrera2', 'carrera3']);
+	});
+	$('#carrera2').on('change', function(){
+		carrerasList.carrera2 = $(this).val();
+		updateLists(carrerasList, ['carrera1', 'carrera3']);
+	});
+	$('#carrera3').on('change', function(){
+		carrerasList.carrera3 = $(this).val();
+		updateLists(carrerasList, ['carrera1', 'carrera2']);
+	});
+
+	var viernesList = {vopt1:null, vopt2: null, vopt3: null};
+	$('#vopt1').on('change', function(){
+		viernesList.vopt1 = $(this).val();
+		updateLists(viernesList, ['vopt2', 'vopt3']);
+	});
+	$('#vopt2').on('change', function(){
+		viernesList.vopt2 = $(this).val();
+		updateLists(viernesList, ['vopt1', 'vopt3']);
+	});
+	$('#vopt3').on('change', function(){
+		viernesList.vopt3 = $(this).val();
+		updateLists(viernesList, ['vopt1', 'vopt2']);
+	});
+
+	var sabadoList = {sopt1:null, sopt2: null};
+	$('#sopt1').on('change', function(){
+		sabadoList.sopt1 = $(this).val();
+		updateLists(sabadoList, ['sopt2']);
+	});
+	$('#sopt2').on('change', function(){
+		sabadoList.sopt2 = $(this).val();
+		updateLists(sabadoList, ['sopt1']);
+	});
+
 	//===== Acciones en registrar ===== //
 	$("#generoM").click(function() {
 		if($(this).hasClass("selected")){

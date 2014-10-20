@@ -13,6 +13,7 @@ if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 		$q = "SELECT ciudades.id, ciudades.nombre FROM ciudades, preparatorias WHERE ciudades.id = preparatorias.id_ciudad GROUP BY ciudades.id";
 		$v = $mysqli->query($q);
 		if($v){
+			$listado = "";
 			while ($row = $v->fetch_assoc()) {
 				$listado .= "<option value='".$row['id']."'>".$row['nombre']."</option>";
 			}
@@ -23,13 +24,14 @@ if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 	
 	$idc = $_GET['idc'];
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$prim = "<option value=''>Prepa donde estudias**</option>";
+	$prim = "<option value=''>Prepa donde estudias*</option>";
 
 	if(isset($idc) && $idc != NULL){
 		$q = "SELECT id, nombre FROM preparatorias WHERE id_ciudad = $idc";
 		$v = $mysqli->query($q);
 
 		if($v){
+			$listado = "";
 			while ($row = $v->fetch_assoc()) {
 				$listado .= ucwords("<option value='".$row['id']."'>".$row['nombre']."</option>");
 			}
@@ -44,8 +46,8 @@ function cupoTaller(){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$q = "SELECT id, nombre FROM talleres WHERE libres > 0";
 	$v = $mysqli->query($q);
-
 	if($v){
+		$listado = "";
 		while ($row = $v->fetch_assoc()) {
 			$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
 		}
@@ -59,6 +61,7 @@ function selectEstados(){
 	$q = "SELECT id, nombre FROM estados";
 	$v = $mysqli->query($q);
 	if($v){
+		$listado = "";
 		while ($row = $v->fetch_assoc()) {
 			$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
 		}
@@ -73,6 +76,7 @@ function selectCarreras(){
 	$v = $mysqli->query($q);
 
 	if($v){
+		$listado = "";
 		while ($row = $v->fetch_assoc()) {
 			//$listado[] = $row;
 			$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
@@ -88,6 +92,7 @@ function selectTalleresV(){
 	$v = $mysqli->query($q);
 
 	if($v){
+		$listado = "";
 		while ($row = $v->fetch_assoc()) {
 			$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
 		}
@@ -102,6 +107,7 @@ function selectTalleresS(){
 	$v = $mysqli->query($q);
 
 	if($v){
+		$listado = "";
 		while ($row = $v->fetch_assoc()) {
 			$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
 		}
@@ -116,6 +122,7 @@ function selectEventos(){
 	$v = $mysqli->query($q);
 
 	if($v){
+		$listado = "";
 		while ($row = $v->fetch_assoc()) {
 			$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
 		}
