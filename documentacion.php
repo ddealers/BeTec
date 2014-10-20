@@ -149,6 +149,15 @@ $form_FA = "
 					</div>
 				</div>
 			</p>
+			<div class='azul'>
+				<p class='dudas'>¿TIENES DUDAS?</p>
+				<ul>
+					<li>Escribenos:<br><img src='./img/mesage.png' btec@.mty@servicios.itesm.mx</li>
+					<li>Llámanos:<br><img src='./img/fon.png' 01 800 832 33 689<br>o al (81) 8158 2269</li>
+					<li>Postea:<br><img src='./img/face.png' /AdmisionesTecdeMty</li>
+					<li>Tuitea: <br><img src='./img/tw.png' AdmisionesITESM</li>
+				</ul>
+			</div>
 		</article>
 	</section>
 </body>
