@@ -812,12 +812,12 @@
 								</div>
 							</div>
 							<label id="parentesco-cont">
+								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="parentesco" id="parentesco" class="option">
 									<i class="icon ion-ios7-arrow-down"></i>
 									<option value="">Parentesco*</option>
 									<option value="1">Madre</option>
 									<option value="2">Padre</option>
-
 								</select>
 							</label>
 							<input type="text" placeholder="Nombre completo*" name="nomcomp" id="nomcomp">
@@ -860,7 +860,7 @@
 								</div>
 							</div>
 							<div class="step-data">
-								<input type="text" placeholder="Escuela(s)*" name="campus_escuela" id="campus_escuela" />
+								<input type="text" placeholder="¿En qué universidad piensas estudiar tu carrera?*" name="campus_escuela" id="campus_escuela" />
 							</div>
 						</div>
 					</div>

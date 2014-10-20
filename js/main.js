@@ -288,7 +288,7 @@ $(document).ready(function(){
 				});
 				return;
 			}else{
-				alert("Debes aceptar terminos y condiciones");
+				alert("Debes aceptar los Términos y Condiciones");
 				return;
 			}
 		}
