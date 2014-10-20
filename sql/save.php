@@ -56,7 +56,8 @@ $namep	 = $_POST['namep'];
 $vopt1	 = $_POST['vopt1'];
 $vopt2	 = $_POST['vopt2'];
 $vopt3	 = $_POST['vopt3'];
-$sopt	 = $_POST['sopt'];
+$sopt1	 = $_POST['sopt1'];
+$sopt2	 = $_POST['sopt2'];
 
 
 $evento	 = $_POST['evento'];
@@ -79,7 +80,8 @@ if($v){
 		$vp = $mysqli->query($qp);
 	}
 
-	$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt, CURRENT_TIMESTAMP)";
+	$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt1, CURRENT_TIMESTAMP)";
+	$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt2, CURRENT_TIMESTAMP)";
 	$vw = $mysqli->query($qw);
 
 	$qd = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '#', '#', '$subeDocs')";
