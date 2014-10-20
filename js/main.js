@@ -193,7 +193,7 @@ $(document).ready(function(){
 					form_data.pare = '';
 					form_data.namep = '';
 					index_form++;
-					setFormStep(index);
+					setFormStep(index_form);
 					return;
 				}
 			}else{

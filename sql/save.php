@@ -19,9 +19,8 @@ function encriptarURL($string, $key){
 	return base64_encode($result);
 }
 
-$ur = encriptarURL($email, $key);
+$ur = encriptarURL($_POST['email'], $key);
 $url = "http://$_SERVER[HTTP_HOST]/documentacion?s=".$ur;
-
 
 //var_dump($_REQUEST);
 $genero  = $_POST['genero'];
