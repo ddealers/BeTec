@@ -719,9 +719,9 @@
 							<label class="icon-arrow-left">
 								<select name="gradua" id="gradua" class="option inputPrepa">
 									<option>Fecha esperada de graduación*</option>
-									<option value="2014">2014</option>
-									<option value="2015">2015</option>
-									<option value="2016">2016</option>
+									<option value="2015">Agosto 2015</option>
+									<option value="2016-1">Enero 2016</option>
+									<option value="2016-2">Agosto 2016</option>
 								</select>
 							</label>
 						</div>
