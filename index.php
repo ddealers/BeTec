@@ -860,7 +860,7 @@
 								</div>
 							</div>
 							<div class="step-data">
-								<input type="text" placeholder="¿En qué universidad piensas estudiar tu carrera?*" name="campus_escuela" id="campus_escuela" />
+								<input type="text" placeholder="¿En qué universidad piensas estudiar?*" name="campus_escuela" id="campus_escuela" />
 							</div>
 						</div>
 					</div>
@@ -1018,11 +1018,11 @@
 				<div class="response local">
 					<p>Enviaremos a tu correo una confirmación, sólo tendrás que descargarla y presentarla impresa el día del evento junto con tu identificación oficial.<br><br>¡Te esperamos en BORN TO BE TEC 2014!</p-->
 				</div>
-				<!--div class="redesS">
-					<a href="#"></a>
-					<a href="#" class="t"></a>
+				<div class="redesS">
+					<a id="comparte_fb"href="#"></a>
+					<a id="comparte_tw" href="#" class="t"></a>
 					<p>¡COMPARTE EN REDES SOCIALES!</p>
-				</div-->
+				</div>
 			</div>
 		</article>
 	</section>

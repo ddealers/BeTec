@@ -715,7 +715,7 @@ section#be_tec p {
   margin: 0.5vw 0;
   border: 2px #ececec solid;
   width: 80%;
-  font-size: 13px;
+  font-size: 11px;
 }
 #registro article form .step .step-area .step-data label {
   position: relative;
@@ -740,6 +740,7 @@ section#be_tec p {
   -moz-appearance: none;
   appearance: none;
   line-height: 135%;
+  max-width: 25vw;
 }
 #registro article form .step .step-area .step-data .bool-choose .option,
 #registro article form .step .step-area .step-data .bool-chooser .option {
