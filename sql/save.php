@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 ini_set('display_errors', '0');
 setlocale(LC_ALL,"es_ES");
 require_once("../config.php");	
@@ -99,6 +100,14 @@ if($v){
 }else{
 	$response = 'false';
 }
+
+$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+$cabeceras .= 'Content-type: text/html; charset=utf8' . "\r\n";
+$cabeceras .= 'From: no-reply@servicios.itesm.mx' . "\r\n" .
+'Reply-To: btec.mty@servicios.itesm.mx' . "\r\n";
+
+
+
 
 //Tiene que pagar hospedaje
 $mail_FA = "
@@ -358,10 +367,10 @@ $mail_FB = "
 //Si todo bien, envía mails
 if($response){
 	if($hotel == '0'){
-		mail($email, 'Completa tu registro', $mail_FB);
+		mail($email, 'Completa tu registro', $mail_FB, $cabeceras);
 		$datass['mail'] = 'FB';
 	}elseif ($hotel == '1') {
-		mail($email, 'Completa tu registro', $mail_FA);
+		mail($email, 'Completa tu registro', $mail_FA, $cabeceras);
 		$datass['mail'] = 'FA';
 	}elseif($hotel == '0' && $city = '986'){
 		
@@ -509,7 +518,7 @@ if($response){
 				</html>
 			";
 		}
-		mail($email, 'Registro Completo', $mail);
+		mail($email, 'Registro Completo', $mail, $cabeceras);
 		$datass['mail'] = 'Normal';
 	}
 }
