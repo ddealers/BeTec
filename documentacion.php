@@ -266,8 +266,6 @@ $form_FB = "
 </html>
 ";
 
-echo $form_FB;
-exit();
 if($respuesta['estatus'] == 'true' && $respuesta['docs'] == 'false' && $respuesta['hotel'] == 'false'){
 	echo $form_FA;
 }elseif ($respuesta['estatus'] == 'true' && $respuesta['docs'] == 'false' && $respuesta['hotel'] == 'true') {
