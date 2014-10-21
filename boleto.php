@@ -2,9 +2,6 @@
 header('Content-Type: text/html; charset=utf-8');
 error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
 
-echo "HOLA";
-exit();
-
 require_once('config.php');
 require('./sql/funciones.php');
 require('pdf/fpdf.php');
