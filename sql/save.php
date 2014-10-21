@@ -81,6 +81,7 @@ if($v){
 	}
 
 	$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt1, CURRENT_TIMESTAMP)";
+	$vw = $mysqli->query($qw);
 	$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt2, CURRENT_TIMESTAMP)";
 	$vw = $mysqli->query($qw);
 
