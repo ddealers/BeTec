@@ -595,7 +595,7 @@
 			<h1 class="registro">REGISTRO</h1>
 			<h2 class="experiencia">¡ESTÁS MUY CERCA DE<br> VIVIR LA EXPERIENCIA TEC!</h2>
 			<p>Iniciemos con el registro ahora mismo. Por favor proporciona<br>los siguientes datos:</p>
-			<form method="POST">
+			<form method="POST" action="sql/save.php" >
 				<div class="step">
 					<div class="step-area genero">
 						<p class="info">TU GÉNERO</p>
@@ -984,6 +984,7 @@
 						</div>
 					</div>
 				</div>
+				<!--input type="submit" value="GUARAD"-->
 			</form>
 		</article>
 		<div class="siguiente">
