@@ -273,6 +273,9 @@ $(document).ready(function () {
 							$('#end').show();
 							TweenMax.from('#end', 1, {opacity: 0, scale: 0.5, ease: Back.easeOut});
 							return;
+						}else if(response == 'badMail'){
+							alert("Este email ya ha sido registrado");
+							console.log(response);
 						}else{
 							alert("Lo sentimos tu registro no se pudo completar");
 							console.log(response);
