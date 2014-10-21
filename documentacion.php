@@ -68,6 +68,9 @@ $idu = $in[1]['id'];
 
 $respuesta = validaDocs($idu);
 
+//
+//var_dump($mail);
+//var_dump($in);
 
 //Generamos Boleto
 $correcto = "<span>Se guardo correctamente tu información.</span><br />";
@@ -78,6 +81,12 @@ $class = 'noactive';
 $correcto = ($v == 'ok') ? $correcto : $nll ;
 $bolet = ($v == 'ok' || $respuesta['v'] == 'ok') ? $bolet : $nll;
 $class = ($v == 'ok') ? $class : $nll;
+
+
+//enviar ruta para subir archivos
+$dir = dirname(__FILE__);
+$ruta = $dir;
+$ruta = $ruta . '/archivos/';
 
 //Forms
 $form_FA = "
@@ -143,6 +152,7 @@ $form_FA = "
 						<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
 							<input type='hidden' name='string' value='".$string."' />
 							<input type='hidden' name='idu' value='".$idu."' />
+							<input type='hidden' name='ruta' value='".$ruta."' />
 							<input type='file' name='carta' />
 							<input type='submit' value='Guardar' class='".$class."'/>
 						</form>
@@ -164,22 +174,6 @@ $form_FA = "
 </html>
 ";
 
-/*$OLD= "
-<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
-	<fieldset>Sube tu documentación</fieldset>
-	".$correcto."
-	<label>Carta Compromiso</label><br />
-	<input type='hidden' name='string' value='".$string."' />
-	<input type='hidden' name='idu' value='".$idu."' />
-	<input type='file' name='carta' />
-	<br />
-	<label>Ficha Bancaria</label><br />
-	<input type='file' name='banco' /><br />
-	<input type='submit' value='Guardar' class='".$class."'/>
-	".$bolet."
-</form>
-";
-*/
 $form_FB = "
 <!DOCTYPE html>
 <html lang='es'>
@@ -202,7 +196,6 @@ $form_FB = "
 	<header>
 		<figure id='logo'>
 			<a href='#'><img src='./img/logo.png' title='Born to be TEC' /></a>
-			
 		</figure>
 		<nav>
 			<ul><!--NADA--></ul>
@@ -243,21 +236,15 @@ $form_FB = "
 						<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
 							<input type='hidden' name='string' value='".$string."' />
 							<input type='hidden' name='idu' value='".$idu."' />
-							<input type='file' name='carta' />
-							<input type='submit' value='Guardar' class='".$class."'/>
-						</form>
+							<input type='hidden' name='ruta' value='".$ruta."' />
+							<input type='file' name='banco' />
 					</div>
-
-
 					<div class='pendiente carta'>
 						<figure>
 							<img src='img/incorrecto.png' alt='Pendiente'>
 						</figure>
 						<span class='even'>Carta</span>
 						<h4>Pendiente subir<br> carta compromiso</h4>
-						<form action='./sql/saveDoc.php' method='POST' enctype='multipart/form-data'>
-							<input type='hidden' name='string' value='".$string."' />
-							<input type='hidden' name='idu' value='".$idu."' />
 							<input type='file' name='carta' />
 							<input type='submit' value='Guardar' class='".$class."'/>
 						</form>
@@ -278,6 +265,9 @@ $form_FB = "
 </body>
 </html>
 ";
+
+echo $form_FB;
+exit();
 if($respuesta['estatus'] == 'true' && $respuesta['docs'] == 'false' && $respuesta['hotel'] == 'false'){
 	echo $form_FA;
 }elseif ($respuesta['estatus'] == 'true' && $respuesta['docs'] == 'false' && $respuesta['hotel'] == 'true') {
