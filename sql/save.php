@@ -24,7 +24,10 @@ $ur = encriptarURL($_POST['email'], $key);
 $url = "http://$_SERVER[HTTP_HOST]/documentacion?s=".$ur;
 
 //var_dump($_REQUEST);
-$genero  = $_POST['genero'];
+//$genero  = $_POST['genero'];
+
+$genero = ($_POST['genero'] != '') ? $_POST['genero'] : 0 ;
+
 $nombre	 = $_POST['nombre'];
 $cumple	 = $_POST['cumple'];
 $email	 = $_POST['email'];
@@ -50,8 +53,7 @@ $solo	 = $_POST['solo'];
 
 
 $pare	 = $_POST['pare'];
-$namep	 = $_POST['namep'];
-
+$namep = ($_POST['namep'] != '') ? $_POST['namep'] : '9' ;
 
 
 $vopt1	 = $_POST['vopt1'];
@@ -65,9 +67,10 @@ $evento	 = $_POST['evento'];
 
 $subeDocs = ($_POST['hotel'] == '1') ? '1' : '0' ;
 
-$q = "INSERT INTO usuarios VALUES(NULL, '$genero', '$nombre', '$cumple', '$email', '$numero', '$cel', '$state', '$city', '$prep', '$grad', '$hotel', '$solo', '$evento', '$subeDocs',  CURRENT_TIMESTAMP )";
-//echo $sql;
+$q = "INSERT INTO usuarios VALUES(NULL, $genero, '$nombre', '$cumple', '$email', '$numero', '$cel', '$state', '$city', '$prep', '$grad', '$hotel', '$solo', '$evento', '$subeDocs',  CURRENT_TIMESTAMP )";
+
 $v = $mysqli->query($q);
+
 if($v){
 	$idu = $mysqli->insert_id;
 
@@ -79,12 +82,23 @@ if($v){
 	for ($i=1; $i < 4; $i++) { 
 		$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt$i, CURRENT_TIMESTAMP)";
 		$vp = $mysqli->query($qp);
+		
+		//UPDATEA CUPOS LIBRES
+		$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt$i ";
+		$vl = $mysqli->query($ql);
 	}
 
 	$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt1, CURRENT_TIMESTAMP)";
 	$vw = $mysqli->query($qw);
+
+	$qsl = "UPDATE talleres SET libres=libres-1 WHERE id = $sopt1";
+	$vsl = $mysqli->query($qsl);
+
 	$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt2, CURRENT_TIMESTAMP)";
 	$vw = $mysqli->query($qw);
+
+	$qsl = "UPDATE talleres SET libres=libres-1 WHERE id = $sopt2";
+	$vsl = $mysqli->query($qsl);
 
 	$qd = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '#', '#', '$subeDocs')";
 	$vd = $mysqli->query($qd);
@@ -103,11 +117,7 @@ if($v){
 
 $cabeceras  = 'MIME-Version: 1.0' . "\r\n";
 $cabeceras .= 'Content-type: text/html; charset=utf8' . "\r\n";
-$cabeceras .= 'From: no-reply@servicios.itesm.mx' . "\r\n" .
-'Reply-To: btec.mty@servicios.itesm.mx' . "\r\n";
-
-
-
+$cabeceras .= 'From: no-reply@servicios.itesm.mx' . "\r\n" . 'Reply-To: btec.mty@servicios.itesm.mx' . "\r\n";
 
 //Tiene que pagar hospedaje
 $mail_FA = "
@@ -524,8 +534,8 @@ if($response){
 }
 
 
-/*echo $hotel."<br />";
-echo $datass['mail'];*/
+//echo $genero."<br />";
+/*echo $datass['mail'];*/
 
 echo $response;
 
