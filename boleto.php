@@ -5,7 +5,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
 echo "HOLA";
 exit();
 
-require_once("config.php");
+require_once('config.php');
 require('./sql/funciones.php');
 require('pdf/fpdf.php');
 require('barcode/BarcodeBase.php');

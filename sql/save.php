@@ -230,8 +230,8 @@ $mail_FA = "
 		<strong>¿No encuentras los formatos? Descárgalos de aquí</strong>
 		<hr />
 		<ul>
-			<li>- Carta Compromiso <a href='../download/FormatodeCartaCompromisao_2014_BTEC.pdf' class='lista_link'>http://bitl.ly/334ds</a></li>
-			<li>- Ficha Bancaria   <a href='../download/FormatodeCuentaBancaria.jpg' class='lista_link'>http://bitl.ly/2fd8ab</a></li>
+			<li>- Carta Compromiso <a href='http://borntobetec.mty.itesm.mx/download/FormatodeCartaCompromisao_2014_BTEC.pdf' class='lista_link'>http://bitl.ly/334ds</a></li>
+			<li>- Ficha Bancaria   <a href='http://borntobetec.mty.itesm.mx/download/FormatodeCuentaBancaria.jpg' class='lista_link'>http://bitl.ly/2fd8ab</a></li>
 		</ul>
 	</p>
 	</div>
@@ -357,7 +357,7 @@ $mail_FB = "
 		<strong>¿No encuentras el formato? Descárgalo de aquí</strong>
 		<hr />
 		<ul>
-			<li>- Carta Compromiso <a href='../download/FormatodeCartaCompromisao_2014_BTEC.pdf' class='lista_link'>http://bitl.ly/334ds</a></li>
+			<li>- Carta Compromiso <a href='http://borntobetec.mty.itesm.mx/download/FormatodeCartaCompromisao_2014_BTEC.pdf' class='lista_link'>http://bitl.ly/334ds</a></li>
 		</ul>
 	</p>
 	</div>
