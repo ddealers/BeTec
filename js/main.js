@@ -1,5 +1,5 @@
-$(document).ready(function(){
-	//===== Init Skrollr =====
+$(document).ready(function () {
+  //===== Init Skrollr =====
 	var s = skrollr.init({
 		smoothScrolling: true,
 		mobileDeceleration: 0.004,
@@ -351,7 +351,7 @@ $(document).ready(function(){
 		updateLists(sabadoList, ['sopt1']);
 	});
 
-	//===== Acciones en registrar ===== //
+	//===== Acciones en choose ===== //
 	$("#generoM").click(function() {
 		if($(this).hasClass("selected")){
 			console.log("ya tiene la clase!!");
@@ -374,8 +374,6 @@ $(document).ready(function(){
 			$("#genero").val('0');
 		}
 	})
-	//$("#genero").val('0');
-
 	$(".compania").hide();
 	$("#hotelS").click(function() {
 		if($(this).hasClass("activo")){
@@ -402,8 +400,6 @@ $(document).ready(function(){
 			}});
 		}
 	})
-	//$("#hospedaje").val('0');
-
 	$("#soloS").click(function() {
 		if($(this).hasClass("activo")){
 			console.log("ya esta activo");
@@ -449,7 +445,19 @@ $(document).ready(function(){
 		
 		input.val($(this).data('val'));
 	});
-	//$("#acompanante").val('0');
+	
+	//===== Share ===== //
+  $('#comparte_fb').on('click', function(e){
+    e.preventDefault();
+    url = encodeURIComponent(location.href);
+    window.open('http://www.facebook.com/sharer.php?u='+url, 'Compartir en Facebook','width=480, height=320');
+  });
+  $('#comparte_tw').on('click', function(e){
+    e.preventDefault();
+    url = encodeURIComponent(location.href);
+    window.open('https://twitter.com/share?url='+url, 'Compartir en Twitter','width=480, height=320');
+  });
+
 })
 
 
