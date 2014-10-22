@@ -728,21 +728,21 @@
 					</div>
 					<div class="step-area residencia">
 						<p class="info">
-							TU RESIDENCIA
+							¿DONDE ESTUDIAS?
 							<img class="lapiz"src="./img/ubi.png">
 						</p>
 						<div class="step-data">
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="estado" id="estado" class="option" onchange="estadoCity(this,'ciudadMX')">
-									<option value=''>Estado de residencia*</option>
+									<option value=''>Estado donde estudio*</option>
 									<?php echo selectEstados(); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="ciudad" id="ciudadMX" class="option" onchange="citySchool(this,'prepaMX')">
-									<option value=''>Ciudad de residencia*</option>
+									<option value=''>Ciudad donde estudio*</option>
 								</select>
 							</label>
 						</div>
@@ -875,7 +875,7 @@
 						<div class="step-data">
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
-								<select name="carrera1" id="carrera1" class="option">
+								<select name="carrera1" id="carrera1" class="option" requerid>
 									<option value="">Elige una carrera*</option>
 									<?php echo selectCarreras(); ?>
 								</select>
@@ -883,14 +883,14 @@
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera2" id="carrera2" class="option">
-									<option value="">Elige una carrera*</option>
+									<option value="">Elige una carrera</option>
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera3" id="carrera3" class="option">
-									<option value="">Elige una carrera*</option>
+									<option value="">Elige una carrera</option>
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
@@ -922,6 +922,7 @@
 						</p>
 						<div class="step-data">
 							<p>Elige las tres actividades a las que quieres asistir el viernes.</p>
+							<p>Elige las tres actividades a las que quieres asistir el viernes, ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</p>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt1" id="vopt1" class="option">
@@ -953,6 +954,7 @@
 						</p>
 						<div class="step-data">
 							<p>Elige los dos talleres que quieres asistir el sábado.</p>
+							<p>Elige las tres actividades a las que quieres asistir el viernes, ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</p>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="sopt1" id="sopt1" class="option">
