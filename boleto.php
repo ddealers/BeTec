@@ -210,7 +210,7 @@ fclose( $fp );
 			// Escuela
 			$this->Image('./img/tmty.png',165,98,30);
 			//Barcode girado 180º
-			$this->RotatedImage("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 175, 98, 70, 15, 90);
+			$this->RotatedImage("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 175, 98, 70, 15, 'PNG');
 			
 
 			//Contenido Dinamico
@@ -361,7 +361,7 @@ fclose( $fp );
 			$this->SetX(-356);
 			$this->Image('./img/gafete.png', 105,130,90);
 			//Barcode sin rotacion
-			$this->Image("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 112, 230, -100);
+			$this->Image("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 112, 230, -100, -100, 'PNG');
 
 			$this->SetTextColor(26, 89, 184);
 			$this->SetFont('Arial','B',24);
