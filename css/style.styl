@@ -644,26 +644,30 @@ section
 			position initial
 		div.registroT
 			h1
-				top: 190px;
-				background: #ff3073;
-				padding: 10px;
-				left: 40%;
+				background #ff3073
+				padding 10px
+				position relative
+				width 22vw
+				margin 12% auto 0
 			h2
-				width: 465px;
-				margin: auto;
-				padding-top: 280px;
+				width 40%
+				margin 2vw auto
 				color #727272
 				text-align center
+				font-size 120%
 			p
 				font-size 1.3vw
-				margin-top 1vw
+				margin 2vw auto
 				text-align center
 				color #727272
-				&.sigue
-					text-align left
+				width 40%
 			ol
-				width 45%
-				margin auto
+				width 40%
+				margin 0 auto
+				p
+					margin 2vw -1vw 1vw
+					width 100%
+					text-align left
 				li
 					font-size 1.3vw
 					color #727272
@@ -674,31 +678,31 @@ section
 				position: absolute
 				width 7%
 		div.redesS
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: 20vw;
-			background: #ff2f72;
+			absolute bottom 0
+			size 100% 20%
+			background #ff2f72
+			display inline-flex
+			flex-direction column
+			justify-content center
+			align-items center
+			div 
+				size 50% 80%
+				display inline-flex
+				justify-content center
+				align-items center
+				a
+					size 8vw
+					&#comparte_tw
+						background: url("../img/t.png") no-repeat
+						background-size contain
+					&#comparte_fb
+						background: url("../img/f.png") no-repeat 2vw
+						background-size contain
 			p
-				color: #fff;
-				font-weight: bold;
-				width: 100%;
-				text-align: center;
-				position: absolute;
-				bottom: 2vw;
-			a
-				background: url("../img/f.png") no-repeat;
-				position: absolute;
-				top: 30px;
-				height: 100px;
-				width: 100px;
-				left: -35px;
-				right: 0;
-				margin: auto;
-			.t
-				background: url("../img/t.png") no-repeat 30px;
-				left 35px
-				top: 20px;
+				color #fff
+				font-weight bold
+				font-size 90%
+				margin 0
 		p.siguiente
 			background: url("../img/siguiente.png") no-repeat no-repeat;
 			color #fff
@@ -783,276 +787,138 @@ footer
 /** CARGAR DOCUMENTOS jok3r**/
 
 section.content
-	margin-top -30px
-	margin-left: 120px;
-	//background-color #fafafa
-	width  100%
+	padding-left 120px
 	article
+		width 70%
+		left 10vw
+		top 16.5vw
 		h1
+			font-size 2.5vw
 			top -6.6vw
+			left 0
 			background #43b9f0
 			padding 1vw 2.1vw
-			left -7vw
-		span
-			font-size 0.7em
-			text-align left
-			display block
-			max-width 250px
-			margin-left -80px
-			margin-top 12px
-			color #c9c9c9
-		h3
-			text-transform: uppercase
-			color #4D4D4D
-			margin-left -80px
-			margin-top 30px
-			line-height 1px
-			font-family: GillSans-Bold;
-		div.evento
-			display inline-block
-			float right
-			margin: -50px 0 0 300px;
-			color: #4d4d4d;
-			position: absolute;
-			width 100%
-			span.even
-				display inline-block
-				margin-left 1px!important
-				font-family: 'Gill Sans';
-			h4.font
-				font-family: 'Gill Sans';
-		div.acciones
-			display inline
-			float left
-			margin-left -120px
-			.hecho
-				margin-top 30px!important
-				display inline-block
-				figure
-					width 100%
-				img
-					width 60px
-				span, h4
-					float left
-					margin-left 120px
-					margin-top -60px
-					display block
-					font-family: 'Gill Sans';
-				h4
-					margin-top -40px
-					font-weight normal
-					text-transform uppercase
-					font-family: 'Gill Sans'
-					color: #4d4d4d;
-					font-weight: bold;
-		div.pendiente
-			display: inline;
-			float: right;
-			//margin-left: 235px;
-			margin-left: -154px;
-			position: absolute;
-			margin-top: 34px;
-			//position: absolute;
-			//margin-top: -97px;
-			figure
-				width 100%
-			img
-				width 62px
-			span, h4
-				float left
-				margin-left: 110px;
-				margin-top: -57px;
-				display inline
-				font-family: 'Gill Sans';
-			h4
-				margin-top -40px
-				font-weight normal
-				width 100%
-				font-family: 'Gill Sans';
-				text-transform: uppercase;
-				color: #4d4d4d;
-				font-weight: bold;
-			input[type='file']
-				margin-left 110px
-				font-size: 11px;
-			input[type='submit']
-				color: #fff;
-				background: #6d6d6d url(../img/up.png)no-repeat 75px;
-				border: none;
-				width: 100px;
-				text-align: left;
-				padding: 10px;
-				margin-top: 20px;
-				margin-left: 110px;
-		div.pendiente.carta
-			display: inline;
-			float: right;
-			margin-left: 300px;
-			position: absolute;
-			margin-top: -97px;
-			left 100px
-		div.azul
-			background: #00bbf2;
-			width: 100%;
-			position: fixed;
-			left: 0;
-			bottom: 0;
-			height: 155px;
-			p
-				text-align: center;
-				padding-top: 15px;
-				font-weight: bold;
-				padding-bottom 10px
-			ul
-				display: inline-flex;
-				padding: 10px 60px;
-				list-style: none;
-				color: #fff;
-				font-family: 'Gill Sans';
-				font-size 13px
-				li
-					padding-left: 100px
-/*
-.foot
-	background-color: #858585
-	display: inline-block
-	max-height 40px
-	height 40px
-	position: fixed;
-	margin: 639px 0 0 0px;
-	max-width: 100%!important;
-	width: 1280px;
-	figure
-		margin: 5px 0 0 10px;
-	ul
-		display: inline;
-		width: 100%;
-		float: left;
-		color #fff
-		li
-			list-style: none;
-			margin-top: -20px;
-			margin-left: 100px;
-			a
-				margin-left 100px!important
-*/
-			
-		
-	
-
-	
-				
-
-/*
-/* =========================== LOAD DOCUMENTS */
-/*
-section#load_documents
-	background: #f9f9f9;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	border-top: 1px solid #eeeeee;
-	h1
-		top: 100px;
-		background: #00bbf2;
-		padding: 10px;
-		left: 100px;
-	div.adjuntar
-		position: relative;
-		padding-top: 180px;
-		margin-left: -105px;
+		h4
+			font-size 1.3vw
 		p
-			margin-left: 210px;
-			margin-bottom: 10px;
-			color #727272
-		div.container12
-			padding-top 0
-			margin-left 183px
-			div.column6
-				padding-top 40px
-				width: 373px;
-				p.name
-					font-weight bold
-					color #727272
-					margin-left: 115px;
-					margin-top -20px
-					font-size: 23px;
-					line-height: 15px;
-				p.tec
-					margin-top -35px
-				p.line
-					border-bottom: 1px solid;
-					margin-top: -13px;
-					margin-left: 300px;
-				p
-					color #000
-					margin-top: -60px;
-				img
-					margin-left 130px
-				button
-					margin-left: 210px;
-					padding: 5px 27px 5px 5px;
-					background: #727272 url(../img/up.png)no-repeat 47px;
-					color: #fff;
-					font-size: 14px;
-					border none
-		span
-			font-weight normal
-			font-size 12px
-			color #727272
-	div.footer
-		background: #00bbf2;
-		margin-top: 43px;
-		height: 185px;
-		div.container12
-			padding-top: 10px;
-			padding-left: 151px;
-			width: 1000px;
-			margin: auto;
-		div.column3
-			width 230px
-		p
-			text-align center
-			padding-top: 20px;
+			&.sub
+				font-size 1vw
+				text-align left
+				color #c9c9c9
 		div
-			padding-top 10px
-		a
-			color: #fff;
-			text-decoration: none;
-			font-size: 14px;
-/* =========================== LOAD DOCUMENTS */
-/*
-
-/* =========================== MODAL LOAD DOCUMENTS √ */
-/*
-div.containerModal
-	width 100%
-	height 100%
-	position relative
-	div.modal
-		position absolute
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		margin: auto;
-		background: url("../img/modal.png") no-repeat;
-		height: 480px;
-		width: 690px;
-		h1.hecho
-			margin-left 175px
-			margin-top 95px
-			font-size 50px
-		img
-			position absolute
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 70px;
-			margin: auto;
-		p
-			text-align: center;
-			margin-top: 255px;
-		span
-			font-weight bold
-			font-size: 27px;
+			float left
+			margin-top 0.5vw
+			display block
+			box-sizing border-box
+			&.alert
+				margin 0
+				font-size 1vw
+				text-align center
+				padding 0.5vw
+				color #fff
+				background #faa
+				border 1px solid #f66
+			&.cont
+				clear both
+				width 100%
+			&.columns20
+				width 20%
+			&.columns25
+				width 25%
+			&.columns30
+				width 30%
+			&.columns40
+				width 40%
+			&.columns50
+				width 50%
+			&.columns60
+				width 60%
+			&.columns70
+				width 70%
+			&.columns75
+				width 75%
+			&.columns80
+				width 80%
+			&.columns100
+				width 100%
+			&.acciones
+				margin 0
+				figure
+					img
+						margin auto
+				span
+					display block
+					text-align center
+				h4
+					text-align center
+				form
+					.btn
+						display block
+						text-align center
+						vertical-align middle
+						cursor pointer
+						background-image none
+						background-color #666
+						color #fff
+						border 1px solid transparent
+						white-space nowrap
+						padding 6px 12px
+						font-size 14px
+						line-height 100%
+						user-select none
+						margin-left 35%
+						transform rotate(-5deg)
+					.file-upload
+						position relative
+						overflow hidden
+						margin 10px -55px
+						left 50%
+						input.upload
+							absolute top 0 right 0
+							margin 0
+							padding 0
+							font-size 20px
+							cursor pointer
+							opacity 0
+							filter 'alpha(opacity=0)'
+			&.azul
+				background #00bbf2
+				size 100% 120px
+				fixed left 0 bottom 0
+				margin 0
+				p
+					text-align center
+					padding 10px
+					font-weight bold
+				ul
+					display inline-flex
+					list-style-type none
+					color #fff
+					font-family 'Gill Sans'
+					font-size 13px
+					align-items flex-start
+					justify-content space-around
+					width 100%
+					margin-top 1vw
+					li
+						padding-left 20px
+						&.msg
+							background url(../img/mesage.png) no-repeat 0 25px
+							padding-left 35px
+						&.phn
+							background url(../img/fon.png) no-repeat 0 25px
+							padding-left 35px
+						&.fb
+							background url(../img/face.png) no-repeat 0 25px
+						&.tw
+							background url(../img/tw.png) no-repeat 0 25px
+							padding-left 27px
+			figure
+				margin 0.5vw
+			a.btn
+				display block
+				background #0ce77f
+				padding 1vw
+				color #fff
+				text-align center
+				border 4px solid #25c77a 

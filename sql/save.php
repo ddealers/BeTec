@@ -26,7 +26,7 @@ $url = "http://$_SERVER[HTTP_HOST]/documentacion.php?s=".$ur;
 
 $genero = ($_POST['genero'] != '') ? $_POST['genero'] : 0 ;
 
-$nombre	 = utf8_encode($_POST['nombre']);
+$nombre	 = utf8_decode($_POST['nombre']);
 $cumple	 = $_POST['cumple'];
 $email	 = $_POST['email'];
 $numero	 = $_POST['numero'];
@@ -38,7 +38,7 @@ $car1	 = $_POST['car1'];
 $car2	 = $_POST['car2'];
 $car3	 = $_POST['car3'];
 $campus = $_POST['campus'];
-$campus_escuela = utf8_encode($_POST['campus_escuela']);
+$campus_escuela = utf8_decode($_POST['campus_escuela']);
 
 
 $state	 = $_POST['state'];
@@ -53,7 +53,7 @@ $solo	 = $_POST['solo'];
 $pare	 = $_POST['pare'];
 $namep = ($_POST['namep'] != '') ? $_POST['namep'] : '9' ;
 
-$namep = utf8_encode($namep);
+$namep = utf8_decode($namep);
 
 $vopt1	 = $_POST['vopt1'];
 $vopt2	 = $_POST['vopt2'];
@@ -107,8 +107,13 @@ if($qma){
 			$qsl = "UPDATE talleres SET libres=libres-1 WHERE id = $sopt2";
 			$vsl = $mysqli->query($qsl);
 
-			$qd = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '#', '#', '$subeDocs')";
-			$vd = $mysqli->query($qd);
+			if($city == '986'){
+				$qd = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '-', '-', '$subeDocs')";
+				$vd = $mysqli->query($qd);
+			}else{
+				$qd = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '#', '#', '$subeDocs')";
+				$vd = $mysqli->query($qd);
+			}
 
 			$qi = "INSERT INTO usuarios_info VALUES($idu, $campus, '$campus_escuela')";
 			$vi = $mysqli->query($qi);
@@ -389,8 +394,7 @@ if($qma){
 			}elseif ($hotel == '1') {
 				mail($email, 'Completa tu registro', $mail_FA, $cabeceras);
 				$datass['mail'] = 'FA';
-			}elseif($hotel == '0' && $city = '986'){
-
+			}elseif($hotel == '0' && $city == '986'){
 				$data = '';
 				$q = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
 				$v = $mysqli->query($q);
@@ -401,7 +405,7 @@ if($qma){
 
 					for ($i=0; $i < 4 ; $i++) { 
 						$day = ($info[$i]['dia'] == '1') ? 'Viernes 21 Noviembre' : 'Sábado 22 Noviembre' ;
-						$num = $i +1;
+						$num = $i + 1;
 						$data .= "<li>" .$num.")". $info[$i]['nombre'] ." <e class='lista_link'>".$day."</e></li>";
 					}
 					$mail = "

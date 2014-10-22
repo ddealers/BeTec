@@ -101,32 +101,37 @@ $(document).ready(function () {
 	$('#aviso_legal .info').perfectScrollbar();
 
 	//===== Registro =====
-	$('#btn_registrate').on('click', function(e){
+	function initRegistro(e){
 		e.preventDefault();
+		carrerasList = {carrera1:null, carrera2: null, carrera3: null};
+		viernesList = {vopt1:null, vopt2: null, vopt3: null};
+		sabadoList = {sopt1:null, sopt2: null};
+		form_data = {};
 		index_form = 0;
 		setFormStep(0);
+		updateLists(carrerasList, ['carrera1','carrera2', 'carrera3']);
+		updateLists(viernesList, ['vopt1','vopt2', 'vopt3']);
+		updateLists(sabadoList, ['sopt1','sopt2']);
 		$('.siguiente .next').html('Siguiente<i class="icon ion-arrow-right-c">');
 		$('select').val('');
 		$('input').val('');
+		$(".compania").hide();
+		$('#campus_escuela').hide();
+		$('#parentesco-cont').hide();
+		$('#nomcomp').hide();
+		$('.bool-choose .option').removeClass('activo');
+		$('.bool-choose .option').addClass('noActivo');
+		$('.bool-chooser .option').removeClass('activo');
+		$('.bool-chooser .option').addClass('noActivo');
+		$('#acepto').attr('checked', false);
 		TweenMax.to('header .social', 0.5, {opacity:0});
 		TweenMax.to('nav ul', 0.5, {opacity:0});
 		TweenMax.to('.arrows', 0.5, {opacity:0});
 		TweenMax.set('#registro', {display:'block'});
 		TweenMax.from('#registro', 0.5, {opacity:0});
-	});
-	$('#btn_registro').on('click', function(e){
-		e.preventDefault();
-		index_form = 0;
-		setFormStep(0);
-		$('.siguiente .next').html('Siguiente<i class="icon ion-arrow-right-c">');
-		$('select').val('');
-		$('input').val('');
-		TweenMax.to('header .social', 0.5, {opacity:0});
-		TweenMax.to('nav ul', 0.5, {opacity:0});
-		TweenMax.to('.arrows', 0.5, {opacity:0});
-		TweenMax.set('#registro', {display:'block'});
-		TweenMax.from('#registro', 0.5, {opacity:0});
-	});
+	}
+	$('#btn_registrate').on('click', initRegistro);
+	$('#btn_registro').on('click', initRegistro);
 	$('#logo').on('click', function(e){
 		TweenMax.to('header .social', 0.5, {opacity:1});
 		TweenMax.to('nav ul', 0.5, {opacity:1});
@@ -137,8 +142,11 @@ $(document).ready(function () {
 
 
 	//===== Form =====
-	var form_data = {};
-	var index_form = 0;
+	var carrerasList,
+		viernesList,
+		sabadoList,
+		form_data,
+		index_form;
 	setFormStep(0);
 
 	$("#registro .next").on("click", function(e){
@@ -279,12 +287,12 @@ $(document).ready(function () {
 						if(response == 'true'){
 							$('.registroT .response').hide();
 							console.log(form_data.city, form_data.hotel);
-							if(form_data.city != 986 && form_data.hotel == '1'){
-								$('.registroT .foraneoA').show();
-							}else if(form_data.city != 986 && form_data.hotel == '0'){
+							if(form_data.city == 986){
+								$('.registroT .local').show();
+							}else if(form_data.hotel == 0){
 								$('.registroT .foraneoB').show();
 							}else{
-								$('.registroT .local').show();
+								$('.registroT .foraneoA').show();
 							}
 							$('#end').show();
 							TweenMax.from('#end', 1, {opacity: 0, scale: 0.5, ease: Back.easeOut});
@@ -323,7 +331,6 @@ $(document).ready(function () {
 		$.each(lists, function(){
 			var list = this;
 			$('#'+list+' option').show();
-			console.log(all);
 			$.each(all, function(key, value){
 				if(key != list){
 					$('#'+list+' option[value="'+value+'"]').hide();
@@ -332,7 +339,6 @@ $(document).ready(function () {
 		});
 	}
 
-	var carrerasList = {carrera1:null, carrera2: null, carrera3: null};
 	$('#carrera1').on('change', function(){
 		carrerasList.carrera1 = $(this).val();
 		updateLists(carrerasList, ['carrera2', 'carrera3']);
@@ -345,8 +351,6 @@ $(document).ready(function () {
 		carrerasList.carrera3 = $(this).val();
 		updateLists(carrerasList, ['carrera1', 'carrera2']);
 	});
-
-	var viernesList = {vopt1:null, vopt2: null, vopt3: null};
 	$('#vopt1').on('change', function(){
 		viernesList.vopt1 = $(this).val();
 		updateLists(viernesList, ['vopt2', 'vopt3']);
@@ -359,8 +363,6 @@ $(document).ready(function () {
 		viernesList.vopt3 = $(this).val();
 		updateLists(viernesList, ['vopt1', 'vopt2']);
 	});
-
-	var sabadoList = {sopt1:null, sopt2: null};
 	$('#sopt1').on('change', function(){
 		sabadoList.sopt1 = $(this).val();
 		updateLists(sabadoList, ['sopt2']);
@@ -393,7 +395,6 @@ $(document).ready(function () {
 			$("#genero").val('0');
 		}
 	})
-	$(".compania").hide();
 	$("#hotelS").click(function() {
 		if($(this).hasClass("activo")){
 			console.log("ya esta activo");
@@ -444,7 +445,6 @@ $(document).ready(function () {
 			}});
 		}
 	})
-	$('#campus_escuela').hide();
 	$('#campusN').on('click', function(e){
 		TweenMax.set('#campus_escuela',{display: 'block'});
 		TweenMax.from('#campus_escuela', 0.3, {opacity: 0});
@@ -454,7 +454,6 @@ $(document).ready(function () {
 			TweenMax.set('#campus_escuela', {display:'none', opacity: '1'});
 		}});
 	});
-
 	$('.bool-chooser .option').on('click', function(e){
 		e.preventDefault();
 		var input = $('#'+$(this).parent().data('input'));
@@ -464,37 +463,42 @@ $(document).ready(function () {
 		
 		input.val($(this).data('val'));
 	});
-	
+
 	//===== Share ===== //
-  $('#comparte_fb').on('click', function(e){
-    e.preventDefault();
-    url = encodeURIComponent('http://borntobetec.mty.itesm.mx');
-    pname = 'Born To Be Tec';
-	pcaption = 'YA ME REGISTRÉ PARA VIVIR LA EXPERIENCIA BORN TO BE TEC EN TECNOLÓGICO DE MONTERREY, CAMPUS MONTERREY';
-	pdesc = '¿Quieres ser parte de este evento? Haz click aquí, regístrate y no pierdas esta increíble oportunidad de conocer todo lo que el Tecnológico de Monterrey tiene para ti.';
-	plink = url;
-	ppicture = 'http://borntobetec.mty.itesm.mx/img/logo.png';
-	FB.ui({
-	  method: 'feed',
-	  name: pname,
-	  caption: pcaption,
-	  description: pdesc,
-	  link: plink,
-	  picture: ppicture
-	},
-	function(response) {
-		//addShare(response['post_id'],1);
-	});
-    //window.open('http://www.facebook.com/sharer.php?u=YA ME REGISTRÉ PARA VIVIR LA EXPERIENCIA BORN TO BE TEC EN TECNOLÓGICO DE MONTERREY, CAMPUS MONTERREY'+url, 'Compartir en Facebook','width=480, height=320');
-  });
-  $('#comparte_tw').on('click', function(e){
-    e.preventDefault();
-    url = encodeURIComponent('http://borntobetec.mty.itesm.mx');
-    window.open('https://twitter.com/share?url=Ya me registré para vivir la experiencia Born To Be Tec, regístrate tú aquí: '+url+' #BornToBeTec', 'Compartir en Twitter','width=480, height=320');
-  });
+ 	$('#comparte_fb').on('click', function(e){
+	    e.preventDefault();
+	    pname = 'Born To Be Tec';
+		pcaption = 'YA ME REGISTRÉ PARA VIVIR LA EXPERIENCIA BORN TO BE TEC EN TECNOLÓGICO DE MONTERREY, CAMPUS MONTERREY';
+		pdesc = '¿Quieres ser parte de este evento? Haz click aquí, regístrate y no pierdas esta increíble oportunidad de conocer todo lo que el Tecnológico de Monterrey tiene para ti.';
+		plink = 'http://borntobetec.mty.itesm.mx';
+		ppicture = 'http://borntobetec.mty.itesm.mx/img/logo.png';
+		FB.ui({
+		  method: 'feed',
+		  name: pname,
+		  caption: pcaption,
+		  description: pdesc,
+		  link: plink,
+		  picture: ppicture
+		},
+		function(response) {
+			//addShare(response['post_id'],1);
+		});
+	    //window.open('http://www.facebook.com/sharer.php?u=YA ME REGISTRÉ PARA VIVIR LA EXPERIENCIA BORN TO BE TEC EN TECNOLÓGICO DE MONTERREY, CAMPUS MONTERREY'+url, 'Compartir en Facebook','width=480, height=320');
+  	});
+  	$('#comparte_tw').on('click', function(e){
+    	e.preventDefault();
+    	url = encodeURIComponent('http://borntobetec.mty.itesm.mx');
+    	window.open('https://twitter.com/share?text=Ya me registré para vivir la experiencia Born To Be Tec, regístrate tú aquí %23BornToBeTec', 'Compartir en Twitter','width=480, height=320');
+  	});
 
-})
-
+  	//===== Adjuntar ===== //
+  	$('input[name="carta"]').on('change', function(e){
+  		$('#carta_upload').submit();
+   	});
+  	$('input[name="banco"]').on('change', function(e){
+  		$('#banco_upload').submit();
+  	});
+});
 
 function estadoCity(s,id){
 	var est = $(s).val();

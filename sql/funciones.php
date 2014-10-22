@@ -4,6 +4,18 @@ if(curPageName() == 'funciones.php'){
 }else{
 	require_once("config.php");
 }
+if(isset($_GET['opc']) && $_GET['opc'] == 'encode'){
+	$string = $_GET['s'];
+	$key = 'BornToBeTec321_';
+	$result = '';
+	for($i=0; $i<strlen($string); $i++) {
+		$char = substr($string, $i, 1);
+		$keychar = substr($key, ($i % strlen($key))-1, 1);
+		$char = chr(ord($char)+ord($keychar));
+		$result.=$char;
+	}
+	echo base64_encode($result);
+}
 if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 	$est = $_GET['est'];
 	$mysqli = new mysqli(HOST,USR,PWD,DB);

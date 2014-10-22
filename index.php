@@ -995,7 +995,7 @@
 		<article><!--CONTENIDO_REGISTRO_TERMINADO-->
 			<div class="registroT">
 				<h1>¡BIEN HECHO!</h1>
-				<h2>TU REGISTRO ESTÁ CASI TERMINADO.</h2>
+				<h2>TU REGISTRO ESTÁ COMPLETO.</h2>
 				<div class="response foraneoA">
 					<!--img src="./img/img.png"-->
 					<ol>
@@ -1019,8 +1019,10 @@
 					<p>Enviaremos a tu correo una confirmación, sólo tendrás que descargarla y presentarla impresa el día del evento junto con tu identificación oficial.<br><br>¡Te esperamos en BORN TO BE TEC 2014!</p-->
 				</div>
 				<div class="redesS">
-					<a id="comparte_fb"href="#"></a>
-					<a id="comparte_tw" href="#" class="t"></a>
+					<div>
+						<a id="comparte_fb" href="#"></a>
+						<a id="comparte_tw" href="#"></a>
+					</div>
 					<p>¡COMPARTE EN REDES SOCIALES!</p>
 				</div>
 			</div>
