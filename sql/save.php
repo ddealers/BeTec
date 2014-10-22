@@ -21,12 +21,12 @@ function encriptarURL($string, $key){
 }
 
 $ur = encriptarURL($_POST['email'], $key);
-$url = "http://$_SERVER[HTTP_HOST]/documentacion?s=".$ur;
+$url = "http://$_SERVER[HTTP_HOST]/documentacion.php?s=".$ur;
 
 
 $genero = ($_POST['genero'] != '') ? $_POST['genero'] : 0 ;
 
-$nombre	 = $_POST['nombre'];
+$nombre	 = utf8_encode($_POST['nombre']);
 $cumple	 = $_POST['cumple'];
 $email	 = $_POST['email'];
 $numero	 = $_POST['numero'];
@@ -38,7 +38,7 @@ $car1	 = $_POST['car1'];
 $car2	 = $_POST['car2'];
 $car3	 = $_POST['car3'];
 $campus = $_POST['campus'];
-$campus_escuela = $_POST['campus_escuela'];
+$campus_escuela = utf8_encode($_POST['campus_escuela']);
 
 
 $state	 = $_POST['state'];
@@ -53,6 +53,7 @@ $solo	 = $_POST['solo'];
 $pare	 = $_POST['pare'];
 $namep = ($_POST['namep'] != '') ? $_POST['namep'] : '9' ;
 
+$namep = utf8_encode($namep);
 
 $vopt1	 = $_POST['vopt1'];
 $vopt2	 = $_POST['vopt2'];
