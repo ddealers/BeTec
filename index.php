@@ -30,6 +30,7 @@
 	border:none;
 	position: relative;
 	z-index: 10;
+	margin-left: -200px;
 }
 
 #primary_nav_wrap ul
@@ -56,7 +57,7 @@
 	float:none;
 	display:table-cell;
 	margin:0;
-	margin-right: 1px;
+	margin-right: 4px;
 }
 
 #primary_nav_wrap ul li:hover > ul
