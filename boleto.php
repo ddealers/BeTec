@@ -12,7 +12,7 @@ $string = $_GET['s'];
 $bcode = new emberlabs\Barcode\Code128();
 $bcode->setData($string);
 $bcode->setDimensions(400, 150);
-$bcode->draw();
+//$bcode->draw();
 $b64 = 'data:image/png;base64,'.$bcode->base64();
 echo $b64;
 /*
