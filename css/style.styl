@@ -35,7 +35,7 @@ header
 	fixed top left
 	width 100%
 	display inline-flex
-	display: -ms-flex;
+	display:-ms-flexbox;
 	justify-content space-around
 	align-items center
 	z-index 1
@@ -50,11 +50,19 @@ header
 		font-family 'Gill Sans'
 		font-weight 300
 		ul
-			display inline-flex
-			display: -ms-flex;
+			-ms-flex-wrap:wrap;
+			-webkit-flex-wrap:wrap;
+			display:-ms-flexbox;
+			display:-webkit-box;
+			display:-webkit-flex;
+			display:flex;
+			flex-wrap:wrap;
+			list-style:none;
+			//display inline-flex
+			//display:-ms-flexbox;
 			justify-content space-around
 			align-items center
-			list-style-type none
+			//list-style-type none
 			li
 				margin-right 3vw
 				a
@@ -66,7 +74,7 @@ header
 						font-weight 700
 	div.social
 		display inline-flex
-		display: -ms-flex;
+		display:-ms-flexbox;
 		flex-wrap wrap
 		list-style none
 		width 15vw
@@ -173,7 +181,7 @@ section
 						text-align center
 						padding 0
 						display inline-flex
-						display: -ms-flex;
+						display:-ms-flexbox;
 						p
 							padding 1vw
 							font-size 1vw
@@ -462,7 +470,7 @@ section
 						right 0
 					.step-area
 						display inline-flex
-						display: -ms-flex;
+						display:-ms-flexbox;
 						align-items center
 						float left
 						.hospedaje
@@ -618,7 +626,7 @@ section
 					.clearborder
 						clear both
 						display inline-flex
-						display: -ms-flex;
+						display:-ms-flexbox;
 						width 100%
 						.info
 							width 12vw
@@ -697,14 +705,14 @@ section
 			size 100% 20%
 			background #ff2f72
 			display inline-flex
-			display: -ms-flex;
+			display:-ms-flexbox;
 			flex-direction column
 			justify-content center
 			align-items center
 			div 
 				size 50% 80%
 				display inline-flex
-				display: -ms-flex;
+				display:-ms-flexbox;
 				justify-content center
 				align-items center
 				a
@@ -788,7 +796,7 @@ footer
 	div
 		absolute bottom 2vh left 2vw
 		display inline-flex
-		display: -ms-flex;
+		display:-ms-flexbox;
 		align-items center
 		width 30%
 		a
@@ -910,7 +918,7 @@ section.content
 					font-weight bold
 				ul
 					display inline-flex
-					display: -ms-flex;
+					display:-ms-flexbox;
 					list-style-type none
 					color #fff
 					font-family 'Gill Sans'
