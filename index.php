@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/btec.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/vendor/modernizr.custom.js"></script>
 	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="js/vendor/skrollr/skrollr.min.js"></script>
 	<script type="text/javascript" src="js/vendor/skrollr/skrollr.menu.min.js"></script>
