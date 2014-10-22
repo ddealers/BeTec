@@ -11,7 +11,7 @@ $string = $_GET['s'];
 
 $bcode = new emberlabs\Barcode\Code128();
 $bcode->setData($string);
-$bcode->setDimensions(400, 150);
+$bcode->setDimensions(320, 100);
 $bcode->draw();
 $b64 = 'data:image/png;base64,'.$bcode->base64();
 $filtered = substr($b64, strpos( $b64, ',' ) + 1 );
@@ -347,7 +347,7 @@ fclose( $fp );
 			$this->SetY(-65);
 			$this->SetX(-305);
 			$this->SetTextColor(0,0,0);
-			$this->SetFont('Arial','B',11);
+			$this->SetFont('Arial','B',9);
 			$this->Cell(0,0,'- '.$ts1,0,0,'C');
 			$this->Ln(30);
 			$this->SetX(-305);
