@@ -70,8 +70,7 @@
 		<div class="social">
 			<a id="btn_registrate" href="#registro"><img src="./img/registro_boton.png"/></a>
 			<div class="rs">
-				<a href="http://ç
-				www.facebook.com/AdmisionesTecdeMty" target="_blank"><img src="./img/face.png"></a>
+				<a href="http://www.facebook.com/AdmisionesTecdeMty" target="_blank"><img src="./img/face.png"></a>
 				<a href="http://twitter.com/AdmisionesITESM" target="_blank"><img src="./img/tw.png"></a>
 			</div>
 		</div>

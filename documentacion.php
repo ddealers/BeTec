@@ -87,7 +87,7 @@ $class = ($v == 'ok') ? $class : $nll;
 //enviar ruta para subir archivos
 $dir = dirname(__FILE__);
 $ruta = $dir;
-$ruta = $ruta . '/archivos/';
+$ruta = $ruta . '/download/';
 
 //Forms
 $form_FA = "
@@ -165,8 +165,8 @@ $form_FA = "
 				<ul>
 					<li>Escribenos:<br><br><img src='./img/mesage.png'> btec.mty@servicios.itesm.mx</li>
 					<li>Llámanos:<br><br><img src='./img/fon.png'> 01 800 832 33 689<br>o al (81) 8158 2269</li>
-					<li>Postea:<br><br><img src='./img/face.png'> /AdmisionesTecdeMty</li>
-					<li>Tuitea: <br><br><img src='./img/tw.png'> AdmisionesITESM</li>
+					<li>Postea:<br><br> <a href='https://www.facebook.com/AdmisionesTecdeMty' target='_blank' style='color:white;'><img src='./img/face.png' /> /AdmisionesTecdeMty</a></li>
+					<li>Tuitea: <br><br><a href='http://twitter.com/AdmisionesITESM' target='_blank' style='color:white;' ><img src='./img/tw.png' /> AdmisionesITESM</a></li>
 				</ul>
 			</div>
 		</article>
@@ -258,8 +258,8 @@ $form_FB = "
 				<ul>
 					<li>Escribenos:<br><br><img src='./img/mesage.png'> btec.mty@servicios.itesm.mx</li>
 					<li>Llámanos:<br><br><img src='./img/fon.png'> 01 800 832 33 689<br>o al (81) 8158 2269</li>
-					<li>Postea:<br><br><img src='./img/face.png'> /AdmisionesTecdeMty</li>
-					<li>Tuitea: <br><br><img src='./img/tw.png'> AdmisionesITESM</li>
+					<li>Postea:<br><br> <a href='https://www.facebook.com/AdmisionesTecdeMty' target='_blank' style='color:white;' ><img src='./img/face.png' /> /AdmisionesTecdeMty</a></li>
+					<li>Tuitea: <br><br><a href='http://twitter.com/AdmisionesITESM' target='_blank' style='color:white;' ><img src='./img/tw.png' /> AdmisionesITESM</a></li>
 				</ul>
 			</div>
 		</article>
