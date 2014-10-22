@@ -666,6 +666,12 @@ section#be_tec p {
 #registro article p {
   color: #9d9d9d;
   margin-bottom: 1vh;
+  font-size: 12px;
+  padding-left: 11px;
+}
+#registro article p span.instrucciones {
+  font-weight: bold;
+  font-size: 10px;
 }
 #registro article img {
   display: block;
@@ -719,6 +725,11 @@ section#be_tec p {
   border: 2px #ececec solid;
   width: 80%;
   font-size: 11px;
+}
+#registro article form .step .step-area .step-data input[type="checkbox"] {
+  position: absolute;
+  right: 400px;
+  bottom: 60px;
 }
 #registro article form .step .step-area .step-data label {
   position: relative;
@@ -859,7 +870,7 @@ section#be_tec p {
 #registro article form .step .step-area.sabado {
   width: 30vw;
   margin-left: 1vw;
-  margin-top: 2vw;
+  margin-top: 1vw;
   padding-bottom: 1vw;
 }
 #registro article form .step .step-area.sabado label {

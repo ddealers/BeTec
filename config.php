@@ -2,7 +2,7 @@
 define('HOST', 'localhost');
 define('USR', 'root');
 define('PWD', '');
-define('DB', 'betec_2014');
+define('DB', 'betec');
 /*
 define('HOST', 'localhost');
 define('USR', 'root');

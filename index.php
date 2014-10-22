@@ -921,8 +921,7 @@
 							<img class="lapiz"src="./img/ecualizador.png">
 						</p>
 						<div class="step-data">
-							<p>Elige las tres actividades a las que quieres asistir el viernes.</p>
-							<p>Elige las tres actividades a las que quieres asistir el viernes, ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</p>
+							<p>Elige las tres actividades a las que quieres asistir el viernes,<br><span class="instrucciones">ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</span></p></p>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt1" id="vopt1" class="option">
@@ -953,8 +952,7 @@
 							<img class="lapiz"src="./img/ecualizador.png">
 						</p>
 						<div class="step-data">
-							<p>Elige los dos talleres que quieres asistir el sábado.</p>
-							<p>Elige las tres actividades a las que quieres asistir el viernes, ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</p>
+							<p>Elige los dos talleres que quieres asistir el sábado,<br><span class="instrucciones">ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</span></p></p>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="sopt1" id="sopt1" class="option">
