@@ -997,7 +997,7 @@
 				<h1>¡BIEN HECHO!</h1>
 				<h2>TU REGISTRO ESTÁ CASI TERMINADO.</h2>
 				<div class="response foraneoA">
-				<p class="sigue">Ahora sólo sigue estas instrucciones:</p>
+				<p class="sigue" style='text-align: left;'>Ahora sólo sigue estas instrucciones:</p>
 				<!--img src="./img/img.png"-->
 					<ol>
 						<li><span>1.</span> Descarga la Carta Compromiso <span><a target="_blank" href="./download/FormatodeCartaCompromiso_2014_BTEC.pdf" download="FormatodeCartaCompromiso_2014_BTEC.pdf">aquí</a></span> llénala y que firmen tus papás.</li>
@@ -1007,7 +1007,7 @@
 				</div>
 				<!-- ========================= REGISTRO TERMINADO PASO 2-->
 				<div class="response foraneoB">
-					<p class="sigue">Ahora sólo sigue estas instrucciones:</p>
+					<p class="sigue" style='text-align: left;'>Ahora sólo sigue estas instrucciones:</p>
 					<!--img src="./img/img.png"-->
 					<ol>
 						<li><span>1.</span> Descarga la Carta Compromiso <span><a target="_blank" href="./download/FormatodeCartaCompromiso_2014_BTEC.pdf" download="FormatodeCartaCompromiso_2014_BTEC.pdf">aquí</a></span> llénala y que firmen tus papás.</li>
