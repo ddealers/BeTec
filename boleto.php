@@ -12,16 +12,13 @@ $string = $_GET['s'];
 $bcode = new emberlabs\Barcode\Code128();
 $bcode->setData($string);
 $bcode->setDimensions(400, 150);
-//$bcode->draw();
+$bcode->draw();
 $b64 = 'data:image/png;base64,'.$bcode->base64();
-echo $b64;
-/*
 $filtered = substr($b64, strpos( $b64, ',' ) + 1 );
 $decoded = base64_decode( $filtered );
 $fp = fopen( 'download/' . $string . '.png', 'wb' );
 fwrite( $fp, $decoded );
 fclose( $fp );
-*/
 	class PDF_Rotate extends FPDF
 	{
 		var $angle=0;
