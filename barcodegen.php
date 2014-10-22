@@ -7,4 +7,5 @@ $bcode = new emberlabs\Barcode\Code128();
 $bcode->setData($string);
 $bcode->setDimensions(320, 100);
 $bcode->draw();
+header('Content-Type: image/png');
 $bcode->output();
