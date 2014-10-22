@@ -468,7 +468,7 @@ $(document).ready(function () {
 	//===== Share ===== //
   $('#comparte_fb').on('click', function(e){
     e.preventDefault();
-    url = encodeURIComponent(location.href);
+    url = encodeURIComponent('http://borntobetec.mty.itesm.mx');
     pname = 'Born To Be Tec';
 	pcaption = 'YA ME REGISTRÉ PARA VIVIR LA EXPERIENCIA BORN TO BE TEC EN TECNOLÓGICO DE MONTERREY, CAMPUS MONTERREY';
 	pdesc = '¿Quieres ser parte de este evento? Haz click aquí, regístrate y no pierdas esta increíble oportunidad de conocer todo lo que el Tecnológico de Monterrey tiene para ti.';
@@ -489,7 +489,7 @@ $(document).ready(function () {
   });
   $('#comparte_tw').on('click', function(e){
     e.preventDefault();
-    url = encodeURIComponent(location.href);
+    url = encodeURIComponent('http://borntobetec.mty.itesm.mx');
     window.open('https://twitter.com/share?url=Ya me registré para vivir la experiencia Born To Be Tec, regístrate tú aquí: '+url+' #BornToBeTec', 'Compartir en Twitter','width=480, height=320');
   });
 

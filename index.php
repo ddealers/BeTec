@@ -997,21 +997,21 @@
 				<h1>¡BIEN HECHO!</h1>
 				<h2>TU REGISTRO ESTÁ CASI TERMINADO.</h2>
 				<div class="response foraneoA">
-				<p class="sigue" style='text-align: left;'>Ahora sólo sigue estas instrucciones:</p>
-				<!--img src="./img/img.png"-->
+					<!--img src="./img/img.png"-->
 					<ol>
-						<li><span>1.</span> Descarga la Carta Compromiso <span><a target="_blank" href="./download/FormatodeCartaCompromiso_2014_BTEC.pdf" download="FormatodeCartaCompromiso_2014_BTEC.pdf">aquí</a></span> llénala y que firmen tus papás.</li>
-						<li><span>2.</span> Descarga la ficha de pago <span><a target="_blank" href="./download/Formato_CuentaBancaria.jpg" download="Formato_CuentaBancaria.jpg">aquí</a></span> y realiza el depósito de $500.00 pesos en<br>el banco de tu preferencia.<br></li>
-						<li><span>3.</span> Sube ambos documentos comprobantes al link que te enviamos por correo.</li>
+						<p class="sigue">Ahora sólo sigue estas instrucciones:</p>
+						<li>Descarga la Carta Compromiso <span><a target="_blank" href="./download/FormatodeCartaCompromiso_2014_BTEC.pdf" download="FormatodeCartaCompromiso_2014_BTEC.pdf">aquí</a></span> llénala y que firmen tus papás.</li>
+						<li>Descarga la ficha de pago <span><a target="_blank" href="./download/Formato_CuentaBancaria.jpg" download="Formato_CuentaBancaria.jpg">aquí</a></span> y realiza el depósito de $500.00 pesos en<br>el banco de tu preferencia.<br></li>
+						<li>Sube ambos documentos comprobantes al link que te enviamos por correo.</li>
 					</ol>
 				</div>
 				<!-- ========================= REGISTRO TERMINADO PASO 2-->
 				<div class="response foraneoB">
-					<p class="sigue" style='text-align: left;'>Ahora sólo sigue estas instrucciones:</p>
 					<!--img src="./img/img.png"-->
 					<ol>
-						<li><span>1.</span> Descarga la Carta Compromiso <span><a target="_blank" href="./download/FormatodeCartaCompromiso_2014_BTEC.pdf" download="FormatodeCartaCompromiso_2014_BTEC.pdf">aquí</a></span> llénala y que firmen tus papás.</li>
-						<li><span>2.</span> Sube el documento al link que te enviamos por correo</li-->
+						<p class="sigue">Ahora sólo sigue estas instrucciones:</p>
+						<li>Descarga la Carta Compromiso <span><a target="_blank" href="./download/FormatodeCartaCompromiso_2014_BTEC.pdf" download="FormatodeCartaCompromiso_2014_BTEC.pdf">aquí</a></span> llénala y que firmen tus papás.</li>
+						<li>Sube el documento al link que te enviamos por correo</li-->
 					</ol>
 				</div>
 				<!-- ========================= REGISTRO TERMINADO PASO 3-->

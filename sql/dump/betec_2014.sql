@@ -7164,12 +7164,6 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `genero`, `nombre`, `cumpleaños`, `correo`, `telefono`, `celular`, `id_estado`, `id_ciudad`, `id_prepa`, `graduacion`, `hospedaje`, `acompana`, `id_medio`, `documentos`, `create_at`) VALUES
-(3, 0, 'ARES VAZQUEZ BRAVO', '1988-05-08', 'a@a', '5551295731', '5531035485', 15, 689, 3530, '2016-2', 1, 0, 3, '0', '2014-10-20 22:03:06');
 
 -- --------------------------------------------------------
 
@@ -7185,13 +7179,6 @@ CREATE TABLE IF NOT EXISTS `usuarios_documentos` (
   `url_permiso` varchar(100) DEFAULT '#',
   `tipo_foraneo` char(1) DEFAULT '0'
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Volcado de datos para la tabla `usuarios_documentos`
---
-
-INSERT INTO `usuarios_documentos` (`id`, `id_usuario`, `url_pago`, `url_permiso`, `tipo_foraneo`) VALUES
-(3, 3, '#', '#', '1');
 
 -- --------------------------------------------------------
 
@@ -7219,21 +7206,6 @@ CREATE TABLE IF NOT EXISTS `usuario_carrera` (
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `usuario_carrera`
---
-
-INSERT INTO `usuario_carrera` (`id_usuario`, `id_carrera`, `create_at`) VALUES
-(1, 1, '2014-10-20 21:14:42'),
-(1, 2, '2014-10-20 21:14:42'),
-(1, 3, '2014-10-20 21:14:42'),
-(2, 1, '2014-10-20 21:42:00'),
-(2, 2, '2014-10-20 21:42:00'),
-(2, 3, '2014-10-20 21:42:00'),
-(3, 1, '2014-10-20 22:03:06'),
-(3, 2, '2014-10-20 22:03:06'),
-(3, 3, '2014-10-20 22:03:06');
-
 -- --------------------------------------------------------
 
 --
@@ -7246,24 +7218,6 @@ CREATE TABLE IF NOT EXISTS `usuario_taller` (
   `id_taller` int(11) NOT NULL,
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `usuario_taller`
---
-
-INSERT INTO `usuario_taller` (`id_usuario`, `id_taller`, `create_at`) VALUES
-(1, 1, '2014-10-20 21:14:42'),
-(1, 2, '2014-10-20 21:14:42'),
-(1, 3, '2014-10-20 21:14:42'),
-(1, 6, '2014-10-20 21:14:42'),
-(2, 1, '2014-10-20 21:42:00'),
-(2, 2, '2014-10-20 21:42:00'),
-(2, 3, '2014-10-20 21:42:00'),
-(2, 6, '2014-10-20 21:42:00'),
-(3, 1, '2014-10-20 22:03:06'),
-(3, 2, '2014-10-20 22:03:06'),
-(3, 3, '2014-10-20 22:03:06'),
-(3, 13, '2014-10-20 22:03:06');
 
 --
 -- Índices para tablas volcadas
