@@ -9,7 +9,7 @@
  * Minimum Requirement: PHP 5.3.0
  */
 
-namespace emberlabs\Barcode;
+//namespace emberlabs\Barcode;
 
 /**
  * emberlabs Barcode Creator - Code39
