@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-10-2014 a las 03:04:00
+-- Tiempo de generación: 23-10-2014 a las 01:11:25
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -33,50 +33,55 @@ CREATE TABLE IF NOT EXISTS `carreras` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=41 ;
 
 --
+-- Truncar tablas antes de insertar `carreras`
+--
+
+TRUNCATE TABLE `carreras`;
+--
 -- Volcado de datos para la tabla `carreras`
 --
 
 INSERT INTO `carreras` (`id`, `nombre`) VALUES
-(1, 'Licenciado en Administración y Estrategia de Negocios'),
-(2, 'Licenciado en Contaduría Pública y Finanzas'),
-(3, 'Licenciado en Administración Financiera'),
-(4, 'Licenciado en Mercadotecnia'),
-(5, 'Licenciado en Negocios Internacionales'),
-(6, 'Licenciado en Psicología Organizacional'),
-(7, 'Licenciado en Creación de Empresas'),
-(8, 'Licenciado en Economía'),
-(9, 'Licenciado en Derecho'),
-(10, 'Licenciado en Derecho y Finanzas'),
-(11, 'Licenciado en Letras Hispánicas'),
-(12, 'Licenciado en Relaciones Internacionales'),
-(13, 'Licenciado en Ciencias de la Comunicación y Medios Digitales'),
-(14, 'Ingeniero en Producción Musical'),
-(15, 'Lic.  en Publicidad y Comunicación de Mercados'),
-(16, 'Arquitecto'),
-(17, 'Licenciado en Diseño Industrial'),
-(18, 'Licenciado en Animación y Arte Digital'),
-(19, 'Ingeniero Civil'),
-(20, 'Ingeniero Industrial y de Sistemas'),
-(21, 'Ingeniero Mecánico Administrador'),
-(22, 'Ingeniero Mecánico Electricista'),
-(23, 'Ingeniero Químico Administrador'),
-(24, 'Ingeniero Químico en Procesos Sustentables'),
-(25, 'Ingeniero en Desarrollo Sustentable'),
-(26, 'Ingeniero en Diseño Automotriz'),
-(27, 'Ingeniero en Mecatrónica'),
-(28, 'Ingeniero Físico Industrial'),
-(29, 'Ingeniero en Tecnologías Computacionales'),
-(30, 'Ing en Sistemas Digitales y Robótica '),
-(31, 'Ing en Negocios y Tecnologías de Información'),
-(32, 'Ing. en Innovación y Desarrollo'),
-(33, 'Médico Cirujano'),
-(34, 'Ingeniero en Nanotecnología y Ciencias Químicas'),
-(35, 'Ingeniero en Biotecnología'),
-(36, 'Ingeniero en Industrias Alimentarias'),
-(37, 'Ingeniero Biomédico'),
-(38, 'Licenciado en Nutrición y Bienestar Integral'),
-(39, 'Médico Cirujano Odontólogo'),
-(40, 'Licenciado en Psicología Clínica y de la Salud');
+(1, 'Licenciado en Administración y Estrategia de Negocios (LAE)'),
+(2, 'Licenciado en Contaduría Pública y Finanzas (LCPF)'),
+(3, 'Licenciado en Administración Financiera (LAF)'),
+(4, 'Licenciado en Mercadotecnia (LEM)'),
+(5, 'Licenciado en Negocios Internacionales (LIN)'),
+(6, 'Licenciado en Psicología Organizacional (LPO)'),
+(7, 'Licenciado en Creación y desarrollo de Empresas (LCDE)'),
+(8, 'Licenciado en Economía (LEC)'),
+(9, 'Licenciado en Derecho (LED)'),
+(10, 'Licenciado en Derecho y Finanzas (LDF)'),
+(11, 'Licenciado en Letras Hispánicas (LLE)'),
+(12, 'Licenciado en Relaciones Internacionales (LRI)'),
+(13, 'Licenciado en Ciencias de la Comunicación y Medios Digitales (LCMD)'),
+(14, 'Ingeniero en Producción Musical (IMI)'),
+(15, 'Lic.  en Publicidad y Comunicación de Mercados (LPM)'),
+(16, 'Arquitecto (ARQ)'),
+(17, 'Licenciado en Diseño Industrial (LDI)'),
+(18, 'Licenciado en Animación y Arte Digital (LAD)'),
+(19, 'Ingeniero Civil (IC)'),
+(20, 'Ingeniero Industrial y de Sistemas (IIS)'),
+(21, 'Ingeniero Mecánico Administrador (IMA)'),
+(22, 'Ingeniero Mecánico Electricista (IME)'),
+(23, 'Ingeniero Químico Administrador (IQA)'),
+(24, 'Ingeniero Químico en Procesos Sustentables (IQP)'),
+(25, 'Ingeniero en Desarrollo Sustentable (IDS)'),
+(26, 'Ingeniero en Diseño Automotriz (IDA)'),
+(27, 'Ingeniero en Mecatrónica (IMT)'),
+(28, 'Ingeniero Físico Industrial (IFI)'),
+(29, 'Ingeniero en Tecnologías Computacionales (ITC)'),
+(30, 'Ing en Sistemas Digitales y Robótica (ISD)'),
+(31, 'Ing en Negocios y Tecnologías de Información (INT)'),
+(32, 'Ing. en Innovación y Desarrollo (IID)'),
+(33, 'Médico Cirujano (MC)'),
+(34, 'Ingeniero en Nanotecnología y Ciencias Químicas (INCQ)'),
+(35, 'Ingeniero en Biotecnología (IBT)'),
+(36, 'Ingeniero en Industrias Alimentarias (IIA)'),
+(37, 'Ingeniero Biomédico (IMD)'),
+(38, 'Licenciado en Nutrición y Bienestar Integral (LNB)'),
+(39, 'Médico Cirujano Odontólogo (MO)'),
+(40, 'Licenciado en Psicología Clínica y de la Salud (LPS)');
 
 -- --------------------------------------------------------
 
@@ -93,6 +98,11 @@ CREATE TABLE IF NOT EXISTS `ciudades` (
   `sigla` varchar(4) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Tabla de ciudades de la Republica Mexicana';
 
+--
+-- Truncar tablas antes de insertar `ciudades`
+--
+
+TRUNCATE TABLE `ciudades`;
 --
 -- Volcado de datos para la tabla `ciudades`
 --
@@ -2573,6 +2583,11 @@ CREATE TABLE IF NOT EXISTS `estados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Tabla de Estados de la República Mexicana';
 
 --
+-- Truncar tablas antes de insertar `estados`
+--
+
+TRUNCATE TABLE `estados`;
+--
 -- Volcado de datos para la tabla `estados`
 --
 
@@ -2623,6 +2638,11 @@ CREATE TABLE IF NOT EXISTS `medios` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
+-- Truncar tablas antes de insertar `medios`
+--
+
+TRUNCATE TABLE `medios`;
+--
 -- Volcado de datos para la tabla `medios`
 --
 
@@ -2631,243 +2651,10 @@ INSERT INTO `medios` (`id`, `nombre`) VALUES
 (2, 'Por correo electr&oacute;nico'),
 (3, 'Por p&aacute;gina del Tec'),
 (4, 'Por tel&eacute;fono'),
-(5, 'Por un amigo');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__bookmark`
---
-
-DROP TABLE IF EXISTS `pma__bookmark`;
-CREATE TABLE IF NOT EXISTS `pma__bookmark` (
-`id` int(11) NOT NULL,
-  `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `label` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `query` text COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Bookmarks' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__column_info`
---
-
-DROP TABLE IF EXISTS `pma__column_info`;
-CREATE TABLE IF NOT EXISTS `pma__column_info` (
-`id` int(5) unsigned NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `column_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `comment` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `mimetype` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin' AUTO_INCREMENT=39 ;
-
---
--- Volcado de datos para la tabla `pma__column_info`
---
-
-INSERT INTO `pma__column_info` (`id`, `db_name`, `table_name`, `column_name`, `comment`, `mimetype`, `transformation`, `transformation_options`) VALUES
-(1, 'betec_2014', 'usuarios', 'id', '', '', '_', ''),
-(2, 'betec_2014', 'usuarios', 'genero', '', '', '_', ''),
-(3, 'betec_2014', 'usuarios', 'nombre', '', '', '_', ''),
-(4, 'betec_2014', 'usuarios', 'cumpleaÃ±os', '', '', '_', ''),
-(5, 'betec_2014', 'usuarios', 'correo', '', '', '_', ''),
-(6, 'betec_2014', 'usuarios', 'telefono', '', '', '_', ''),
-(7, 'betec_2014', 'usuarios', 'celular', '', '', '_', ''),
-(8, 'betec_2014', 'usuarios', 'id_estado', '', '', '_', ''),
-(9, 'betec_2014', 'usuarios', 'id_ciudad', '', '', '_', ''),
-(10, 'betec_2014', 'usuarios', 'id_prepa', '', '', '_', ''),
-(11, 'betec_2014', 'usuarios', 'graduacion', '', '', '_', ''),
-(12, 'betec_2014', 'usuarios', 'hospedaje', '', '', '_', ''),
-(13, 'betec_2014', 'usuarios', 'acompana', '', '', '_', ''),
-(14, 'betec_2014', 'usuarios', 'id_conocio', '', '', '_', ''),
-(15, 'betec_2014', 'usuario_carrera', 'id_usuario', '', '', '_', ''),
-(16, 'betec_2014', 'usuario_carrera', 'id_carrera', '', '', '_', ''),
-(17, 'betec_2014', 'usuario_taller', 'id_usuario', '', '', '_', ''),
-(18, 'betec_2014', 'usuario_taller', 'id_taller', '', '', '_', ''),
-(24, 'betec_2014', 'talleres', 'dia', '', '', '_', ''),
-(23, 'betec_2014', 'talleres', 'id', '', '', '_', ''),
-(25, 'betec_2014', 'talleres', 'nombre', '', '', '_', ''),
-(26, 'betec_2014', 'talleres', 'cupo', '', '', '_', ''),
-(27, 'betec_2014', 'ciudades', 'id', '', '', '_', ''),
-(28, 'betec_2014', 'ciudades', 'nombre', '', '', '_', ''),
-(29, 'betec_2014', 'estados', 'id', '', '', '_', ''),
-(30, 'betec_2014', 'estados', 'nombre', '', '', '_', ''),
-(31, 'betec_2014', 'preparatorias', 'id', '', '', '_', ''),
-(32, 'betec_2014', 'preparatorias', 'id_estado', '', '', '_', ''),
-(33, 'betec_2014', 'preparatorias', 'nombre', '', '', '_', ''),
-(34, 'betec_2014', 'carreras', 'id', '', '', '_', ''),
-(35, 'betec_2014', 'carreras', 'nombre', '', '', '_', ''),
-(36, 'betec_2014', 'medios', 'id', '', '', '_', ''),
-(37, 'betec_2014', 'medios', 'nombre', '', '', '_', ''),
-(38, 'betec_2014', 'usuarios', 'id_medio', '', '', '_', '');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__designer_coords`
---
-
-DROP TABLE IF EXISTS `pma__designer_coords`;
-CREATE TABLE IF NOT EXISTS `pma__designer_coords` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `x` int(11) DEFAULT NULL,
-  `y` int(11) DEFAULT NULL,
-  `v` tinyint(4) DEFAULT NULL,
-  `h` tinyint(4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for Designer';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__history`
---
-
-DROP TABLE IF EXISTS `pma__history`;
-CREATE TABLE IF NOT EXISTS `pma__history` (
-`id` bigint(20) unsigned NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `sqlquery` text COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='SQL history for phpMyAdmin' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__pdf_pages`
---
-
-DROP TABLE IF EXISTS `pma__pdf_pages`;
-CREATE TABLE IF NOT EXISTS `pma__pdf_pages` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-`page_nr` int(10) unsigned NOT NULL,
-  `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__recent`
---
-
-DROP TABLE IF EXISTS `pma__recent`;
-CREATE TABLE IF NOT EXISTS `pma__recent` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tables` text COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
-
---
--- Volcado de datos para la tabla `pma__recent`
---
-
-INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{"db":"betec_2014","table":"usuarios"},{"db":"betec_2014","table":"medios"},{"db":"betec_2014","table":"carreras"},{"db":"betec_2014","table":"preparatorias"},{"db":"betec_2014","table":"estados"},{"db":"betec_2014","table":"ciudades"},{"db":"betec_2014","table":"talleres"},{"db":"betec_2014","table":"usuario_taller"},{"db":"betec_2014","table":"usuario_carrera"}]');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__relation`
---
-
-DROP TABLE IF EXISTS `pma__relation`;
-CREATE TABLE IF NOT EXISTS `pma__relation` (
-  `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `master_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Relation table';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__table_coords`
---
-
-DROP TABLE IF EXISTS `pma__table_coords`;
-CREATE TABLE IF NOT EXISTS `pma__table_coords` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `pdf_page_number` int(11) NOT NULL DEFAULT '0',
-  `x` float unsigned NOT NULL DEFAULT '0',
-  `y` float unsigned NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__table_info`
---
-
-DROP TABLE IF EXISTS `pma__table_info`;
-CREATE TABLE IF NOT EXISTS `pma__table_info` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table information for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__table_uiprefs`
---
-
-DROP TABLE IF EXISTS `pma__table_uiprefs`;
-CREATE TABLE IF NOT EXISTS `pma__table_uiprefs` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `prefs` text COLLATE utf8_bin NOT NULL,
-  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__tracking`
---
-
-DROP TABLE IF EXISTS `pma__tracking`;
-CREATE TABLE IF NOT EXISTS `pma__tracking` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `version` int(10) unsigned NOT NULL,
-  `date_created` datetime NOT NULL,
-  `date_updated` datetime NOT NULL,
-  `schema_snapshot` text COLLATE utf8_bin NOT NULL,
-  `schema_sql` text COLLATE utf8_bin,
-  `data_sql` longtext COLLATE utf8_bin,
-  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8_bin DEFAULT NULL,
-  `tracking_active` int(1) unsigned NOT NULL DEFAULT '1'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT COMMENT='Database changes tracking for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `pma__userconfig`
---
-
-DROP TABLE IF EXISTS `pma__userconfig`;
-CREATE TABLE IF NOT EXISTS `pma__userconfig` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `config_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
-
---
--- Volcado de datos para la tabla `pma__userconfig`
---
-
-INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2014-10-12 18:53:39', '{"lang":"es","collation_connection":"utf8mb4_general_ci"}');
+(5, 'Por un amigo'),
+(6, 'Por sesi&oacute;n informativa del Tec en mi colegio'),
+(7, 'Por radio'),
+(8, 'Por otro medio de publicidad');
 
 -- --------------------------------------------------------
 
@@ -2882,6 +2669,11 @@ CREATE TABLE IF NOT EXISTS `preparatorias` (
   `nombre` varchar(150) NOT NULL DEFAULT ''
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Truncar tablas antes de insertar `preparatorias`
+--
+
+TRUNCATE TABLE `preparatorias`;
 --
 -- Volcado de datos para la tabla `preparatorias`
 --
@@ -7082,61 +6874,69 @@ DROP TABLE IF EXISTS `talleres`;
 CREATE TABLE IF NOT EXISTS `talleres` (
 `id` int(11) NOT NULL,
   `dia` int(11) NOT NULL,
+  `opc` int(5) DEFAULT '0',
   `nombre` varchar(150) CHARACTER SET utf8 NOT NULL DEFAULT '',
   `cupo` int(11) NOT NULL,
   `libres` int(5) NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49;
 
+--
+-- Truncar tablas antes de insertar `talleres`
+--
+
+TRUNCATE TABLE `talleres`;
 --
 -- Volcado de datos para la tabla `talleres`
 --
-
-INSERT INTO `talleres` (`id`, `dia`, `nombre`, `cupo`, `libres`) VALUES
-(1, 1, 'Taller de Liderazgo', 30, 30),
-(2, 1, 'Plática de Programas Internacionales', 30, 30),
-(3, 1, 'Plática de Asuntos Estudiantiles', 30, 30),
-(4, 1, 'Feria de Carreras', 30, 30),
-(5, 1, 'Tour por el Campus', 30, 30),
-(6, 2, 'Taller de Administración y Estrategia de Negocios (LAE)', 40, 40),
-(7, 2, 'Taller de Contaduría Pública y Finanzas (LCPF)', 40, 40),
-(8, 2, 'Taller de  Administración Financiera (LAF)', 40, 40),
-(9, 2, 'Taller de Mercadotecnia (LEM)', 40, 40),
-(10, 2, 'Taller de Negocios Internacionales (LIN)', 40, 40),
-(11, 2, 'Taller de Psicología Organizacional (LPO)', 40, 40),
-(12, 2, 'Taller de Creación y Desarrollo de Empresas (LCDE)', 40, 40),
-(13, 2, 'Taller de Economía (LEC)', 40, 40),
-(14, 2, 'Taller de Derecho (LED)', 40, 40),
-(15, 2, 'Taller de Derecho y Finanzas (LDF)', 40, 40),
-(16, 2, 'Taller de Letras Hispánicas (LLE)', 40, 40),
-(17, 2, 'Taller de Relaciones Internacionales (LRI)', 40, 40),
-(18, 2, 'Taller de Ciencias de la Comunicación y Medios Digitales (LCMD)', 40, 40),
-(19, 2, 'Taller de Producción Musical (IMI)', 40, 40),
-(20, 2, 'Taller de Publicidad y Comunicación de Mercados (LPM)', 40, 40),
-(21, 2, 'Taller de Arquitectura (ARQ)', 30, 30),
-(22, 2, 'Taller de Diseño Industrial (LDI)', 15, 15),
-(23, 2, 'Taller de Animación y Arte Digital (LAD)', 20, 20),
-(24, 2, 'Taller de Ingeniería Civil (IC)', 35, 35),
-(25, 2, 'Taller de Ingeniería Industrial y de Sistemas (IIS)', 35, 35),
-(26, 2, 'Taller de Mecánico Administrador (IMA)', 35, 35),
-(27, 2, 'Taller de Mecánico Electricista (IME)', 35, 35),
-(28, 2, 'Taller de Químico Administrador (IQA)', 35, 35),
-(29, 2, 'Taller de Químico en Procesos Sustentables (IQP)', 35, 35),
-(30, 2, 'Taller de Desarrollo Sustentable (IDS)', 35, 35),
-(31, 2, 'Taller de Diseño Automotriz (IDA)', 35, 35),
-(32, 2, 'Taller de Mecatrónica (IMT)', 35, 35),
-(33, 2, 'Taller de Físico Industrial (IFI)', 35, 35),
-(34, 2, 'Taller de Tecnologías Computacionales (ITC)', 35, 35),
-(35, 2, 'Taller de Sistemas Digitales y Robótica (ISD)', 35, 35),
-(36, 2, 'Taller de Negocios y Tecnologías de Información (INT)', 35, 35),
-(37, 2, 'Taller de Innovación y Desarrollo (IID)', 35, 35),
-(38, 2, 'Taller de Médico Cirujano (MC)', 30, 30),
-(39, 2, 'Taller de Nanotecnología y Ciencias Químicas (INCQ)', 20, 20),
-(40, 2, 'Taller de Biotecnología (IBT)', 40, 40),
-(41, 2, 'Taller de Industrias Alimentarias (IIA)', 20, 20),
-(42, 2, 'Taller Biomédico (IMD)', 20, 20),
-(43, 2, 'Taller de Nutrición y Bienestar Integral (LNB)', 20, 20),
-(44, 2, 'Taller de Médico Cirujano Odontólogo (MO)', 30, 30),
-(45, 2, 'Taller de Psicología Clínica y de la Salud (LPS)', 30, 30);
+INSERT INTO `talleres` (`id`, `dia`, `opc`, `nombre`, `cupo`, `libres`) VALUES
+(1, 1, 0, 'Taller de Liderazgo', 30, 30),
+(2, 1, 0,'Plática de Programas Internacionales', 30, 30),
+(3, 1, 0,'Plática de Asuntos Estudiantiles', 30, 30),
+(4, 1, 0,'Feria de Carreras', 30, 30),
+(5, 1, 0,'Tour por el Campus', 30, 30),
+(6, 2, 0,'Taller de Administración y Estrategia de Negocios (LAE)', 40, 40),
+(7, 2, 0,'Taller de Contaduría Pública y Finanzas (LCPF)', 40, 40),
+(8, 2, 0,'Taller de  Administración Financiera (LAF)', 40, 40),
+(9, 2, 0,'Taller de Mercadotecnia (LEM)', 40, 40),
+(10, 2, 0,'Taller de Negocios Internacionales (LIN)', 40, 40),
+(11, 2, 0,'Taller de Psicología Organizacional (LPO)', 40, 40),
+(12, 2, 0,'Taller de Creación y Desarrollo de Empresas (LCDE)', 40, 40),
+(13, 2, 0,'Taller de Economía (LEC)', 40, 40),
+(14, 2, 0,'Taller de Derecho (LED)', 40, 40),
+(15, 2, 0,'Taller de Derecho y Finanzas (LDF)', 40, 40),
+(16, 2, 0,'Taller de Letras Hispánicas (LLE)', 40, 40),
+(17, 2, 0,'Taller de Relaciones Internacionales (LRI)', 40, 40),
+(18, 2, 0,'Taller de Ciencias de la Comunicación y Medios Digitales (LCMD)', 40, 40),
+(19, 2, 0,'Taller de Producción Musical (IMI)', 40, 40),
+(20, 2, 0,'Taller de Publicidad y Comunicación de Mercados (LPM)', 40, 40),
+(21, 2, 0,'Taller de Arquitectura (ARQ)', 30, 30),
+(22, 2, 0,'Taller de Diseño Industrial (LDI)', 15, 15),
+(23, 2, 0,'Taller de Animación y Arte Digital (LAD)', 20, 20),
+(24, 2, 0,'Taller de Ingeniería Civil (IC)', 35, 35),
+(25, 2, 0,'Taller de Ingeniería Industrial y de Sistemas (IIS)', 35, 35),
+(26, 2, 0,'Taller de Mecánico Administrador (IMA)', 35, 35),
+(27, 2, 0,'Taller de Mecánico Electricista (IME)', 35, 35),
+(28, 2, 0,'Taller de Químico Administrador (IQA)', 35, 35),
+(29, 2, 0,'Taller de Químico en Procesos Sustentables (IQP)', 35, 35),
+(30, 2, 0,'Taller de Desarrollo Sustentable (IDS)', 35, 35),
+(31, 2, 0,'Taller de Diseño Automotriz (IDA)', 35, 35),
+(32, 2, 0,'Taller de Mecatrónica (IMT)', 35, 35),
+(33, 2, 0,'Taller de Físico Industrial (IFI)', 35, 35),
+(34, 2, 0,'Taller de Tecnologías Computacionales (ITC)', 35, 35),
+(35, 2, 0,'Taller de Sistemas Digitales y Robótica (ISD)', 35, 35),
+(36, 2, 0,'Taller de Negocios y Tecnologías de Información (INT)', 35, 35),
+(37, 2, 0,'Taller de Innovación y Desarrollo (IID)', 35, 35),
+(38, 2, 0,'Taller de Médico Cirujano (MC)', 30, 30),
+(39, 2, 0,'Taller de Nanotecnología y Ciencias Químicas (INCQ)', 20, 20),
+(40, 2, 0,'Taller de Biotecnología (IBT)', 40, 40),
+(41, 2, 0,'Taller de Industrias Alimentarias (IIA)', 20, 20),
+(42, 2, 0,'Taller Biomédico (IMD)', 20, 20),
+(43, 2, 0,'Taller de Nutrición y Bienestar Integral (LNB)', 20, 20),
+(44, 2, 0,'Taller de Médico Cirujano Odontólogo (MO)', 30, 30),
+(45, 2, 0,'Taller de Psicología Clínica y de la Salud (LPS)', 30, 30);
+(46, 1, 1,'Plática \"No tengo idea\"',30,30),
+(47, 1, 1,'Feria de Carreras',30,30),
+(48, 1, 1,'Tour por el campus',30,30);
 
 -- --------------------------------------------------------
 
@@ -7162,8 +6962,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_medio` int(11) NOT NULL,
   `documentos` char(1) CHARACTER SET utf8 DEFAULT '0',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
-
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 -- --------------------------------------------------------
 
@@ -7178,7 +6977,7 @@ CREATE TABLE IF NOT EXISTS `usuarios_documentos` (
   `url_pago` varchar(100) DEFAULT '#',
   `url_permiso` varchar(100) DEFAULT '#',
   `tipo_foraneo` char(1) DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 -- --------------------------------------------------------
 
@@ -7191,7 +6990,7 @@ CREATE TABLE IF NOT EXISTS `usuarios_info` (
 `id` int(11) unsigned NOT NULL,
   `moneterrey` tinyint(1) DEFAULT '0',
   `campus` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 -- --------------------------------------------------------
 
@@ -7230,76 +7029,10 @@ ALTER TABLE `carreras`
  ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `pma__bookmark`
+-- Indices de la tabla `medios`
 --
-ALTER TABLE `pma__bookmark`
+ALTER TABLE `medios`
  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `pma__column_info`
---
-ALTER TABLE `pma__column_info`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
-
---
--- Indices de la tabla `pma__designer_coords`
---
-ALTER TABLE `pma__designer_coords`
- ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- Indices de la tabla `pma__history`
---
-ALTER TABLE `pma__history`
- ADD PRIMARY KEY (`id`), ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
-
---
--- Indices de la tabla `pma__pdf_pages`
---
-ALTER TABLE `pma__pdf_pages`
- ADD PRIMARY KEY (`page_nr`), ADD KEY `db_name` (`db_name`);
-
---
--- Indices de la tabla `pma__recent`
---
-ALTER TABLE `pma__recent`
- ADD PRIMARY KEY (`username`);
-
---
--- Indices de la tabla `pma__relation`
---
-ALTER TABLE `pma__relation`
- ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`), ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
-
---
--- Indices de la tabla `pma__table_coords`
---
-ALTER TABLE `pma__table_coords`
- ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
-
---
--- Indices de la tabla `pma__table_info`
---
-ALTER TABLE `pma__table_info`
- ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- Indices de la tabla `pma__table_uiprefs`
---
-ALTER TABLE `pma__table_uiprefs`
- ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
-
---
--- Indices de la tabla `pma__tracking`
---
-ALTER TABLE `pma__tracking`
- ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
-
---
--- Indices de la tabla `pma__userconfig`
---
-ALTER TABLE `pma__userconfig`
- ADD PRIMARY KEY (`username`);
 
 --
 -- Indices de la tabla `talleres`
@@ -7335,26 +7068,6 @@ ALTER TABLE `usuarios_info`
 ALTER TABLE `carreras`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
 --
--- AUTO_INCREMENT de la tabla `pma__bookmark`
---
-ALTER TABLE `pma__bookmark`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `pma__column_info`
---
-ALTER TABLE `pma__column_info`
-MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
---
--- AUTO_INCREMENT de la tabla `pma__history`
---
-ALTER TABLE `pma__history`
-MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT de la tabla `pma__pdf_pages`
---
-ALTER TABLE `pma__pdf_pages`
-MODIFY `page_nr` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT de la tabla `talleres`
 --
 ALTER TABLE `talleres`
@@ -7363,12 +7076,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `usuarios_documentos`
 --
 ALTER TABLE `usuarios_documentos`
-MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `usuarios_info`
 --
