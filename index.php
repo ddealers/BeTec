@@ -54,37 +54,6 @@
 	margin:0;
 }
 
-#primary_nav_wrap ul ul
-{
-	display:none;
-	border:none;
-	position:absolute;
-	top:100%;
-	left:0;
-	text-align:left;
-	padding:0;
-	width:auto;
-}
-
-#primary_nav_wrap ul ul li
-{
-	position:relative;
-	float:none;
-	display:block;
-}
-
-#primary_nav_wrap ul ul a
-{
-	line-height:120%;
-	padding:10px 15px;
-}
-
-#primary_nav_wrap ul ul ul
-{
-	top:0;
-	left:100%;
-}
-
 #primary_nav_wrap ul li:hover > ul
 {
 	display:block;
@@ -98,6 +67,27 @@
 .step-area{
 	float:left!important;
 	margin-left:130px!important;
+}
+.title{
+	display:table;
+	border-collapse:collapse;
+	border:none;
+	position: relative;
+	z-index: 10;
+	padding-bottom: 40px;
+	margin-left: 180px!important;
+}
+.j{
+	display:inline;
+}
+.v{
+	display:inline;
+}
+.s{
+	display: inline;
+}
+.days{
+	margin-top: 20px!important;
 }
 </style>
 <![endif]-->
@@ -205,10 +195,12 @@
 			<div class="calendar">
 				<div class="header">
 					<!--a class="prev" href="#prev"></a-->
-					<div class="titles">
-						<p class="j">JUEVES 20 DE NOVIEMBRE</p>
-						<p class="v">VIERNES 21 DE NOVIEMBRE</p>
-						<p class="s">SÁBADO 22 DE NOVIEMBRE</p>
+					<div class="title">
+						<div class="titles">
+							<p class="j">JUEVES 20 DE NOVIEMBRE</p>
+							<p class="v">VIERNES 21 DE NOVIEMBRE</p>
+							<p class="s">SÁBADO 22 DE NOVIEMBRE</p>
+						</div>
 					</div>
 					<!--a class="next" href="#next"></a-->
 				</div>

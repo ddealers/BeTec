@@ -218,7 +218,14 @@ section
 					.titles
 						text-align center
 						padding 0
-						display inline-flex
+						//display inline-flex
+						-ms-flex-wrap:wrap;
+					    -webkit-flex-wrap:wrap;
+					    display:-ms-flexbox;
+					    display:-webkit-box;
+					    display:-webkit-flex;
+					    display:flex;
+					    flex-wrap:wrap;
 						p
 							padding 1vw
 							font-size 1vw
