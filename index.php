@@ -23,6 +23,8 @@
 <style type="text/css">
 #primary_nav_wrap
 {
+	font-family: 'Gill Sans';
+	font-weight: 300;
 	display:table;
 	width:100%;
 	border-collapse:collapse;
@@ -42,44 +44,19 @@
 #primary_nav_wrap ul a
 {
 	display:block;
+	font-size: 1.2vw;
+	color: #fff;
 }
 
+#primary_nav_wrap ul a .selected{
+	font-weight: 700;
+}
 #primary_nav_wrap ul li
 {
 	float:none;
 	display:table-cell;
 	margin:0;
-}
-
-#primary_nav_wrap ul ul
-{
-	display:none;
-	border:none;
-	position:absolute;
-	top:100%;
-	left:0;
-	text-align:left;
-	padding:0;
-	width:auto;
-}
-
-#primary_nav_wrap ul ul li
-{
-	position:relative;
-	float:none;
-	display:block;
-}
-
-#primary_nav_wrap ul ul a
-{
-	line-height:120%;
-	padding:10px 15px;
-}
-
-#primary_nav_wrap ul ul ul
-{
-	top:0;
-	left:100%;
+	margin-right: 3vw;
 }
 
 #primary_nav_wrap ul li:hover > ul
