@@ -61,7 +61,7 @@ fclose( $fp );
 		{
 		    //Image rotated around its upper-left corner
 		    $this->Rotate($angle, $x, $y);
-		    $this->Image($file, $x, $y, $w, $h);
+		    $this->Image($file, $x, $y, $w, $h, 'PNG');
 		    $this->Rotate(0);
 		}
 		function Header()
@@ -210,26 +210,26 @@ fclose( $fp );
 			// Escuela
 			$this->Image('./img/tmty.png',165,98,30);
 			//Barcode girado 180º
-			$this->RotatedImage("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 175, 98, 70, 15, 'PNG');
-			
+			$this->RotatedImage("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 175, 98, 70, 15, 90);
+			//$this->Image('http://chart.googleapis.com/chart?cht=p3&chd=t:60,40&chs=250x100&chl=Hello|World',60,30,90,0,'PNG');
 
 			//Contenido Dinamico
 			$this->SetTextColor(0,0,0);
 			$this->SetFont('Arial','B',12);
 				//Talleres Viernes
 			$this->SetY(60);
-			$this->SetX(-300);
-			$this->Cell(0,0, $full_name, 0,0,'C');
+			$this->SetX(18);
+			$this->Cell(0,0, $full_name, 0,0);
 			$this->SetFont('Arial','B',8);
 			$this->SetY(75);
-			$this->SetX(-315);
-			$this->Cell(310,0, '1. '.$tv1, 0,0,'C');
+			$this->SetX(18);
+			$this->Cell(50,0, '1. '.$tv1, 0,0);
 			$this->ln(7);
-			$this->SetX(-315);
-			$this->Cell(310,0, '2. '.$tv2, 0,0,'C');
+			$this->SetX(18);
+			$this->Cell(50,0, '2. '.$tv2, 0,0);
 			$this->ln(7);
-			$this->SetX(-315);
-			$this->Cell(310,0, '3. '.$tv3, 0,0,'C');
+			$this->SetX(18);
+			$this->Cell(50,0, '3. '.$tv3, 0,0);
 
 				//Luagr
 			$this->SetY(99);
@@ -249,11 +249,11 @@ fclose( $fp );
 				//Talleres Sabado
 			$this->SetFont('Arial','B',8);
 			$this->SetY(75);
-			$this->SetX(90);
-			$this->Cell(80,0, '1. '.$ts1, 0,0,'C');
-			$this->ln(10);
-			$this->SetX(90);
-			$this->Cell(80,0, '2. '.$ts2, 0,0,'C');
+			$this->SetX(85);
+			$this->MultiCell(75,3, '1. '.$ts1, 0);
+			$this->ln(5);
+			$this->SetX(85);
+			$this->MultiCell(75,3, '2. '.$ts2, 0);
 			$mysqli = new mysqli(HOST,USR,PWD,DB);
 			$string = $_GET['s'];
 			$key = 'BornToBeTec321_';
@@ -268,7 +268,7 @@ fclose( $fp );
 						}
 						$idu = $data['id'];
 						$full_name = $data['nombre'];
-						list($n1, $n2, $n3, $n4) = explode(' ', $full_name);
+						list($n1, $n2) = explode(' ', $full_name);
 
 						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
 						$vt = $mysqli->query($t);
@@ -323,17 +323,17 @@ fclose( $fp );
 			$this->Ln(20);
 			$this->Cell(80,0,'Cierre primer dia / Cena de 19:40 - 21:00',0,0,'C');
 			
-			$this->SetY(-141);
-			$this->SetX(-305);
+			$this->SetY(154);
+			$this->SetX(20);
 			$this->SetTextColor(0,0,0);
 			$this->SetFont('Arial','B',11);
-			$this->Cell(0,0,'- '.$tv1,0,0,'C');
-			$this->Ln(20);
-			$this->SetX(-305);
-			$this->Cell(0,0,'- '.$tv2,0,0,'C');
-			$this->Ln(20);
-			$this->SetX(-305);
-			$this->Cell(0,0,'- '.$tv3,0,0,'C');
+			$this->MultiCell(70,5,$tv1,0, 'L');
+			$this->Ln(15);
+			$this->SetX(20);
+			$this->MultiCell(70,5,$tv2,0, 'L');
+			$this->Ln(15);
+			$this->SetX(20);
+			$this->MultiCell(70,5,$tv3,0, 'L');
 
 			//Agenda Sabado
 			$this->SetX(-201);
@@ -347,21 +347,21 @@ fclose( $fp );
 			$this->Cell(50,0,'Taller de 11:45 - 14:15',0,0,'C');
 			$this->Ln(20);
 
-			$this->SetY(-65);
-			$this->SetX(-305);
+			$this->SetY(238);
+			$this->SetX(20);
 			$this->SetTextColor(0,0,0);
-			$this->SetFont('Arial','B',9);
-			$this->Cell(0,0,'- '.$ts1,0,0,'C');
-			$this->Ln(30);
-			$this->SetX(-305);
-			$this->Cell(0,0,'- '.$ts2,0,0,'C');
+			$this->SetFont('Arial','B',11);
+			$this->MultiCell(75,5,$ts1,0,'L');
+			$this->Ln(20);
+			$this->SetX(20);
+			$this->MultiCell(75,5,$ts2,0,'L');
 
 			//Imagen Gafete
 			$this->SetY(-188);
 			$this->SetX(-356);
 			$this->Image('./img/gafete.png', 105,130,90);
 			//Barcode sin rotacion
-			$this->Image("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 112, 230, -100, -100, 'PNG');
+			$this->Image("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 107, 230, -120, -120, 'PNG');
 
 			$this->SetTextColor(26, 89, 184);
 			$this->SetFont('Arial','B',24);
