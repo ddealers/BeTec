@@ -30,7 +30,8 @@
 	border:none;
 	position: relative;
 	z-index: 10;
-	margin-left: -200px;
+	margin-left: 500px;
+	paddin-top: 80px;
 }
 
 #primary_nav_wrap ul
@@ -57,7 +58,7 @@
 	float:none;
 	display:table-cell;
 	margin:0;
-	margin-right: 4px;
+	margin-right: 100px!important;
 }
 
 #primary_nav_wrap ul li:hover > ul
