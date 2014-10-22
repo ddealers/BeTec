@@ -9,7 +9,8 @@ require('barcode/Code128.php');
 
 $string = $_GET['s'];
 
-$bcode = new emberlabs\Barcode\Code128();
+//$bcode = new emberlabs\Barcode\Code128();
+$bcode  = new Code128();
 $bcode->setData($string);
 $bcode->setDimensions(320, 100);
 $bcode->draw();
