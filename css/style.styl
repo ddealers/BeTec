@@ -31,7 +31,46 @@ a
 	text-decoration none
 
 /* =========================== NAV */
-
+#primary_nav_wrap ul {
+    -ms-flex-wrap:wrap;
+    -webkit-flex-wrap:wrap;
+    display:-ms-flexbox;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+    flex-wrap:wrap;
+    list-style:none;
+    margin:0;
+    padding:0;
+    position:relative;
+    width:100%;
+}
+#primary_nav_wrap ul a {
+    -ms-flex-align:center;
+    -ms-flex-pack:center;
+    -webkit-align-items:center;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    -webkit-justify-content:center;
+    align-items:center;
+    color:#fff;
+    display:-ms-flexbox;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+    font-weight:300;
+    justify-content:center;
+    line-height:32px;
+    padding:0;
+    text-decoration:none;
+}
+#primary_nav_wrap ul li {
+    -ms-flex:1 1 auto;
+    -webkit-box-flex:1;
+    -webkit-flex:1 1 auto;
+    flex:1 1 auto;
+    position:relative;
+}
 header
 	fixed top left
 	width 100%

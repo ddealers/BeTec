@@ -23,15 +23,14 @@
 <style type="text/css">
 #primary_nav_wrap
 {
-	font-family: 'Gill Sans';
-	font-weight: 300;
 	display:table;
+	margin-left: 500px;
+	margin-top:80px
 	border-collapse:collapse;
 	border:none;
 	position: relative;
 	z-index: 10;
-	margin-left: 500px;
-	paddin-top: 80px;
+	
 }
 
 #primary_nav_wrap ul
