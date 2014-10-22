@@ -163,7 +163,7 @@ $(document).ready(function () {
 					form_data.cumple = cumple;
 					index_form++;
 			}else{
-				alert("Todos los datos son requeridos");
+				alert("Todos los datos son requeridos, revisa cual es el campo que te falta completar.");
 				return;
 			}
 		}else if(index_form == 1){
@@ -197,7 +197,7 @@ $(document).ready(function () {
 					return;
 				}
 			}else{
-				alert("Todos los datos son requeridos");
+				alert("Todos los datos son requeridos, revisa cual es el campo que te falta completar.");
 				return;
 			}
 		}else if(index_form == 2){
@@ -213,7 +213,7 @@ $(document).ready(function () {
 				if(pare != '' && namep != ''){
 					index_form++;
 				}else{
-					alert("Nombre y Parentesco son necesarios");
+					alert("El Nombre y Parentesco de tu acompañante son necesarios, proporciona los datos.");
 				}
 			}else{
 				index_form++;
@@ -244,14 +244,14 @@ $(document).ready(function () {
 					if(campusEscuela != ''){
 						form_data.campus_escuela = campusEscuela;
 					}else{
-						alert("Es necesario indicar que escuela se ha elegido");
+						alert("Es necesario indicar la universidad en la que piensas estudiar");
 						return;
 					}
 				}
 				$('.siguiente .next').html('Enviar<i class="icon ion-paper-airplane"></i>');
 				index_form++;
 			}else{
-				alert("Todos los datos son requeridos");
+				alert("Todos los datos son requeridos, revisa cual es el campo que te falta completar.");
 				return;
 			}
 		}else if(index_form == 4){
@@ -290,7 +290,7 @@ $(document).ready(function () {
 							TweenMax.from('#end', 1, {opacity: 0, scale: 0.5, ease: Back.easeOut});
 							return;
 						}else if(response == 'badMail'){
-							alert("Este email ya ha sido registrado");
+							alert("Este email ya ha sido registrado, vuelve a realizar el registro con una cuenta de correo nueva.");
 							console.log(response);
 						}else{
 							alert("Lo sentimos tu registro no se pudo completar");
@@ -298,13 +298,13 @@ $(document).ready(function () {
 						}
 					},
 					error: function(){
-						alert('Algo salio mal, recarga y trata de nuevo.');
+						alert("Lo sentimos tu registro no se pudo completar, escríbenos a btec.mty@servicios.itesm.mx \n o llámanos al 01 800 832 33689 o al (81) 81582269 para ayudarte.");
 						console.log(response);
 					}
 				});
 				return;
 			}else{
-				alert("Debes aceptar los Términos y Condiciones");
+				alert("Debes aceptar los Términos y Condiciones.");
 				return;
 			}
 		}
