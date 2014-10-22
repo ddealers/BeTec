@@ -15,7 +15,7 @@ $key = 'BornToBeTec321_';
 function validaMail($mail){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	$res = array();
-	$q = "SELECT id, documentos FROM usuarios WHERE correo = '$mail' ";
+	$q = "SELECT id, documentos, nombre FROM usuarios WHERE correo = '$mail' ";
 	$v = $mysqli->query($q);
 	if($v){
 		if($v->num_rows > 0){
@@ -65,6 +65,7 @@ function validaDocs($idu){
 $mail = desencriptarURL($string, $key);
 $in = validaMail($mail);
 $idu = $in[1]['id'];
+$name = $in[1]['nombre'];
 
 $respuesta = validaDocs($idu);
 
@@ -128,7 +129,7 @@ $form_FA = "
 		<article>
 			<h1>ADJUNTAR</h1>
 			<span>Sube tu carta compromiso correctamente llenada y firmada antes del 18 de noviembre.</span>
-			<h3>GERMÁN RADILLO</h3>
+			<h3>".$name."</h3>
 			<span class='sub'>Asistente</span>
 			<p>	
 				<div class='evento'>
@@ -174,6 +175,7 @@ $form_FA = "
 </html>
 ";
 
+
 $form_FB = "
 <!DOCTYPE html>
 <html lang='es'>
@@ -212,7 +214,7 @@ $form_FB = "
 		<article>
 			<h1>ADJUNTAR</h1>
 			<span>Sube tu carta compromiso correctamente llenada y firmada antes del 18 de noviembre.</span>
-			<h3>GERMÁN RADILLO</h3>
+			<h3>".$name."</h3>
 			<span class='sub'>Asistente</span>
 			<p>	
 				<div class='evento'>
@@ -265,6 +267,9 @@ $form_FB = "
 </body>
 </html>
 ";
+
+echo $form_FB;
+exit;
 
 if($respuesta['estatus'] == 'true' && $respuesta['docs'] == 'false' && $respuesta['hotel'] == 'false'){
 	echo $form_FA;
