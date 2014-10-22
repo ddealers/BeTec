@@ -1,15 +1,15 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
+//error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
 require_once("config.php");
 require('sql/funciones.php');
 require('pdf/fpdf.php');
-require('barcode/BarcodeBase.php');
-require('barcode/Code128.php');
+//require('barcode/BarcodeBase.php');
+//require('barcode/Code128.php');
 
 $string = $_GET['s'];
 
-//$bcode = new emberlabs\Barcode\Code128();
+/*$bcode = new emberlabs\Barcode\Code128();
 $bcode  = new Code128();
 $bcode->setData($string);
 $bcode->setDimensions(320, 100);
@@ -20,6 +20,7 @@ $decoded = base64_decode( $filtered );
 $fp = fopen( 'download/' . $string . '.png', 'wb' );
 fwrite( $fp, $decoded );
 fclose( $fp );
+*/
 	class PDF_Rotate extends FPDF
 	{
 		var $angle=0;
@@ -208,8 +209,9 @@ fclose( $fp );
 
 			// Escuela
 			$this->Image('./img/tmty.png',165,98,30);
-			$this->RotatedImage("./download/$string.png", 175, 98, 70, 15, 90);
-			//Aka lleva un Barcode girado 180º
+			//Barcode girado 180º
+			$this->RotatedImage("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 175, 98, 70, 15, 'PNG');
+			
 
 			//Contenido Dinamico
 			$this->SetTextColor(0,0,0);
@@ -358,8 +360,8 @@ fclose( $fp );
 			$this->SetY(-188);
 			$this->SetX(-356);
 			$this->Image('./img/gafete.png', 105,130,90);
-			$this->Image("./download/$string.png", 112, 230, -100);
-			//Aka lleva un Barcode sin rotacion
+			//Barcode sin rotacion
+			$this->Image("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 112, 230, -100, -100, 'PNG');
 
 			$this->SetTextColor(26, 89, 184);
 			$this->SetFont('Arial','B',24);
