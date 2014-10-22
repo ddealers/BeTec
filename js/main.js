@@ -1,3 +1,19 @@
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '706985549396891',
+      xfbml      : true,
+      version    : 'v2.1'
+    });
+  };
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
 $(document).ready(function () {
   //===== Init Skrollr =====
 	var s = skrollr.init({
@@ -453,12 +469,28 @@ $(document).ready(function () {
   $('#comparte_fb').on('click', function(e){
     e.preventDefault();
     url = encodeURIComponent(location.href);
-    window.open('http://www.facebook.com/sharer.php?u='+url, 'Compartir en Facebook','width=480, height=320');
+    pname = 'Born To Be Tec';
+	pcaption = 'YA ME REGISTRÉ PARA VIVIR LA EXPERIENCIA BORN TO BE TEC EN TECNOLÓGICO DE MONTERREY, CAMPUS MONTERREY';
+	pdesc = '¿Quieres ser parte de este evento? Haz click aquí, regístrate y no pierdas esta increíble oportunidad de conocer todo lo que el Tecnológico de Monterrey tiene para ti.';
+	plink = url;
+	ppicture = 'http://borntobetec.mty.itesm.mx/img/logo.png';
+	FB.ui({
+	  method: 'feed',
+	  name: pname,
+	  caption: pcaption,
+	  description: pdesc,
+	  link: plink,
+	  picture: ppicture
+	},
+	function(response) {
+		//addShare(response['post_id'],1);
+	});
+    //window.open('http://www.facebook.com/sharer.php?u=YA ME REGISTRÉ PARA VIVIR LA EXPERIENCIA BORN TO BE TEC EN TECNOLÓGICO DE MONTERREY, CAMPUS MONTERREY'+url, 'Compartir en Facebook','width=480, height=320');
   });
   $('#comparte_tw').on('click', function(e){
     e.preventDefault();
     url = encodeURIComponent(location.href);
-    window.open('https://twitter.com/share?url='+url, 'Compartir en Twitter','width=480, height=320');
+    window.open('https://twitter.com/share?url=Ya me registré para vivir la experiencia Born To Be Tec, regístrate tú aquí: '+url+' #BornToBeTec', 'Compartir en Twitter','width=480, height=320');
   });
 
 })
