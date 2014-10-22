@@ -351,10 +351,10 @@ $(document).ready(function () {
 		carrerasList.carrera3 = $(this).val();
 		updateLists(carrerasList, ['carrera1', 'carrera2']);
 	});
-	$('#vopt1').on('change', function(){
+	/*$('#vopt1').on('change', function(){
 		viernesList.vopt1 = $(this).val();
 		updateLists(viernesList, ['vopt2', 'vopt3']);
-	});
+	});*/
 	$('#vopt2').on('change', function(){
 		viernesList.vopt2 = $(this).val();
 		updateLists(viernesList, ['vopt1', 'vopt3']);

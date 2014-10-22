@@ -926,21 +926,21 @@
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt1" id="vopt1" class="option">
 									<option value="">Elige tu actividad de 16:30 a 17:20 horas*</option>
-									<?php echo selectTalleresV(); ?>
+									<?php echo selectTalleresV(1); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt2" id="vopt2" class="option">
 									<option value="">Elige tu actividad de 17:40 a 18:30 horas*</option>
-									<?php echo selectTalleresV(); ?>
+									<?php echo selectTalleresV(0); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt3" id="vopt3" class="option">
 									<option value="">Elige tu actividad de 18:40 a 19:30 horas*</option>
-									<?php echo selectTalleresV(); ?>
+									<?php echo selectTalleresV(0); ?>
 								</select>
 							</label>
 						</div>
