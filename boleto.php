@@ -1,8 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT);
-
-require_once('config.php');
+require_once("config.php");
 require('./sql/funciones.php');
 require('pdf/fpdf.php');
 require('barcode/BarcodeBase.php');
