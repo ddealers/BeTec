@@ -98,9 +98,14 @@ function selectCarreras(){
 	return $listado;
 }
 
-function selectTalleresV(){
+function selectTalleresV($opc){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$q = "SELECT id, nombre FROM talleres WHERE dia = 1 ";
+	if($opc == '1'){
+		//solo x campos
+		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND opc = 1";
+	}else{
+		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND opc = 0";
+	}
 	$v = $mysqli->query($q);
 
 	if($v){

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/perfect-scrollbar.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/btec.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/vendor/modernizr.custom.js"></script>
 	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="js/vendor/skrollr/skrollr.min.js"></script>
 	<script type="text/javascript" src="js/vendor/skrollr/skrollr.menu.min.js"></script>
@@ -18,6 +19,58 @@
 	<script type="text/javascript" src="js/vendor/perfect-scrollbar.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<!--[if IE 9]>
+<style type="text/css">
+#primary_nav_wrap
+{
+	font-family: 'Gill Sans';
+	font-weight: 300;
+	display:table;
+	border-collapse:collapse;
+	border:none;
+	position: relative;
+	z-index: 10;
+	margin-left: -200px;
+}
+
+#primary_nav_wrap ul
+{
+	float:none;
+	display:table-row;
+	text-align:center;
+	list-style:none;
+}
+
+#primary_nav_wrap ul a
+{
+	display:block;
+	font-size: 1.2vw;
+	color: #fff;
+}
+
+#primary_nav_wrap ul a .selected{
+	font-weight: 700;
+}
+
+#primary_nav_wrap ul li
+{
+	float:none;
+	display:table-cell;
+	margin:0;
+	margin-right: 4px;
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+	display:block;
+}
+
+.social{
+	float: right;
+}
+</style>
+<![endif]-->
+
 </head>
 <body>
 	<header>
@@ -25,7 +78,7 @@
 			<a id="logo" href="#"><img src="./img/logo.png" title="Born to be TEC" /></a>
 			
 		</figure>
-		<nav>
+		<!--nav>
 			<ul>
 				<li><a
 					data-0="font-weight:700"
@@ -64,6 +117,28 @@
 					data-400p="font-weight:500"
 					data-500p="font-weight:700"
 					data-menu-top="500p" href="#faq">FAQ's</a>
+				</li>
+			</ul>
+		</nav-->
+		<nav id="primary_nav_wrap">
+			<ul>
+				<li>
+					<a data-0="font-weight:700" data-100p="font-weight:500" data-menu-top="0" href="#be_tec">BTEC</a>
+				</li>
+				<li>
+					<a data-0="font-weight:500" data-100p="font-weight:700" data-200p="font-weight:500" data-menu-top="100p" href="#actividades">Actividades</a>
+				</li>
+				<li>
+					<a data-100p="font-weight:500" data-200p="font-weight:700" data-300p="font-weight:500" data-menu-top="200p" href="#agenda">Agenda</a>
+				</li>
+				<li>
+					<a  data-200p="font-weight:500" data-300p="font-weight:700" data-400p="font-weight:500" data-menu-top="300p" href="#sede">Sede</a>
+				</li>
+				<li>
+					<a  data-300p="font-weight:500" data-400p="font-weight:700" data-500p="font-weight:500" data-menu-top="400p" href="#registrate">Regístrate</a>
+				</li>
+				<li>
+					<a data-400p="font-weight:500" data-500p="font-weight:700" data-menu-top="500p" href="#faq">FAQ's</a>
 				</li>
 			</ul>
 		</nav>
@@ -728,21 +803,21 @@
 					</div>
 					<div class="step-area residencia">
 						<p class="info">
-							TU RESIDENCIA
+							¿DONDE ESTUDIAS?
 							<img class="lapiz"src="./img/ubi.png">
 						</p>
 						<div class="step-data">
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="estado" id="estado" class="option" onchange="estadoCity(this,'ciudadMX')">
-									<option value=''>Estado de residencia*</option>
+									<option value=''>Estado donde estudio*</option>
 									<?php echo selectEstados(); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="ciudad" id="ciudadMX" class="option" onchange="citySchool(this,'prepaMX')">
-									<option value=''>Ciudad de residencia*</option>
+									<option value=''>Ciudad donde estudio*</option>
 								</select>
 							</label>
 						</div>
@@ -875,7 +950,7 @@
 						<div class="step-data">
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
-								<select name="carrera1" id="carrera1" class="option">
+								<select name="carrera1" id="carrera1" class="option" requerid>
 									<option value="">Elige una carrera*</option>
 									<?php echo selectCarreras(); ?>
 								</select>
@@ -883,14 +958,14 @@
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera2" id="carrera2" class="option">
-									<option value="">Elige una carrera*</option>
+									<option value="">Elige una carrera</option>
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="carrera3" id="carrera3" class="option">
-									<option value="">Elige una carrera*</option>
+									<option value="">Elige una carrera</option>
 									<?php echo selectCarreras(); ?>
 								</select>
 							</label>
@@ -921,26 +996,26 @@
 							<img class="lapiz"src="./img/ecualizador.png">
 						</p>
 						<div class="step-data">
-							<p>Elige las tres actividades a las que quieres asistir el viernes.</p>
+							<p>Elige las tres actividades a las que quieres asistir el viernes,<br><span class="instrucciones">ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</span></p></p>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt1" id="vopt1" class="option">
 									<option value="">Elige tu actividad de 16:30 a 17:20 horas*</option>
-									<?php echo selectTalleresV(); ?>
+									<?php echo selectTalleresV(1); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt2" id="vopt2" class="option">
 									<option value="">Elige tu actividad de 17:40 a 18:30 horas*</option>
-									<?php echo selectTalleresV(); ?>
+									<?php echo selectTalleresV(0); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt3" id="vopt3" class="option">
 									<option value="">Elige tu actividad de 18:40 a 19:30 horas*</option>
-									<?php echo selectTalleresV(); ?>
+									<?php echo selectTalleresV(0); ?>
 								</select>
 							</label>
 						</div>
@@ -952,7 +1027,7 @@
 							<img class="lapiz"src="./img/ecualizador.png">
 						</p>
 						<div class="step-data">
-							<p>Elige los dos talleres que quieres asistir el sábado.</p>
+							<p>Elige los dos talleres que quieres asistir el sábado,<br><span class="instrucciones">ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</span></p></p>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="sopt1" id="sopt1" class="option">
