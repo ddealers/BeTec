@@ -144,7 +144,7 @@
 				</div>
 				<div class="days">
 					<div class="day">
-						<table class="responsive jueves">
+						<table class="jueves">
 							<tr>
 								<td class="act">ACTIVIDADES</td>
 								<td class="hr" colspan="2">3<span>pm</span></td>
@@ -203,7 +203,7 @@
 						</div>
 					</div>
 					<div class="day">
-						<table class="responsive viernes">
+						<table class="viernes">
 							<tr>
 								<td class="act">ACTIVIDADES</td>
 								<td class="hr" colspan="2">9<span>AM</span></td>
@@ -424,7 +424,7 @@
 					</div>
 					<div class="day">
 <!-- ============================== table  PARTE SÁBADO-->
-						<table class="responsive sabado">
+						<table class="sabado">
 							<tr>
 								<td class="act">ACTIVIDADES</td>
 								<td class="hr" colspan="2">9<span>AM</span></td>
