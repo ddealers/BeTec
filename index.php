@@ -26,7 +26,6 @@
 	font-family: 'Gill Sans';
 	font-weight: 300;
 	display:table;
-	width:100%;
 	border-collapse:collapse;
 	border:none;
 	position: relative;
@@ -51,17 +50,22 @@
 #primary_nav_wrap ul a .selected{
 	font-weight: 700;
 }
+
 #primary_nav_wrap ul li
 {
 	float:none;
 	display:table-cell;
 	margin:0;
-	margin-right: 3vw;
+	margin-right: 1px;
 }
 
 #primary_nav_wrap ul li:hover > ul
 {
 	display:block;
+}
+
+.social{
+	float: right;
 }
 </style>
 <![endif]-->
