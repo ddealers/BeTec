@@ -19,6 +19,76 @@
 	<script type="text/javascript" src="js/vendor/perfect-scrollbar.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenMax.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<!--[if IE 9]>
+<style type="text/css">
+#primary_nav_wrap
+{
+	display:table;
+	width:100%;
+	border-collapse:collapse;
+	border:none;
+	position: relative;
+	z-index: 10;
+}
+
+#primary_nav_wrap ul
+{
+	float:none;
+	display:table-row;
+	text-align:center;
+	list-style:none;
+}
+
+#primary_nav_wrap ul a
+{
+	display:block;
+}
+
+#primary_nav_wrap ul li
+{
+	float:none;
+	display:table-cell;
+	margin:0;
+}
+
+#primary_nav_wrap ul ul
+{
+	display:none;
+	border:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	text-align:left;
+	padding:0;
+	width:auto;
+}
+
+#primary_nav_wrap ul ul li
+{
+	position:relative;
+	float:none;
+	display:block;
+}
+
+#primary_nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px;
+}
+
+#primary_nav_wrap ul ul ul
+{
+	top:0;
+	left:100%;
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+	display:block;
+}
+</style>
+<![endif]-->
+
 </head>
 <body>
 	<header>
@@ -26,7 +96,7 @@
 			<a id="logo" href="#"><img src="./img/logo.png" title="Born to be TEC" /></a>
 			
 		</figure>
-		<nav>
+		<!--nav>
 			<ul>
 				<li><a
 					data-0="font-weight:700"
@@ -65,6 +135,28 @@
 					data-400p="font-weight:500"
 					data-500p="font-weight:700"
 					data-menu-top="500p" href="#faq">FAQ's</a>
+				</li>
+			</ul>
+		</nav-->
+		<nav id="primary_nav_wrap">
+			<ul>
+				<li>
+					<a data-0="font-weight:700" data-100p="font-weight:500" data-menu-top="0" href="#be_tec">BTEC</a>
+				</li>
+				<li>
+					<a data-0="font-weight:500" data-100p="font-weight:700" data-200p="font-weight:500" data-menu-top="100p" href="#actividades">Actividades</a>
+				</li>
+				<li>
+					<a data-100p="font-weight:500" data-200p="font-weight:700" data-300p="font-weight:500" data-menu-top="200p" href="#agenda">Agenda</a>
+				</li>
+				<li>
+					<a  data-200p="font-weight:500" data-300p="font-weight:700" data-400p="font-weight:500" data-menu-top="300p" href="#sede">Sede</a>
+				</li>
+				<li>
+					<a  data-300p="font-weight:500" data-400p="font-weight:700" data-500p="font-weight:500" data-menu-top="400p" href="#registrate">Regístrate</a>
+				</li>
+				<li>
+					<a data-400p="font-weight:500" data-500p="font-weight:700" data-menu-top="500p" href="#faq">FAQ's</a>
 				</li>
 			</ul>
 		</nav>
