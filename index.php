@@ -94,6 +94,11 @@
 	margin-right: 100px!important;
 	margin-top: -45px!important;
 }
+
+.step-area{
+	float:left!important;
+	margin-left:130px!important;
+}
 </style>
 <![endif]-->
 	<header>
