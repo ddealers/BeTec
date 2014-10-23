@@ -43,13 +43,13 @@ $campus_escuela = utf8_decode($_POST['campus_escuela']);
 
 $state	 = $_POST['state'];
 $city	 = $_POST['city'];
-$prep	 = $_POST['prep'];
+$prep	 = ($_POST['prep'] != '#') ? $_POST['prep'] : '0';
 $grad	 = $_POST['grad'];
 
 $hotel	 = $_POST['hotel'];
 $solo	 = $_POST['solo'];
 
-$nombreprepa = ($_POST['nombreprepa'] != '') ? $_POST['nombreprepa'] : '#' ;
+$nombreprepa = ($_POST['nomprepa'] != '') ? $_POST['nomprepa'] : '#';
 
 $pare	 = $_POST['pare'];
 $namep = ($_POST['namep'] != '') ? $_POST['namep'] : '9' ;
@@ -76,7 +76,7 @@ if($qma){
 	if($qma->num_rows > 0){
 		$response = 'badMail';
 	}else{
-		$q = "INSERT INTO usuarios VALUES(NULL, $genero, '$nombre', '$cumple', '$email', '$numero', '$cel', '$state', '$city', '$prep', '$grad', '$hotel', '$solo', '$evento', '$subeDocs',  CURRENT_TIMESTAMP, '$nombreprepa' )";
+		$q = "INSERT INTO usuarios VALUES(NULL, $genero, '$nombre', '$cumple', '$email', '$numero', '$cel', '$state', '$city', '$prep', '$grad', '$hotel', '$solo', '$evento', '$subeDocs',  CURRENT_TIMESTAMP)";
 
 		$v = $mysqli->query($q);
 
@@ -115,6 +115,8 @@ if($qma){
 				$qd = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '#', '#', '$subeDocs')";
 				$vd = $mysqli->query($qd);
 			}
+			$qpr = "INSERT INTO usuarios_prepa VALUES ($idu, '$nombreprepa')";
+			$vpr = $mysqli->query($qpr);
 
 			$qi = "INSERT INTO usuarios_info VALUES($idu, $campus, '$campus_escuela')";
 			$vi = $mysqli->query($qi);

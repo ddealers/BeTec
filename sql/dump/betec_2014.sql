@@ -6919,6 +6919,15 @@ VALUES
 /*!40000 ALTER TABLE `talleres` ENABLE KEYS */;
 UNLOCK TABLES;
 
+# Volcado de tabla usuarios_prepa
+# ------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `usuarios_prepa` (
+  `id_usuario` int(11) NOT NULL,
+  `nombre_prepa` varchar(250) NOT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

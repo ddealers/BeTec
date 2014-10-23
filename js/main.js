@@ -119,6 +119,7 @@ $(document).ready(function () {
 		$('#campus_escuela').hide();
 		$('#parentesco-cont').hide();
 		$('#nomcomp').hide();
+		$("#nomprepa").hide();
 		$('.bool-choose .option').removeClass('activo');
 		$('.bool-choose .option').addClass('noActivo');
 		$('.bool-chooser .option').removeClass('activo');
@@ -359,10 +360,10 @@ $(document).ready(function () {
 		carrerasList.carrera3 = $(this).val();
 		updateLists(carrerasList, ['carrera1', 'carrera2']);
 	});
-	/*$('#vopt1').on('change', function(){
+	$('#vopt1').on('change', function(){
 		viernesList.vopt1 = $(this).val();
 		updateLists(viernesList, ['vopt2', 'vopt3']);
-	});*/
+	});
 	$('#vopt2').on('change', function(){
 		viernesList.vopt2 = $(this).val();
 		updateLists(viernesList, ['vopt1', 'vopt3']);

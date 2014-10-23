@@ -46,7 +46,6 @@ CREATE TABLE `usuarios` (
   `id_medio` int(11) NOT NULL,
   `documentos` char(1) CHARACTER SET utf8 DEFAULT '0',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `otra_prepa` varchar(150) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -66,8 +65,6 @@ CREATE TABLE `usuarios_documentos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-
 # Volcado de tabla usuarios_info
 # ------------------------------------------------------------
 
@@ -78,4 +75,13 @@ CREATE TABLE `usuarios_info` (
   `moneterrey` tinyint(1) DEFAULT '0',
   `campus` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+# Volcado de tabla usuarios_prepa
+# ------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `usuarios_prepa` (
+  `id_usuario` int(11) NOT NULL,
+  `nombre_prepa` varchar(250) NOT NULL,
+  PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
