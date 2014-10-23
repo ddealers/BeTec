@@ -101,7 +101,7 @@ fclose( $fp );
 			$this->Image('./img/impresora.png',77,12,6);
 			$this->SetFont('Arial','',8);
 			$this->Cell(80);
-			$this->Cell(30,10,'imprimir y traer el dia del evento',0,0,'C');
+			$this->Cell(30,10,'Imprimir y traer el día del evento',0,0,'C');
 			$this->Ln(10);
 
 			$this->SetLineWidth(0.5);
@@ -199,7 +199,7 @@ fclose( $fp );
 			$this->Cell(0,0,'Lugar:',0,0,'C');
 			$this->SetY(68);
 			$this->SetX(-210);
-			$this->Cell(0,0,utf8_decode('Talleres de Sábado:'),0,0,'C');
+			$this->Cell(0,0,utf8_decode('Talleres del Sábado:'),0,0,'C');
 			$this->SetY(90);
 			$this->SetX(-208);
 			$this->Cell(179,10,'Fecha:',0,0,'C');
@@ -235,16 +235,16 @@ fclose( $fp );
 			$this->SetY(99);
 			$this->SetX(-326);
 			$this->SetFont('Arial','',7);
-			$this->Cell(0,0, utf8_decode('-Centro Estudiantil de Tecnológico de'), 0,0,'C');
+			$this->Cell(0,0, utf8_decode('-Centro Estudiantil del Tecnológico de'), 0,0,'C');
 			$this->Ln(3);
 			$this->Cell(56,0, 'Monterrey, Campus Monterrey.', 0,0,'C');
 				//Fecha
 			$this->SetY(99);
 			$this->SetX(-200);
 			$this->SetFont('Arial','',7);
-			$this->Cell(0,0, '- 21 de noviembre (14:30 horas)', 0,0,'C');
+			$this->Cell(0,0, '- 21 de Noviembre (14:30 horas)', 0,0,'C');
 			$this->Ln(3);
-			$this->Cell(190,0, '- 22 de noviembre (09:00 horas)', 0,0,'C');
+			$this->Cell(190,0, '- 22 de Noviembre (09:00 horas)', 0,0,'C');
 
 				//Talleres Sabado
 			$this->SetFont('Arial','B',8);
@@ -321,7 +321,7 @@ fclose( $fp );
 			$this->Ln(20);
 			$this->Cell(50,0,'Taller de 17:40 - 18:30',0,0,'C');
 			$this->Ln(20);
-			$this->Cell(80,0,'Cierre primer dia / Cena de 19:40 - 21:00',0,0,'C');
+			$this->Cell(80,0,'Cierre primer día / Cena de 19:40 - 21:00',0,0,'C');
 			
 			$this->SetY(154);
 			$this->SetX(20);
@@ -339,7 +339,7 @@ fclose( $fp );
 			$this->SetX(-201);
 			$this->SetTextColor(207,207,207);
 			$this->SetFont('Arial','B',17);
-			$this->Cell(85,30,'SABADO',0,0,'C');
+			$this->Cell(85,30,'SÁBADO',0,0,'C');
 			$this->Ln(30);
 			$this->SetFont('Arial','B',10);
 			$this->Cell(50,0,'Taller de 09:00 - 11:30',0,0,'C');
