@@ -482,7 +482,7 @@ section
 		display none
 		background #f9f9f9
 		article
-			top 15vh
+			top 13vw
 			left 20vw
 			size 65% 60%
 			h1.registro
@@ -498,7 +498,9 @@ section
 				color #9d9d9d
 				margin-bottom  1vh
 				font-size: 12px;
-				padding-left: 11px;
+				//padding-left: 11px;
+				&.elige
+					padding-left 1vw
 				span.instrucciones
 					font-weight bold
 					font-size 10px
@@ -624,6 +626,10 @@ section
 								width 100%
 							select
 								width 100%
+							input
+								display none
+								margin-left 3%
+								width 88%
 						&.compania
 							label
 								width 11vw
@@ -637,6 +643,8 @@ section
 								display none
 								width 45%
 						&.viernes
+							.info
+								width 15vw
 							width 30vw
 							label
 								width 100%
@@ -644,6 +652,8 @@ section
 									font-size 0.8vw
 									width 100%
 						&.sabado
+							.info
+								width 15vw
 							width 30vw
 							margin-left 1vw
 							margin-top 1vw
@@ -661,6 +671,9 @@ section
 							.info
 								width 15vw
 						&.acepto
+							.info
+								label
+									display block
 							.step-data
 								font-size 0.8vw
 								color #333

@@ -186,12 +186,20 @@ $(document).ready(function () {
 			var city  = $("#ciudadMX").val();
 			form_data.city = city;
 			var prep  = $("#prepaMX").val();
+			var nomprepa = $("#nomprepa").val();
 			form_data.prep = prep;
+			form_data.nomprepa = nomprepa;
 			var grad  = $("#gradua").val();
 			form_data.grad = grad;
 
 			if(email != '' 
 				&& lada != '' && tel != ''  && cel != ''  && state != '' && city != ''  && prep != '' && grad != ''){
+				if(prep == '#'){
+					if(nomprepa == ''){
+						alert("Todos los datos son requeridos, revisa cual es el campo que te falta completar.");
+						return;
+					}
+				}
 				var numero = lada + tel;
 				form_data.numero = numero;
 				index_form++;
@@ -513,7 +521,6 @@ function estadoCity(s,id){
 			}
 		},
 		error: function(){
-			console.log(response);
 			alert('Algo salio mal, selecciona tu estado de nuevo.');
 		}
 	});
@@ -528,12 +535,17 @@ function citySchool(s,id){
 		data: {opc:opc, idc:idc},
 		success: function(response){
 			if(id != undefined){
+				$("#nomprepa").hide();
 				$("#"+id).html(response);
+				$('#'+id).on('change', function(e){
+					if($(this).val() == '#'){
+						$("#nomprepa").show();	
+					}
+				});
 			}
 		},
 		error: function(){
-			console.log(response);
-			alert('Algo salio mal, selecciona tu estado de nuevo.');
+			alert('Algo salio mal, selecciona tu ciudad de nuevo.');
 		}
 	});
 }

@@ -790,7 +790,7 @@
 					</div>
 					<div class="step-area residencia">
 						<p class="info">
-							¿DONDE ESTUDIAS?
+							¿DÓNDE ESTUDIAS?
 							<img class="lapiz"src="./img/ubi.png">
 						</p>
 						<div class="step-data">
@@ -818,9 +818,10 @@
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="prepa" class="option" id="prepaMX">
-									<option value=''>Prepa donde estudias*</option>
+									<option value=''>Prepa donde estudio*</option>
 								</select>
 							</label>
+							<input type="text" placeholder="Nombre de la prepa*" name="nomprepa" id="nomprepa">
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="gradua" id="gradua" class="option inputPrepa">
@@ -983,7 +984,7 @@
 							<img class="lapiz"src="./img/ecualizador.png">
 						</p>
 						<div class="step-data">
-							<p>Elige las tres actividades a las que quieres asistir el viernes,<br><span class="instrucciones">ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</span></p></p>
+							<p class="elige">Elige las tres actividades a las que quieres asistir el viernes,<br><span class="instrucciones">ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</span></p></p>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt1" id="vopt1" class="option">
@@ -1014,7 +1015,7 @@
 							<img class="lapiz"src="./img/ecualizador.png">
 						</p>
 						<div class="step-data">
-							<p>Elige los dos talleres que quieres asistir el sábado,<br><span class="instrucciones">ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</span></p></p>
+							<p class="elige">Elige los dos talleres que quieres asistir el sábado,<br><span class="instrucciones">ASEGÚRATE DE ELEGIR CORRECTAMENTE PORQUE NO EXISTIRÁN CAMBIOS.</span></p></p>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="sopt1" id="sopt1" class="option">
@@ -1037,11 +1038,11 @@
 					</div>
 					<div class="step-area acepto">
 						<p class="info">
+							<label><input type="checkbox" id="acepto"></label>
 							ACEPTO
 						</p>
 						<div class="step-data">
 							El Instituto Tecnológico y de Estudios Superiores de Monterrey, con domicilio en Av. Eugenio Garza Sada #2501 Sur, Col. Tecnológico, en la ciudad de Monterrey, N.L., utilizará sus datos personales aquí recabados para fines de seguimiento y promoción de eventos exclusivos del Tecnológico de Monterrey, así como para dar seguimiento al proceso de admisión e inscripción a cualquiera de los campus o sedes del Tecnológico de Monterrey. Para mayor información acerca del tratamiento y de los derechos que puede ejercer, por favor acceder al Aviso de Privacidad completo en la página hospedada en la siguiente dirección electrónica: www.itesm.edu.  Acepto y autorizo que el Instituto Tecnológico y de Estudios Superiores de Monterrey utilice la información aquí proporcionada para los fines anteriormente señalados. Si desea eliminar su registro de nuestra base de datos, favor de enviar un correo con la palabra BAJA a la dirección: siem@servicios.itesm.mx
-							<label>Acepto los Términos y Condiciones<input type="checkbox" id="acepto"></label>
 						</div>
 					</div>
 				</div>
