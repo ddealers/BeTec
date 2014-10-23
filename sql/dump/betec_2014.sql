@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# Versión 4096
+# VersiÃ³n 4096
 #
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
 # Host: 127.0.0.1 (MySQL 5.6.19)
 # Base de datos: btec
-# Tiempo de Generación: 2014-10-23 05:43:18 p.m. +0000
+# Tiempo de GeneraciÃ³n: 2014-10-23 06:58:26 p.m. +0000
 # ************************************************************
 
 
@@ -2555,7 +2555,8 @@ VALUES
 	(2454,32,'055','Villanueva','VIVA'),
 	(2455,32,'056','Zacatecas','ZAAS'),
 	(2456,32,'057','Trancoso','TRSO'),
-	(2457,32,'058','Santa Mar&iacute;a de la Paz','SAMP');
+	(2457,32,'058','Santa Mar&iacute;a de la Paz','SAMP'),
+	(2458,33,'001','OTROS','Otr');
 
 /*!40000 ALTER TABLE `ciudades` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2609,7 +2610,8 @@ VALUES
 	(29,'29','Tlaxcala','Tlax.'),
 	(30,'30','Veracruz de Ignacio de la Llave','Ver.'),
 	(31,'31','Yucat&aacute;n','Yuc.'),
-	(32,'32','Zacatecas','Zac.');
+	(32,'32','Zacatecas','Zac.'),
+	(33,'33','OTROS','Otr');
 
 /*!40000 ALTER TABLE `estados` ENABLE KEYS */;
 UNLOCK TABLES;
