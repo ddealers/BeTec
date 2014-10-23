@@ -391,7 +391,7 @@ if($qma){
 
 //Si todo bien, envía mails
 		if($response){
-			if($hotel == '0' && $city == '986'){
+			if($hotel == '' && $city == '986'){
 				$data = '';
 				$q = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
 				$v = $mysqli->query($q);
