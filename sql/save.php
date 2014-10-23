@@ -49,6 +49,7 @@ $grad	 = $_POST['grad'];
 $hotel	 = $_POST['hotel'];
 $solo	 = $_POST['solo'];
 
+$nombreprepa = ($_POST['nombreprepa'] != '') ? $_POST['nombreprepa'] : '#' ;
 
 $pare	 = $_POST['pare'];
 $namep = ($_POST['namep'] != '') ? $_POST['namep'] : '9' ;
@@ -75,7 +76,7 @@ if($qma){
 	if($qma->num_rows > 0){
 		$response = 'badMail';
 	}else{
-		$q = "INSERT INTO usuarios VALUES(NULL, $genero, '$nombre', '$cumple', '$email', '$numero', '$cel', '$state', '$city', '$prep', '$grad', '$hotel', '$solo', '$evento', '$subeDocs',  CURRENT_TIMESTAMP )";
+		$q = "INSERT INTO usuarios VALUES(NULL, $genero, '$nombre', '$cumple', '$email', '$numero', '$cel', '$state', '$city', '$prep', '$grad', '$hotel', '$solo', '$evento', '$subeDocs',  CURRENT_TIMESTAMP, '$nombreprepa' )";
 
 		$v = $mysqli->query($q);
 
