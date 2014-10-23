@@ -14,7 +14,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	if(isset($_FILES['carta']) && $_FILES['carta'] != NULL){
 		$uname = str_replace(' ', '', $_FILES['carta']['name']);
 		$name0 = $hora . $uname;
-		$mime = mime_content_type($_FILES['carta']['tmp_name']);
+		//$mime = mime_content_type($_FILES['carta']['tmp_name']);
 		//if($mime == 'image/png' || $mime == 'image/jpeg' || $mime == 'application/pdf'){
 			$mv0 = move_uploaded_file($_FILES['carta']['tmp_name'], $ruta.$name0);
 
@@ -30,7 +30,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	if(isset($_FILES['banco']) && $_FILES['banco'] != NULL){
 		$uname1 = str_replace(' ', '', $_FILES['banco']['name']);
 		$name1 = $hora . $uname1;
-		$mime = mime_content_type($_FILES['carta']['tmp_name']);
+		//$mime = mime_content_type($_FILES['carta']['tmp_name']);
 		//if($mime == 'image/png' || $mime == 'image/jpeg' || $mime == 'application/pdf'){
 			$mv1 = move_uploaded_file($_FILES['banco']['tmp_name'], $ruta.$name1);
 

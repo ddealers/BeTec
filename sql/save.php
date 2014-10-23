@@ -391,13 +391,7 @@ if($qma){
 
 //Si todo bien, envía mails
 		if($response){
-			if($hotel == '0'){
-				mail($email, 'Completa tu registro', $mail_FB, $cabeceras);
-				$datass['mail'] = 'FB';
-			}elseif ($hotel == '1') {
-				mail($email, 'Completa tu registro', $mail_FA, $cabeceras);
-				$datass['mail'] = 'FA';
-			}elseif($hotel == '0' && $city == '986'){
+			if($hotel == '0' && $city == '986'){
 				$data = '';
 				$q = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
 				$v = $mysqli->query($q);
@@ -411,7 +405,7 @@ if($qma){
 						$num = $i + 1;
 						$data .= "<li>" .$num.")". $info[$i]['nombre'] ." <e class='lista_link'>".$day."</e></li>";
 					}
-					$mail = "
+					$mailL = "
 					<!DOCTYPE html>
 					<html lang='es'>
 					<head>
@@ -542,8 +536,14 @@ if($qma){
 					</html>
 					";
 				}
-				mail($email, 'Registro Completo', $mail, $cabeceras);
+				mail($email, 'Registro Completo', $mailL, $cabeceras);
 				$datass['mail'] = 'Normal';
+			}elseif($hotel == '0'){
+				mail($email, 'Completa tu registro', $mail_FB, $cabeceras);
+				$datass['mail'] = 'FB';
+			}elseif($hotel == '1') {
+				mail($email, 'Completa tu registro', $mail_FA, $cabeceras);
+				$datass['mail'] = 'FA';
 			}
 		}
 	}
