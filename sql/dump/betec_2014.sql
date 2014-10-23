@@ -6870,8 +6870,8 @@ VALUES
 	(1,1,0,'Taller de Liderazgo',30,30),
 	(2,1,0,'Plática de Programas Internacionales',30,30),
 	(3,1,0,'Plática de Asuntos Estudiantiles',30,30),
-	(4,1,0,'Feria de Carreras',30,30),
-	(5,1,0,'Tour por el Campus',30,30),
+	(4,1,1,'Feria de Carreras',30,30),
+	(5,1,1,'Tour por el Campus',30,30),
 	(6,2,0,'Taller de Administración y Estrategia de Negocios (LAE)',40,40),
 	(7,2,0,'Taller de Contaduría Pública y Finanzas (LCPF)',40,40),
 	(8,2,0,'Taller de  Administración Financiera (LAF)',40,40),
@@ -6912,9 +6912,7 @@ VALUES
 	(43,2,0,'Taller de Nutrición y Bienestar Integral (LNB)',20,20),
 	(44,2,0,'Taller de Médico Cirujano Odontólogo (MO)',30,30),
 	(45,2,0,'Taller de Psicología Clínica y de la Salud (LPS)',30,30),
-	(46,1,1,'Plática \"No tengo idea\"',30,30),
-	(47,1,1,'Feria de Carreras',30,30),
-	(48,1,1,'Tour por el campus',30,30);
+	(46,1,1,'Plática \"No tengo idea\"',30,30);
 
 /*!40000 ALTER TABLE `talleres` ENABLE KEYS */;
 UNLOCK TABLES;

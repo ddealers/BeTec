@@ -22,7 +22,7 @@ function encriptarURL($string, $key){
 
 $ur = encriptarURL($_POST['email'], $key);
 $url = "http://$_SERVER[HTTP_HOST]/documentacion.php?s=".$ur;
-
+$boleto = "http://$_SERVER[HTTP_HOST]/boleto.php?s=".$ur;
 
 $genero = ($_POST['genero'] != '') ? $_POST['genero'] : 0 ;
 
@@ -515,7 +515,7 @@ if($qma){
 						<h3 style='line-height: 1px;'>Tu reservación para BORN TO BE TEC está completa.</h3>
 						<span style='color:#cfcfcf; font-size:0.7em; text-align:center; margin-left: 55px;'>(Tecnológico de Monterrey, Campus Monterrey - 21 y 22 de noviembre de 2014)</span>
 						<p>
-						Encontrarás tu boleto en un <strong>PDF</strong> al final de este mail, <strong style='text-transform:uppercase;'>Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
+						Encontrarás tu boleto en <a href='".$boleto."'>".$boleto."</a><strong style='text-transform:uppercase;'>Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
 						<span>
 						<strong>Fecha de reservación: </strong> ".strftime('%d de %B del %Y')."<br />
 						<strong>Nombre: </strong> ".$nombre."

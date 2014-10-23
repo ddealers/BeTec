@@ -15,7 +15,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		$uname = str_replace(' ', '', $_FILES['carta']['name']);
 		$name0 = $hora . $uname;
 		$mime = mime_content_type($_FILES['carta']['tmp_name']);
-		if($mime == 'image/png' || $mime == 'image/jpeg' || $mime == 'application/pdf'){
+		//if($mime == 'image/png' || $mime == 'image/jpeg' || $mime == 'application/pdf'){
 			$mv0 = move_uploaded_file($_FILES['carta']['tmp_name'], $ruta.$name0);
 
 			$q = "UPDATE usuarios_documentos SET url_permiso = '$name0' WHERE id_usuario = '$idu' ";
@@ -23,15 +23,15 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 			if($v){
 				$permiso = true;
 			}
-		}else{
-			$error = 'El formato del archivo es incorrecto, sólo puedes subir archivos PNG, JPG o PDF';
-		}
+		//}else{
+		//	$error = 'El formato del archivo es incorrecto, sólo puedes subir archivos PNG, JPG o PDF';
+		//}
 	}
 	if(isset($_FILES['banco']) && $_FILES['banco'] != NULL){
 		$uname1 = str_replace(' ', '', $_FILES['banco']['name']);
 		$name1 = $hora . $uname1;
 		$mime = mime_content_type($_FILES['carta']['tmp_name']);
-		if($mime == 'image/png' || $mime == 'image/jpeg' || $mime == 'application/pdf'){
+		//if($mime == 'image/png' || $mime == 'image/jpeg' || $mime == 'application/pdf'){
 			$mv1 = move_uploaded_file($_FILES['banco']['tmp_name'], $ruta.$name1);
 
 			$q = "UPDATE usuarios_documentos SET url_pago = '$name1' WHERE id_usuario = '$idu' ";
@@ -39,9 +39,9 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 			if($v){
 				$pago = true;
 			}
-		}else{
-			$error = 'El formato del archivo es incorrecto, sólo puedes subir archivos PNG, JPG o PDF';
-		}
+		//}else{
+		//	$error = 'El formato del archivo es incorrecto, sólo puedes subir archivos PNG, JPG o PDF';
+		//}
 	}
 	$q = "SELECT * FROM usuarios_documentos WHERE id_usuario = '$idu' ";
 	$v = $mysqli->query($q);
