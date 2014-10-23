@@ -8,6 +8,9 @@ require('pdf/fpdf.php');
 //require('barcode/Code128.php');
 
 $string = $_GET['s'];
+$key = $key = 'BornToBeTec321_';
+
+echo desencriptarURL($string, $key)
 
 /*$bcode = new emberlabs\Barcode\Code128();
 $bcode  = new Code128();
