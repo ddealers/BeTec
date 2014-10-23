@@ -733,7 +733,7 @@ section#be_tec p {
   background: #f9f9f9;
 }
 #registro article {
-  top: 15vh;
+  top: 13vw;
   left: 20vw;
   width: 65%;
   height: 60%;
@@ -753,7 +753,9 @@ section#be_tec p {
   color: #9d9d9d;
   margin-bottom: 1vh;
   font-size: 12px;
-  padding-left: 11px;
+}
+#registro article p.elige {
+  padding-left: 1vw;
 }
 #registro article p span.instrucciones {
   font-weight: bold;
@@ -928,6 +930,11 @@ section#be_tec p {
 #registro article form .step .step-area.prepa select {
   width: 100%;
 }
+#registro article form .step .step-area.prepa input {
+  display: none;
+  margin-left: 3%;
+  width: 88%;
+}
 #registro article form .step .step-area.compania label {
   width: 11vw;
   display: inline-block;
@@ -946,6 +953,9 @@ section#be_tec p {
 #registro article form .step .step-area.viernes {
   width: 30vw;
 }
+#registro article form .step .step-area.viernes .info {
+  width: 15vw;
+}
 #registro article form .step .step-area.viernes label {
   width: 100%;
 }
@@ -958,6 +968,9 @@ section#be_tec p {
   margin-left: 1vw;
   margin-top: 1vw;
   padding-bottom: 1vw;
+}
+#registro article form .step .step-area.sabado .info {
+  width: 15vw;
 }
 #registro article form .step .step-area.sabado label {
   width: 100%;
@@ -975,6 +988,9 @@ section#be_tec p {
 }
 #registro article form .step .step-area.evento .info {
   width: 15vw;
+}
+#registro article form .step .step-area.acepto .info label {
+  display: block;
 }
 #registro article form .step .step-area.acepto .step-data {
   font-size: 0.8vw;

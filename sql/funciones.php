@@ -19,7 +19,7 @@ if(isset($_GET['opc']) && $_GET['opc'] == 'encode'){
 if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 	$est = $_GET['est'];
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$prim = "<option value=''>Ciudad de residencia*</option>";
+	$prim = "<option value=''>Ciudad donde estudio*</option>";
 	if(isset($est) AND $est != NULL){
 		//$q = "SELECT id, nombre FROM ciudades WHERE estado_id = $est";
 		$q = "SELECT ciudades.id, ciudades.nombre FROM ciudades, preparatorias WHERE ciudades.id = preparatorias.id_ciudad AND ciudades.estado_id = $est GROUP BY ciudades.id ORDER BY ciudades.nombre";
@@ -36,8 +36,8 @@ if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 	
 	$idc = $_GET['idc'];
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$prim = "<option value=''>Prepa donde estudias*</option>";
-
+	$prim = "<option value=''>Prepa donde estudio*</option>";
+	$last = "<option value='#'>Otra</option>";
 	if(isset($idc) && $idc != NULL){
 		$q = "SELECT id, nombre FROM preparatorias WHERE id_ciudad = $idc ORDER BY nombre";
 		$v = $mysqli->query($q);
@@ -49,7 +49,7 @@ if(isset($_GET['opc']) && $_GET['opc'] == 'estadoCity'){
 			}
 		}
 	}
-		echo $prim . $listado;
+		echo $prim . $listado . $last;
 }
 function curPageName() {
  return substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
