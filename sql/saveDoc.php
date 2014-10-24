@@ -22,6 +22,8 @@ function desencriptarURL($string, $key){
 	}
 	return $result;
 }
+
+$boleto = "http://$_SERVER[HTTP_HOST]/boleto.php?s=".$s;
 $correo = desencriptarURL($s, $key);
 $mysqli = new mysqli(HOST,USR,PWD,DB);	
 
@@ -201,7 +203,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 				<h3 style='line-height: 1px;'>Tu reservación para BORN TO BE TEC está completa.</h3>
 				<span style='color:#cfcfcf; text-align:center;'>Tecnológico de Monterrey, Campus Monterrey - 21 y 22 de noviembre de 2014</span>
 				<p>
-				Encontrarás tu boleto en un <strong>PDF</strong> en el siguiente <a href='http://borntobetec.mty.itesm.mx/boleto.php?s=".$s."'>link</a>, <strong style='text-transform:uppercase;'>  Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
+				Encontrarás tu boleto en <a href='".$boleto."'>".$boleto."</a><strong style='text-transform:uppercase;'>  Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
 				<span>
 				<strong>Fecha de reservación: </strong> ".strftime('%d de %B del %Y')."<br />
 				<strong>Nombre: </strong> ".$name."
