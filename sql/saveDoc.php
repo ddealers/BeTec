@@ -98,6 +98,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 				$num = $i + 1;
 				$data .= "<li>" .$num.")". utf8_encode($info[$i]['nombre']) ." <e class='lista_link'>".$day."</e></li>";
 			}
+			setlocale(LC_ALL,"es_ES");
 			$mail = "
 			<!DOCTYPE html>
 			<html lang='es'>
