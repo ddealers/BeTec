@@ -217,7 +217,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 				</div>
 				<footer>
 				<p>
-				TECNOLÓGICO DE MONTERREY<br/>
+				<e style='font-size:0.9em;'>TECNOLÓGICO DE MONTERREY</e><br/>
 				Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
 				duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
 				escríbenos a <a href='mailto:btec.mty@servicios.itesm.mx'>btec.mty@servicios.itesm.mx</a>
