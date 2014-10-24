@@ -1058,7 +1058,7 @@
 		<article><!--CONTENIDO_REGISTRO_TERMINADO-->
 			<div class="registroT">
 				<h1>¡BIEN HECHO!</h1>
-				<h2>TU REGISTRO ESTÁ CASI COMPLETO.</h2>
+				<h2>TU REGISTRO ESTÁ COMPLETO.</h2>
 				<div class="response foraneoA">
 					<!--img src="./img/img.png"-->
 					<ol>

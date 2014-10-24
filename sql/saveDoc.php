@@ -96,7 +96,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 			for ($i=0; $i < 5 ; $i++) { 
 				$day = ($info[$i]['dia'] == '1') ? 'Viernes 21 Noviembre' : 'Sábado 22 Noviembre' ;
 				$num = $i + 1;
-				$data .= "<li>" .$num.")". $info[$i]['nombre'] ." <e class='lista_link'>".$day."</e></li>";
+				$data .= "<li>" .$num.")". utf8_encode($info[$i]['nombre']) ." <e class='lista_link'>".$day."</e></li>";
 			}
 			$mail = "
 			<!DOCTYPE html>

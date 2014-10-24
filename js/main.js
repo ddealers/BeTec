@@ -297,10 +297,13 @@ $(document).ready(function () {
 							$('.registroT .response').hide();
 							console.log(form_data.city, form_data.hotel);
 							if(form_data.city == 986){
+								$('.registroT h2').text('TU REGISTRO ESTÁ COMPLETO.');
 								$('.registroT .local').show();
 							}else if(form_data.hotel == 0){
+								$('.registroT h2').text('TU REGISTRO ESTÁ CASI COMPLETO.');
 								$('.registroT .foraneoB').show();
 							}else{
+								$('.registroT h2').text('TU REGISTRO ESTÁ CASI COMPLETO.');
 								$('.registroT .foraneoA').show();
 							}
 							$('#end').show();
