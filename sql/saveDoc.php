@@ -237,7 +237,6 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 				<p>
 				Encontrarás tu boleto en <a href='".$boleto."'>".$boleto."</a><strong style='text-transform:uppercase;'>  Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
 				<span>
-				<strong>Fecha de reservación: </strong> ".$today['mday']." de ".getMonth($today['mon'])." de ".$today['year']."<br />
 				<strong>Nombre: </strong> ".$name."
 				</span>
 				</p>
