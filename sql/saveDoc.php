@@ -1,6 +1,7 @@
 <?php
 require_once("../config.php");	
-require_once("funciones.php");	
+require("funciones.php");	
+
 //variales FORM
 $hora = date('YmdHms');
 $s = $_POST['string'];
@@ -11,8 +12,9 @@ $permiso = false;
 $pago = false;
 $res = false;
 
-$correo = desencriptarURL($s, $key)
-$mysqli = new mysqli(HOST,USR,PWD,DB);
+$correo = desencriptarURL($s, $key);
+$mysqli = new mysqli(HOST,USR,PWD,DB);	
+
 	//Mover
 	if(isset($_FILES['carta']) && $_FILES['carta'] != NULL){
 		$uname = str_replace(' ', '', $_FILES['carta']['name']);
@@ -61,8 +63,15 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	}
 	if($res){
 		$data = '';
-	$q = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
-	$v = $mysqli->query($q);
+		$qn = "SELECT nombre FROM usuarios WHERE id = $idu";
+		$r = $mysqli->query($qn);
+		if($r){
+			while ($rw = $r->fetch_assoc()) {
+				$name = $rw['nombre'];
+			}
+		}
+		$q = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
+		$v = $mysqli->query($q);
 	if($v){
 		while ($row = $v->fetch_assoc()) {
 			$info[] = $row;
@@ -180,7 +189,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 			Encontrarás tu boleto en un <strong>PDF</strong> al final de este mail, <strong style='text-transform:uppercase;'>Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
 			<span>
 			<strong>Fecha de reservación: </strong> ".strftime('%d de %B del %Y')."<br />
-			<strong>Nombre: </strong> ".$nombre."
+			<strong>Nombre: </strong> ".$name."
 			</span>
 			</p>
 			<br />
