@@ -2,12 +2,45 @@
 header('Content-Type: text/html; charset=utf-8');
 ini_set('display_errors', '0');
 setlocale(LC_ALL,"es_ES");
-require_once("../config.php");	
+require_once("../config.php");
+
+$today = getdate();	
 $mysqli = new mysqli(HOST,USR,PWD,DB);
 
 $response = 'false';
 
 $key = 'BornToBeTec321_';
+
+function getMonth($mnum){
+	switch ($mnum) {
+		case '1':
+			$m = 'Enero';
+			break;
+		case '2':
+			$m = 'Febrero';
+		case '3':
+			$m = 'Marzo';
+		case '4':
+			$m = 'Abril';
+		case '5':
+			$m = 'Mayo';
+		case '6':
+			$m = 'Junio';
+		case '7':
+			$m = 'Julio';
+		case '8':
+			$m = 'Agosto';
+		case '9':
+			$m = 'Septiembre';
+		case '10':
+			$m = 'Octubre';
+		case '11':
+			$m = 'Noviembre';
+		case '12':
+			$m = 'Diciembre';
+			break;
+	}
+}
 
 function encriptarURL($string, $key){
 	$result = '';
@@ -512,7 +545,7 @@ if($qma){
 						<p>
 						Encontrarás tu boleto en <a href='".$boleto."'>".$boleto."</a><strong style='text-transform:uppercase;'>  Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
 						<span>
-						<strong>Fecha de reservación: </strong> ".strftime('%d de %B de %Y')."<br />
+						<strong>Fecha de reservación: </strong> ".$today['mday']." de ".getMonth($today['mon'])." de ".$today['year']."<br />
 						<strong>Nombre: </strong> ".$nombre."
 						</span>
 						</p>

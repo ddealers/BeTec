@@ -1,6 +1,8 @@
 <?php
 require_once("../config.php");
 setlocale(LC_ALL,"es_ES");
+$today = getdate();
+
 //variales FORM
 $hora = date('YmdHms');
 $s = $_POST['string'];
@@ -10,6 +12,37 @@ $ruta = $_POST['ruta'];
 $permiso = false;
 $pago = false;
 $res = false;
+
+function getMonth($mnum){
+	switch ($mnum) {
+		case '1':
+			$m = 'Enero';
+			break;
+		case '2':
+			$m = 'Febrero';
+		case '3':
+			$m = 'Marzo';
+		case '4':
+			$m = 'Abril';
+		case '5':
+			$m = 'Mayo';
+		case '6':
+			$m = 'Junio';
+		case '7':
+			$m = 'Julio';
+		case '8':
+			$m = 'Agosto';
+		case '9':
+			$m = 'Septiembre';
+		case '10':
+			$m = 'Octubre';
+		case '11':
+			$m = 'Noviembre';
+		case '12':
+			$m = 'Diciembre';
+			break;
+	}
+}
 
 function desencriptarURL($string, $key){
 	$result = '';
@@ -204,7 +237,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 				<p>
 				Encontrarás tu boleto en <a href='".$boleto."'>".$boleto."</a><strong style='text-transform:uppercase;'>  Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
 				<span>
-				<strong>Fecha de reservación: </strong> ".strftime('%d de %B del %Y')."<br />
+				<strong>Fecha de reservación: </strong> ".$today['mday']." de ".getMonth($today['mon'])." de ".$today['year']."<br />
 				<strong>Nombre: </strong> ".$name."
 				</span>
 				</p>
