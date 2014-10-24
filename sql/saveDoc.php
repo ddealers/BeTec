@@ -1,7 +1,7 @@
 <?php
 require_once("../config.php");	
 require("funciones.php");	
-
+setlocale(LC_ALL,"es_ES");
 //variales FORM
 $hora = date('YmdHms');
 $s = $_POST['string'];
@@ -63,6 +63,10 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	}
 	if($res){
 		$data = '';
+		$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+		$cabeceras .= 'Content-type: text/html; charset=utf8' . "\r\n";
+		$cabeceras .= 'From: no-reply@servicios.itesm.mx' . "\r\n" . 'Reply-To: btec.mty@servicios.itesm.mx' . "\r\n";
+
 		$qn = "SELECT nombre FROM usuarios WHERE id = $idu";
 		$r = $mysqli->query($qn);
 		if($r){
@@ -72,148 +76,148 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		}
 		$q = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
 		$v = $mysqli->query($q);
-	if($v){
-		while ($row = $v->fetch_assoc()) {
-			$info[] = $row;
+		if($v){
+			while ($row = $v->fetch_assoc()) {
+				$info[] = $row;
+			}
+
+			for ($i=0; $i < 4 ; $i++) { 
+				$day = ($info[$i]['dia'] == '1') ? 'Viernes 21 Noviembre' : 'Sábado 22 Noviembre' ;
+				$num = $i + 1;
+				$data .= "<li>" .$num.")". $info[$i]['nombre'] ." <e class='lista_link'>".$day."</e></li>";
+			}
+			$mail = "
+			<!DOCTYPE html>
+			<html lang='es'>
+			<head>
+			<meta charset='UTF-8'>
+			<title>Mail</title>
+			</head>
+			<style type='text/css'>
+				a{
+					color: #00b7ff;
+				}
+				a:visited{
+					color: #00b7ff;
+				}
+				body{
+					font-family: 'Times New Roman', Times, serif;
+					font-size: 18px;
+					height: 100%;
+					width: 600px;
+				}
+				figure{
+					position: relative;
+					margin-left: 35%;
+					width: 147px;
+				}
+				img{
+					width: 100%;
+				}
+				h3{
+					text-align: center;
+					color: #424040;
+				}
+				p{
+					font-size: 0.8em;
+					text-align: justify;
+					padding-left: 10px;
+					padding-right: 30px;
+
+				}
+				p>strong{
+					color: #000;
+					font-size: 0.9em;
+				}
+				hr{
+					border: 0.5;
+					border-color: #000;
+				}
+				ul{
+					margin: 0;
+					padding: 0;
+					position: relative;
+					left: 8px;
+					list-style: none;
+					display: inline;
+					font-size: 0.8em;
+					line-height: 20px;
+
+				}
+				footer{
+					text-align: center;
+					font-size: 0.8em;
+					margin-left: 50px;
+					margin-right: 50px;
+				}
+				footer>h4{
+					margin-top: 20px;
+					margin-left: -15px;
+					margin-bottom: -1px;
+					line-height: 10px;
+					text-align: left;
+					font-size: 0.8em;
+
+				}
+				li{
+					border-width: 1px;
+					border-bottom: dashed;
+					border-color: #ccc;
+				}
+				li:last-child{
+					border-width: 0px;
+					border-bottom: none;
+				}
+				.aviso{
+					line-height: 1px;
+				}
+				.cuadro{
+					border-top: 10px solid #06ba4e;
+					background-color: #fff;
+					padding: 25px;
+				}
+				.lista_link{
+					position: relative;
+					float: right;
+					margin-right: 70px;
+				}
+			</style>
+			<body>
+				<div class='cuadro'>
+				<figure>
+				<img src='http://borntobetec.mty.itesm.mx/img/logo.png' />
+				</figure>
+				<h3 style='line-height: 1px;'>Tu reservación para BORN TO BE TEC está completa.</h3>
+				<span style='color:#cfcfcf; text-align:center;'>Tecnológico de Monterrey, Campus Monterrey - 21 y 22 de noviembre de 2014</span>
+				<p>
+				Encontrarás tu boleto en un <strong>PDF</strong> al final de este mail, <strong style='text-transform:uppercase;'>  Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
+				<span>
+				<strong>Fecha de reservación: </strong> ".strftime('%d de %B del %Y')."<br />
+				<strong>Nombre: </strong> ".$name."
+				</span>
+				</p>
+				<br />
+				<p class='aviso'>
+				<strong>Talleres elegidos <e style='float:right;'>Fecha de taller</e></strong>
+				<hr />
+				<ul>
+				".$data."
+				</ul>
+				</p>
+				</div>
+				<footer>
+				<p>
+				TECNOLÓGICO DE MONTERREY<br/>
+				Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
+				duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
+				escríbenos a <a href='mailto:btec.mty@servicios.itesm.mx'>btec.mty@servicios.itesm.mx</a>
+				</p>
+				</footer>
+			</body>
+			</html>
+			";
 		}
-
-		for ($i=0; $i < 4 ; $i++) { 
-			$day = ($info[$i]['dia'] == '1') ? 'Viernes 21 Noviembre' : 'Sábado 22 Noviembre' ;
-			$num = $i + 1;
-			$data .= "<li>" .$num.")". $info[$i]['nombre'] ." <e class='lista_link'>".$day."</e></li>";
-		}
-		$mail = "
-		<!DOCTYPE html>
-		<html lang='es'>
-		<head>
-		<meta charset='UTF-8'>
-		<title>Mail</title>
-		</head>
-		<style type='text/css'>
-			a{
-				color: #00b7ff;
-			}
-			a:visited{
-				color: #00b7ff;
-			}
-			body{
-				font-family: 'Times New Roman', Times, serif;
-				font-size: 18px;
-				height: 100%;
-				width: 600px;
-			}
-			figure{
-				position: relative;
-				margin-left: 35%;
-				width: 147px;
-			}
-			img{
-				width: 100%;
-			}
-			h3{
-				text-align: center;
-				color: #424040;
-			}
-			p{
-				font-size: 0.8em;
-				text-align: justify;
-				padding-left: 10px;
-				padding-right: 30px;
-
-			}
-			p>strong{
-				color: #000;
-				font-size: 0.9em;
-			}
-			hr{
-				border: 0.5;
-				border-color: #000;
-			}
-			ul{
-				margin: 0;
-				padding: 0;
-				position: relative;
-				left: 8px;
-				list-style: none;
-				display: inline;
-				font-size: 0.8em;
-				line-height: 20px;
-
-			}
-			footer{
-				text-align: center;
-				font-size: 0.8em;
-				margin-left: 50px;
-				margin-right: 50px;
-			}
-			footer>h4{
-				margin-top: 20px;
-				margin-left: -15px;
-				margin-bottom: -1px;
-				line-height: 10px;
-				text-align: left;
-				font-size: 0.8em;
-
-			}
-			li{
-				border-width: 1px;
-				border-bottom: dashed;
-				border-color: #ccc;
-			}
-			li:last-child{
-				border-width: 0px;
-				border-bottom: none;
-			}
-			.aviso{
-				line-height: 1px;
-			}
-			.cuadro{
-				border-top: 10px solid #06ba4e;
-				background-color: #fff;
-				padding: 25px;
-			}
-			.lista_link{
-				position: relative;
-				float: right;
-				margin-right: 70px;
-			}
-		</style>
-		<body>
-			<div class='cuadro'>
-			<figure>
-			<img src='http://borntobetec.mty.itesm.mx/img/logo.png' />
-			</figure>
-			<h3 style='line-height: 1px;'>Tu reservación para BORN TO BE TEC está completa.</h3>
-			<span style='color:#cfcfcf; font-size:0.7em; text-align:center; margin-left: 55px;'>(Tecnológico de Monterrey, Campus Monterrey - 21 y 22 de noviembre de 2014)</span>
-			<p>
-			Encontrarás tu boleto en un <strong>PDF</strong> al final de este mail, <strong style='text-transform:uppercase;'>Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
-			<span>
-			<strong>Fecha de reservación: </strong> ".strftime('%d de %B del %Y')."<br />
-			<strong>Nombre: </strong> ".$name."
-			</span>
-			</p>
-			<br />
-			<p class='aviso'>
-			<strong>Talleres elegidos <e style='float:right;'>Fecha de taller</e></strong>
-			<hr />
-			<ul>
-			".$data."
-			</ul>
-			</p>
-			</div>
-			<footer>
-			<h4>TECNOLÓGICO DE MONTERREY</h4>
-			<p>
-			Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
-			duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
-			escríbenos a <a href='mailto:btec.mty@servicios.itesm.mx'>btec.mty@servicios.itesm.mx</a>
-			</p>
-			</footer>
-		</body>
-		</html>
-		";
-	}
-	mail($correo, 'Registro Completo', $mail, $cabeceras);
+		mail($correo, 'Registro Completo', $mail, $cabeceras);
 		header("Location: ../boleto.php?s=$s");
 	}else{
 		header("Location: ../documentacion.php?s=$s");

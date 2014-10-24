@@ -251,8 +251,8 @@ if($qma){
 			</p>
 			</div>
 			<footer>
-			<h4>TECNOLÓGICO DE MONTERREY</h4>
 			<p>
+			TECNOLÓGICO DE MONTERREY<br/>
 			Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
 			duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
 			escríbenos a <a href='mailto:btec.mty@servicios.itesm.mx'>btec.mty@servicios.itesm.mx</a>
@@ -377,8 +377,8 @@ if($qma){
 			</p>
 			</div>
 			<footer>
-			<h4>TECNOLÓGICO DE MONTERREY</h4>
 			<p>
+			TECNOLÓGICO DE MONTERREY<br/>
 			Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
 			duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
 			escríbenos a <a href='mailto:btec.mty@servicios.itesm.mx'>btec.mty@servicios.itesm.mx</a>
@@ -405,7 +405,7 @@ if($qma){
 						$num = $i + 1;
 						$data .= "<li>" .$num.")". utf8_encode($info[$i]['nombre']) ." <e class='lista_link'>".$day."</e></li>";
 					}
-					$mailL = "
+					$mail = "
 					<!DOCTYPE html>
 					<html lang='es'>
 					<head>
@@ -507,9 +507,9 @@ if($qma){
 						<img src='http://borntobetec.mty.itesm.mx/img/logo.png' />
 						</figure>
 						<h3 style='line-height: 1px;'>Tu reservación para BORN TO BE TEC está completa.</h3>
-						<span style='color:#cfcfcf; font-size:0.7em; text-align:center; margin-left: 55px;'>(Tecnológico de Monterrey, Campus Monterrey - 21 y 22 de noviembre de 2014)</span>
+						<span style='color:#cfcfcf; text-align:center;'>Tecnológico de Monterrey, Campus Monterrey - 21 y 22 de noviembre de 2014</span>
 						<p>
-						Encontrarás tu boleto en <a href='".$boleto."'>".$boleto."</a><strong style='text-transform:uppercase;'>Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
+						Encontrarás tu boleto en <a href='".$boleto."'>".$boleto."</a><strong style='text-transform:uppercase;'>  Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
 						<span>
 						<strong>Fecha de reservación: </strong> ".strftime('%d de %B del %Y')."<br />
 						<strong>Nombre: </strong> ".$nombre."
@@ -525,18 +525,18 @@ if($qma){
 						</p>
 						</div>
 						<footer>
-						<h4>TECNOLÓGICO DE MONTERREY</h4>
-						<p>
-						Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
-						duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
-						escríbenos a <a href='mailto:btec.mty@servicios.itesm.mx'>btec.mty@servicios.itesm.mx</a>
-						</p>
+							<p>
+							TECNOLÓGICO DE MONTERREY<br/>
+							Av Eugenio Garza Sada 2501 Sur, Tecnológico, 64849 Monterrey, Nuevo León. Si tienes alguna
+							duda relacionada con el evento <i>Born To Be Tec</i> llámanos al 01 800 832 33 689 o al (81) 8158 2269,
+							escríbenos a <a href='mailto:btec.mty@servicios.itesm.mx'>btec.mty@servicios.itesm.mx</a>
+							</p>
 						</footer>
 					</body>
 					</html>
 					";
 				}
-				mail($email, 'Registro Completo', $mailL, $cabeceras);
+				mail($email, 'Registro Completo', $mail, $cabeceras);
 				$datass['mail'] = 'Normal';
 			}elseif($hotel == '0'){
 				mail($email, 'Completa tu registro', $mail_FB, $cabeceras);
