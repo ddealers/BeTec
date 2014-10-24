@@ -599,7 +599,7 @@
 			 		<p><span>¿Hay cupo limitado?</span><br />
 					Sí, Born To Be Tec se ha vuelto en un evento con mucha participación de chavos de todo el país, debido a la demanda contamos con cupo limitado por lo que te invitamos a que te registres lo antes posible y realices tu pago en caso de ser foráneo.</p>
 					<p><span>Si soy foráneo, ¿cuándo tengo que llegar a Monterrey?</span><br />
-					Te recomendamos llegar a Monterrey desde el 21 de noviembre para que te instales cómodamente, asistas a la Meet&Grill y al tour por la ciudad.</p>
+					Te recomendamos llegar a Monterrey desde el 20 de noviembre para que te instales cómodamente, asistas a la Meet&Grill y al tour por la ciudad.</p>
 					<p><span>¿Cuál es el costo del evento?</span><br />
 					Éste es un evento sin costo alguno.
 					</p>
@@ -621,7 +621,7 @@
 			 	</div>
 			  	<div class="column6">
 			  		<p><span>¿Qué tipos de pagos se aceptan?</span> <br />
-			  		Solo depósitos bancarios a través de BBVA Bancomer,  Banorte, HSBC, Santander y Banamex. Imprime este formato, deposita en la sucursal bancaria que prefieras con las referencias del formato y pide que agreguen tu nombre dentro de la referencia.
+			  		Solo depósitos bancarios a través de BBVA Bancomer,  Banorte, HSBC, Santander y Banamex. <a href="./download/Formato_CuentaBancaria.jpg">Imprime este formato</a>, deposita en la sucursal bancaria que prefieras con las referencias del formato y pide que agreguen tu nombre dentro de la referencia.
 			  		</p>
 			  		<p><span>Tengo dudas sobre el proceso de Admisión, ¿qué hago?</span><br />
 			  		Llámanos al 01 800 TEC DE MTY (01 800 832 33689) o al (81)81582269, también podrás escribir a <a href="mailto:admisiones.mty@itesm.mx">admisiones.mty@itesm.mx</a>
