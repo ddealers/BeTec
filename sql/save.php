@@ -403,7 +403,7 @@ if($qma){
 					for ($i=0; $i < 5; $i++) { 
 						$day = ($info[$i]['dia'] == '1') ? 'Viernes 21 Noviembre' : 'Sábado 22 Noviembre' ;
 						$num = $i + 1;
-						$data .= "<li>" .$num.")". utf8_encode($info[$i]['nombre']) ." <e class='lista_link'>".$day."</e></li>";
+						$data .= "<tr><td>" .$num.")". utf8_encode($info[$i]['nombre']) ."</td><td>".$day."</td></tr>";
 					}
 					setlocale(LC_ALL,"es_ES");
 					$mail = "
@@ -512,17 +512,19 @@ if($qma){
 						<p>
 						Encontrarás tu boleto en <a href='".$boleto."'>".$boleto."</a><strong style='text-transform:uppercase;'>  Imprímelo y Tráelo contigo el día del evento.</strong><br /><br />
 						<span>
-						<strong>Fecha de reservación: </strong> ".strftime('%d de %B del %Y')."<br />
+						<strong>Fecha de reservación: </strong> ".strftime('%d de %B de %Y')."<br />
 						<strong>Nombre: </strong> ".$nombre."
 						</span>
 						</p>
 						<br />
 						<p class='aviso'>
-						<strong>Talleres elegidos <e style='float:right;'>Fecha de taller</e></strong>
-						<hr />
-						<ul>
+						<table>
+						<tr>
+						<th>Talleres elegidos</th>
+						<th>Fecha de taller</th>
+						</tr>
 						".$data."
-						</ul>
+						</table>
 						</p>
 						</div>
 						<footer>
