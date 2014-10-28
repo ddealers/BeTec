@@ -102,9 +102,9 @@ function selectTalleresV($opc){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	if($opc == '1'){
 		//solo x campos
-		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND opc = 1";
+		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND opc = 1 AND libres > 0";
 	}else{
-		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND id <> 46";
+		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND id <> 46 AND libres > 0";
 	}
 	$v = $mysqli->query($q);
 
@@ -120,7 +120,7 @@ function selectTalleresV($opc){
 
 function selectTalleresS(){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$q = "SELECT id, nombre FROM talleres WHERE dia = 2 ";
+	$q = "SELECT id, nombre FROM talleres WHERE dia = 2 AND libres > 0";
 	$v = $mysqli->query($q);
 
 	if($v){
