@@ -84,8 +84,10 @@ $solo	 = $_POST['solo'];
 
 $nombreprepa = ($_POST['nomprepa'] != '') ? $_POST['nomprepa'] : '#';
 
-$pare	 = $_POST['pare'];
-$namep = ($_POST['namep'] != '') ? $_POST['namep'] : '9' ;
+
+/*Si va acompañador */
+$pare  = $_POST['pare']; //Parentesco 1 = Madre / 2 = Padre
+$namep = ($_POST['namep'] != '') ? $_POST['namep'] : '9' ; // Nombre Parentesco 
 
 $namep = utf8_decode($namep);
 
@@ -153,6 +155,11 @@ if($qma){
 
 			$qi = "INSERT INTO usuarios_info VALUES($idu, $campus, '$campus_escuela')";
 			$vi = $mysqli->query($qi);
+
+			if($solo == '1'){
+				$sql = "INSERT INTO usuario_follow VALUES(NULL, $idu, $pare, '$namep')";
+				$vsql = $mysqli->query($sql);
+			}
 
 			if($v && $vp && $vi){
 				$response = 'true';
