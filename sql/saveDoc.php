@@ -108,9 +108,13 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	}
 	if($res){
 		$data = '';
+		/*$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+		$cabeceras .= 'Content-type: text/html; charset=utf8' . "\r\n";
+		$cabeceras .= 'From: no-reply@servicios.itesm.mx' . "\r\n" . 'Reply-To: btec.mty@servicios.itesm.mx' . "\r\n";*/
 		$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
 		$cabeceras .= 'Content-type: text/html; charset=utf8' . "\r\n";
-		$cabeceras .= 'From: no-reply@servicios.itesm.mx' . "\r\n" . 'Reply-To: btec.mty@servicios.itesm.mx' . "\r\n";
+		$cabeceras .= 'From: btec.mty@servicios.itesm.mx' . "\r\n" . 'Reply-To: btec.mty@servicios.itesm.mx' . "\r\n";
+		$cabeceras .= "Bcc:ccpin.mty@itesm.mx \r\n";
 
 		$qn = "SELECT nombre FROM usuarios WHERE id = $idu";
 		$r = $mysqli->query($qn);
