@@ -364,7 +364,7 @@ fclose( $fp );
 			$this->SetX(-356);
 			$this->Image('./img/gafete.png', 105,130,90);
 			//Barcode sin rotacion
-			$this->Image("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 107, 230, -120, -120, 'PNG');
+			$this->Image("http://makerz.digitaldealers.mx/BeTec/barcodegen.php?s=$string", 110, 230, -180, -120, 'PNG');
 
 			$this->SetTextColor(26, 89, 184);
 			$this->SetFont('Arial','B',24);
