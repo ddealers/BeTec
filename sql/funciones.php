@@ -104,7 +104,7 @@ function selectTalleresV($opc){
 		//solo x campos
 		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND opc = 1 AND libres > 0";
 	}else{
-		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND libres > 0";
+		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND id <> 46 AND libres > 0";
 	}
 	$v = $mysqli->query($q);
 
