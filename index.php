@@ -807,14 +807,6 @@
 									<option value=''>Ciudad donde estudio*</option>
 								</select>
 							</label>
-						</div>
-					</div>
-					<div class="step-area prepa">
-						<p class="info">
-							TU PREPA
-							<img class="lapiz"src="./img/libro.png">
-						</p>
-						<div class="step-data">
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="prepa" class="option" id="prepaMX">
@@ -822,10 +814,18 @@
 								</select>
 							</label>
 							<input type="text" placeholder="Nombre de la prepa*" name="nomprepa" id="nomprepa">
+						</div>
+					</div>
+					<div class="step-area prepa">
+						<p class="info">
+							INGRESO
+							<img class="lapiz"src="./img/cal.png">
+						</p>
+						<div class="step-data">
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="gradua" id="gradua" class="option inputPrepa">
-									<option value="">Fecha esperada de graduación*</option>
+									<option value="">Fecha esperada de ingreso a carrera*</option>
 									<option value="2015">Agosto 2015</option>
 									<option value="2016-1">Enero 2016</option>
 									<option value="2016-2">Agosto 2016</option>
