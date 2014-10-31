@@ -83,7 +83,7 @@ fclose( $fp );
 						}
 						$idu = $data['id'];
 						$full_name = $data['nombre'];
-						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
+						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY usuario_taller.create_at ASC ";
 						$vt = $mysqli->query($t);
 						if($vt){
 							if($vt->num_rows > 0){

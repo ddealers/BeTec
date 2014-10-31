@@ -444,7 +444,7 @@ if($qma){
 		if($response){
 			if($hotel == '' && $city == '986'){
 				$data = '';
-				$q = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
+				$q = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY usuario_taller.create_at ASC ";
 				$v = $mysqli->query($q);
 				if($v){
 					while ($row = $v->fetch_assoc()) {
