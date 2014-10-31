@@ -118,19 +118,26 @@ if($qma){
 		if($v){
 			$idu = $mysqli->insert_id;
 
-			for ($i=1; $i < 4; $i++) { 
-				$q = "INSERT INTO usuario_carrera VALUES($idu, $car$i, CURRENT_TIMESTAMP)";
-				$v = $mysqli->query($q);
-			}
+			$q = "INSERT INTO usuario_carrera VALUES($idu, $car1, CURRENT_TIMESTAMP)";
+			$v = $mysqli->query($q);
+			$q = "INSERT INTO usuario_carrera VALUES($idu, $car2, CURRENT_TIMESTAMP)";
+			$v = $mysqli->query($q);
+			$q = "INSERT INTO usuario_carrera VALUES($idu, $car3, CURRENT_TIMESTAMP)";
+			$v = $mysqli->query($q);
 
-			for ($i=1; $i < 4; $i++) { 
-				$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt$i, CURRENT_TIMESTAMP)";
-				$vp = $mysqli->query($qp);
-
-				$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt$i ";
-				$vl = $mysqli->query($ql);
-			}
-
+			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt1, CURRENT_TIMESTAMP)";
+			$vp = $mysqli->query($qp);
+			$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt1";
+			$vl = $mysqli->query($ql);
+			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt2, CURRENT_TIMESTAMP)";
+			$vp = $mysqli->query($qp);
+			$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt2";
+			$vl = $mysqli->query($ql);
+			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt3, CURRENT_TIMESTAMP)";
+			$vp = $mysqli->query($qp);
+			$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt3";
+			$vl = $mysqli->query($ql);
+			
 			$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt1, CURRENT_TIMESTAMP)";
 			$vw = $mysqli->query($qw);
 
