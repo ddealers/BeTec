@@ -655,7 +655,7 @@
 		<article><!--CONTENIDO_REGISTRO-->
 			<h1 class="registro">REGISTRO</h1>
 			<h2 class="experiencia">¡ESTÁS MUY CERCA DE<br> VIVIR LA EXPERIENCIA TEC!</h2>
-			<p>Iniciemos con el registro ahora mismo. Por favor proporciona<br>los siguientes datos:</p>
+			<!--p>Iniciemos con el registro ahora mismo. Por favor proporciona<br>los siguientes datos:</p-->
 			<form method="POST" action="sql/save.php" >
 				<div class="step">
 					<div class="step-area genero">
@@ -907,7 +907,7 @@
 					</div>
 					<div class="step-area campus">
 						<p class="info campus">
-							CAMPUS MONTERREY
+							UNIVERSIDAD
 							<img class="lapiz"src="./img/libro.png">
 						</p>
 						<div class="step-data">
@@ -961,7 +961,7 @@
 					</div>
 					<div class="step-area evento">
 						<p class="info">
-							EVENTO
+							MEDIO
 							<img class="lapiz"src="./img/evento.png">
 						</p>
 						<div class="step-data">
@@ -1051,6 +1051,7 @@
 		</article>
 		<div class="siguiente">
 			<a class="next" href="#next">Siguiente<i class="icon ion-arrow-right-c"></i></a>
+			<a class="prev" href="#prev">ATRÁS<i class="icon ion-arrow-left-c"></i></a>
 		</div>
 		<div class="footer"></div>
 	</section>

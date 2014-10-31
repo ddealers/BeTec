@@ -1044,12 +1044,23 @@ section#be_tec p {
   color: #fff;
   padding: 0.7vw 5.5vw 0 2.75vw;
   font-size: 0.9vw;
+  left: 200px;
+}
+#registro .siguiente a.prev {
+  right: 360px;
+  padding-left: 82px;
 }
 #registro .siguiente a i {
   position: absolute;
   right: 20%;
   top: 0%;
   font-size: 2vw;
+}
+#registro .siguiente a i.icon.ion-arrow-left-c {
+  content: "\f108";
+  position: absolute;
+  right: 100px;
+  top: 2px;
 }
 #registro .footer {
   background: #727272;
