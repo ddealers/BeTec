@@ -12,14 +12,14 @@
 		<nav class="navbar navbar-default">
 			<img src="../img/logo.png">
 		</nav>
-		<form role="form" action="./admin.class.php?login" method="POST">
+		<form role="form">
   			<div class="form-group">
     			<label for="exampleInputEmail1">Email address</label>
-    			<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="usuario" id="usuario">
+    			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
  			</div>
   			<div class="form-group">
     			<label for="exampleInputPassword1">Password</label>
-    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="clave" id="clave">
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   			</div>
   			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
@@ -44,7 +44,6 @@
 		 	</div>
 		 	<div role="tabpanel" class="tab-pane" id="nombre">
 		 		<section>
-		 			<p><br></p>
 					<p>TU NOMBRE</p>
 					<input type="text" class="form-control" placeholder="Nombre(s)" id="nombre">
 					<input type="text" class="form-control" placeholder="Apellido paterno" id="paterno">
@@ -53,7 +52,6 @@
 		 	</div>
 		 	<div role="tabpanel" class="tab-pane" id="cumpleaños">
 		 		<section>
-		 			<p><br></p>
 					<p>FECHA DE NACIMIENTO</p>
 					<select class="form-control">
 						<option>Día*</option>
@@ -133,7 +131,6 @@
 		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane active" id="contacto">
 				<section>
-					<p><br></p>
 					<p>DATOS CONTACTO</p>
 					<input type="email" class="form-control" placeholder="Correo electrónico">
 						<input type="email" class="form-control" placeholder="Correo electrónico">
