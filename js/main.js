@@ -150,7 +150,76 @@ $(document).ready(function () {
 		index_form;
 	setFormStep(0);
 
+	function validate( key, msg, type ){
+		var patt;
+		if(!type){
+			if(key == ''){
+				alert(msg);
+				return false;
+			}
+			return true;
+		}else if(type == 'email'){
+			patt = /([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/igm;
+			if(key == ''){
+				alert('Te hace falta ingresar tu correo electrónico.');
+				return false;
+			}else if(!patt.test(key)){
+				alert(msg);
+				return false;
+			}
+			return true;
+		}else if(type == 'lada'){
+			patt = /\d{1,3}/;
+			if(key == ''){
+				alert('Te hace falta ingresar la clave lada.');
+				return false;
+			}else if(!patt.test(key)){
+				alert(msg);
+				return false;
+			}
+			return true;
+		}else if(type == 'tel'){
+			patt = /\d{8,10}/;
+			if(key == ''){
+				alert('Te hace falta ingresar tu número telefónico.');
+				return false;
+			}else if(!patt.test(key)){
+				alert(msg);
+				return false;
+			}
+			return true;
+		}else if(type == 'cel'){
+			patt = /\d{8,10}/;
+			if(key == ''){
+				alert('Te hace falta ingresar tu número celular.');
+				return false;
+			}else if(!patt.test(key)){
+				alert(msg);
+				return false;
+			}
+			return true;
+		}
+
+	}
+	$("#registro .prev").hide();
+	$("#registro .prev").on("click", function(e){
+		if(index_form == 1){
+			$("#registro .iniciemos").show();
+			$("#registro .prev").hide();
+		}
+		if(index_form == 4){
+			$('.siguiente .next').html('Siguiente<i class="icon ion-arrow-right-c"></i>');
+		}
+		e.preventDefault();
+		index_form--;
+		if(index_form >= 0){
+			setFormStep(index_form);	
+		}else{
+			index_form = 0;
+		}
+	});
 	$("#registro .next").on("click", function(e){
+		$('#registro .iniciemos').hide();
 		e.preventDefault();
 		prev = index_form;
 		//index++;
@@ -164,17 +233,30 @@ $(document).ready(function () {
 			var anio = $("#nanio").val();
 			var mes = $("#nmes").val();
 			
-			if(name != '' && apat != '' && amat != '' 
-				&& dia != '' && mes != '' && anio != ''){
-					var nombre = name + ' ' + apat + ' ' + amat;
-					form_data.nombre = nombre;
-					var cumple = anio + '-' + mes +'-'+ dia;
-					form_data.cumple = cumple;
-					index_form++;
-			}else{
-				alert("Todos los datos son requeridos, revisa cual es el campo que te falta completar.");
+			if( !validate(name, 'Te hace falta ingresar tu nombre.') ){
 				return;
 			}
+			if( !validate(apat, 'Te hace falta ingresar tu apellido paterno.') ){
+				return;
+			}
+			if( !validate(amat, 'Te hace falta ingresar tu apellido materno.') ){
+				return;
+			}
+			if( !validate(dia, 'Te hace falta ingresar tu día de nacimiento.') ){
+				return;
+			}
+			if( !validate(mes, 'Te hace falta ingresar tu mes de nacimiento.') ){
+				return;
+			}
+			if( !validate(anio, 'Te hace falta ingresar tu año de nacimiento.') ){
+				return;
+			}
+			var nombre = name + ' ' + apat + ' ' + amat;
+			form_data.nombre = nombre;
+			var cumple = anio + '-' + mes +'-'+ dia;
+			form_data.cumple = cumple;
+			index_form++;
+			$("#registro .prev").show();
 		}else if(index_form == 1){
 			var email = $("#email").val();
 			form_data.email = email;
@@ -193,29 +275,44 @@ $(document).ready(function () {
 			var grad  = $("#gradua").val();
 			form_data.grad = grad;
 
-			if(email != '' 
-				&& lada != '' && tel != ''  && cel != ''  && state != '' && city != ''  && prep != '' && grad != ''){
-				if(prep == '#'){
-					if(nomprepa == ''){
-						alert("Todos los datos son requeridos, revisa cual es el campo que te falta completar.");
-						return;
-					}
-				}
-				var numero = lada + tel;
-				form_data.numero = numero;
-				index_form++;
-				if(form_data.city == 986){
-					form_data.hotel = '';
-					form_data.solo = '';
-					form_data.pare = '';
-					form_data.namep = '';
-					index_form++;
-					setFormStep(index_form);
+			if( !validate(email, 'Ingresa un correo válido.', 'email') ){
+				return;
+			}
+			if( !validate(lada, 'Ingresa una clave lada válida.', 'lada') ){
+				return;
+			}
+			if( !validate(tel, 'Ingresa un número de teléfono válido.', 'tel') ){
+				return;
+			}
+			if( !validate(cel, 'Ingresa un número de celular válido.', 'cel') ){
+				return;
+			}
+			if( !validate(state, 'Te hace falta seleccionar tu estado.') ){
+				return;
+			}
+			if( !validate(city, 'Te hace falta seleccionar tu ciudad.') ){
+				return;
+			}
+			if( !validate(prep, 'Te hace falta seleccionar tu prepa.') ){
+				return;
+			}
+			if( !validate(grad, 'Te hace falta seleccionar tu fecha esperada de ingreso.') ){
+				return;
+			}
+			if(prep == '#'){
+				if( !validate(nomprepa, 'Te hace falta ingresar el nombre de tu prepa.') ){
 					return;
 				}
-			}else{
-				alert("Todos los datos son requeridos, revisa cual es el campo que te falta completar.");
-				return;
+			}
+			var numero = lada + tel;
+			form_data.numero = numero;
+			index_form++;
+			if(form_data.city == 986){
+				form_data.hotel = '';
+				form_data.solo = '';
+				form_data.pare = '';
+				form_data.namep = '';
+				index_form++;
 			}
 		}else if(index_form == 2){
 			var hotel = $("#hospedaje").val();
@@ -226,51 +323,59 @@ $(document).ready(function () {
 			form_data.pare = pare;
 			var namep = $("#nomcomp").val();
 			form_data.namep = namep;
-			if(hotel == '1' && solo == '1'){
-				if(pare != '' && namep != ''){
-					index_form++;
-				}else{
-					alert("El Nombre y Parentesco de tu acompañante son necesarios, proporciona los datos.");
-				}
-			}else{
-				index_form++;
-			}
-		}else if(index_form == 3){
-			var carrera = $("#carrera").val();
-				form_data.carrera = carrera;
-			var car1  = $("#carrera1").val();
-				form_data.car1 = car1;
-			var car2  = $("#carrera2").val();
-				form_data.car2 = car2;
-			var car3  = $("#carrera3").val();
-				form_data.car3 = car3;
-				
-				campus = $("#campus").val();
-					form_data.campus = campus;
-				campusEscuela = $("#campus_escuela").val();
-					form_data.campus_escuela = campusEscuela;
-				eventos = $("#evento").val();
-					form_data.eventos = eventos;
 
-			if(carrera != '' && car1 != '' && car2 != '' && car3 != '' && campus != '' && eventos != ''){
-				form_data.carrera = carrera;
-				form_data.car1 = car1;
-				form_data.car2 = car2;
-				form_data.car3 = car3;
-				if(campus == 1){
-					if(campusEscuela != ''){
-						form_data.campus_escuela = campusEscuela;
-					}else{
-						alert("Es necesario indicar la universidad en la que piensas estudiar");
-						return;
-					}
-				}
-				$('.siguiente .next').html('Enviar<i class="icon ion-paper-airplane"></i>');
-				index_form++;
-			}else{
-				alert("Todos los datos son requeridos, revisa cual es el campo que te falta completar.");
+			if( !validate(hotel, 'Debes indicar si necesitas hospedaje.') ){
 				return;
 			}
+			if(hotel == '1'){
+				if( !validate(solo, 'Debes indicar si vendrás con acompañante.') ){
+					return;
+				}
+			}
+			if(hotel == '1' && solo == '1'){
+				if( !validate(pare, 'Indica el parentesco de tu acompañante.') ){
+					return;
+				}
+				if( !validate(namep, 'Ingresa el nombre de tu acompañante.') ){
+					return;
+				}
+			}
+			index_form++;
+		}else if(index_form == 3){
+			var carrera = $("#carrera").val();
+			form_data.carrera = carrera;
+			var car1  = $("#carrera1").val();
+			form_data.car1 = car1;
+			var car2  = $("#carrera2").val();
+			form_data.car2 = car2;
+			var car3  = $("#carrera3").val();
+			form_data.car3 = car3;
+			var	campus = $("#campus").val();
+			form_data.campus = campus;
+			var	campusEscuela = $("#campus_escuela").val();
+			form_data.campus_escuela = campusEscuela;
+			var	eventos = $("#evento").val();
+			form_data.eventos = eventos;
+
+			if( !validate(carrera, 'Es necesario que indiques si ya decidiste qué carrera estudiar.') ){
+				return;
+			}
+			if( !validate(campus, 'Es necesario que indiques si tienes pensado estudiar en Tecnológico de Monterrey, Campus Monterrey.') ){
+				return;
+			}
+			if(campus == '1'){
+				if( !validate(campusEscuela, 'Es necesario que indiques en qué Universidad tienes pensado estudiar.') ){
+					return;
+				}
+			}
+			if( !validate(car1, 'Es obligatorio que selecciones la primer carrera de interés.') ){
+				return;
+			}
+			if( !validate(eventos, 'Es obligatorio que selecciones por qué medio te enteraste del evento.') ){
+				return;
+			}
+			$('.siguiente .next').html('Enviar<i class="icon ion-paper-airplane"></i>');
+			index_form++;
 		}else if(index_form == 4){
 			var vopt1  = $("#vopt1").val();
 			form_data.vopt1 = vopt1;
@@ -285,48 +390,61 @@ $(document).ready(function () {
 			var evento = $("#evento").val();
 			form_data.evento = evento;
 
-			if($("#acepto").is(':checked') === true  && vopt1 != ''  && vopt2 != ''  && vopt3 != '' && sopt1 != '' && sopt2 != '' && evento != ''){
-				//cotinuar
-				console.log(form_data);
-				$.ajax({
-					type: 'POST',
-					url: 'sql/save.php',
-					data:form_data,
-					success: function(response){
-						if(response == 'true'){
-							$('.registroT .response').hide();
-							console.log(form_data.city, form_data.hotel);
-							if(form_data.city == 986){
-								$('.registroT h2').text('TU REGISTRO ESTÁ COMPLETO.');
-								$('.registroT .local').show();
-							}else if(form_data.hotel == 0){
-								$('.registroT h2').text('TU REGISTRO ESTÁ CASI COMPLETO.');
-								$('.registroT .foraneoB').show();
-							}else{
-								$('.registroT h2').text('TU REGISTRO ESTÁ CASI COMPLETO.');
-								$('.registroT .foraneoA').show();
-							}
-							$('#end').show();
-							TweenMax.from('#end', 1, {opacity: 0, scale: 0.5, ease: Back.easeOut});
-							return;
-						}else if(response == 'badMail'){
-							alert("Este email ya ha sido registrado, vuelve a realizar el registro con una cuenta de correo nueva.");
-							console.log(response);
-						}else{
-							alert("Lo sentimos tu registro no se pudo completar");
-							console.log(response);
-						}
-					},
-					error: function(){
-						alert("Lo sentimos tu registro no se pudo completar, escríbenos a btec.mty@servicios.itesm.mx \n o llámanos al 01 800 832 33689 o al (81) 81582269 para ayudarte.");
-						console.log(response);
-					}
-				});
-				return;
-			}else{
-				alert("Debes aceptar los Términos y Condiciones.");
+			if(!$("#acepto").is(':checked') == true){
+				alert('Debes aceptar los Términos y Condiciones.');
 				return;
 			}
+			if( !validate(vopt1, 'Es necesario que selecciones tu actividad de las 16:30 horas del viernes.') ){
+				return;
+			}
+			if( !validate(vopt2, 'Es necesario que selecciones tu actividad de las 17:40 horas del viernes.') ){
+				return;
+			}
+			if( !validate(vopt3, 'Es necesario que selecciones tu actividad de las 18:40 horas del viernes.') ){
+				return;
+			}
+			if( !validate(sopt1, 'Es necesario que selecciones tu taller de las 9:00 horas del sábado.') ){
+				return;
+			}
+			if( !validate(sopt2, 'Es necesario que selecciones tu taller de las 11:45 horas del sábado.') ){
+				return;
+			}
+			console.log(form_data);
+			$.ajax({
+				type: 'POST',
+				url: 'sql/save.php',
+				data:form_data,
+				success: function(response){
+					if(response == 'true'){
+						$('.registroT .response').hide();
+						console.log(form_data.city, form_data.hotel);
+						if(form_data.city == 986){
+							$('.registroT h2').text('TU REGISTRO ESTÁ COMPLETO.');
+							$('.registroT .local').show();
+						}else if(form_data.hotel == 0){
+							$('.registroT h2').text('TU REGISTRO ESTÁ CASI COMPLETO.');
+							$('.registroT .foraneoB').show();
+						}else{
+							$('.registroT h2').text('TU REGISTRO ESTÁ CASI COMPLETO.');
+							$('.registroT .foraneoA').show();
+						}
+						$('#end').show();
+						TweenMax.from('#end', 1, {opacity: 0, scale: 0.5, ease: Back.easeOut});
+						return;
+					}else if(response == 'badMail'){
+						alert("Este email ya ha sido registrado, vuelve a realizar el registro con una cuenta de correo nueva.");
+						console.log(response);
+					}else{
+						alert("Lo sentimos tu registro no se pudo completar");
+						console.log(response);
+					}
+				},
+				error: function(){
+					alert("Lo sentimos tu registro no se pudo completar, escríbenos a btec.mty@servicios.itesm.mx \n o llámanos al 01 800 832 33689 o al (81) 81582269 para ayudarte.");
+					console.log(response);
+				}
+			});
+			return;
 		}
 		setFormStep(index_form);
 	});
@@ -544,6 +662,8 @@ function citySchool(s,id){
 				$('#'+id).on('change', function(e){
 					if($(this).val() == '#'){
 						$("#nomprepa").show();	
+					}else{
+						$("#nomprepa").hide();
 					}
 				});
 			}
