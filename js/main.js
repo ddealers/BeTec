@@ -241,7 +241,7 @@ $(document).ready(function () {
 		setFormStep(index_form);
 
 		//index++;
-	/*	if(index_form == 0){
+		if(index_form == 0){
 			var genero = $("#genero").val();
 			form_data.genero = genero;
 			var name = $("#nombre").val();
@@ -464,7 +464,7 @@ $(document).ready(function () {
 			});
 			return;
 		}
-		setFormStep(index_form);*/
+		setFormStep(index_form);
 	});
 
 	function setFormStep(next){
