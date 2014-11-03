@@ -12,14 +12,14 @@
 		<nav class="navbar navbar-default">
 			<img src="../img/logo.png">
 		</nav>
-		<form role="form">
+		<form role="form" action="./admin.class.php?login" method="POST">
   			<div class="form-group">
     			<label for="exampleInputEmail1">Email address</label>
-    			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+    			<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="usuario" id="usuario">
  			</div>
   			<div class="form-group">
     			<label for="exampleInputPassword1">Password</label>
-    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="clave" id="clave">
   			</div>
   			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
