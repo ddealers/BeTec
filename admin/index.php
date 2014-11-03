@@ -25,10 +25,24 @@
 		<nav class="navbar navbar-default">
 			<img src="../img/logo.png">
 		</nav>
+<<<<<<< HEAD
 <?php 
 if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 //echo $_SESSION['user']->s_login_user;
 ?>
+=======
+		<form role="form">
+  			<div class="form-group">
+    			<label for="exampleInputEmail1">Email address</label>
+    			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+ 			</div>
+  			<div class="form-group">
+    			<label for="exampleInputPassword1">Password</label>
+    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  			</div>
+  			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+>>>>>>> origin/master
 		<p><br></p>
 		<ul class="nav nav-tabs" role="tablist" id="myTab">
 		 	<li role="presentation" class="active"><a href="#paso1" role="tab" data-toggle="tab">PASO 1</a></li>
@@ -49,15 +63,19 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 			  			<input type="radio" name="inlineRadioOptions" id="genero" value="option2"> MUJER
 					</label>
 				</section>
-		 		<section>
-		 			<p><br></p>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="paso2">
+				<p><br></p>
+				<section>
 					<p>TU NOMBRE</p>
-					<input type="text" class="form-control" placeholder="Nombre(s)" id="nombre">
-					<input type="text" class="form-control" placeholder="Apellido paterno" id="paterno">
+					<input type="text" class="form-control" placeholder="Nombre(s)" id="nombre"><br>
+					<input type="text" class="form-control" placeholder="Apellido paterno" id="paterno"><br>
 					<input type="text" class="form-control" placeholder="Apellido materno" id="materno">
 				</section>
-		 		<section>
-		 			<p><br></p>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="paso3">
+				<p><br></p>
+				<section>
 					<p>FECHA DE NACIMIENTO</p>
 					<select class="form-control">
 						<option>Día*</option>
@@ -92,7 +110,7 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 						<option>29</option>
 						<option>30</option>
 						<option>31</option>
-					</select>
+					</select><br>
 					<select class="form-control">
 						<option>Mes*</option>
 						<option>Enero</option>
@@ -107,7 +125,7 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 						<option>Octubre</option>
 						<option>Noviembre</option>
 						<option>Diciembre</option>
-					</select>
+					</select><br>
 					<select class="form-control">
 						<option>Año*</option>
 						<option>1986</option>
@@ -126,22 +144,73 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 					</select>
 				</section>
 			</div>
-			<div role="tabpanel" class="tab-pane active" id="paso2">
+			<div role="tabpanel" class="tab-pane" id="paso4">
+				<p><br></p>
 				<section>
-					<p><br></p>
 					<p>DATOS CONTACTO</p>
-					<input type="email" class="form-control" placeholder="Correo electrónico">
-						<input type="email" class="form-control" placeholder="Correo electrónico">
+					<input type="email" class="form-control" placeholder="Correo electrónico"><br>
+						<input type="email" class="form-control" placeholder="Correo electrónico"><br>
 						<div class="row">
 						  	<div class="col-md-6">
 						  		<input type="tel" class="form-control" placeholder="Lada">
 						  	</div>
 						  	<div class="col-md-6">
-						  		<input type="tel" class="form-control" placeholder="Teléfono fijo">
+						  		<input type="tel" class="form-control" placeholder="Teléfono fijo"><br>
 						  	</div>
 						</div>
 						<input type="tel" class="form-control" placeholder="Celular">
 				</section>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="paso5">
+				<p><br></p>
+				<section>
+					<p>¿DONDE ESTUDIAS?</p>
+					<select class="form-control">
+						<option>Estado donde estudio</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+					<select class="form-control"><br>
+						<option>Ciudad donde estudio</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+					<select class="form-control">
+						<option>Prepa donde estudio</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</section>
+			</div>
+
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 				<section>
 					<select class="form-control">
 						<option>Estado donde estudio</option>
