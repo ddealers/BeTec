@@ -655,7 +655,7 @@
 		<article><!--CONTENIDO_REGISTRO-->
 			<h1 class="registro">REGISTRO</h1>
 			<h2 class="experiencia">¡ESTÁS MUY CERCA DE<br> VIVIR LA EXPERIENCIA TEC!</h2>
-			<!--p>Iniciemos con el registro ahora mismo. Por favor proporciona<br>los siguientes datos:</p-->
+			<p class="iniciemos">Iniciemos con el registro ahora mismo. Por favor proporciona<br>los siguientes datos:</p>
 			<form method="POST" action="sql/save.php" >
 				<div class="step">
 					<div class="step-area genero">
@@ -843,7 +843,7 @@
 						<div class="step-data">
 							<p>¿Necesitas hospedaje en Monterrey?<br>ahora que asistirás al Born To Be Tec*</p>
 							<div class="bool-choose">
-								<input type="hidden" name="hospedaje" id="hospedaje" value="0"/>
+								<input type="hidden" name="hospedaje" id="hospedaje" value=""/>
 								<div class="option noActivo" id="hotelS">
 									<p>SÍ</p>
 								</div>
@@ -865,7 +865,7 @@
 						<div class="step-data">
 							<p>¿Vendrás con un acompañante?*</p>
 							<div class="bool-choose">
-								<input type="hidden" name="acompanante" id="acompanante" value="0"/>
+								<input type="hidden" name="acompanante" id="acompanante" value=""/>
 								<div class="option noActivo" id="soloS">
 									<p>SÍ</p>
 								</div>

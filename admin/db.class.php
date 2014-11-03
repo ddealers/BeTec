@@ -44,6 +44,16 @@ class MYDB{
 			return new MYResult( NULL );
 		}
 	}
+	protected function _insert( $data ){
+		$fields = array();
+		foreach ($data as $key => $value) {
+			$fields[] = $key;
+		}
+		$fieldsstr = implode( ', ', $fields);
+		$fieldsval = ':' . implode( ', ', $fields);
+		$this->mysqli->prepare("INSERT INTO " . $this->table . " ( $fieldsstr, created_at ) value ( $fieldsval, NOW() )")
+		$this->mysqli->execute();
+	}
 	protected function _delete( $condition ){
 		$r = $this->mysqli->query( "DELETE FROM " . $this->table . "WHERE $condition" );
 		return true;
