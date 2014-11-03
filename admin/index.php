@@ -1,3 +1,7 @@
+<?php session_start();
+//session_unset($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,17 +16,10 @@
 		<nav class="navbar navbar-default">
 			<img src="../img/logo.png">
 		</nav>
-		<form role="form" action="./admin.class.php?login" method="POST">
-  			<div class="form-group">
-    			<label for="exampleInputEmail1">Email address</label>
-    			<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="usuario" id="usuario">
- 			</div>
-  			<div class="form-group">
-    			<label for="exampleInputPassword1">Password</label>
-    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="clave" id="clave">
-  			</div>
-  			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
+<?php 
+if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
+//echo $_SESSION['user']->s_login_user;
+?>
 		<p><br></p>
 		<ul class="nav nav-tabs" role="tablist" id="myTab">
 		 	<li role="presentation" class="active"><a href="#genero" role="tab" data-toggle="tab">PASO 1</a></li>
@@ -594,42 +591,21 @@
 				<option>4</option>
 				<option>5</option>
 			</select>
-		</section>
-		<section>
-			<table class="table table-bordered">
-				<tr>
-					<td>ID</td>
-					<td>Nombre</td>
-					<td>Correo</td>
-					<td>Modificar</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-					<td><button type="button" class="btn btn-primary btn-xs">Modificar</button></td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-					<td><button type="button" class="btn btn-primary btn-xs">Modificar</button></td>
-				</tr>
-			</table>
-			
-		</section>	
-		<section>
-			<p>Recuperar contraseña</p>
-			<form class="form-horizontal" role="form">
-			  	<div class="form-group">
-			    	<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-			    	<div class="col-sm-10">
-			      		<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-			    	</div>
-			  	</div>
-			  	<button type="submit" class="btn btn-default">Submit</button>
-			</form>
-		</section>
 	</div>
+<?php
+}else{ ?>
+		<form role="form" action="./admin.class.php?login" method="POST">
+  			<div class="form-group">
+    			<label for="exampleInputEmail1">Usuario</label>
+    			<input type="text" class="form-control" placeholder="usuario" name="usuario" id="usuario">
+ 			</div>
+  			<div class="form-group">
+    			<label for="exampleInputPassword1">Password</label>
+    			<input type="password" class="form-control" placeholder="******" name="clave" id="clave">
+  			</div>
+  			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+	
+<?php } ?>
 </body>
 </html>

@@ -15,12 +15,15 @@ class AdminClass extends MYDB
 
 	public function login($user, $pass){
 		$response = false;
-		$clave = md5($pass);
+		$v = $this->_where("id_login, s_login_user", "s_login_user = '$user' AND s_login_clave = '$pass'");
 
-		$v = $this->_where('*', 's_login_user = "$user" AND s_login_clave = "$clave"');
-
-		var_dump($v->get());
-		//return $response;
+		if($v->count() == 1){
+			$data = $v->get();
+			session_start();
+			$_SESSION['user'] = $data[0];
+			$response = true;
+		}
+		return $response;
 	}
 
 }
@@ -33,12 +36,9 @@ if($action == 'login'){
 		$clave = $_POST['clave'];
 
 		$res = $admin->login($user, $clave);
-
-		var_dump($res);
-		exit();
 		
 		if($res){
-			$uri = "/admin/home.php";
+			$uri = "/admin/index.php";
 		}else{
 			$uri = "/admin/index.php?e=60";
 		}

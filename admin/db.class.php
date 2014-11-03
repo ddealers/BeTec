@@ -70,10 +70,6 @@ class MYDB{
 	}
 }
 
-
-/**
-* 
-*/
 class MYResult 
 {
 	private $result;
