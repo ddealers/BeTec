@@ -15,7 +15,7 @@ window.fbAsyncInit = function() {
 }(document, 'script', 'facebook-jssdk'));
 
 $(document).ready(function () {
-  //===== Init Skrollr =====
+  	//===== Init Skrollr =====
 	var s = skrollr.init({
 		smoothScrolling: true,
 		mobileDeceleration: 0.004,
@@ -149,6 +149,16 @@ $(document).ready(function () {
 		form_data,
 		index_form;
 	setFormStep(0);
+
+	function textonly(e){
+		var patt = /[^0-9]/ig;
+		var code, character;
+		if(e.keyCode) code = e.keyCode;
+		else if(e.which) code = e.which;
+		character = String.fromCharCode(code);
+		if(!patt.test(character)) return false;
+	}
+	$('.textonly').on('keypress', textonly);
 
 	function validate( key, msg, type ){
 		var patt;

@@ -683,9 +683,9 @@
 							<img class="lapiz"src="./img/lapiz.png">
 						</p>
 						<div class="step-data">
-							<input type="text" placeholder="Nombre(s)*" name="nombre" id="nombre" />
-							<input type="text" placeholder="Apellido paterno*" name="apaterno" id="apaterno" />
-							<input type="text" placeholder="Apellido materno*" name="amaterno" id="amaterno" />
+							<input class="textonly" type="text" placeholder="Nombre(s)*" name="nombre" id="nombre" />
+							<input class="textonly" type="text" placeholder="Apellido paterno*" name="apaterno" id="apaterno" />
+							<input class="textonly" type="text" placeholder="Apellido materno*" name="amaterno" id="amaterno" />
 						</div>
 					</div>
 					<div class="step-area cumple">
@@ -882,7 +882,7 @@
 									<option value="2">Padre</option>
 								</select>
 							</label>
-							<input type="text" placeholder="Nombre completo*" name="nomcomp" id="nomcomp">
+							<input class="textonly" type="text" placeholder="Nombre completo*" name="nomcomp" id="nomcomp">
 						</div>
 					</div>
 				</div>
@@ -922,7 +922,7 @@
 								</div>
 							</div>
 							<div class="step-data">
-								<input type="text" placeholder="¿En qué universidad piensas estudiar?*" name="campus_escuela" id="campus_escuela" />
+								<input  class="textonly" type="text" placeholder="¿En qué universidad piensas estudiar?*" name="campus_escuela" id="campus_escuela" />
 							</div>
 						</div>
 					</div>
