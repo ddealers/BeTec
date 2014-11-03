@@ -207,6 +207,11 @@ $(document).ready(function () {
 			$("#registro .iniciemos").show();
 			$("#registro .prev").hide();
 		}
+		if(index_form == 3){
+			if(form_data.city == 986){
+				index_form--;
+			}
+		}
 		if(index_form == 4){
 			$('.siguiente .next').html('Siguiente<i class="icon ion-arrow-right-c"></i>');
 		}
