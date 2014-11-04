@@ -1,5 +1,6 @@
 
 function Update(){
+	var idu 	= $("#idu").val();
 	var genero 	= $("#genero").val();
 	var nombre 	= $("#nombre").val();
 	var cumple 	= $("#cumple").val();
@@ -28,5 +29,26 @@ function Update(){
 	var tas1 	= $("#tas1").val(); 
 	var tas2 	= $("#tas2").val();
 
-	console.log(genero + nombre + cumple + email + tel +' <> '+cel+' <> '+medio+' <> '+estado+' <> '+ciudad+' <> '+prepa+' <> '+ingreso +' <hospedaje> '+ hotel +' <> '+ solo +' <> '+ perentesco+' <> '+acompana+' <tecnologico> '+ tecno+' <> '+car1+' <> '+car2+' <> '+car3+' <talleres> '+tav1+' <> '+tav2+' <> '+tav3+' <> '+tas1+' <> '+tas2);
+//	console.log(genero + nombre + cumple + email + tel +' <> '+cel+' <> '+medio+' <> '+estado+' <> '+ciudad+' <> '+prepa+' <> '+ingreso +' <hospedaje> '+ hotel +' <> '+ solo +' <> '+ perentesco+' <> '+acompana+' <tecnologico> '+ tecno+' <> '+car1+' <> '+car2+' <> '+car3+' <talleres> '+tav1+' <> '+tav2+' <> '+tav3+' <> '+tas1+' <> '+tas2);
+	
+	$.ajax({
+		type: 'POST',
+		url: './update.php',
+		data: {genero:genero,nombre:nombre,cumple:cumple,email:email,tel:tel,cel:cel,medio:medio,estado:estado,ciudad:ciudad,prepa:prepa,ingreso:ingreso,hotel:hotel,solo:solo,perentesco:perentesco,acompana:acompana,tecno:tecno,car1:car1,car2:car2,car3:car3,tav1:tav1,tav2:tav2,tav3:tav3,tas1:tas1,tas2:tas2, idu:idu},
+		
+		success: function(resp){
+			if(resp == 'true'){
+				alert("Ok se actualizo correctamente");
+				console.log(resp);
+			}else{
+				alert("Algo salio mal y no se actualizo");
+				console.log(resp);
+			}
+		},
+		error: function(resp){
+			alert("Lo sentimos tu registro no se pudo completar, escríbenos a btec.mty@servicios.itesm.mx \n o llámanos al 01 800 832 33689 o al (81) 81582269 para ayudarte.");
+			console.log(response);
+		}
+	});
 }
+
