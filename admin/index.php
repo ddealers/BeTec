@@ -23,14 +23,6 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 		 	<li role="presentation"><a href="#paso3" role="tab" data-toggle="tab">PASO 3</a></li>
 		 	<li role="presentation"><a href="#paso4" role="tab" data-toggle="tab">PASO 4</a></li>
 		 	<li role="presentation"><a href="#paso5" role="tab" data-toggle="tab">PASO 5</a></li>
-		 	<li role="presentation"><a href="#paso6" role="tab" data-toggle="tab">PASO 6</a></li>
-		 	<li role="presentation"><a href="#paso7" role="tab" data-toggle="tab">PASO 7</a></li>
-		 	<li role="presentation"><a href="#paso8" role="tab" data-toggle="tab">PASO 8</a></li>
-		 	<li role="presentation"><a href="#paso9" role="tab" data-toggle="tab">PASO 9</a></li>
-		 	<li role="presentation"><a href="#paso10" role="tab" data-toggle="tab">PASO 10</a></li>
-		 	<li role="presentation"><a href="#paso11" role="tab" data-toggle="tab">PASO 11</a></li>
-		 	<li role="presentation"><a href="#paso12" role="tab" data-toggle="tab">PASO 12</a></li>
-		 	<li role="presentation"><a href="#paso13" role="tab" data-toggle="tab">PASO 13</a></li>
 		</ul>
 		<div class="tab-content">
 		 	<div role="tabpanel" class="tab-pane active" id="paso1">
@@ -44,8 +36,6 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 			  			<input type="radio" name="inlineRadioOptions" id="genero" value="option2"> MUJER
 					</label>
 				</section>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="paso2">
 				<p><br></p>
 				<section>
 					<p>TU NOMBRE</p>
@@ -53,8 +43,6 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 					<input type="text" class="form-control" placeholder="Apellido paterno" id="paterno"><br>
 					<input type="text" class="form-control" placeholder="Apellido materno" id="materno">
 				</section>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="paso3">
 				<p><br></p>
 				<section>
 					<p>FECHA DE NACIMIENTO</p>
@@ -125,7 +113,7 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 					</select>
 				</section>
 			</div>
-			<div role="tabpanel" class="tab-pane" id="paso4">
+			<div role="tabpanel" class="tab-pane" id="paso2">
 				<p><br></p>
 				<section>
 					<p>DATOS CONTACTO</p>
@@ -140,8 +128,6 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 					</div>
 					<input type="tel" class="form-control" placeholder="Celular">
 				</section>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="paso5">
 				<p><br></p>
 				<section>
 					<p>¿DONDE ESTUDIAS?</p>
@@ -169,8 +155,6 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 						<option>5</option>
 					</select>
 				</section>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="paso6">
 				<p><br></p>
 				<section>
 					<p>INGRESO</p>
@@ -183,7 +167,7 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 					</select>
 				</section>	
 			</div>
-			<div role="tabpanel" class="tab-pane" id="paso7">
+			<div role="tabpanel" class="tab-pane" id="paso3">
 				<p><br></p>
 				<section>
 					<p>TU HOSPEDAJE</p>
@@ -196,7 +180,7 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 					</label>
 				</section>
 			</div>
-			<div role="tabpanel" class="tab-pane" id="paso8">
+			<div role="tabpanel" class="tab-pane" id="paso4">
 				<p><br></p>
 				<section>
 					<p>ELECCIÓN DE CARRERA</p>
@@ -208,8 +192,6 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 			  			<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">no
 					</label>		
 				</section>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="paso9">
 				<p><br></p>
 				<section>
 					<p>CARRERAS DE INTERÉS</p>
@@ -237,8 +219,6 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 						<option>5</option>
 					</select>
 			 	</section>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="paso10">
 				<p><br></p>
 				<section>
 					<p>UNIVERSIDAD</p>
@@ -250,8 +230,6 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 				  		<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">no
 					</label>
 			 	</section>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="paso11">
 				<p><br></p>
 				<section>
 					<p>MEDIO</p>
@@ -265,7 +243,7 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 					</select>
 			 	</section>
 			</div>
-			<div role="tabpanel" class="tab-pane" id="paso12">
+			<div role="tabpanel" class="tab-pane" id="paso5">
 				<p><br></p>
 				<section>
 					<p>ACTIVIDADES DEL VIERNES</p>
@@ -294,8 +272,6 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
 						<option>5</option>
 					</select>
 			 	</section>
-			</div>
-			<div role="tabpanel" class="tab-pane" id="paso13">
 				<p><br></p>
 				<section>
 					<p>TALLERES DEL SÁBADO</p>
