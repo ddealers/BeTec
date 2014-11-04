@@ -29,13 +29,32 @@ class Usuario extends MYDB{
 		return $this->_where("id","id_ciudad<>'986'")->count();
 	}
 	public function nodocs(){
-		return $this->_where("id","documentos<>'1'")->count();
+		$total = 0;
+		$r = $this->_custom("SELECT * FROM usuarios_documentos")->get();
+		foreach ($r as $key => $value) {
+			if($value->tipo_foraneo== '1'){
+				if($value->url_pago == '#' || $value->url_permiso == '#') $total++;
+			}elseif($value->tipo_foraneo == '0'){
+				if($value->url_permiso == '#') $total++;
+			}
+		}
+		return $total;
 	}
 	public function hospedaje(){
-		return $this->_where("id","hospedaje<>'1'")->count();
+		return $this->_where("id","hospedaje='1'")->count();
 	}
 	public function acompana(){
-		return $this->_where("id","acompana<>'1'")->count();
+		return $this->_where("id","acompana='1'")->count();
+	}
+	public function realtime(){
+		return array(
+			'registrados'=>$this->registrados(), 
+			'locales'=>$this->locales(), 
+			'foraneos'=>$this->foraneos(), 
+			'nodocs'=>$this->nodocs(), 
+			'hospedaje'=>$this->hospedaje(), 
+			'acompana'=>$this->acompana()
+			);
 	}
 	public function byID( $id ){
 		$v = $this->_where("*","id=$id")->first();

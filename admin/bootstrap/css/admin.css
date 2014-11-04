@@ -27,9 +27,12 @@ div.admin p.p {
 }
 div.admin p.p span {
   border: 1px solid #ddd;
-  padding: 15px 30px;
+  padding: 3px 30px;
   margin-left: 40px;
   position: absolute;
-  right: 100px;
+  right: 25px;
+  width: 100px;
+  text-align: center;
   border-radius: 5px;
+  font-size: 20px;
 }
