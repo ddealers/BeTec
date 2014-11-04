@@ -20,6 +20,8 @@ if($action == 'login'){
 			$uri = "../admin/index.php?e=60";
 		}
 		header("Location: ". $uri);
+	}else{
+		header("Location: ../admin/index.php?e=60");
 	}
 }elseif ($action == 'recuperar') {
 	if($_POST['correo'] != NULL && $_POST['correo'] != ''){
