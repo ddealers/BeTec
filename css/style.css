@@ -827,6 +827,7 @@ section#be_tec p {
   right: 8%;
 }
 #registro article form .step .step-area .step-data label select {
+  width: 100%;
   display: inline-block;
   padding: 0.5vw 19% 0.5vw 0.5vw;
   margin: 0.3vw 5px;
@@ -840,15 +841,6 @@ section#be_tec p {
   line-height: 135%;
   max-width: 25vw;
   font-size: 11px;
-}
-#registro article form .step .step-area .step-data label select.option.inputPrepa {
-  width: 233px;
-}
-#registro article form .step .step-area .step-data .step-area.prepa label {
-  width: 150%;
-}
-#registro article form .step .step-area .step-data .step-area.prepa label select i {
-  right: 3%;
 }
 #registro article form .step .step-area .step-data .bool-choose .option,
 #registro article form .step .step-area .step-data .bool-chooser .option {
@@ -929,6 +921,9 @@ section#be_tec p {
 #registro article form .step .step-area.prepa {
   width: 25vw;
   margin-left: 2vw;
+}
+#registro article form .step .step-area.prepa .step-data {
+  width: 200%;
 }
 #registro article form .step .step-area.prepa label {
   width: 100%;
