@@ -81,6 +81,11 @@ if($action == 'login'){
 		header("Location: ../admin/recuperar.php?e=".$uri);
 		
 	}
+}elseif ($action = 'logout') {
+	$_SESSION['user'] = null;
+	unset($_SESSION['user']);
+	session_destroy();
+	clearstatcache();
 }else{
 	//echo "No entra";
 }
