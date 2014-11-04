@@ -237,8 +237,8 @@ $(document).ready(function () {
 		$('#registro .iniciemos').hide();
 		e.preventDefault();
 		prev = index_form;
-		index_form++;
-		setFormStep(index_form);
+		//index_form++;
+		//setFormStep(index_form);
 
 		//index++;
 		if(index_form == 0){
