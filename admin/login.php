@@ -39,7 +39,7 @@ if($action == 'login'){
 		header("Location: ../admin/recuperar.php?e=".$uri);
 		
 	}
-}elseif ($action = 'logout') {
+}elseif ($action == 'logout') {
 	session_start();
 	$_SESSION['user'] = null;
 	unset($_SESSION['user']);

@@ -12,6 +12,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/admin.css"/>
 	<script type="text/javascript" src="../js/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$('#myTab a').click(function (e) {
