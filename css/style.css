@@ -774,7 +774,7 @@ section#be_tec p {
   right: 75px;
 }
 #registro article form .step .step-area.prepa .step-data label i {
-  right: -55px;
+  right: -30px;
 }
 #registro article form .step .step-area {
   display: -webkit-inline-box;
@@ -846,9 +846,10 @@ section#be_tec p {
   appearance: none;
   line-height: 135%;
   max-width: 25vw;
+  font-size: 11px;
 }
 #registro article form .step .step-area .step-data label select.option.inputPrepa {
-  width: 260px;
+  width: 233px;
 }
 #registro article form .step .step-area .step-data .bool-choose .option,
 #registro article form .step .step-area .step-data .bool-chooser .option {
