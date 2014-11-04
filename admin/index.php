@@ -61,8 +61,9 @@ $taller = new Taller();
 	//var_dump($user);
 	?>
 	<div class="btn-group pull-right">
+		<button type="button" class="btn btn-info">Enviar Boleto</button>
 		<button type="button" class="btn btn-success">Guardar Cambios</button>
-		<button type="button" class="btn btn-danger">Cancelar Cambios</button>
+		<button type="button" class="btn btn-default">Cancelar Cambios</button>
 		<button type="button" class="btn btn-danger">Eliminar Registro</button>
 	</div>
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
