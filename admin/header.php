@@ -42,7 +42,7 @@ session_start();
 					</ul>
 					<form class="navbar-form navbar-right" role="search">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Buscar registro">
+							<input name="s" type="text" class="form-control" placeholder="Buscar registro">
 						</div>
 						<button type="submit" class="btn btn-default">Buscar</button>
 					</form>
