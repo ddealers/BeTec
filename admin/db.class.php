@@ -43,24 +43,41 @@ class MYDB{
 			while( $row = $r->fetch_object() ){
 				$result[] = $row;
 			}
+			$this->mysqli->close();
 			return new MYResult( $result );
 		}else{
+			$this->mysqli->close();
 			return new MYResult( NULL );
 		}
 	}
 	
 	protected function _insert( $data ){
 		$fields = array();
+		$values = array();
 		foreach ($data as $key => $value) {
 			$fields[] = $key;
+			$values[] = $value;
 		}
 		$fieldsstr = implode( ', ', $fields);
-		$fieldsval = ':' . implode( ', ', $fields);
-		$this->mysqli->prepare("INSERT INTO " . $this->table . " ( $fieldsstr, created_at ) value ( $fieldsval, NOW() )");
-		$this->mysqli->execute();
+		$fieldsval = implode( ', ', $fields);
+		$r = $this->mysqli->query( "INSERT INTO " . $this->table . " ( $fieldsstr ) value ( $fieldsval )" );
+		$this->mysqli->close();
+		return $this->mysqli->insert_id();
+	}
+	protected function _update( $data, $condition ){
+		$fields = array();
+		$values = array();
+		foreach($data as $key=>$value){
+			$fields[] = $key . '=' .$value;
+		}
+		$fieldsstr = implode( ', ', $fields );
+		$r = $this->mysqli->query( "UPDATE " . $this->table . "SET $fieldsstr WHERE $condition" );
+		$this->mysqli->close();
+		return $this->mysqli->affected_rows();
 	}
 	protected function _delete( $condition ){
 		$r = $this->mysqli->query( "DELETE FROM " . $this->table . "WHERE $condition" );
+		$this->mysqli->close();
 		return true;
 	}
 	private function getError(){
