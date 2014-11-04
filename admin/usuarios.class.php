@@ -19,6 +19,24 @@ class Usuario extends MYDB{
 		}
 		return $v;
 	}
+	public function registrados(){
+		return $this->_all("id")->count();
+	}
+	public function locales(){
+		return $this->_where("id","id_ciudad='986'")->count();
+	}
+	public function foraneos(){
+		return $this->_where("id","id_ciudad<>'986'")->count();
+	}
+	public function nodocs(){
+		return $this->_where("id","documentos<>'1'")->count();
+	}
+	public function hospedaje(){
+		return $this->_where("id","hospedaje<>'1'")->count();
+	}
+	public function acompana(){
+		return $this->_where("id","acompana<>'1'")->count();
+	}
 	public function byID( $id ){
 		$v = $this->_where("*","id=$id")->first();
 		foreach ($v as $key => $value) {

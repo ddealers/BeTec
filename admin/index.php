@@ -19,33 +19,35 @@ $taller = new Taller();
 <?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
 	<?php if(!isset($_REQUEST['u'])): ?>
 	<section>
-		<table class="table table-bordered">
-			<tr>
-				<td>ID</td>
-				<td>Nombre</td>
-				<td>Correo</td>
-				<td>Modificar</td>
-			</tr>
-			<?php 
-			$s = isset($_REQUEST['s']) ? $_REQUEST['s'] : NULL;
-			foreach($usuario->rows($s) as $row): ?>
-			<tr>
-				<td><?php echo $row->id?></td>
-				<td><?php echo $row->nombre?></td>
-				<td><?php echo $row->correo?></td>
-				<td>
-					<a href='?u=<?php echo $row->id?>' type='button' class='btn btn-primary btn-xs'>Ver Detalle</a>
-				</td>
-			</tr>
-			<?php endforeach; ?>
-		</table>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tr>
+					<td>ID</td>
+					<td>Nombre</td>
+					<td>Correo</td>
+					<td>Modificar</td>
+				</tr>
+				<?php 
+				$s = isset($_REQUEST['s']) ? $_REQUEST['s'] : NULL;
+				foreach($usuario->rows($s) as $row): ?>
+				<tr>
+					<td><?php echo $row->id?></td>
+					<td><?php echo $row->nombre?></td>
+					<td><?php echo $row->correo?></td>
+					<td>
+						<a href='?u=<?php echo $row->id?>' type='button' class='btn btn-primary btn-xs'>Ver Detalle</a>
+					</td>
+				</tr>
+				<?php endforeach; ?>
+			</table>
+		</div>
 		<div class="admin">
-			<p class="p">* Número de usuarios registrados<span></span></p>
-			<p class="p">* Número de usuarios Locales<span></span></p>
-			<p class="p">* Número de usuarios Foráneos<span></span></p>
-			<p class="p">* Usuarios Foráneos pendientes de subir documentos<span></span></p>
-			<p class="p">* Usuarios Foráneos que solicitaron habitación<span></span></p>
-			<p class="p">* Usuarios Foráneos que vienen con acompañantes<span></span></p>
+			<p class="p">* Número de usuarios registrados<span><?php echo $usuario->registrados() ?></span></p>
+			<p class="p">* Número de usuarios Locales<span><?php echo $usuario->locales() ?></span></p>
+			<p class="p">* Número de usuarios Foráneos<span><?php echo $usuario->foraneos() ?></span></p>
+			<p class="p">* Usuarios Foráneos pendientes de subir documentos<span><?php echo $usuario->nodocs() ?></span></p>
+			<p class="p">* Usuarios Foráneos que solicitaron habitación<span><?php echo $usuario->hospedaje() ?></span></p>
+			<p class="p">* Usuarios Foráneos que vienen con acompañantes<span><?php echo $usuario->acompana() ?></span></p>
 		</div>
 	</section>
 	<?php endif; ?>
