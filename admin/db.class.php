@@ -12,6 +12,7 @@ class MYDB{
 	
 	protected function _custom( $q ){
 		$result = array();
+		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		$r = $this->mysqli->query( $q );
 		if($r){
 			while( $row = $r->fetch_object() ){
@@ -98,6 +99,10 @@ class MYResult
 
 	public function get(){
 		return $this->result;
+	}
+
+	public function first(){
+		return $this->result[0];
 	}
 
 	public function count(){

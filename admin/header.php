@@ -22,6 +22,31 @@ session_start();
 </head>
 <body>
 	<div class="container">
-		<nav class="navbar navbar-default">
-			<img src="../img/logo.png">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<?php endif; ?>
+					<a class="navbar-brand" href="#"><img height="200%" src="../img/logo.png"></a>
+				</div>
+				<?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
+				<div class="collapse navbar-collapse" id="navbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="./login.php?logout">Salir</a></li>
+					</ul>
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Buscar registro">
+						</div>
+						<button type="submit" class="btn btn-default">Buscar</button>
+					</form>
+				</div>
+				<?php endif; ?>
+			</div>
 		</nav>
