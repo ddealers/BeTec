@@ -15,6 +15,7 @@ if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
   			</div>
   			<button type="submit" class="btn btn-default">Submit</button>
 		</form-->
+		<a href="./admin.class.php?logout">Salir</a><br />
 		<p><br></p>
 		<ul class="nav nav-tabs" role="tablist" id="myTab">
 		 	<li role="presentation" class="active"><a href="#paso1" role="tab" data-toggle="tab">PASO 1</a></li>

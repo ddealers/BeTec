@@ -82,10 +82,12 @@ if($action == 'login'){
 		
 	}
 }elseif ($action = 'logout') {
+	session_start();
 	$_SESSION['user'] = null;
 	unset($_SESSION['user']);
-	session_destroy();
+	session_destroy($_SESSION['user']);
 	clearstatcache();
+	header("Location: ../admin/index.php");
 }else{
 	//echo "No entra";
 }
