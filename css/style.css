@@ -769,13 +769,6 @@ section#be_tec p {
   width: 100%;
   height: 100%;
 }
-#registro article form .step .step-area.prepa {
-  position: absolute;
-  right: 75px;
-}
-#registro article form .step .step-area.prepa .step-data label i {
-  right: -55px;
-}
 #registro article form .step .step-area {
   display: -webkit-inline-box;
   display: -moz-inline-box;
@@ -826,11 +819,12 @@ section#be_tec p {
   position: relative;
   display: block;
   font-size: 13px;
+  width: 100%;
 }
 #registro article form .step .step-area .step-data label i {
   position: absolute;
-  right: 5%;
   top: 30%;
+  right: 8%;
 }
 #registro article form .step .step-area .step-data label select {
   width: 100%;
@@ -846,9 +840,7 @@ section#be_tec p {
   appearance: none;
   line-height: 135%;
   max-width: 25vw;
-}
-#registro article form .step .step-area .step-data label select.option.inputPrepa {
-  width: 260px;
+  font-size: 11px;
 }
 #registro article form .step .step-area .step-data .bool-choose .option,
 #registro article form .step .step-area .step-data .bool-chooser .option {
@@ -914,7 +906,7 @@ section#be_tec p {
   display: inline-block;
 }
 #registro article form .step .step-area.contacto input[name="tel"] {
-  width: 63%;
+  width: 70%;
   display: inline-block;
 }
 #registro article form .step .step-area.carreras {
@@ -929,6 +921,9 @@ section#be_tec p {
 #registro article form .step .step-area.prepa {
   width: 25vw;
   margin-left: 2vw;
+}
+#registro article form .step .step-area.prepa .step-data {
+  width: 200%;
 }
 #registro article form .step .step-area.prepa label {
   width: 100%;

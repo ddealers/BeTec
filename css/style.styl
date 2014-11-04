@@ -510,13 +510,6 @@ section
 			form
 				.step
 					size 100% 100%
-					.step-area.prepa
-						position absolute
-						right 75px
-						.step-data
-							label
-								i 
-									right -55px
 					.step-area
 						display inline-flex
 						align-items center
@@ -551,10 +544,11 @@ section
 								position relative
 								display block
 								font-size: 13px;
+								width 100%
 								i
 									position absolute
-									right 5%
 									top 30%
+									right 8%
 								select
 									width 100%
 									display inline-block
@@ -567,10 +561,7 @@ section
 									appearance none
 									line-height 135%
 									max-width 25vw
-									&.option.inputPrepa
-										width 260px
-										input
-											right
+									font-size 11px
 							.bool-choose
 							.bool-chooser
 								.option
@@ -618,7 +609,7 @@ section
 								width 10%
 								display inline-block
 							input[name="tel"]
-								width 63%
+								width 70%
 								display inline-block
 						&.carreras
 							width 30vw
@@ -630,10 +621,13 @@ section
 						&.prepa
 							width 25vw
 							margin-left 2vw
+							.step-data
+								width 200%
 							label
 								width 100%
 							select
 								width 100%
+								//width 233px
 							input
 								display none
 								margin-left 3%
