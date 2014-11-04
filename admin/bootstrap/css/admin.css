@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  size: 100%;
+}
+/* =========================== admin */
+div.container div.navbar-header img {
+  margin-top: -10px;
+}
+div.admin {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+div.admin p.p {
+  padding-top: 10px;
+  font-style: italic;
+}
+div.admin p.p span {
+  border: 1px solid #ddd;
+  padding: 15px 30px;
+  margin-left: 40px;
+  position: absolute;
+  left: 850px;
+  border-radius: 5px;
+}
