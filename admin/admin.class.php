@@ -50,13 +50,15 @@ class AdminClass extends MYDB{
 		$q = "UPDATE usuarios SET genero = $genero, nombre = '$nombre', cumpleaños = '$cumple', correo = '$email', telefono = '$tel' , celular = '$cel', id_medio = $medio, id_estado = $estado, id_ciudad = $ciudad, id_prepa = $prepa, graduacion = '$ingreso', hospedaje = $hotel, $acompana = $solo WHERE id = '$idu'";
 		$v = $this->_custom($q);
 
-		$q = "UPDATE usuario_follow SET parentestco = '$parentestco', acompanante = '$acompana' WHERE id_usuario = $idu";
+		$q = "UPDATE usuario_follow SET parentestco = '$perentesco', acompanante = '$acompana' WHERE id_usuario = $idu";
 		$v = $this->_custom($q);
 
 		$q = "UPDATE usuarios_info SET monterrey = $tecno WHERE id = $idu";
 		$v = $this->_custom($q);
 
-		
+		$q = "UPDATE usuario"
+
+
 		$response = 'true';
 
 		return $response;
