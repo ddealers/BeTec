@@ -769,10 +769,6 @@ section#be_tec p {
   width: 100%;
   height: 100%;
 }
-#registro article form .step .step-area.prepa {
-  position: absolute;
-  right: 75px;
-}
 #registro article form .step .step-area.prepa .step-data label i {
   right: -30px;
 }
@@ -915,7 +911,7 @@ section#be_tec p {
   display: inline-block;
 }
 #registro article form .step .step-area.contacto input[name="tel"] {
-  width: 63%;
+  width: 70%;
   display: inline-block;
 }
 #registro article form .step .step-area.carreras {
