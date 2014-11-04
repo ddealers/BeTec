@@ -59,9 +59,9 @@ if($action == 'login'){
 		$res = $admin->login($user, $clave);
 		
 		if($res){
-			$uri = "/admin/index.php";
+			$uri = "../admin/index.php";
 		}else{
-			$uri = "/admin/index.php?e=60";
+			$uri = "../admin/index.php?e=60";
 		}
 		header("Location: ". $uri);
 	}
@@ -78,7 +78,7 @@ if($action == 'login'){
 			$uri = $res['uri'];
 		}
 
-		header("Location: /admin/recuperar.php?e=".$uri);
+		header("Location: ../admin/recuperar.php?e=".$uri);
 		
 	}
 }else{
