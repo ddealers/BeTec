@@ -9,6 +9,7 @@ session_start();
 	<title>BTEC</title>
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/admin.css"/>
 	<script type="text/javascript" src="../js/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript">

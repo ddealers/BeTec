@@ -34,6 +34,14 @@ $carrera = new Carrera();
 			</tr>
 			<?php endforeach; ?>
 		</table>
+		<div class="admin">
+			<p class="p">* Número de usuarios registrados<span></span></p>
+			<p class="p">* Número de usuarios Locales<span></span></p>
+			<p class="p">* Número de usuarios Foráneos<span></span></p>
+			<p class="p">* Usuarios Foráneos pendientes de subir documentos<span></span></p>
+			<p class="p">* Usuarios Foráneos que solicitaron habitación<span></span></p>
+			<p class="p">* Usuarios Foráneos que vienen con acompañantes<span></span></p>
+		</div>
 	</section>
 	<?php endif; ?>
 	<?php 
