@@ -44,10 +44,8 @@ class MYDB{
 			while( $row = $r->fetch_object() ){
 				$result[] = $row;
 			}
-			$this->mysqli->close();
 			return new MYResult( $result );
 		}else{
-			$this->mysqli->close();
 			return new MYResult( NULL );
 		}
 	}
@@ -62,7 +60,6 @@ class MYDB{
 		$fieldsstr = implode( ', ', $fields);
 		$fieldsval = implode( ', ', $fields);
 		$r = $this->mysqli->query( "INSERT INTO " . $this->table . " ( $fieldsstr ) value ( $fieldsval )" );
-		$this->mysqli->close();
 		return $this->mysqli->insert_id();
 	}
 	protected function _update( $data, $condition ){
@@ -73,12 +70,10 @@ class MYDB{
 		}
 		$fieldsstr = implode( ', ', $fields );
 		$r = $this->mysqli->query( "UPDATE " . $this->table . "SET $fieldsstr WHERE $condition" );
-		$this->mysqli->close();
 		return $this->mysqli->affected_rows();
 	}
 	protected function _delete( $condition ){
 		$r = $this->mysqli->query( "DELETE FROM " . $this->table . "WHERE $condition" );
-		$this->mysqli->close();
 		return true;
 	}
 	private function getError(){
@@ -102,7 +97,8 @@ class MYResult
 	}
 
 	public function first(){
-		return $this->result[0];
+		if($this->count() > 0) return $this->result[0];
+		else return false;
 	}
 
 	public function count(){

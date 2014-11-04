@@ -8,8 +8,12 @@ class Usuario extends MYDB{
 		$this->table = 'usuarios';
 	}
 
-	public function rows(){
-		$v = $this->_all("id, nombre, correo")->get();
+	public function rows($search){
+		if($search){
+			$v = $this->_where("id, nombre, correo","nombre LIKE '%$search%' OR correo LIKE '%$search%'")->get();
+		}else{
+			$v = $this->_all("id, nombre, correo")->get();
+		}
 		foreach ($v as $value) {
 			$value->nombre = utf8_encode($value->nombre);
 		}
@@ -25,9 +29,11 @@ class Usuario extends MYDB{
 	}
 	public function getFollow( $id ){
 		$v = $this->_custom("SELECT parentestco, acompanante FROM usuario_follow WHERE id_usuario='$id'")->first();
-		foreach ($v as $key => $value) {
-			$key = utf8_encode($key);
-			$v->$key = utf8_encode($value);
+		if($v){
+			foreach ($v as $key => $value) {
+				$key = utf8_encode($key);
+				$v->$key = utf8_encode($value);
+			}
 		}
 		return $v;
 	}
@@ -40,7 +46,14 @@ class Usuario extends MYDB{
 		return $v;
 	}
 	public function getCarreras( $id ){
-		$v = $this->_custom("SELECT id_carrera, nombre FROM usuario_carrera LEFT JOIN carreras ON carreras.id=usuario_carrera.id_carrera WHERE id_usuario='$id'")->get();
+		$v = $this->_custom("SELECT id_carrera, nombre FROM usuario_carrera LEFT JOIN carreras ON carreras.id=usuario_carrera.id_carrera WHERE id_usuario='$id' ORDER BY create_at ASC")->get();
+		foreach ($v as $key => $value) {
+			$value->nombre = utf8_encode($value->nombre);
+		}
+		return $v;
+	}
+	public function getTalleres( $id ){
+		$v = $this->_custom("SELECT id_taller, nombre FROM usuario_taller LEFT JOIN talleres ON talleres.id=usuario_taller.id_taller WHERE id_usuario='$id' ORDER BY create_at ASC")->get();
 		foreach ($v as $key => $value) {
 			$value->nombre = utf8_encode($value->nombre);
 		}

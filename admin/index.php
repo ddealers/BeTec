@@ -5,12 +5,16 @@ require_once('estado.class.php');
 require_once('ciudad.class.php');
 require_once('prepa.class.php');
 require_once('carrera.class.php');
+require_once('medio.class.php');
+require_once('talleres.class.php');
 
 $usuario = new Usuario();
 $estado = new Estado();
 $ciudad = new Ciudad();
 $prepa = new Prepa();
 $carrera = new Carrera();
+$medio = new Medio();
+$taller = new Taller();
 ?>
 <?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
 	<?php if(!isset($_REQUEST['u'])): ?>
@@ -22,8 +26,9 @@ $carrera = new Carrera();
 				<td>Correo</td>
 				<td>Modificar</td>
 			</tr>
-			<?php foreach($usuario->rows() as $row): ?>
-			<?php //var_dump($row) ?>
+			<?php 
+			$s = isset($_REQUEST['s']) ? $_REQUEST['s'] : NULL;
+			foreach($usuario->rows($s) as $row): ?>
 			<tr>
 				<td><?php echo $row->id?></td>
 				<td><?php echo $row->nombre?></td>
@@ -50,7 +55,8 @@ $carrera = new Carrera();
 	$user->follow = $usuario->getFollow($_REQUEST['u']);
 	$user->universidad = $usuario->getUniversidad($_REQUEST['u']);
 	$user->carreras = $usuario->getCarreras($_REQUEST['u']);
-	var_dump($user);
+	$user->talleres = $usuario->getTalleres($_REQUEST['u']);
+	//var_dump($user);
 	?>
 	<p><br></p>
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
@@ -101,6 +107,20 @@ $carrera = new Carrera();
 		 			<label class="col-sm-2 control-label">Celular</label>
 		 			<div class="col-sm-10">
 		 				<input type="tel" class="form-control" placeholder="Celular" id="cel" value="<?php echo $user->celular ?>">
+		 			</div>
+		 		</div>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">¿Cómo te enteraste?</label>
+		 			<div class="col-sm-10">
+		 				<select class="form-control">
+							<?php foreach($medio->listAll() as $value): ?>
+							<?php if($value->id == $user->id_medio): ?>
+							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php else: ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endif ?>
+							<?php endforeach; ?>
+						</select>
 		 			</div>
 		 		</div>
 		 		<h3>Estudios y fecha de ingreso</h3>
@@ -179,15 +199,16 @@ $carrera = new Carrera();
 			 		<label class="col-sm-2 control-label">Parentesco del Acompañante</label>
 			 		<div class="col-sm-10">
 			 			<select>
-							<option <?php if($user->follow->parentestco=='1') echo 'selected' ?> value="1">Madre</option>
-							<option <?php if($user->follow->parentestco=='2') echo 'selected' ?> value="2">Padre</option>
+			 				<option>Ninguno</option>
+							<option <?php if($user->follow && $user->follow->parentestco=='1') echo 'selected' ?> value="1">Madre</option>
+							<option <?php if($user->follow && $user->follow->parentestco=='2') echo 'selected' ?> value="2">Padre</option>
 						</select>
 			 		</div>
 			 	</div>
 			 	<div class="form-group">
 			 		<label class="col-sm-2 control-label">Nombre del Acompañante</label>
 			 		<div class="col-sm-10">
-			 			<input type="text" class="form-control" placeholder="Nombre" id="acompana" value="<?php echo $user->follow->acompanante ?>">
+			 			<input type="text" class="form-control" placeholder="Nombre" id="acompana" value="<?php if($user->follow) echo $user->follow->acompanante ?>">
 			 		</div>
 			 	</div>
 			</form>
@@ -209,7 +230,7 @@ $carrera = new Carrera();
 			 		<label class="col-sm-2 control-label">Carrera 1</label>
 			 		<div class="col-sm-10">
 			 			<select>
-			 			<?php foreach($carreras->listAll() as $value): ?>
+			 			<?php foreach($carrera->listAll() as $value): ?>
 							<?php if($value->id == $user->carreras[0]->id_carrera): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php else: ?>
@@ -223,7 +244,7 @@ $carrera = new Carrera();
 			 		<label class="col-sm-2 control-label">Carrera 2</label>
 			 		<div class="col-sm-10">
 			 			<select>
-			 			<?php foreach($carreras->listAll() as $value): ?>
+			 			<?php foreach($carrera->listAll() as $value): ?>
 							<?php if($value->id == $user->carreras[1]->id_carrera): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php else: ?>
@@ -237,7 +258,7 @@ $carrera = new Carrera();
 			 		<label class="col-sm-2 control-label">Carrera 3</label>
 			 		<div class="col-sm-10">
 			 			<select>
-			 			<?php foreach($carreras->listAll() as $value): ?>
+			 			<?php foreach($carrera->listAll() as $value): ?>
 							<?php if($value->id == $user->carreras[2]->id_carrera): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php else: ?>
@@ -247,105 +268,83 @@ $carrera = new Carrera();
 			 			</select>
 			 		</div>
 			 	</div>
-			<section>
-				<p>CARRERAS DE INTERÉS</p>
-		 		<select class="form-control">
-					<option>Elige una carrera</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-				<p><br></p>
-				<select class="form-control">
-					<option>Elige una carrera</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-				<p><br></p>
-				<select class="form-control">
-					<option>Elige una carrera</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-		 	</section>
-			<p><br></p>
-			<section>
-				<p>UNIVERSIDAD</p>
-		 		<p>¿Tienes pensado estudiar tu carrera en el Tecnológico de Monterrey, Campus Monterrey?</p>
-				<label class="radio-inline">
-			  		<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">si
-				</label>
-				<label class="radio-inline">
-			  		<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">no
-				</label>
-		 	</section>
-			<p><br></p>
-			<section>
-				<p>MEDIO</p>
-		 		<p>¿Cómo te enteraste del Born to be Tec?</p>
-				<select class="form-control">
-					<option>Elige un medio</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-		 	</section>
+			</form>
 		</div>
-		<div role="tabpanel" class="tab-pane" id="paso5">
-			<p><br></p>
-			<section>
-				<p>ACTIVIDADES DEL VIERNES</p>
-		 		<p>Elige las tres actividades a las que quieres asistir el viernes.</p>
-				<select class="form-control">
-					<option>Elige tu actividad de 16:30 a 17:00 horas</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-				<p><br></p>
-				<select class="form-control">
-					<option>Elige tu actividad de 17:40 a 16:30 horas</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-				<p><br></p>
-				<select class="form-control">
-					<option>Elige tu actividad de 18:40 a 19:30 horas</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-		 	</section>
-			<p><br></p>
-			<section>
-				<p>TALLERES DEL SÁBADO</p>
-		 		<p>Elige los dos talleres que quieres asistir el sábado.</p>
-				<select class="form-control">
-					<option>Elige tu taller de 9:00 a 11:30 horas</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-				<p><br></p>
-				<select class="form-control">
-					<option>Elige tu taller de 11:45 a 14:15 horas</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-			</section>
+		<div role="tabpanel" class="tab-pane" id="talleres">
+			<form class="form-horizontal" role="form">
+				<h3>Talleres del Viernes</h3>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Viernes 1</label>
+					<div class="col-sm-10">
+						<select>
+						<?php foreach($taller->listViernes() as $value): ?>
+							<?php if($value->id == $user->talleres[0]->id_taller): ?>
+							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php else: ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endif ?>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Viernes 2</label>
+					<div class="col-sm-10">
+						<select>
+						<?php foreach($taller->listViernes() as $value): ?>
+							<?php if($value->id == $user->talleres[1]->id_taller): ?>
+							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php else: ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endif ?>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Viernes 3</label>
+					<div class="col-sm-10">
+						<select>
+						<?php foreach($taller->listViernes() as $value): ?>
+							<?php if($value->id == $user->talleres[2]->id_taller): ?>
+							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php else: ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endif ?>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<h3>Talleres del Sábado</h3>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Sábado 1</label>
+					<div class="col-sm-10">
+						<select>
+						<?php foreach($taller->listSabado() as $value): ?>
+							<?php if($value->id == $user->talleres[3]->id_taller): ?>
+							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php else: ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endif ?>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Sábado 2</label>
+					<div class="col-sm-10">
+						<select>
+						<?php foreach($taller->listSabado() as $value): ?>
+							<?php if($value->id == $user->talleres[1]->id_taller): ?>
+							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php else: ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endif ?>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 	<?php endif; ?>
