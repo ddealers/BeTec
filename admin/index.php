@@ -60,7 +60,10 @@ $taller = new Taller();
 	$user->talleres = $usuario->getTalleres($_REQUEST['u']);
 	//var_dump($user);
 	?>
-	<p><br></p>
+	<div class="btn-group pull-right">
+		<button type="button" class="btn btn-success">Guardar Cambios</button>
+		<button type="button" class="btn btn-danger">Eliminar</button>
+	</div>
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
 	 	<li role="presentation" class="active"><a href="#generales" role="tab" data-toggle="tab">Datos Generales</a></li>
 	 	<li role="presentation"><a href="#hospedaje" role="tab" data-toggle="tab">Hospedaje</a></li>
