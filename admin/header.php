@@ -34,7 +34,7 @@ session_start();
 						<span class="icon-bar"></span>
 					</button>
 					<?php endif; ?>
-					<a class="navbar-brand" href="#"><img height="200%" src="../img/logo.png"></a>
+					<a class="navbar-brand" href="index.php"><img height="200%" src="../img/logo.png"></a>
 				</div>
 				<?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
 				<div class="collapse navbar-collapse" id="navbar">
