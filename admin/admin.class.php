@@ -26,7 +26,7 @@ class AdminClass extends MYDB
 		return $response;
 	}
 
-	public function recuperar($email, $msg){
+	public function recuperar($email, $msg, $newpass){
 		$response['status'] = false;
 		$response['uri'] = '69';
 
@@ -34,6 +34,7 @@ class AdminClass extends MYDB
 		
 		if($v->count() == 1){
 			//Genera pass y manda mail
+			$w = $this->_update('s_login_clave = "$newpass"', 's_login_email = "$email"');
 			$response['status'] = true;
 			$response['uri'] = '100';
 			mail($email, 'Recuperar contraseña BTEC ADMIN', $msg);
@@ -66,11 +67,12 @@ if($action == 'login'){
 	}
 }elseif ($action == 'recuperar') {
 	if($_POST['correo'] != NULL && $_POST['correo'] != ''){
+
 		$email = $_POST['correo'];
 		$psswd = substr( md5(microtime()), 1, 8);
 		$msg = "Tu nueva password para acceder al administrador de btec es: <br /> $psswd";
 		
-		$res = $admin->recuperar($email, $msg);
+		$res = $admin->recuperar($email, $msg, $psswd);
 
 		if($res['status']){
 			$uri = $res['uri'];
