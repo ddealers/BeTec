@@ -62,7 +62,7 @@ $taller = new Taller();
 	?>
 	<div class="btn-group pull-right">
 		<button type="button" class="btn btn-info">Enviar Boleto</button>
-		<button type="button" class="btn btn-success">Guardar Cambios</button>
+		<button type="button" class="btn btn-success" onclick="Update()">Guardar Cambios</button>
 		<button type="button" class="btn btn-default">Cancelar Cambios</button>
 		<button type="button" class="btn btn-danger">Eliminar Registro</button>
 	</div>
@@ -79,7 +79,7 @@ $taller = new Taller();
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">Género</label>
 		 			<div class="col-sm-10">
-		 				<select>
+		 				<select id="genero">
 							<option <?php if($user->genero=='0') echo 'selected' ?> value="0">Hombre</option>
 							<option <?php if($user->genero=='1') echo 'selected' ?> value="1">Mujer</option>
 						</select>
@@ -119,7 +119,7 @@ $taller = new Taller();
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">¿Cómo te enteraste?</label>
 		 			<div class="col-sm-10">
-		 				<select class="form-control">
+		 				<select class="form-control" id="medio">
 							<?php foreach($medio->listAll() as $value): ?>
 							<?php if($value->id == $user->id_medio): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -134,7 +134,7 @@ $taller = new Taller();
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">Estado</label>
 		 			<div class="col-sm-10">
-		 				<select class="form-control">
+		 				<select class="form-control" id="estado">
 							<?php foreach($estado->listAll() as $value): ?>
 							<?php if($value->id == $user->id_estado): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -148,7 +148,7 @@ $taller = new Taller();
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">Ciudad</label>
 		 			<div class="col-sm-10">
-		 				<select class="form-control">
+		 				<select class="form-control" id="ciudad">
 							<?php foreach($ciudad->listAll() as $value): ?>
 							<?php if($value->id == $user->id_ciudad): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -162,7 +162,7 @@ $taller = new Taller();
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">Preparatoria</label>
 		 			<div class="col-sm-10">
-		 				<select class="form-control">
+		 				<select class="form-control" id="prepa">
 							<?php foreach($prepa->listAll() as $value): ?>
 							<?php if($value->id == $user->id_prepa): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -187,7 +187,7 @@ $taller = new Taller();
 				<div class="form-group">
 			 		<label class="col-sm-2 control-label">Necesita Hospedaje</label>
 			 		<div class="col-sm-10">
-			 			<select>
+			 			<select id="hotel">
 							<option <?php if($user->hospedaje=='0') echo 'selected' ?> value="0">No</option>
 							<option <?php if($user->hospedaje=='1') echo 'selected' ?> value="1">Si</option>
 						</select>
@@ -196,7 +196,7 @@ $taller = new Taller();
 			 	<div class="form-group">
 			 		<label class="col-sm-2 control-label">Lleva Acompañante</label>
 			 		<div class="col-sm-10">
-			 			<select>
+			 			<select id="solo">
 							<option <?php if($user->hospedaje=='0') echo 'selected' ?> value="0">No</option>
 							<option <?php if($user->hospedaje=='1') echo 'selected' ?> value="1">Si</option>
 						</select>
@@ -205,7 +205,7 @@ $taller = new Taller();
 			 	<div class="form-group">
 			 		<label class="col-sm-2 control-label">Parentesco del Acompañante</label>
 			 		<div class="col-sm-10">
-			 			<select>
+			 			<select id="perentesco">
 			 				<option>Ninguno</option>
 							<option <?php if($user->follow && $user->follow->parentestco=='1') echo 'selected' ?> value="1">Madre</option>
 							<option <?php if($user->follow && $user->follow->parentestco=='2') echo 'selected' ?> value="2">Padre</option>
@@ -226,7 +226,7 @@ $taller = new Taller();
 				<div class="form-group">
 			 		<label class="col-sm-2 control-label">Eligió el Tec</label>
 			 		<div class="col-sm-10">
-			 			<select>
+			 			<select id="tecno">
 							<option <?php if($user->universidad->moneterrey == '0') echo 'selected' ?> value="0">Sí</option>
 							<option <?php if($user->universidad->moneterrey == '1') echo 'selected' ?> value="1">No</option>
 						</select>
@@ -236,7 +236,7 @@ $taller = new Taller();
 				<div class="form-group">
 			 		<label class="col-sm-2 control-label">Carrera 1</label>
 			 		<div class="col-sm-10">
-			 			<select>
+			 			<select id="car1">
 			 			<?php foreach($carrera->listAll() as $value): ?>
 							<?php if($value->id == $user->carreras[0]->id_carrera): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -250,7 +250,7 @@ $taller = new Taller();
 			 	<div class="form-group">
 			 		<label class="col-sm-2 control-label">Carrera 2</label>
 			 		<div class="col-sm-10">
-			 			<select>
+			 			<select id="car2">
 			 			<?php foreach($carrera->listAll() as $value): ?>
 							<?php if($value->id == $user->carreras[1]->id_carrera): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -264,7 +264,7 @@ $taller = new Taller();
 			 	<div class="form-group">
 			 		<label class="col-sm-2 control-label">Carrera 3</label>
 			 		<div class="col-sm-10">
-			 			<select>
+			 			<select id="car3">
 			 			<?php foreach($carrera->listAll() as $value): ?>
 							<?php if($value->id == $user->carreras[2]->id_carrera): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -283,7 +283,7 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Viernes 1</label>
 					<div class="col-sm-10">
-						<select>
+						<select id="tav1">
 						<?php foreach($taller->listViernes() as $value): ?>
 							<?php if($value->id == $user->talleres[0]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -297,7 +297,7 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Viernes 2</label>
 					<div class="col-sm-10">
-						<select>
+						<select id="tav2">
 						<?php foreach($taller->listViernes() as $value): ?>
 							<?php if($value->id == $user->talleres[1]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -311,7 +311,7 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Viernes 3</label>
 					<div class="col-sm-10">
-						<select>
+						<select id="tav3">
 						<?php foreach($taller->listViernes() as $value): ?>
 							<?php if($value->id == $user->talleres[2]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -326,7 +326,7 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Sábado 1</label>
 					<div class="col-sm-10">
-						<select>
+						<select id="tas1">
 						<?php foreach($taller->listSabado() as $value): ?>
 							<?php if($value->id == $user->talleres[3]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
@@ -340,7 +340,7 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Sábado 2</label>
 					<div class="col-sm-10">
-						<select>
+						<select id="tas2">
 						<?php foreach($taller->listSabado() as $value): ?>
 							<?php if($value->id == $user->talleres[1]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
