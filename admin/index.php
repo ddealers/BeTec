@@ -2,20 +2,32 @@
 
 require_once('header.php');
 if(isset($_SESSION['user']) && $_SESSION['user'] != NULL){
-//echo $_SESSION['user']->s_login_user;
+	require_once('usuarios.class.php');
+	$usuarios = new Usuarios;
+	//echo $_SESSION['user']->s_login_user;
 ?>
-		<!--form role="form">
-  			<div class="form-group">
-    			<label for="exampleInputEmail1">Email address</label>
-    			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
- 			</div>
-  			<div class="form-group">
-    			<label for="exampleInputPassword1">Password</label>
-    			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  			</div>
-  			<button type="submit" class="btn btn-default">Submit</button>
-		</form-->
 		<a href="./admin.class.php?logout">Salir</a><br />
+		<br />
+		<!-- Row usuarios -->
+		<section>
+			<table class="table table-bordered">
+				<tr>
+					<td>ID</td>
+					<td>Nombre</td>
+					<td>Correo</td>
+					<td>Modificar</td>
+				</tr>
+				<tr>
+
+				</tr>
+				
+				<?php
+					echo utf8_decode($usuarios->rowUsuarios());
+				?>
+				</tr>
+			</table>
+		</section>	
+		<!-- ROW usuarios -->
 		<p><br></p>
 		<ul class="nav nav-tabs" role="tablist" id="myTab">
 		 	<li role="presentation" class="active"><a href="#paso1" role="tab" data-toggle="tab">PASO 1</a></li>
