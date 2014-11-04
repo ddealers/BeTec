@@ -167,12 +167,14 @@ if($qma){
 				$sql = "INSERT INTO usuario_follow VALUES(NULL, $idu, $pare, '$namep')";
 				$vsql = $mysqli->query($sql);
 			}
-
+			/*
 			if($v && $vp && $vi){
 				$response = 'true';
 			}else{
 				$response = 'false';
 			}
+			*/
+			$response = 'true';
 		}else{
 			$response = 'false';
 		}
