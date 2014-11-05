@@ -51,7 +51,7 @@ class AdminClass extends MYDB{
 		$q = "UPDATE usuarios 
 		SET genero = $genero, 
 		nombre = '$nombre',
-		#cumpleaños = '0000-00-00',
+		cumpleanos = '$cumple',
 		correo = '$email', 
 		telefono = '$tel' , 
 		celular = '$cel', 
