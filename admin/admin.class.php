@@ -117,6 +117,18 @@ class AdminClass extends MYDB{
 		$tss2 = date('Y-m-d H:i:s', time() + 4);
 		$q = "DELETE FROM usuario_taller WHERE id_usuario = {$data['idu']}";
 		$d = $this->_custom($q);
+		
+		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptav1']}";
+		$u = $mysqli->query($qsl);
+		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptav2']}";
+		$u = $mysqli->query($qsl);
+		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptav3']}";
+		$u = $mysqli->query($qsl);
+		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptas1']}";
+		$u = $mysqli->query($qsl);
+		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptas2']}";
+		$u = $mysqli->query($qsl);
+		
 		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tav1']}', '$tsv1')";
 		$i = $this->_custom($q);
 		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tav2']}', '$tsv2')";
@@ -128,6 +140,17 @@ class AdminClass extends MYDB{
 		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tas2']}', '$tss2')";
 		$i = $this->_custom($q);
 		
+		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav1']}";
+		$u = $mysqli->query($qsl);
+		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav2']}";
+		$u = $mysqli->query($qsl);
+		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav3']}";
+		$u = $mysqli->query($qsl);
+		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tas1']}";
+		$u = $mysqli->query($qsl);
+		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tas2']}";
+		$u = $mysqli->query($qsl);
+
 		$response = 'true';
 
 		return $response;
