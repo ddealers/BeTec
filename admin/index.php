@@ -199,8 +199,8 @@ $taller = new Taller();
 			 		<label class="col-sm-2 control-label">Lleva Acompañante</label>
 			 		<div class="col-sm-10">
 			 			<select id="solo">
-							<option <?php if($user->hospedaje=='0') echo 'selected' ?> value="0">No</option>
-							<option <?php if($user->hospedaje=='1') echo 'selected' ?> value="1">Si</option>
+							<option <?php if($user->acompana=='0') echo 'selected' ?> value="0">No</option>
+							<option <?php if($user->acompana=='1') echo 'selected' ?> value="1">Si</option>
 						</select>
 			 		</div>
 			 	</div>
