@@ -28,6 +28,11 @@ $admin = new AdminClass();
 	$tas2 			= $_POST["tas2"];
 	$idu 			= $_POST['idu'];
 	$res = $admin->updateAdmin($genero, $nombre, $cumple, $email, $tel, $cel, $medio, $estado, $ciudad, $prepa, $ingreso, $hotel, $solo, $perentesco ,$acompana, $tecno, $car1, $car2, $car3, $tav1, $tav2, $tav3, $tas1,$tas2, $idu);
+	
+	if($res){
+		$res = true;	
+	}
+	
 	echo $res;
 
 ?>
