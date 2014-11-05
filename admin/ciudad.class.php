@@ -9,7 +9,7 @@ class Ciudad extends MYDB{
 		$this->table = 'ciudades';
 	}
 	public function listAll(){
-		$v = $this->_all("id, nombre")->get();
+		$v = $this->_all("id, estado_id, nombre","ORDER BY nombre ASC")->get();
 		foreach ($v as $value) {
 			$value->nombre = utf8_encode($value->nombre);
 		}

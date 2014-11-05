@@ -24,9 +24,9 @@ class MYDB{
 		}
 	}
 	
-	protected function _all( $fields ){
+	protected function _all( $fields, $order = NULL ){
 		$result = array();
-		$r = $this->mysqli->query( "SELECT $fields FROM " . $this->table );
+		$r = $this->mysqli->query( "SELECT $fields FROM " . $this->table . " " . $order );
 		if($r){
 			while( $row = $r->fetch_object() ){
 				$result[] = $row;
@@ -70,7 +70,7 @@ class MYDB{
 		}
 		$fieldsstr = implode( ', ', $fields );
 		$r = $this->mysqli->query( "UPDATE " . $this->table . "SET $fieldsstr WHERE $condition" );
-		return $this->mysqli->affected_rows();
+		return $this->mysqli->affected_rows;
 	}
 	protected function _delete( $condition ){
 		$r = $this->mysqli->query( "DELETE FROM " . $this->table . "WHERE $condition" );

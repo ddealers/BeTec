@@ -13,14 +13,6 @@ session_start();
 	<script type="text/javascript" src="../js/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function(){
-		$('#myTab a').click(function (e) {
-			e.preventDefault()
-			$(this).tab('show')
-		});
-	});
-	</script>
 </head>
 <body>
 	<div class="container">

@@ -153,9 +153,9 @@ $taller = new Taller();
 		 				<select class="form-control" id="ciudad">
 							<?php foreach($ciudad->listAll() as $value): ?>
 							<?php if($value->id == $user->id_ciudad): ?>
-							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="estado estado<?php echo $value->estado_id ?>" selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php else: ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="estado estado<?php echo $value->estado_id ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
 							<?php endforeach; ?>
 						</select>
@@ -167,9 +167,9 @@ $taller = new Taller();
 		 				<select class="form-control" id="prepa">
 							<?php foreach($prepa->listAll() as $value): ?>
 							<?php if($value->id == $user->id_prepa): ?>
-							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="ciudad ciudad<?php echo $value->id_ciudad ?>" selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php else: ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="ciudad ciudad<?php echo $value->id_ciudad ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
 							<?php endforeach; ?>
 						</select>
@@ -242,6 +242,8 @@ $taller = new Taller();
 			 			<?php foreach($carrera->listAll() as $value): ?>
 							<?php if($value->id == $user->carreras[0]->id_carrera): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php elseif($value->id == $user->carreras[1]->id_carrera || $value->id == $user->carreras[2]->id_carrera): ?>
+							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
@@ -256,6 +258,8 @@ $taller = new Taller();
 			 			<?php foreach($carrera->listAll() as $value): ?>
 							<?php if($value->id == $user->carreras[1]->id_carrera): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php elseif($value->id == $user->carreras[0]->id_carrera || $value->id == $user->carreras[2]->id_carrera): ?>
+							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
@@ -270,6 +274,8 @@ $taller = new Taller();
 			 			<?php foreach($carrera->listAll() as $value): ?>
 							<?php if($value->id == $user->carreras[2]->id_carrera): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php elseif($value->id == $user->carreras[0]->id_carrera || $value->id == $user->carreras[1]->id_carrera): ?>
+							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
@@ -285,10 +291,13 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Viernes 1</label>
 					<div class="col-sm-10">
-						<select id="tav1">
+						<input id="pvopt1" type="hidden" value="<?php echo $user->talleres[0]->id_taller ?>">
+						<select id="vopt1">
 						<?php foreach($taller->listViernes() as $value): ?>
 							<?php if($value->id == $user->talleres[0]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php elseif($value->id == $user->talleres[1]->id_taller || $value->id == $user->talleres[2]->id_taller): ?>
+							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
@@ -299,10 +308,13 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Viernes 2</label>
 					<div class="col-sm-10">
-						<select id="tav2">
+						<input id="pvopt2" type="hidden" value="<?php echo $user->talleres[1]->id_taller ?>">
+						<select id="vopt2">
 						<?php foreach($taller->listViernes() as $value): ?>
 							<?php if($value->id == $user->talleres[1]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php elseif($value->id == $user->talleres[0]->id_taller || $value->id == $user->talleres[2]->id_taller): ?>
+							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
@@ -313,10 +325,13 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Viernes 3</label>
 					<div class="col-sm-10">
-						<select id="tav3">
+						<input id="pvopt3" type="hidden" value="<?php echo $user->talleres[2]->id_taller ?>">
+						<select id="vopt3">
 						<?php foreach($taller->listViernes() as $value): ?>
 							<?php if($value->id == $user->talleres[2]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php elseif($value->id == $user->talleres[0]->id_taller || $value->id == $user->talleres[1]->id_taller): ?>
+							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
@@ -328,10 +343,13 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Sábado 1</label>
 					<div class="col-sm-10">
-						<select id="tas1">
+						<input id="psopt1" type="hidden" value="<?php echo $user->talleres[3]->id_taller ?>">
+						<select id="sopt1">
 						<?php foreach($taller->listSabado() as $value): ?>
 							<?php if($value->id == $user->talleres[3]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php elseif($value->id == $user->talleres[4]->id_taller): ?>
+							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
@@ -342,10 +360,13 @@ $taller = new Taller();
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Sábado 2</label>
 					<div class="col-sm-10">
-						<select id="tas2">
+						<input id="psopt2" type="hidden" value="<?php echo $user->talleres[4]->id_taller ?>">
+						<select id="sopt2">
 						<?php foreach($taller->listSabado() as $value): ?>
-							<?php if($value->id == $user->talleres[1]->id_taller): ?>
+							<?php if($value->id == $user->talleres[4]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php elseif($value->id == $user->talleres[3]->id_taller): ?>
+							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
