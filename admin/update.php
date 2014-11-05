@@ -1,8 +1,6 @@
 <?php
-require_once('header.php');
 require_once('admin.class.php');
 $admin = new AdminClass();
-	
 	$res = 'false';
 	$genero 		= $_POST["genero"];
 	$nombre 		= $_POST["nombre"];
@@ -29,9 +27,7 @@ $admin = new AdminClass();
 	$tas1 			= $_POST["tas1"];
 	$tas2 			= $_POST["tas2"];
 	$idu 			= $_POST['idu'];
-
 	$res = $admin->updateAdmin($genero, $nombre, $cumple, $email, $tel, $cel, $medio, $estado, $ciudad, $prepa, $ingreso, $hotel, $solo, $perentesco ,$acompana, $tecno, $car1, $car2, $car3, $tav1, $tav2, $tav3, $tas1,$tas2, $idu);
-	
 	echo $res;
 
 ?>

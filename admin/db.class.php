@@ -14,7 +14,7 @@ class MYDB{
 		$result = array();
 		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		$r = $this->mysqli->query( $q );
-		if($r !== TRUE){
+		if($r && $r !== TRUE){
 			while( $row = $r->fetch_object() ){
 				$result[] = $row;
 			}
