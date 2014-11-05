@@ -179,9 +179,9 @@ $taller = new Taller();
 		 			<label class="col-sm-2 control-label">Fecha de Ingreso al Nivel Superior</label>
 		 			<div class="col-sm-10">
 		 				<select class="form-control" id="ingreso">
-		 					<option>Agosto 2015</option>
-		 					<option>Enero 2016</option>
-		 					<option>Agosto 2016</option>
+		 					<option <?php if($user->graduacion == 'Agosto 2015') echo 'selected' ?>>Agosto 2015</option>
+		 					<option <?php if($user->graduacion == 'Enero 2016') echo 'selected' ?>>Enero 2016</option>
+		 					<option <?php if($user->graduacion == 'Agosto 2016') echo 'selected' ?>>Agosto 2016</option>
 		 				</select>
 		 				<!--input type="text" class="form-control" placeholder="Fecha de Ingreso" id="ingreso" value="<?php echo $user->graduacion ?>"-->
 		 			</div>
