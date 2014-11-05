@@ -66,6 +66,7 @@ $taller = new Taller();
 		<button type="button" class="btn btn-default">Cancelar Cambios</button>
 		<button type="button" class="btn btn-danger">Eliminar Registro</button>
 	</div>
+	<div class="clearfix"></div>
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
 	 	<li role="presentation" class="active"><a href="#generales" role="tab" data-toggle="tab">Datos Generales</a></li>
 	 	<li role="presentation"><a href="#hospedaje" role="tab" data-toggle="tab">Hospedaje</a></li>
@@ -88,6 +89,7 @@ $taller = new Taller();
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">Nombre</label>
 		 			<div class="col-sm-10">
+		 				<input type="hidden" id="idu" value="<?php echo $uid = $_REQUEST['u'];?>" />
 		 				<input type="text" class="form-control" placeholder="Nombre(s)" id="nombre" value="<?php echo $user->nombre ?>">
 		 			</div>
 		 		</div>
