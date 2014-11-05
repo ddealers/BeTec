@@ -56,7 +56,7 @@ class AdminClass extends MYDB{
 		$q = "UPDATE usuarios_info SET monterrey = $tecno WHERE id = $idu";
 		$v = $this->_custom($q);
 
-		$q = "UPDATE usuario"
+		//$q = "UPDATE usuario"
 
 
 		$response = 'true';
