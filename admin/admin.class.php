@@ -132,5 +132,10 @@ class AdminClass extends MYDB{
 
 		return $response;
 	}
+	public function delete( $id ){
+		$q = "DELETE FROM usuarios WHERE id = $id";
+		$d = $this->_custom($q);
+		return $d->get();
+	}
 }
 ?>

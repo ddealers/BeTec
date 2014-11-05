@@ -123,6 +123,20 @@ $(document).ready(function(){
 		e.preventDefault()
 		$(this).tab('show')
 	});
+	$('.btn-delete').on('click', function(e){
+		e.preventDefault();
+		var r = confirm("Este registro se borrará permanentemente y no podrá recuperarse");
+		if(r){
+			var id = location.search.replace('?u=','');
+			$.ajax({
+				type: 'POST',
+				url: './delete.php',
+				data: {id: id}
+			}).done(function(res){
+				location.href='./index.php';
+			});
+		}
+	});
 	$('#estado').on('change', function(e){
 		var es = $(this).val();
 		$('#ciudad option.estado').hide();

@@ -63,8 +63,8 @@ $taller = new Taller();
 	<div class="btn-group pull-right">
 		<button type="button" class="btn btn-info">Enviar Boleto</button>
 		<button type="button" class="btn btn-success" onclick="Update()">Guardar Cambios</button>
-		<button type="button" class="btn btn-default">Cancelar Cambios</button>
-		<button type="button" class="btn btn-danger">Eliminar Registro</button>
+		<a href="./index.php" class="btn btn-default">Cancelar Cambios</a>
+		<button type="button" class="btn btn-danger btn-delete">Eliminar Registro</button>
 	</div>
 	<div class="clearfix"></div>
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
