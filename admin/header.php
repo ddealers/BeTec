@@ -36,6 +36,8 @@ session_start();
 					</button>
 					<?php endif; ?>
 					<a class="navbar-brand" href="index.php"><img height="200%" src="../img/logo.png"></a>
+					<p><a href="">Inicio</a></p>
+					<p class="check"><a href="">Check in</a></p>
 				</div>
 				<?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
 				<div class="collapse navbar-collapse" id="navbar">

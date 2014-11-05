@@ -10,6 +10,17 @@ html {
 div.container div.navbar-header img {
   margin-top: -10px;
 }
+div.container div.navbar-header p {
+  margin-top: 14px;
+}
+div.container div.navbar-header p a {
+  color: #777;
+  margin-left: 30px;
+}
+div.container div.navbar-header p.check {
+  margin-left: 150px;
+  margin-top: -29px;
+}
 .table-responsive {
   overflow-y: scroll;
   height: 250px;
