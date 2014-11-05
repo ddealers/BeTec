@@ -29,6 +29,7 @@ CREATE TABLE `admin_login` (
   `id_login` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `s_login_user` varchar(100) NOT NULL DEFAULT '',
   `s_login_clave` varchar(250) NOT NULL DEFAULT '',
+  `s_login_permission` int(2) NOT NULL DEFAULT 3,
   `s_login_email` varchar(250) DEFAULT '',
   PRIMARY KEY (`id_login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -36,9 +37,9 @@ CREATE TABLE `admin_login` (
 LOCK TABLES `admin_login` WRITE;
 /*!40000 ALTER TABLE `admin_login` DISABLE KEYS */;
 
-#INSERT INTO `admin_login` (`id_login`, `s_login_user`, `s_login_clave`, `s_login_email`)
-#VALUES
-#	(1,'jok3r','olamundo','jkurtsme@gmail.com');
+INSERT INTO `admin_login` (`id_login`, `s_login_user`, `s_login_clave`, `s_login_permission`, `s_login_email`)
+VALUES
+	(1,'admin','4dm1n',1,'vampay@digitaldealers.mx');
 
 /*!40000 ALTER TABLE `admin_login` ENABLE KEYS */;
 UNLOCK TABLES;
