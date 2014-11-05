@@ -15,6 +15,19 @@ $prepa = new Prepa();
 $carrera = new Carrera();
 $medio = new Medio();
 $taller = new Taller();
+
+//Para Mail
+$key = 'BornToBeTec321_';
+function encriptarURL($string, $key){
+	$result = '';
+	for($i=0; $i<strlen($string); $i++) {
+		$char = substr($string, $i, 1);
+		$keychar = substr($key, ($i % strlen($key))-1, 1);
+		$char = chr(ord($char)+ord($keychar));
+		$result.=$char;
+	}
+	return base64_encode($result);
+}
 ?>
 <?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
 	<?php if(!isset($_REQUEST['u'])): ?>
@@ -59,9 +72,10 @@ $taller = new Taller();
 	$user->carreras = $usuario->getCarreras($_REQUEST['u']);
 	$user->talleres = $usuario->getTalleres($_REQUEST['u']);
 	//var_dump($user);
+	$val = encriptarURL($user->correo, $key);
 	?>
 	<div class="btn-group pull-right">
-		<!--button type="button" class="btn btn-info">Enviar Boleto</button-->
+		<button type="button" class="btn btn-info" onclick="sendTicket()">Enviar Boleto</button>
 		<button type="button" class="btn btn-success" onclick="Update()">Guardar Cambios</button>
 		<a href="./index.php" class="btn btn-default">Cancelar Cambios</a>
 		<button type="button" class="btn btn-danger btn-delete">Eliminar Registro</button>
@@ -104,6 +118,7 @@ $taller = new Taller();
 		 			<label class="col-sm-2 control-label">Correo Electrónico</label>
 		 			<div class="col-sm-10">
 		 				<input type="email" class="form-control" placeholder="Correo electrónico" id="email" value="<?php echo $user->correo?>">
+		 				<input type="hidden"  id="correo" value="<?php echo $val; ?>">
 		 			</div>
 		 		</div>
 		 		<div class="form-group">
