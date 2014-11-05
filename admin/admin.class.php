@@ -92,7 +92,7 @@ class AdminClass extends MYDB{
 		}
 
 		$q = "UPDATE usuarios_info 
-		SET monterrey = {$data['tecno']} 
+		SET moneterrey = {$data['tecno']} 
 		WHERE id = {$data['idu']}";
 		$v = $this->_custom($q);
 
@@ -119,15 +119,15 @@ class AdminClass extends MYDB{
 		$d = $this->_custom($q);
 		
 		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptav1']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptav2']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptav3']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptas1']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptas2']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 		
 		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tav1']}', '$tsv1')";
 		$i = $this->_custom($q);
@@ -141,15 +141,15 @@ class AdminClass extends MYDB{
 		$i = $this->_custom($q);
 		
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav1']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav2']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav3']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tas1']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tas2']}";
-		$u = $mysqli->query($qsl);
+		$u = $this->_custom($q);
 
 		$response = 'true';
 
