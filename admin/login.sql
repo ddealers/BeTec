@@ -36,14 +36,14 @@ CREATE TABLE `admin_login` (
 LOCK TABLES `admin_login` WRITE;
 /*!40000 ALTER TABLE `admin_login` DISABLE KEYS */;
 
-INSERT INTO `admin_login` (`id_login`, `s_login_user`, `s_login_clave`, `s_login_email`)
-VALUES
-	(1,'jok3r','olamundo','jkurtsme@gmail.com');
+#INSERT INTO `admin_login` (`id_login`, `s_login_user`, `s_login_clave`, `s_login_email`)
+#VALUES
+#	(1,'jok3r','olamundo','jkurtsme@gmail.com');
 
 /*!40000 ALTER TABLE `admin_login` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
+ALTER TABLE `usuarios` CHANGE `cumpleaños` `cumpleanos` DATE NOT NULL;
 
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

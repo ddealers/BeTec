@@ -63,7 +63,6 @@ class AdminClass extends MYDB{
 		hospedaje = $hotel, 
 		acompana = $solo 
 		WHERE id = '$idu'";
-		echo $q;
 		$v = $this->_custom($q);
 
 		$q = "UPDATE usuario_follow 
