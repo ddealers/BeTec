@@ -96,7 +96,7 @@ $taller = new Taller();
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">Fecha de Nacimiento</label>
 		 			<div class="col-sm-10">
-		 				<input type="text" class="form-control" placeholder="Nombre(s)" id="cumple" value="<?php echo $user->cumpleaños ?>">
+		 				<input type="text" class="form-control" placeholder="Nombre(s)" id="cumple" value="<?php echo $user->cumpleanos ?>">
 		 			</div>
 		 		</div>
 		 		<h3>Contacto</h3>
