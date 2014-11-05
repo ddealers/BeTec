@@ -75,8 +75,36 @@ class AdminClass extends MYDB{
 		$q = "UPDATE usuarios_info 
 		SET monterrey = $tecno 
 		WHERE id = $idu";
-		
 		$v = $this->_custom($q);
+
+		//Carreras
+		$q = "DELETE FROM usuario_carrera WHERE id_usuario = $idu";
+		$d = $this->_custom($q);
+		if($d){
+			$q = "INSERT INTO usuario_carrera VALUES($idu, '$car1', NOW())";
+			$i = $this->_custom($q);
+			$q = "INSERT INTO usuario_carrera VALUES($idu, '$car2', NOW())";
+			$i = $this->_custom($q);
+			$q = "INSERT INTO usuario_carrera VALUES($idu, '$car3', NOW())";
+			$i = $this->_custom($q);
+		}
+
+		//Talleres
+		$q = "DELETE FROM usuario_taller WHERE id_usuario = $idu";
+		$d = $this->_custom($q);
+		if($d){
+			$q = "INSERT INTO usuario_taller VALUES($idu, '$tav1', NOW())";
+			$i = $this->_custom($q);
+			$q = "INSERT INTO usuario_taller VALUES($idu, '$tav2', NOW())";
+			$i = $this->_custom($q);
+			$q = "INSERT INTO usuario_taller VALUES($idu, '$tav3', NOW())";
+			$i = $this->_custom($q);
+
+			$q = "INSERT INTO usuario_taller VALUES($idu, '$tas1', NOW())";
+			$i = $this->_custom($q);
+			$q = "INSERT INTO usuario_taller VALUES($idu, '$tas2', NOW())";
+			$i = $this->_custom($q);
+		}
 
 		$response = 'true';
 
