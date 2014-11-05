@@ -61,7 +61,7 @@ $taller = new Taller();
 	//var_dump($user);
 	?>
 	<div class="btn-group pull-right">
-		<button type="button" class="btn btn-info">Enviar Boleto</button>
+		<!--button type="button" class="btn btn-info">Enviar Boleto</button-->
 		<button type="button" class="btn btn-success" onclick="Update()">Guardar Cambios</button>
 		<a href="./index.php" class="btn btn-default">Cancelar Cambios</a>
 		<button type="button" class="btn btn-danger btn-delete">Eliminar Registro</button>
@@ -289,11 +289,11 @@ $taller = new Taller();
 			<form class="form-horizontal" role="form">
 				<h3>Talleres del Viernes</h3>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Taller Viernes 1</label>
+					<label class="col-sm-2 control-label">Taller Viernes de 16:30 a 17:20</label>
 					<div class="col-sm-10">
 						<input id="pvopt1" type="hidden" value="<?php echo $user->talleres[0]->id_taller ?>">
 						<select id="vopt1">
-						<?php foreach($taller->listViernes() as $value): ?>
+						<?php foreach($taller->listViernes(true) as $value): ?>
 							<?php if($value->id == $user->talleres[0]->id_taller): ?>
 							<option selected value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php elseif($value->id == $user->talleres[1]->id_taller || $value->id == $user->talleres[2]->id_taller): ?>
@@ -306,7 +306,7 @@ $taller = new Taller();
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Taller Viernes 2</label>
+					<label class="col-sm-2 control-label">Taller Viernes de 17:40 a 18:30</label>
 					<div class="col-sm-10">
 						<input id="pvopt2" type="hidden" value="<?php echo $user->talleres[1]->id_taller ?>">
 						<select id="vopt2">
@@ -323,7 +323,7 @@ $taller = new Taller();
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Taller Viernes 3</label>
+					<label class="col-sm-2 control-label">Taller Viernes de 18:40 a 19:30</label>
 					<div class="col-sm-10">
 						<input id="pvopt3" type="hidden" value="<?php echo $user->talleres[2]->id_taller ?>">
 						<select id="vopt3">
@@ -341,7 +341,7 @@ $taller = new Taller();
 				</div>
 				<h3>Talleres del Sábado</h3>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Taller Sábado 1</label>
+					<label class="col-sm-2 control-label">Taller Sábado de 9:00 a 11:30</label>
 					<div class="col-sm-10">
 						<input id="psopt1" type="hidden" value="<?php echo $user->talleres[3]->id_taller ?>">
 						<select id="sopt1">
@@ -358,7 +358,7 @@ $taller = new Taller();
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Taller Sábado 2</label>
+					<label class="col-sm-2 control-label">Taller Sábado de 11:45 a 14:15</label>
 					<div class="col-sm-10">
 						<input id="psopt2" type="hidden" value="<?php echo $user->talleres[4]->id_taller ?>">
 						<select id="sopt2">

@@ -8,8 +8,12 @@ class Taller extends MYDB{
 		parent::__construct();
 		$this->table = 'talleres';
 	}
-	public function listViernes(){
-		$v = $this->_where("id, nombre","dia='1'")->get();
+	public function listViernes($v1 = false){
+		if($v1){
+			$v = $this->_where("id, nombre","dia='1' AND opc='1'")->get();
+		}else{
+			$v = $this->_where("id, nombre","dia='1' AND id<>46")->get();
+		}
 		foreach ($v as $value) {
 			$value->nombre = utf8_encode($value->nombre);
 		}
