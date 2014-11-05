@@ -178,7 +178,12 @@ $taller = new Taller();
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">Fecha de Ingreso al Nivel Superior</label>
 		 			<div class="col-sm-10">
-		 				<input type="text" class="form-control" placeholder="Fecha de Ingreso" id="ingreso" value="<?php echo $user->graduacion ?>">
+		 				<select class="form-control" id="ingreso">
+		 					<option>Agosto 2015</option>
+		 					<option>Enero 2016</option>
+		 					<option>Agosto 2016</option>
+		 				</select>
+		 				<!--input type="text" class="form-control" placeholder="Fecha de Ingreso" id="ingreso" value="<?php echo $user->graduacion ?>"-->
 		 			</div>
 		 		</div>
 	 		</form>
