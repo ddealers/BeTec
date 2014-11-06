@@ -30,9 +30,12 @@ function encriptarURL($string, $key){
 }
 ?>
 <?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
-	<?php if(!isset($_REQUEST['u'])): ?>
+	<?php if(!isset($_REQUEST['u']) && !isset($_REQUEST['n'])): ?>
 	<section>
 		<div class="table-responsive">
+			<div class="btn-group pull-right">
+				<a href="?n=1" class="btn btn-success" >Agregar Nuevo</a>
+			</div><br /><br />
 			<table class="table table-bordered">
 				<tr>
 					<td>ID</td>
@@ -398,6 +401,261 @@ function encriptarURL($string, $key){
 		</div>
 	</div>
 	<?php endif; ?>
+	<?php if(isset($_REQUEST['n'])){?>
+		<div class="btn-group pull-right">
+			<button type="button" class="btn btn-success" onclick="saveNew()">Guardar</button>
+			<a href="./index.php" class="btn btn-default">Cancelar</a>
+		</div>
+		<div class="clearfix"></div>
+		<ul class="nav nav-tabs" role="tablist" id="myTab">
+	 	<li role="presentation" class="active"><a href="#generales" role="tab" data-toggle="tab">Datos Generales</a></li>
+	 	<li role="presentation"><a href="#hospedaje" role="tab" data-toggle="tab">Hospedaje</a></li>
+	 	<li role="presentation"><a href="#universidad" role="tab" data-toggle="tab">Universidad</a></li>
+	 	<li role="presentation"><a href="#talleres" role="tab" data-toggle="tab">Talleres</a></li>
+	</ul>
+	<div class="tab-content">
+	 	<div role="tabpanel" class="tab-pane active" id="generales">
+	 		<form class="form-horizontal" role="form">
+	 			<h3>Generales</h3>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Género</label>
+		 			<div class="col-sm-10">
+		 				<select id="genero">
+							<option value="0">Hombre</option>
+							<option value="1">Mujer</option>
+						</select>
+		 			</div>
+		 		</div>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Nombre</label>
+		 			<div class="col-sm-10">
+		 				<input type="text" class="form-control" placeholder="Nombre(s)" id="nombre" />
+		 			</div>
+		 		</div>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Fecha de Nacimiento</label>
+		 			<div class="col-sm-10">
+		 				<input type="text" class="form-control" placeholder="Cumpleaños" id="cumple" />
+		 			</div>
+		 		</div>
+		 		<h3>Contacto</h3>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Correo Electrónico</label>
+		 			<div class="col-sm-10">
+		 				<input type="email" class="form-control" placeholder="Correo electrónico" id="email" />
+		 			</div>
+		 		</div>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Teléfono</label>
+		 			<div class="col-sm-10">
+		 				<input type="tel" class="form-control" placeholder="Telefono" id="tel" />
+		 			</div>
+		 		</div>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Celular</label>
+		 			<div class="col-sm-10">
+		 				<input type="tel" class="form-control" placeholder="Celular" id="cel" />
+		 			</div>
+		 		</div>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">¿Cómo te enteraste?</label>
+		 			<div class="col-sm-10">
+		 				<select class="form-control" id="medio">
+							<?php foreach($medio->listAll() as $value): ?>
+								<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endforeach; ?>
+						</select>
+		 			</div>
+		 		</div>
+		 		<h3>Estudios y fecha de ingreso</h3>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Estado</label>
+		 			<div class="col-sm-10">
+		 				<select class="form-control" id="estado">
+							<?php foreach($estado->listAll() as $value): ?>
+								<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endforeach; ?>
+						</select>
+		 			</div>
+		 		</div>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Ciudad</label>
+		 			<div class="col-sm-10">
+		 				<select class="form-control" id="ciudad">
+							<?php foreach($ciudad->listAll() as $value): ?>
+								<option class="estado" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endforeach; ?>
+						</select>
+		 			</div>
+		 		</div>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Preparatoria</label>
+		 			<div class="col-sm-10">
+		 				<select class="form-control" id="prepa">
+							<?php foreach($prepa->listAll() as $value): ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<?php endforeach; ?>
+						</select>
+		 			</div>
+		 		</div>
+		 		<div class="form-group">
+		 			<label class="col-sm-2 control-label">Fecha de Ingreso al Nivel Superior</label>
+		 			<div class="col-sm-10">
+		 				<select class="form-control" id="ingreso">
+		 					<option value="2015">Agosto 2015</option>
+		 					<option value="2016">Enero 2016</option>
+		 					<option value="2016-1">Agosto 2016</option>
+		 				</select>
+		 			</div>
+		 		</div>
+	 		</form>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="hospedaje">
+			<form class="form-horizontal" role="form">
+				<h3>Hospedaje</h3>
+				<div class="form-group">
+			 		<label class="col-sm-2 control-label">Necesita Hospedaje</label>
+			 		<div class="col-sm-10">
+			 			<select id="hotel">
+							<option value="0">No</option>
+							<option value="1">Si</option>
+						</select>
+			 		</div>
+			 	</div>
+			 	<div class="form-group">
+			 		<label class="col-sm-2 control-label">Lleva Acompañante</label>
+			 		<div class="col-sm-10">
+			 			<select id="solo">
+							<option value="0">No</option>
+							<option value="1">Si</option>
+						</select>
+			 		</div>
+			 	</div>
+			 	<div class="form-group">
+			 		<label class="col-sm-2 control-label">Parentesco del Acompañante</label>
+			 		<div class="col-sm-10">
+			 			<select id="perentesco">
+			 				<option value="0">Ninguno</option>
+							<option value="1">Madre</option>
+							<option value="2">Padre</option>
+						</select>
+			 		</div>
+			 	</div>
+			 	<div class="form-group">
+			 		<label class="col-sm-2 control-label">Nombre del Acompañante</label>
+			 		<div class="col-sm-10">
+			 			<input type="text" class="form-control" placeholder="Nombre(s)" id="acompana" />
+			 		</div>
+			 	</div>
+			</form>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="universidad">
+			<form class="form-horizontal" role="form">
+				<h3>Elección de Carrera</h3>
+				<div class="form-group">
+			 		<label class="col-sm-2 control-label">Eligió el Tec</label>
+			 		<div class="col-sm-10">
+			 			<select id="tecno">
+							<option value="0">Sí</option>
+							<option value="1">No</option>
+						</select>
+			 		</div>
+			 	</div>
+			 	<h3>Carreras de Interés</h3>
+				<div class="form-group">
+			 		<label class="col-sm-2 control-label">Carrera 1</label>
+			 		<div class="col-sm-10">
+			 			<select id="car1">
+			 			<?php foreach($carrera->listAll() as $value): ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+						<?php endforeach; ?>
+			 			</select>
+			 		</div>
+			 	</div>
+			 	<div class="form-group">
+			 		<label class="col-sm-2 control-label">Carrera 2</label>
+			 		<div class="col-sm-10">
+			 			<select id="car2">
+			 			<?php foreach($carrera->listAll() as $value): ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+						<?php endforeach; ?>
+			 			</select>
+			 		</div>
+			 	</div>
+			 	<div class="form-group">
+			 		<label class="col-sm-2 control-label">Carrera 3</label>
+			 		<div class="col-sm-10">
+			 			<select id="car3">
+			 			<?php foreach($carrera->listAll() as $value): ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+						<?php endforeach; ?>
+			 			</select>
+			 		</div>
+			 	</div>
+			</form>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="talleres">
+			<form class="form-horizontal" role="form">
+				<h3>Talleres del Viernes</h3>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Viernes de 16:30 a 17:20</label>
+					<div class="col-sm-10">
+						<input id="pvopt1" type="hidden" value="<?php echo $user->talleres[0]->id_taller ?>">
+						<select id="vopt1">
+						<?php foreach($taller->listViernes(true) as $value): ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Viernes de 17:40 a 18:30</label>
+					<div class="col-sm-10">
+						<input id="pvopt2" type="hidden" value="<?php echo $user->talleres[1]->id_taller ?>">
+						<select id="vopt2">
+						<?php foreach($taller->listViernes() as $value): ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Viernes de 18:40 a 19:30</label>
+					<div class="col-sm-10">
+						<select id="vopt3">
+						<?php foreach($taller->listViernes() as $value): ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<h3>Talleres del Sábado</h3>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Sábado de 9:00 a 11:30</label>
+					<div class="col-sm-10">
+						<input id="psopt1" type="hidden" value="<?php echo $user->talleres[3]->id_taller ?>">
+						<select id="sopt1">
+						<?php foreach($taller->listSabado() as $value): ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Taller Sábado de 11:45 a 14:15</label>
+					<div class="col-sm-10">
+						<input id="psopt2" type="hidden" value="<?php echo $user->talleres[4]->id_taller ?>">
+						<select id="sopt2">
+						<?php foreach($taller->listSabado() as $value): ?>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+						<?php endforeach; ?>
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<?php }?>
 <?php else: ?>
 		<form role="form" action="./login.php?login" method="POST">
   			<div class="form-group">

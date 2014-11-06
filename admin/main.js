@@ -77,8 +77,6 @@ function Update(){
 	var tas1 	= $("#sopt1").val(); 
 	var ptas2 	= $("#psopt2").val();
 	var tas2 	= $("#sopt2").val();
-
-//	console.log(genero + nombre + cumple + email + tel +' <> '+cel+' <> '+medio+' <> '+estado+' <> '+ciudad+' <> '+prepa+' <> '+ingreso +' <hospedaje> '+ hotel +' <> '+ solo +' <> '+ perentesco+' <> '+acompana+' <tecnologico> '+ tecno+' <> '+car1+' <> '+car2+' <> '+car3+' <talleres> '+tav1+' <> '+tav2+' <> '+tav3+' <> '+tas1+' <> '+tas2);
 	$.ajax({
 		type: 'POST',
 		url: './update.php',
@@ -116,6 +114,74 @@ function Update(){
 		}
 	}).done(function(res){
 		alert("Se ha actualizado correctamente");
+	});
+}
+
+function saveNew(){
+	var genero 	= $("#genero").val();
+	var nombre 	= $("#nombre").val();
+	var cumple 	= $("#cumple").val();
+	var email 	= $("#email").val();
+	var tel 	= $("#tel").val();
+	var cel 	= $("#cel").val();
+	var medio 	= $("#medio").val();
+	var estado 	= $("#estado").val();
+	var ciudad 	= $("#ciudad").val();
+	var prepa 	= $("#prepa").val();
+	var ingreso = $("#ingreso").val();
+	//Hospedaje
+	var hotel 		= $("#hotel").val();
+	var solo 		= $("#solo").val();
+	var perentesco 	= $("#perentesco").val();
+	var acompana 	= $("#acompana").val();
+	//tecnologico
+	var tecno 	= $("#tecno").val();
+	var car1 	= $("#car1").val();
+	var car2 	= $("#car2").val();
+	var car3 	= $("#car3").val();
+	//talleres
+	var ptav1 	= $("#pvopt1").val();
+	var tav1 	= $("#vopt1").val();
+	var ptav2 	= $("#pvopt2").val();
+	var tav2 	= $("#vopt2").val();
+	var ptav3 	= $("#pvopt3").val();
+	var tav3 	= $("#vopt3").val();
+	var ptas1 	= $("#psopt1").val();
+	var tas1 	= $("#sopt1").val(); 
+	var ptas2 	= $("#psopt2").val();
+	var tas2 	= $("#sopt2").val();
+	$.ajax({
+		type: 'POST',
+		url: './save.php',
+		data: {
+			genero:genero,
+			nombre:nombre,
+			cumple:cumple,
+			email:email,
+			tel:tel,
+			cel:cel,
+			medio:medio,
+			estado:estado,
+			ciudad:ciudad,
+			prepa:prepa,
+			ingreso:ingreso,
+			hotel:hotel,
+			solo:solo,
+			perentesco:perentesco,
+			acompana:acompana,
+			tecno:tecno,
+			car1:car1,
+			car2:car2,
+			car3:car3,
+			tav1:tav1,
+			tav2:tav2,
+			tav3:tav3,
+			tas1:tas1,
+			tas2:tas2
+		}
+	}).done(function(res){
+		//alert("Se ha actualizado correctamente");
+		console.log(res);
 	});
 }
 
