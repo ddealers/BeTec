@@ -55,7 +55,7 @@ function encriptarURL($string, $key){
 						<a href='?u=<?php echo $row->id?>' type='button' class='btn btn-primary btn-xs'>Ver Detalle</a>
 					</td>
 					<td>
-						<a href='../boleto.php?s=<?php echo encriptarURL($row->correo, $key)?>' target="_blank" type='button' class='btn btn-primary btn-xs'>Generar Boleto</a>
+						<a href='http://borntobetec.mty.itesm.mx/boleto.php?s=<?php echo encriptarURL($row->correo, $key)?>' target="_blank" type='button' class='btn btn-primary btn-xs'>Generar Boleto</a>
 					</td>
 				</tr>
 				<?php endforeach; ?>
@@ -406,16 +406,34 @@ function encriptarURL($string, $key){
 		</div>
 		<div role="tabpanel" class="tab-pane" id="documentos">
 			<form class="form-horizontal" role="form">
-				<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>">
 				<h3>Carta Compromiso</h3>
 				<div class="form-group">
-			 		<input type="file" name="cartacomp">
-			 		<a class="btn btn-info" target="_blank" href="#">Ver Documento</a><!--Aquí va la liga al documento si es que ya se subió, sino no debe aparecer -->
+			 		<form action="./upload.php" method="POST" enctype="multipart/form-data">
+			 			<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>" />
+			 			<input type="hidden" name="action" value="carta" />
+			 			<input type="file" name="cartacomp">
+			 			<br />
+			 			<input class="btn btn-info" type="submit" value="Guardar" />
+			 		</form>
+			 		<?php  //if(){ ?>
+			 			<!--a class="btn btn-info" target="_blank" href="#">Ver Documento</a-->
+			 		<?php //} ?>
+			 		
+			 		
+			 		<!--Aquí va la liga al documento si es que ya se subió, sino no debe aparecer -->
 			 	</div>
 			 	<h3>Comprobante de Pago</h3>
 				<div class="form-group">
-			 		<input type="file" name="compag">
-			 		<a class="btn btn-info" target="_blank" href="#">Ver Documento</a><!--Aquí va la liga al documento si es que ya se subió, sino no debe aparecer -->
+					<form action="./upload.php" method="POST" enctype="multipart/form-data">
+			 			<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>">
+			 			<input type="hidden" name="action" value="pago" />
+			 			<input type="file" name="compago">
+			 			<br />
+			 			<input class="btn btn-info" type="submit" value="Guardar" />
+			 		</form>
+			 		<?php  //if(){ ?>
+			 			<!--a class="btn btn-info" target="_blank" href="#">Ver Documento</a-->
+			 		<?php //} ?>
 			 	</div>
 			</form>
 		</div>
