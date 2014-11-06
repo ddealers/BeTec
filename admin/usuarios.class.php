@@ -8,11 +8,11 @@ class Usuario extends MYDB{
 		$this->table = 'usuarios';
 	}
 
-	public function rows($search){
+	public function rows($search = false){
 		if($search){
 			$v = $this->_where("id, nombre, correo","nombre LIKE '%$search%' OR correo LIKE '%$search%'")->get();
 		}else{
-			$v = $this->_all("id, nombre, correo")->get();
+			$v = $this->_all("id, nombre, correo", "ORDER BY id")->get();
 		}
 		foreach ($v as $value) {
 			$value->nombre = utf8_encode($value->nombre);
