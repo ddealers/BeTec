@@ -39,6 +39,7 @@ function encriptarURL($string, $key){
 					<td>Nombre</td>
 					<td>Correo</td>
 					<td>Modificar</td>
+					<td>Boleto</td>
 				</tr>
 				<?php 
 				$s = isset($_REQUEST['s']) ? $_REQUEST['s'] : NULL;
@@ -49,6 +50,9 @@ function encriptarURL($string, $key){
 					<td><?php echo $row->correo?></td>
 					<td>
 						<a href='?u=<?php echo $row->id?>' type='button' class='btn btn-primary btn-xs'>Ver Detalle</a>
+					</td>
+					<td>
+						<a href='../boleto.php?s=<?php echo encriptarURL($row->correo, $key)?>' target="_blank" type='button' class='btn btn-primary btn-xs'>Generar Boleto</a>
 					</td>
 				</tr>
 				<?php endforeach; ?>
@@ -86,6 +90,7 @@ function encriptarURL($string, $key){
 	 	<li role="presentation"><a href="#hospedaje" role="tab" data-toggle="tab">Hospedaje</a></li>
 	 	<li role="presentation"><a href="#universidad" role="tab" data-toggle="tab">Universidad</a></li>
 	 	<li role="presentation"><a href="#talleres" role="tab" data-toggle="tab">Talleres</a></li>
+	 	<li role="presentation"><a href="#documentos" role="tab" data-toggle="tab">Documentos</a></li>
 	</ul>
 	<div class="tab-content">
 	 	<div role="tabpanel" class="tab-pane active" id="generales">
@@ -394,6 +399,21 @@ function encriptarURL($string, $key){
 						</select>
 					</div>
 				</div>
+			</form>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="documentos">
+			<form class="form-horizontal" role="form">
+				<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>">
+				<h3>Carta Compromiso</h3>
+				<div class="form-group">
+			 		<input type="file" name="cartacomp">
+			 		<a class="btn btn-info" target="_blank" href="#">Ver Documento</a><!--Aquí va la liga al documento si es que ya se subió, sino no debe aparecer -->
+			 	</div>
+			 	<h3>Comprobante de Pago</h3>
+				<div class="form-group">
+			 		<input type="file" name="compag">
+			 		<a class="btn btn-info" target="_blank" href="#">Ver Documento</a><!--Aquí va la liga al documento si es que ya se subió, sino no debe aparecer -->
+			 	</div>
 			</form>
 		</div>
 	</div>
