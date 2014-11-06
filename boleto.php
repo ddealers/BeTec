@@ -9,7 +9,7 @@ require('pdf/fpdf.php');
 
 $string = $_GET['s'];
 $key = $key = 'BornToBeTec321_';
-
+$string = str_replace(" ","+",$string);
 $string = desencriptarURL($string, $key);
 
 /*$bcode = new emberlabs\Barcode\Code128();

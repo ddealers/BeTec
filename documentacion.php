@@ -66,6 +66,7 @@ function validaDocs($idu){
 	return $respuesta;
 }
 
+$string = str_replace(" ","+",$string);
 $mail = desencriptarURL($string, $key);
 $in = validaMail($mail);
 if($in[0]){
