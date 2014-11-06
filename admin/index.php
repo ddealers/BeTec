@@ -7,6 +7,7 @@ require_once('prepa.class.php');
 require_once('carrera.class.php');
 require_once('medio.class.php');
 require_once('talleres.class.php');
+require_once('documentacion.class.php');
 
 $usuario = new Usuario();
 $estado = new Estado();
@@ -15,6 +16,7 @@ $prepa = new Prepa();
 $carrera = new Carrera();
 $medio = new Medio();
 $taller = new Taller();
+$docos = new Documentacion();
 
 //Para Mail
 $key = 'BornToBeTec321_';
@@ -80,6 +82,7 @@ function encriptarURL($string, $key){
 	$user->talleres = $usuario->getTalleres($_REQUEST['u']);
 	//var_dump($user);
 	$val = encriptarURL($user->correo, $key);
+	$carta = $docos->documentos($_REQUEST['u']);
 	?>
 	<div class="btn-group pull-right">
 		<button type="button" class="btn btn-info" onclick="sendTicket()">Enviar Boleto</button>
@@ -405,37 +408,47 @@ function encriptarURL($string, $key){
 			</form>
 		</div>
 		<div role="tabpanel" class="tab-pane" id="documentos">
-			<form class="form-horizontal" role="form">
+		<?php 
+		if(isset($_GET['e'])){
+			if($_GET['e'] == 100 || $_GET['e'] == 101){ 
+				$ans =  "<div class='alert alert-success' role='alert'>Se Han subido correctamente tus archivos.</div>";
+			}elseif ($_GET['e'] == 69) { 
+				$ans = "<div class='alert alert-danger' role='alert'>Ocurrio un problema al subir tus archivos.</div>"; 
+			}else{$ans = '';}
+			echo $ans;
+		}
+		?>
 				<h3>Carta Compromiso</h3>
-				<div class="form-group">
-			 		<form action="./upload.php" method="POST" enctype="multipart/form-data">
+				<form action="upload.php" method="post" enctype="multipart/form-data">
+					<div class="form-group">
 			 			<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>" />
 			 			<input type="hidden" name="action" value="carta" />
 			 			<input type="file" name="cartacomp">
 			 			<br />
-			 			<input class="btn btn-info" type="submit" value="Guardar" />
-			 		</form>
-			 		<?php  //if(){ ?>
-			 			<!--a class="btn btn-info" target="_blank" href="#">Ver Documento</a-->
-			 		<?php //} ?>
-			 		
-			 		
-			 		<!--Aquí va la liga al documento si es que ya se subió, sino no debe aparecer -->
-			 	</div>
+
+			 		<?php if($carta[0]->url_permiso != '' || $carta[0]->url_permiso != NULL){ ?>
+			 			<input class="btn btn-info" type="submit" value="Actualizar" />
+			 			<a class="btn btn-info" target="_blank" href="../download/<?php echo $carta[0]->url_permiso;?>">Ver Documento</a>
+			 		<?php }else{ ?>
+						<input class="btn btn-info" type="submit" value="Guardar" />
+			 		<?php } ?>
+			 		</div>
+			 	</form>
 			 	<h3>Comprobante de Pago</h3>
-				<div class="form-group">
-					<form action="./upload.php" method="POST" enctype="multipart/form-data">
+				<form action="upload.php" method="post" enctype="multipart/form-data">
+					<div class="form-group">
 			 			<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>">
 			 			<input type="hidden" name="action" value="pago" />
 			 			<input type="file" name="compago">
 			 			<br />
-			 			<input class="btn btn-info" type="submit" value="Guardar" />
-			 		</form>
-			 		<?php  //if(){ ?>
-			 			<!--a class="btn btn-info" target="_blank" href="#">Ver Documento</a-->
-			 		<?php //} ?>
-			 	</div>
-			</form>
+			 		<?php if($carta[0]->url_pago != '' || $carta[0]->url_pago != NULL){ ?>
+			 			<input class="btn btn-info" type="submit" value="Actualizar" />
+			 			<a class="btn btn-info" target="_blank" href="../download/<?php echo $carta[0]->url_pago;?>">Ver Documento</a>
+			 		<?php }else{ ?>
+						<input class="btn btn-info" type="submit" value="Guardar" />
+			 		<?php } ?>
+			 		</div>
+			 	</form>
 		</div>
 	</div>
 	<?php endif; ?>
