@@ -118,6 +118,25 @@ function Update(){
 		alert("Se ha actualizado correctamente");
 	});
 }
+
+function sendTicket(){
+	//get mail, 
+	var idu		= $("#idu").val();
+	var nombre	= $("#nombre").val();
+	var email	= $("#email").val();
+	var correo	= $("#correo").val();
+
+	$.ajax({
+		type: 'POST',
+		url: './boleto.php',
+		data: {idu:idu, nombre:nombre, email:email, correo:correo }
+	}).done(function(res){
+		if(res){
+			alert("Se ha enviado el mail.");
+		}
+	});
+}
+
 $(document).ready(function(){
 	$('#myTab a').click(function (e) {
 		e.preventDefault()
