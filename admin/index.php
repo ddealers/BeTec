@@ -8,6 +8,8 @@ require_once('carrera.class.php');
 require_once('medio.class.php');
 require_once('talleres.class.php');
 require_once('documentacion.class.php');
+require_once('admin.class.php');
+
 
 $usuario = new Usuario();
 $estado = new Estado();
@@ -17,6 +19,7 @@ $carrera = new Carrera();
 $medio = new Medio();
 $taller = new Taller();
 $docos = new Documentacion();
+$admin = new AdminClass();
 
 //Para Mail
 $key = 'BornToBeTec321_';
@@ -31,24 +34,85 @@ function encriptarURL($string, $key){
 	return base64_encode($result);
 }
 ?>
+<?php if(isset($_GET['e']) && $e = $_GET['e']):
+	switch ($e) {
+		case '100':
+		case '101':
+	?>
+		<div class='alert alert-success' role='alert'>Se Han subido correctamente tus archivos.</div>
+	<?php 
+		break;
+		case '102': ?>
+		<div class='alert alert-success' role='alert'>El usuario se creo correctamente.</div>	
+	<?php 
+		break;
+		case '103': ?>
+		<div class='alert alert-success' role='alert'>El usuario ha sido eliminado.</div>
+	<?php	
+		break;
+		case '60': ?>
+		<div class='alert alert-danger' role='alert'>Usuario o contraseña incorrectos.</div>
+	<?php
+		break;
+		case '69':
+	?>
+		<div class='alert alert-danger' role='alert'>Ocurrio un problema al subir tus archivos.</div>
+<?php
+	}
+	endif; 
+?>
 <?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
-	<?php if(!isset($_REQUEST['u']) && !isset($_REQUEST['n'])): ?>
+	<?php if(!isset($_REQUEST['u']) 
+	&& !isset($_REQUEST['n']) 
+	&& !isset($_REQUEST['admin'])): ?>
 	<section>
-		<div class="table-responsive">
-			<div class="btn-group pull-right">
-				<a href="?n=1" class="btn btn-success" >Agregar Nuevo</a>
-			</div><br /><br />
+		<h4>Filtrar por:</h4>
+		<form id="filters" method="get">
+			<div class="from btn-group pull-left" data-toggle="buttons">
+				<label class="btn btn-default <?php if(!isset($_GET['from']) || $_GET['from'] == 0) echo 'active' ?>">
+					<input type="radio" name="from" value="0" id="fil_opt1" autocomplete="off" <?php if(!isset($_GET['from']) || $_GET['from'] == 0) echo 'checked' ?>> Todos
+				</label>
+				<label class="btn btn-default <?php if(@$_GET['from'] == 1) echo 'active' ?>">
+					<input type="radio" name="from" value="1" id="fil_opt2" autocomplete="off" <?php if(@$_GET['from'] == 1) echo 'checked' ?>> Locales
+				</label>
+				<label class="btn btn-default <?php if(@$_GET['from'] == 2) echo 'active' ?>">
+			  		<input type="radio" name="from" value="2" id="fil_opt3" autocomplete="off" <?php if(@$_GET['from'] == 2) echo 'checked' ?>> Foráneos
+			  	</label>
+			</div>
+			<div class="foreign btn-group pull-right" data-toggle="buttons">
+				<label class="btn btn-default <?php if(@$_GET['docs']) echo 'active' ?>">
+					<input type="checkbox" name="docs" autocomplete="off" <?php if(@$_GET['docs']) echo 'checked' ?>> Docs Pendientes
+				</label>
+				<label class="btn btn-default <?php if(@$_GET['hab']) echo 'active' ?>">
+					<input type="checkbox" name="hab" autocomplete="off" <?php if(@$_GET['hab']) echo 'checked' ?>> c/Habitación
+				</label>
+				<label class="btn btn-default <?php if(@$_GET['comp']) echo 'active' ?>">
+					<input type="checkbox" name="comp" autocomplete="off" <?php if(@$_GET['comp']) echo 'checked' ?>> c/Acompañante
+				</label>
+			</div>
+		</form>
+		<div class="clearfix"></div>
+		<?php 
+		$s = isset($_REQUEST['s']) ? $_REQUEST['s'] : NULL;
+		$f = @$_GET['from'];
+		$d = @$_GET['docs'];
+		$h = @$_GET['hab'];
+		$c = @$_GET['comp'];
+		$rows = $usuario->rows($s, $f, $d, $h, $c);
+		?>
+		<h4>Registros: <?php echo count($rows) ?></h4>
+		<div style="border-bottom: 1px #ccc solid;" class="table-responsive">
 			<table class="table table-bordered">
 				<tr>
-					<td>ID</td>
-					<td>Nombre</td>
-					<td>Correo</td>
-					<td>Modificar</td>
-					<td>Boleto</td>
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Correo</th>
+					<th>Modificar</th>
+					<th>Boleto</th>
 				</tr>
 				<?php 
-				$s = isset($_REQUEST['s']) ? $_REQUEST['s'] : NULL;
-				foreach($usuario->rows($s) as $row): ?>
+				if(count($rows) > 0):
+				foreach($rows as $row): ?>
 				<tr>
 					<td><?php echo $row->id?></td>
 					<td><?php echo $row->nombre?></td>
@@ -60,9 +124,17 @@ function encriptarURL($string, $key){
 						<a href='http://borntobetec.mty.itesm.mx/boleto.php?s=<?php echo encriptarURL($row->correo, $key)?>' target="_blank" type='button' class='btn btn-primary btn-xs'>Generar Boleto</a>
 					</td>
 				</tr>
-				<?php endforeach; ?>
+				<?php 
+				endforeach; 
+				endif;
+				?>
 			</table>
 		</div>
+		<br>
+		<div class="btn-group pull-right">
+			<a href="?n=1" class="btn btn-success">Agregar Nuevo</a>
+		</div>
+		<br>
 		<div class="admin">
 			<p class="p">* Número de usuarios registrados<span><?php echo $usuario->registrados() ?></span></p>
 			<p class="p">* Número de usuarios Locales<span><?php echo $usuario->locales() ?></span></p>
@@ -71,6 +143,86 @@ function encriptarURL($string, $key){
 			<p class="p">* Usuarios Foráneos que solicitaron habitación<span><?php echo $usuario->hospedaje() ?></span></p>
 			<p class="p">* Usuarios Foráneos que vienen con acompañantes<span><?php echo $usuario->acompana() ?></span></p>
 		</div>
+	</section>
+	<?php endif; ?>
+	<?php if(isset($_REQUEST['admin'])):?>
+	<section>
+		<div class="btn-group pull-right">
+			<a href="./index.php?admin&new" class="btn btn-success" >Agregar Nuevo</a>
+		</div><br /><br />
+		<div style="border-bottom: 1px #ccc solid;" class="table-responsive">
+			<table class="table table-bordered">
+				<tr>
+					<th>Usuario</th>
+					<th>Correo</th>
+					<th>Permiso</th>
+					<th>Eliminar</th>
+				</tr>
+				<?php foreach($admin->rows() as $row): ?>
+				<tr>
+					<td><?php echo $row->s_login_user ?></td>
+					<td><?php echo $row->s_login_email ?></td>
+					<td>
+						<select class="form-control">
+							<option <?php if($row->s_login_permission==1) echo 'selected' ?> value="1">Administrador</option>
+							<option <?php if($row->s_login_permission==2) echo 'selected' ?> value="2">Editor</option>
+							<option <?php if($row->s_login_permission==3) echo 'selected' ?> value="3">Sólo lectura</option>
+						</select>
+					</td>
+					<td>
+						<a href='./index.php?admin&delete&id=<?php echo $row->id_login ?>' type='button' class='btn btn-danger btn-xs'>Eliminar</a>
+					</td>
+				</tr>
+				<?php endforeach; ?>
+			</table>
+		</div>
+		<?php 
+		if(isset($_REQUEST['new'])):
+			if(isset($_POST['email']) && isset($_POST['usr'])):
+				$n = $admin->create($_POST['usr'],$_POST['pwd'],$_POST['perm'],$_POST['email']);
+				if($n):
+		?>
+			<script type="text/javascript">location.href = './index.php?admin&e=102';</script>
+		<?php 
+				endif;
+			endif;
+		?>
+		<h3>Nuevo Usuario</h3>
+		<form style="margin-top:20px" method="post" role="form">
+			<div class="form-group">
+				<input type="text" class="form-control" name="usr" placeholder="Usuario">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" name="pwd" placeholder="Contraseña">
+			</div>
+			<div class="form-group">
+				<select name="perm" class="form-control">
+					<option value="1">Administrador</option>
+					<option value="2">Editor</option>
+					<option value="3">Sólo lectura</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">@</div>
+					<input class="form-control" type="email" name="email" placeholder="Correo electrónico">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-default">Guardar</button>
+		</form>
+		<?php endif ?>
+		<?php 
+		if(isset($_REQUEST['delete'])):
+			if(isset($_REQUEST['id'])):
+				$d = $admin->del($_REQUEST['id']);
+				if($d):
+		?>
+			<script type="text/javascript">location.href = './index.php?admin&e=103'</script>
+		<?php
+				endif;
+			endif;
+		endif;
+		?>
 	</section>
 	<?php endif; ?>
 	<?php 
@@ -86,11 +238,16 @@ function encriptarURL($string, $key){
 	?>
 	<div class="btn-group pull-right">
 		<button type="button" class="btn btn-info" onclick="sendTicket()">Enviar Boleto</button>
+		<?php if($_SESSION['user']->s_login_permission < 3): ?>
 		<button type="button" class="btn btn-success" onclick="Update()">Guardar Cambios</button>
 		<a href="./index.php" class="btn btn-default">Cancelar Cambios</a>
 		<button type="button" class="btn btn-danger btn-delete">Eliminar Registro</button>
+		<?php else: ?>
+		<a href="./index.php" class="btn btn-default">Regresar</a>
+		<?php endif ?>
 	</div>
 	<div class="clearfix"></div>
+	<br>
 	<ul class="nav nav-tabs" role="tablist" id="myTab">
 	 	<li role="presentation" class="active"><a href="#generales" role="tab" data-toggle="tab">Datos Generales</a></li>
 	 	<li role="presentation"><a href="#hospedaje" role="tab" data-toggle="tab">Hospedaje</a></li>
@@ -408,47 +565,36 @@ function encriptarURL($string, $key){
 			</form>
 		</div>
 		<div role="tabpanel" class="tab-pane" id="documentos">
-		<?php 
-		if(isset($_GET['e'])){
-			if($_GET['e'] == 100 || $_GET['e'] == 101){ 
-				$ans =  "<div class='alert alert-success' role='alert'>Se Han subido correctamente tus archivos.</div>";
-			}elseif ($_GET['e'] == 69) { 
-				$ans = "<div class='alert alert-danger' role='alert'>Ocurrio un problema al subir tus archivos.</div>"; 
-			}else{$ans = '';}
-			echo $ans;
-		}
-		?>
-				<h3>Carta Compromiso</h3>
-				<form action="upload.php" method="post" enctype="multipart/form-data">
-					<div class="form-group">
-			 			<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>" />
-			 			<input type="hidden" name="action" value="carta" />
-			 			<input type="file" name="cartacomp">
-			 			<br />
-
-			 		<?php if($carta[0]->url_permiso != '' || $carta[0]->url_permiso != NULL){ ?>
-			 			<input class="btn btn-info" type="submit" value="Actualizar" />
-			 			<a class="btn btn-info" target="_blank" href="../download/<?php echo $carta[0]->url_permiso;?>">Ver Documento</a>
-			 		<?php }else{ ?>
-						<input class="btn btn-info" type="submit" value="Guardar" />
-			 		<?php } ?>
-			 		</div>
-			 	</form>
-			 	<h3>Comprobante de Pago</h3>
-				<form action="upload.php" method="post" enctype="multipart/form-data">
-					<div class="form-group">
-			 			<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>">
-			 			<input type="hidden" name="action" value="pago" />
-			 			<input type="file" name="compago">
-			 			<br />
-			 		<?php if($carta[0]->url_pago != '' || $carta[0]->url_pago != NULL){ ?>
-			 			<input class="btn btn-info" type="submit" value="Actualizar" />
-			 			<a class="btn btn-info" target="_blank" href="../download/<?php echo $carta[0]->url_pago;?>">Ver Documento</a>
-			 		<?php }else{ ?>
-						<input class="btn btn-info" type="submit" value="Guardar" />
-			 		<?php } ?>
-			 		</div>
-			 	</form>
+			<h3>Carta Compromiso</h3>
+			<form action="upload.php" method="post" enctype="multipart/form-data">
+				<div class="form-group">
+					<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>" />
+					<input type="hidden" name="action" value="carta" />
+					<input type="file" name="cartacomp">
+					<br />
+				<?php if($carta->url_permiso != '#' && $carta->url_permiso != '' && $carta->url_permiso != NULL): ?>
+					<input class="btn btn-info" type="submit" value="Actualizar" />
+					<a class="btn btn-info" data-ob="lightbox" target="_blank" href="../download/<?php echo $carta->url_permiso;?>">Ver Documento</a>
+				<?php else: ?>
+					<input class="btn btn-info" type="submit" value="Guardar" />
+				<?php endif; ?>
+				</div>
+			</form>
+			<h3>Comprobante de Pago</h3>
+			<form action="upload.php" method="post" enctype="multipart/form-data">
+				<div class="form-group">
+					<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>">
+					<input type="hidden" name="action" value="pago" />
+					<input type="file" name="compago">
+					<br />
+				<?php if($carta->url_pago != '#' && $carta->url_pago != '' && $carta->url_pago != NULL): ?>
+					<input class="btn btn-info" type="submit" value="Actualizar" />
+					<a class="btn btn-info" data-ob="lightbox" target="_blank" href="../download/<?php echo $carta->url_pago;?>">Ver Documento</a>
+				<?php else: ?>
+					<input class="btn btn-info" type="submit" value="Guardar" />
+				<?php endif; ?>
+				</div>
+			</form>
 		</div>
 	</div>
 	<?php endif; ?>
@@ -718,5 +864,6 @@ function encriptarURL($string, $key){
     			<input type="password" class="form-control" placeholder="******" name="clave" id="clave">
   			</div>
   			<button type="submit" class="btn btn-default">Submit</button>
+  			<a href="./recuperar.php">Olvidé mi contraseña</a>
 		</form>
 <?php endif; ?>

@@ -9,9 +9,11 @@ session_start();
 	<title>BTEC</title>
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/orangebox.css" />
 	<link rel="stylesheet" type="text/css" href="./bootstrap/css/admin.css"/>
 	<script type="text/javascript" src="../js/vendor/jquery.min.js"></script>
 	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./bootstrap/js/orangebox.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </head>
 <body>
@@ -29,8 +31,13 @@ session_start();
 					<?php endif; ?>
 					<a class="navbar-brand" href="index.php"><img height="200%" src="../img/logo.png"></a>
 					<?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
-					<p><a href="./index.php">Inicio</a></p>
-					<p class="check"><!--a href="">Check in</a--></p>
+					<ul class="nav nav-pills" role="tablist">
+						<li role="presentation"><a href="./index.php">Visitantes</a></li>
+						<?php if($_SESSION['user']->s_login_permission == 1): ?>
+						<li role="presentation"><a href="./index.php?admin">Usuarios</a></li>
+						<?php endif; ?>
+						<!--li role="presentation"><a href="#">Messages</a></li-->
+					</ul>
 					<?php endif; ?>
 				</div>
 				<?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
@@ -38,7 +45,15 @@ session_start();
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="./login.php?logout">Salir</a></li>
 					</ul>
-					<form class="navbar-form navbar-right" role="search">
+					<form action="./index.php" method="get" class="navbar-form navbar-right" role="search">
+						<?php 
+						parse_str($_SERVER['QUERY_STRING'], $vars);
+						foreach ($vars as $key => $value): 
+						if($key != 's'):?>
+						<input type="hidden" name="<?php echo $key ?>" value="<?php echo $value ?>">
+						<?php 
+						endif;
+						endforeach; ?>
 						<div class="form-group">
 							<input name="s" type="text" class="form-control" placeholder="Buscar registro">
 						</div>

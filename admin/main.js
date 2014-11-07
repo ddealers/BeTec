@@ -1,48 +1,3 @@
-/*
-function estadoCity(s,id){
-	var est = $(s).val();
-	var opc = 'estadoCity';
-	$.ajax({
-		type: 'GET',
-		url: 'sql/funciones.php',
-		data: {opc:opc, est:est},
-		success: function(response){
-			if(id != undefined){
-				$("#"+id).html(response);
-			}
-		},
-		error: function(){
-			alert('Algo salio mal, selecciona tu estado de nuevo.');
-		}
-	});
-}
-
-function citySchool(s,id){
-	var idc = $(s).val();
-	var opc = 'citySchool';
-	$.ajax({
-		type: 'GET',
-		url: 'sql/funciones.php',
-		data: {opc:opc, idc:idc},
-		success: function(response){
-			if(id != undefined){
-				$("#nomprepa").hide();
-				$("#"+id).html(response);
-				$('#'+id).on('change', function(e){
-					if($(this).val() == '#'){
-						$("#nomprepa").show();	
-					}else{
-						$("#nomprepa").hide();
-					}
-				});
-			}
-		},
-		error: function(){
-			alert('Algo salio mal, selecciona tu ciudad de nuevo.');
-		}
-	});
-}
-*/
 function Update(){
 	var idu 	= $("#idu").val();
 	var genero 	= $("#genero").val();
@@ -203,8 +158,29 @@ function sendTicket(){
 	});
 }
 
+//OrangeBox
+oB.settings.addThis = false;
+
 $(document).ready(function(){
-	$('#myTab a').click(function (e) {
+	$('.from label input').on('change', function(e){
+		var target = $(e.currentTarget);
+		$("#filters").submit();
+	});
+	$('.foreign label input').on('change', function(e){
+		var target = $(e.currentTarget);
+		if(target.attr('name') == 'comp'){
+			if(target.prop('checked')){
+				$("input[name='hab']").attr('checked', true);	
+			}
+		}
+		if(target.attr('name') == 'hab'){
+			if(!target.prop('checked')){
+				$("input[name='comp']").attr('checked', false);	
+			}
+		}
+		$("#filters").submit();
+	});
+	$('#myTab a').on('click', function (e) {
 		e.preventDefault()
 		$(this).tab('show')
 	});

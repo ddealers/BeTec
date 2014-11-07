@@ -6,7 +6,13 @@ body,
 html {
   size: 100%;
 }
+#ob_image {
+  width: 100% !important;
+}
 /* =========================== admin */
+.navbar >.container-fluid .navbar-brand {
+  margin-left: 0;
+}
 div.container div.navbar-header img {
   margin-top: -10px;
 }
@@ -15,11 +21,6 @@ div.container div.navbar-header p {
 }
 div.container div.navbar-header p a {
   color: #777;
-  margin-left: 30px;
-}
-div.container div.navbar-header p.check {
-  margin-left: 150px;
-  margin-top: -29px;
 }
 .table-responsive {
   overflow-y: scroll;

@@ -8,14 +8,40 @@ class Usuario extends MYDB{
 		$this->table = 'usuarios';
 	}
 
-	public function rows($search = false){
-		if($search){
-			$v = $this->_where("id, nombre, correo","nombre LIKE '%$search%' OR correo LIKE '%$search%'")->get();
-		}else{
-			$v = $this->_all("id, nombre, correo", "ORDER BY id")->get();
+	public function rows($search = false, $from = false, $docs = false, $habitacion = false, $compania = false){
+		$condition = "SELECT * FROM `usuarios` ";
+		if($docs){
+			$condition .= "LEFT JOIN `usuarios_documentos` ON usuarios.id = usuarios_documentos.id_usuario ";
 		}
-		foreach ($v as $value) {
-			$value->nombre = utf8_encode($value->nombre);
+		$condition .= "WHERE 1 ";
+		if($from){
+			switch ($from) {
+				case '1':
+					$condition .= "AND id_ciudad='986' ";
+					break;
+				case '2':
+					$condition .= "AND id_ciudad<>'986' ";
+					break;
+			}
+		}
+		if($docs){
+			$condition .= "AND ((`tipo_foraneo`=1 AND `url_pago`='#' OR `url_permiso`='#') OR (`tipo_foraneo`=0 AND `url_permiso`='#')) ";	
+		}
+		if($habitacion){
+			$condition .= "AND `hospedaje`=1 ";	
+		}
+		if($compania){
+			$condition .= "AND `acompana`=1 ";
+		}
+		if($search){
+			$condition .= " AND (nombre LIKE '%$search%' OR correo LIKE '%$search%')";
+		}
+		$condition .= "ORDER BY usuarios.id";
+		$v = $this->_custom($condition)->get();
+		if($v){
+			foreach ($v as $value) {
+				$value->nombre = utf8_encode($value->nombre);
+			}
 		}
 		return $v;
 	}

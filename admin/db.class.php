@@ -59,25 +59,25 @@ class MYDB{
 		$values = array();
 		foreach ($data as $key => $value) {
 			$fields[] = $key;
-			$values[] = $value;
+			$values[] = "'$value'";
 		}
 		$fieldsstr = implode( ', ', $fields);
-		$fieldsval = implode( ', ', $fields);
-		$r = $this->mysqli->query( "INSERT INTO " . $this->table . " ( $fieldsstr ) value ( $fieldsval )" );
-		return $this->mysqli->insert_id();
+		$fieldsval = implode( ', ', $values);
+		$r = $this->mysqli->query( "INSERT INTO " . $this->table . " ( $fieldsstr ) VALUES ( $fieldsval )" );
+		return $this->mysqli->insert_id;
 	}
 	protected function _update( $data, $condition ){
 		$fields = array();
 		$values = array();
 		foreach($data as $key=>$value){
-			$fields[] = $key . '=' .$value;
+			$fields[] = "$key = '$value'";
 		}
 		$fieldsstr = implode( ', ', $fields );
-		$r = $this->mysqli->query( "UPDATE " . $this->table . "SET $fieldsstr WHERE $condition" );
+		$r = $this->mysqli->query( "UPDATE " . $this->table . " SET $fieldsstr WHERE $condition" );
 		return $this->mysqli->affected_rows;
 	}
 	protected function _delete( $condition ){
-		$r = $this->mysqli->query( "DELETE FROM " . $this->table . "WHERE $condition" );
+		$r = $this->mysqli->query( "DELETE FROM " . $this->table . " WHERE $condition" );
 		return true;
 	}
 	private function getError(){

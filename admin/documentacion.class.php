@@ -10,7 +10,7 @@ class Documentacion extends MYDB{
 	}
 
 	public function documentos($uid){
-		$v = $this->_where("url_pago, url_permiso","id_usuario = '$uid' ")->get();
+		$v = $this->_where("url_pago, url_permiso","id_usuario = '$uid' ")->first();
 		return $v;
 	}
 }

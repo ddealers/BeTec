@@ -1,7 +1,5 @@
 <?php
-ini_set('display_errors', '0');
 require_once('db.class.php');
-
 class AdminClass extends MYDB{
 	var $mydb = NULL;
 
@@ -9,15 +7,28 @@ class AdminClass extends MYDB{
 		parent::__construct();
 		$this->table = 'admin_login';
 	}
-
+	public function rows(){
+		$v = $this->_all("id_login, s_login_user,s_login_permission,s_login_email")->get();
+		return $v;
+	}
+	public function create($usr,$pwd,$per,$mail){
+		$data = array('s_login_user'=>$usr, 's_login_clave'=>$pwd, 's_login_permission'=>$per,'s_login_email'=>$mail);
+		$v = $this->_insert($data);
+		return $v;
+	}
+	public function del($id){
+		$condition = "id_login=$id";
+		$v = $this->_delete($condition);
+		return $v;
+	}
 	public function login($user, $pass){
 		$response = false;
-		$v = $this->_where("id_login, s_login_user", "s_login_user = '$user' AND s_login_clave = '$pass'");
+		$v = $this->_where("id_login, s_login_user, s_login_permission", "s_login_user = '$user' AND s_login_clave = '$pass'");
 
-		if($v->count() == 1){
-			$data = $v->get();
+		if($v){
+			$data = $v->first();
 			session_start();
-			$_SESSION['user'] = $data[0];
+			$_SESSION['user'] = $data;
 			$response = true;
 		}
 		return $response;
@@ -27,11 +38,12 @@ class AdminClass extends MYDB{
 		$response['status'] = false;
 		$response['uri'] = '69';
 
-		$v = $this->_where('*', "s_login_email = '$email' ");
-		
-		if($v->count() == 1){
+		$v = $this->_where('*', "s_login_email = '$email' ")->first();
+		if($v){
 			//Genera pass y manda mail
-			$w = $this->_update('s_login_clave = "$newpass"', 's_login_email = "$email"');
+			$data = array('s_login_clave' => $newpass);
+			$condition = "s_login_email = '$email'";
+			$w = $this->_update( $data, $condition);
 			$response['status'] = true;
 			$response['uri'] = '100';
 			mail($email, 'Recuperar contraseña BTEC ADMIN', $msg);
@@ -40,7 +52,6 @@ class AdminClass extends MYDB{
 			$response['status'] = true;
 			$response['uri'] = '101';
 		}
-
 		return $response;
 	}
 
@@ -331,6 +342,7 @@ class AdminClass extends MYDB{
 		$boleto = "http://borntobetec.mty.itesm.mx/boleto.php?s=".$ur;
 		$url = "http://borntobetec.mty.itesm.mx/documentacion.php?s=".$ur;
 		$datos = '';
+		$subeDocs = ($data['hotel'] == '1') ? '1' : '0' ;
 		
 		$q = "INSERT INTO usuarios VALUES (NULL, {$data['genero']}, '{$data['nombre']}', '{$data['cumple']}', '{$data['email']}', '{$data['tel']}', '{$data['cel']}', {$data['estado']}, {$data['ciudad']}, {$data['prepa']}, '{$data['ingreso']}', {$data['hotel']}, {$data['solo']}, {$data['medio']}, 0, NOW())";
 
@@ -341,7 +353,17 @@ class AdminClass extends MYDB{
 			$this->_custom($q);
 		}
 
-		$q = "INSERT INTO usuarios_info VALUES($idu, {$data['tecno']}, 'OK')";
+		if($city == '986'){
+			$q = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '-', '-', '$subeDocs')";
+			$v = $mysqli->query($q);
+		}else{
+			$q = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '#', '#', '$subeDocs')";
+			$v = $mysqli->query($q);
+		}
+		$q = "INSERT INTO usuarios_prepa VALUES ($idu, '{$data['prepa']}')";
+		$v = $mysqli->query($q);
+
+		$q = "INSERT INTO usuarios_info VALUES($idu, {$data['tecno']}, '')";
 		$v = $this->_custom($q);
 
 		//Carreras

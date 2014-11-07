@@ -15,6 +15,10 @@ function encriptarURL($string, $key){
 
 $ur = encriptarURL($_POST["email"], $key);
 
+if($_POST['hotel'] == '0'){
+	$_POST['solo'] = '0';
+}
+
 $data = array(
 	'genero' => $_POST["genero"],
 	'nombre' => $_POST["nombre"],

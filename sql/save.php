@@ -81,6 +81,9 @@ $grad	 = $_POST['grad'];
 
 $hotel	 = $_POST['hotel'];
 $solo	 = $_POST['solo'];
+if($hotel == '0'){
+	$solo = '0';
+}
 
 $nombreprepa = ($_POST['nomprepa'] != '') ? $_POST['nomprepa'] : '#';
 
@@ -101,7 +104,6 @@ $sopt2	 = $_POST['sopt2'];
 $evento	 = $_POST['evento'];
 
 $subeDocs = ($_POST['hotel'] == '1') ? '1' : '0' ;
-
 
 
 $validaMail = "SELECT correo FROM usuarios WHERE correo = '$email' ";

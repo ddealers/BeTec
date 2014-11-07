@@ -12,7 +12,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 
 if(isset($action) AND $action == 'carta'){
 	$e = 69;
-	if(isset($_FILES['cartacomp']) && $_FILES['cartacomp'] != NULL){
+	if(isset($_FILES['cartacomp']) && $_FILES['cartacomp'] != NULL && $_FILES['cartacomp']['error'] == 0){
 		$uname = str_replace(' ', '', $_FILES['cartacomp']['name']);
 		$name0 = $hora . $uname;
 		$mv0 = move_uploaded_file($_FILES['cartacomp']['tmp_name'], $ruta.$name0);
@@ -26,7 +26,7 @@ if(isset($action) AND $action == 'carta'){
 
 }elseif (isset($action) AND $action == 'pago') {
 	$e = 69;
-	if(isset($_FILES['compago']) && $_FILES['compago'] != NULL){
+	if(isset($_FILES['compago']) && $_FILES['compago'] != NULL && $_FILES['compago']['error'] == 0){
 		$uname1 = str_replace(' ', '', $_FILES['compago']['name']);
 		$name1 = $hora . $uname1;
 		$mv1 = move_uploaded_file($_FILES['compago']['tmp_name'], $ruta.$name1);

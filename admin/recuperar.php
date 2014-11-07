@@ -10,19 +10,18 @@ if(isset($_GET['e']) && $_GET['e'] == '100'){
 else{
 	$response = "<div></div>";
 }
-
 ?>
 
 <section>
-	<p>Recuperar contraseña</p>
+	<h3>Recuperar contraseña</h3>
 	<?php echo $response; ?>
-	<form class="form-horizontal" role="form" action="./admin.class.php?recuperar" method="POST" >
+	<form class="form-inline" role="form" action="./login.php?recuperar" method="post" >
 		<div class="form-group">
 			<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 			<div class="col-sm-10">
 				<input type="email" class="form-control" id="correo" name="correo" placeholder="Email">
 			</div>
 		</div>
-		<button type="submit" class="btn btn-default">Submit</button>
+		<button type="submit" class="btn btn-default">Enviar</button>
 	</form>
 </section>
