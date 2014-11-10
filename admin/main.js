@@ -10,6 +10,7 @@ function Update(){
 	var estado 	= $("#estado").val();
 	var ciudad 	= $("#ciudad").val();
 	var prepa 	= $("#prepa").val();
+	var nomprepa= $("#nomprepa").val();
 	var ingreso = $("#ingreso").val();
 	//Hospedaje
 	var hotel 		= $("#hotel").val();
@@ -46,6 +47,7 @@ function Update(){
 			estado:estado,
 			ciudad:ciudad,
 			prepa:prepa,
+			nomprepa:nomprepa,
 			ingreso:ingreso,
 			hotel:hotel,
 			solo:solo,
@@ -83,6 +85,7 @@ function saveNew(){
 	var estado 	= $("#estado").val();
 	var ciudad 	= $("#ciudad").val();
 	var prepa 	= $("#prepa").val();
+	var nomprepa= $("#nomprepa").val();
 	var ingreso = $("#ingreso").val();
 	//Hospedaje
 	var hotel 		= $("#hotel").val();
@@ -119,6 +122,7 @@ function saveNew(){
 			estado:estado,
 			ciudad:ciudad,
 			prepa:prepa,
+			nomprepa: nomprepa,
 			ingreso:ingreso,
 			hotel:hotel,
 			solo:solo,
@@ -136,7 +140,9 @@ function saveNew(){
 		}
 	}).done(function(res){
 		//alert("Se ha actualizado correctamente");
-		console.log(res);
+		if(res.error){
+			alert(error);
+		}
 	});
 }
 

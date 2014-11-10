@@ -17,7 +17,6 @@ class MYDB{
 		
 		if(isset($this->mysqli->insert_id) && $this->mysqli->insert_id>0){
 			return new MYResult($this->mysqli->insert_id);
-			return new MYResult( $result );
 		}elseif($r && $r !== TRUE){
 			while( $row = $r->fetch_object() ){
 				$result[] = $row;

@@ -360,7 +360,7 @@ class AdminClass extends MYDB{
 			$q = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '#', '#', '$subeDocs')";
 			$v = $mysqli->query($q);
 		}
-		$q = "INSERT INTO usuarios_prepa VALUES ($idu, '{$data['prepa']}')";
+		$q = "INSERT INTO usuarios_prepa VALUES ($idu, '{$data['nomprepa']}')";
 		$v = $mysqli->query($q);
 
 		$q = "INSERT INTO usuarios_info VALUES($idu, {$data['tecno']}, '')";
@@ -385,8 +385,35 @@ class AdminClass extends MYDB{
 		$tss1 = date('Y-m-d H:i:s', time() + 3);
 		$tss2 = date('Y-m-d H:i:s', time() + 4);
 		
+
+		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tav1']}' AND libres > 0";
+		if($this->_custom($q)->count() <= 0){
+			echo json_encode(array('error'=>'El taller del Viernes a las 16:30'));
+			return;
+		}
+		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tav2']}' AND libres > 0";
+		if($this->_custom($q)->count() <= 0){
+			echo json_encode(array('error'=>'El taller del Viernes a las 17:40'));
+			return;
+		}
+		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tav3']}' AND libres > 0";
+		if($this->_custom($q)->count() <= 0){
+			echo json_encode(array('error'=>'El taller del Viernes a las 18:40'));
+			return;
+		}
+		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tas1']}' AND libres > 0";
+		if($this->_custom($q)->count() <= 0){
+			echo json_encode(array('error'=>'El taller del Viernes a las 9:00'));
+			return;
+		}
+		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tas2']}' AND libres > 0";
+		if($this->_custom($q)->count() <= 0){
+			echo json_encode(array('error'=>'El taller del Viernes a las 11:45'));
+			return;
+		}
+
 		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tav1']}', '$tsv1')";
-		$i = $this->_custom($q);
+		$i = $this->_custom($q);	
 		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tav2']}', '$tsv2')";
 		$i = $this->_custom($q);
 		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tav3']}', '$tsv3')";

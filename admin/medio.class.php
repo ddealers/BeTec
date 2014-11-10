@@ -8,6 +8,10 @@ class Medio extends MYDB{
 		parent::__construct();
 		$this->table = 'medios';
 	}
+	public function get($id){
+		$v = $this->_where("nombre", "id=$id")->first();
+		return $v->nombre = utf8_encode($v->nombre);
+	}
 	public function listAll(){
 		$v = $this->_all("id, nombre")->get();
 		foreach ($v as $value) {

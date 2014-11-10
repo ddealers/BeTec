@@ -45,6 +45,45 @@ class Usuario extends MYDB{
 		}
 		return $v;
 	}
+
+	public function excel_rows($search = false, $from = false, $docs = false, $habitacion = false, $compania = false){
+		$condition = "SELECT id,genero,nombre,cumpleanos AS nacimiento,correo,telefono,celular,id_estado AS estado, id_ciudad AS ciudad, id_prepa AS preparatoria, graduacion, hospedaje, acompana, id_medio AS medio FROM `usuarios` ";
+		if($docs){
+			$condition .= "LEFT JOIN `usuarios_documentos` ON usuarios.id = usuarios_documentos.id_usuario ";
+		}
+		$condition .= "WHERE 1 ";
+		if($from){
+			switch ($from) {
+				case '1':
+					$condition .= "AND id_ciudad='986' ";
+					break;
+				case '2':
+					$condition .= "AND id_ciudad<>'986' ";
+					break;
+			}
+		}
+		if($docs){
+			$condition .= "AND ((`tipo_foraneo`=1 AND `url_pago`='#' OR `url_permiso`='#') OR (`tipo_foraneo`=0 AND `url_permiso`='#')) ";	
+		}
+		if($habitacion){
+			$condition .= "AND `hospedaje`=1 ";	
+		}
+		if($compania){
+			$condition .= "AND `acompana`=1 ";
+		}
+		if($search){
+			$condition .= " AND (nombre LIKE '%$search%' OR correo LIKE '%$search%')";
+		}
+		$condition .= "ORDER BY usuarios.id";
+		$v = $this->_custom($condition)->get();
+		if($v){
+			foreach ($v as $value) {
+				$value->nombre = utf8_encode($value->nombre);
+			}
+		}
+		return $v;
+	}
+
 	public function registrados(){
 		return $this->_all("id")->count();
 	}
@@ -89,6 +128,16 @@ class Usuario extends MYDB{
 			$v->$key = utf8_encode($value);
 		}
 		return $v;
+	}
+	public function getPrepa( $id ){
+		$v = $this->_custom("SELECT id_usuario, nombre_prepa FROM usuarios_prepa WHERE id_usuario='$id'")->first();
+		if($v){
+			foreach ($v as $key => $value) {
+				$key = utf8_encode($key);
+				$v->$key = utf8_encode($value);
+			}
+		}
+		return $v;	
 	}
 	public function getFollow( $id ){
 		$v = $this->_custom("SELECT parentestco, acompanante FROM usuario_follow WHERE id_usuario='$id'")->first();

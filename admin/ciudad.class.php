@@ -8,6 +8,10 @@ class Ciudad extends MYDB{
 		parent::__construct();
 		$this->table = 'ciudades';
 	}
+	public function get($id){
+		$v = $this->_where("nombre", "id=$id")->first();
+		return $v->nombre = utf8_encode($v->nombre);
+	}
 	public function listAll(){
 		$v = $this->_all("id, estado_id, nombre","ORDER BY nombre ASC")->get();
 		foreach ($v as $value) {

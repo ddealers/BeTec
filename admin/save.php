@@ -30,6 +30,7 @@ $data = array(
 	'estado' => $_POST["estado"],
 	'ciudad' => $_POST["ciudad"],
 	'prepa' => $_POST["prepa"],
+	'nomprepa' => $_POST["nomprepa"],
 	'ingreso' => $_POST["ingreso"],
 	'hotel' => $_POST["hotel"],
 	'solo' => $_POST["solo"],

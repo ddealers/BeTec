@@ -132,7 +132,8 @@ function encriptarURL($string, $key){
 		</div>
 		<br>
 		<div class="btn-group pull-right">
-			<a href="?n=1" class="btn btn-success">Agregar Nuevo</a>
+			<a href="./excel.php?<?php echo $_SERVER['QUERY_STRING'] ?>" class="btn btn-default" target="_blank">Generar Excel</a>
+			<a href="?n=1" class="btn btn-primary">Agregar Nuevo</a>
 		</div>
 		<br>
 		<div class="admin">
@@ -232,6 +233,7 @@ function encriptarURL($string, $key){
 	$user->universidad = $usuario->getUniversidad($_REQUEST['u']);
 	$user->carreras = $usuario->getCarreras($_REQUEST['u']);
 	$user->talleres = $usuario->getTalleres($_REQUEST['u']);
+	$user->nomprepa = $usuario->getPrepa($_REQUEST['u']);
 	//var_dump($user);
 	$val = encriptarURL($user->correo, $key);
 	$carta = $docos->documentos($_REQUEST['u']);
@@ -355,8 +357,14 @@ function encriptarURL($string, $key){
 							<option class="ciudad ciudad<?php echo $value->id_ciudad ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
 							<?php endforeach; ?>
+							<option value="#">Otra</option>
 						</select>
 		 			</div>
+		 			<?php if($user->id_prepa == '#'): ?>
+		 			<div class="col-sm-10">
+		 				<input type="text" class="form-control" placeholder="Otra preparatoria" id="nomprepa" value="<?php echo $user->nomprepa ?>">
+		 			</div>
+		 			<?php endif ?>
 		 		</div>
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">Fecha de Ingreso al Nivel Superior</label>
