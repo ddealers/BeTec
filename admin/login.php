@@ -27,7 +27,7 @@ if($action == 'login'){
 	if($_POST['correo'] != NULL && $_POST['correo'] != ''){
 		$email = $_POST['correo'];
 		$psswd = substr( md5(microtime()), 1, 8);
-		$msg = "Tu nueva contraseña para acceder al administrador de btec es: <br /> $psswd";
+		$msg = "Tu nueva contraseña para acceder al administrador de btec es: $psswd";
 		$res = $admin->recuperar($email, $msg, $psswd);
 		if($res['status']){
 			$uri = $res['uri'];

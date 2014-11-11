@@ -3,9 +3,9 @@ require_once('header.php');
 if(isset($_GET['e']) && $_GET['e'] == '100'){
 	$response = "<div class='alert alert-success' role='alert'>Se ha enviado un mail con tu nueva contraseña</div>";
 }elseif (isset($_GET['e']) && $_GET['e'] == '101') {
-	$response = "<div class='alert alert-warning' role='alert'>Debe ser un mail valido</div>";
+	$response = "<div class='alert alert-warning' role='alert'>Debe ser un mail válido</div>";
 }elseif (isset($_GET['e']) && $_GET['e'] == '68') {
-	$response = "<div class='alert alert-danger' role='alert'>Un error ocurrio, refresca y trata de nuevo</div>";
+	$response = "<div class='alert alert-danger' role='alert'>Ocurrió un error, refresca y trata de nuevo</div>";
 }
 else{
 	$response = "<div></div>";

@@ -41,12 +41,16 @@ class Usuario extends MYDB{
 		if($v){
 			foreach ($v as $value) {
 				$value->nombre = utf8_encode($value->nombre);
-				$value->checkin = false;
+				$value->checkin = $this->getCheckin($value->id);
 			}
 		}
 		return $v;
 	}
-
+	public function getCheckin($id){
+		$q = "SELECT * FROM checkin WHERE id_usuario=$id";
+		$chk = $this->_custom($q)->get();
+		return $chk;
+	}
 	public function excel_rows($search = false, $from = false, $docs = false, $habitacion = false, $compania = false){
 		$condition = "SELECT id,genero,nombre,cumpleanos AS nacimiento,correo,telefono,celular,id_estado AS estado, id_ciudad AS ciudad, id_prepa AS preparatoria, graduacion, hospedaje, acompana, id_medio AS medio FROM `usuarios` ";
 		if($docs){
