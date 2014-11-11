@@ -4,12 +4,17 @@ require_once('usuarios.class.php');
 require_once('talleres.class.php');
 require_once('admin.class.php');
 
+$taller = 1;
+$contador = 0;
+
 $users = new Usuario();
 $collection = $users->rows();
 foreach($collection as $user){
 	$user->talleres = $users->getTalleres($user->id);
 	echo $user->id.'::'.$user->nombre.'<br>';
-	if($user->talleres[0]->id_taller == 1){
+
+	if($user->talleres[0]->id_taller == $taller){
+		$contador++;
 		echo $user->talleres[0]->id_taller . '::' . $user->talleres[0]->nombre;
 	}
 	/*
@@ -21,3 +26,4 @@ foreach($collection as $user){
 	*/
 	echo '---------------------------<br>';
 }
+echo $contador;
