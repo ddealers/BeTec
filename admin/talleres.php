@@ -8,9 +8,9 @@ $users = new Usuario();
 $collection = $users->rows();
 foreach($collection as $user){
 	$user->talleres = $users->getTalleres($user->id);
-	echo $user->nombre.'<br>';
+	echo $user->id.'::'.$user->nombre.'<br>';
 	if($user->talleres[0]->id_taller == 1){
-		echo $user->talleres[0]->nombre;
+		echo $user->talleres[0]->id_taller . '::' . $user->talleres[0]->nombre;
 	}
 	/*
 	echo $user->talleres[0]->nombre.'<br>';
