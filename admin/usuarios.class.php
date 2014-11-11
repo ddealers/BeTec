@@ -46,11 +46,6 @@ class Usuario extends MYDB{
 		}
 		return $v;
 	}
-	public function getCheckin($id){
-		$q = "SELECT * FROM checkin WHERE id_usuario=$id";
-		$chk = $this->_custom($q)->get();
-		return $chk;
-	}
 	public function excel_rows($search = false, $from = false, $docs = false, $habitacion = false, $compania = false){
 		$condition = "SELECT id,genero,nombre,cumpleanos AS nacimiento,correo,telefono,celular,id_estado AS estado, id_ciudad AS ciudad, id_prepa AS preparatoria, graduacion, hospedaje, acompana, id_medio AS medio FROM `usuarios` ";
 		if($docs){
@@ -148,6 +143,11 @@ class Usuario extends MYDB{
 		$q = "INSERT INTO checkin VALUES(NULL,$id,NULL)";
 		$v = $this->_custom($q)->get();
 		return $v;
+	}
+	public function getCheckin($id){
+		$q = "SELECT * FROM checkin WHERE id_usuario=$id";
+		$chk = $this->_custom($q)->get();
+		return $chk;
 	}
 	public function getPrepa( $id ){
 		$v = $this->_custom("SELECT id_usuario, nombre_prepa FROM usuarios_prepa WHERE id_usuario='$id'")->first();
