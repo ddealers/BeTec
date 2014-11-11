@@ -127,6 +127,37 @@ if($qma){
 			$q = "INSERT INTO usuario_carrera VALUES($idu, $car3, CURRENT_TIMESTAMP)";
 			$v = $mysqli->query($q);
 
+			$q = "SELECT id, nombre FROM talleres WHERE id='$vopt1' AND libres > 0";
+			$vt = $mysqli->query($q);
+			if($vt->num_rows <= 0){
+				echo json_encode(array('error'=>'El taller del Viernes a las 16:30 está lleno, elige otro.'));
+				return;
+			}
+			$q = "SELECT id, nombre FROM talleres WHERE id='$vopt2' AND libres > 0";
+			$vt = $mysqli->query($q);
+			if($vt->num_rows <= 0){
+				echo json_encode(array('error'=>'El taller del Viernes a las 17:40 está lleno, elige otro.'));
+				return;
+			}
+			$q = "SELECT id, nombre FROM talleres WHERE id='$vopt3' AND libres > 0";
+			$vt = $mysqli->query($q);
+			if($vt->num_rows <= 0){
+				echo json_encode(array('error'=>'El taller del Viernes a las 18:40 está lleno, elige otro.'));
+				return;
+			}
+			$q = "SELECT id, nombre FROM talleres WHERE id='$sopt1' AND libres > 0";
+			$vt = $mysqli->query($q);
+			if($vt->num_rows <= 0){
+				echo json_encode(array('error'=>'El taller del Sábado a las 9:00 está lleno, elige otro.'));
+				return;
+			}
+			$q = "SELECT id, nombre FROM talleres WHERE id='$sopt2' AND libres > 0";
+			$vt = $mysqli->query($q);
+			if($vt->num_rows <= 0){
+				echo json_encode(array('error'=>'El taller del Sábado a las 11:45 está lleno, elige otro.'));
+				return;
+			}
+
 			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt1, CURRENT_TIMESTAMP)";
 			$vp = $mysqli->query($qp);
 			$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt1";

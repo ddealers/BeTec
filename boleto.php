@@ -72,6 +72,7 @@ fclose( $fp );
 			$mysqli = new mysqli(HOST,USR,PWD,DB);
 			$string = $_GET['s'];
 			$key = 'BornToBeTec321_';
+			$string = str_replace(" ","+",$string);
 			$mail = desencriptarURL($string, $key);
 			if($mail){
 				$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
@@ -81,6 +82,7 @@ fclose( $fp );
 						while ($row = $v->fetch_assoc()) {
 							$data = $row;
 						}
+						
 						$idu = $data['id'];
 						$full_name = $data['nombre'];
 						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY usuario_taller.create_at ASC ";
@@ -260,6 +262,7 @@ fclose( $fp );
 			$mysqli = new mysqli(HOST,USR,PWD,DB);
 			$string = $_GET['s'];
 			$key = 'BornToBeTec321_';
+			$string = str_replace(" ","+",$string);
 			$mail = desencriptarURL($string, $key);
 			if($mail){
 				$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";

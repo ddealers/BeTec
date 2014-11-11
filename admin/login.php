@@ -33,6 +33,8 @@ if($action == 'login'){
 			$uri = $res['uri'];
 		}
 		header("Location: ../admin/recuperar.php?e=".$uri);
+	}else{
+		header("Location: ../admin/recuperar.php?e=101");
 	}
 }elseif ($action == 'logout') {
 	session_start();

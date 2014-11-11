@@ -15,7 +15,7 @@ class MYDB{
 		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		$r = $this->mysqli->query( $q );
 		
-		if(isset($this->mysqli->insert_id) && $this->mysqli->insert_id>0){
+		if(isset($this->mysqli->insert_id) && $this->mysqli->insert_id > 0){
 			return new MYResult($this->mysqli->insert_id);
 		}elseif($r && $r !== TRUE){
 			while( $row = $r->fetch_object() ){
@@ -89,7 +89,6 @@ class MYDB{
 class MYResult 
 {
 	private $result;
-	public $insert_id;
 	
 	function __construct($result)
 	{

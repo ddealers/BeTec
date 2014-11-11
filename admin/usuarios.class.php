@@ -41,6 +41,7 @@ class Usuario extends MYDB{
 		if($v){
 			foreach ($v as $value) {
 				$value->nombre = utf8_encode($value->nombre);
+				$value->checkin = false;
 			}
 		}
 		return $v;
@@ -127,6 +128,21 @@ class Usuario extends MYDB{
 			$key = utf8_encode($key);
 			$v->$key = utf8_encode($value);
 		}
+		return $v;
+	}
+	public function byMail( $mail ){
+		$v = $this->_where("*","correo='$mail'")->first();
+		if($v){
+			foreach ($v as $key => $value) {
+				$key = utf8_encode($key);
+				$v->$key = utf8_encode($value);
+			}
+		}
+		return $v;
+	}
+	public function checkin( $id ){
+		$q = "INSERT INTO checkin VALUES(NULL,$id,NULL)";
+		$v = $this->_custom($q)->get();
 		return $v;
 	}
 	public function getPrepa( $id ){

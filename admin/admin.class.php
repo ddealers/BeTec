@@ -325,6 +325,11 @@ class AdminClass extends MYDB{
 		return $response;
 	}
 	public function delete( $id ){
+		$q = "SELECT id_taller FROM usuario_taller WHERE id_usuario='$id'";
+		$t = $this->_custom($q)->get();
+		foreach ($t as $key => $value) {
+			$q = "UPDATE talleres SET libres=libres+1 WHERE id={$value->id_taller}";
+		}
 		$q = "DELETE FROM usuarios WHERE id = $id";
 		$d = $this->_custom($q);
 		return $d->get();
@@ -388,27 +393,27 @@ class AdminClass extends MYDB{
 
 		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tav1']}' AND libres > 0";
 		if($this->_custom($q)->count() <= 0){
-			echo json_encode(array('error'=>'El taller del Viernes a las 16:30'));
+			echo json_encode(array('error'=>'El taller del Viernes a las 16:30 está lleno, elige otro.'));
 			return;
 		}
 		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tav2']}' AND libres > 0";
 		if($this->_custom($q)->count() <= 0){
-			echo json_encode(array('error'=>'El taller del Viernes a las 17:40'));
+			echo json_encode(array('error'=>'El taller del Viernes a las 17:40 está lleno, elige otro.'));
 			return;
 		}
 		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tav3']}' AND libres > 0";
 		if($this->_custom($q)->count() <= 0){
-			echo json_encode(array('error'=>'El taller del Viernes a las 18:40'));
+			echo json_encode(array('error'=>'El taller del Viernes a las 18:40 está lleno, elige otro.'));
 			return;
 		}
 		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tas1']}' AND libres > 0";
 		if($this->_custom($q)->count() <= 0){
-			echo json_encode(array('error'=>'El taller del Viernes a las 9:00'));
+			echo json_encode(array('error'=>'El taller del Sábado a las 9:00 está lleno, elige otro.'));
 			return;
 		}
 		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tas2']}' AND libres > 0";
 		if($this->_custom($q)->count() <= 0){
-			echo json_encode(array('error'=>'El taller del Viernes a las 11:45'));
+			echo json_encode(array('error'=>'El taller del Sábado a las 11:45 está lleno, elige otro.'));
 			return;
 		}
 
@@ -842,6 +847,65 @@ class AdminClass extends MYDB{
 		$response = 'true';
 
 		echo $response;
+	}
+}
+class Validator{
+	
+	public static $errors;
+	public static $valid = true;
+	
+	public static function validate( $fields ){
+		foreach($fields as  $field ){
+			$rules = explode( ",", $field['rules'] );
+			$value = $field['value'];
+			$name = $field['name'];
+			foreach( $rules as $rule ){
+				self::$rule( $name, $value );
+			}
+		}
+	}
+	
+	private static function required( $name, $value ){
+		if( !isset($value) || empty( $value ) ){
+			self::$valid = false;
+			self::$errors[] = "el campo " . $name . " es requerido";
+		}
+	}
+	
+	private function file( $name, $value ){
+		if( !isset($value) || empty( $value ) ){
+			self::$valid = false;
+			self::$errors[] = "el campo " . $name . " es requerido";
+		}
+		if ($value['error'] > 0){
+  			self::$errors[] = $value['error'];
+  		}
+	}
+	private static function selection( $name, $value ){
+		if( $value=="-1" ){
+			self::$valid = false;
+			self::$errors[] = "no has seleccionado un valor para " . $name;
+		}
+	}
+	
+	private static function email( $name, $value ){
+		$mail_rule = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/";
+		if( !preg_match( $mail_rule, $value ) ){
+			self::$valid = false;
+			self::$errors[] = "el campo " . $name . " no está bien escrito";
+		}
+	}
+	
+	private static function phone( $name, $value ){
+		$phone_rule = "/^[0-9]{10}$/";
+		if( !preg_match( $phone_rule, $value ) ){
+			self::$valid = false;
+			self::$errors[] = "el campo " . $name . " tiene caracteres inválidos";
+		}
+	}
+	
+	private static function ticket( $name, $value ){
+		
 	}
 }
 ?>

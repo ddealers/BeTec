@@ -64,7 +64,8 @@ function encriptarURL($string, $key){
 <?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
 	<?php if(!isset($_REQUEST['u']) 
 	&& !isset($_REQUEST['n']) 
-	&& !isset($_REQUEST['admin'])): ?>
+	&& !isset($_REQUEST['admin'])
+	&& !isset($_REQUEST['checkin'])): ?>
 	<section>
 		<h4>Filtrar por:</h4>
 		<form id="filters" method="get">
@@ -109,6 +110,7 @@ function encriptarURL($string, $key){
 					<th>Correo</th>
 					<th>Modificar</th>
 					<th>Boleto</th>
+					<th>Check-in</th>
 				</tr>
 				<?php 
 				if(count($rows) > 0):
@@ -122,6 +124,14 @@ function encriptarURL($string, $key){
 					</td>
 					<td>
 						<a href='http://borntobetec.mty.itesm.mx/boleto.php?s=<?php echo encriptarURL($row->correo, $key)?>' target="_blank" type='button' class='btn btn-primary btn-xs'>Generar Boleto</a>
+						<a href='#' class='btn btn-info btn-xs' onclick='sendTicket(<?php echo $row->id ?>)'>Enviar Boleto</a>
+					</td>
+					<td>
+						<?php if($row->checkin): ?>
+						<span style="color:green; font-size: 30px" class="glyphicon glyphicon-ok-circle"></span>
+						<?php else: ?>
+						<span style="color:orange; font-size: 30px" class="glyphicon glyphicon-remove-circle"></span>
+						<?php endif ?>
 					</td>
 				</tr>
 				<?php 
@@ -133,10 +143,11 @@ function encriptarURL($string, $key){
 		<br>
 		<div class="btn-group pull-right">
 			<a href="./excel.php?<?php echo $_SERVER['QUERY_STRING'] ?>" class="btn btn-default" target="_blank">Generar Excel</a>
-			<a href="?n=1" class="btn btn-primary">Agregar Nuevo</a>
+			<a href="?n=1" class="btn btn-success">Agregar Nuevo Registro</a>
 		</div>
 		<br>
 		<div class="admin">
+			<h2>Estadísticas</h2>
 			<p class="p">* Número de usuarios registrados<span><?php echo $usuario->registrados() ?></span></p>
 			<p class="p">* Número de usuarios Locales<span><?php echo $usuario->locales() ?></span></p>
 			<p class="p">* Número de usuarios Foráneos<span><?php echo $usuario->foraneos() ?></span></p>
@@ -146,10 +157,100 @@ function encriptarURL($string, $key){
 		</div>
 	</section>
 	<?php endif; ?>
+	<?php if(isset($_REQUEST['checkin'])):?>
+	<?php 
+	if(isset($_REQUEST['validate'])){
+		if(!isset($_REQUEST['correo']) || $_REQUEST['correo'] == ''){
+	?>
+	<div class='alert alert-danger' role='alert'>Antes de comenzar se debe introducir un correo válido.</div>
+	<?php
+		}else{
+			$u = $usuario->byMail($_REQUEST['correo']);
+			if(!$u){
+	?>
+	<div class='alert alert-danger' role='alert'>No se ha encontrado este correo en la base de datos.</div>
+	<?php
+			}else{
+				$u->talleres = $usuario->getTalleres($u->id);
+	?>
+	<div class='alert alert-success' role='alert'>Correo válido, puedes realizar el Check-in.</div>
+	<?php			
+			}
+		}
+	}
+	if(isset($_REQUEST['confirm'])){
+		$_REQUEST['correo'] = '';
+		$ok = $usuario->checkin($_REQUEST['id']);
+		if($ok){
+	?>
+	<div class='alert alert-success' role='alert'>El Check-in se ha realizado correctamente.</div>
+	<script type="text/javascript">
+		setTimeout(function(){
+			$('.alert').fadeOut();
+		},500);
+	</script>
+	<?php
+		}else{
+	?>
+	<div class='alert alert-warning' role='alert'>Hubo un problema al realizar el check-in, vuelve a intentarlo.</div>
+	<?php
+		}
+	}
+	?>
+	<section>
+		<h3>Check-in</h3>
+		<form class="form-inline" role="form" method="post" >
+			<input type="hidden" name="checkin">
+			<?php if(isset($_REQUEST['validate']) && isset($_REQUEST['correo']) && $_REQUEST['correo'] != '' && $u): ?>
+			<input type="hidden" name="confirm">
+			<input type="hidden" name="id" value="<?php echo $u->id ?>">
+			<?php else: ?>
+			<input type="hidden" name="validate">
+			<?php endif ?>
+			<div class="form-group">
+				<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-10">
+					<input value="<?php if(isset($_REQUEST['correo'])) echo $_REQUEST['correo'] ?>" type="email" class="form-control" id="incorreo" name="correo" placeholder="Email">
+				</div>
+			</div>
+			<?php if(isset($_REQUEST['validate']) && isset($_REQUEST['correo']) && $_REQUEST['correo'] != '' && $u): ?>
+			<a href="./index.php?checkin" class="btn btn-default">Cancelar</a>
+			<button type="submit" class="btn btn-primary">Check-in</button>
+			<?php else: ?>
+			<button type="submit" class="btn btn-primary">Validar</button>
+			<?php endif ?>
+		</form>
+		<?php if(isset($_REQUEST['validate']) && isset($_REQUEST['correo']) && $_REQUEST['correo'] != '' && $u): ?>
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Talleres del Viernes</h3>
+				<h5>Taller Viernes de 16:30 a 17:20</h5>
+				<p><?php echo $u->talleres[0]->nombre ?></p>
+				<br>
+				<h5>Taller Viernes de 17:40 a 18:30</h5>
+				<p><?php echo $u->talleres[1]->nombre ?></p>
+				<br>
+				<h5>Taller Viernes de 18:40 a 19:30</h5>
+				<p><?php echo $u->talleres[2]->nombre ?></p>
+				<br>
+			</div>
+			<div class="col-sm-6">
+				<h3>Talleres del Sábado</h3>
+				<h5>Taller Sábado de 9:00 a 11:30</h5>
+				<p><?php echo $u->talleres[3]->nombre ?></p>
+				<br>
+				<h5>Taller Sábado de 11:45 a 14:15</h5>
+				<p><?php echo $u->talleres[4]->nombre ?></p>
+				<br>
+			</div>
+		</div>
+		<?php endif ?>
+	</section>
+	<?php endif ?>
 	<?php if(isset($_REQUEST['admin'])):?>
 	<section>
 		<div class="btn-group pull-right">
-			<a href="./index.php?admin&new" class="btn btn-success" >Agregar Nuevo</a>
+			<a href="./index.php?admin&new" class="btn btn-success" >Agregar Nuevo Registro</a>
 		</div><br /><br />
 		<div style="border-bottom: 1px #ccc solid;" class="table-responsive">
 			<table class="table table-bordered">
@@ -243,7 +344,9 @@ function encriptarURL($string, $key){
 		<?php if($_SESSION['user']->s_login_permission < 3): ?>
 		<button type="button" class="btn btn-success" onclick="Update()">Guardar Cambios</button>
 		<a href="./index.php" class="btn btn-default">Cancelar Cambios</a>
+		<?php if($_SESSION['user']->s_login_permission  < 2): ?>
 		<button type="button" class="btn btn-danger btn-delete">Eliminar Registro</button>
+		<?php endif ?>
 		<?php else: ?>
 		<a href="./index.php" class="btn btn-default">Regresar</a>
 		<?php endif ?>
@@ -278,7 +381,7 @@ function encriptarURL($string, $key){
 		 			</div>
 		 		</div>
 		 		<div class="form-group">
-		 			<label class="col-sm-2 control-label">Fecha de Nacimiento</label>
+		 			<label class="col-sm-2 control-label">Fecha de Nacimiento(YYYY-MM-DD)</label>
 		 			<div class="col-sm-10">
 		 				<input type="text" class="form-control" placeholder="Nombre(s)" id="cumple" value="<?php echo $user->cumpleanos ?>">
 		 			</div>
@@ -370,9 +473,9 @@ function encriptarURL($string, $key){
 		 			<label class="col-sm-2 control-label">Fecha de Ingreso al Nivel Superior</label>
 		 			<div class="col-sm-10">
 		 				<select class="form-control" id="ingreso">
-		 					<option <?php if($user->graduacion == 'Agosto 2015') echo 'selected' ?>>Agosto 2015</option>
-		 					<option <?php if($user->graduacion == 'Enero 2016') echo 'selected' ?>>Enero 2016</option>
-		 					<option <?php if($user->graduacion == 'Agosto 2016') echo 'selected' ?>>Agosto 2016</option>
+		 					<option value="2015" <?php if($user->graduacion == '2015') echo 'selected' ?>>Agosto 2015</option>
+		 					<option value="2016" <?php if($user->graduacion == '2016') echo 'selected' ?>>Enero 2016</option>
+		 					<option value="2016-1" <?php if($user->graduacion == '2016-1') echo 'selected' ?>>Agosto 2016</option>
 		 				</select>
 		 				<!--input type="text" class="form-control" placeholder="Fecha de Ingreso" id="ingreso" value="<?php echo $user->graduacion ?>"-->
 		 			</div>
@@ -638,7 +741,7 @@ function encriptarURL($string, $key){
 		 			</div>
 		 		</div>
 		 		<div class="form-group">
-		 			<label class="col-sm-2 control-label">Fecha de Nacimiento</label>
+		 			<label class="col-sm-2 control-label">Fecha de Nacimiento(YYYY-MM-DD)</label>
 		 			<div class="col-sm-10">
 		 				<input type="text" class="form-control" placeholder="Cumpleaños" id="cumple" />
 		 			</div>
@@ -666,6 +769,7 @@ function encriptarURL($string, $key){
 		 			<label class="col-sm-2 control-label">¿Cómo te enteraste?</label>
 		 			<div class="col-sm-10">
 		 				<select class="form-control" id="medio">
+		 					<option value="">Elige un medio</option>
 							<?php foreach($medio->listAll() as $value): ?>
 								<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endforeach; ?>
@@ -677,8 +781,9 @@ function encriptarURL($string, $key){
 		 			<label class="col-sm-2 control-label">Estado</label>
 		 			<div class="col-sm-10">
 		 				<select class="form-control" id="estado">
+		 					<option value="">Elige un Estado</option>
 							<?php foreach($estado->listAll() as $value): ?>
-								<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endforeach; ?>
 						</select>
 		 			</div>
@@ -687,8 +792,9 @@ function encriptarURL($string, $key){
 		 			<label class="col-sm-2 control-label">Ciudad</label>
 		 			<div class="col-sm-10">
 		 				<select class="form-control" id="ciudad">
+		 					<option value="">Elige una Ciudad</option>
 							<?php foreach($ciudad->listAll() as $value): ?>
-								<option class="estado" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="estado estado<?php echo $value->estado_id ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endforeach; ?>
 						</select>
 		 			</div>
@@ -697,16 +803,22 @@ function encriptarURL($string, $key){
 		 			<label class="col-sm-2 control-label">Preparatoria</label>
 		 			<div class="col-sm-10">
 		 				<select class="form-control" id="prepa">
+		 					<option value="">Elige una Preparatoria</option>
 							<?php foreach($prepa->listAll() as $value): ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="ciudad ciudad<?php echo $value->id_ciudad ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endforeach; ?>
+							<option value="#">Otra</option>
 						</select>
+		 			</div>
+		 			<div class="col-sm-10">
+		 				<input type="text" class="form-control" placeholder="Nombre de otra preparatoria" id="nomprepa" value="">
 		 			</div>
 		 		</div>
 		 		<div class="form-group">
 		 			<label class="col-sm-2 control-label">Fecha de Ingreso al Nivel Superior</label>
 		 			<div class="col-sm-10">
 		 				<select class="form-control" id="ingreso">
+		 					<option value="">Elige una fecha</option>
 		 					<option value="2015">Agosto 2015</option>
 		 					<option value="2016">Enero 2016</option>
 		 					<option value="2016-1">Agosto 2016</option>
@@ -740,7 +852,7 @@ function encriptarURL($string, $key){
 			 		<label class="col-sm-2 control-label">Parentesco del Acompañante</label>
 			 		<div class="col-sm-10">
 			 			<select id="perentesco">
-			 				<option value="0">Ninguno</option>
+			 				<option value="">Elige uno</option>
 							<option value="1">Madre</option>
 							<option value="2">Padre</option>
 						</select>
@@ -761,6 +873,7 @@ function encriptarURL($string, $key){
 			 		<label class="col-sm-2 control-label">Eligió el Tec</label>
 			 		<div class="col-sm-10">
 			 			<select id="tecno">
+			 				<option value="">Elegir respuesta</option>
 							<option value="0">Sí</option>
 							<option value="1">No</option>
 						</select>
@@ -771,6 +884,7 @@ function encriptarURL($string, $key){
 			 		<label class="col-sm-2 control-label">Carrera 1</label>
 			 		<div class="col-sm-10">
 			 			<select id="car1">
+			 				<option value="">Elige una</option>
 			 			<?php foreach($carrera->listAll() as $value): ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
@@ -781,6 +895,7 @@ function encriptarURL($string, $key){
 			 		<label class="col-sm-2 control-label">Carrera 2</label>
 			 		<div class="col-sm-10">
 			 			<select id="car2">
+			 				<option value="">Elige una</option>
 			 			<?php foreach($carrera->listAll() as $value): ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
@@ -791,6 +906,7 @@ function encriptarURL($string, $key){
 			 		<label class="col-sm-2 control-label">Carrera 3</label>
 			 		<div class="col-sm-10">
 			 			<select id="car3">
+			 				<option value="">Elige una</option>
 			 			<?php foreach($carrera->listAll() as $value): ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
@@ -807,6 +923,7 @@ function encriptarURL($string, $key){
 					<div class="col-sm-10">
 						<input id="pvopt1" type="hidden" value="<?php echo $user->talleres[0]->id_taller ?>">
 						<select id="vopt1">
+							<option value="">Elige uno</option>
 						<?php foreach($taller->listViernes(true) as $value): ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
@@ -818,6 +935,7 @@ function encriptarURL($string, $key){
 					<div class="col-sm-10">
 						<input id="pvopt2" type="hidden" value="<?php echo $user->talleres[1]->id_taller ?>">
 						<select id="vopt2">
+							<option value="">Elige uno</option>
 						<?php foreach($taller->listViernes() as $value): ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
@@ -828,6 +946,7 @@ function encriptarURL($string, $key){
 					<label class="col-sm-2 control-label">Taller Viernes de 18:40 a 19:30</label>
 					<div class="col-sm-10">
 						<select id="vopt3">
+							<option value="">Elige uno</option>
 						<?php foreach($taller->listViernes() as $value): ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
@@ -840,6 +959,7 @@ function encriptarURL($string, $key){
 					<div class="col-sm-10">
 						<input id="psopt1" type="hidden" value="<?php echo $user->talleres[3]->id_taller ?>">
 						<select id="sopt1">
+							<option value="">Elige uno</option>
 						<?php foreach($taller->listSabado() as $value): ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
@@ -851,6 +971,7 @@ function encriptarURL($string, $key){
 					<div class="col-sm-10">
 						<input id="psopt2" type="hidden" value="<?php echo $user->talleres[4]->id_taller ?>">
 						<select id="sopt2">
+							<option value="">Elige uno</option>
 						<?php foreach($taller->listSabado() as $value): ?>
 							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>

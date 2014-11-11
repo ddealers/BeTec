@@ -31,17 +31,18 @@ session_start();
 					<?php endif; ?>
 					<a class="navbar-brand" href="index.php"><img height="200%" src="../img/logo.png"></a>
 					<?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
-					<ul class="nav nav-pills" role="tablist">
-						<li role="presentation"><a href="./index.php">Visitantes</a></li>
-						<?php if($_SESSION['user']->s_login_permission == 1): ?>
-						<li role="presentation"><a href="./index.php?admin">Usuarios</a></li>
-						<?php endif; ?>
-						<!--li role="presentation"><a href="#">Messages</a></li-->
-					</ul>
 					<?php endif; ?>
 				</div>
 				<?php if(isset($_SESSION['user']) && $_SESSION['user'] != NULL): ?>
 				<div class="collapse navbar-collapse" id="navbar">
+					<ul class="nav nav-pills" role="tablist">
+						<li role="presentation"><a href="./index.php?checkin">Checkin</a></li>
+						<li role="presentation"><a href="./index.php">Registros</a></li>
+						<?php if($_SESSION['user']->s_login_permission == 1): ?>
+						<li role="presentation"><a href="./index.php?admin">Admin</a></li>
+						<?php endif; ?>
+						<!--li role="presentation"><a href="#">Messages</a></li-->
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="./login.php?logout">Salir</a></li>
 					</ul>
