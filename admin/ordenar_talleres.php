@@ -36,9 +36,11 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	$v = $mysqli->query($q);
 
 	if($v){
+		$fix = array();
 		while ($row = $v->fetch_assoc()) {
 			$fix[] = $row;
 		}
+
 		$lng = sizeof($fix);
 		$dataFix = array();
 		for ($i=0; $i < $lng; $i++) { 
@@ -47,6 +49,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		
 		//UPDATEAMOS EN OTRO ORDEN
 		$ids = implode(',', $dataFix);
+		$newDatos = array();
 		for ($i=0; $i < $lng; $i++) { 
 			$q = "SELECT * FROM usuario_taller WHERE id_usuario in ($ids) ORDER BY create_at ASC";
 			$v = $mysqli->query($q);
@@ -72,6 +75,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	$v = $mysqli->query($q);
 
 	if($v){
+		$fix = array();
 		while ($row = $v->fetch_assoc()) {
 			$fix[] = $row;
 		}
@@ -83,6 +87,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		
 		//UPDATEAMOS EN OTRO ORDEN
 		$ids = implode(',', $dataFix);
+		$newDatos = array();
 		for ($i=0; $i < $lng; $i++) { 
 			$q = "SELECT * FROM usuario_taller WHERE id_usuario in ($ids) ORDER BY create_at ASC";
 			$v = $mysqli->query($q);
@@ -108,6 +113,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	$v = $mysqli->query($q);
 
 	if($v){
+		$fix = array();
 		while ($row = $v->fetch_assoc()) {
 			$fix[] = $row;
 		}
@@ -119,6 +125,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		
 		//UPDATEAMOS EN OTRO ORDEN
 		$ids = implode(',', $dataFix);
+		$newDatos = array();
 		for ($i=0; $i < $lng; $i++) { 
 			$q = "SELECT * FROM usuario_taller WHERE id_usuario in ($ids) ORDER BY create_at ASC";
 			$v = $mysqli->query($q);
@@ -144,6 +151,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	$v = $mysqli->query($q);
 
 	if($v){
+		$fix = array();
 		while ($row = $v->fetch_assoc()) {
 			$fix[] = $row;
 		}
@@ -155,6 +163,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		
 		//UPDATEAMOS EN OTRO ORDEN
 		$ids = implode(',', $dataFix);
+		$newDatos = array();
 		for ($i=0; $i < $lng; $i++) { 
 			$q = "SELECT * FROM usuario_taller WHERE id_usuario in ($ids) ORDER BY create_at ASC";
 			$v = $mysqli->query($q);
@@ -180,6 +189,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	$v = $mysqli->query($q);
 
 	if($v){
+		$fix = array();
 		while ($row = $v->fetch_assoc()) {
 			$fix[] = $row;
 		}
@@ -191,6 +201,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		
 		//UPDATEAMOS EN OTRO ORDEN
 		$ids = implode(',', $dataFix);
+		$newDatos = array();
 		for ($i=0; $i < $lng; $i++) { 
 			$q = "SELECT * FROM usuario_taller WHERE id_usuario in ($ids) ORDER BY create_at ASC";
 			$v = $mysqli->query($q);
@@ -216,6 +227,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 	$v = $mysqli->query($q);
 
 	if($v){
+		$fix = array();
 		while ($row = $v->fetch_assoc()) {
 			$fix[] = $row;
 		}
@@ -227,6 +239,7 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		
 		//UPDATEAMOS EN OTRO ORDEN
 		$ids = implode(',', $dataFix);
+		$newDatos = array();
 		for ($i=0; $i < $lng; $i++) { 
 			$q = "SELECT * FROM usuario_taller WHERE id_usuario in ($ids) ORDER BY create_at ASC";
 			$v = $mysqli->query($q);
