@@ -85,7 +85,7 @@ fclose( $fp );
 						
 						$idu = $data['id'];
 						$full_name = $data['nombre'];
-						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY usuario_taller.create_at ASC ";
+						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY usuario_taller.horario_taller ASC ";
 						$vt = $mysqli->query($t);
 						if($vt){
 							if($vt->num_rows > 0){
@@ -276,7 +276,7 @@ fclose( $fp );
 						$full_name = $data['nombre'];
 						list($n1, $n2) = explode(' ', $full_name);
 
-						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY talleres.dia ASC ";
+						$t = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY usuario_taller.horario_taller ASC ";
 						$vt = $mysqli->query($t);
 						if($vt){
 							if($vt->num_rows > 0){
