@@ -9,7 +9,7 @@ class Lugares extends MyDB{
 	public function talleres($horario){
 		switch ($horario) {
 			case 1:
-				return $this->_custom("SELECT * FROM talleres WHERE dia=1 AND opc=1")->get();
+				return $this->_custom("SELECT * FROM talleres WHERE dia=1")->get();
 				break;
 			case 2:
 			case 3:
