@@ -48,7 +48,7 @@ for ($i=1; $i <= 5; $i++) {
 	echo "<table>";
 	foreach ($l->talleres($i) as $key => $value) {
 		echo "<tr>";
-		echo "<td>" . $value->nombre . "</td>" . "<td>" . $l->getTotal($value->id, $i) . "</td>";
+		echo "<td>" . $value->nombre . "</td>" . "<td>" . $l->getTotal($value->id, $i) . " de " . $value->cupo . "</td>";
 		echo "</tr>";
 	}
 	echo "</table>";

@@ -14,18 +14,20 @@ class MYDB{
 		$result = array();
 		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		$r = $this->mysqli->query( $q );
-		
 		if(isset($this->mysqli->insert_id) && $this->mysqli->insert_id > 0){
-			return new MYResult($this->mysqli->insert_id);
+			$id = $this->mysqli->insert_id;
+			$this->mysqli->close();
+			return new MYResult( $id );
 		}elseif($r && $r !== TRUE){
 			while( $row = $r->fetch_object() ){
 				$result[] = $row;
 			}
+			$this->mysqli->close();
 			return new MYResult( $result );
 		}else{
+			$this->mysqli->close();
 			return new MYResult( NULL );
 		}
-		$this->mysqli->close();
 	}
 	
 	protected function _all( $fields, $order = NULL ){
@@ -36,11 +38,12 @@ class MYDB{
 			while( $row = $r->fetch_object() ){
 				$result[] = $row;
 			}
+			$this->mysqli->close();
 			return new MYResult( $result );
 		}else{
+			$this->mysqli->close();
 			return new MYResult( NULL );
 		}
-		$this->mysqli->close();
 	}
 	
 	protected function _where( $fields, $condition ){
@@ -51,11 +54,12 @@ class MYDB{
 			while( $row = $r->fetch_object() ){
 				$result[] = $row;
 			}
+			$this->mysqli->close();
 			return new MYResult( $result );
 		}else{
+			$this->mysqli->close();
 			return new MYResult( NULL );
 		}
-		$this->mysqli->close();
 	}
 	
 	protected function _insert( $data ){
@@ -69,8 +73,9 @@ class MYDB{
 		$fieldsstr = implode( ', ', $fields);
 		$fieldsval = implode( ', ', $values);
 		$r = $this->mysqli->query( "INSERT INTO " . $this->table . " ( $fieldsstr ) VALUES ( $fieldsval )" );
-		return $this->mysqli->insert_id;
+		$id = $this->mysqli->insert_id;
 		$this->mysqli->close();
+		return new MYResult($id);
 	}
 	protected function _update( $data, $condition ){
 		$fields = array();
@@ -81,14 +86,15 @@ class MYDB{
 		}
 		$fieldsstr = implode( ', ', $fields );
 		$r = $this->mysqli->query( "UPDATE " . $this->table . " SET $fieldsstr WHERE $condition" );
-		return $this->mysqli->affected_rows;
+		$affected = $this->mysqli->affected_rows;
 		$this->mysqli->close();
+		return new MYResult($affected);
 	}
 	protected function _delete( $condition ){
 		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		$r = $this->mysqli->query( "DELETE FROM " . $this->table . " WHERE $condition" );
-		return true;
 		$this->mysqli->close();
+		return new MYREsult(true);
 	}
 	private function getError(){
 		if($this->mysqli->connect_errno){
