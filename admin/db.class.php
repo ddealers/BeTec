@@ -25,10 +25,12 @@ class MYDB{
 		}else{
 			return new MYResult( NULL );
 		}
+		$this->mysqli->close();
 	}
 	
 	protected function _all( $fields, $order = NULL ){
 		$result = array();
+		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		$r = $this->mysqli->query( "SELECT $fields FROM " . $this->table . " " . $order );
 		if($r){
 			while( $row = $r->fetch_object() ){
@@ -38,10 +40,12 @@ class MYDB{
 		}else{
 			return new MYResult( NULL );
 		}
+		$this->mysqli->close();
 	}
 	
 	protected function _where( $fields, $condition ){
 		$result = array();
+		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		$r = $this->mysqli->query( "SELECT $fields FROM " . $this->table . " WHERE $condition" );
 		if($r){
 			while( $row = $r->fetch_object() ){
@@ -51,11 +55,13 @@ class MYDB{
 		}else{
 			return new MYResult( NULL );
 		}
+		$this->mysqli->close();
 	}
 	
 	protected function _insert( $data ){
 		$fields = array();
 		$values = array();
+		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		foreach ($data as $key => $value) {
 			$fields[] = $key;
 			$values[] = "'$value'";
@@ -64,20 +70,25 @@ class MYDB{
 		$fieldsval = implode( ', ', $values);
 		$r = $this->mysqli->query( "INSERT INTO " . $this->table . " ( $fieldsstr ) VALUES ( $fieldsval )" );
 		return $this->mysqli->insert_id;
+		$this->mysqli->close();
 	}
 	protected function _update( $data, $condition ){
 		$fields = array();
 		$values = array();
+		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		foreach($data as $key=>$value){
 			$fields[] = "$key = '$value'";
 		}
 		$fieldsstr = implode( ', ', $fields );
 		$r = $this->mysqli->query( "UPDATE " . $this->table . " SET $fieldsstr WHERE $condition" );
 		return $this->mysqli->affected_rows;
+		$this->mysqli->close();
 	}
 	protected function _delete( $condition ){
+		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		$r = $this->mysqli->query( "DELETE FROM " . $this->table . " WHERE $condition" );
 		return true;
+		$this->mysqli->close();
 	}
 	private function getError(){
 		if($this->mysqli->connect_errno){
