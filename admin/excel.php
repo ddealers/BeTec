@@ -1,4 +1,5 @@
 <?php 
+ini_set('display_errors', '0');
 require_once('usuarios.class.php');
 require_once('estado.class.php');
 require_once('ciudad.class.php');

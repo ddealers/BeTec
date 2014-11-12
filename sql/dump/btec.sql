@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-11-2014 a las 16:43:03
+-- Tiempo de generación: 12-11-2014 a las 16:51:22
 -- Versión del servidor: 5.1.34
 -- Versión de PHP: 5.2.10
 
@@ -25,6 +25,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Estructura de tabla para la tabla `admin_login`
 --
 
+DROP TABLE IF EXISTS `admin_login`;
 CREATE TABLE IF NOT EXISTS `admin_login` (
   `id_login` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `s_login_user` varchar(100) NOT NULL DEFAULT '',
@@ -54,6 +55,7 @@ INSERT INTO `admin_login` (`id_login`, `s_login_user`, `s_login_clave`, `s_login
 -- Estructura de tabla para la tabla `carreras`
 --
 
+DROP TABLE IF EXISTS `carreras`;
 CREATE TABLE IF NOT EXISTS `carreras` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(250) NOT NULL DEFAULT '',
@@ -112,6 +114,7 @@ INSERT INTO `carreras` (`id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `checkin`
 --
 
+DROP TABLE IF EXISTS `checkin`;
 CREATE TABLE IF NOT EXISTS `checkin` (
   `id_check` int(11) NOT NULL AUTO_INCREMENT,
   `id_usuario` int(11) NOT NULL,
@@ -131,6 +134,7 @@ CREATE TABLE IF NOT EXISTS `checkin` (
 -- Estructura de tabla para la tabla `ciudades`
 --
 
+DROP TABLE IF EXISTS `ciudades`;
 CREATE TABLE IF NOT EXISTS `ciudades` (
   `id` int(11) NOT NULL,
   `estado_id` int(11) NOT NULL COMMENT 'Relación con estados',
@@ -2611,6 +2615,7 @@ INSERT INTO `ciudades` (`id`, `estado_id`, `clave`, `nombre`, `sigla`) VALUES
 -- Estructura de tabla para la tabla `estados`
 --
 
+DROP TABLE IF EXISTS `estados`;
 CREATE TABLE IF NOT EXISTS `estados` (
   `id` int(11) NOT NULL,
   `clave` varchar(2) CHARACTER SET utf8 NOT NULL,
@@ -2663,6 +2668,7 @@ INSERT INTO `estados` (`id`, `clave`, `nombre`, `abrev`) VALUES
 -- Estructura de tabla para la tabla `interesados`
 --
 
+DROP TABLE IF EXISTS `interesados`;
 CREATE TABLE IF NOT EXISTS `interesados` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
@@ -2781,6 +2787,7 @@ INSERT INTO `interesados` (`id`, `email`, `fecha`) VALUES
 -- Estructura de tabla para la tabla `interes_paa`
 --
 
+DROP TABLE IF EXISTS `interes_paa`;
 CREATE TABLE IF NOT EXISTS `interes_paa` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) CHARACTER SET utf8 NOT NULL,
@@ -2834,6 +2841,7 @@ INSERT INTO `interes_paa` (`id`, `email`, `fecha`, `sede`) VALUES
 -- Estructura de tabla para la tabla `medios`
 --
 
+DROP TABLE IF EXISTS `medios`;
 CREATE TABLE IF NOT EXISTS `medios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(150) NOT NULL DEFAULT '',
@@ -2860,6 +2868,7 @@ INSERT INTO `medios` (`id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `pma__bookmark`
 --
 
+DROP TABLE IF EXISTS `pma__bookmark`;
 CREATE TABLE IF NOT EXISTS `pma__bookmark` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -2880,6 +2889,7 @@ CREATE TABLE IF NOT EXISTS `pma__bookmark` (
 -- Estructura de tabla para la tabla `pma__column_info`
 --
 
+DROP TABLE IF EXISTS `pma__column_info`;
 CREATE TABLE IF NOT EXISTS `pma__column_info` (
   `id` int(5) unsigned NOT NULL AUTO_INCREMENT,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -2939,6 +2949,7 @@ INSERT INTO `pma__column_info` (`id`, `db_name`, `table_name`, `column_name`, `c
 -- Estructura de tabla para la tabla `pma__designer_coords`
 --
 
+DROP TABLE IF EXISTS `pma__designer_coords`;
 CREATE TABLE IF NOT EXISTS `pma__designer_coords` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -2960,6 +2971,7 @@ CREATE TABLE IF NOT EXISTS `pma__designer_coords` (
 -- Estructura de tabla para la tabla `pma__history`
 --
 
+DROP TABLE IF EXISTS `pma__history`;
 CREATE TABLE IF NOT EXISTS `pma__history` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -2982,6 +2994,7 @@ CREATE TABLE IF NOT EXISTS `pma__history` (
 -- Estructura de tabla para la tabla `pma__pdf_pages`
 --
 
+DROP TABLE IF EXISTS `pma__pdf_pages`;
 CREATE TABLE IF NOT EXISTS `pma__pdf_pages` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `page_nr` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -3001,6 +3014,7 @@ CREATE TABLE IF NOT EXISTS `pma__pdf_pages` (
 -- Estructura de tabla para la tabla `pma__recent`
 --
 
+DROP TABLE IF EXISTS `pma__recent`;
 CREATE TABLE IF NOT EXISTS `pma__recent` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `tables` text COLLATE utf8_bin NOT NULL,
@@ -3020,6 +3034,7 @@ INSERT INTO `pma__recent` (`username`, `tables`) VALUES
 -- Estructura de tabla para la tabla `pma__relation`
 --
 
+DROP TABLE IF EXISTS `pma__relation`;
 CREATE TABLE IF NOT EXISTS `pma__relation` (
   `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -3042,6 +3057,7 @@ CREATE TABLE IF NOT EXISTS `pma__relation` (
 -- Estructura de tabla para la tabla `pma__table_coords`
 --
 
+DROP TABLE IF EXISTS `pma__table_coords`;
 CREATE TABLE IF NOT EXISTS `pma__table_coords` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -3062,6 +3078,7 @@ CREATE TABLE IF NOT EXISTS `pma__table_coords` (
 -- Estructura de tabla para la tabla `pma__table_info`
 --
 
+DROP TABLE IF EXISTS `pma__table_info`;
 CREATE TABLE IF NOT EXISTS `pma__table_info` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -3080,6 +3097,7 @@ CREATE TABLE IF NOT EXISTS `pma__table_info` (
 -- Estructura de tabla para la tabla `pma__table_uiprefs`
 --
 
+DROP TABLE IF EXISTS `pma__table_uiprefs`;
 CREATE TABLE IF NOT EXISTS `pma__table_uiprefs` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -3100,6 +3118,7 @@ CREATE TABLE IF NOT EXISTS `pma__table_uiprefs` (
 -- Estructura de tabla para la tabla `pma__tracking`
 --
 
+DROP TABLE IF EXISTS `pma__tracking`;
 CREATE TABLE IF NOT EXISTS `pma__tracking` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -3125,6 +3144,7 @@ CREATE TABLE IF NOT EXISTS `pma__tracking` (
 -- Estructura de tabla para la tabla `pma__userconfig`
 --
 
+DROP TABLE IF EXISTS `pma__userconfig`;
 CREATE TABLE IF NOT EXISTS `pma__userconfig` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -3145,6 +3165,7 @@ INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
 -- Estructura de tabla para la tabla `preparatorias`
 --
 
+DROP TABLE IF EXISTS `preparatorias`;
 CREATE TABLE IF NOT EXISTS `preparatorias` (
   `id` int(11) NOT NULL,
   `id_ciudad` int(11) NOT NULL,
@@ -7347,6 +7368,7 @@ INSERT INTO `preparatorias` (`id`, `id_ciudad`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `talleres`
 --
 
+DROP TABLE IF EXISTS `talleres`;
 CREATE TABLE IF NOT EXISTS `talleres` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dia` int(11) NOT NULL,
@@ -7421,6 +7443,7 @@ INSERT INTO `talleres` (`id`, `dia`, `opc`, `nombre`, `cupo`, `libres`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `genero` tinyint(1) NOT NULL COMMENT '0 = masculino, 1 = femenino',
@@ -7439,7 +7462,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `documentos` char(1) CHARACTER SET utf8 DEFAULT '0',
   `create_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=754 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=755 ;
 
 --
 -- Volcar la base de datos para la tabla `usuarios`
@@ -8144,9 +8167,8 @@ INSERT INTO `usuarios` (`id`, `genero`, `nombre`, `cumpleanos`, `correo`, `telef
 (739, 0, 'Jorge Galindo Ramírez', '1993-01-15', 'jorge_gr55@hotmail.com', '8384864876', '0448117475813', 19, 986, 2410, '2015', 0, 0, 4, '0', '2014-11-12 13:55:50'),
 (740, 1, 'Lizbeth  Rincon Hernandez', '1998-05-06', 'lizzy_rh97@hotmail.com', '8110964014', '8117426612', 19, 986, 2465, '2015', 0, 0, 6, '0', '2014-11-12 14:00:50'),
 (741, 1, 'Mónica Carolina Treviño Rodríguez ', '1997-09-12', 'monicacarolinat97@gmail.com', '8383499799', '8113855441', 19, 986, 2443, '2015', 0, 0, 6, '0', '2014-11-12 14:11:04'),
+(754, 0, 'Josué Radillo Ibarra', '1989-05-02', 'german@berners.mx', '787888787787878', '7787878877878', 3, 17, 152, '2015', 0, 0, 4, '0', '2014-11-12 16:50:54'),
 (743, 1, 'Gabriela lucinda oyervides  lopez', '1997-01-14', 'noe_fabela.20@hotmail.com', '018666355996', '0448661303250', 5, 42, 1204, '2015', 0, 0, 5, '0', '2014-11-12 15:11:31'),
-(750, 0, 'Josué Radillo Ibarra', '1986-01-01', 'german@berners.mx', '4654655567567', '5756757567', 4, 23, 134, '2016-1', 0, 0, 3, '0', '2014-11-12 16:19:27'),
-(751, 0, 'Germán Radillo ibarra', '1987-04-02', 'german.radillo@gmail.com', '23545464564656', '67867868678678', 19, 958, 2583, '2015', 1, 1, 6, '1', '2014-11-12 16:24:13'),
 (748, 0, 'Daniel Alejandro Murillo Velazquez', '1998-02-12', 'faisanes@intercable.net', '8118704660', '8180220209', 19, 986, 2420, '2016-2', 0, 0, 8, '0', '2014-11-12 15:40:40');
 
 -- --------------------------------------------------------
@@ -8155,6 +8177,7 @@ INSERT INTO `usuarios` (`id`, `genero`, `nombre`, `cumpleanos`, `correo`, `telef
 -- Estructura de tabla para la tabla `usuarios_documentos`
 --
 
+DROP TABLE IF EXISTS `usuarios_documentos`;
 CREATE TABLE IF NOT EXISTS `usuarios_documentos` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `id_usuario` int(11) NOT NULL,
@@ -8162,7 +8185,7 @@ CREATE TABLE IF NOT EXISTS `usuarios_documentos` (
   `url_permiso` varchar(100) DEFAULT '#',
   `tipo_foraneo` char(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=739 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=740 ;
 
 --
 -- Volcar la base de datos para la tabla `usuarios_documentos`
@@ -8906,7 +8929,8 @@ INSERT INTO `usuarios_documentos` (`id`, `id_usuario`, `url_pago`, `url_permiso`
 (735, 748, '-', '-', '0'),
 (736, 750, '#', '20141112161124HipsterGirl.jpg', '0'),
 (737, 751, '20141112161144HipsterGirl.jpg', '20141112161128HipsterGirl.jpg', '1'),
-(738, 753, '-', '-', '0');
+(738, 753, '-', '-', '0'),
+(739, 754, '#', '20141112161112HipsterGirl.jpg', '0');
 
 -- --------------------------------------------------------
 
@@ -8914,12 +8938,13 @@ INSERT INTO `usuarios_documentos` (`id`, `id_usuario`, `url_pago`, `url_permiso`
 -- Estructura de tabla para la tabla `usuarios_info`
 --
 
+DROP TABLE IF EXISTS `usuarios_info`;
 CREATE TABLE IF NOT EXISTS `usuarios_info` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `moneterrey` tinyint(1) DEFAULT '0',
   `campus` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=754 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=755 ;
 
 --
 -- Volcar la base de datos para la tabla `usuarios_info`
@@ -9662,7 +9687,8 @@ INSERT INTO `usuarios_info` (`id`, `moneterrey`, `campus`) VALUES
 (748, 0, ''),
 (750, 0, ''),
 (751, 0, ''),
-(753, 0, '');
+(753, 0, ''),
+(754, 0, '');
 
 -- --------------------------------------------------------
 
@@ -9670,6 +9696,7 @@ INSERT INTO `usuarios_info` (`id`, `moneterrey`, `campus`) VALUES
 -- Estructura de tabla para la tabla `usuarios_prepa`
 --
 
+DROP TABLE IF EXISTS `usuarios_prepa`;
 CREATE TABLE IF NOT EXISTS `usuarios_prepa` (
   `id_usuario` int(11) NOT NULL,
   `nombre_prepa` varchar(250) NOT NULL,
@@ -10418,7 +10445,8 @@ INSERT INTO `usuarios_prepa` (`id_usuario`, `nombre_prepa`) VALUES
 (748, '#'),
 (750, '#'),
 (751, '#'),
-(753, '#');
+(753, '#'),
+(754, '#');
 
 -- --------------------------------------------------------
 
@@ -10426,6 +10454,7 @@ INSERT INTO `usuarios_prepa` (`id_usuario`, `nombre_prepa`) VALUES
 -- Estructura de tabla para la tabla `usuario_carrera`
 --
 
+DROP TABLE IF EXISTS `usuario_carrera`;
 CREATE TABLE IF NOT EXISTS `usuario_carrera` (
   `id_usuario` int(11) NOT NULL,
   `id_carrera` int(11) NOT NULL,
@@ -12515,7 +12544,8 @@ INSERT INTO `usuario_carrera` (`id_usuario`, `id_carrera`, `create_at`) VALUES
 (752, 37, '2014-11-12 16:28:23'),
 (752, 39, '2014-11-12 16:28:23'),
 (753, 30, '2014-11-12 16:41:32'),
-(753, 20, '2014-11-12 16:41:32');
+(753, 20, '2014-11-12 16:41:32'),
+(754, 3, '2014-11-12 16:50:54');
 
 -- --------------------------------------------------------
 
@@ -12523,6 +12553,7 @@ INSERT INTO `usuario_carrera` (`id_usuario`, `id_carrera`, `create_at`) VALUES
 -- Estructura de tabla para la tabla `usuario_follow`
 --
 
+DROP TABLE IF EXISTS `usuario_follow`;
 CREATE TABLE IF NOT EXISTS `usuario_follow` (
   `id_follow` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `id_usuario` int(11) DEFAULT NULL,
@@ -12625,6 +12656,7 @@ INSERT INTO `usuario_follow` (`id_follow`, `id_usuario`, `parentestco`, `acompan
 -- Estructura de tabla para la tabla `usuario_taller`
 --
 
+DROP TABLE IF EXISTS `usuario_taller`;
 CREATE TABLE IF NOT EXISTS `usuario_taller` (
   `id_usuario` int(11) NOT NULL,
   `id_taller` int(11) NOT NULL,
@@ -16038,4 +16070,9 @@ INSERT INTO `usuario_taller` (`id_usuario`, `id_taller`, `create_at`, `horario_t
 (701, 4, '2014-11-12 16:00:23', '2'),
 (701, 1, '2014-11-12 16:00:24', '3'),
 (701, 20, '2014-11-12 16:00:25', '4'),
-(701, 16, '2014-11-12 16:00:26', '5');
+(701, 16, '2014-11-12 16:00:26', '5'),
+(754, 4, '2014-11-12 16:50:54', '1'),
+(754, 3, '2014-11-12 16:50:54', '2'),
+(754, 1, '2014-11-12 16:50:54', '3'),
+(754, 8, '2014-11-12 16:50:54', '4'),
+(754, 9, '2014-11-12 16:50:54', '5');
