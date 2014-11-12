@@ -835,14 +835,18 @@ class AdminClass extends MYDB{
 		</html>";
 
 		if($data['ciudad'] == 986){
-			mail($data['email'], 'Registro Completo', $mail, $cabeceras);
+			$send = mail($data['email'], 'Registro Completo', $mail, $cabeceras);
 		}elseif ($data['ciudad'] != 986 && $data['hotel'] == '1' && $data['solo'] == '1') {
-			mail($data['email'], 'Completa tu Registro', $mail_FA, $cabeceras);
+			$send = mail($data['email'], 'Completa tu Registro', $mail_FA, $cabeceras);
 		}elseif($data['ciudad'] != 986 && $data['hotel'] == '1' && $data['solo'] == '0'){
-			mail($data['email'], 'Completa tu Registro', $mail_FB, $cabeceras);
+			$send = mail($data['email'], 'Completa tu Registro', $mail_FB, $cabeceras);
 		}
 
-		$response = 'true';
+		if($send){
+			$response = 'true';
+		}else{
+			$response = 'false';
+		}
 
 		echo $response;
 	}

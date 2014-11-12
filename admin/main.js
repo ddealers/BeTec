@@ -130,6 +130,7 @@ function Update(){
 			idu:idu
 		}
 	}).done(function(res){
+		console.log(res);
 		alert("Se ha actualizado correctamente");
 	});
 }
