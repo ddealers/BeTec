@@ -286,7 +286,7 @@ class AdminClass extends MYDB{
 		$tss2 = date('Y-m-d H:i:s', time() + 4);
 		$q = "DELETE FROM usuario_taller WHERE id_usuario = {$data['idu']}";
 		$d = $this->_custom($q);
-		
+		/*
 		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptav1']}";
 		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptav2']}";
@@ -297,18 +297,18 @@ class AdminClass extends MYDB{
 		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres+1 WHERE id = {$data['ptas2']}";
 		$u = $this->_custom($q);
-		
-		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tav1']}', '$tsv1')";
+		*/
+		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tav1']}', '$tsv1',1)";
 		$i = $this->_custom($q);
-		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tav2']}', '$tsv2')";
+		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tav2']}', '$tsv2',2)";
 		$i = $this->_custom($q);
-		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tav3']}', '$tsv3')";
+		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tav3']}', '$tsv3',3)";
 		$i = $this->_custom($q);
-		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tas1']}', '$tss1')";
+		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tas1']}', '$tss1',4)";
 		$i = $this->_custom($q);
-		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tas2']}', '$tss2')";
+		$q = "INSERT INTO usuario_taller VALUES({$data['idu']}, '{$data['tas2']}', '$tss2',5)";
 		$i = $this->_custom($q);
-		
+		/*
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav1']}";
 		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav2']}";
@@ -319,7 +319,7 @@ class AdminClass extends MYDB{
 		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tas2']}";
 		$u = $this->_custom($q);
-
+		*/
 		$response = 'true';
 
 		return $response;
@@ -390,7 +390,7 @@ class AdminClass extends MYDB{
 		$tss1 = date('Y-m-d H:i:s', time() + 3);
 		$tss2 = date('Y-m-d H:i:s', time() + 4);
 		
-
+		/*
 		$q = "SELECT id, nombre FROM talleres WHERE id='{$data['tav1']}' AND libres > 0";
 		if($this->_custom($q)->count() <= 0){
 			echo json_encode(array('error'=>'El taller del Viernes a las 16:30 está lleno, elige otro.'));
@@ -416,18 +416,18 @@ class AdminClass extends MYDB{
 			echo json_encode(array('error'=>'El taller del Sábado a las 11:45 está lleno, elige otro.'));
 			return;
 		}
-
-		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tav1']}', '$tsv1')";
+		*/
+		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tav1']}', '$tsv1',1)";
 		$i = $this->_custom($q);	
-		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tav2']}', '$tsv2')";
+		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tav2']}', '$tsv2',2)";
 		$i = $this->_custom($q);
-		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tav3']}', '$tsv3')";
+		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tav3']}', '$tsv3',3)";
 		$i = $this->_custom($q);
-		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tas1']}', '$tss1')";
+		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tas1']}', '$tss1',4)";
 		$i = $this->_custom($q);
-		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tas2']}', '$tss2')";
+		$q = "INSERT INTO usuario_taller VALUES($idu, '{$data['tas2']}', '$tss2',5)";
 		$i = $this->_custom($q);
-		
+		/*
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav1']}";
 		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tav2']}";
@@ -438,7 +438,7 @@ class AdminClass extends MYDB{
 		$u = $this->_custom($q);
 		$q = "UPDATE talleres SET libres=libres-1 WHERE id = {$data['tas2']}";
 		$u = $this->_custom($q);
-
+		*/
 
 		//CORREOS
 		$q = "SELECT talleres.dia, talleres.nombre FROM talleres, usuario_taller WHERE usuario_taller.id_usuario = '$idu' AND usuario_taller.id_taller = talleres.id ORDER BY usuario_taller.create_at ASC ";

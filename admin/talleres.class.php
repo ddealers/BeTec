@@ -26,5 +26,14 @@ class Taller extends MYDB{
 		}
 		return $v;
 	}
+	public function byID($id){
+		$v = $this->_where("id, nombre, cupo","id=$id")->first();
+		return $v;
+	}
+	public function full($t, $h){
+		$c = $this->byID($t)->cupo;
+		$t = $this->_custom("SELECT * FROM usuario_taller WHERE id_taller=$t AND horario_taller=$h")->count();
+		return $t >= $c;
+	}
 }
 ?>

@@ -127,61 +127,82 @@ if($qma){
 			$q = "INSERT INTO usuario_carrera VALUES($idu, $car3, CURRENT_TIMESTAMP)";
 			$v = $mysqli->query($q);
 
-			$q = "SELECT id, nombre FROM talleres WHERE id='$vopt1' AND libres > 0";
-			$vt = $mysqli->query($q);
-			if($vt->num_rows <= 0){
+			$q = "SELECT id, cupo FROM talleres WHERE id='$vopt1'";
+			$v = $mysqli->query($q);
+			$row = $v->fetch_assoc();
+			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=1 AND id_taller={$row['id']}";
+			$sc = $mysqli->query($q);
+			$tr = $sc->fetch_assoc();
+			if($tr['total'] >= $row['cupo']){
 				echo json_encode(array('error'=>'El taller del Viernes a las 16:30 está lleno, elige otro.'));
 				return;
 			}
-			$q = "SELECT id, nombre FROM talleres WHERE id='$vopt2' AND libres > 0";
-			$vt = $mysqli->query($q);
-			if($vt->num_rows <= 0){
+
+			$q = "SELECT id, cupo FROM talleres WHERE id='$vopt2'";
+			$v = $mysqli->query($q);
+			$row = $v->fetch_assoc();
+			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=2 AND id_taller={$row['id']}";
+			$sc = $mysqli->query($q);
+			$tr = $sc->fetch_assoc();
+			if($tr['total'] >= $row['cupo']){
 				echo json_encode(array('error'=>'El taller del Viernes a las 17:40 está lleno, elige otro.'));
 				return;
 			}
-			$q = "SELECT id, nombre FROM talleres WHERE id='$vopt3' AND libres > 0";
-			$vt = $mysqli->query($q);
-			if($vt->num_rows <= 0){
+			$q = "SELECT id, cupo FROM talleres WHERE id='$vopt3'";
+			$v = $mysqli->query($q);
+			$row = $v->fetch_assoc();
+			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=3 AND id_taller={$row['id']}";
+			$sc = $mysqli->query($q);
+			$tr = $sc->fetch_assoc();
+			if($tr['total'] >= $row['cupo']){
 				echo json_encode(array('error'=>'El taller del Viernes a las 18:40 está lleno, elige otro.'));
 				return;
 			}
-			$q = "SELECT id, nombre FROM talleres WHERE id='$sopt1' AND libres > 0";
-			$vt = $mysqli->query($q);
-			if($vt->num_rows <= 0){
+			$q = "SELECT id, cupo FROM talleres WHERE id='$sopt1'";
+			$v = $mysqli->query($q);
+			$row = $v->fetch_assoc();
+			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=4 AND id_taller={$row['id']}";
+			$sc = $mysqli->query($q);
+			$tr = $sc->fetch_assoc();
+			if($tr['total'] >= $row['cupo']){
 				echo json_encode(array('error'=>'El taller del Sábado a las 9:00 está lleno, elige otro.'));
 				return;
 			}
-			$q = "SELECT id, nombre FROM talleres WHERE id='$sopt2' AND libres > 0";
-			$vt = $mysqli->query($q);
-			if($vt->num_rows <= 0){
+			$q = "SELECT id, cupo FROM talleres WHERE id='$sopt2'";
+			$v = $mysqli->query($q);
+			$row = $v->fetch_assoc();
+			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=5 AND id_taller={$row['id']}";
+			$sc = $mysqli->query($q);
+			$tr = $sc->fetch_assoc();
+			if($tr['total'] >= $row['cupo']){
 				echo json_encode(array('error'=>'El taller del Sábado a las 11:45 está lleno, elige otro.'));
 				return;
 			}
-
-			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt1, CURRENT_TIMESTAMP)";
-			$vp = $mysqli->query($qp);
-			$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt1";
-			$vl = $mysqli->query($ql);
-			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt2, CURRENT_TIMESTAMP)";
-			$vp = $mysqli->query($qp);
-			$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt2";
-			$vl = $mysqli->query($ql);
-			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt3, CURRENT_TIMESTAMP)";
-			$vp = $mysqli->query($qp);
-			$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt3";
-			$vl = $mysqli->query($ql);
 			
-			$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt1, CURRENT_TIMESTAMP)";
+			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt1, CURRENT_TIMESTAMP, 1)";
+			$vp = $mysqli->query($qp);
+			//$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt1";
+			//$vl = $mysqli->query($ql);
+			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt2, CURRENT_TIMESTAMP, 2)";
+			$vp = $mysqli->query($qp);
+			//$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt2";
+			//$vl = $mysqli->query($ql);
+			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt3, CURRENT_TIMESTAMP, 3)";
+			$vp = $mysqli->query($qp);
+			//$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt3";
+			//$vl = $mysqli->query($ql);
+			
+			$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt1, CURRENT_TIMESTAMP, 4)";
 			$vw = $mysqli->query($qw);
 
-			$qsl = "UPDATE talleres SET libres=libres-1 WHERE id = $sopt1";
-			$vsl = $mysqli->query($qsl);
+			//$qsl = "UPDATE talleres SET libres=libres-1 WHERE id = $sopt1";
+			//$vsl = $mysqli->query($qsl);
 
-			$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt2, CURRENT_TIMESTAMP)";
+			$qw = "INSERT INTO usuario_taller VALUES($idu, $sopt2, CURRENT_TIMESTAMP, 5)";
 			$vw = $mysqli->query($qw);
 
-			$qsl = "UPDATE talleres SET libres=libres-1 WHERE id = $sopt2";
-			$vsl = $mysqli->query($qsl);
+			//$qsl = "UPDATE talleres SET libres=libres-1 WHERE id = $sopt2";
+			//$vsl = $mysqli->query($qsl);
 
 			if($city == '986'){
 				$qd = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '-', '-', '$subeDocs')";

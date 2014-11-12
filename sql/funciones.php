@@ -98,35 +98,48 @@ function selectCarreras(){
 	return $listado;
 }
 
-function selectTalleresV($opc){
+function selectTalleresV($opc, $hr){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
 	if($opc == '1'){
 		//solo x campos
-		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND opc = 1 AND libres > 0";
+		//$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND opc = 1 AND libres > 0";
+		$q = "SELECT id, nombre, cupo FROM talleres WHERE dia = 1 AND opc = 1";
 	}else{
-		$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND id <> 46 AND libres > 0";
+		//$q = "SELECT id, nombre FROM talleres WHERE dia = 1 AND id <> 46 AND libres > 0";
+		$q = "SELECT id, nombre, cupo FROM talleres WHERE dia = 1 AND id <> 46";
 	}
 	$v = $mysqli->query($q);
 
 	if($v){
 		$listado = "";
 		while ($row = $v->fetch_assoc()) {
-			$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
+			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=$hr AND id_taller={$row['id']}";
+			$sc = $mysqli->query($q);
+			$tr = $sc->fetch_assoc();
+			if($tr['total'] < $row['cupo']){
+				$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
+			}
 		}
 	}
 
 	return $listado;
 }
 
-function selectTalleresS(){
+function selectTalleresS($hr){
 	$mysqli = new mysqli(HOST,USR,PWD,DB);
-	$q = "SELECT id, nombre FROM talleres WHERE dia = 2 AND libres > 0";
+	//$q = "SELECT id, nombre, cupo FROM talleres WHERE dia = 2 AND libres > 0";
+	$q = "SELECT id, nombre, cupo FROM talleres WHERE dia = 2";
 	$v = $mysqli->query($q);
 
 	if($v){
 		$listado = "";
 		while ($row = $v->fetch_assoc()) {
-			$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
+			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=$hr AND id_taller={$row['id']}";
+			$sc = $mysqli->query($q);
+			$tr = $sc->fetch_assoc();
+			if($tr['total'] < $row['cupo']){
+				$listado .= "<option value='".$row['id']."'>".utf8_encode($row['nombre'])."</option>";
+			}
 		}
 	}
 

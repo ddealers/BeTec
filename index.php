@@ -989,21 +989,21 @@
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt1" id="vopt1" class="option">
 									<option value="">Elige tu actividad de 16:30 a 17:20 horas*</option>
-									<?php echo selectTalleresV(1); ?>
+									<?php echo selectTalleresV(1,1); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt2" id="vopt2" class="option">
 									<option value="">Elige tu actividad de 17:40 a 18:30 horas*</option>
-									<?php echo selectTalleresV(0); ?>
+									<?php echo selectTalleresV(0,2); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="vopt3" id="vopt3" class="option">
 									<option value="">Elige tu actividad de 18:40 a 19:30 horas*</option>
-									<?php echo selectTalleresV(0); ?>
+									<?php echo selectTalleresV(0,3); ?>
 								</select>
 							</label>
 						</div>
@@ -1020,14 +1020,14 @@
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="sopt1" id="sopt1" class="option">
 									<option value="">Elige tu taller de 9:00 a 11:30 horas*</option>
-									<?php echo selectTalleresS(); ?>
+									<?php echo selectTalleresS(4); ?>
 								</select>
 							</label>
 							<label>
 								<i class="icon ion-ios7-arrow-down"></i>
 								<select name="sopt2" id="sopt2" class="option">
 									<option value="">Elige tu taller de 11:45 a 14:15 horas*</option>
-									<?php echo selectTalleresS(); ?>
+									<?php echo selectTalleresS(5); ?>
 								</select>
 							</label>
 						</div>

@@ -598,7 +598,7 @@ function encriptarURL($string, $key){
 							<?php elseif($value->id == $user->talleres[1]->id_taller || $value->id == $user->talleres[2]->id_taller): ?>
 							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 1)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
 						<?php endforeach; ?>
 						</select>
@@ -615,7 +615,7 @@ function encriptarURL($string, $key){
 							<?php elseif($value->id == $user->talleres[0]->id_taller || $value->id == $user->talleres[2]->id_taller): ?>
 							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 2)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
 						<?php endforeach; ?>
 						</select>
@@ -632,7 +632,7 @@ function encriptarURL($string, $key){
 							<?php elseif($value->id == $user->talleres[0]->id_taller || $value->id == $user->talleres[1]->id_taller): ?>
 							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 3)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
 						<?php endforeach; ?>
 						</select>
@@ -650,7 +650,7 @@ function encriptarURL($string, $key){
 							<?php elseif($value->id == $user->talleres[4]->id_taller): ?>
 							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 4)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
 						<?php endforeach; ?>
 						</select>
@@ -667,7 +667,7 @@ function encriptarURL($string, $key){
 							<?php elseif($value->id == $user->talleres[3]->id_taller): ?>
 							<option value="<?php echo $value->id ?>" style="display: none;"><?php echo $value->nombre ?></option>
 							<?php else: ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 5)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 							<?php endif ?>
 						<?php endforeach; ?>
 						</select>
@@ -925,7 +925,7 @@ function encriptarURL($string, $key){
 						<select id="vopt1">
 							<option value="">Elige uno</option>
 						<?php foreach($taller->listViernes(true) as $value): ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 1)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
 						</select>
 					</div>
@@ -937,7 +937,7 @@ function encriptarURL($string, $key){
 						<select id="vopt2">
 							<option value="">Elige uno</option>
 						<?php foreach($taller->listViernes() as $value): ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 2)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
 						</select>
 					</div>
@@ -948,7 +948,7 @@ function encriptarURL($string, $key){
 						<select id="vopt3">
 							<option value="">Elige uno</option>
 						<?php foreach($taller->listViernes() as $value): ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 3)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
 						</select>
 					</div>
@@ -961,7 +961,7 @@ function encriptarURL($string, $key){
 						<select id="sopt1">
 							<option value="">Elige uno</option>
 						<?php foreach($taller->listSabado() as $value): ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 4)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
 						</select>
 					</div>
@@ -973,7 +973,7 @@ function encriptarURL($string, $key){
 						<select id="sopt2">
 							<option value="">Elige uno</option>
 						<?php foreach($taller->listSabado() as $value): ?>
-							<option value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
+							<option class="<?if($taller->full($value->id, 5)) echo 'full' ?>" value="<?php echo $value->id ?>"><?php echo $value->nombre ?></option>
 						<?php endforeach; ?>
 						</select>
 					</div>
