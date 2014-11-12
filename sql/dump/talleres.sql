@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 12-11-2014 a las 04:42:44
+-- Tiempo de generación: 12-11-2014 a las 04:49:50
 -- Versión del servidor: 5.6.20
 -- Versión de PHP: 5.5.15
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `talleres`
 --
 
+DROP TABLE IF EXISTS `talleres`;
 CREATE TABLE IF NOT EXISTS `talleres` (
 `id` int(11) NOT NULL,
   `dia` int(11) NOT NULL,
