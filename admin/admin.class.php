@@ -725,7 +725,7 @@ class AdminClass extends MYDB{
 			</footer>
 		</body>
 		</html>";
-
+		$send = true;
 		if($data['ciudad'] == 986){
 			$send = mail($data['email'], 'Registro Completo', $mail, $cabeceras);
 		}else{
