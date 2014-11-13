@@ -1,6 +1,24 @@
 <?php
 require_once('admin.class.php');
 $admin = new AdminClass();
+$key = 'BornToBeTec321_';
+function encriptarURL($string, $key){
+	$result = '';
+	for($i=0; $i<strlen($string); $i++) {
+		$char = substr($string, $i, 1);
+		$keychar = substr($key, ($i % strlen($key))-1, 1);
+		$char = chr(ord($char)+ord($keychar));
+		$result.=$char;
+	}
+	return base64_encode($result);
+}
+
+$ur = encriptarURL($_POST["email"], $key);
+
+if($_POST['hotel'] == '0'){
+	$_POST['solo'] = '0';
+}
+
 $data = array(
 	'genero' => $_POST["genero"],
 	'nombre' => $_POST["nombre"],
@@ -33,6 +51,6 @@ $data = array(
 	'tas2' => $_POST["tas2"],
 	'idu' => $_POST['idu']
 );
-$res = $admin->update($data);
+$res = $admin->update($data, $ur);
 echo $res;
 ?>
