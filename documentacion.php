@@ -83,6 +83,8 @@ $ruta = $ruta . '/download/';
 
 //error al subir el archivo
 @$error = $_GET['e'];
+
+var_dump($respuesta);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -220,6 +222,36 @@ $ruta = $ruta . '/download/';
 					<?php endif; ?>
 				</div>
 				<?php endif; ?>
+
+				<!--TIPO B-->
+				<?php if($respuesta['tipo'] == 'B'):?>
+				<div class="columns30 pendiente">
+					<figure>
+					<?php if($respuesta['banco'] == 'false'): ?>
+						<img src="img/incorrecto.png" alt="Pendiente">
+					<?php else: ?>
+						<img src="img/correcto.png" alt="Registrado">
+					<?php endif; ?>
+					</figure>
+					<span>Pago</span>
+					<?php if($respuesta['banco'] == 'false'): ?>
+					<h4>Pendiente subir<br>comprobante</h4>
+					<form id="banco_upload" action="./sql/saveDoc.php" method="POST" enctype="multipart/form-data">
+						<input type="hidden" name="string" value="<?php echo $string ?>"/>
+						<input type="hidden" name="idu" value="<?php echo $idu ?>"/>
+						<input type="hidden" name="ruta" value="<?php echo $ruta ?>"/>
+						<div class="file-upload btn">
+							<span>Subir Archivo</span>
+							<input type="file" class="upload" accept="image/png,image/jpeg,application/pdf" name="banco"/>
+						</div>
+						<!--input id="banco_upload" type="submit" value="Guardar"/-->
+					</form>
+					<?php else: ?>
+					<h4>Realizado</h4>
+					<?php endif; ?>
+				</div>
+				<?php endif; ?>
+
 				<?php endif; ?>
 				<?php endif; ?>
 			</div>

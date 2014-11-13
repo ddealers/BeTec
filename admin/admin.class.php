@@ -52,6 +52,7 @@ class AdminClass extends MYDB{
 			$response['status'] = true;
 			$response['uri'] = '101';
 		}
+
 		return $response;
 	}
 
@@ -224,7 +225,7 @@ class AdminClass extends MYDB{
 	}
 
 	public function update($data, $ur){ 
-		$response['status'] = 'false';
+		$response = 'false';
 		
 		$data['nombre'] = utf8_decode($data['nombre']);
 		$data['acompana'] = utf8_decode($data['acompana']);
@@ -238,6 +239,7 @@ class AdminClass extends MYDB{
 		$url = "http://borntobetec.mty.itesm.mx/documentacion.php?s=".$ur;
 		$datos = '';
 		$subeDocs = ($data['hotel'] == '1') ? '1' : '0' ;
+		$data['solo'] = ($data['solo'] == '1') ? '1' : '0' ;
 
 		$q = "UPDATE usuarios 
 		SET genero = {$data['genero']}, 
@@ -726,20 +728,18 @@ class AdminClass extends MYDB{
 
 		if($data['ciudad'] == 986){
 			$send = mail($data['email'], 'Registro Completo', $mail, $cabeceras);
-			$tipoSend = 'monterry';
-		}elseif ($data['ciudad'] != 986 && $data['hotel'] == '1' && $data['solo'] == '1') {
-			$send = mail($data['email'], 'Completa tu Registro', $mail_FA, $cabeceras);
-			$tipoSend = 'FA';
-		}elseif($data['ciudad'] != 986 && $data['hotel'] == '1' && $data['solo'] == '0'){
-			$send = mail($data['email'], 'Completa tu Registro', $mail_FB, $cabeceras);
-			$tipoSend = 'FB';
+		}else{
+			if($data['hotel'] == '1' && $data['solo'] == '1'){
+				$send = mail($data['email'], 'Completa tu Registro', $mail_FA, $cabeceras);
+			}elseif($data['hotel'] == '1' && $data['solo'] == '0'){
+				$send = mail($data['email'], 'Completa tu Registro', $mail_FA, $cabeceras);
+			}
 		}
 
 		if($send){
-			$response['status'] = 'true';
-			$response['mail'] = $tipoSend;
+			$response = 'true';
 		}else{
-			$response['status'] = 'false';
+			$response = 'false';
 		}
 
 		return $response;
