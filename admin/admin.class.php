@@ -283,6 +283,16 @@ class AdminClass extends MYDB{
 			}
 		}
 
+		if($data['hotel'] == '1'){
+		//UPDATE DOCUMENTOS 
+			$q = "UPDATE usuarios_documentos SET tipo_foraneo = '1' WHERE id_usuario = '{$data['idu']}' ";
+			$v = $this->_custom($q)->get();
+		}else{
+		//UPDATE DOCUMENTOS 
+			$q = "UPDATE usuarios_documentos SET tipo_foraneo = '0' WHERE id_usuario = '{$data['idu']}' ";
+			$v = $this->_custom($q)->get();
+		}
+
 		$q = "UPDATE usuarios_info 
 		SET moneterrey = {$data['tecno']} 
 		WHERE id = {$data['idu']}";
