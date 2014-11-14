@@ -57,7 +57,7 @@ function desencriptarURL($string, $key){
 }
 
 //$url = "http://borntobetec.mty.itesm.mx/documentacion.php?s=".$ur;
-$boleto = "http://borntobetec.mty.itesm.mx/boleto.php?s=".$ur;
+$boleto = "http://borntobetec.mty.itesm.mx/boleto.php?s=".$s;
 //$boleto = "http://$_SERVER[HTTP_HOST]/boleto.php?s=".$s;
 $correo = desencriptarURL($s, $key);
 $mysqli = new mysqli(HOST,USR,PWD,DB);	
