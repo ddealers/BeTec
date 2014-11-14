@@ -296,13 +296,13 @@ $(document).ready(function () {
 			if( !validate(email, 'Ingresa un correo válido.', 'email') ){
 				return;
 			}
-			if( !validate(lada, 'Ingresa una clave lada válida.', 'lada') ){
+			if( !validate(lada, 'Ingresa una clave lada válida(Entre 1 y 3 dígitos).', 'lada') ){
 				return;
 			}
-			if( !validate(tel, 'Ingresa un número de teléfono válido.', 'tel') ){
+			if( !validate(tel, 'Ingresa un número de teléfono válido(Entre 8 y 10 dígitos).', 'tel') ){
 				return;
 			}
-			if( !validate(cel, 'Ingresa un número de celular válido.', 'cel') ){
+			if( !validate(cel, 'Ingresa un número de celular válido(Entre 8 y 10 dígitos).', 'cel') ){
 				return;
 			}
 			if( !validate(state, 'Te hace falta seleccionar tu estado.') ){
