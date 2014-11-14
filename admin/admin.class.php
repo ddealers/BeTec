@@ -17,6 +17,8 @@ class AdminClass extends MYDB{
 		return $v;
 	}
 	public function del($id){
+		$q = "DELETE FROM usuario_taller WHERE id_usuario=$id";
+		$this->_custom($q);
 		$condition = "id_login=$id";
 		$v = $this->_delete($condition);
 		return $v;
