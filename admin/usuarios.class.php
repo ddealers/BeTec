@@ -185,7 +185,7 @@ class Usuario extends MYDB{
 		return $v;
 	}
 	public function getTalleres( $id ){
-		$v = $this->_custom("SELECT id_taller, nombre FROM usuario_taller LEFT JOIN talleres ON talleres.id=usuario_taller.id_taller WHERE id_usuario='$id' ORDER BY create_at ASC")->get();
+		$v = $this->_custom("SELECT id_taller, nombre FROM usuario_taller LEFT JOIN talleres ON talleres.id=usuario_taller.id_taller WHERE id_usuario='$id' ORDER BY usuario_taller.horario_taller ASC")->get();
 		foreach ($v as $key => $value) {
 			$value->nombre = utf8_encode($value->nombre);
 		}
