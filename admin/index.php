@@ -685,7 +685,7 @@ function encriptarURL($string, $key){
 					<br />
 				<?php if($carta->url_permiso != '#' && $carta->url_permiso != '' && $carta->url_permiso != NULL): ?>
 					<input class="btn btn-info" type="submit" value="Actualizar" />
-					<a class="btn btn-info" data-ob="lightbox" target="_blank" href="../download/<?php echo $carta->url_permiso;?>">Ver Documento</a>
+					<a class="btn btn-info" data-ob="lightbox" target="_blank" href="http://borntobetec.mty.itesm.mx/download/<?php echo $carta->url_permiso;?>">Ver Documento</a>
 				<?php else: ?>
 					<input class="btn btn-info" type="submit" value="Guardar" />
 				<?php endif; ?>
@@ -700,7 +700,7 @@ function encriptarURL($string, $key){
 					<br />
 				<?php if($carta->url_pago != '#' && $carta->url_pago != '' && $carta->url_pago != NULL): ?>
 					<input class="btn btn-info" type="submit" value="Actualizar" />
-					<a class="btn btn-info" data-ob="lightbox" target="_blank" href="../download/<?php echo $carta->url_pago;?>">Ver Documento</a>
+					<a class="btn btn-info" data-ob="lightbox" target="_blank" href="http://borntobetec.mty.itesm.mx/download/<?php echo $carta->url_pago;?>">Ver Documento</a>
 				<?php else: ?>
 					<input class="btn btn-info" type="submit" value="Guardar" />
 				<?php endif; ?>
