@@ -25,11 +25,18 @@ if(isset($_POST['action']) && $_POST['action']=='byID'){
 	$email = $u->correo;
 	$correo = encriptarURL($u->correo, $key);
 }else{
-	$idu	= $_POST['idu'];
+	$idu	= $_REQUEST['idu'];
 	$nombre	= $_POST['nombre'];
 	$email	= $_POST['email'];
 	$correo	= $_POST['correo'];
 }
-$res = $admin->boleto($idu, $nombre, $email, $correo);
+
+$q = "SELECT * FROM usuarios_documentos WHERE id_usuario=$idu";
+$v = $usuario->_custom($q)->first();
+if($v->url_pago == "-" && $v->url_pago == "-"){
+	$res = $admin->boleto($idu, $nombre, $email, $correo);
+}else{
+	$res = $admin->docs($idu, $nombre, $email, $correo, $v->tipo_foraneo);
+}
 echo $res;
 ?>

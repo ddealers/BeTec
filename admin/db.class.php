@@ -10,7 +10,7 @@ class MYDB{
 		$this->getError();
 	}
 	
-	protected function _custom( $q ){
+	public function _custom( $q ){
 		$result = array();
 		$this->mysqli = new mysqli(HOST,USR,PWD,DB);
 		$r = $this->mysqli->query( $q );
