@@ -54,8 +54,10 @@ function encriptarURL($string, $key){
 }
 
 $ur = encriptarURL($_POST['email'], $key);
-$url = "http://$_SERVER[HTTP_HOST]/documentacion.php?s=".$ur;
-$boleto = "http://$_SERVER[HTTP_HOST]/boleto.php?s=".$ur;
+$url = "http://borntobetec.mty.itesm.mx/documentacion.php?s=".$ur;
+$boleto = "http://borntobetec.mty.itesm.mx/boleto.php?s=".$ur;
+//$url = "http://$_SERVER[HTTP_HOST]/documentacion.php?s=".$ur;
+//$boleto = "http://$_SERVER[HTTP_HOST]/boleto.php?s=".$ur;
 
 $genero = ($_POST['genero'] != '') ? $_POST['genero'] : 0 ;
 
