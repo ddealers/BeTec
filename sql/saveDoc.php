@@ -67,7 +67,10 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		$uname = str_replace(' ', '', $_FILES['carta']['name']);
 		$name0 = $hora . $uname;
 
-		$name0 = uniqid("bt14_",true);
+		$path = $_FILES['carta']['name'];
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
+
+		$name0 = uniqid("bt14_",true).'.'.$ext;
 
 		//$mime = mime_content_type($_FILES['carta']['tmp_name']);
 		//if($mime == 'image/png' || $mime == 'image/jpeg' || $mime == 'application/pdf'){
@@ -86,7 +89,10 @@ $mysqli = new mysqli(HOST,USR,PWD,DB);
 		$uname1 = str_replace(' ', '', $_FILES['banco']['name']);
 		$name1 = $hora . $uname1;
 
-		$name1 = uniqid("bt14_",true);
+		$path = $_FILES['banco']['name'];
+		$ext = pathinfo($path, PATHINFO_EXTENSION);
+
+		$name1 = uniqid("bt14_",true).'.'.$ext;
 
 		//$mime = mime_content_type($_FILES['carta']['tmp_name']);
 		//if($mime == 'image/png' || $mime == 'image/jpeg' || $mime == 'application/pdf'){
