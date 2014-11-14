@@ -452,6 +452,9 @@ $(document).ready(function () {
 					}else if(response == 'badMail'){
 						alert("Este email ya ha sido registrado, vuelve a realizar el registro con una cuenta de correo nueva.");
 						console.log(response);
+					}else if(response.error){
+						alert(error);
+						console.log(response);
 					}else{
 						alert("Lo sentimos tu registro no se pudo completar");
 						console.log(response);

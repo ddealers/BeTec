@@ -115,6 +115,58 @@ if($qma){
 	if($qma->num_rows > 0){
 		$response = 'badMail';
 	}else{
+		$q = "SELECT id, cupo FROM talleres WHERE id='$vopt1'";
+		$v = $mysqli->query($q);
+		$row = $v->fetch_assoc();
+		$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=1 AND id_taller={$row['id']}";
+		$sc = $mysqli->query($q);
+		$tr = $sc->fetch_assoc();
+		if($tr['total'] >= $row['cupo']){
+			echo json_encode(array('error'=>'El taller del Viernes a las 16:30 está lleno, elige otro.'));
+			return;
+		}
+
+		$q = "SELECT id, cupo FROM talleres WHERE id='$vopt2'";
+		$v = $mysqli->query($q);
+		$row = $v->fetch_assoc();
+		$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=2 AND id_taller={$row['id']}";
+		$sc = $mysqli->query($q);
+		$tr = $sc->fetch_assoc();
+		if($tr['total'] >= $row['cupo']){
+			echo json_encode(array('error'=>'El taller del Viernes a las 17:40 está lleno, elige otro.'));
+			return;
+		}
+		$q = "SELECT id, cupo FROM talleres WHERE id='$vopt3'";
+		$v = $mysqli->query($q);
+		$row = $v->fetch_assoc();
+		$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=3 AND id_taller={$row['id']}";
+		$sc = $mysqli->query($q);
+		$tr = $sc->fetch_assoc();
+		if($tr['total'] >= $row['cupo']){
+		echo json_encode(array('error'=>'El taller del Viernes a las 18:40 está lleno, elige otro.'));
+			return;
+		}
+		$q = "SELECT id, cupo FROM talleres WHERE id='$sopt1'";
+		$v = $mysqli->query($q);
+		$row = $v->fetch_assoc();
+		$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=4 AND id_taller={$row['id']}";
+		$sc = $mysqli->query($q);
+		$tr = $sc->fetch_assoc();
+		if($tr['total'] >= $row['cupo']){
+			echo json_encode(array('error'=>'El taller del Sábado a las 9:00 está lleno, elige otro.'));
+			return;
+		}
+		$q = "SELECT id, cupo FROM talleres WHERE id='$sopt2'";
+		$v = $mysqli->query($q);
+		$row = $v->fetch_assoc();
+		$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=5 AND id_taller={$row['id']}";
+		$sc = $mysqli->query($q);
+		$tr = $sc->fetch_assoc();
+		if($tr['total'] >= $row['cupo']){
+			echo json_encode(array('error'=>'El taller del Sábado a las 11:45 está lleno, elige otro.'));
+			return;
+		}
+
 		$q = "INSERT INTO usuarios VALUES(NULL, $genero, '$nombre', '$cumple', '$email', '$numero', '$cel', '$state', '$city', '$prep', '$grad', '$hotel', '$solo', '$evento', '$subeDocs',  CURRENT_TIMESTAMP)";
 
 		$v = $mysqli->query($q);
@@ -128,60 +180,7 @@ if($qma){
 			$v = $mysqli->query($q);
 			$q = "INSERT INTO usuario_carrera VALUES($idu, $car3, CURRENT_TIMESTAMP)";
 			$v = $mysqli->query($q);
-
-			/*
-			$q = "SELECT id, cupo FROM talleres WHERE id='$vopt1'";
-			$v = $mysqli->query($q);
-			$row = $v->fetch_assoc();
-			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=1 AND id_taller={$row['id']}";
-			$sc = $mysqli->query($q);
-			$tr = $sc->fetch_assoc();
-			if($tr['total'] >= $row['cupo']){
-				echo json_encode(array('error'=>'El taller del Viernes a las 16:30 está lleno, elige otro.'));
-				return;
-			}
-
-			$q = "SELECT id, cupo FROM talleres WHERE id='$vopt2'";
-			$v = $mysqli->query($q);
-			$row = $v->fetch_assoc();
-			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=2 AND id_taller={$row['id']}";
-			$sc = $mysqli->query($q);
-			$tr = $sc->fetch_assoc();
-			if($tr['total'] >= $row['cupo']){
-				echo json_encode(array('error'=>'El taller del Viernes a las 17:40 está lleno, elige otro.'));
-				return;
-			}
-			$q = "SELECT id, cupo FROM talleres WHERE id='$vopt3'";
-			$v = $mysqli->query($q);
-			$row = $v->fetch_assoc();
-			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=3 AND id_taller={$row['id']}";
-			$sc = $mysqli->query($q);
-			$tr = $sc->fetch_assoc();
-			if($tr['total'] >= $row['cupo']){
-				echo json_encode(array('error'=>'El taller del Viernes a las 18:40 está lleno, elige otro.'));
-				return;
-			}
-			$q = "SELECT id, cupo FROM talleres WHERE id='$sopt1'";
-			$v = $mysqli->query($q);
-			$row = $v->fetch_assoc();
-			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=4 AND id_taller={$row['id']}";
-			$sc = $mysqli->query($q);
-			$tr = $sc->fetch_assoc();
-			if($tr['total'] >= $row['cupo']){
-				echo json_encode(array('error'=>'El taller del Sábado a las 9:00 está lleno, elige otro.'));
-				return;
-			}
-			$q = "SELECT id, cupo FROM talleres WHERE id='$sopt2'";
-			$v = $mysqli->query($q);
-			$row = $v->fetch_assoc();
-			$q = "SELECT COUNT(*) AS total FROM usuario_taller WHERE horario_taller=5 AND id_taller={$row['id']}";
-			$sc = $mysqli->query($q);
-			$tr = $sc->fetch_assoc();
-			if($tr['total'] >= $row['cupo']){
-				echo json_encode(array('error'=>'El taller del Sábado a las 11:45 está lleno, elige otro.'));
-				return;
-			}
-			*/
+			
 			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt1, CURRENT_TIMESTAMP, 1)";
 			$vp = $mysqli->query($qp);
 			//$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt1";
