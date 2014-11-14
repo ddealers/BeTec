@@ -16,13 +16,6 @@ class AdminClass extends MYDB{
 		$v = $this->_insert($data);
 		return $v;
 	}
-	public function del($id){
-		$q = "DELETE FROM usuario_taller WHERE id_usuario=$id";
-		$this->_custom($q);
-		$condition = "id_login=$id";
-		$v = $this->_delete($condition);
-		return $v;
-	}
 	public function login($user, $pass){
 		$response = false;
 		$v = $this->_where("id_login, s_login_user, s_login_permission", "s_login_user = '$user' AND s_login_clave = '$pass'");
@@ -216,11 +209,8 @@ class AdminClass extends MYDB{
 	}
 	
 	public function delete( $id ){
-		$q = "SELECT id_taller FROM usuario_taller WHERE id_usuario='$id'";
-		$t = $this->_custom($q)->get();
-		foreach ($t as $key => $value) {
-			$q = "UPDATE talleres SET libres=libres+1 WHERE id={$value->id_taller}";
-		}
+		$q = "DELETE FROM usuario_taller WHERE id_usuario=$id";
+		$this->_custom($q);
 		$q = "DELETE FROM usuarios WHERE id = $id";
 		$d = $this->_custom($q);
 		return $d->get();

@@ -316,7 +316,7 @@ function encriptarURL($string, $key){
 		<?php 
 		if(isset($_REQUEST['delete'])):
 			if(isset($_REQUEST['id'])):
-				$d = $admin->del($_REQUEST['id']);
+				$d = $admin->delete($_REQUEST['id']);
 				if($d):
 		?>
 			<script type="text/javascript">location.href = './index.php?admin&e=103'</script>
