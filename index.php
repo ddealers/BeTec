@@ -258,7 +258,7 @@
 						<div class="container12">
 							<div class="column6 top">
 								<img src="./img/foco.png">
-					 			<p class="textJ"><span class="negritas">ASISTENTES LOCALES:</span><br>Las actividades para ti inician el viernes 21 de<br>noviembre a partir de las 4:30 horas. Consulta las<br>actividades del viernes para más detalles de la agenda.</p>
+					 			<p class="textJ"><span class="negritas">ASISTENTES LOCALES:</span><br>Las actividades para ti inician el viernes 21 de<br>noviembre a partir de las 14:30 horas. Consulta las<br>actividades del viernes para más detalles de la agenda.</p>
 					 		</div>
 					  		<div class="column6">
 					  		</div>
@@ -432,7 +432,7 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td>Terecera ronda de<br> actividades</td>
+								<td>Tercera ronda de<br> actividades</td>
 								<td></td>
 								<td></td>
 								<td></td>
