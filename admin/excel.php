@@ -18,7 +18,6 @@ $d = @$_GET['docs'];
 $h = @$_GET['hab'];
 $c = @$_GET['comp'];
 $rows = $usuario->excel_rows($s, $f, $d, $h, $c);
-
 $filename = 'Registros BTEC.csv';
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 header('Content-Description: File Transfer');

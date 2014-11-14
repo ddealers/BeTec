@@ -47,7 +47,7 @@ class Usuario extends MYDB{
 		return $v;
 	}
 	public function excel_rows($search = false, $from = false, $docs = false, $habitacion = false, $compania = false){
-		$condition = "SELECT id,genero,nombre,cumpleanos AS nacimiento,correo,telefono,celular,id_estado AS estado, id_ciudad AS ciudad, id_prepa AS preparatoria, graduacion, hospedaje, acompana, id_medio AS medio FROM `usuarios` ";
+		$condition = "SELECT usuarios.id,genero,nombre,cumpleanos AS nacimiento,correo,telefono,celular,id_estado AS estado, id_ciudad AS ciudad, id_prepa AS preparatoria, graduacion, hospedaje, acompana, id_medio AS medio FROM `usuarios` ";
 		if($docs){
 			$condition .= "LEFT JOIN `usuarios_documentos` ON usuarios.id = usuarios_documentos.id_usuario ";
 		}
@@ -75,6 +75,7 @@ class Usuario extends MYDB{
 			$condition .= " AND (nombre LIKE '%$search%' OR correo LIKE '%$search%')";
 		}
 		$condition .= "ORDER BY usuarios.id";
+		//echo $condition;
 		$v = $this->_custom($condition)->get();
 		if($v){
 			foreach ($v as $value) {

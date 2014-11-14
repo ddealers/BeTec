@@ -1,8 +1,8 @@
 <?php
 define('HOST', 'localhost');
-define('USR', 'tec');
-define('PWD', 'tec12345');
-define('DB', 'betec');
+define('USR', 'root');
+define('PWD', '');
+define('DB', 'betec_2014');
 /*
 define('HOST', 'localhost');
 define('USR', 'root');

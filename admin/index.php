@@ -684,6 +684,7 @@ function encriptarURL($string, $key){
 			</form>
 		</div>
 		<div role="tabpanel" class="tab-pane" id="documentos">
+			<?php if($carta->url_permiso != '-'): ?>
 			<h3>Carta Compromiso</h3>
 			<form action="upload.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
@@ -699,6 +700,8 @@ function encriptarURL($string, $key){
 				<?php endif; ?>
 				</div>
 			</form>
+			<?php endif ?>
+			<?php if($carta->url_pago != '-'): ?>
 			<h3>Comprobante de Pago</h3>
 			<form action="upload.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
@@ -714,6 +717,7 @@ function encriptarURL($string, $key){
 				<?php endif; ?>
 				</div>
 			</form>
+			<?php endif ?>
 		</div>
 	</div>
 	<?php endif; ?>
