@@ -129,6 +129,7 @@ if($qma){
 			$q = "INSERT INTO usuario_carrera VALUES($idu, $car3, CURRENT_TIMESTAMP)";
 			$v = $mysqli->query($q);
 
+			/*
 			$q = "SELECT id, cupo FROM talleres WHERE id='$vopt1'";
 			$v = $mysqli->query($q);
 			$row = $v->fetch_assoc();
@@ -180,7 +181,7 @@ if($qma){
 				echo json_encode(array('error'=>'El taller del Sábado a las 11:45 está lleno, elige otro.'));
 				return;
 			}
-			
+			*/
 			$qp = "INSERT INTO usuario_taller VALUES($idu, $vopt1, CURRENT_TIMESTAMP, 1)";
 			$vp = $mysqli->query($qp);
 			//$ql = "UPDATE talleres SET libres=libres-1 WHERE id = $vopt1";
