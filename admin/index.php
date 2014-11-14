@@ -639,7 +639,6 @@ function encriptarURL($string, $key){
 					</div>
 				</div>
 				<h3>Talleres del Sábado</h3>
-				<?php var_dump($user->talleres) ?>
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Taller Sábado de 9:00 a 11:30</label>
 					<div class="col-sm-10">
