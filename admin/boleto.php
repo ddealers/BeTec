@@ -36,7 +36,7 @@ $v = $usuario->_custom($q)->first();
 
 if($v->url_permiso == "-" && $v->url_pago == "-"){
 	$res = $admin->boleto($idu, $nombre, $email, $correo);
-elseif($v->url_pago != "#" && $v->url_permiso != "#" && $v->tipo_foraneo == 1){
+}elseif($v->url_pago != "#" && $v->url_permiso != "#" && $v->tipo_foraneo == 1){
 	$res = $admin->boleto($idu, $nombre, $email, $correo);
 }elseif($v->url_permiso != "#" && $v->tipo_foraneo == 0){
 	$res = $admin->boleto($idu, $nombre, $email, $correo);

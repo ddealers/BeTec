@@ -1050,7 +1050,7 @@
 			</form>
 		</article>
 		<div class="siguiente">
-			<a class="next" href="#next">Siguiente<i class="icon ion-arrow-right-c"></i></a>
+			<a class="next" id="send" href="#next">Siguiente<i class="icon ion-arrow-right-c"></i></a>
 			<a class="prev" href="#prev">ATRÁS<i class="icon ion-arrow-left-c"></i></a>
 		</div>
 		<div class="footer"></div>
