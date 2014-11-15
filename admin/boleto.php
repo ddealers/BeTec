@@ -34,13 +34,6 @@ if(isset($_POST['action']) && $_POST['action']=='byID'){
 $q = "SELECT * FROM usuarios_documentos WHERE id_usuario=$idu";
 $v = $usuario->_custom($q)->first();
 
-if($row['tipo_foraneo'] == '1'){
-			$res = ($row['url_pago'] != '#' && $row['url_permiso'] != '#');
-		}elseif($row['tipo_foraneo'] == '0'){
-			$res = $row['url_permiso'] != '#';
-		}
-
-
 if($v->url_permiso == "-" && $v->url_pago == "-"){
 	$res = $admin->boleto($idu, $nombre, $email, $correo);
 elseif($v->url_pago != "#" && $v->url_permiso != "#" && $v->tipo_foraneo == 1){
