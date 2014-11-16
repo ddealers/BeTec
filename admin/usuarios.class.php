@@ -8,10 +8,13 @@ class Usuario extends MYDB{
 		$this->table = 'usuarios';
 	}
 
-	public function rows($search = false, $from = false, $docs = false, $habitacion = false, $compania = false){
+	public function rows($search = false, $from = false, $docs = false, $habitacion = false, $compania = false, $checkin = false){
 		$condition = "SELECT * FROM `usuarios` ";
 		if($docs){
 			$condition .= "LEFT JOIN `usuarios_documentos` ON usuarios.id = usuarios_documentos.id_usuario ";
+		}
+		if($checkin){
+			$condition .= "LEFT JOIN `checkin` ON usuarios.id = checkin.id_usuario ";
 		}
 		$condition .= "WHERE 1 ";
 		if($from){
@@ -36,7 +39,11 @@ class Usuario extends MYDB{
 		if($search){
 			$condition .= " AND (nombre LIKE '%$search%' OR correo LIKE '%$search%')";
 		}
+		if($checkin){
+			$condition .= "AND id_check != 'NULL' ";
+		}
 		$condition .= "ORDER BY usuarios.id";
+		//echo $condition;
 		$v = $this->_custom($condition)->get();
 		if($v){
 			foreach ($v as $value) {
@@ -46,10 +53,13 @@ class Usuario extends MYDB{
 		}
 		return $v;
 	}
-	public function excel_rows($search = false, $from = false, $docs = false, $habitacion = false, $compania = false){
+	public function excel_rows($search = false, $from = false, $docs = false, $habitacion = false, $compania = false, $checkin = false){
 		$condition = "SELECT usuarios.id,genero,nombre,cumpleanos AS nacimiento,correo,telefono,celular,id_estado AS estado, id_ciudad AS ciudad, id_prepa AS preparatoria, graduacion, hospedaje, acompana, id_medio AS medio FROM `usuarios` ";
 		if($docs){
 			$condition .= "LEFT JOIN `usuarios_documentos` ON usuarios.id = usuarios_documentos.id_usuario ";
+		}
+		if($checkin){
+			$condition .= "LEFT JOIN `checkin` ON usuarios.id = checkin.id_usuario ";
 		}
 		$condition .= "WHERE 1 ";
 		if($from){
@@ -73,6 +83,9 @@ class Usuario extends MYDB{
 		}
 		if($search){
 			$condition .= " AND (nombre LIKE '%$search%' OR correo LIKE '%$search%')";
+		}
+		if($checkin){
+			$condition .= "AND id_check != 'NULL' ";
 		}
 		$condition .= "ORDER BY usuarios.id";
 		//echo $condition;
@@ -84,7 +97,9 @@ class Usuario extends MYDB{
 		}
 		return $v;
 	}
-
+	public function checkins(){
+		return $this->_custom("SELECT * FROM checkin GROUP BY id_usuario")->count();
+	}
 	public function registrados(){
 		return $this->_all("id")->count();
 	}
@@ -142,6 +157,11 @@ class Usuario extends MYDB{
 	}
 	public function checkin( $id ){
 		$q = "INSERT INTO checkin VALUES(NULL,$id,NULL)";
+		$v = $this->_custom($q)->get();
+		return $v;
+	}
+	public function removeCheckin( $id ){
+		$q = "DELETE FROM checkin WHERE id_usuario=$id";
 		$v = $this->_custom($q)->get();
 		return $v;
 	}

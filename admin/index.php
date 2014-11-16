@@ -81,6 +81,9 @@ function encriptarURL($string, $key){
 			  	</label>
 			</div>
 			<div class="foreign btn-group pull-right" data-toggle="buttons">
+				<label class="btn btn-default <?php if(@$_GET['check']) echo 'active' ?>">
+					<input type="checkbox" name="check" autocomplete="off" <?php if(@$_GET['check']) echo 'checked' ?>> c/Checkin
+				</label>
 				<label class="btn btn-default <?php if(@$_GET['docs']) echo 'active' ?>">
 					<input type="checkbox" name="docs" autocomplete="off" <?php if(@$_GET['docs']) echo 'checked' ?>> Docs Pendientes
 				</label>
@@ -99,7 +102,8 @@ function encriptarURL($string, $key){
 		$d = @$_GET['docs'];
 		$h = @$_GET['hab'];
 		$c = @$_GET['comp'];
-		$rows = $usuario->rows($s, $f, $d, $h, $c);
+		$k = @$_GET['check'];
+		$rows = $usuario->rows($s, $f, $d, $h, $c, $k);
 		?>
 		<h4>Registros: <?php echo count($rows) ?></h4>
 		<div style="border-bottom: 1px #ccc solid;" class="table-responsive">
@@ -128,9 +132,9 @@ function encriptarURL($string, $key){
 					</td>
 					<td>
 						<?php if($row->checkin): ?>
-						<span style="color:green; font-size: 30px" class="glyphicon glyphicon-ok-circle"></span>
+						<span data-id="<?php echo $row->id ?>" class="checkin-on glyphicon glyphicon-ok-circle"></span>
 						<?php else: ?>
-						<span style="color:orange; font-size: 30px" class="glyphicon glyphicon-remove-circle"></span>
+						<span data-id="<?php echo $row->id ?>" class="checkin-off glyphicon glyphicon-remove-circle"></span>
 						<?php endif ?>
 					</td>
 				</tr>
@@ -148,6 +152,7 @@ function encriptarURL($string, $key){
 		<br>
 		<div class="admin">
 			<h2>Estadísticas</h2>
+			<p class="p">* Número de usuarios con checkin<span><?php echo $usuario->checkins() ?></span></p>
 			<p class="p">* Número de usuarios registrados<span><?php echo $usuario->registrados() ?></span></p>
 			<p class="p">* Número de usuarios Locales<span><?php echo $usuario->locales() ?></span></p>
 			<p class="p">* Número de usuarios Foráneos<span><?php echo $usuario->foraneos() ?></span></p>

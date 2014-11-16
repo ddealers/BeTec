@@ -264,6 +264,40 @@ function sendTicket(){
 oB.settings.addThis = false;
 
 $(document).ready(function(){
+	function checkinOff(e){
+		var span = $(this);
+		var id = $(this).data('id');
+		$.ajax({
+			type: 'POST',
+			url: './checkin.php',
+			data: {action: 'remove', id: id}
+		}).done(function(res){
+			span.removeClass('checkin-on');
+			span.removeClass('glyphicon-ok-circle');
+			span.addClass('checkin-off');
+			span.addClass('glyphicon-remove-circle');
+			span.off('click');
+			span.on('click', checkinOn);
+		});
+	}
+	function checkinOn(e){
+		var span = $(this);
+		var id = $(this).data('id');
+		$.ajax({
+		type: 'POST',
+		url: './checkin.php',
+		data: {action: 'add', id: id}
+		}).done(function(res){
+			span.addClass('checkin-on');
+			span.addClass('glyphicon-ok-circle');
+			span.removeClass('checkin-off');
+			span.removeClass('glyphicon-remove-circle');
+			span.off('click');
+			span.on('click', checkinOff);
+		});
+	}
+	$('span.checkin-on').on('click', checkinOff);
+	$('span.checkin-off').on('click', checkinOn);
 	$('.from label input').on('change', function(e){
 		var target = $(e.currentTarget);
 		$("#filters").submit();

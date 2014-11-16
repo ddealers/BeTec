@@ -15,6 +15,14 @@ session_start();
 	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./bootstrap/js/orangebox.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
+	<style type="text/css">
+		.checkin-on{
+			color:green; font-size: 30px;
+		}
+		.checkin-off{
+			color:orange; font-size: 30px
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
