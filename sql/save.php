@@ -96,9 +96,22 @@ $namep = ($_POST['namep'] != '') ? $_POST['namep'] : '9' ; // Nombre Parentesco
 
 $namep = utf8_decode($namep);
 
+if($_POST['vopt1'] == $_POST['vopt2']){
+	echo json_encode(array('error'=>'No es posible el mismo taller en diferentes horarios.'));
+	return;
+}
+if($_POST['vopt2'] == $_POST['vopt3']){
+	echo json_encode(array('error'=>'No es posible el mismo taller en diferentes horarios.'));
+	return;
+}
+if($_POST['vopt1'] == $_POST['vopt3']){
+	echo json_encode(array('error'=>'No es posible el mismo taller en diferentes horarios.'));
+	return;
+}
+
 $vopt1	 = $_POST['vopt1'];
 $vopt2	 = $_POST['vopt2'];
-$vopt3	 = $_POST['vopt3'];
+$vopt3	 = ($_POST['vopt3'];
 $sopt1	 = $_POST['sopt1'];
 $sopt2	 = $_POST['sopt2'];
 
