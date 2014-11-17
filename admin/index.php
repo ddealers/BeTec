@@ -9,7 +9,7 @@ require_once('medio.class.php');
 require_once('talleres.class.php');
 require_once('documentacion.class.php');
 require_once('admin.class.php');
-
+require_once('../sql/funciones.php');
 
 $usuario = new Usuario();
 $estado = new Estado();
@@ -189,11 +189,6 @@ function encriptarURL($string, $key){
 		if($ok){
 	?>
 	<div class='alert alert-success' role='alert'>El Check-in se ha realizado correctamente.</div>
-	<script type="text/javascript">
-		setTimeout(function(){
-			$('.alert').fadeOut();
-		},500);
-	</script>
 	<?php
 		}else{
 	?>
@@ -201,10 +196,53 @@ function encriptarURL($string, $key){
 	<?php
 		}
 	}
+	if(isset($_REQUEST['barcode'])){
+		$barcode = str_replace(" ","+",$_REQUEST['barcode']);
+		$mail = desencriptarURL($barcode, $key);
+		$user = $usuario->byMail($mail);
+		if($user):
+			$ok = $usuario->checkin($user->id);
+			if($ok): ?>
+	<div class='alert alert-success' role='alert'>El Check-in se ha realizado correctamente.</div>
+	<?php	else: ?>
+	<div class='alert alert-warning' role='alert'>Hubo un problema al realizar el check-in, vuelve a intentarlo.</div>
+	<?php	endif; ?>
+	<?php else: ?>
+	<div class='alert alert-warning' role='alert'>Hubo un problema al realizar el check-in, vuelve a intentarlo.</div>
+	<?php 
+		endif; 
+	}
 	?>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			barcode = '';
+			$(document).keypress(function(e) {
+				var code = (e.keyCode ? e.keyCode : e.which);
+				if(code==13){
+					$('#bccheck').submit();
+				}else{
+					barcode=barcode+String.fromCharCode(code);
+				}
+				$('#bc').val(barcode);
+		    });
+		    setTimeout(function(){
+				$('.alert').fadeOut();
+			},500);
+		});
+	</script>
 	<section>
 		<h3>Check-in</h3>
-		<form class="form-inline" role="form" method="post" >
+		<form id="bccheck" role="form" method="get">
+			<input type="hidden" name="checkin">
+			<div class="form-group">
+				<label for="bc" class="col-sm-2 control-label">Barcode</label>
+				<div class="col-sm-10">
+					<input autofocus type="text" class="form-control" id="bc" name="barcode" placeholder="Barcode">
+				</div>
+			</div>
+		</form>
+		<div class="clearfix"></div>
+		<form role="form" method="post">
 			<input type="hidden" name="checkin">
 			<?php if(isset($_REQUEST['validate']) && isset($_REQUEST['correo']) && $_REQUEST['correo'] != '' && $u): ?>
 			<input type="hidden" name="confirm">
@@ -213,7 +251,7 @@ function encriptarURL($string, $key){
 			<input type="hidden" name="validate">
 			<?php endif ?>
 			<div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				<label for="incorreo" class="col-sm-2 control-label">Email</label>
 				<div class="col-sm-10">
 					<input value="<?php if(isset($_REQUEST['correo'])) echo $_REQUEST['correo'] ?>" type="email" class="form-control" id="incorreo" name="correo" placeholder="Email">
 				</div>
