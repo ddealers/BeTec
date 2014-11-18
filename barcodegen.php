@@ -5,7 +5,7 @@ require('barcode/Code128.php');
 $string = $_GET['s'];
 $bcode = new emberlabs\Barcode\Code128();
 $bcode->setData($string);
-$bcode->setDimensions(650, 100);
+$bcode->setDimensions(720, 100);
 $bcode->draw();
 header('Content-Type: image/png');
 $bcode->output();
