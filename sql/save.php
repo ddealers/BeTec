@@ -115,7 +115,7 @@ if($_POST['sopt1'] == $_POST['sopt2']){
 
 $vopt1	 = $_POST['vopt1'];
 $vopt2	 = $_POST['vopt2'];
-$vopt3	 = ($_POST['vopt3'];
+$vopt3	 = $_POST['vopt3'];
 $sopt1	 = $_POST['sopt1'];
 $sopt2	 = $_POST['sopt2'];
 
