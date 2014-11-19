@@ -103,6 +103,8 @@ $(document).ready(function () {
 	//===== Registro =====
 	function initRegistro(e){
 		e.preventDefault();
+		alert("Gracias por tu interés, el registro se ha terminado. Te esperamos en BTEC 2015.");
+		return;
 		carrerasList = {carrera1:null, carrera2: null, carrera3: null};
 		viernesList = {vopt1:null, vopt2: null, vopt3: null};
 		sabadoList = {sopt1:null, sopt2: null};
