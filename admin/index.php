@@ -106,11 +106,8 @@ function encriptarURL($string, $key){
 		$k = @$_GET['check'];
 		if($b){
 			$barcode = str_replace(" ","+",$b);
-			echo $barcode;
 			$mail = desencriptarURL($barcode, $key);
-			echo $mail;
 			$user = $usuario->byMail($mail);
-			var_dump($user);
 			if($user){
 				$s = $user->correo;
 			}
