@@ -54,6 +54,23 @@ session_start();
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="./login.php?logout">Salir</a></li>
 					</ul>
+					<script type="text/javascript">
+					$(document).ready(function(){
+						barcode = '';
+						$(document).keypress(function(e) {
+							var code = (e.keyCode ? e.keyCode : e.which);
+							if(code==13){
+								$('#bccheck').submit();
+							}else{
+								barcode=barcode+String.fromCharCode(code);
+							}
+							$('#bc').val(barcode);
+					    });
+					    setTimeout(function(){
+							$('.alert').fadeOut();
+						},500);
+					});
+					</script>
 					<form action="./index.php" method="get" class="navbar-form navbar-right" role="search">
 						<?php 
 						parse_str($_SERVER['QUERY_STRING'], $vars);
@@ -67,6 +84,13 @@ session_start();
 							<input name="s" type="text" class="form-control" placeholder="Buscar registro">
 						</div>
 						<button type="submit" class="btn btn-default">Buscar</button>
+					</form>
+					<form action="./index.php" id="bccheck" class="navbar-form navbar-right" role="form" method="get">
+						<div class="form-group">
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="bc" name="bc" placeholder="Barcode">
+							</div>
+						</div>
 					</form>
 				</div>
 				<?php endif; ?>

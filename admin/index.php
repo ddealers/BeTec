@@ -97,13 +97,25 @@ function encriptarURL($string, $key){
 		</form>
 		<div class="clearfix"></div>
 		<?php 
+		$b = @$_REQUEST['bc'];
 		$s = isset($_REQUEST['s']) ? $_REQUEST['s'] : NULL;
 		$f = @$_GET['from'];
 		$d = @$_GET['docs'];
 		$h = @$_GET['hab'];
 		$c = @$_GET['comp'];
 		$k = @$_GET['check'];
-		$rows = $usuario->rows($s, $f, $d, $h, $c, $k);
+		if($b){
+			$barcode = str_replace(" ","+",$b);
+			echo $barcode;
+			$mail = desencriptarURL($barcode, $key);
+			echo $mail;
+			$user = $usuario->byMail($mail);
+			var_dump($user);
+			if($user){
+				$s = $user->correo;
+			}
+		}
+		$rows = $usuario->rows($s, $f, $d, $h, $c, $k, $b);
 		?>
 		<h4>Registros: <?php echo count($rows) ?></h4>
 		<div style="border-bottom: 1px #ccc solid;" class="table-responsive">
