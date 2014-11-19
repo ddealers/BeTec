@@ -729,7 +729,7 @@ function encriptarURL($string, $key){
 		<div role="tabpanel" class="tab-pane" id="documentos">
 			<?php if($carta->url_permiso != '-'): ?>
 			<h3>Carta Compromiso</h3>
-			<form action="upload.php" method="post" enctype="multipart/form-data">
+			<form action="http://borntobetec.mty.itesm.mx/admin/upload.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>" />
 					<input type="hidden" name="action" value="carta" />
@@ -746,7 +746,7 @@ function encriptarURL($string, $key){
 			<?php endif ?>
 			<?php if($carta->url_pago != '-'): ?>
 			<h3>Comprobante de Pago</h3>
-			<form action="upload.php" method="post" enctype="multipart/form-data">
+			<form action="http://borntobetec.mty.itesm.mx/admin/upload.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<input type="hidden" name="id" value="<?php echo $_REQUEST['u'] ?>">
 					<input type="hidden" name="action" value="pago" />

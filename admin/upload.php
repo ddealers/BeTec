@@ -39,7 +39,7 @@ if(isset($action) AND $action == 'carta'){
 	}
 }
 
-header("Location: index.php?u=".$uid."&e=".$e);
+header("Location: http://makerz.digitaldealers.mx/BeTec/admin/index.php?u=".$uid."&e=".$e);
 
 
 
