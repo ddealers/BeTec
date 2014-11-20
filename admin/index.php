@@ -107,8 +107,10 @@ function encriptarURL($string, $key){
 		if($b){
 			$barcode = str_replace(" ","+",$b);
 			$mail = desencriptarURL($barcode, $key);
-			$user = $usuario->byMail($mail);
-			if($user){
+			$userByMail = $usuario->byMail($mail);
+			$userById = $usuario->byID($mail);
+			if($userByMail || $userById){
+				$user = $userByMail ? $userByMail : $userById;
 				$s = $user->correo;
 			}
 		}
@@ -137,6 +139,7 @@ function encriptarURL($string, $key){
 					</td>
 					<td>
 						<a href='http://borntobetec.mty.itesm.mx/boleto.php?s=<?php echo encriptarURL($row->correo, $key)?>' target="_blank" type='button' class='btn btn-primary btn-xs'>Generar Boleto</a>
+						<a href='../boleto.php?s=<?php echo encriptarURL($row->id, $key)?>' target="_blank" type='button' class='btn btn-primary btn-xs'>Generar Boleto B</a>
 						<a href='#' class='btn btn-info btn-xs' onclick='sendTicket(<?php echo $row->id ?>)'>Enviar Boleto</a>
 					</td>
 					<td>
@@ -208,8 +211,10 @@ function encriptarURL($string, $key){
 	if(isset($_REQUEST['barcode'])){
 		$barcode = str_replace(" ","+",$_REQUEST['barcode']);
 		$mail = desencriptarURL($barcode, $key);
-		$user = $usuario->byMail($mail);
-		if($user):
+		$userByMail = $usuario->byMail($mail);
+		$userById = $usuario->byID($mail);
+		if($userByMail || $userById):
+			$user = $userByMail ? $userByMail : $userById;
 			$ok = $usuario->checkin($user->id);
 			if($ok): ?>
 	<div class='alert alert-success' role='alert'>El Check-in se ha realizado correctamente.</div>
@@ -225,14 +230,14 @@ function encriptarURL($string, $key){
 	<script type="text/javascript">
 		$(document).ready(function(){
 			barcode = '';
-			$(document).keypress(function(e) {
-				var code = (e.keyCode ? e.keyCode : e.which);
+			$('#bc').keypress(function(e) {
+				//var code = (e.keyCode ? e.keyCode : e.which);
 				if(code==13){
 					$('#bccheck').submit();
-				}else{
-					barcode=barcode+String.fromCharCode(code);
-				}
-				$('#bc').val(barcode);
+				}//else{
+				//	barcode=barcode+String.fromCharCode(code);
+				//}
+				//$('#bc').val(barcode);
 		    });
 		    setTimeout(function(){
 				$('.alert').fadeOut();

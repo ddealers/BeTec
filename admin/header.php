@@ -57,14 +57,14 @@ session_start();
 					<script type="text/javascript">
 					$(document).ready(function(){
 						barcode = '';
-						$(document).keypress(function(e) {
-							var code = (e.keyCode ? e.keyCode : e.which);
+						$('#bc').keypress(function(e) {
+							//var code = (e.keyCode ? e.keyCode : e.which);
 							if(code==13){
 								$('#bccheck').submit();
-							}else{
-								barcode=barcode+String.fromCharCode(code);
-							}
-							$('#bc').val(barcode);
+							}//else{
+							//	barcode=barcode+String.fromCharCode(code);
+							//}
+							//$('#bc').val(barcode);
 					    });
 					    setTimeout(function(){
 							$('.alert').fadeOut();

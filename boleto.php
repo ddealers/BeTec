@@ -75,7 +75,7 @@ fclose( $fp );
 			$string = str_replace(" ","+",$string);
 			$mail = desencriptarURL($string, $key);
 			if($mail){
-				$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
+				$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' OR id = '$mail' ";
 				$v = $mysqli->query($q);
 				if($v){
 					if($v->num_rows > 0){
@@ -265,7 +265,7 @@ fclose( $fp );
 			$string = str_replace(" ","+",$string);
 			$mail = desencriptarURL($string, $key);
 			if($mail){
-				$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' ";
+				$q = "SELECT id, nombre FROM usuarios WHERE correo = '$mail' OR id = '$mail' ";
 				$v = $mysqli->query($q);
 				if($v){
 					if($v->num_rows > 0){
