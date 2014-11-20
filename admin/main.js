@@ -230,8 +230,11 @@ function saveNew(){
 		}
 	}).done(function(res){
 		//alert("Se ha actualizado correctamente");
-		if(res.error){
-			alert(error);
+		if(res.status == 'false'){
+			alert("Ha habido un error en el registro, inténtalo nuevamente");
+		}else{
+			alert("El registro se ha guardado correctamente");
+			location.href="./index.php";
 		}
 	});
 }

@@ -1043,15 +1043,15 @@ class AdminClass extends MYDB{
 			$this->_custom($q);
 		}
 
-		if($data['city'] == '986'){
+		if($data['ciudad'] == '986'){
 			$q = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '-', '-', '$subeDocs')";
-			$v = $mysqli->query($q);
+			$this->_custom($q);
 		}else{
 			$q = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '#', '#', '$subeDocs')";
-			$v = $mysqli->query($q);
+			$this->_custom($q);
 		}
 		$q = "INSERT INTO usuarios_prepa VALUES ($idu, '{$data['nomprepa']}')";
-		$v = $mysqli->query($q);
+		$this->_custom($q);
 
 		$q = "INSERT INTO usuarios_info VALUES($idu, {$data['tecno']}, '')";
 		$v = $this->_custom($q);
@@ -1519,6 +1519,9 @@ class AdminClass extends MYDB{
 		</body>
 		</html>";
 
+
+		$send = false;
+
 		if($data['ciudad'] == 986){
 			$send = mail($data['email'], 'Registro Completo', $mail, $cabeceras);
 			$tipoSend = 'monterry';
@@ -1537,7 +1540,7 @@ class AdminClass extends MYDB{
 			$response['status'] = 'false';
 		}
 
-		echo $response;
+		echo json_encode($response);
 	}
 }
 class Validator{
