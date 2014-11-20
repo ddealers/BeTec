@@ -40,7 +40,7 @@ class Usuario extends MYDB{
 			$condition .= " AND (nombre LIKE '%$search%' OR correo LIKE '%$search%')";
 		}
 		if($checkin){
-			$condition .= "AND id_check != 'NULL' ";
+			$condition .= "AND id_check != 'NULL' GROUP BY usuarios.id ";
 		}
 		$condition .= "ORDER BY usuarios.id";
 		//echo $condition;
@@ -85,7 +85,7 @@ class Usuario extends MYDB{
 			$condition .= " AND (nombre LIKE '%$search%' OR correo LIKE '%$search%')";
 		}
 		if($checkin){
-			$condition .= "AND id_check != 'NULL' ";
+			$condition .= "AND id_check != 'NULL' GROUP BY usuarios.id ";
 		}
 		$condition .= "ORDER BY usuarios.id";
 		//echo $condition;
