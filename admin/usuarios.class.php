@@ -192,9 +192,11 @@ class Usuario extends MYDB{
 	}
 	public function getUniversidad( $id ){
 		$v = $this->_custom("SELECT moneterrey, campus FROM usuarios_info WHERE id='$id'")->first();
-		foreach ($v as $key => $value) {
-			$key = utf8_encode($key);
-			$v->$key = utf8_encode($value);
+		if($v){
+			foreach ($v as $key => $value) {
+				$key = utf8_encode($key);
+				$v->$key = utf8_encode($value);
+			}
 		}
 		return $v;
 	}

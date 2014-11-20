@@ -741,7 +741,7 @@ function encriptarURL($string, $key){
 			</form>
 		</div>
 		<div role="tabpanel" class="tab-pane" id="documentos">
-			<?php if($carta->url_permiso != '-'): ?>
+			<?php if($carta && $carta->url_permiso != '-'): ?>
 			<h3>Carta Compromiso</h3>
 			<form action="http://borntobetec.mty.itesm.mx/admin/upload.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
@@ -758,7 +758,7 @@ function encriptarURL($string, $key){
 				</div>
 			</form>
 			<?php endif ?>
-			<?php if($carta->url_pago != '-'): ?>
+			<?php if($carta && $carta->url_pago != '-'): ?>
 			<h3>Comprobante de Pago</h3>
 			<form action="http://borntobetec.mty.itesm.mx/admin/upload.php" method="post" enctype="multipart/form-data">
 				<div class="form-group">
@@ -766,7 +766,7 @@ function encriptarURL($string, $key){
 					<input type="hidden" name="action" value="pago" />
 					<input type="file" name="compago">
 					<br />
-				<?php if($carta->url_pago != '#' && $carta->url_pago != '' && $carta->url_pago != NULL): ?>
+				<?php if($carta && $carta->url_pago != '#' && $carta->url_pago != '' && $carta->url_pago != NULL): ?>
 					<input class="btn btn-info" type="submit" value="Actualizar" />
 					<a class="btn btn-info" data-ob="lightbox" target="_blank" href="http://borntobetec.mty.itesm.mx/download/<?php echo $carta->url_pago;?>">Ver Documento</a>
 				<?php else: ?>
