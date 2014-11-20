@@ -1043,7 +1043,7 @@ class AdminClass extends MYDB{
 			$this->_custom($q);
 		}
 
-		if($city == '986'){
+		if($data['city'] == '986'){
 			$q = "INSERT INTO usuarios_documentos VALUES(NULL, $idu, '-', '-', '$subeDocs')";
 			$v = $mysqli->query($q);
 		}else{
