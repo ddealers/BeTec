@@ -25,6 +25,8 @@ p
 	font-size: 1.2vw;
 	font-family:'GillSans-Light'
 	font-weight:regular
+	@media screen and (max-width: 1024px)
+		font-size 1.8vw;
 li
 	font-family:'GillSans-Light'	
 a
@@ -33,8 +35,7 @@ a
 /* =========================== NAV */
 #primary_nav_wrap {
     margin-top:30px
-}
-
+    
 #primary_nav_wrap ul {
     -ms-flex-wrap:wrap;
     -webkit-flex-wrap:wrap;
@@ -97,6 +98,8 @@ header
 	nav
 		font-family 'Gill Sans'
 		font-weight 300
+		@media screen and (max-width: 1024px)
+			padding-left 100px
 		ul
 			display inline-flex
 			justify-content space-around
@@ -107,10 +110,10 @@ header
 				a
 					font-size 1.2vw
 					color #fff
-					&:hover
-						//font-family 'GillSans-Bold'
 					&.selected
 						font-weight 700
+					@media screen and (max-width: 1024px)
+						font-size 1.8vw	
 	div.social
 		display inline-flex
 		flex-wrap wrap
@@ -151,6 +154,8 @@ section
 	overflow hidden
 	article
 		absolute top 32vh left 16vw
+		@media screen and (max-width: 1024px)
+			top 31vh
 	&#be_tec
 		background: url(../img/filtro-rosa.png), url(../img/back-be-tec.jpg)no-repeat;
 		background-size: cover
@@ -159,6 +164,8 @@ section
 			background #97ea3d
 			padding 1vw 2.1vw
 			left -7vw
+			@media screen and (max-width: 1024px)
+				top -7.9vw
 		p
 			margin-left 1.6vw
 /* =========================== ACTIVIDADES */
@@ -168,7 +175,8 @@ section
 		background-size: cover;
 		article
 			absolute top 28vh left 16vw
-
+			@media screen and (max-width: 1024px)
+				top 25vh
 		h1
 			top: -3.6vw
 			background #00bbf2
@@ -222,10 +230,10 @@ section
 						padding 0
 						display inline-flex
 						-ms-flex-wrap:wrap;
-					    display:-ms-flexbox;
-					    display:-webkit-flex;
-					    flex-wrap:wrap;
-						p
+					 	display:-ms-flexbox;
+					 	display:-webkit-flex;
+					   	flex-wrap:wrap;
+					   	p
 							padding 1vw
 							font-size 1vw
 							border 1px solid rgba(255,255,255,0.3)
@@ -249,7 +257,7 @@ section
 						font-size: 13px;
 					p.s 
 						position absolute
-						left: 458px;
+						left: 458px;*/
 						/*background: rgba(255,255,255,0.2);*/
 						top: 60px
 						padding: 10px;
