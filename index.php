@@ -3,6 +3,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>BTEC</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/1140.css" />
@@ -164,7 +165,7 @@
 			  		<img src="./img/bici.png">
 			  		<p class="col">Tours por el <br>campus</p>
 			  	</div>
-			  	<div class="column3">
+			  	<div class="column3" class="img-person">
 			  		<img src="./img/person.png">
 			  		<p class="col">Conferencia<br> Magistral</p>
 			  	</div>

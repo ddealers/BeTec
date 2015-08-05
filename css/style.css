@@ -20,12 +20,27 @@ h1 {
   display: block;
   font-family: 'HelveticaNeue-CondensedBold';
 }
+@media screen and (margin-right: 320px){
+    h1 {
+        font-size: 6.8vw;
+    }
+}
 h2 {
   color: #fff;
   font-size: 2.7vw;
   font-family: 'GillSans-Bold';
   font-weight: bold;
   margin-bottom: 3vh;
+}
+@media screen and (max-width: 1024px) {
+    h2 {
+        font-size: 2.9vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    h2 {
+        font-size: 4vw;
+    }
 }
 p {
   color: #fff;
@@ -42,6 +57,22 @@ a {
 /* =========================== NAV */
 #primary_nav_wrap {
   margin-top: 30px;
+}
+@media screen and (max-width: 1024px) {
+    #primary_nav_wrap {
+        width: 100%;
+        left: 84px;
+        position: absolute;
+        margin-top: 60px;
+    }    
+}
+@media screen and (max-width: 320px) {
+    #primary_nav_wrap {
+        width: 100%;
+        left: 5px;
+        position: absolute;
+        margin-top: 61px;
+    }
 }
 #primary_nav_wrap ul {
   -ms-flex-wrap: wrap;
@@ -139,12 +170,28 @@ header {
   align-items: center;
   z-index: 1;
 }
+@media screen and (max-width: 320px) {
+    header {
+        height: 15%;
+    }
+}
 header figure img {
-  width: 11vw;
-  min-width: 135px;
-  position: fixed;
-  left: 93px;
-  top: 15px;
+    width: 11vw;
+    min-width: 135px;
+    position: fixed;
+    left: 93px;
+    top: 15px;
+}
+@media screen and (max-width: 1024px) {
+  header figure img {
+   left: 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+    header figure img {
+        min-width: 25vw;
+        left: 8px;
+    }
 }
 header nav {
   font-family: 'Gill Sans';
@@ -178,6 +225,16 @@ header nav ul li a {
   font-size: 1.2vw;
   color: #fff;
 }
+@media screen and (max-width: 1024px){
+  header nav ul li a {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 320px){
+    header nav ul li a {
+        font-size: 10px;
+    }
+}
 header nav ul li a.selected {
   font-weight: 700;
 }
@@ -198,6 +255,18 @@ header div.social {
   width: 15vw;
   margin-top: 2vw;
 }
+@media screen and (max-width: 1024px) {
+    header div.social {
+        width: 17vw;
+    }    
+}
+@media screen and (max-width: 320px) {
+    header div.social {
+        width: 23vw;
+        margin-top: -2px;
+        margin-right: -44px;
+    }
+}
 header div.social a {
   width: 100%;
   display: block;
@@ -206,12 +275,32 @@ header div.social div.rs {
   width: 5vw;
   margin: 0 auto;
 }
+@media screen and (max-width: 1024px){
+    header div.social div.rs {
+        width: 10vw;
+    }
+}
+@media screen and (max-width: 320px){
+    header div.social div.rs {
+        width: 15vw;
+    }
+}
 header div.social div.rs a {
   width: 2vw;
   height: 2vw;
   text-align: center;
   display: inline-block;
   height: 20px;
+}
+@media screen and (max-width: 1024px){
+    header div.social div.rs a  {
+        width: 4vw;
+    }
+}
+@media screen and (max-width: 320px){
+    header div.social div.rs a  {
+        width: 6vw;
+    }
 }
 header [class^="icon-"],
 header [class*=" icon-"] {
@@ -256,11 +345,25 @@ section article {
   top: 32vh;
   left: 16vw;
 }
+@media screen and (max-width: 1024px){
+    section article {
+        top: 32vh;
+        left: 16vw;
+        width: 70%;
+    }    
+}
 section#be_tec {
   background: url("../img/filtro-rosa.png"), url("../img/back-be-tec.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+}
+@media screen and (max-width: 320px) {
+    section#be_tec article {
+        top: 38vh;
+        left: 14vw;
+        width: 75%;
+    }
 }
 section#be_tec h1 {
   top: -6.6vw;
@@ -268,8 +371,30 @@ section#be_tec h1 {
   padding: 1vw 2.1vw;
   left: -7vw;
 }
+@media screen and (max-width: 1024px) {
+    section#be_tec h1 {
+          top: -9.6vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    section#be_tec h1 {
+        font-size: 6.8vw;
+        top: -15.6vw;
+    }
+}
 section#be_tec p {
   margin-left: 1.6vw;
+}
+@media screen and (max-width: 1024px){
+    section#be_tec p {
+        font-size: 1.8vw;
+        margin-left: 6.6vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    section#be_tec p {
+        font-size: 3.1vw;
+    }   
 }
 /* =========================== ACTIVIDADES */
 #actividades {
@@ -283,11 +408,31 @@ section#be_tec p {
   top: 28vh;
   left: 16vw;
 }
+@media screen and (max-width: 1024px) {
+    #actividades article {
+        top: 26vh;
+        left: 19vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    #actividades article  {
+        top: 23vh;
+        left: 0vw;
+        width: 100%;
+    }
+}
 #actividades h1 {
   top: -3.6vw;
   background: #00bbf2;
   padding: 1vw 2.1vw;
   left: -7vw;
+}
+@media screen and (max-width: 320px) {
+    #actividades h1 {
+        font-size: 6.8vw;
+        left: 5vw;
+        top: -6.6vw;
+    } 
 }
 #actividades p {
   margin-left: 1.6vw;
@@ -296,14 +441,52 @@ section#be_tec p {
   padding-left: 1vw;
   padding-top: 12vh;
 }
+@media screen and (max-width: 1024px) {
+    #actividades div.container12 {
+       padding-top: 7vh;  
+    }
+}
 #actividades div.container12 .column3 {
   width: 12vw;
   padding: 0 20px;
   margin: 0;
 }
+@media screen and (max-width: 320px) {
+    #actividades div.container12 .column3 {
+        width: 23vw;
+        padding: 4px 13px;
+        margin: 0;
+    }
+}
 #actividades div.container12 .column3 img {
   display: block;
   margin: 1vw auto;
+}
+@media screen and (max-width: 1024px) {
+    #actividades div.container12 .column3 img {
+        width: 90px;
+    }    
+}
+@media screen and (max-width: 320px) {
+    #actividades div.container12 .column3 img {
+        width: 58px;
+        min-width: 0;
+    }    
+}
+@media screen and (max-width: 320px) {
+    #actividades div.container12 .column3 .img-person {
+        margin-right: 20%;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #actividades div.container12 .column3 p {
+        font-size: 1.9vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    #actividades div.container12 .column3 p {
+        font-size: 3.5vw;
+    }
 }
 #actividades div.container12 .column3 p.col {
   margin: 0;
@@ -319,15 +502,27 @@ section#be_tec p {
 #agenda article {
   top: 27vh;
 }
+@media screen and (max-width: 1024px){
+    #agenda article {
+        left: 11vw;
+        width: 85%;
+    }    
+}
 #agenda article h1 {
   top: -6.6vw;
   background: #f20000;
   padding: 1vw 2.1vw;
   left: -7vw;
 }
+@media screen and (max-width: 1024px) {
+    #agenda article h2 {
+        padding-bottom: 0vh;
+    }
+}
 #agenda article .calendar {
   width: 65vw;
   height: 57vh;
+
 /*
 					p.j 
 						position absolute
@@ -350,6 +545,11 @@ section#be_tec p {
   top: 60px;
   padding: 10px;
   font-size: 13px;
+}
+@media screen and (max-width: 1024px){
+    #agenda article .calendar  {
+        width: 80vw;
+    }
 }
 #agenda article .calendar .header {
   display: -webkit-box;
@@ -407,6 +607,11 @@ section#be_tec p {
   border: 1px solid rgba(255,255,255,0.3);
   cursor: pointer;
 }
+@media screen and (max-width: 1024px) {
+    #agenda article .calendar .header p {
+        font-size: 1.6vw;
+    }
+}
 #agenda article .calendar .header p.active {
   background: rgba(255,255,255,0.2);
 }
@@ -430,9 +635,19 @@ section#be_tec p {
   font-size: 1vw;
   color: #fff;
 }
+@media screen and (max-width: 1024px) {
+    #agenda .days .day table tr td  {
+        font-size: 1.7vw;
+    }  
+}
 #agenda .days .day table tr td.act {
   font-size: 1.4vw;
   text-transform: uppercase;
+}
+@media screen and (max-width: 1024px) {
+    #agenda .days .day table tr td.act {
+        font-size: 1.8vw;   
+    }
 }
 #agenda .days .day table tr td.hr {
   font-size: 1.4vw;
@@ -482,16 +697,40 @@ section#be_tec p {
   margin-bottom: 5.6vh;
   width: 745px;
 }
+@media screen and (max-width: 1024px) {
+    #agenda .days .day table.jueves {
+        width: 810px;
+        margin-bottom: 4vh;
+    }
+}
 #agenda .days .day table.viernes {
   width: 745px;
 }
+@media screen and (max-width: 1024px) {
+    #agenda .days .day table.viernes {
+        width: 860px;
+    }  
+}
 #agenda .days .day table.sabado {
   width: 745px;
+}
+@media screen and (max-width: 1024px) {
+    #agenda .days .day table.sabado {
+        width: 800px;
+    }  
 }
 #agenda .days .day p.textJ {
   text-align: left;
   width: 29vw;
   padding-left: 5vw;
+}
+@media screen and (max-width: 1024px) {
+    #agenda .days .day p.textJ  {
+        width: 43vw;
+        padding-left: 4vw;
+        font-size: 1.8vw;
+        margin-bottom: -20px;
+    }
 }
 #agenda .days .day p.textJ span.negritas {
   font-weight: bold;
@@ -504,6 +743,11 @@ section#be_tec p {
 }
 #agenda .days .day div.column6:nth-child(2) p {
   width: 27vw;
+}
+@media screen and (max-width: 1024px) {
+    #agenda .days .day div.column6:nth-child(2) p {
+        width: 30vw;
+    }
 }
 #agenda .days .day img {
   float: left;
@@ -518,6 +762,13 @@ section#be_tec p {
   -moz-background-size: cover;
   background-size: cover;
 }
+@media screen and (max-width: 1024px) {
+    #sede article {
+        top: 29vh;
+        left: 15vw;
+        width: 51%;
+    }
+}
 #sede article h1 {
   top: -6.6vw;
   background: #97ea3d;
@@ -529,6 +780,11 @@ section#be_tec p {
   margin-top: 2vh;
   margin-left: -6.5vw;
 }
+@media screen and (max-width: 1024px) {
+    #sede article h2 {
+        font-size: 2.4vw;
+    }
+}
 #sede article h2 span {
   font-family: 'GillSans-Light';
   font-size: 1.6vw;
@@ -539,6 +795,13 @@ section#be_tec p {
   left: 26vw;
   width: 42vw;
   height: 45vw;
+}
+@media screen and (max-width: 1024px) {
+    #sede article div.image {
+        top: 12vw;
+        left: 29vw;
+        width: 42vw;
+    } 
 }
 #sede article div.image img.uno {
   position: absolute;
@@ -589,19 +852,45 @@ section#be_tec p {
   -moz-background-size: cover;
   background-size: cover;
 }
+@media screen and (max-width: 1024px){
+    #registrate article {
+        top: 34vh;
+    }   
+}
 #registrate article h1 {
   top: -6.6vw;
   background: #32dafe;
   padding: 1vw 2.1vw;
   left: -7vw;
 }
+@media screen and (max-width: 1024px) {
+    #registrate article h1 {
+        top: -8.6vw;
+    }
+}
 #registrate article h2 {
   font-size: 1.7vw;
   margin-bottom: 2vh;
 }
+@media screen and (max-width: 1024px) {
+    #registrate article h2 {
+        font-size: 2.5vw;
+    }
+}
 #registrate article .container12 {
   width: 40vw;
   margin-left: 2.5vw;
+}
+@media screen and (max-width: 1024px) {
+    #registrate article .container12 {
+        width: 60vw;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #registrate article .container12 p {
+        font-size: 1.9vw;
+        margin-bottom: 14px;
+    }
 }
 #registrate article .container12 .column12 {
   width: 100%;
@@ -610,13 +899,28 @@ section#be_tec p {
 #registrate article .container12 .column3 {
   width: 25%;
 }
+@media screen and (max-width: 1024px) {
+    #registrate article .container12 .column3 {
+        width: 30%;
+    }
+}
 #registrate article .container12 .column3 a img {
   display: block;
   margin-left: 15%;
   margin-bottom: 1vh;
 }
+@media screen and (max-width: 1024px){
+   #registrate article .container12 .column3 a img {
+    width: 45%;
+   } 
+}
 #registrate article .container12 .column3 a p {
   font-size: 1.1vw;
+}
+@media screen and (max-width: 1024px) {
+    #registrate article .container12 .column3 a p {
+        font-size: 1.8vw;
+    }    
 }
 #registrate article .container12 .column3.registro {
   text-align: center;
@@ -626,6 +930,11 @@ section#be_tec p {
 }
 #registrate article .container12 .column3.registro p {
   font-size: 1.3vw;
+}
+@media screen and (max-width: 1024px) {
+    #registrate article .container12 .column3.registro p {
+        font-size: 2.3vw;
+    }
 }
 /* =========================== FAQ'S */
 #faq {
@@ -637,11 +946,23 @@ section#be_tec p {
 #faq article {
   width: 75%;
 }
+@media screen and (max-width: 1024px){
+    #faq article {
+        width: 85%;
+        top: 25vh;
+        left: 13vw;
+    }
+}
 #faq article h1 {
   top: -6.6vw;
   background: #fbc549;
   padding: 1vw 2.1vw;
   left: -7vw;
+}
+@media screen and (max-width: 1024px) {
+    #faq article h1 {
+        top: -4.8vw
+    }
 }
 #faq article .texto {
   margin-top: 5vh;
@@ -649,6 +970,12 @@ section#be_tec p {
 #faq article .texto p {
   text-align: center;
   margin-bottom: 3.4vh;
+}
+@media screen and (max-width: 1024px) {
+    #faq article .texto p {
+        font-size: 2.1vw;
+        margin-bottom: 2.4vh;
+    }
 }
 #faq article .texto p.bold {
   font-family: 'GillSans';
@@ -670,12 +997,25 @@ section#be_tec p {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+@media screen and (max-width: 1024px){
+    #faq article .container12 .column6 a {
+        font-size: 1.7vw;
+        width: 31vw;
+        height: 9vw;
+    }  
+}
 #faq article .container12 .column6 a.escribenos {
   background: url("../img/escribenos.png") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   padding-left: 4vw;
+}
+@media screen and (max-width: 1024px){
+    #faq article .container12 .column6 a.escribenos {
+        padding-left: 7.5vw;
+        padding-top: 25px;
+    }
 }
 #faq article .container12 .column6 a.llamanos {
   background: url("../img/llamanos.png") no-repeat;
@@ -684,8 +1024,19 @@ section#be_tec p {
   background-size: cover;
   padding-left: 3vw;
 }
+@media screen and (max-width: 1024px ){
+    #faq article .container12 .column6 a.llamanos {
+        padding-left: 6vw;
+        padding-top: 20px;
+    }
+}
 #faq article .container12.contacto {
   width: 65%;
+}
+@media screen and (max-width: 1024px){
+    #faq article .container12.contacto {
+        width: 90%;
+    }
 }
 #faq article .container12.faqs {
   width: 80%;
@@ -695,6 +1046,11 @@ section#be_tec p {
 #faq article .container12.faqs p {
   margin-top: 2vh;
   margin-left: 2vw;
+}
+@media screen and (max-width: 1024px) {
+    #faq article .container12.faqs p{
+        font-size: 20px;
+    }
 }
 #faq article .container12.faqs p span {
   font-family: 'GillSans';
@@ -738,21 +1094,44 @@ section#be_tec p {
   width: 65%;
   height: 60%;
 }
+@media screen and (max-width: 1024px) {
+    #registro article {
+        top: 10vw;
+        width: 70%;
+    }  
+}
 #registro article h1.registro {
   top: -4.6vw;
   background: #ff3073;
   padding: 1vw 2.1vw;
   font-size: 2.3vw;
 }
+@media screen and (max-width: 1024px) {
+    #registro article h1.registro {
+        font-size: 3.3vw;
+        top: -6.6vw;
+    }
+}
 #registro article h2.experiencia {
   color: #727272;
   font-size: 2.4vh;
   margin: 1vh 0;
 }
+@media screen and (max-width: 1024px){
+    #registro article h2.experiencia {
+        font-size: 2.4vw;
+    }
+}
 #registro article p {
   color: #9d9d9d;
   margin-bottom: 1vh;
   font-size: 12px;
+}
+@media screen and (max-width: 1024px) {
+    #registro article p {
+        font-size: 20px;
+        padding: 8px;
+    }  
 }
 #registro article p.elige {
   padding-left: 1vw;
@@ -810,6 +1189,12 @@ section#be_tec p {
   width: 90%;
   font-size: 11px;
 }
+@media screen and (max-width: 1024px) {
+    #registro article form .step .step-area .step-data input {
+        width: 110%;
+        font-size: 16px;
+    }    
+}
 #registro article form .step .step-area .step-data input[type="checkbox"] {
   position: absolute;
   right: 400px;
@@ -821,10 +1206,21 @@ section#be_tec p {
   font-size: 13px;
   width: 100%;
 }
+@media screen and (max-width: 1024px) {
+    #registro article form .step .step-area .step-data label  {
+        font-size: 16px;
+    }
+}
 #registro article form .step .step-area .step-data label i {
   position: absolute;
   top: 30%;
   right: 8%;
+}
+@media screen and (max-width: 1024px) {
+    #registro article form .step .step-area .step-data label i  {
+        top: 30%;
+        right: -5%;
+    }
 }
 #registro article form .step .step-area .step-data label select {
   width: 100%;
@@ -842,6 +1238,11 @@ section#be_tec p {
   max-width: 25vw;
   font-size: 11px;
 }
+@media screen and (max-width: 1024px) {
+    #registro article form .step .step-area .step-data label select {
+        font-size: 16px;
+    }
+}
 #registro article form .step .step-area .step-data .bool-choose .option,
 #registro article form .step .step-area .step-data .bool-chooser .option {
   cursor: pointer;
@@ -853,6 +1254,14 @@ section#be_tec p {
   padding: 1vw;
   text-align: center;
   display: inline-block;
+}
+@media screen and (max-width: 1024px) {
+    #registro article form .step .step-area .step-data .bool-choose .option,
+    #registro article form .step .step-area .step-data .bool-chooser .option {
+        width: 4vw;
+        height: 3.5vw;
+        margin-left: 50px;
+    }
 }
 #registro article form .step .step-area.genero .choose {
   border: 1px solid #ececec;
@@ -928,6 +1337,12 @@ section#be_tec p {
 #registro article form .step .step-area.prepa label {
   width: 100%;
 }
+@media screen and (max-width: 1024px) {
+    #registro article form .step .step-area.prepa label {
+        width: 178%;
+        margin-left: -12px;
+    }
+}
 #registro article form .step .step-area.prepa select {
   width: 100%;
 }
@@ -951,6 +1366,12 @@ section#be_tec p {
   display: none;
   width: 45%;
 }
+@media screen and (margin-left: 1024px) {
+    #registro article form .step .step-area.compania #parentesco-cont,
+    #registro article form .step .step-area.compania #nomcomp {
+        width: 70%;
+    }
+}
 #registro article form .step .step-area.viernes {
   width: 30vw;
 }
@@ -964,6 +1385,12 @@ section#be_tec p {
   font-size: 0.8vw;
   width: 100%;
 }
+@media screen and (max-width: 1024px) {
+    #registro article form .step .step-area.viernes label select {
+        font-size: 1.3vw;
+        width: 170%;
+    }
+}    
 #registro article form .step .step-area.sabado {
   width: 30vw;
   margin-left: 1vw;
@@ -979,6 +1406,12 @@ section#be_tec p {
 #registro article form .step .step-area.sabado label select {
   font-size: 0.8vw;
   width: 100%;
+}
+@media screen and (max-width: 1024px) {
+    #registro article form .step .step-area.sabado label select {
+        font-size: 1.3vw;
+        width: 140%;
+    }   
 }
 #registro article form .step .step-area.evento {
   width: 30vw;
@@ -997,6 +1430,12 @@ section#be_tec p {
   font-size: 0.8vw;
   color: #333;
   width: 50vw;
+}
+@media screen and (max-width: 1024px) {
+    #registro article form .step .step-area.acepto .step-data {
+        font-size:  1vw;
+        width: 55vw;
+    }
 }
 #registro article form .step .clearborder {
   clear: both;
@@ -1047,9 +1486,21 @@ section#be_tec p {
   font-size: 0.9vw;
   left: 200px;
 }
+@media screen and (max-width: 1024px) {
+    #registro .siguiente a {
+        font-size: 1.5vw;
+        width: 15vw;
+        height: 4vw;
+    }
+}
 #registro .siguiente a.prev {
   right: 360px;
   padding-left: 82px;
+}
+@media screen and (max-width: 1024px) {
+    #registro .siguiente a.prev {
+        padding-left: 62px;
+    }
 }
 #registro .siguiente a i {
   position: absolute;
@@ -1057,11 +1508,24 @@ section#be_tec p {
   top: 0%;
   font-size: 2vw;
 }
+@media screen and (max-width: 1024px) {
+    #registro .siguiente a i {
+        right: 5%;
+        top: -1px;
+        font-size: 3vw;
+    }
+}
 #registro .siguiente a i.icon.ion-arrow-left-c {
   content: "\f108";
   position: absolute;
   right: 100px;
   top: 2px;
+}
+@media screen and (max-width: 1024px) {
+    #registro .siguiente a i.icon.ion-arrow-left-c {
+        top: 1px;
+        right: 97px;
+    }   
 }
 #registro .footer {
   background: #727272;
@@ -1094,12 +1558,23 @@ section#be_tec p {
   text-align: center;
   font-size: 120%;
 }
+@media screen and (max-width: 1024px) {
+    #end div.registroT h2 {
+        width: 50%;
+        font-size: 160%;
+    }  
+}
 #end div.registroT p {
   font-size: 1.3vw;
   margin: 2vw auto;
   text-align: center;
   color: #727272;
   width: 40%;
+}
+@media screen and (max-width: 1024px) {
+    #end div.registroT p {
+        font-size: 2.3vw;
+    }
 }
 #end div.registroT ol {
   width: 40%;
@@ -1114,6 +1589,11 @@ section#be_tec p {
   font-size: 1.3vw;
   color: #727272;
   padding-top: 10px;
+}
+@media screen and (max-width: 1024px) {
+    #end div.registroT ol li  {
+        font-size: 1.8vw;
+    }
 }
 #end div.registroT ol li span {
   font-weight: bold;
@@ -1179,6 +1659,12 @@ section#be_tec p {
   width: 8vw;
   height: 8vw;
 }
+@media screen and (max-width: 1024px) {
+    #end div.redesS div a {
+        width: 13vw;
+        height: 8vw;
+    }
+}
 #end div.redesS div a#comparte_tw {
   background: url("../img/t.png") no-repeat;
   -webkit-background-size: contain;
@@ -1196,6 +1682,11 @@ section#be_tec p {
   font-weight: bold;
   font-size: 90%;
   margin: 0;
+}
+@media screen and (max-width: 1024px) {
+    #end div.redesS p {
+        font-size: 120%;
+    }
 }
 #end p.siguiente {
   background: url("../img/siguiente.png") no-repeat no-repeat;
@@ -1219,6 +1710,11 @@ section#be_tec p {
   width: 65%;
   height: 60%;
 }
+@media screen and (max-width: 1024px) {
+    #aviso_legal article {
+        top: 15vh;
+    }
+}
 #aviso_legal article h1 {
   top: -6.6vw;
   background: #7338b6;
@@ -1229,6 +1725,11 @@ section#be_tec p {
   font-size: 1.5vw;
   text-align: center;
   margin-top: 7vh;
+}
+@media screen and (max-width: 1024px) {
+    #aviso_legal article h2 {
+        font-size: 2.5vw;
+    }
 }
 #aviso_legal article .info {
   width: 100%;
@@ -1257,9 +1758,19 @@ section#be_tec p {
   margin: 1vh 0 2vh;
   padding: 0 1vw;
 }
+@media screen and (max-width: 1024px) {
+    #aviso_legal article .info h3 {
+        font-size: 19px;
+    } 
+}
 #aviso_legal article .info p {
   margin-bottom: 1vh;
   padding: 0 1vw;
+}
+@media screen and (max-width: 1024px) {
+    #aviso_legal article .info p {
+        font-size: 18px;
+    }
 }
 #aviso_legal article .info ul {
   list-style-type: disc;
@@ -1269,6 +1780,11 @@ section#be_tec p {
 #aviso_legal article .info ul li {
   font-size: 1.1vw;
   color: #fff;
+}
+@media screen and (max-width: 1024px) {
+    #aviso_legal article .info ul li {
+        font-size: 1.7vw;
+    }
 }
 #aviso_legal article .info a {
   color: #eee;
@@ -1312,17 +1828,65 @@ footer div {
   align-items: center;
   width: 30%;
 }
+@media screen and (max-width: 1024px) {
+   footer div {
+        bottom: 1vh
+   } 
+}
+@media screen and (max-width: 320px){
+    footer div {
+        width: 43%;
+        text-align: center;
+    }
+}
 footer div a {
   font-family: 'GillSans-Light';
   font-size: 1.2vw;
   margin-left: 2vw;
   color: #fff;
 }
+@media screen and (max-width: 1024px) {
+    footer div a {
+        font-size: 1.9vw;
+        margin-left: 0.5vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    footer div a {
+        font-size: 3.9vw;
+        margin-left: 1.5vw;
+    }
+}
 footer .icon-help {
   position: absolute;
   bottom: 2vh;
   right: 2vw;
   color: #fff;
+}
+@media screen and (max-width: 1024px){
+    footer .icon-help {
+        font-size: 37px;
+    }
+}
+@media screen and (max-width: 320px) {
+    footer .icon-help  {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 1024px){
+    footer img {
+        width: 50px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    footer p {
+        font-size: 1.9vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    footer p {
+        font-size: 3.1vw;
+    }
 }
 /** CARGAR DOCUMENTOS jok3r**/
 section.content {
