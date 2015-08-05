@@ -165,7 +165,7 @@
 			  		<img src="./img/bici.png">
 			  		<p class="col">Tours por el <br>campus</p>
 			  	</div>
-			  	<div class="column3" class="img-person">
+			  	<div class="column3">
 			  		<img src="./img/person.png">
 			  		<p class="col">Conferencia<br> Magistral</p>
 			  	</div>
