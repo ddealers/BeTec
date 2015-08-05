@@ -20,9 +20,15 @@ h1 {
   display: block;
   font-family: 'HelveticaNeue-CondensedBold';
 }
+<<<<<<< HEAD
 @media screen and (margin-right: 320px){
     h1 {
         font-size: 6.8vw;
+=======
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 5.8vw;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 h2 {
@@ -32,14 +38,25 @@ h2 {
   font-weight: bold;
   margin-bottom: 3vh;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     h2 {
         font-size: 2.9vw;
+=======
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 3.7vw;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 @media screen and (max-width: 320px) {
     h2 {
+<<<<<<< HEAD
         font-size: 4vw;
+=======
+        padding-top: 18px;
+        margin-bottom: 2vh;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 p {
@@ -47,6 +64,21 @@ p {
   font-size: 1.2vw;
   font-family: 'GillSans-Light';
   font-weight: regular;
+}
+@media screen and (max-width: 1024px) {
+  p {
+        font-size: 1.9vw;
+  }
+}
+@media screen and (max-width: 768px){
+    p {
+        font-size: 2.4vw;
+    } 
+}
+@media screen and (max-width: 320px) {
+    p {
+        font-size: 2.9vw;
+    }
 }
 li {
   font-family: 'GillSans-Light';
@@ -58,6 +90,7 @@ a {
 #primary_nav_wrap {
   margin-top: 30px;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #primary_nav_wrap {
         width: 100%;
@@ -73,6 +106,15 @@ a {
         position: absolute;
         margin-top: 61px;
     }
+=======
+@media screen and (max-width: 1024px){
+   #primary_nav_wrap {
+    padding-left: 0px;
+   } 
+}
+@media screen and (max-width: 320px) {
+
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #primary_nav_wrap ul {
   -ms-flex-wrap: wrap;
@@ -193,6 +235,12 @@ header figure img {
         left: 8px;
     }
 }
+@media screen and (max-width: 320px) {
+    header figure img {
+        min-width: 60px;
+        left: 5px;
+    }    
+}
 header nav {
   font-family: 'Gill Sans';
   font-weight: 300;
@@ -221,11 +269,17 @@ header nav ul {
 header nav ul li {
   margin-right: 3vw;
 }
+@media screen and (max-width: 320px) {
+    header nav ul li {
+        margin-right: 2vw;
+    }    
+}
 header nav ul li a {
   font-size: 1.2vw;
   color: #fff;
 }
 @media screen and (max-width: 1024px){
+<<<<<<< HEAD
   header nav ul li a {
     font-size: 20px;
   }
@@ -233,6 +287,15 @@ header nav ul li a {
 @media screen and (max-width: 320px){
     header nav ul li a {
         font-size: 10px;
+=======
+    header nav ul li a {
+        font-size: 1.9vw;
+    }    
+}
+@media screen and (max-width: 320px) {
+    header nav ul li a {
+        font-size: 2.4vw;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 header nav ul li a.selected {
@@ -275,6 +338,7 @@ header div.social div.rs {
   width: 5vw;
   margin: 0 auto;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px){
     header div.social div.rs {
         width: 10vw;
@@ -284,6 +348,12 @@ header div.social div.rs {
     header div.social div.rs {
         width: 15vw;
     }
+=======
+@media screen and (max-width: 320px) {
+    header div.social div.rs a {
+        width: 2.7vw;
+    }   
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 header div.social div.rs a {
   width: 2vw;
@@ -292,6 +362,7 @@ header div.social div.rs a {
   display: inline-block;
   height: 20px;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px){
     header div.social div.rs a  {
         width: 4vw;
@@ -301,6 +372,12 @@ header div.social div.rs a {
     header div.social div.rs a  {
         width: 6vw;
     }
+=======
+@media screen and (max-width: 320px) {
+    header div.social div.rs a {
+       width: 2.7vw;
+    }   
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 header [class^="icon-"],
 header [class*=" icon-"] {
@@ -311,6 +388,11 @@ nav.arrows {
   top: 21vh;
   right: 11vw;
   z-index: 1;
+}
+@media screen and (max-width: 1024px) {
+    nav.arrows {
+        top: 18vh;
+    }
 }
 nav.arrows a {
   width: 4vw;
@@ -331,6 +413,7 @@ nav.arrows a.next {
   background-size: cover;
   margin-left: 2px;
 }
+@media screen and (max-width: 320px) {
 /* =========================== BE TEC */
 section {
   width: 100%;
@@ -345,12 +428,19 @@ section article {
   top: 32vh;
   left: 16vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px){
     section article {
         top: 32vh;
         left: 16vw;
         width: 70%;
     }    
+=======
+@media screen and (max-width: 1024px) {
+  section article {
+    top: 32vh;
+  }
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 section#be_tec {
   background: url("../img/filtro-rosa.png"), url("../img/back-be-tec.jpg") no-repeat;
@@ -372,14 +462,29 @@ section#be_tec h1 {
   left: -7vw;
 }
 @media screen and (max-width: 1024px) {
+<<<<<<< HEAD
     section#be_tec h1 {
           top: -9.6vw;
+=======
+  section#be_tec h1 {
+        top: -7.9vw;
+  }
+}
+@media screen and (max-width: 768px) {
+    section#be_tec h1 {
+        top: -9.9vw;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 @media screen and (max-width: 320px) {
     section#be_tec h1 {
+<<<<<<< HEAD
         font-size: 6.8vw;
         top: -15.6vw;
+=======
+        top: -12.9vw;
+        font-size: 
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 section#be_tec p {
@@ -408,6 +513,7 @@ section#be_tec p {
   top: 28vh;
   left: 16vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #actividades article {
         top: 26vh;
@@ -419,6 +525,16 @@ section#be_tec p {
         top: 23vh;
         left: 0vw;
         width: 100%;
+=======
+@media screen and (max-width: 1024px){
+    #actividades article {
+        top: 23vh;
+    }
+}
+@media screen and (max-width: 320px) {
+    #actividades article {
+        left: 10vw;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 #actividades h1 {
@@ -441,9 +557,17 @@ section#be_tec p {
   padding-left: 1vw;
   padding-top: 12vh;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #actividades div.container12 {
        padding-top: 7vh;  
+=======
+@media screen and (max-width: 320px) {
+    #actividades div.container12 {
+        padding-left: 0vw;
+        padding-top: 12vh;
+        width: 285px;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 #actividades div.container12 .column3 {
@@ -453,9 +577,14 @@ section#be_tec p {
 }
 @media screen and (max-width: 320px) {
     #actividades div.container12 .column3 {
+<<<<<<< HEAD
         width: 23vw;
         padding: 4px 13px;
         margin: 0;
+=======
+        width: 15vw;
+        padding: 1px 11px;  
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 #actividades div.container12 .column3 img {
@@ -504,9 +633,14 @@ section#be_tec p {
 }
 @media screen and (max-width: 1024px){
     #agenda article {
+<<<<<<< HEAD
         left: 11vw;
         width: 85%;
     }    
+=======
+        top: 23vh;
+    }
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #agenda article h1 {
   top: -6.6vw;
@@ -522,6 +656,7 @@ section#be_tec p {
 #agenda article .calendar {
   width: 65vw;
   height: 57vh;
+<<<<<<< HEAD
 
 /*
 					p.j 
@@ -545,6 +680,13 @@ section#be_tec p {
   top: 60px;
   padding: 10px;
   font-size: 13px;
+=======
+}
+@media screen and (max-width: 320px) {
+    #agenda article .calendar {
+        width: 82vw;
+    }
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 @media screen and (max-width: 1024px){
     #agenda article .calendar  {
@@ -589,6 +731,28 @@ section#be_tec p {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+/*
+					p.j 
+						position absolute
+						left: 107px;
+						background: rgba(255,255,255,0.2);
+						top: 60px;
+						
+					p.v 
+						position absolute
+						left: 278px;
+						/*background: rgba(255,255,255,0.2);
+						border 1px solid rgba(255,255,255,0.3)
+						top: 60px;
+						padding: 10px;
+						font-size: 13px;
+					p.s 
+						position absolute
+						left: 458px;*/
+/*background: rgba(255,255,255,0.2);*/
+  top: 60px;
+  padding: 10px;
+  font-size: 13px;
 }
 #agenda article .calendar .header .titles {
   text-align: center;
@@ -607,27 +771,39 @@ section#be_tec p {
   border: 1px solid rgba(255,255,255,0.3);
   cursor: pointer;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #agenda article .calendar .header p {
         font-size: 1.6vw;
+=======
+@media screen and (max-width: 1024px){
+    #agenda article .calendar .header p {
+        font-size: 1.3vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    #agenda article .calendar .header p  {
+        font-size: 2.3vw;
+        width: 80px;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 #agenda article .calendar .header p.active {
   background: rgba(255,255,255,0.2);
 }
-#agenda .days {
+#agenda article .days {
   width: 100%;
   height: 100%;
 }
-#agenda .days .day table {
+#agenda article .days .day table {
   margin: auto;
   background: rgba(255,255,255,0.2);
 }
-#agenda .days .day table tr {
+#agenda article .days .day table tr {
   border-top: solid 1.5px #943ba7;
   border-bottom: solid 1.5px #943ba7;
 }
-#agenda .days .day table tr td {
+#agenda article .days .day table tr td {
   font-family: 'GillSans-Light';
   border-left: solid 1.5px #943ba7;
   border-right: solid 1.5px #943ba7;
@@ -635,6 +811,7 @@ section#be_tec p {
   font-size: 1vw;
   color: #fff;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #agenda .days .day table tr td  {
         font-size: 1.7vw;
@@ -650,53 +827,86 @@ section#be_tec p {
     }
 }
 #agenda .days .day table tr td.hr {
+=======
+@media screen and (max-width: 1024px){
+    #agenda article .days .day table tr td {
+         font-size: 1.6vw;
+    }
+}
+@media screen and (max-width: 320px) {
+     #agenda article .days .day table tr td {
+        font-size: 10px;
+     }
+}
+#agenda article .days .day table tr td.act {
+  font-size: 1.4vw;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 320px) {
+    #agenda article .days .day table tr td.act {
+        font-size: 10px;
+    }
+}
+#agenda article .days .day table tr td.hr {
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
   font-size: 1.4vw;
   text-transform: uppercase;
   text-align: center;
 }
-#agenda .days .day table tr td.hr span {
+@media screen and (max-width: 1024px) {
+    #agenda article .days .day table tr td.hr {
+        font-size: 1.6vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    #agenda article .days .day table tr td.hr {
+        font-size: 10px;
+    }
+}
+#agenda article .days .day table tr td.hr span {
   font-size: 1vh;
   vertical-align: super;
 }
-#agenda .days .day table tr td.uno {
+#agenda article .days .day table tr td.uno {
   background: #8fd8f0;
   color: #fff;
   height: 25px;
 }
-#agenda .days .day table tr td.dos {
+#agenda article .days .day table tr td.dos {
   background: #eeb790;
   color: #fff;
 }
-#agenda .days .day table tr td.tres {
+#agenda article .days .day table tr td.tres {
   background: #8fe9c9;
   color: #000;
 }
-#agenda .days .day table tr td.cuatro {
+#agenda article .days .day table tr td.cuatro {
   background: #eb8bf2;
   color: #fff;
   border: none;
 }
-#agenda .days .day table tr td.cinco {
+#agenda article .days .day table tr td.cinco {
   background: #b58bf1;
   color: #000;
 }
-#agenda .days .day table tr td.seis {
+#agenda article .days .day table tr td.seis {
   background: #ef8a91;
   color: #fff;
 }
-#agenda .days .day table tr td.siete {
+#agenda article .days .day table tr td.siete {
   background: #90eae2;
   color: #fff;
   border: none;
 }
-#agenda .days .day table tr td.ocho {
+#agenda article .days .day table tr td.ocho {
   background: #e6e691;
   color: #000;
 }
-#agenda .days .day table.jueves {
+#agenda article .days .day table.jueves {
   margin-bottom: 5.6vh;
   width: 745px;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #agenda .days .day table.jueves {
         width: 810px;
@@ -720,10 +930,45 @@ section#be_tec p {
     }  
 }
 #agenda .days .day p.textJ {
+=======
+@media screen and (max-width: 320px) {
+    #agenda article .days .day table.jueves {
+        width: 260px;
+    }
+}
+@media screen and (max-width: 1024px){
+    #agenda article .days .day table.jueves {
+        margin-bottom: 4vh;
+    }
+}
+#agenda article .days .day table.viernes {
+  width: 745px;
+}
+@media screen and (max-width: 1024px) {
+    #agenda article .days .day table.viernes {
+        width: 800px;
+    }    
+}
+@media screen and (max-width: 320px) {
+    #agenda article .days .day table.viernes {
+        width: 345px;
+    }
+}
+#agenda article .days .day table.sabado {
+  width: 745px;
+}
+@media screen and (max-width: 320px) {
+    #agenda article .days .day table.sabado {
+        width: 260px;
+    }
+}
+#agenda article .days .day p.textJ {
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
   text-align: left;
   width: 29vw;
   padding-left: 5vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #agenda .days .day p.textJ  {
         width: 43vw;
@@ -733,25 +978,64 @@ section#be_tec p {
     }
 }
 #agenda .days .day p.textJ span.negritas {
+=======
+@media screen and (max-width: 1024px){
+    #agenda article .days .day p.textJ {
+        width: 43vw;
+        padding-left: 5vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    #agenda article .days .day p.textJ {
+        width: 80vw;
+        padding-left: 0vw;
+        font-size: 10px;
+    }
+}
+#agenda article .days .day p.textJ span.negritas {
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
   font-weight: bold;
 }
-#agenda .days .day .column6 {
+#agenda article .days .day .column6 {
   width: 450px;
 }
-#agenda .days .day .top {
+@media screen and (max-width: 320px) {
+    #agenda article .days .day .column6 {
+        width: 300px;
+        margin: -2px 0px 7px 0px;
+    }
+}
+#agenda article .days .day .top {
   margin-top: 30px;
 }
-#agenda .days .day div.column6:nth-child(2) p {
+#agenda article .days .day div.column6:nth-child(2) p {
   width: 27vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #agenda .days .day div.column6:nth-child(2) p {
         width: 30vw;
     }
 }
 #agenda .days .day img {
+=======
+@media screen and (max-width: 320px) {
+    #agenda article .days .day div.column6:nth-child(2) p {
+            width: 70vw;
+            padding-top: 10px;
+            font-size: 10px;
+    }   
+}
+#agenda article .days .day img {
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
   float: left;
   margin-left: -35px;
+}
+@media screen and (max-width: 320px) {
+    #agenda article .days .day img {
+        margin-left: -40px;
+        width: 9%;
+    }
 }
 /* =========================== SEDE */
 #sede {
@@ -775,19 +1059,36 @@ section#be_tec p {
   padding: 1vw 2.1vw;
   left: -7vw;
 }
+@media screen and (max-width: 320px) {
+    #sede article h1 {
+        font-size: 7.8vw;
+    }  
+}
 #sede article h2 {
   font-size: 1.7vw;
   margin-top: 2vh;
   margin-left: -6.5vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #sede article h2 {
         font-size: 2.4vw;
+=======
+@media screen and (max-width: 320px) {
+    #sede article h2 {
+        font-size: 3.7vw;
+        margin-left: 1.5vw;   
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 #sede article h2 span {
   font-family: 'GillSans-Light';
   font-size: 1.6vw;
+}
+@media screen and (max-width: 320px) {
+    #sede article h2 span {
+        font-size: 2.6vw;
+    }
 }
 #sede article div.image {
   position: absolute;
@@ -796,12 +1097,20 @@ section#be_tec p {
   width: 42vw;
   height: 45vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #sede article div.image {
         top: 12vw;
         left: 29vw;
         width: 42vw;
     } 
+=======
+@media screen and (max-width: 320px) {
+    #sede article div.image {
+        top: 40vw;
+        left: 12%;
+    }
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #sede article div.image img.uno {
   position: absolute;
@@ -864,44 +1173,71 @@ section#be_tec p {
   left: -7vw;
 }
 @media screen and (max-width: 1024px) {
+<<<<<<< HEAD
     #registrate article h1 {
         top: -8.6vw;
     }
+=======
+   #registrate article h1 {
+        top: -8.6vw;
+   } 
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #registrate article h2 {
   font-size: 1.7vw;
   margin-bottom: 2vh;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #registrate article h2 {
         font-size: 2.5vw;
     }
+=======
+@media screen and (max-width: 320px) {
+  #registrate article h2 {
+    font-size: 3vw;
+  }
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #registrate article .container12 {
   width: 40vw;
   margin-left: 2.5vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
+=======
+@media screen and (max-width: 320px) {
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     #registrate article .container12 {
         width: 60vw;
     }
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #registrate article .container12 p {
         font-size: 1.9vw;
         margin-bottom: 14px;
     }
 }
+=======
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 #registrate article .container12 .column12 {
   width: 100%;
   margin-bottom: 2vh;
 }
+
 #registrate article .container12 .column3 {
   width: 25%;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #registrate article .container12 .column3 {
         width: 30%;
+=======
+@media screen and (max-width: 320px) {
+    #registrate article .container12 .column3 {
+        padding: 5px;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 #registrate article .container12 .column3 a img {
@@ -917,10 +1253,19 @@ section#be_tec p {
 #registrate article .container12 .column3 a p {
   font-size: 1.1vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #registrate article .container12 .column3 a p {
         font-size: 1.8vw;
     }    
+=======
+@media screen and (max-width: 320px) {
+    #registrate article .container12 .column3 a p {
+        font-size: 10px;
+        width: 53px;
+        text-align: center;
+    }  
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #registrate article .container12 .column3.registro {
   text-align: center;
@@ -931,10 +1276,17 @@ section#be_tec p {
 #registrate article .container12 .column3.registro p {
   font-size: 1.3vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #registrate article .container12 .column3.registro p {
         font-size: 2.3vw;
     }
+=======
+@media screen and (max-width: 320px) {
+  #registrate article .container12 .column3.registro p {
+    font-size: 3.9vw;
+  }
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 /* =========================== FAQ'S */
 #faq {
@@ -946,11 +1298,19 @@ section#be_tec p {
 #faq article {
   width: 75%;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px){
     #faq article {
         width: 85%;
         top: 25vh;
         left: 13vw;
+=======
+@media screen and (max-width: 320px) {
+    #faq article {
+        width: 90%;
+        left: 10vw;
+        top: 24vh;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 #faq article h1 {
@@ -971,11 +1331,18 @@ section#be_tec p {
   text-align: center;
   margin-bottom: 3.4vh;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #faq article .texto p {
         font-size: 2.1vw;
         margin-bottom: 2.4vh;
     }
+=======
+@media screen and (max-width: 320px) {
+    #faq article .texto p {
+        font-size: 3.9vw;
+    }    
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #faq article .texto p.bold {
   font-family: 'GillSans';
@@ -984,7 +1351,12 @@ section#be_tec p {
   width: 100%;
 }
 #faq article .container12 .column6 {
-  width: 46%;
+  width: 44%;
+}
+@media screen and (max-width: 320px) {
+   #faq article .container12 .column6  {
+        width: 50%;
+   } 
 }
 #faq article .container12 .column6 a {
   width: 20vw;
@@ -997,12 +1369,23 @@ section#be_tec p {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px){
     #faq article .container12 .column6 a {
         font-size: 1.7vw;
         width: 31vw;
         height: 9vw;
     }  
+=======
+@media screen and (max-width: 320px) {
+    #faq article .container12 .column6 a {
+        width: 44vw;
+        height: 13vw;
+        font-size: 8px;
+        padding-left: 32px;
+        padding-top: 10px;
+    }
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #faq article .container12 .column6 a.escribenos {
   background: url("../img/escribenos.png") no-repeat;
@@ -1011,11 +1394,18 @@ section#be_tec p {
   background-size: cover;
   padding-left: 4vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px){
     #faq article .container12 .column6 a.escribenos {
         padding-left: 7.5vw;
         padding-top: 25px;
     }
+=======
+@media screen and (max-width: 320px) {
+    #faq article .container12 .column6 a.escribenos {
+        padding-left: 10vw;   
+    
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #faq article .container12 .column6 a.llamanos {
   background: url("../img/llamanos.png") no-repeat;
@@ -1024,19 +1414,32 @@ section#be_tec p {
   background-size: cover;
   padding-left: 3vw;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px ){
     #faq article .container12 .column6 a.llamanos {
         padding-left: 6vw;
         padding-top: 20px;
+=======
+@media screen and (max-width: 320px) {
+    #faq article .container12 .column6 a.llamanos  {
+        padding-left: 8vw;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 #faq article .container12.contacto {
   width: 65%;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px){
     #faq article .container12.contacto {
         width: 90%;
     }
+=======
+@media screen and (max-width: 320px) {
+    #faq article .container12.contacto {
+        width: 100%;
+    } 
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #faq article .container12.faqs {
   width: 80%;
@@ -1094,11 +1497,18 @@ section#be_tec p {
   width: 65%;
   height: 60%;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     #registro article {
         top: 10vw;
         width: 70%;
     }  
+=======
+@media screen and (max-width: 320px) {
+    #registro article {
+        left: 10vw;
+    }
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 #registro article h1.registro {
   top: -4.6vw;
@@ -1828,6 +2238,7 @@ footer div {
   align-items: center;
   width: 30%;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
    footer div {
         bottom: 1vh
@@ -1838,6 +2249,12 @@ footer div {
         width: 43%;
         text-align: center;
     }
+=======
+@media screen and (max-width: 320px) {
+    footer div {
+        width: 45%;
+    }    
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 }
 footer div a {
   font-family: 'GillSans-Light';
@@ -1845,6 +2262,7 @@ footer div a {
   margin-left: 2vw;
   color: #fff;
 }
+<<<<<<< HEAD
 @media screen and (max-width: 1024px) {
     footer div a {
         font-size: 1.9vw;
@@ -1855,6 +2273,12 @@ footer div a {
     footer div a {
         font-size: 3.9vw;
         margin-left: 1.5vw;
+=======
+@media screen and (max-width: 320px) {
+    footer div a {
+        font-size: 3.2vw;
+        margin-left: 0vw;
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
     }
 }
 footer .icon-help {
@@ -1865,6 +2289,7 @@ footer .icon-help {
 }
 @media screen and (max-width: 1024px){
     footer .icon-help {
+<<<<<<< HEAD
         font-size: 37px;
     }
 }
@@ -1888,6 +2313,11 @@ footer .icon-help {
         font-size: 3.1vw;
     }
 }
+=======
+        font-size: 30px;
+    }
+}
+>>>>>>> ba5755339e35a1a397bc641bb987b6dfceab633d
 /** CARGAR DOCUMENTOS jok3r**/
 section.content {
   padding-left: 120px;
