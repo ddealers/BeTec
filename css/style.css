@@ -21,7 +21,9 @@ h1 {
   font-family: 'HelveticaNeue-CondensedBold';
 }
 @media screen and (margin-right: 320px){
-
+    h1 {
+        font-size: 5.8vw;
+    }
 }
 h2 {
   color: #fff;
@@ -507,6 +509,12 @@ section#be_tec p {
         width: 85%;
     }    
 }
+@media screen and (max-width: 320px) {
+    #agenda article {
+        left: 7vw;
+        top: 23vh;
+    }
+}
 #agenda article h1 {
   top: -6.6vw;
   background: #f20000;
@@ -516,6 +524,14 @@ section#be_tec p {
 @media screen and (max-width: 1024px) {
     #agenda article h2 {
         padding-bottom: 0vh;
+    }
+}
+@media screen and (max-width: 320px) {
+    #agenda article h1 {
+        padding-top: 0px;
+        top: -9.6vw;
+        font-size: 5.8vw;
+        left: -4vw;
     }
 }
 #agenda article .calendar {
@@ -611,6 +627,11 @@ section#be_tec p {
         font-size: 1.6vw;
     }
 }
+@media screen and (max-width: 320px) {
+    #agenda article .calendar .header p {
+        font-size: 2.3vw;
+    }
+}
 #agenda article .calendar .header p.active {
   background: rgba(255,255,255,0.2);
 }
@@ -639,6 +660,11 @@ section#be_tec p {
         font-size: 1.7vw;
     }  
 }
+@media screen and (max-width: 320px) {
+    #agenda .days .day table tr td {
+        font-size: 3.1vw;
+    }    
+}
 #agenda .days .day table tr td.act {
   font-size: 1.4vw;
   text-transform: uppercase;
@@ -646,6 +672,11 @@ section#be_tec p {
 @media screen and (max-width: 1024px) {
     #agenda .days .day table tr td.act {
         font-size: 1.8vw;   
+    }
+}
+@media screen and (max-width: 320px) {
+    #agenda .days .day table tr td.act {
+        font-size: 2.8vw;
     }
 }
 #agenda .days .day table tr td.hr {
@@ -702,6 +733,11 @@ section#be_tec p {
         margin-bottom: 4vh;
     }
 }
+@media screen and (max-width: 320px) {
+    #agenda .days .day table.jueves {
+        width: 280px;
+    }
+}
 #agenda .days .day table.viernes {
   width: 745px;
 }
@@ -710,6 +746,11 @@ section#be_tec p {
         width: 860px;
     }  
 }
+@media screen and (max-width: 320px) {
+    #agenda .days .day table.viernes {
+        width: 300px;
+    }
+}
 #agenda .days .day table.sabado {
   width: 745px;
 }
@@ -717,6 +758,11 @@ section#be_tec p {
     #agenda .days .day table.sabado {
         width: 800px;
     }  
+}
+@media screen and (max-width: 320px){
+    #agenda .days .day table.sabado {
+        width: 280px;
+    }
 }
 #agenda .days .day p.textJ {
   text-align: left;
@@ -730,6 +776,13 @@ section#be_tec p {
         font-size: 1.8vw;
         margin-bottom: -20px;
     }
+}
+@media screen and (max-width: 320px) {
+    #agenda .days .day p.textJ {
+        font-size: 3.1vw;
+        width: 73vw;
+        margin-left: 3vw;
+    }    
 }
 #agenda .days .day p.textJ span.negritas {
   font-weight: bold;
@@ -748,9 +801,20 @@ section#be_tec p {
         width: 30vw;
     }
 }
+@media screen and (max-width: 320px) {
+    #agenda .days .day div.column6:nth-child(2) p {
+        width: 70vw;
+    } 
+}
 #agenda .days .day img {
   float: left;
   margin-left: -35px;
+}
+@media screen and (max-width: 320px) {
+    #agenda .days .day img {
+        width: 9%;
+        margin-left: -22px;
+    }
 }
 /* =========================== SEDE */
 #sede {
@@ -774,6 +838,11 @@ section#be_tec p {
   padding: 1vw 2.1vw;
   left: -7vw;
 }
+@media screen and (max-width: 320px) {
+    #sede article h1 {
+        font-size: 5.8vw;
+    }
+}
 #sede article h2 {
   font-size: 1.7vw;
   margin-top: 2vh;
@@ -782,6 +851,12 @@ section#be_tec p {
 @media screen and (max-width: 1024px) {
     #sede article h2 {
         font-size: 2.4vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    #sede article h2 {
+        font-size: 3vw;
+        margin-top: 5vh;
     }
 }
 #sede article h2 span {
@@ -802,11 +877,23 @@ section#be_tec p {
         width: 42vw;
     } 
 }
+@media screen and (max-width: 320px){
+    #sede article div.image {
+        top: 37vw;
+        left: 9vw;
+        width: 70vw;
+    }
+}
 #sede article div.image img.uno {
   position: absolute;
   right: -4vw;
   top: 14.6vw;
   width: 52%;
+}
+@media screen and  (max-width: 320px){
+    #sede article div.image img.uno {
+        right: 2vw;
+    }
 }
 #sede article div.image img.dos {
   position: absolute;
@@ -814,11 +901,25 @@ section#be_tec p {
   left: 3vw;
   width: 26%;
 }
+@media screen and (max-width: 320px) {
+    #sede article div.image img.dos {
+        top: -3vw;
+        left: -2vw;
+        width: 29%
+    }
+}
 #sede article div.image img.tres {
   position: absolute;
   top: 15vw;
   left: 0.5vw;
   width: 35%;
+}
+@media screen and (max-width: 320px) {
+    #sede article div.image img.tres {
+        top: 13vw;
+        left: -8.5vw;
+        width: 37%;
+    }
 }
 #sede article div.image img.cuatro {
   position: absolute;
@@ -826,17 +927,37 @@ section#be_tec p {
   right: 15vw;
   width: 18%;
 }
+@media screen and (max-width: 320px) {
+    #sede article div.image img.cuatro {
+        top: -19px;
+        right: 36vw;
+        width: 21%
+    }
+}
 #sede article div.image img.cinco {
   position: absolute;
   top: 22vw;
   left: 14.6vw;
   width: 22%;
 }
+@media screen and (max-width: 320px) {
+    #sede article div.image img.cinco {
+        top: 28vw;
+        left: 13.6vw;
+        width: 27%;
+    }  
+}
 #sede article div.image img.seis {
   position: absolute;
   top: 4vh;
   right: 3.2vw;
   width: 30%;
+}
+@media screen and (max-width: 320px) {
+    #sede article div.image img.seis {
+        top: -1vh;
+        right: 16.2vw;
+    }   
 }
 #sede article div.image img.siete {
   position: absolute;
@@ -867,6 +988,12 @@ section#be_tec p {
         top: -8.6vw;
     }
 }
+@media screen and (max-width: 320px) {
+    #registrate article h1 {
+        top: -15.6vw;
+        font-size: 5.8vw;
+    }
+}
 #registrate article h2 {
   font-size: 1.7vw;
   margin-bottom: 2vh;
@@ -874,6 +1001,12 @@ section#be_tec p {
 @media screen and (max-width: 1024px) {
     #registrate article h2 {
         font-size: 2.5vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    #registrate article h2 {
+        font-size: 3.5vw;
+        margin-left: -17px;
     }
 }
 #registrate article .container12 {
@@ -889,6 +1022,12 @@ section#be_tec p {
     #registrate article .container12 p {
         font-size: 1.9vw;
         margin-bottom: 14px;
+    }
+}
+@media screen and (max-width: 320px) {
+    #registrate article .container12 p {
+        font-size: 3.3vw;
+        margin-bottom: 7px;
     }
 }
 #registrate article .container12 .column12 {
@@ -913,12 +1052,23 @@ section#be_tec p {
     width: 45%;
    } 
 }
+@media screen and (max-width: 320px){
+   #registrate article .container12 .column3 a img {
+    width: 60%;
+   } 
+}
 #registrate article .container12 .column3 a p {
   font-size: 1.1vw;
 }
 @media screen and (max-width: 1024px) {
     #registrate article .container12 .column3 a p {
         font-size: 1.8vw;
+    }    
+}
+@media screen and (max-width: 320px) {
+    #registrate article .container12 .column3 a p {
+        font-size: 2.3vw;
+        text-align: center;
     }    
 }
 #registrate article .container12 .column3.registro {
@@ -960,6 +1110,12 @@ section#be_tec p {
 }
 @media screen and (max-width: 1024px) {
     #faq article h1 {
+        top: -8.8vw;
+        font-size: 5.8vw;
+    }
+}
+@media screen and (max-width: 320px) {
+    #faq article h1 {
         top: -4.8vw
     }
 }
@@ -974,6 +1130,13 @@ section#be_tec p {
     #faq article .texto p {
         font-size: 2.1vw;
         margin-bottom: 2.4vh;
+    }
+}
+@media screen and (max-width: 320px) {
+    #faq article .texto p {
+        font-size: 4.1vw;
+        margin-bottom: 1.4vh;
+        margin-left: -28px;
     }
 }
 #faq article .texto p.bold {
@@ -1016,6 +1179,12 @@ section#be_tec p {
         padding-top: 25px;
     }
 }
+@media screen and (max-width: 320px){
+    #faq article .container12 .column6 a.escribenos {
+        padding-left: 7.5vw;
+        padding-top: 9px;
+    }
+}
 #faq article .container12 .column6 a.llamanos {
   background: url("../img/llamanos.png") no-repeat;
   -webkit-background-size: cover;
@@ -1027,6 +1196,12 @@ section#be_tec p {
     #faq article .container12 .column6 a.llamanos {
         padding-left: 6vw;
         padding-top: 20px;
+    }
+}
+@media screen and (max-width: 320px ){
+    #faq article .container12 .column6 a.llamanos {
+        padding-left: 6vw;
+        padding-top: 7px;
     }
 }
 #faq article .container12.contacto {
@@ -1049,6 +1224,11 @@ section#be_tec p {
 @media screen and (max-width: 1024px) {
     #faq article .container12.faqs p{
         font-size: 20px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #faq article .container12.faqs p{
+        font-size: 11px;
     }
 }
 #faq article .container12.faqs p span {
@@ -1099,6 +1279,11 @@ section#be_tec p {
         width: 70%;
     }  
 }
+@media screen and (max-width: 320px) {
+     #registro article {
+        width: 80%;
+     }
+}
 #registro article h1.registro {
   top: -4.6vw;
   background: #ff3073;
@@ -1111,6 +1296,13 @@ section#be_tec p {
         top: -6.6vw;
     }
 }
+@media screen and (max-width: 320px) {
+    #registro article h1.registro {
+        font-size: 5.3vw;
+        top: -7.6vw;
+        margin-left: -52px;
+    }
+}
 #registro article h2.experiencia {
   color: #727272;
   font-size: 2.4vh;
@@ -1121,6 +1313,11 @@ section#be_tec p {
         font-size: 2.4vw;
     }
 }
+@media screen and (max-width: 320px){
+    #registro article h2.experiencia {
+        font-size: 3.4vw;
+    }
+}
 #registro article p {
   color: #9d9d9d;
   margin-bottom: 1vh;
@@ -1129,6 +1326,12 @@ section#be_tec p {
 @media screen and (max-width: 1024px) {
     #registro article p {
         font-size: 20px;
+        padding: 8px;
+    }  
+}
+@media screen and (max-width: 320px) {
+    #registro article p {
+        font-size: 13px;
         padding: 8px;
     }  
 }
@@ -1146,6 +1349,11 @@ section#be_tec p {
 #registro article form .step {
   width: 100%;
   height: 100%;
+}
+@media screen and (max-width: 320px) {
+    #registro article form {
+        margin-left: -49px;
+    }
 }
 #registro article form .step .step-area {
   display: -webkit-inline-box;
@@ -1171,6 +1379,13 @@ section#be_tec p {
   width: 12vw;
   text-align: center;
 }
+@media screen and (max-width: 320px) {
+    #registro article form .step .step-area .info {
+        width: 17vw;
+        text-align: center;
+        font-size: 8px;
+    }   
+}
 #registro article form .step .step-area .info.hospedaje {
   margin-top: 30px;
 }
@@ -1193,6 +1408,11 @@ section#be_tec p {
         width: 110%;
         font-size: 16px;
     }    
+}
+@media screen and (max-width: 320px){
+     #registro article form .step .step-area .step-data input {
+          font-size: 12px;
+     }
 }
 #registro article form .step .step-area .step-data input[type="checkbox"] {
   position: absolute;
@@ -1242,6 +1462,11 @@ section#be_tec p {
         font-size: 16px;
     }
 }
+@media screen and (max-width: 320px) {
+     #registro article form .step .step-area .step-data label select {
+        font-size: 10px;
+     }
+}
 #registro article form .step .step-area .step-data .bool-choose .option,
 #registro article form .step .step-area .step-data .bool-chooser .option {
   cursor: pointer;
@@ -1268,6 +1493,12 @@ section#be_tec p {
   height: 11vw;
   position: relative;
 }
+@media screen and (max-width: 320px) {
+    #registro article form .step .step-area.genero .choose {
+        width: 60vw;
+        height: 19vw;
+    }
+}
 #registro article form .step .step-area.genero .choose .option {
   cursor: pointer;
   width: 50%;
@@ -1279,6 +1510,11 @@ section#be_tec p {
   padding-top: 10%;
   display: block;
   margin: auto;
+}
+@media screen and (max-width: 320px) {
+    #registro article form .step .step-area.genero .choose .option img {
+        width: 16%;
+    }
 }
 #registro article form .step .step-area.genero .choose .option p {
   color: #727272;
@@ -1492,6 +1728,14 @@ section#be_tec p {
         height: 4vw;
     }
 }
+@media screen and (max-width: 320px) {
+     #registro .siguiente a {
+        font-size: 3vw;
+        width: 29vw;
+        height: 8vw;
+        padding-top: 4px;
+    }
+}
 #registro .siguiente a.prev {
   right: 360px;
   padding-left: 82px;
@@ -1500,6 +1744,14 @@ section#be_tec p {
     #registro .siguiente a.prev {
         padding-left: 62px;
     }
+}
+@media screen and (max-width: 320px) {
+     #registro .siguiente a.prev {
+        margin-right: 116px;
+        width: 28vw;
+        font-size: 3.1vw;
+        padding-left: 34px;
+     }   
 }
 #registro .siguiente a i {
   position: absolute;
@@ -1514,6 +1766,13 @@ section#be_tec p {
         font-size: 3vw;
     }
 }
+@media screen and (max-width: 320px) {
+    #registro .siguiente a i {
+        right: 5%;
+        top: 1px;
+        font-size: 5vw;
+    }
+}
 #registro .siguiente a i.icon.ion-arrow-left-c {
   content: "\f108";
   position: absolute;
@@ -1525,6 +1784,12 @@ section#be_tec p {
         top: 1px;
         right: 97px;
     }   
+}
+@media screen and (max-width: 320px) {
+    #registro .siguiente a i.icon.ion-arrow-left-c {
+        top: 1px;
+        right: 60px;
+    }
 }
 #registro .footer {
   background: #727272;
@@ -1714,11 +1979,21 @@ section#be_tec p {
         top: 15vh;
     }
 }
+@media screen and (max-width: 320px) {
+    #aviso_legal article {
+        width: 79%;
+    }
+}
 #aviso_legal article h1 {
   top: -6.6vw;
   background: #7338b6;
   padding: 1vw 2.1vw;
   left: -7vw;
+}
+@media screen and (max-width: 320px) {
+    #aviso_legal article h1 {
+        font-size: 5.8vw;
+    }
 }
 #aviso_legal article h2 {
   font-size: 1.5vw;
@@ -1728,6 +2003,11 @@ section#be_tec p {
 @media screen and (max-width: 1024px) {
     #aviso_legal article h2 {
         font-size: 2.5vw;
+    }
+}
+@media screen and (max-width: 320px){
+    #aviso_legal article h2  {
+        font-size: 5.5vw;
     }
 }
 #aviso_legal article .info {
@@ -1762,6 +2042,12 @@ section#be_tec p {
         font-size: 19px;
     } 
 }
+@media screen and (max-width: 320px){
+    #aviso_legal article .info h3  {
+            font-size: 16px;
+        text-align: center;
+    }
+}
 #aviso_legal article .info p {
   margin-bottom: 1vh;
   padding: 0 1vw;
@@ -1769,6 +2055,11 @@ section#be_tec p {
 @media screen and (max-width: 1024px) {
     #aviso_legal article .info p {
         font-size: 18px;
+    }
+}
+@media screen and (max-width: 320px) {
+      #aviso_legal article .info p {
+        font-size: 12px;
     }
 }
 #aviso_legal article .info ul {
@@ -1799,6 +2090,13 @@ section#be_tec p {
   width: 4vw;
   height: 4vw;
   display: block;
+}
+@media screen and (max-width: 320px) {
+    #aviso_legal article .close  {
+        width: 8vw;
+        height: 8vw;
+        right: 0;
+    }
 }
 footer {
   position: fixed;
