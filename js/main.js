@@ -16,14 +16,16 @@ window.fbAsyncInit = function() {
 
 $(document).ready(function () {
   	//===== Init Skrollr =====
-	var s = skrollr.init({
-		smoothScrolling: true,
-		mobileDeceleration: 0.004,
-		constants:{
-			sparkles: '0p'
-		}
-	});
-	skrollr.menu.init(s);
+  	if($(window).width() > 640){
+  		var s = skrollr.init({
+			smoothScrolling: true,
+			mobileDeceleration: 0.004,
+			constants:{
+				sparkles: '0p'
+			}
+		});
+		skrollr.menu.init(s);
+  	}
 
 	//===== Container Auto Height =====
 	function updateContainer(){
@@ -62,16 +64,37 @@ $(document).ready(function () {
 
 	$('footer .aviso-legal').on('click', function(e){
 		e.preventDefault();
-		TweenMax.set('#aviso_legal',{display: 'block', opacity: 1, scale: 1});
+		TweenMax.set('header',{'z-index': 1});
+		TweenMax.set('#aviso_legal',{display: 'block', 'z-index':15, opacity: 1, scale: 1});
 		TweenMax.from('#aviso_legal', 0.5, {opacity: 0, scale: 0.5, ease: Back.easeOut});
+
 	});
 
 	$('#aviso_legal .close').on('click', function(e){
 		e.preventDefault();
 		TweenMax.to('#aviso_legal', 0.5, {opacity: 0, scale: 0.5, ease: Back.easeOut, onComplete: function(){
-			TweenMax.set('#aviso_legal',{display: 'none'});
+			TweenMax.set('#aviso_legal',{display: 'none', 'z-index':0});
+			TweenMax.set('header',{'z-index': 10});
 		}});
 	});
+
+	//===== Mobile Navigation =====
+	if($(window).width() < 640){
+		showSection('#be_tec');
+  		$('#primary_nav_wrap ul li a').on('click', function(){
+  			showSection($(this).attr('href'));
+  		});
+  	}
+
+
+  	function showSection(section){
+  		TweenMax.to("section", 0.8, {opacity: 0, onComplete:function(){
+  			$("section").css('z-index', 0);
+  			$(section).css('z-index', 1);
+  		}});
+  		TweenMax.set(section, {scale: 0, y: -100});
+  		TweenMax.to(section, 0.5, {y: 0, scale: 1, opacity: 1});
+  	}
 
 	//===== Calendar =====
 	var index = 0;
@@ -130,7 +153,7 @@ $(document).ready(function () {
 		TweenMax.to('header .social', 0.5, {opacity:0});
 		TweenMax.to('nav ul', 0.5, {opacity:0});
 		TweenMax.to('.arrows', 0.5, {opacity:0});
-		TweenMax.set('#registro', {display:'block'});
+		TweenMax.set('#registro', {display:'block', opacity: 1});
 		TweenMax.from('#registro', 0.5, {opacity:0});
 	}
 	$('#btn_registrate').on('click', initRegistro);

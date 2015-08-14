@@ -186,7 +186,7 @@ header {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  z-index: 1;
+  z-index: 10;
 }
 @media screen and (max-width: 320px) {
     header {
@@ -1395,8 +1395,7 @@ section#be_tec p {
 }
 @media screen and (max-width: 360px) {
     #faq article .container12 .column6 {
-        width: 46%;
-        margin-left: 2%;
+        width: 100%;
     }
 }
 #faq article .container12 .column6 a {
@@ -1439,8 +1438,9 @@ section#be_tec p {
 }
 @media screen and (max-width: 360px) {
      #faq article .container12 .column6 a.escribenos  {
-        padding-left: 7.5vw;
+        padding-left: 4em;
         padding-top: 12px;
+        font-size: 0.5em;
     }   
 }
 @media screen and (max-width: 320px){
@@ -1464,11 +1464,11 @@ section#be_tec p {
 }
 @media screen and (max-width: 360px) {
      #faq article .container12 .column6 a.llamanos  {
-        font-size: 2.7vw;
         width: 42vw;
         height: 12vw;
-        padding-left: 9vw;
-        padding-top: 9px;
+        padding-left: 4em;
+        padding-top: 12px;
+        font-size: 0.5em;
     }   
 }
 @media screen and (max-width: 320px ){
@@ -1568,7 +1568,8 @@ section#be_tec p {
         top: 34vw;
         width: 94%;
         left: 5%;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 }
 @media screen and (max-width: 320px) {
@@ -1888,8 +1889,9 @@ section#be_tec p {
   right: 0;
   bottom: 0;
   left: 0;
-  width: 3vw;
-  height: 1.5vw;
+  width: 3em;
+  height: 1.5em;
+  padding: 0;
   margin: auto;
   text-align: center;
   background: #f5f4f4;
@@ -2150,7 +2152,7 @@ section#be_tec p {
     #registro .siguiente a {
         font-size: 3vw;
         width: 26vw;
-        height: 8vw;
+        height: 7vw;
     }    
 }
 @media screen and (max-width: 320px) {
@@ -2440,7 +2442,7 @@ section#be_tec p {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  z-index: 5;
+  z-index: 15;
   display: none;
 }
 #aviso_legal article {
