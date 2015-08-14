@@ -1138,7 +1138,7 @@
 			<a href="http://www.itesm.mx/" class="tec"><p>Tecnológico de Monterrey</p></a>
 			<a class="aviso-legal" href="#aviso_legal">Aviso Legal</a>
 		</div>
-		<a href="#faq" data-menu-top="500p" class="icon-help"></a>
+		<!--a href="#faq" data-menu-top="500p" class="icon-help"></a-->
 	</footer>
 	<!-- Google Tag Manager -->
 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TFRWXJ"
