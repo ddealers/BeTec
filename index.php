@@ -576,7 +576,7 @@
 		</article>
 	</section>
 	<section id="faq" data-400p="transform: translate(100%, 0)" data-500p="transform: translate(0%, 0)">
-	<section id="faq" data-400p="transform: translate(100%, 0)" data-500p="transform: translate(0%, 0)" data-600p="transform: translate(-100%, 0)"-->
+	<!--section id="faq" data-400p="transform: translate(100%, 0)" data-500p="transform: translate(0%, 0)" data-600p="transform: translate(-100%, 0)"-->
 		<article><!--CONTENIDO_FAQ-->
 			<h1>PREGUNTAS FRECUENTES</h1>
 			<div class="texto">
