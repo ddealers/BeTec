@@ -307,7 +307,7 @@ header div.social {
     header div.social {
         width: 23vw;
         margin-top: -2px;
-        margin-right: -44px;
+        margin-right: -2%;
     }
 }
 header div.social a {
@@ -411,6 +411,11 @@ section article {
         left: 13vw;
         width: 81%; 
     }
+}
+@media screen and (max-width: 320px) {
+  section article  {
+    overflow: scroll;
+  }
 }
 section#be_tec {
   background: url("../img/filtro-rosa.png"), url("../img/back-be-tec.jpg") no-repeat;
@@ -1621,6 +1626,7 @@ section#be_tec p {
 @media screen and (max-width: 320px) {
      #registro article {
         width: 80%;
+        left: 10%;
      }
 }
 #registro article h1.registro {
@@ -1644,7 +1650,7 @@ section#be_tec p {
 @media screen and (max-width: 320px) {
     #registro article h1.registro {
         font-size: 5.3vw;
-        top: -7.6vw;
+        top: -8.6vw;
         margin-left: -52px;
     }
 }
@@ -1687,8 +1693,8 @@ section#be_tec p {
 }
 @media screen and (max-width: 320px) {
     #registro article p {
-        font-size: 13px;
-        padding: 8px;
+      font-size: 11px;
+      padding: 4px;
     }  
 }
 #registro article p.elige {
@@ -1747,9 +1753,10 @@ section#be_tec p {
 }
 @media screen and (max-width: 320px) {
     #registro article form .step .step-area .info {
-        width: 17vw;
-        text-align: center;
-        font-size: 8px;
+      width: 15vw;
+      text-align: center;
+      font-size: 8px;
+      margin-left: 44px;
     }   
 }
 #registro article form .step .step-area .info.hospedaje {
@@ -1790,6 +1797,7 @@ section#be_tec p {
 @media screen and (max-width: 320px){
      #registro article form .step .step-area .step-data input {
           font-size: 12px;
+          width: 91%;
      }
 }
 #registro article form .step .step-area .step-data input[type="checkbox"] {
@@ -1853,9 +1861,12 @@ section#be_tec p {
      }
 }
 @media screen and (max-width: 320px) {
-     #registro article form .step .step-area .step-data label select {
-        font-size: 10px;
-     }
+    #registro article form .step .step-area .step-data label select {
+      font-size: 10px;
+      max-width: 58vw;
+      min-width: 60px;
+      margin-left: 14px;
+    }
 }
 #registro article form .step .step-area .step-data .bool-choose .option,
 #registro article form .step .step-area .step-data .bool-chooser .option {
@@ -1963,6 +1974,11 @@ section#be_tec p {
         width: 14%;  
     }
 }
+@media screen and (max-width: 320px) {
+   #registro article form .step .step-area.contacto input[name="lada"] {
+      width: 16%;
+   }
+}
 #registro article form .step .step-area.contacto input[name="tel"] {
   width: 70%;
   display: inline-block;
@@ -2002,6 +2018,11 @@ section#be_tec p {
         width: 178%;
         margin-left: -12px;
     }
+}
+@media screen and (max-width: 320px) {
+   #registro article form .step .step-area.prepa label {
+    min-width: 217px;
+   }
 }
 #registro article form .step .step-area.prepa select {
   width: 100%;
@@ -2225,10 +2246,9 @@ section#be_tec p {
 }
 @media screen and (max-width: 320px) {
      #registro .siguiente a.prev {
-        margin-right: 116px;
-        width: 28vw;
-        font-size: 3.1vw;
-        padding-left: 34px;
+      width: 26vw;
+      font-size: 3.1vw;
+      padding-left: 30px;
      }   
 }
 #registro .siguiente a i {
@@ -2510,6 +2530,8 @@ section#be_tec p {
 @media screen and (max-width: 320px) {
     #aviso_legal article {
         width: 79%;
+        height: 73%;
+        top: 20vh;
     }
 }
 #aviso_legal article h1 {
@@ -2641,8 +2663,8 @@ section#be_tec p {
 }
 @media screen and (max-width: 320px) {
     #aviso_legal article .close  {
-        width: 8vw;
-        height: 8vw;
+        width: 6vw;
+        height: 6vw;
         right: 0;
     }
 }
