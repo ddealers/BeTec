@@ -1488,11 +1488,11 @@ section#be_tec p {
 }
 @media screen and (max-width: 360px) {
      #faq article .container12 .column6 a.escribenos  {
-        width: 79vw;
-        height: 10vh;
-        padding-left: 4em;
-        padding-top: 12px;
-        font-size: 0.5em;
+        width: 81vw;
+        height: 13vh;
+        padding-left: 59px;
+        padding-top: 16px;
+        font-size: 1em;
     }   
 }
 @media screen and (max-width: 320px){
@@ -1516,11 +1516,11 @@ section#be_tec p {
 }
 @media screen and (max-width: 360px) {
      #faq article .container12 .column6 a.llamanos  {
-        width: 42vw;
-        height: 12vw;
-        padding-left: 4em;
-        padding-top: 12px;
-        font-size: 0.5em;
+        width: 81vw;
+        height: 13vh;
+        padding-left: 59px;
+        padding-top: 8px;
+        font-size: 1em;
     }   
 }
 @media screen and (max-width: 320px ){
@@ -1550,7 +1550,7 @@ section#be_tec p {
 @media screen and (max-width: 360px) {
     #faq article .container12.faqs  {
         width: 90%;
-        height: 19vh;
+        height: 14vh;
     }
 }
 #faq article .container12.faqs p {
@@ -1565,7 +1565,7 @@ section#be_tec p {
 @media screen and (max-width: 360px) {
     #faq article .container12.faqs p{
         font-size: 12px;
-        width: 100%;
+        width: 90%;
     }
 }
 #faq article .container12.faqs p span {
