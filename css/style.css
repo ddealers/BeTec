@@ -574,7 +574,7 @@ section#be_tec p {
 }
 #agenda article .calendar .days .day p.textJ {
   text-align: left;
-  width: 29vw;
+  min-width: 36vw;
   padding-left: 5vw;
   font-size: 0.9em;
 }
