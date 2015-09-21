@@ -1,1020 +1,1187 @@
 @import "nib"
 *
-	margin 0
-	padding 0
+  margin 0
+  padding 0
 body
 html
-	size 100%
-
+  size 100%
 /* =========================== ESTILO GENERAL */
 h1
-	position: absolute;
-	font-size: 3.8vw;
-	color: #fff;
-	transform: rotate(-3deg);
-	display: block;
-	font-family:'HelveticaNeue-CondensedBold';
-h2 
-	color: #fff;
-	font-size: 2.7vw;
-	font-family:'GillSans-Bold';
-	font-weight:bold;
-	margin-bottom 3vh
-p 
-	color: #fff;
-	font-size: 1.2vw;
-	font-family:'GillSans-Light'
-	font-weight:regular
-	@media screen and (max-width: 1024px)
-		font-size 1.8vw;
+  position absolute
+  font-size 3.8vw
+  color #fff
+  transform rotate(-3deg)
+  display block
+  font-family 'HelveticaNeue-CondensedBold'
+h2
+  color #fff
+  font-size 2.7vw
+  font-family 'GillSans-Bold'
+  font-weight bold
+  margin-bottom 3vh
+  @media screen and (max-width: 640px)
+    font-size 1em
+p
+  color #fff
+  font-size 1.2vw
+  font-family 'GillSans-Light'
+  font-weight regular
+  @media screen and (max-width: 1024px)
+    font-size 1.8vw
 li
-	font-family:'GillSans-Light'	
+  font-family 'GillSans-Light'
 a
-	text-decoration none
-
+  text-decoration none
 /* =========================== NAV */
-#primary_nav_wrap {
-    margin-top:30px
-    
-#primary_nav_wrap ul {
-    -ms-flex-wrap:wrap;
-    -webkit-flex-wrap:wrap;
-    display:-ms-flexbox;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:flex;
-    flex-wrap:wrap;
-    list-style:none;
-    margin:0;
-    padding:0;
-    position:relative;
-    //width:70%;
-}
-
-#primary_nav_wrap ul a {
-    -ms-flex-align:center;
-    -ms-flex-pack:center;
-    -webkit-align-items:center;
-    -webkit-box-align:center;
-    -webkit-box-pack:center;
-    -webkit-justify-content:center;
-    align-items:center;
-    color:#fff;
-    display:-ms-flexbox;
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:flex;
-    font-family 'Gill Sans'
-    font-weight:300;
-    justify-content:center;
-    line-height:32px;
-    padding:0;
-    text-decoration:none;
-}
-
-#primary_nav_wrap ul li {
-    -ms-flex:1 1 auto;
-    -webkit-box-flex:1;
-    -webkit-flex:1 1 auto;
-    flex:1 1 auto;
-    position:relative;
-}
-
-
 header
-	fixed top left
-	width 100%
-	display inline-flex
-	justify-content space-around
-	align-items center
-	z-index 1
-	figure 
-		img
-			width 11vw
-			min-width: 135px;
-			position: fixed;
-			left: 93px;
-			top: 15px
-	nav
-		font-family 'Gill Sans'
-		font-weight 300
-		@media screen and (max-width: 1024px)
-			padding-left 100px
-		ul
-			display inline-flex
-			justify-content space-around
-			align-items center
-			list-style-type none
-			li
-				margin-right 3vw
-				a
-					font-size 1.2vw
-					color #fff
-					&.selected
-						font-weight 700
-					@media screen and (max-width: 1024px)
-						font-size 1.8vw	
-	div.social
-		display inline-flex
-		flex-wrap wrap
-		list-style none
-		width 15vw
-		margin-top 2vw
-		a
-			width 100%
-			display block
-		div.rs
-			width 5vw
-			margin 0 auto
-			a
-				size 2vw
-				text-align center
-				display inline-block
-				height 20px
-	[class^="icon-"], [class*=" icon-"] 
-		color: #fff;
+  fixed top left
+  width 100%
+  display inline-flex
+  justify-content space-around
+  align-items center
+  z-index 3
+  figure 
+    img
+      width 11vw
+      min-width 135px
+      position fixed
+      left 93px
+      top 15px
+      @media screen and (max-width: 640px)
+        min-width 70px
+        left 0
+        top 5px
+  nav
+    font-family 'Gill Sans'
+    font-weight 300
+    @media screen and (max-width: 1024px)
+      padding-left 100px
+    @media screen and (max-width: 640px)
+      padding-left 0
+    ul
+      display inline-flex
+      justify-content space-around
+      align-items center
+      list-style-type none
+      li
+        margin-right 3vw
+        @media screen and (max-width: 640px)
+          margin-right 0.5em
+        a
+          font-size 1.2vw
+          color #fff
+          &.selected
+            font-weight 700
+          @media screen and (max-width: 1024px)
+            font-size 1.8vw 
+          @media screen and (max-width: 640px)
+            font-size 0.6em
+  div.social
+    display inline-flex
+    flex-wrap wrap
+    list-style none
+    width 15vw
+    margin-top 2vw
+    @media screen and (max-width: 640px)
+          position absolute
+          right 0
+          margin-top 2em
+          margin-right 1em
+          width 5em
+    a
+      width 100%
+      display block
+    div.rs
+      width 5vw
+      margin 0 auto
+      @media screen and (max-width: 640px)
+        width 2.5em
+      a
+        size 2vw
+        text-align center
+        display inline-block
+        height 20px
+        @media screen and (max-width: 640px)
+          width 1em
+  [class^="icon-"], [class*=" icon-"] 
+    color: #fff;
 nav.arrows
-	fixed top 21vh right 11vw z-index 1
-	a
-		size 4vw
-		display block
-		float left
-		&.prev
-			background url(../img/flechas.png) no-repeat 
-			background-size cover
-		&.next
-			background url(../img/flechas.png) no-repeat -4.5vw
-			background-size cover
-			margin-left: 2px;
+  fixed top 21vh right 11vw z-index 1
+  @media screen and (max-width: 640px)
+    display none
+  a
+    size 4vw
+    display block
+    float left
+    &.prev
+      background url(../img/flechas.png) no-repeat 
+      background-size cover
+    &.next
+      background url(../img/flechas.png) no-repeat -4.5vw
+      background-size cover
+      margin-left: 2px
 
 /* =========================== BE TEC */
 section
-	size 100%
-	fixed top 0 left 0
-	overflow hidden
-	article
-		absolute top 32vh left 16vw
-		@media screen and (max-width: 1024px)
-			top 31vh
-	&#be_tec
-		background: url(../img/filtro-rosa.png), url(../img/back-be-tec.jpg)no-repeat;
-		background-size: cover
-		h1
-			top -6.6vw
-			background #97ea3d
-			padding 1vw 2.1vw
-			left -7vw
-			@media screen and (max-width: 1024px)
-				top -7.9vw
-		p
-			margin-left 1.6vw
-/* =========================== ACTIVIDADES */
-	
-	&#actividades
-		background: url(../img/filtro-verde.png), url(../img/back-actividades.jpg)no-repeat;
-		background-size: cover;
-		article
-			absolute top 28vh left 16vw
-			@media screen and (max-width: 1024px)
-				top 25vh
-		h1
-			top: -3.6vw
-			background #00bbf2
-			padding: 1vw 2.1vw
-			left: -7vw
-		p
-			margin-left 1.6vw
-		div.container12
-			padding-left 1vw
-			padding-top 12vh
-			.column3 
-				width: 12vw
-				padding 0 20px
-				margin 0
-				img
-					display block
-					margin 1vw auto
-				p.col
-					margin 0
-					text-align center
+  size 100%
+  fixed top 0 left 0
+  overflow hidden
+  article
+    absolute top 32vh left 16vw
+    @media screen and (max-width: 1024px)
+      top 31vh
+    @media screen and (max-width: 640px)
+      width 15em
+      left 2em
+      padding 0 1em
+  &#be_tec
+    background url(../img/filtro-rosa.png), url(../img/back-be-tec.jpg)no-repeat;
+    background-size: cover
+    h1
+      top -6.6vw
+      background #97ea3d
+      padding 1vw 2.1vw
+      left -7vw
+      @media screen and (max-width: 1024px)
+        top -7.9vw
+      @media screen and (max-width: 640px)
+        font-size 2em
+        top -1.4em
+    p
+      margin-left 1.6vw
+      @media screen and (max-width: 640px)
+        font-size 0.7em
+/* =========================== ACTIVIDADES */ 
+  &#actividades
+    background url(../img/filtro-verde.png), url(../img/back-actividades.jpg)no-repeat;
+    background-size: cover;
+    article
+      absolute top 28vh left 16vw
+      @media screen and (max-width: 1024px)
+        top 25vh
+      @media screen and (max-width: 640px)
+        width 15em
+        left 2em
+        padding 0 1em
+    h1
+      top -3.6vw
+      background #00bbf2
+      padding 1vw 2.1vw
+      left -7vw
+      @media screen and (max-width: 640px)
+        font-size 2em
+        top -1.4em
+    p
+      margin-left 1.6vw
+    div.container12
+      padding-left 1vw
+      padding-top 12vh
+      @media screen and (max-width: 640px)
+        padding-left 0
+        padding-top 1em
+      .column3 
+        width: 12vw
+        padding 0 20px
+        margin 0
+        @media screen and (max-width: 640px)
+          width 3em
+          padding 0px 5px
+        img
+          display block
+          margin 1vw auto
+        p.col
+          margin 0
+          text-align center
 /* =========================== AGENDA */
-	&#agenda
-		background: url(../img/filtro-morado.png), url(../img/back-agenda.jpg) no-repeat;
-		background-size cover
-		article
-			top 27vh
-			h1
-				top: -6.6vw
-				background #f20000
-				padding: 1vw 2.1vw
-				left: -7vw
-			.calendar
-				size 65vw 57vh
-				.header
-					display flex
-					justify-content center
-					align-items center
-					/*
-					a
-						size 2.1vw
-						display block
-						&.prev
-							background url(../img/table_left.png) no-repeat
-							background-size cover
-						&.next
-							background url(../img/table_right.png) no-repeat
-							background-size cover
-					*/
-					.titles
-						text-align center
-						padding 0
-						display inline-flex
-						-ms-flex-wrap:wrap;
-					 	display:-ms-flexbox;
-					 	display:-webkit-flex;
-					   	flex-wrap:wrap;
-					   	p
-							padding 1vw
-							font-size 1vw
-							border 1px solid rgba(255,255,255,0.3)
-							cursor pointer
-							&.active
-								background: rgba(255,255,255,0.2);
-					/*
-					p.j 
-						position absolute
-						left: 107px;
-						background: rgba(255,255,255,0.2);
-						top: 60px;
-						
-					p.v 
-						position absolute
-						left: 278px;
-						/*background: rgba(255,255,255,0.2);
-						border 1px solid rgba(255,255,255,0.3)
-						top: 60px;
-						padding: 10px;
-						font-size: 13px;
-					p.s 
-						position absolute
-						left: 458px;*/
-						/*background: rgba(255,255,255,0.2);*/
-						top: 60px
-						padding: 10px;
-						font-size: 13px;
-				.days
-					size 100%
-					.day
-						table
-							margin auto
-							background rgba(255, 255, 255, 0.2)
-							tr
-								border-top: solid 1.5px #943ba7;
-								border-bottom: solid 1.5px #943ba7;
-								td
-									font-family:'GillSans-Light'
-									border-left: solid 1.5px #943ba7;
-									border-right: solid 1.5px #943ba7;
-									padding 0 1.1vw
-									font-size 1vw
-									color #fff
-									&.act
-										font-size 1.4vw
-										text-transform uppercase
-									&.hr
-										font-size 1.4vw
-										text-transform uppercase
-										text-align center
-										span
-											font-size 1vh
-											vertical-align super
-									&.uno
-										background #8fd8f0
-										color #fff
-										height 25px
-									&.dos
-										background #eeb790
-										color #fff
-									&.tres
-										background #8fe9c9
-										color #000
-									&.cuatro
-										background #eb8bf2
-										color #fff
-										border none
-									&.cinco
-										background #b58bf1
-										color #000
-									&.seis
-										background #ef8a91
-										color #fff
-									&.siete
-										background #90eae2
-										color #fff
-										border none
-									&.ocho
-										background #e6e691
-										color #000
-							&.jueves
-								margin-bottom 5.6vh
-								width: 745px;
-							&.viernes
-								width: 745px;
-								//
-							&.sabado
-								width: 745px;
-								//
-						p.textJ
-							text-align left
-							width 29vw
-							padding-left 5vw
-							span.negritas
-								font-weight bold
-						.column6
-							width 450px
-						.top
-							margin-top 30px
-						div.column6:nth-child(2)
-							p
-								width 27vw
-						img
-							float left	
-							margin-left: -35px;
-
+  &#agenda
+    background url(../img/filtro-morado.png), url(../img/back-agenda.jpg) no-repeat;
+    background-size cover
+    article
+      top 27vh
+      @media screen and (max-width: 640px)
+        width 20em
+        left 2em
+        padding 0
+      h1
+        top -6.6vw
+        background #f20000
+        padding 1vw 2.1vw
+        left -7vw
+        @media screen and (max-width: 640px)
+          font-size 2em
+          top -1.4em
+      .calendar
+        size 65vw 
+        @media screen and (max-width: 640px)
+          width 16em
+        .header
+          display flex
+          justify-content center
+          align-items center
+          .titles
+            text-align center
+            padding 0
+            display inline-flex
+            -ms-flex-wrap wrap
+            display -ms-flexbox
+            display -webkit-flex
+            flex-wrap wrap
+            top 60px
+            font-size 13px
+            p
+              padding 1vw
+              font-size 1vw
+              border 1px solid rgba(255,255,255,0.3)
+              cursor pointer
+              &.active
+                background rgba(255,255,255,0.2)
+              @media screen and (max-width: 640px)
+                font-size 0.5em
+        .days
+          size 100%
+          .day
+            overflow-x scroll
+            table
+              margin auto
+              background rgba(255, 255, 255, 0.2)
+              tr
+                border-top solid 1.5px #943ba7 
+                border-bottom solid 1.5px #943ba7
+                td
+                  font-family 'GillSans-Light'
+                  border-left solid 1.5px #943ba7
+                  border-right solid 1.5px #943ba7
+                  padding 0 1.1vw
+                  font-size 1vw
+                  color #fff
+                  @media screen and (max-width: 640px)
+                    font-size 0.6em
+                  &.act
+                    font-size 1.4vw
+                    text-transform uppercase
+                    @media screen and (max-width: 640px)
+                      font-size 0.6em
+                  &.hr
+                    font-size 1.4vw
+                    text-transform uppercase
+                    text-align center
+                    @media screen and (max-width: 640px)
+                      font-size 0.6em
+                    span
+                      font-size 1vh
+                      vertical-align super
+                    @media screen and (max-width: 640px)
+                      font-size 0.6em
+                  &.uno
+                    background #8fd8f0
+                    color #fff
+                    height 25px
+                  &.dos
+                    background #eeb790
+                    color #fff
+                  &.tres
+                    background #8fe9c9
+                    color #000
+                  &.cuatro
+                    background #eb8bf2
+                    color #fff
+                    border none
+                  &.cinco
+                    background #b58bf1
+                    color #000
+                  &.seis
+                    background #ef8a91
+                    color #fff
+                  &.siete
+                    background #90eae2
+                    color #fff
+                    border none
+                  &.ocho
+                    background #e6e691
+                    color #000
+              &.jueves
+                margin-bottom 5.6vh
+                width 745px 
+                @media screen and (max-width: 640px)
+                  width 110%
+                  margin-bottom 1em
+              &.viernes
+                width 745px
+                @media screen and (max-width: 640px)
+                  width 110%
+              &.sabado
+                width 745px
+                @media screen and (max-width: 640px)
+                  width 110%
+            p.textJ
+              text-align left
+              width 29vw
+              padding-left 5vw
+              span.negritas
+                font-weight bold
+              @media screen and (max-width: 640px)
+                text-align left
+                padding-left 4em
+                font-size 0.58em
+                width auto
+            .container12
+              @media screen and (max-width: 640px)
+                width 100%
+            .column6
+              width 450px
+              @media screen and (max-width: 640px)
+                width 100%
+            .top
+              margin-top 30px
+              @media screen and (max-width: 640px)
+                margin-top 0
+            .column6:nth-child(2)
+              p
+                width 27vw
+                @media screen and (max-width: 640px)
+                  width auto
+            img
+              float left  
+              margin-left -35px
+              @media screen and (max-width: 640px)
+                margin-left 0
+                width 2em
 /* =========================== SEDE */
-	&#sede
-		background: url(../img/filtro-azul.png), url(../img/back-sede.jpg)no-repeat;
-		width: 100%;
-		height: 100%;
-		background-size: cover;
-		article
-			h1
-				top: -6.6vw
-				background #97ea3d
-				padding: 1vw 2.1vw
-				left: -7vw
-			h2
-				font-size 1.7vw
-				margin-top 2vh
-				margin-left -6.5vw
-				span
-					font-family:'GillSans-Light'
-					font-size 1.6vw
-			div.image
-				absolute top -8vw left 26vw
-				size 42vw 45vw
-				img.uno
-					absolute right -4vw top 14.6vw
-					width 52%
-				img.dos
-					absolute top 4vw left 3vw
-					width 26%
-				img.tres
-					absolute top 15vw left 0.5vw
-					width 35%
-				img.cuatro
-					absolute top right 15vw
-					width 18%
-				img.cinco
-					absolute top 22vw left 14.6vw
-					width 22%
-				img.seis
-					absolute top 4vh right 3.2vw
-					width 30%
-				img.siete
-					absolute top 7.2vw left 13vw
-					width 35%
-
-						
+  &#sede
+    background url(../img/filtro-azul.png), url(../img/back-sede.jpg)no-repeat
+    width 100%
+    height 100%
+    background-size cover
+    article
+      h1
+        top -6.6vw
+        background #97ea3d
+        padding: 1vw 2.1vw
+        left -7vw
+        @media screen and (max-width: 640px)
+          font-size 2em
+          top -1.4em
+      h2
+        font-size 1.7vw
+        margin-top 2vh
+        margin-left -6.5vw
+        span
+          font-family:'GillSans-Light'
+          font-size 1.6vw
+        @media screen and (max-width: 640px)
+          font-size 0.6em
+          span
+            font-size 0.5em
+      div.image
+        absolute top -8vw left 26vw
+        size 42vw 45vw
+        @media screen and (max-width: 640px)
+          absolute top 4em left 0
+          size 90% 15em
+        img.uno
+          absolute right -4vw top 14.6vw
+          width 52%
+          @media screen and (max-width: 640px)
+            top 6.2em
+            right 2.4em
+        img.dos
+          absolute top 4vw left 3vw
+          width 26%
+          @media screen and (max-width: 640px)
+            //
+        img.tres
+          absolute top 15vw left 0.5vw
+          width 35%
+          @media screen and (max-width: 640px)
+            top 7.6em
+            left -0.5em
+        img.cuatro
+          absolute top right 15vw
+          width 18%
+          @media screen and (max-width: 640px)
+            top 0
+            right 3.4em
+        img.cinco
+          absolute top 22vw left 14.6vw
+          width 22%
+          @media screen and (max-width: 640px)
+            top 4.6em
+            left 1.8em
+        img.seis
+          absolute top 4vh right 3.2vw
+          width 30%
+          @media screen and (max-width: 640px)
+            top 2.5em
+            right 1em
+        img.siete
+          absolute top 7.2vw left 13vw
+          width 35%
+          @media screen and (max-width: 640px)
+            top 1em
+            left 4.5em
 /* =========================== REGISTRATE */
-	&#registrate
-		background: url(../img/filtro-rojo.png), url(../img/back-registrate.jpg) no-repeat;
-		background-size: cover;
-		article
-			h1
-				top: -6.6vw
-				background #32dafe
-				padding: 1vw 2.1vw
-				left: -7vw
-			h2
-				font-size 1.7vw
-				margin-bottom 2vh
-			.container12
-				width 40vw
-				margin-left 2.5vw
-				.column12
-					width 100%
-					margin-bottom 2vh
-				.column3
-					width 25%
-					a
-						img
-							display block
-							margin-left 15%
-							margin-bottom 1vh
-						p
-							font-size 1.1vw
-					&.registro
-						text-align center
-						img
-							margin 0 auto 1vh
-						p
-							font-size 1.3vw
-
+  &#registrate
+    background url(../img/filtro-rojo.png), url(../img/back-registrate.jpg) no-repeat
+    background-size cover
+    article
+      h1
+        top: -6.6vw
+        background #32dafe
+        padding 1vw 2.1vw
+        left: -7vw
+        @media screen and (max-width: 640px)
+          font-size 2em
+          top -1.6em
+      h2
+        font-size 1.7vw
+        margin-bottom 2vh
+        @media screen and (max-width: 640px)
+          font-size 0.5em
+      .container12
+        width 40vw
+        margin-left 2.5vw
+        @media screen and (max-width: 640px)
+          width 100%
+          margin 0 auto
+        .column12
+          width 100%
+          margin-bottom 2vh
+          p
+            font-size 0.6em
+            br.avoid
+              display none
+        .column3
+          width 25%
+          a
+            img
+              display block
+              margin-left 15%
+              margin-bottom 1vh
+            p
+              font-size 1.1vw
+            @media screen and (max-width: 640px)
+              img
+                margin 0
+              p
+                font-size 0.6em
+                text-align center;
+          &.registro
+            text-align center
+            img
+              margin 0 auto 1vh
+            p
+              font-size 1.3vw
+              @media screen and (max-width: 640px)
+                font-size 0.8em
 /* =========================== FAQ'S */
-	&#faq
-		background: url(../img/filtro-rosa.png), url(../img/back-faqs.jpg)no-repeat;
-		background-size: cover;
-		article
-			width 75%
-			h1
-				top: -6.6vw
-				background #fbc549
-				padding: 1vw 2.1vw
-				left: -7vw
-			.texto
-				margin-top 5vh
-				p
-					text-align center
-					margin-bottom 3.4vh
-					&.bold
-						font-family 'GillSans'
-			.container12
-				width 100%
-				.column6
-					width 46%
-					a
-						size 20vw 5vw
-						display block
-						padding-top 1.5vw
-						color #fff
-						font-size 1vw
-						box-sizing border-box
-						&.escribenos
-							background url(../img/escribenos.png)no-repeat
-							background-size cover
-							padding-left 4vw
-						&.llamanos
-							background url(../img/llamanos.png)no-repeat
-							background-size cover
-							padding-left 3vw
-				&.contacto
-					width 65%
-				&.faqs
-					size 80% 35vh
-					overflow hidden
-					p
-						margin-top 2vh
-						margin-left 2vw
-						span
-							font-family 'GillSans'
-					.ps-scrollbar-y-rail
-						background #193349
-						border-radius 0
-						opacity 1
-					.ps-scrollbar-y
-						background #fbc549
-						border-radius 0
-						opacity 1
+  &#faq
+    background: url(../img/filtro-rosa.png), url(../img/back-faqs.jpg)no-repeat;
+    background-size: cover;
+    article
+      width 75%
+      h1
+        top: -6.6vw
+        background #fbc549
+        padding: 1vw 2.1vw
+        left: -7vw
+        @media screen and (max-width: 640px)
+          font-size 1.4em
+          top -1.6em
+      .texto
+        margin-top 5vh
+        p
+          text-align center
+          margin-bottom 3.4vh
+          &.bold
+            font-family 'GillSans'
+            @media screen and (max-width: 640px)
+              font-size 0.8em
+          @media screen and (max-width: 640px)
+            font-size 0.6em
+      .container12
+        width 100%
+        .column6
+          width 46%
+          @media screen and (max-width: 640px)
+            width 100%
+            margin 0
+          a
+            size 20vw 5vw
+            display block
+            padding-top 1.5vw
+            color #fff
+            font-size 1vw
+            box-sizing border-box
+            &.escribenos
+              background url(../img/escribenos.png)no-repeat
+              background-size cover
+              padding-left 4vw
+              @media screen and (max-width: 640px)
+                width 100%
+                font-size 0.5em
+                height auto
+                padding 1em 4em
+            &.llamanos
+              background url(../img/llamanos.png)no-repeat
+              background-size cover
+              padding-left 3vw
+              @media screen and (max-width: 640px)
+                width 100%
+                font-size 0.5em
+                height auto
+                padding 1em 4em
+        &.contacto
+          width 65%
+        &.faqs
+          size 80% 35vh
+          overflow hidden
+          @media screen and (max-width: 640px)
+            size 100%
+            height 7.5em
+          p
+            margin-top 2vh
+            margin-left 2vw
+            @media screen and (max-width: 640px)
+              font-size 0.6em
+              padding-right 1em
+            span
+              font-family 'GillSans'
+          .ps-scrollbar-y-rail
+            background #193349
+            border-radius 0
+            opacity 1
+          .ps-scrollbar-y
+            background #fbc549
+            border-radius 0
+            opacity 1
 .activo
-	background #68b9ef!important
-	p
-		color white!important
+  background #68b9ef!important
+  p
+    color white!important
 .noActivo
-	background #ECECEC
-	p
-		colro #9D9D9D
-
+  background #ECECEC
+  p
+    color #9D9D9D
 /* =========================== REGISTRO */
-	&#registro
-		display none
-		background #f9f9f9
-		article
-			top 11vw
-			left 20vw
-			size 65% 60%
-			h1.registro
-				top -4.6vw
-				background #ff3073
-				padding 1vw 2.1vw
-				font-size 2.3vw 
-			h2.experiencia 
-				color #727272
-				font-size 2.4vh
-				margin 1vh 0
-			p
-				color #9d9d9d
-				margin-bottom  1vh
-				font-size: 12px;
-				//padding-left: 11px;
-				&.elige
-					padding-left 1vw
-				span.instrucciones
-					font-weight bold
-					font-size 10px
-			img
-				display block
-				margin auto
-			form
-				.step
-					size 100% 100%
-					.step-area
-						display inline-flex
-						align-items center
-						float left
-						.hospedaje
-							margin-top 20px
-							width: 417px;
-						.info
-							font-family 'Futura-Medium'
-							width 12vw
-							text-align center
-						.info.hospedaje
-							margin-top 30px
-							img
-								/*display block
-								margin 2vh auto 0*/
-								display: list-item;
-								margin-left: 50px;
-						.step-data
-							input
-								display block
-								padding 0.8vw
-								margin 0.5vw 0
-								border 2px #ececec solid
-								width 90%
-								font-size: 11px;
-							input[type="checkbox"]
-								position: absolute;
-								right: 400px;
-								bottom: 60px;
-							label
-								position relative
-								display block
-								font-size: 13px;
-								width 100%
-								i
-									position absolute
-									top 30%
-									right 8%
-								select
-									width 100%
-									display inline-block
-									padding 0.5vw 19% 0.5vw 0.5vw
-									margin 0.3vw 5px
-									min-width 9vw
-									border 2px #ececec solid
-									background #fff
-									color #727272
-									appearance none
-									line-height 135%
-									max-width 25vw
-									font-size 11px
-							.bool-choose
-							.bool-chooser
-								.option
-									cursor pointer
-									size 2vw 1.5vw
-									color #ececec
-									background #fff
-									border 2px #ececec solid
-									padding 1vw
-									text-align center
-									display inline-block
-						&.genero
-							.choose
-								border 1px solid #ececec 
-								size 53vw 11vw
-								position relative
-								.option
-									cursor pointer
-									size 50% 100%
-									float left
-									text-align center
-									img
-										padding-top 10%
-										display block
-										margin auto
-									p
-										color #727272
-									&.selected
-										background #68b9ef
-										p
-											color #fff
-								.o
-									absolute top right bottom left
-									size 3vw 1.5vw
-									margin auto
-									text-align center
-									background #f5f4f4
-									box-shadow 1px 1px 5px #ccc
-						&.cumple
-							margin-left 4vw
-							.step-data
-								margin-left 2vw
-						&.contacto
-							input[name="lada"]
-								width 10%
-								display inline-block
-							input[name="tel"]
-								width 70%
-								display inline-block
-						&.carreras
-							width 30vw
-							select
-								width 12vw
-						&.residencia
-							select
-								width 18vw
-						&.prepa
-							width 25vw
-							margin-left 2vw
-							.step-data
-								width 200%
-							label
-								width 100%
-							select
-								width 100%
-								//width 233px
-							input
-								display none
-								margin-left 3%
-								width 88%
-						&.compania
-							label
-								width 11vw
-								display inline-block
-								select
-									width 100%
-							input
-								display inline-block
-							#parentesco-cont
-							#nomcomp
-								display none
-								width 45%
-						&.viernes
-							.info
-								width 15vw
-							width 30vw
-							label
-								width 100%
-								select
-									font-size 0.8vw
-									width 100%
-						&.sabado
-							.info
-								width 15vw
-							width 30vw
-							margin-left 1vw
-							margin-top 1vw
-							padding-bottom 1vw
-							label
-								width 100%
-								select
-									font-size 0.8vw
-									width 100%
-						&.evento
-							width 30vw
-							margin-left 4vw
-							select.option.eve
-								width 100%
-							.info
-								width 15vw
-						&.acepto
-							.info
-								label
-									display block
-							.step-data
-								font-size 0.8vw
-								color #333
-								width 50vw
-					.clearborder
-						clear both
-						display inline-flex
-						width 100%
-						.info
-							width 12vw
-						.border
-							height 1vw
-							border-bottom 1px #eeeeee solid
-							margin-bottom 1vw
-							width 53vw
-		.siguiente
-			background #ff3073
-			fixed bottom 7.5vh left
-			size 100% 9vh
-			a
-				border-radius 20px
-				border 3px #fff solid
-				display block
-				size 13vw 3vw
-				box-sizing border-box
-				absolute top right bottom left
-				margin auto
-				text-transform uppercase
-				color #fff
-				padding 0.7vw 5.5vw 0 2.75vw
-				font-size 0.9vw
-				left 200px
-				&.prev
-					right 360px
-					padding-left: 82px;
-				i
-					absolute right 20% top 0%
-					font-size 2vw
-					&.icon.ion-arrow-left-c
-						content: "\f108";
-						position: absolute;
-						right: 100px;
-						top: 2px;
-		.footer
-			background #727272
-			fixed bottom left z-index 1
-			size 100% 7.5vh
-			display block
-	
-	&#end
-		display none
-		background #fff
-		article
-			position initial
-		div.registroT
-			h1
-				background #ff3073
-				padding 10px
-				position relative
-				width 22vw
-				margin 12% auto 0
-			h2
-				width 40%
-				margin 2vw auto
-				color #727272
-				text-align center
-				font-size 120%
-			p
-				font-size 1.3vw
-				margin 2vw auto
-				text-align center
-				color #727272
-				width 40%
-			ol
-				width 40%
-				margin 0 auto
-				p
-					margin 2vw -1vw 1vw
-					width 100%
-					text-align left
-				li
-					font-size 1.3vw
-					color #727272
-					padding-top 10px
-					span
-						font-weight bold
-			img
-				position: absolute
-				width 7%
-		div.redesS
-			absolute bottom 0
-			size 100% 20%
-			background #ff2f72
-			display inline-flex
-			flex-direction column
-			justify-content center
-			align-items center
-			div 
-				size 50% 80%
-				display inline-flex
-				justify-content center
-				align-items center
-				a
-					size 8vw
-					&#comparte_tw
-						background: url("../img/t.png") no-repeat
-						background-size contain
-					&#comparte_fb
-						background: url("../img/f.png") no-repeat 2vw
-						background-size contain
-			p
-				color #fff
-				font-weight bold
-				font-size 90%
-				margin 0
-		p.siguiente
-			background: url("../img/siguiente.png") no-repeat no-repeat;
-			color #fff
-			padding-top: 20px;
-			font-weight: normal;
-			padding-left: 50px;
-			height: 100px;
-			margin-left: 500px;
-
+  &#registro
+    display block
+    background #f9f9f9
+    article
+      top 11vw
+      left 20vw
+      size 65% 60%
+      h1.registro
+        top -4.6vw
+        background #ff3073
+        padding 1vw 2.1vw
+        font-size 2.3vw 
+        @media screen and (max-width: 640px)
+          font-size 1.4em
+          top -1.3em
+      h2.experiencia 
+        color #727272
+        font-size 2.4vh
+        margin 1vh 0
+        @media screen and (max-width: 640px)
+          font-size 1em
+      p
+        color #9d9d9d
+        margin-bottom  1vh
+        font-size: 12px;
+        @media screen and (max-width: 640px)
+          br
+            display none
+        //padding-left: 11px;
+        &.elige
+          padding-left 1vw
+        span.instrucciones
+          font-weight bold
+          font-size 10px
+      img
+        display block
+        margin auto
+      form
+        .step
+          size 100% 60vh
+          overflow-y auto
+          overflow-x hidden
+          .step-area
+            display inline-flex
+            align-items center
+            float left
+            .hospedaje
+              margin-top 20px
+              width: 417px;
+            .info
+              font-family 'Futura-Medium'
+              width 12vw
+              text-align center
+              @media screen and (max-width: 640px)
+                width 40%
+            .info.hospedaje
+              margin-top 30px
+              img
+                /*display block
+                margin 2vh auto 0*/
+                display: list-item;
+                margin-left: 50px;
+            .step-data
+              @media screen and (max-width: 640px)
+                padding-left 1em
+              input
+                display block
+                padding 0.8vw
+                margin 0.5vw 0
+                border 2px #ececec solid
+                width 90%
+                font-size: 11px;
+              input[type="checkbox"]
+                position: absolute;
+                right: 400px;
+                bottom: 60px;
+              label
+                position relative
+                display block
+                font-size: 13px;
+                width 100%
+                i
+                  position absolute
+                  top 30%
+                  right 8%
+                select
+                  width 100%
+                  display inline-block
+                  padding 0.5vw 19% 0.5vw 0.5vw
+                  margin 0.3vw 5px
+                  min-width 9vw
+                  border 2px #ececec solid
+                  background #fff
+                  color #727272
+                  appearance none
+                  line-height 135%
+                  max-width 25vw
+                  font-size 11px
+                  @media screen and (max-width: 640px)
+                    max-width 95%
+              .bool-choose
+              .bool-chooser
+                .option
+                  cursor pointer
+                  size 2vw 1.5vw
+                  color #ececec
+                  background #fff
+                  border 2px #ececec solid
+                  padding 1vw
+                  text-align center
+                  display inline-block
+                  @media screen and (max-width: 640px)
+                    size 1.2em
+            &.genero
+              .choose
+                border 1px solid #ececec 
+                size 53vw 11vw
+                position relative
+                .option
+                  cursor pointer
+                  size 50% 100%
+                  float left
+                  text-align center
+                  img
+                    padding-top 10%
+                    display block
+                    margin auto
+                    @media screen and (max-width: 640px)
+                      padding 5%
+                      width 15%
+                  p
+                    color #727272
+                  &.selected
+                    background #68b9ef
+                    p
+                      color #fff
+                .o
+                  absolute top right bottom left
+                  size 3vw 1.5vw
+                  margin auto
+                  text-align center
+                  background #f5f4f4
+                  box-shadow 1px 1px 5px #ccc
+                  @media screen and (max-width: 640px)
+                    height 1.5em
+            &.cumple
+              margin-left 4vw
+              .step-data
+                margin-left 2vw
+            &.contacto
+              input[name="lada"]
+                width 10%
+                display inline-block
+              input[name="tel"]
+                width 70%
+                display inline-block
+            &.carreras
+              width 30vw
+              select
+                width 12vw
+              @media screen and (max-width: 640px)
+                width 100%
+            &.residencia
+              select
+                width 18vw
+            &.prepa
+              width 25vw
+              margin-left 2vw
+              @media screen and (max-width: 640px)
+                width 95%
+              .step-data
+                width 200%
+              label
+                width 100%
+              select
+                width 100%
+                //width 233px
+              input
+                display none
+                margin-left 3%
+                width 88%
+            &.compania
+              label
+                width 11vw
+                display inline-block
+                select
+                  width 100%
+              input
+                display inline-block
+              #parentesco-cont
+              #nomcomp
+                display none
+                width 45%
+                @media screen and (max-width: 640px)
+                  width 80%
+            &.viernes
+              width 30vw
+              .info
+                width 15vw
+              @media screen and (max-width: 640px)
+                width 100%
+                .info
+                  width 40%
+              label
+                width 100%
+                select
+                  font-size 0.8vw
+                  width 100%
+                  @media screen and (max-width: 640px)
+                    font-size 12px
+            &.sabado
+              width 30vw
+              margin-left 1vw
+              margin-top 1vw
+              padding-bottom 1vw
+              .info
+                width 15vw
+              @media screen and (max-width: 640px)
+                width 100%
+                .info
+                  width 40%
+              label
+                width 100%
+                select
+                  font-size 0.8vw
+                  width 100%
+                  @media screen and (max-width: 640px)
+                    font-size 12px
+            &.evento
+              width 30vw
+              margin-left 4vw
+              @media screen and (max-width: 640px)
+                width 90%
+              select.option.eve
+                width 100%
+              .info
+                width 15vw
+            &.acepto
+              .info
+                label
+                  display block
+              .step-data
+                font-size 0.8vw
+                color #333
+                width 50vw
+                @media screen and (max-width: 640px)
+                    font-size 8px
+          .clearborder
+            clear both
+            display inline-flex
+            width 100%
+            .info
+              width 12vw
+            .border
+              height 1vw
+              border-bottom 1px #eeeeee solid
+              margin-bottom 1vw
+              width 53vw
+    .siguiente
+      background #ff3073
+      fixed bottom 7.5vh left
+      size 100% 9vh
+      a
+        border-radius 20px
+        border 3px #fff solid
+        display block
+        size 13vw 3vw
+        box-sizing border-box
+        absolute top right bottom left 200px
+        margin auto
+        text-transform uppercase
+        color #fff
+        padding 0.7vw 5.5vw 0 2.75vw
+        font-size 0.9vw
+        @media screen and (max-width: 640px)
+          font-size: 0.5em;
+          width: 8em;
+          height: 3em;
+          padding: 0.5em;
+          margin: 0;
+          top: 1em;
+          i
+            display none
+        &.prev
+          right 360px
+          padding-left: 82px;
+          @media screen and (max-width: 640px)
+            padding-left 2em
+            left 5em
+        i
+          absolute right 20% top 0%
+          font-size 2vw
+          &.icon.ion-arrow-left-c
+            content: "\f108";
+            position: absolute;
+            right: 100px;
+            top: 2px;
+    .footer
+      background #727272
+      fixed bottom left z-index 1
+      size 100% 7.5vh
+      display block
+  
+  &#end
+    display none
+    background #fff
+    article
+      position initial
+      margin 0 auto
+    div.registroT
+      .response
+        overflow-y
+      h1
+        background #ff3073
+        padding 10px
+        position relative
+        width 22vw
+        margin 12% auto 0
+        @media screen and (max-width: 640px)
+          margin 10vh auto
+          font-size 1.5em
+      h2
+        width 40%
+        margin 2vw auto
+        color #727272
+        text-align center
+        font-size 120%
+        @media screen and (max-width: 640px)
+          font-size 1em
+      p
+        font-size 1.3vw
+        margin 2vw auto
+        text-align center
+        color #727272
+        width 40%
+        @media screen and (max-width: 640px)
+          font-size 0.8em
+          width 80%
+      ol
+        width 40%
+        margin 0 auto
+        @media screen and (max-width: 640px)
+          width 80%
+        p
+          margin 2vw -1vw 1vw
+          width 100%
+          text-align left
+          @media screen and (max-width: 640px)
+            font-size 0.8em
+        li
+          font-size 1.3vw
+          color #727272
+          padding-top 10px
+          @media screen and (max-width: 640px)
+            font-size 0.8em
+          span
+            font-weight bold
+      img
+        position: absolute
+        width 7%
+    div.redesS
+      absolute bottom 0 left 0
+      size 100% 20%
+      background #ff2f72
+      display inline-flex
+      flex-direction column
+      justify-content center
+      align-items center
+      @media screen and (max-width: 640px)
+        height 10%
+      div 
+        size 50% 80%
+        display inline-flex
+        justify-content center
+        align-items center
+        a
+          size 8vw
+          &#comparte_tw
+            background: url("../img/t.png") no-repeat
+            background-size contain
+          &#comparte_fb
+            background: url("../img/f.png") no-repeat 2vw
+            background-size contain
+      p
+        color #fff
+        font-weight bold
+        font-size 90%
+        margin 0
+        @media screen and (max-width: 640px)
+          display none
+    p.siguiente
+      background: url("../img/siguiente.png") no-repeat no-repeat;
+      color #fff
+      padding-top: 20px;
+      font-weight: normal;
+      padding-left: 50px;
+      height: 100px;
+      margin-left: 500px;
 /* =========================== AVISO LEGAL */
-	&#aviso_legal
-		background url(../img/filtro-amarillo.png), url(../img/back-aviso.jpg) no-repeat
-		background-size cover
-		z-index 5
-		display none
-		article
-			size 65% 60%
-			h1
-				top -6.6vw
-				background #7338b6
-				padding 1vw 2.1vw
-				left -7vw
-			h2
-				font-size 1.5vw
-				text-align center
-				margin-top 7vh
-			.info
-				size 100% 70%
-				overflow hidden
-				position relative
-				.ps-scrollbar-y-rail
-					background #1a423f
-					border-radius 0
-					opacity 1
-				.ps-scrollbar-y
-					background #7338b6
-					border-radius 0
-					opacity 1
-				h3
-					color #fff
-					margin 1vh 0 2vh
-					padding 0 1vw
-				p
-					margin-bottom 1vh
-					padding 0 1vw
-				ul
-					list-style-type disc
-					margin 1vh 2vw 2vh
-					padding 0 1vw
-					li
-						font-size 1.1vw
-						color #fff
-				a
-					color #eee
-			.close
-				background url(../img/btn_cerrar.png) no-repeat
-				background-size cover
-				absolute top -9vh right -5vw
-				size 4vw
-				display block
+  &#aviso_legal
+    background url(../img/filtro-amarillo.png), url(../img/back-aviso.jpg) no-repeat
+    background-size cover
+    z-index 5
+    display none
+    article
+      size 65% 60%
+      h1
+        top -6.6vw
+        background #7338b6
+        padding 1vw 2.1vw
+        left -7vw
+        @media screen and (max-width: 640px)
+          font-size 1.4em
+          top -1.6em
+      h2
+        font-size 1.5vw
+        text-align center
+        margin-top 7vh
+        @media screen and (max-width: 640px)
+          font-size 1em
+      .info
+        size 100% 70%
+        overflow hidden
+        position relative
+        @media screen and (max-width: 640px)
+          padding-right 1em
+        .ps-scrollbar-y-rail
+          background #1a423f
+          border-radius 0
+          opacity 1
+        .ps-scrollbar-y
+          background #7338b6
+          border-radius 0
+          opacity 1
+        h3
+          color #fff
+          margin 1vh 0 2vh
+          padding 0 1vw
+          @media screen and (max-width: 640px)
+            font-size 0.8em
+        p
+          margin-bottom 1vh
+          padding 0 1vw
+          @media screen and (max-width: 640px)
+            font-size 0.5em
+        ul
+          list-style-type disc
+          margin 1vh 2vw 2vh
+          padding 0 1vw
+          li
+            font-size 1.1vw
+            color #fff
+            @media screen and (max-width: 640px)
+              font-size 0.5em
+        a
+          color #eee
+      .close
+        background url(../img/btn_cerrar.png) no-repeat
+        background-size cover
+        absolute top -9vh right -5vw
+        size 4vw
+        display block
 footer
-	fixed bottom left
-	size 100% height 6.5vh
-	display block
-	z-index 1
-	div
-		absolute bottom 2vh left 2vw
-		display inline-flex
-		align-items center
-		width 30%
-		a
-			font-family 'GillSans-Light'
-			font-size 1.2vw
-			margin-left 2vw
-			color #fff
-	.icon-help
-		absolute bottom 2vh right 2vw
-		color #fff
-
-
+  fixed bottom left
+  size 100% height 6.5vh
+  display block
+  z-index 1
+  div
+    absolute bottom 2vh left 2vw
+    display inline-flex
+    align-items center
+    width 30%
+    a
+      font-family 'GillSans-Light'
+      font-size 1.2vw
+      margin-left 2vw
+      color #fff
+      @media screen and (max-width: 640px)
+        font-size  0.6em
+        p
+          font-size  0.6em
+  .icon-help
+    absolute bottom 2vh right 2vw
+    color #fff
 
 /** CARGAR DOCUMENTOS jok3r**/
-
 section.content
-	padding-left 120px
-	article
-		width 70%
-		left 10vw
-		top 16.5vw
-		h1
-			font-size 2.5vw
-			top -6.6vw
-			left 0
-			background #43b9f0
-			padding 1vw 2.1vw
-		h4
-			font-size 1.3vw
-		p
-			&.sub
-				font-size 1vw
-				text-align left
-				color #c9c9c9
-		div
-			float left
-			margin-top 0.5vw
-			display block
-			box-sizing border-box
-			&.alert
-				margin 0
-				font-size 1vw
-				text-align center
-				padding 0.5vw
-				color #fff
-				background #faa
-				border 1px solid #f66
-			&.cont
-				clear both
-				width 100%
-			&.columns20
-				width 20%
-			&.columns25
-				width 25%
-			&.columns30
-				width 30%
-			&.columns40
-				width 40%
-			&.columns50
-				width 50%
-			&.columns60
-				width 60%
-			&.columns70
-				width 70%
-			&.columns75
-				width 75%
-			&.columns80
-				width 80%
-			&.columns100
-				width 100%
-			&.acciones
-				margin 0
-				figure
-					img
-						margin auto
-				span
-					display block
-					text-align center
-				h4
-					text-align center
-				form
-					.btn
-						display block
-						text-align center
-						vertical-align middle
-						cursor pointer
-						background-image none
-						background-color #666
-						color #fff
-						border 1px solid transparent
-						white-space nowrap
-						padding 6px 12px
-						font-size 14px
-						line-height 100%
-						user-select none
-						margin-left 35%
-						transform rotate(-5deg)
-					.file-upload
-						position relative
-						overflow hidden
-						margin 10px -55px
-						left 50%
-						input.upload
-							absolute top 0 right 0
-							margin 0
-							padding 0
-							font-size 20px
-							cursor pointer
-							opacity 0
-							filter 'alpha(opacity=0)'
-			&.azul
-				background #00bbf2
-				size 100% 120px
-				fixed left 0 bottom 0
-				margin 0
-				p
-					text-align center
-					padding 10px
-					font-weight bold
-				ul
-					display inline-flex
-					list-style-type none
-					color #fff
-					font-family 'Gill Sans'
-					font-size 13px
-					align-items flex-start
-					justify-content space-around
-					width 100%
-					margin-top 1vw
-					li
-						padding-left 20px
-						&.msg
-							background url(../img/mesage.png) no-repeat 0 25px
-							padding-left 35px
-						&.phn
-							background url(../img/fon.png) no-repeat 0 25px
-							padding-left 35px
-						&.fb
-							background url(../img/face.png) no-repeat 0 25px
-						&.tw
-							background url(../img/tw.png) no-repeat 0 25px
-							padding-left 27px
-			figure
-				margin 0.5vw
-			a.btn
-				display block
-				background #0ce77f
-				padding 1vw
-				color #fff
-				text-align center
-				border 4px solid #25c77a
+  padding-left 120px
+  article
+    width 70%
+    left 10vw
+    top 16.5vw
+    h1
+      font-size 2.5vw
+      top -6.6vw
+      left 0
+      background #43b9f0
+      padding 1vw 2.1vw
+    h4
+      font-size 1.3vw
+    p
+      &.sub
+        font-size 1vw
+        text-align left
+        color #c9c9c9
+    div
+      float left
+      margin-top 0.5vw
+      display block
+      box-sizing border-box
+      &.alert
+        margin 0
+        font-size 1vw
+        text-align center
+        padding 0.5vw
+        color #fff
+        background #faa
+        border 1px solid #f66
+      &.cont
+        clear both
+        width 100%
+      &.columns20
+        width 20%
+      &.columns25
+        width 25%
+      &.columns30
+        width 30%
+      &.columns40
+        width 40%
+      &.columns50
+        width 50%
+      &.columns60
+        width 60%
+      &.columns70
+        width 70%
+      &.columns75
+        width 75%
+      &.columns80
+        width 80%
+      &.columns100
+        width 100%
+      &.acciones
+        margin 0
+        figure
+          img
+            margin auto
+        span
+          display block
+          text-align center
+        h4
+          text-align center
+        form
+          .btn
+            display block
+            text-align center
+            vertical-align middle
+            cursor pointer
+            background-image none
+            background-color #666
+            color #fff
+            border 1px solid transparent
+            white-space nowrap
+            padding 6px 12px
+            font-size 14px
+            line-height 100%
+            user-select none
+            margin-left 35%
+            transform rotate(-5deg)
+          .file-upload
+            position relative
+            overflow hidden
+            margin 10px -55px
+            left 50%
+            input.upload
+              absolute top 0 right 0
+              margin 0
+              padding 0
+              font-size 20px
+              cursor pointer
+              opacity 0
+              filter 'alpha(opacity=0)'
+      &.azul
+        background #00bbf2
+        size 100% 120px
+        fixed left 0 bottom 0
+        margin 0
+        p
+          text-align center
+          padding 10px
+          font-weight bold
+        ul
+          display inline-flex
+          list-style-type none
+          color #fff
+          font-family 'Gill Sans'
+          font-size 13px
+          align-items flex-start
+          justify-content space-around
+          width 100%
+          margin-top 1vw
+          li
+            padding-left 20px
+            &.msg
+              background url(../img/mesage.png) no-repeat 0 25px
+              padding-left 35px
+            &.phn
+              background url(../img/fon.png) no-repeat 0 25px
+              padding-left 35px
+            &.fb
+              background url(../img/face.png) no-repeat 0 25px
+            &.tw
+              background url(../img/tw.png) no-repeat 0 25px
+              padding-left 27px
+      figure
+        margin 0.5vw
+      a.btn
+        display block
+        background #0ce77f
+        padding 1vw
+        color #fff
+        text-align center
+        border 4px solid #25c77a

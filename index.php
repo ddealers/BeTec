@@ -119,15 +119,6 @@
 				</li>
 			</ul>
 		</nav>
-<!--nav id="primary_nav_wrap">
-<ul>
-  <li><a href="#">Menu 1</a></li>
-  <li><a href="#">Menu 2</a></li>
-  <li><a href="#">Menu 3</a></li>
-  <li><a href="#">Menu 1</a></li>
-  <li><a href="#">Menu 2</a></li>
-  <li><a href="#">Menu 3</a></li>
-</nav-->
 		<div class="social">
 			<a id="btn_registrate" href="#registro"><img src="./img/registro_boton.png"/></a>
 			<div class="rs">
@@ -143,8 +134,8 @@
 	<section id="be_tec" data-0="transform: translate(0%,0)" data-100p="transform: translate(-100%,0)">
 		<article><!--CONTENIDO_BORN_TO_BE_TEC-->
 			<h1>¿QUÉ ES?</h1>
-			<h2>UN EVENTO PENSADO EN <br> TI, QUE ESTÁS EN EL <br> ÚLTIMO AÑO DE PREPA.</h2>
-			<p>BORN TO BE TEC es un evento diseñado para que tengas la oportunidad de<br>vivir un día como alumno del Tecnológico de Monterrey.<br><br>Podrás hacer nuevos amigos, conocer el campus, interactuar con alumnos<br>actuales, líderes estudiantiles, y descubrir toda la oferta educativa que podrías<br>estudiar en el Campus Monterrey.<br><br>Te apoyaremos en la elección de carrera a través de una experiencia diseñada<br>por cada director de los programas académicos.<br><br>Te esperamos este 21 y 22 de noviembre en el Tecnológico de Monterrey,<br>en el Campus Monterrey. Cupo limitado ¡Regístrate ahora!</p>
+			<h2>UN EVENTO PENSADO EN TI, QUE ESTÁS EN EL ÚLTIMO AÑO DE PREPA.</h2>
+			<p>BORN TO BE TEC es un evento diseñado para que tengas la oportunidad de vivir un día como alumno del Tecnológico de Monterrey.<br><br>Podrás hacer nuevos amigos, conocer el campus, interactuar con alumnos actuales, líderes estudiantiles, y descubrir toda la oferta educativa que podrías estudiar en el Campus Monterrey.<br><br>Te apoyaremos en la elección de carrera a través de una experiencia diseñada por cada director de los programas académicos.<br><br>Te esperamos este 21 y 22 de noviembre en el Tecnológico de Monterrey, en el Campus Monterrey. Cupo limitado ¡Regístrate ahora!</p>
 		</article>
 	</section>
 	<section id="actividades" data-0="transform: translate(100%,0)" data-100p="transform: translate(0%,0)" data-200p="transform: translate(-100%,0)">
@@ -552,7 +543,7 @@
 			<h2>NO LO PIENSES MÁS Y REGÍSTRATE AHORA PARA<br>QUE PUEDAS PARTICIPAR. EL REGISTRO CIERRA EL<br>MARTES 18 DE NOVIEMBRE A LAS 23:59 HORAS.</h2>
 			<div class="container12">
 				<div class="column12">
-					<p>Llena el siguiente formulario con todos tus datos, asegúrate de contar con la<br> Carta Compromiso correctamente llenada y firmada por tus papás. Si aún no la<br> tienes, aquí te facilitamos el formato, ¡descárgalo! <br><br> Si eres foráneo, descarga el formato de referencias bancarias para realizar tu<br> pago, deposita en el banco de tu preferencia y pide que agreguen tu nombre<br> a la referencia para que puedas subirla escaneada al registro.</p>
+					<p>Llena el siguiente formulario con todos tus datos, asegúrate de contar con la<br class="avoid"> Carta Compromiso correctamente llenada y firmada por tus papás. Si aún no la<br class="avoid"> tienes, aquí te facilitamos el formato, ¡descárgalo! <br><br> Si eres foráneo, descarga el formato de referencias bancarias para realizar tu<br class="avoid"> pago, deposita en el banco de tu preferencia y pide que agreguen tu nombre<br class="avoid"> a la referencia para que puedas subirla escaneada al registro.</p>
 				</div>
 			 	<div class="column3">
 			 		<a target="_blank" href="./download/Formato_CuentaBancaria.jpg" download="Formato_CuentaBancaria.jpg">

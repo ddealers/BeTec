@@ -86,7 +86,6 @@ $(document).ready(function () {
   		});
   	}
 
-
   	function showSection(section){
   		TweenMax.to("section", 0.8, {opacity: 0, onComplete:function(){
   			$("section").css('z-index', 0);
@@ -153,7 +152,7 @@ $(document).ready(function () {
 		TweenMax.to('header .social', 0.5, {opacity:0});
 		TweenMax.to('nav ul', 0.5, {opacity:0});
 		TweenMax.to('.arrows', 0.5, {opacity:0});
-		TweenMax.set('#registro', {display:'block', opacity: 1});
+		TweenMax.set('#registro', {display:'block', opacity: 1, 'z-index':1});
 		TweenMax.from('#registro', 0.5, {opacity:0});
 	}
 	$('#btn_registrate').on('click', initRegistro);
@@ -162,8 +161,8 @@ $(document).ready(function () {
 		TweenMax.to('header .social', 0.5, {opacity:1});
 		TweenMax.to('nav ul', 0.5, {opacity:1});
 		TweenMax.to('.arrows', 0.5, {opacity:1});
-		TweenMax.set('#registro', {display:'none'});
-		TweenMax.set('#end', {display:'none'});
+		TweenMax.set('#registro', {display:'none', 'z-index':0});
+		TweenMax.set('#end', {display:'none', 'z-index':0});
 	});
 
 
@@ -472,6 +471,7 @@ $(document).ready(function () {
 							$('.registroT .foraneoA').show();
 						}
 						$('#end').show();
+						TweenMax.set( '#end', {'z-index':1, opacity: 1, scale: 1, display: 'block'});
 						TweenMax.from('#end', 1, {opacity: 0, scale: 0.5, ease: Back.easeOut});
 						return;
 					}else if(response == 'badMail'){
