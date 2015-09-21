@@ -798,11 +798,13 @@ section#be_tec p {
   width: 100%;
   margin-bottom: 2vh;
 }
-#registrate article .container12 .column12 p {
-  font-size: 0.6em;
-}
-#registrate article .container12 .column12 p br.avoid {
-  display: none;
+@media screen and (max-width: 640px) {
+  #registrate article .container12 .column12 p {
+    font-size: 0.6em;
+  }
+  #registrate article .container12 .column12 p br.avoid {
+    display: none;
+  }
 }
 #registrate article .container12 .column3 {
   width: 25%;
@@ -991,7 +993,7 @@ section#be_tec p {
 }
 /* =========================== REGISTRO */
 #registro {
-  display: block;
+  display: none;
   background: #f9f9f9;
 }
 #registro article {

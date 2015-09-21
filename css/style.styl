@@ -446,10 +446,11 @@ section
         .column12
           width 100%
           margin-bottom 2vh
-          p
-            font-size 0.6em
-            br.avoid
-              display none
+          @media screen and (max-width: 640px)
+            p
+              font-size 0.6em
+              br.avoid
+                display none
         .column3
           width 25%
           a
