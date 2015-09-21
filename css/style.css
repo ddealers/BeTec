@@ -244,6 +244,7 @@ section {
   overflow: hidden;
 }
 section article {
+  width: 70%;
   position: absolute;
   top: 32vh;
   left: 16vw;
