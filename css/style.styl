@@ -241,7 +241,8 @@ section
         .days
           size 100%
           .day
-            overflow-x scroll
+            @media screen and (max-width: 640px)
+              overflow-x scroll
             table
               margin auto
               background rgba(255, 255, 255, 0.2)

@@ -457,8 +457,10 @@ section#be_tec p {
   width: 100%;
   height: 100%;
 }
-#agenda article .calendar .days .day {
-  overflow-x: scroll;
+@media screen and (max-width: 640px) {
+  #agenda article .calendar .days .day {
+    overflow-x: scroll;
+  }
 }
 #agenda article .calendar .days .day table {
   margin: auto;
