@@ -576,6 +576,10 @@ section#be_tec p {
   text-align: left;
   width: 29vw;
   padding-left: 5vw;
+  font-size: 0.9em;
+}
+#agenda article .calendar .days .day p.textJ br {
+  display: none;
 }
 #agenda article .calendar .days .day p.textJ span.negritas {
   font-weight: bold;
@@ -594,7 +598,7 @@ section#be_tec p {
   }
 }
 #agenda article .calendar .days .day .column6 {
-  width: 450px;
+  width: 45%;
 }
 @media screen and (max-width: 640px) {
   #agenda article .calendar .days .day .column6 {
